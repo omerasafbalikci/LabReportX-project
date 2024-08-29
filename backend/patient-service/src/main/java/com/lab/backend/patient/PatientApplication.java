@@ -1,4 +1,4 @@
-package com.lab.patient;
+package com.lab.backend.patient;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.lab.patient;
+package com.lab.backend.patient;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
