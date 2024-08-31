@@ -19,11 +19,11 @@ public interface PatientService {
                                                                       String bloodType, String phoneNumber, String email, String chronicDisease,
                                                                       String updatedDate, Boolean deleted);
 
-    GetPatientResponse addPatient(CreatePatientRequest patientRequest);
+    GetPatientResponse addPatient(CreatePatientRequest createPatientRequest);
 
     GetPatientResponse updatePatient(UpdatePatientRequest updatePatientRequest);
 
-    GetPatientResponse deletePatient(Long id);
+    void deletePatient(Long id);
 
     GetPatientResponse restorePatient(Long id);
 }

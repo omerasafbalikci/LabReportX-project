@@ -27,6 +27,8 @@ import java.util.function.Consumer;
 
 /**
  * Service implementation for managing patients.
+ *
+ * @author Ömer Asaf BALIKÇI
  */
 
 @Service
@@ -80,11 +82,11 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public GetPatientResponse addPatient(CreatePatientRequest patientRequest) {
-        if (this.patientRepository.existsByTrIdNumberAndDeletedIsFalse(patientRequest.getTrIdNumber())) {
+    public GetPatientResponse addPatient(CreatePatientRequest createPatientRequest) {
+        if (this.patientRepository.existsByTrIdNumberAndDeletedIsFalse(createPatientRequest.getTrIdNumber())) {
             throw new PatientAlreadyExistsException("A patient with this TC ID number already exists.");
         }
-        Patient patient = this.patientMapper.toPatient(patientRequest);
+        Patient patient = this.patientMapper.toPatient(createPatientRequest);
         Patient savedPatient = this.patientRepository.save(patient);
         GetPatientResponse patientResponse = this.patientMapper.toGetPatientResponse(savedPatient);
         this.cacheService.addPatientCache(patientResponse);
@@ -121,15 +123,14 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     @CacheEvict(cacheNames = "patient_id", key = "#id")
-    public GetPatientResponse deletePatient(Long id) {
+    public void deletePatient(Long id) {
         Patient patient = this.patientRepository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> {
                     log.error("Patient not found to delete. ID: {}", id);
                     return new PatientNotFoundException("Patient not found to delete. ID: " + id);
                 });
         patient.setDeleted(true);
-        Patient savedPatient = this.patientRepository.save(patient);
-        return this.patientMapper.toGetPatientResponse(savedPatient);
+        this.patientRepository.save(patient);
     }
 
     @Override

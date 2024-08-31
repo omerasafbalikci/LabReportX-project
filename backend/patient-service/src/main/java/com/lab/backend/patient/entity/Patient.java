@@ -69,6 +69,7 @@ public class Patient {
 
     @LastModifiedDate
     @Column(name = "updated_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
     private LocalDateTime updatedDate;
 
     @Column(name = "deleted", nullable = false)

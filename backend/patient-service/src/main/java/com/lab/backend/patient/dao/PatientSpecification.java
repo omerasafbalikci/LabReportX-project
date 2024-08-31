@@ -16,6 +16,8 @@ import java.util.List;
 
 /**
  * Specification class for filtering patients based on various criteria.
+ *
+ * @author Ömer Asaf BALIKÇI
  */
 
 @RequiredArgsConstructor
