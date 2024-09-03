@@ -39,7 +39,7 @@ public class PatientMapper {
                 patient.getPhoneNumber(),
                 patient.getEmail(),
                 patient.getChronicDiseases(),
-                patient.getUpdatedDate()
+                patient.getLastModifiedDate()
         );
     }
 }

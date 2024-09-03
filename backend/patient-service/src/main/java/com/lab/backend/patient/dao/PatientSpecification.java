@@ -31,7 +31,7 @@ public class PatientSpecification implements Specification<Patient> {
     private final String phoneNumber;
     private final String email;
     private final String chronicDisease;
-    private final String updatedDate;
+    private final String lastModifiedDate;
     private final Boolean deleted;
 
     /**
@@ -74,8 +74,8 @@ public class PatientSpecification implements Specification<Patient> {
         if (chronicDisease != null && !chronicDisease.isEmpty()) {
             predicates.add(criteriaBuilder.isMember(chronicDisease, root.get("chronicDiseases")));
         }
-        if (updatedDate != null) {
-            LocalDateTime parsedUpdatedDate = LocalDateTime.parse(updatedDate);
+        if (lastModifiedDate != null) {
+            LocalDateTime parsedUpdatedDate = LocalDateTime.parse(lastModifiedDate);
             predicates.add(criteriaBuilder.equal(root.get("updatedDate"), parsedUpdatedDate));
         }
         if (deleted != null) {

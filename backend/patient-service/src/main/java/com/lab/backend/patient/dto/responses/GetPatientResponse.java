@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -19,7 +20,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetPatientResponse {
+public class GetPatientResponse implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
@@ -30,5 +31,5 @@ public class GetPatientResponse {
     private String phoneNumber;
     private String email;
     private List<String> chronicDiseases;
-    private LocalDateTime updatedDate;
+    private LocalDateTime lastModifiedDate;
 }

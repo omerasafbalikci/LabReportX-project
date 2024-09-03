@@ -29,6 +29,12 @@ public class PatientController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/trIdNumber")
+    public ResponseEntity<GetPatientResponse> getPatientByTrIdNumber(@RequestParam String trIdNumber) {
+        GetPatientResponse response = this.patientService.getPatientByTrIdNumber(trIdNumber);
+        return ResponseEntity.ok(response);
+    }
+
     @GetMapping
     public ResponseEntity<PagedResponse<GetPatientResponse>> getAllPatientsFilteredAndSorted(
             @RequestParam(defaultValue = "0") int page,
@@ -52,8 +58,8 @@ public class PatientController {
     }
 
     @PostMapping
-    public ResponseEntity<GetPatientResponse> addPatient(@RequestBody @Valid CreatePatientRequest createPatientRequest) {
-        GetPatientResponse response = this.patientService.addPatient(createPatientRequest);
+    public ResponseEntity<GetPatientResponse> savePatient(@RequestBody @Valid CreatePatientRequest createPatientRequest) {
+        GetPatientResponse response = this.patientService.savePatient(createPatientRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 

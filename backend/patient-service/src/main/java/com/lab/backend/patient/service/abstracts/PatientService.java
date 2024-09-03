@@ -14,12 +14,14 @@ import com.lab.backend.patient.dto.responses.PagedResponse;
 public interface PatientService {
     GetPatientResponse getPatientById(Long id);
 
+    GetPatientResponse getPatientByTrIdNumber(String trIdNumber);
+
     PagedResponse<GetPatientResponse> getAllPatientsFilteredAndSorted(int page, int size, String sortBy, String direction, String firstName,
                                                                       String lastName, String trIdNumber, String birthDate, String gender,
                                                                       String bloodType, String phoneNumber, String email, String chronicDisease,
                                                                       String updatedDate, Boolean deleted);
 
-    GetPatientResponse addPatient(CreatePatientRequest createPatientRequest);
+    GetPatientResponse savePatient(CreatePatientRequest createPatientRequest);
 
     GetPatientResponse updatePatient(UpdatePatientRequest updatePatientRequest);
 

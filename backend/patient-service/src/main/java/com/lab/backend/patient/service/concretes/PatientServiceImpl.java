@@ -8,12 +8,14 @@ import com.lab.backend.patient.dto.responses.GetPatientResponse;
 import com.lab.backend.patient.dto.responses.PagedResponse;
 import com.lab.backend.patient.entity.Patient;
 import com.lab.backend.patient.service.abstracts.PatientService;
-import com.lab.backend.patient.utilities.exceptions.PatientAlreadyExistsException;
 import com.lab.backend.patient.utilities.exceptions.PatientNotFoundException;
 import com.lab.backend.patient.utilities.mappers.PatientMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -32,7 +34,6 @@ import java.util.function.Consumer;
  */
 
 @Service
-@Transactional
 @AllArgsConstructor
 @Log4j2
 public class PatientServiceImpl implements PatientService {
@@ -41,7 +42,7 @@ public class PatientServiceImpl implements PatientService {
     private final CacheService cacheService;
 
     @Override
-    @Cacheable(cacheNames = "patient_id", key = "#id", unless = "#result == null")
+    @Cacheable(value = "patient_id", key = "#id", unless = "#result == null")
     public GetPatientResponse getPatientById(Long id) {
         log.trace("Entering getPatientById method in PatientServiceImpl with id: {}", id);
         Patient patient = this.patientRepository.findByIdAndDeletedFalse(id).orElseThrow(() -> {
@@ -50,8 +51,20 @@ public class PatientServiceImpl implements PatientService {
         });
         GetPatientResponse response = this.patientMapper.toGetPatientResponse(patient);
         log.debug("Successfully retrieved patient with id: {}", id);
-
         log.trace("Exiting getPatientById method in PatientServiceImpl with id: {}", id);
+        return response;
+    }
+
+    @Override
+    public GetPatientResponse getPatientByTrIdNumber(String trIdNumber) {
+        log.trace("Entering getPatientByTrIdNumber method in PatientServiceImpl with trIdNumber: {}", trIdNumber);
+        Patient patient = this.patientRepository.findByTrIdNumberAndDeletedFalse(trIdNumber).orElseThrow(() -> {
+            log.error("Patient not found with trIdNumber: {}", trIdNumber);
+            return new PatientNotFoundException("Patient not found with trIdNumber: " + trIdNumber);
+        });
+        GetPatientResponse response = this.patientMapper.toGetPatientResponse(patient);
+        log.debug("Successfully retrieved patient with trIdNumber: {}", trIdNumber);
+        log.trace("Exiting getPatientByTrIdNumber method in PatientServiceImpl with trIdNumber: {}", trIdNumber);
         return response;
     }
 
@@ -82,14 +95,21 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public GetPatientResponse addPatient(CreatePatientRequest createPatientRequest) {
+    public GetPatientResponse savePatient(CreatePatientRequest createPatientRequest) {
+        Patient savedPatient;
         if (this.patientRepository.existsByTrIdNumberAndDeletedIsFalse(createPatientRequest.getTrIdNumber())) {
-            throw new PatientAlreadyExistsException("A patient with this TC ID number already exists.");
+            Patient existingPatient = this.patientRepository.findByTrIdNumberAndDeletedFalse(createPatientRequest.getTrIdNumber())
+                    .orElseThrow(() -> {
+                        log.error("Patient not found to save. ID: {}", createPatientRequest.getTrIdNumber());
+                        return new PatientNotFoundException("Patient not found to save. ID: " + createPatientRequest.getTrIdNumber());
+                    });
+            savedPatient = this.patientRepository.save(existingPatient);
+        } else {
+            Patient patient = this.patientMapper.toPatient(createPatientRequest);
+            savedPatient = this.patientRepository.save(patient);
         }
-        Patient patient = this.patientMapper.toPatient(createPatientRequest);
-        Patient savedPatient = this.patientRepository.save(patient);
         GetPatientResponse patientResponse = this.patientMapper.toGetPatientResponse(savedPatient);
-        this.cacheService.addPatientCache(patientResponse);
+        this.cacheService.savePatientCache(patientResponse);
         return patientResponse;
     }
 
@@ -122,7 +142,7 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    @CacheEvict(cacheNames = "patient_id", key = "#id")
+    @CacheEvict(value = "patient_id", key = "#id")
     public void deletePatient(Long id) {
         Patient patient = this.patientRepository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> {
@@ -143,7 +163,7 @@ public class PatientServiceImpl implements PatientService {
         patient.setDeleted(false);
         Patient savedPatient = this.patientRepository.save(patient);
         GetPatientResponse patientResponse = this.patientMapper.toGetPatientResponse(savedPatient);
-        this.cacheService.addPatientCache(patientResponse);
+        this.cacheService.savePatientCache(patientResponse);
         return patientResponse;
     }
 }

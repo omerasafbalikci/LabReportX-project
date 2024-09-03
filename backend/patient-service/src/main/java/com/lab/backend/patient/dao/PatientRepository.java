@@ -5,7 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 import java.util.Optional;
 
 /**
@@ -19,6 +18,8 @@ public interface PatientRepository extends JpaRepository<Patient, Long>, JpaSpec
     Optional<Patient> findByIdAndDeletedFalse(Long id);
 
     Optional<Patient> findByIdAndDeletedTrue(Long id);
+
+    Optional<Patient> findByTrIdNumberAndDeletedFalse(String trIdNumber);
 
     boolean existsByTrIdNumberAndDeletedIsFalse(String trIdNumber);
 }

@@ -10,6 +10,7 @@ import org.hibernate.annotations.ColumnDefault;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -68,9 +69,9 @@ public class Patient {
     private List<String> chronicDiseases;
 
     @LastModifiedDate
-    @Column(name = "updated_date")
+    @Column(name = "last_modified_date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
-    private LocalDateTime updatedDate;
+    private LocalDateTime lastModifiedDate;
 
     @Column(name = "deleted", nullable = false)
     @ColumnDefault("false")
