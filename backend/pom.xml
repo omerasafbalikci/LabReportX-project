@@ -19,6 +19,8 @@
 
 	<modules>
 		<module>patient-service</module>
+        <module>user-management-service</module>
+		<module>auth-service</module>
 	</modules>
 
 	<properties>

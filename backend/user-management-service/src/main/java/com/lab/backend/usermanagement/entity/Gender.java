@@ -1,7 +1,7 @@
-package com.lab.backend.patient.entity;
+package com.lab.backend.usermanagement.entity;
 
 /**
- * Enum for gender of patient.
+ * Enum for gender of user.
  *
  * @author Ömer Asaf BALIKÇI
  */

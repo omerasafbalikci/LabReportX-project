@@ -11,6 +11,7 @@ import com.lab.backend.patient.service.abstracts.PatientService;
 import com.lab.backend.patient.utilities.exceptions.PatientNotFoundException;
 import com.lab.backend.patient.utilities.mappers.PatientMapper;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
@@ -34,7 +35,7 @@ import java.util.function.Consumer;
  */
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Log4j2
 public class PatientServiceImpl implements PatientService {
     private final PatientRepository patientRepository;
