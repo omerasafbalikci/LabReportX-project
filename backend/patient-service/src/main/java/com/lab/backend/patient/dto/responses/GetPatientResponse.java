@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 /**
  * DTO for patient used as response.
@@ -30,6 +29,5 @@ public class GetPatientResponse implements Serializable {
     private BloodType bloodType;
     private String phoneNumber;
     private String email;
-    private List<String> chronicDiseases;
-    private LocalDateTime lastModifiedDate;
+    private LocalDateTime lastPatientRegistrationTime;
 }

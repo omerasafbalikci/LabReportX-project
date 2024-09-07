@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.Set;
 
 /**
  * DTO for patient used as input.
@@ -34,9 +34,9 @@ public class CreatePatientRequest {
     private Gender gender;
     private BloodType bloodType;
     @NotBlank(message = "Phone number must not be blank")
-    @Pattern(regexp = "^\\+(?:[0-9] ?){6,14}[0-9]$", message = "Invalid phone number")
+    @Pattern(regexp = "^(?:\\+90|0)5[0-9]{2} ?[0-9]{3} ?[0-9]{2} ?[0-9]{2}$", message = "Invalid phone number")
     private String phoneNumber;
     @Email(message = "Please provide a valid email address")
     private String email;
-    private List<String> chronicDiseases;
+    private Set<String> chronicDiseases;
 }

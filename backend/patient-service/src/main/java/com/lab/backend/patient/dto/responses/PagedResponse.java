@@ -9,7 +9,6 @@ import java.util.List;
  * A generic class for paginated responses.
  *
  * @param <T> the type of objects contained in the paginated response
- *
  * @author Ömer Asaf BALIKÇI
  */
 

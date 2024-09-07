@@ -20,6 +20,5 @@ public class UpdateUserRequest {
     private String username;
     @Email(message = "It must be a valid email")
     private String email;
-    private Set<String> roles;
     private Gender gender;
 }

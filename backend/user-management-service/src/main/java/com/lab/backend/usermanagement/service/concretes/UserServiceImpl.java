@@ -1,19 +1,14 @@
 package com.lab.backend.usermanagement.service.concretes;
 
-import com.lab.backend.usermanagement.dao.RoleRepository;
 import com.lab.backend.usermanagement.dao.UserRepository;
 import com.lab.backend.usermanagement.dao.UserSpecification;
-import com.lab.backend.usermanagement.dto.requests.AuthUserRequest;
-import com.lab.backend.usermanagement.dto.requests.CreateUserRequest;
-import com.lab.backend.usermanagement.dto.requests.UpdateUserRequest;
+import com.lab.backend.usermanagement.dto.requests.*;
 import com.lab.backend.usermanagement.dto.responses.GetUserResponse;
 import com.lab.backend.usermanagement.dto.responses.PagedResponse;
+import com.lab.backend.usermanagement.entity.Role;
 import com.lab.backend.usermanagement.entity.User;
 import com.lab.backend.usermanagement.service.abstracts.UserService;
-import com.lab.backend.usermanagement.utilities.exceptions.RabbitMQException;
-import com.lab.backend.usermanagement.utilities.exceptions.RoleNotFoundException;
-import com.lab.backend.usermanagement.utilities.exceptions.UserAlreadyExistsException;
-import com.lab.backend.usermanagement.utilities.exceptions.UserNotFoundException;
+import com.lab.backend.usermanagement.utilities.exceptions.*;
 import com.lab.backend.usermanagement.utilities.mappers.UserMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -23,8 +18,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -55,20 +48,22 @@ public class UserServiceImpl implements UserService {
     @Value("${rabbitmq.routingKey.restore}")
     private String ROUTING_KEY_RESTORE;
 
+    @Value("${rabbitmq.routingKey.addRole}")
+    private String ROUTING_KEY_ADD_ROLE;
+
+    @Value("${rabbitmq.routingKey.removeRole}")
+    private String ROUTING_KEY_REMOVE_ROLE;
+
     private final UserRepository userRepository;
-    private final RoleRepository roleRepository;
     private final UserMapper userMapper;
     private final RabbitTemplate rabbitTemplate;
 
     @Override
     public GetUserResponse getUserById(Long id) {
         User user = this.userRepository.findByIdAndDeletedFalse(id).orElseThrow(() -> {
-            log.error("User not found with id: {}", id);
             return new UserNotFoundException("User not found with id: " + id);
         });
         GetUserResponse response = this.userMapper.toGetUserResponse(user);
-        log.debug("Successfully retrieved user with id: {}", id);
-        log.trace("Exiting getUserById method in UserServiceImpl with id: {}", id);
         return response;
     }
 
@@ -98,6 +93,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public GetUserResponse createUser(CreateUserRequest createUserRequest) {
         if (this.userRepository.existsByUsernameAndDeletedIsFalse(createUserRequest.getUsername())) {
             throw new UserAlreadyExistsException("Username '" + createUserRequest.getUsername() + "' is already taken");
@@ -106,10 +102,11 @@ public class UserServiceImpl implements UserService {
             throw new UserAlreadyExistsException("Email '" + createUserRequest.getEmail() + "' is already taken");
         }
         User user = this.userMapper.toUser(createUserRequest);
+        Set<String> roles = createUserRequest.getRoles().stream().map(Enum::toString).collect(Collectors.toSet());
 
         try {
-            AuthUserRequest authUserRequest = new AuthUserRequest(createUserRequest.getUsername(), createUserRequest.getPassword(), createUserRequest.getRoles());
-            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_CREATE, authUserRequest);
+            CreateAuthUserRequest createAuthUserRequest = new CreateAuthUserRequest(createUserRequest.getUsername(), createUserRequest.getPassword(), roles);
+            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_CREATE, createAuthUserRequest);
         } catch (Exception exception) {
             throw new RabbitMQException("Failed to send create message to RabbitMQ", exception);
         }
@@ -118,25 +115,123 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public GetUserResponse updateUser(UpdateUserRequest updateUserRequest) {
-        return null;
-    }
+        User existingUser = this.userRepository.findByIdAndDeletedFalse(updateUserRequest.getId())
+                .orElseThrow(() -> {
+                    return new UserNotFoundException("User doesn't exist with id " + updateUserRequest.getId());
+                });
 
-    @Override
-    public void deleteUser(Long id) {
-
-    }
-
-    @Override
-    public GetUserResponse restoreUser(Long id) {
-        return null;
-    }
-
-    private void validateRoles(List<String> roles) {
-        for (String role : roles) {
-            if (!DEFAULT_ROLES.contains(role)) {
-                throw new RoleNotFoundException("Role not found: " + role);
+        if (updateUserRequest.getUsername() != null && !existingUser.getUsername().equals(updateUserRequest.getUsername())) {
+            if (this.userRepository.existsByUsernameAndDeletedIsFalse(updateUserRequest.getUsername())) {
+                throw new UserAlreadyExistsException("Username is taken");
             }
+            existingUser.setUsername(updateUserRequest.getUsername());
         }
+        if (updateUserRequest.getEmail() != null && !existingUser.getEmail().equals(updateUserRequest.getEmail())) {
+            if (this.userRepository.existsByEmailAndDeletedIsFalse(updateUserRequest.getEmail())) {
+                throw new UserAlreadyExistsException("Email is already taken");
+            }
+            existingUser.setEmail(updateUserRequest.getEmail());
+        }
+        if (updateUserRequest.getFirstName() != null && !existingUser.getFirstName().equals(updateUserRequest.getFirstName())) {
+            existingUser.setFirstName(updateUserRequest.getFirstName());
+        }
+        if (updateUserRequest.getLastName() != null && !existingUser.getLastName().equals(updateUserRequest.getLastName())) {
+            existingUser.setLastName(updateUserRequest.getLastName());
+        }
+        if (updateUserRequest.getGender() != null && !existingUser.getGender().equals(updateUserRequest.getGender())) {
+            existingUser.setGender(updateUserRequest.getGender());
+        }
+
+        try {
+            UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(updateUserRequest.getId(), updateUserRequest.getUsername());
+            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_UPDATE, updateAuthUserRequest);
+        } catch (Exception exception) {
+            throw new RabbitMQException("Failed to send update message to RabbitMQ", exception);
+        }
+        this.userRepository.save(existingUser);
+        return this.userMapper.toGetUserResponse(existingUser);
+    }
+
+    @Override
+    @Transactional
+    public void deleteUser(Long id) {
+        User user = this.userRepository.findByIdAndDeletedFalse(id)
+                .orElseThrow(() -> {
+                    return new UserNotFoundException("User doesn't exist with id " + id);
+                });
+        user.setDeleted(true);
+        try {
+            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_DELETE, id);
+        } catch (Exception exception) {
+            throw new RabbitMQException("Failed to send delete message to RabbitMQ", exception);
+        }
+        this.userRepository.save(user);
+    }
+
+    @Override
+    @Transactional
+    public GetUserResponse restoreUser(Long id) {
+        User user = this.userRepository.findByIdAndDeletedTrue(id)
+                .orElseThrow(() -> {
+                    return new UserNotFoundException("User doesn't exist with id " + id);
+                });
+        user.setDeleted(false);
+        try {
+            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_RESTORE, id);
+        } catch (Exception exception) {
+            throw new RabbitMQException("Failed to send restore message to RabbitMQ", exception);
+        }
+        this.userRepository.save(user);
+        return this.userMapper.toGetUserResponse(user);
+    }
+
+    @Override
+    @Transactional
+    public GetUserResponse addRole(Long id, Role role) {
+        User user = this.userRepository.findByIdAndDeletedTrue(id)
+                .orElseThrow(() -> {
+                    return new UserNotFoundException("User doesn't exist with id " + id);
+                });
+        if (user.getRoles().contains(role)) {
+            throw new RoleAlreadyExistsException("User already has this Role. Role: " + role.toString());
+        }
+        user.getRoles().add(role);
+        String r = role.toString();
+        try {
+            UpdateAuthUserRoleRequest updateAuthUserRoleRequest = new UpdateAuthUserRoleRequest(id, r);
+            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_ADD_ROLE, updateAuthUserRoleRequest);
+        } catch (Exception exception) {
+            throw new RabbitMQException("Failed to send add role message to RabbitMQ", exception);
+        }
+        this.userRepository.save(user);
+        return this.userMapper.toGetUserResponse(user);
+    }
+
+    @Override
+    @Transactional
+    public GetUserResponse removeRole(Long id, Role role) {
+        User user = this.userRepository.findByIdAndDeletedTrue(id)
+                .orElseThrow(() -> {
+                    return new UserNotFoundException("User doesn't exist with id " + id);
+                });
+        if (user.getRoles().size() <= 1) {
+            throw new SingleRoleRemovalException("Cannot remove role. User must have at least one role");
+        }
+        if (!user.getRoles().contains(role)) {
+            throw new RoleNotFoundException("The user does not own this role! Role: " + role);
+        }
+        user.getRoles().remove(role);
+        String r = role.toString();
+        try {
+            UpdateAuthUserRoleRequest updateAuthUserRoleRequest = new UpdateAuthUserRoleRequest(id, r);
+            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_REMOVE_ROLE, updateAuthUserRoleRequest);
+        } catch (Exception exception) {
+            throw new RabbitMQException("Failed to send remove role message to RabbitMQ", exception);
+        }
+        this.userRepository.save(user);
+        return this.userMapper.toGetUserResponse(user);
     }
 }
+

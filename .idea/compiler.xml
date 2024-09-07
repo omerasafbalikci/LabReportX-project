@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="patient-service" />
         <module name="user-management-service" />
+        <module name="auth-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="auth-service" options="-parameters" />
       <module name="patient-service" options="-parameters" />
       <module name="user-management-service" options="-parameters" />
     </option>

@@ -1,6 +1,7 @@
-package com.lab.backend.patient.dao;
+package com.lab.backend.patient.repository;
 
 import com.lab.backend.patient.entity.Patient;
+import com.lab.backend.patient.utilities.exceptions.UnexpectedException;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;
@@ -11,7 +12,10 @@ import org.springframework.data.jpa.domain.Specification;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -31,14 +35,14 @@ public class PatientSpecification implements Specification<Patient> {
     private final String phoneNumber;
     private final String email;
     private final String chronicDisease;
-    private final String lastModifiedDate;
+    private final String lastPatientRegistrationTime;
     private final Boolean deleted;
 
     /**
      * Constructs a {@link Predicate} based on the filtering criteria provided.
      *
-     * @param root the root
-     * @param query the criteria query
+     * @param root            the root
+     * @param query           the criteria query
      * @param criteriaBuilder the criteria builder
      * @return a {@link Predicate} representing the filtering conditions
      */
@@ -46,7 +50,7 @@ public class PatientSpecification implements Specification<Patient> {
     public Predicate toPredicate(@NonNull Root<Patient> root, CriteriaQuery<?> query, @NonNull CriteriaBuilder criteriaBuilder) {
         List<Predicate> predicates = new ArrayList<>();
 
-        if (firstName != null && !firstName.isEmpty()) {
+        if (firstName != null && !lastName.isEmpty()) {
             predicates.add(criteriaBuilder.like(root.get("firstName"), "%" + firstName + "%"));
         }
         if (lastName != null && !lastName.isEmpty()) {
@@ -55,7 +59,7 @@ public class PatientSpecification implements Specification<Patient> {
         if (trIdNumber != null && !trIdNumber.isEmpty()) {
             predicates.add(criteriaBuilder.equal(root.get("trIdNumber"), trIdNumber));
         }
-        if (birthDate != null) {
+        if (birthDate != null && !birthDate.isEmpty()) {
             LocalDate parsedBirthDate = LocalDate.parse(birthDate);
             predicates.add(criteriaBuilder.equal(root.get("birthDate"), parsedBirthDate));
         }
@@ -74,9 +78,24 @@ public class PatientSpecification implements Specification<Patient> {
         if (chronicDisease != null && !chronicDisease.isEmpty()) {
             predicates.add(criteriaBuilder.isMember(chronicDisease, root.get("chronicDiseases")));
         }
-        if (lastModifiedDate != null) {
-            LocalDateTime parsedUpdatedDate = LocalDateTime.parse(lastModifiedDate);
-            predicates.add(criteriaBuilder.equal(root.get("updatedDate"), parsedUpdatedDate));
+        if (lastPatientRegistrationTime != null && !lastPatientRegistrationTime.isEmpty()) {
+            List<DateTimeFormatter> formatters = Arrays.asList(
+                    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSS"),
+                    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS")
+            );
+            boolean parsed = false;
+            for (DateTimeFormatter formatter : formatters) {
+                try {
+                    LocalDateTime dateTime = LocalDateTime.parse(lastPatientRegistrationTime, formatter);
+                    predicates.add(criteriaBuilder.equal(root.get("lastPatientRegistrationTime"), dateTime));
+                    parsed = true;
+                    break;
+                } catch (DateTimeParseException ignored) {
+                }
+            }
+            if (!parsed) {
+                throw new UnexpectedException("Invalid date format: " + lastPatientRegistrationTime);
+            }
         }
         if (deleted != null) {
             predicates.add(criteriaBuilder.equal(root.get("deleted"), deleted));

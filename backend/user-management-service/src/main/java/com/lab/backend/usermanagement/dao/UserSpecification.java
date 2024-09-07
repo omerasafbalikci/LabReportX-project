@@ -2,10 +2,7 @@ package com.lab.backend.usermanagement.dao;
 
 import com.lab.backend.usermanagement.entity.Role;
 import com.lab.backend.usermanagement.entity.User;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Predicate;
-import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.*;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
@@ -48,14 +45,8 @@ public class UserSpecification implements Specification<User> {
             predicates.add(criteriaBuilder.like(root.get("email"), "%" + email + "%"));
         }
         if (role != null && !role.isEmpty()) {
-            Predicate rolePredicate = criteriaBuilder.exists(
-                    query.subquery(Role.class)
-                            .select(query.from(Role.class))
-                            .where(
-                                    criteriaBuilder.equal(root.join("roles").get("name"), role)
-                            )
-            );
-            predicates.add(rolePredicate);
+            Join<User, Role> rolesJoin = root.join("roles");
+            predicates.add(criteriaBuilder.equal(rolesJoin, Role.valueOf(role)));
         }
         if (gender != null && !gender.isEmpty()) {
             predicates.add(criteriaBuilder.equal(root.get("gender"), gender));

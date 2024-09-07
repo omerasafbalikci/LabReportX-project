@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableCaching
-@EnableJpaAuditing
 public class PatientServiceApplication {
 
 	public static void main(String[] args) {

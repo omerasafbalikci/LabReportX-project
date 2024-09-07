@@ -4,6 +4,7 @@ import com.lab.backend.usermanagement.dto.requests.CreateUserRequest;
 import com.lab.backend.usermanagement.dto.requests.UpdateUserRequest;
 import com.lab.backend.usermanagement.dto.responses.GetUserResponse;
 import com.lab.backend.usermanagement.dto.responses.PagedResponse;
+import com.lab.backend.usermanagement.entity.Role;
 
 public interface UserService {
     GetUserResponse getUserById(Long id);
@@ -19,4 +20,8 @@ public interface UserService {
     void deleteUser(Long id);
 
     GetUserResponse restoreUser(Long id);
+
+    GetUserResponse addRole(Long id, Role role);
+
+    GetUserResponse removeRole(Long id, Role role);
 }

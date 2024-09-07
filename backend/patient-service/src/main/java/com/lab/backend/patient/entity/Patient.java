@@ -7,13 +7,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Patient class represents a patient entity in the database.
@@ -29,7 +27,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@EntityListeners(AuditingEntityListener.class)
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,11 +39,11 @@ public class Patient {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "tr_id_number", unique = true, nullable = false, length = 11)
+    @Column(name = "tr_id_number", nullable = false, length = 11)
     private String trIdNumber;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Column(name = "birth_date", nullable = false)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate birthDate;
 
     @Enumerated(value = EnumType.STRING)
@@ -64,14 +61,13 @@ public class Patient {
     private String email;
 
     @Column(name = "chronic_diseases")
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "chronic_diseases", joinColumns = @JoinColumn(name = "patient_id"))
-    private List<String> chronicDiseases;
+    private Set<String> chronicDiseases = new HashSet<>();
 
-    @LastModifiedDate
-    @Column(name = "last_modified_date")
+    @Column(name = "last_patient_registration_time")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
-    private LocalDateTime lastModifiedDate;
+    private LocalDateTime lastPatientRegistrationTime;
 
     @Column(name = "deleted", nullable = false)
     @ColumnDefault("false")

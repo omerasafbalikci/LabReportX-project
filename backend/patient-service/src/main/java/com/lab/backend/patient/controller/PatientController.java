@@ -1,4 +1,4 @@
-package com.lab.backend.patient.resource;
+package com.lab.backend.patient.controller;
 
 import com.lab.backend.patient.dto.requests.CreatePatientRequest;
 import com.lab.backend.patient.dto.requests.UpdatePatientRequest;
@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Set;
 
 /**
  * REST controller for managing patients.
@@ -23,7 +25,7 @@ import org.springframework.web.bind.annotation.*;
 public class PatientController {
     private final PatientService patientService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<GetPatientResponse> getPatientById(@PathVariable Long id) {
         GetPatientResponse response = this.patientService.getPatientById(id);
         return ResponseEntity.ok(response);
@@ -35,7 +37,13 @@ public class PatientController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping
+    @GetMapping("/chronicDiseases/{id}")
+    public ResponseEntity<Set<String>> getChronicDiseasesById(@PathVariable Long id) {
+        Set<String> response = this.patientService.getChronicDiseasesById(id);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/filteredAndSorted")
     public ResponseEntity<PagedResponse<GetPatientResponse>> getAllPatientsFilteredAndSorted(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "3") int size,
@@ -50,10 +58,10 @@ public class PatientController {
             @RequestParam(required = false) String phoneNumber,
             @RequestParam(required = false) String email,
             @RequestParam(required = false) String chronicDisease,
-            @RequestParam(required = false) String updatedDate,
+            @RequestParam(required = false) String lastPatientRegistrationTime,
             @RequestParam(required = false) Boolean deleted
     ) {
-        PagedResponse<GetPatientResponse> response = this.patientService.getAllPatientsFilteredAndSorted(page, size, sortBy, direction, firstName, lastName, trIdNumber, birthDate, gender, bloodType, phoneNumber, email, chronicDisease, updatedDate, deleted);
+        PagedResponse<GetPatientResponse> response = this.patientService.getAllPatientsFilteredAndSorted(page, size, sortBy, direction, firstName, lastName, trIdNumber, birthDate, gender, bloodType, phoneNumber, email, chronicDisease, lastPatientRegistrationTime, deleted);
         return ResponseEntity.ok(response);
     }
 

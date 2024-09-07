@@ -28,18 +28,17 @@ public class PatientMapper {
         if (patient == null) {
             return null;
         }
-        return new GetPatientResponse(
-                patient.getId(),
-                patient.getFirstName(),
-                patient.getLastName(),
-                patient.getTrIdNumber(),
-                patient.getBirthDate(),
-                patient.getGender(),
-                patient.getBloodType(),
-                patient.getPhoneNumber(),
-                patient.getEmail(),
-                patient.getChronicDiseases(),
-                patient.getLastModifiedDate()
-        );
+        GetPatientResponse patientResponse = new GetPatientResponse();
+        patientResponse.setId(patient.getId());
+        patientResponse.setFirstName(patient.getFirstName());
+        patientResponse.setLastName(patient.getLastName());
+        patientResponse.setTrIdNumber(patient.getTrIdNumber());
+        patientResponse.setBirthDate(patient.getBirthDate());
+        patientResponse.setGender(patient.getGender());
+        patientResponse.setBloodType(patient.getBloodType());
+        patientResponse.setPhoneNumber(patient.getPhoneNumber());
+        patientResponse.setEmail(patient.getEmail());
+        patientResponse.setLastPatientRegistrationTime(patient.getLastPatientRegistrationTime());
+        return patientResponse;
     }
 }
