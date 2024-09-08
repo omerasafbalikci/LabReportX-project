@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -63,6 +62,7 @@ public class Patient {
     @Column(name = "chronic_diseases")
     @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "chronic_diseases", joinColumns = @JoinColumn(name = "patient_id"))
+    @Builder.Default
     private Set<String> chronicDiseases = new HashSet<>();
 
     @Column(name = "last_patient_registration_time")
@@ -70,6 +70,6 @@ public class Patient {
     private LocalDateTime lastPatientRegistrationTime;
 
     @Column(name = "deleted", nullable = false)
-    @ColumnDefault("false")
-    private boolean deleted;
+    @Builder.Default
+    private boolean deleted = false;
 }

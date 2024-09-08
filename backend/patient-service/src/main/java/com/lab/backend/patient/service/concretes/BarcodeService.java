@@ -8,7 +8,7 @@ import com.lab.backend.patient.entity.BloodType;
 import com.lab.backend.patient.entity.Gender;
 import com.lab.backend.patient.utilities.exceptions.CameraNotOpenedException;
 import com.lab.backend.patient.utilities.exceptions.UnexpectedException;
-import org.opencv.core.Core;
+import nu.pattern.OpenCV;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
 import org.opencv.imgcodecs.Imgcodecs;
@@ -29,7 +29,7 @@ public class BarcodeService {
     private List<GetPatientResponse> fakePatientDatabase = new ArrayList<>();
 
     public BarcodeService() {
-        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        OpenCV.loadLocally();
         initializeFakePatientsDatabase();
     }
 
