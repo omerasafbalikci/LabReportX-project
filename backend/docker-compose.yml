@@ -1,0 +1,186 @@
+version: '3.9'
+
+services:
+  # NGINX
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    networks:
+      - nginx
+
+  # PROMETHEUS
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider http://localhost:9090 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    networks:
+      - monitoring
+
+  # GRAFANA
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider http://localhost:3000/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    networks:
+      - monitoring
+
+  # ELK STACK
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.1
+    container_name: elasticsearch
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      - "discovery.type=single-node"
+      - "xpack.security.enabled=false"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9200:9200"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health | grep -q '\"status\"' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    networks:
+      - elk-stack
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.15.1
+    container_name: logstash
+    environment:
+      LS_JAVA_OPTS: "-Xmx512m  -Xms512m"
+    ports:
+      - "5044:5044"
+    volumes:
+      - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9600/_node/pipelines | grep -q '\"pipeline\"' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - elk-stack
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.15.1
+    container_name: kibana
+    environment:
+      - "ELASTICSEARCH_HOSTS=http://elasticsearch:9200"
+    ports:
+      - "5601:5601"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:5601/api/status | grep -q '\"state\":\"green\"' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - elk-stack
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+
+  # REDIS
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    networks:
+      - redis
+
+  # ZIPKIN
+  zipkin:
+    image: openzipkin/zipkin:latest
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+    restart: unless-stopped
+    networks:
+      - tracing
+
+  # POSTGRES DATABASES
+  postgres-patient:
+    image: postgres:13-alpine
+    container_name: postgres-patient
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: patient-service
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-patient-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - postgres
+
+  # MAIN SERVICES
+  patient-service:
+    image: omerasaf/patient-service:latest
+    container_name: patient-service
+    environment:
+      - "SPRING_PROFILES_ACTIVE=docker"
+    volumes:
+      - ./logs:/logs
+    networks:
+      - elk-stack
+      - postgres
+      - redis
+      - tracing
+    depends_on:
+      - postgres-patient
+      - redis
+      - zipkin
+      - elasticsearch
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  nginx:
+  elk-stack:
+  postgres:
+  redis:
+  tracing:
+  monitoring:
+
+volumes:
+  grafana-storage:
+  redis-data:
+  postgres-patient-data:

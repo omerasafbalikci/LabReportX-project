@@ -2,9 +2,7 @@ package com.lab.backend.usermanagement.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.ColumnDefault;
 
-import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -37,6 +35,9 @@ public class User {
     @Column(name = "username")
     private String username;
 
+    @Column(name = "hospital_id")
+    private String hospitalId;
+
     @Column(name = "email")
     private String email;
 
@@ -44,13 +45,13 @@ public class User {
     @ElementCollection(targetClass = Role.class)
     @Enumerated(value = EnumType.STRING)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
-    private Set<Role> roles = new HashSet<>();
+    private Set<Role> roles;
 
     @Enumerated(value = EnumType.STRING)
     @Column(name = "gender")
     private Gender gender;
 
     @Column(name = "deleted", nullable = false)
-    @ColumnDefault("false")
-    private boolean deleted;
+    @Builder.Default
+    private boolean deleted = false;
 }

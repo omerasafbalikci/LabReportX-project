@@ -16,6 +16,7 @@ public class GetUserResponse {
     private String firstName;
     private String lastName;
     private String username;
+    private String hospitalId;
     private String email;
     private Set<Role> roles;
     private Gender gender;

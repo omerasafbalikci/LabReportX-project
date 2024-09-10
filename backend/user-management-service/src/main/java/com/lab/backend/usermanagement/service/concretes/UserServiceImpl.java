@@ -1,7 +1,7 @@
 package com.lab.backend.usermanagement.service.concretes;
 
-import com.lab.backend.usermanagement.dao.UserRepository;
-import com.lab.backend.usermanagement.dao.UserSpecification;
+import com.lab.backend.usermanagement.repository.UserRepository;
+import com.lab.backend.usermanagement.repository.UserSpecification;
 import com.lab.backend.usermanagement.dto.requests.*;
 import com.lab.backend.usermanagement.dto.responses.GetUserResponse;
 import com.lab.backend.usermanagement.dto.responses.PagedResponse;
@@ -30,9 +30,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Log4j2
 public class UserServiceImpl implements UserService {
-    @Value("#{'${default-roles}'.split(', ')}")
-    private final List<String> DEFAULT_ROLES;
-
     @Value("${rabbitmq.exchange}")
     private String EXCHANGE;
 
@@ -60,19 +57,22 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public GetUserResponse getUserById(Long id) {
+        log.trace("Fetching user by ID: {}", id);
         User user = this.userRepository.findByIdAndDeletedFalse(id).orElseThrow(() -> {
+            log.error("User not found with id: {}", id);
             return new UserNotFoundException("User not found with id: " + id);
         });
         GetUserResponse response = this.userMapper.toGetUserResponse(user);
+        log.info("Successfully fetched user by ID: {}", id);
         return response;
     }
 
     @Override
     public PagedResponse<GetUserResponse> getAllUsersFilteredAndSorted(int page, int size, String sortBy, String direction, String firstName,
-                                                                       String lastName, String username, String email, String role, String gender,
+                                                                       String lastName, String username, String hospitalId, String email, String role, String gender,
                                                                        Boolean deleted) {
         Pageable pagingSort = PageRequest.of(page, size, Sort.Direction.valueOf(direction.toUpperCase()), sortBy);
-        UserSpecification specification = new UserSpecification(firstName, lastName, username, email, role, gender, deleted);
+        UserSpecification specification = new UserSpecification(firstName, lastName, username, hospitalId, email, role, gender, deleted);
         Page<User> userPage = this.userRepository.findAll(specification, pagingSort);
         List<GetUserResponse> userResponses = userPage.getContent()
                 .stream()
@@ -190,7 +190,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public GetUserResponse addRole(Long id, Role role) {
-        User user = this.userRepository.findByIdAndDeletedTrue(id)
+        User user = this.userRepository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> {
                     return new UserNotFoundException("User doesn't exist with id " + id);
                 });

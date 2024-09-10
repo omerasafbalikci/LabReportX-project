@@ -2,10 +2,11 @@ package com.lab.backend.auth.service.abstracts;
 
 import jakarta.servlet.http.HttpServletRequest;
 
+import java.util.List;
 import java.util.Map;
 
 public interface UserService {
-    AuthenticationResponse login(AuthenticationRequest request);
+    List<String> login(AuthenticationRequest request);
 
     boolean initiatePasswordReset(String email);
 

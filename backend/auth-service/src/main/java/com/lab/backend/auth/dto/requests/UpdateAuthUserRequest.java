@@ -1,4 +1,4 @@
-package com.lab.backend.usermanagement.dto.requests;
+package com.lab.backend.auth.dto.requests;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

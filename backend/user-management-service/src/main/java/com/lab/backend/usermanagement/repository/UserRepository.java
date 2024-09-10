@@ -1,4 +1,4 @@
-package com.lab.backend.usermanagement.dao;
+package com.lab.backend.usermanagement.repository;
 
 import com.lab.backend.usermanagement.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,4 +16,6 @@ public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificat
     boolean existsByUsernameAndDeletedIsFalse(String username);
 
     boolean existsByEmailAndDeletedIsFalse(String email);
+
+    boolean existsByHospitalIdAndDeletedIsFalse(String hospitalId);
 }

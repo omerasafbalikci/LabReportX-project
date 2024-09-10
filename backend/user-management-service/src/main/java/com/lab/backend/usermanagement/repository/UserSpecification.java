@@ -1,4 +1,4 @@
-package com.lab.backend.usermanagement.dao;
+package com.lab.backend.usermanagement.repository;
 
 import com.lab.backend.usermanagement.entity.Role;
 import com.lab.backend.usermanagement.entity.User;
@@ -15,6 +15,7 @@ public class UserSpecification implements Specification<User> {
     private final String firstName;
     private final String lastName;
     private final String username;
+    private final String hospitalId;
     private final String email;
     private final String role;
     private final String gender;
@@ -40,6 +41,9 @@ public class UserSpecification implements Specification<User> {
         }
         if (username != null && !username.isEmpty()) {
             predicates.add(criteriaBuilder.equal(root.get("username"), username));
+        }
+        if (hospitalId != null && !hospitalId.isEmpty()) {
+            predicates.add(criteriaBuilder.equal(root.get("hospitalId"), hospitalId));
         }
         if (email != null && !email.isEmpty()) {
             predicates.add(criteriaBuilder.like(root.get("email"), "%" + email + "%"));

@@ -1,9 +1,6 @@
 package com.lab.backend.patient.advice;
 
-import com.lab.backend.patient.utilities.exceptions.CameraNotOpenedException;
-import com.lab.backend.patient.utilities.exceptions.PatientAlreadyExistsException;
-import com.lab.backend.patient.utilities.exceptions.PatientNotFoundException;
-import com.lab.backend.patient.utilities.exceptions.UnexpectedException;
+import com.lab.backend.patient.utilities.exceptions.*;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.NonNull;
 import org.springframework.http.*;
@@ -46,6 +43,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage());
         errorResponse.setPath(request.getRequestURI());
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(InvalidTrIdNumberException.class)
+    public ResponseEntity<Object> handleInvalidTrIdNumberException(InvalidTrIdNumberException exception, HttpServletRequest request) {
+        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST, exception.getMessage());
+        errorResponse.setPath(request.getRequestURI());
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
     @Override

@@ -15,6 +15,7 @@ public class UserMapper {
         user.setFirstName(request.getFirstName());
         user.setLastName(request.getLastName());
         user.setUsername(request.getUsername());
+        user.setHospitalId();
         user.setEmail(request.getEmail());
         user.setRoles(request.getRoles());
         user.setGender(request.getGender());
@@ -30,6 +31,7 @@ public class UserMapper {
                 user.getFirstName(),
                 user.getLastName(),
                 user.getUsername(),
+                user.getHospitalId(),
                 user.getEmail(),
                 user.getRoles(),
                 user.getGender()

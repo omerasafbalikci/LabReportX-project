@@ -43,28 +43,40 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @Cacheable(value = "patients", key = "#id", unless = "#result == null")
     public GetPatientResponse getPatientById(Long id) {
+        log.trace("Fetching patient by ID: {}", id);
         Patient patient = this.patientRepository.findByIdAndDeletedFalse(id).orElseThrow(() -> {
+            log.error("Patient not found with id: {}", id);
             return new PatientNotFoundException("Patient not found with id: " + id);
         });
         GetPatientResponse response = this.patientMapper.toGetPatientResponse(patient);
+        log.info("Successfully fetched patient by ID: {}", id);
         return response;
     }
 
     @Override
     @Cacheable(value = "patients", key = "#trIdNumber", unless = "#result == null")
     public GetPatientResponse getPatientByTrIdNumber(String trIdNumber) {
+        log.trace("Fetching patient by TR ID number: {}", trIdNumber);
         Patient patient = this.patientRepository.findByTrIdNumberAndDeletedFalse(trIdNumber).orElseThrow(() -> {
-            return new PatientNotFoundException("Patient not found with trIdNumber: " + trIdNumber);
+            log.error("Patient not found with TR ID number: {}", trIdNumber);
+            return new PatientNotFoundException("Patient not found with TR ID number: " + trIdNumber);
         });
         GetPatientResponse response = this.patientMapper.toGetPatientResponse(patient);
+        log.info("Successfully fetched patient by TR ID number: {}", trIdNumber);
         return response;
     }
 
     @Override
     @Cacheable(value = "chronicDiseases", key = "#id", unless = "#result == null")
     public Set<String> getChronicDiseasesById(Long id) {
+        log.trace("Fetching chronic diseases by ID: {}", id);
         Set<String> chronicDiseases = this.patientRepository.findChronicDiseasesByIdAndDeletedFalse(id);
-        return chronicDiseases != null ? chronicDiseases : Collections.emptySet();
+        if (chronicDiseases == null) {
+            log.warn("No chronic diseases found for patient ID: {}", id);
+            chronicDiseases = Collections.emptySet();
+        }
+        log.info("Successfully fetched chronic diseases by ID: {}", id);
+        return chronicDiseases;
     }
 
     @Override
@@ -72,6 +84,8 @@ public class PatientServiceImpl implements PatientService {
                                                                              String lastName, String trIdNumber, String birthDate, String gender,
                                                                              String bloodType, String phoneNumber, String email, String chronicDisease,
                                                                              String lastPatientRegistrationTime, Boolean deleted) {
+        log.debug("Fetching all patients with filters: page={}, size={}, sortBy={}, direction={}, firstName={}, lastName={}, trIdNumber={}, birthDate={}, gender={}, bloodType={}, phoneNumber={}, email={}, chronicDisease={}, lastPatientRegistrationTime={}, deleted={}",
+                page, size, sortBy, direction, firstName, lastName, trIdNumber, birthDate, gender, bloodType, phoneNumber, email, chronicDisease, lastPatientRegistrationTime, deleted);
         Pageable pagingSort = PageRequest.of(page, size, Sort.Direction.valueOf(direction.toUpperCase()), sortBy);
         PatientSpecification specification = new PatientSpecification(firstName, lastName, trIdNumber, birthDate, gender, bloodType, phoneNumber, email, chronicDisease, lastPatientRegistrationTime, deleted);
         Page<Patient> patientPage = this.patientRepository.findAll(specification, pagingSort);
@@ -79,7 +93,7 @@ public class PatientServiceImpl implements PatientService {
                 .stream()
                 .map(this.patientMapper::toGetPatientResponse)
                 .toList();
-
+        log.info("Successfully fetched patients with filters: page={}, size={}, totalPages={}, totalElements={}", page, size, patientPage.getTotalPages(), patientPage.getTotalElements());
         return new PagedResponse<>(
                 patientResponses,
                 patientPage.getNumber(),
@@ -96,25 +110,30 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @CachePut(value = "patients", key = "#result.id", unless = "#result == null")
     public GetPatientResponse savePatient(CreatePatientRequest createPatientRequest) {
+        log.trace("Saving patient with TR ID number: {}", createPatientRequest.getTrIdNumber());
         Patient savedPatient;
         Patient existingPatient = this.patientRepository.findByTrIdNumberAndDeletedFalse(createPatientRequest.getTrIdNumber())
                 .orElse(null);
 
         if (existingPatient != null) {
+            log.debug("Patient already exists. Updating registration time for TR ID number: {}", createPatientRequest.getTrIdNumber());
             existingPatient.setLastPatientRegistrationTime(LocalDateTime.now());
             savedPatient = this.patientRepository.save(existingPatient);
         } else {
             Patient patient = this.patientMapper.toPatient(createPatientRequest);
             patient.setLastPatientRegistrationTime(LocalDateTime.now());
             savedPatient = this.patientRepository.save(patient);
+            log.info("New patient created with TR ID number: {}", createPatientRequest.getTrIdNumber());
         }
         GetPatientResponse patientResponse = this.patientMapper.toGetPatientResponse(savedPatient);
+        log.info("Successfully saved patient with ID: {}", savedPatient.getId());
         return patientResponse;
     }
 
     @Override
     @CachePut(value = "patients", key = "#result.id", unless = "#result == null")
     public GetPatientResponse updatePatient(UpdatePatientRequest updatePatientRequest) {
+        log.trace("Updating patient with ID: {}", updatePatientRequest.getId());
         Patient existingPatient = this.patientRepository.findByIdAndDeletedFalse(updatePatientRequest.getId())
                 .orElseThrow(() -> {
                     log.error("Patient does not exist with id: {}", updatePatientRequest.getId());
@@ -131,6 +150,7 @@ public class PatientServiceImpl implements PatientService {
         updatePatientFieldIfNotNull(existingPatient::setChronicDiseases, updatePatientRequest.getChronicDiseases());
         this.patientRepository.save(existingPatient);
         GetPatientResponse patientResponse = this.patientMapper.toGetPatientResponse(existingPatient);
+        log.info("Successfully updated patient with ID: {}", updatePatientRequest.getId());
         return patientResponse;
     }
 
@@ -143,22 +163,28 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @CacheEvict(value = "patients", key = "#id")
     public void deletePatient(Long id) {
+        log.trace("Deleting patient with ID: {}", id);
         Patient patient = this.patientRepository.findByIdAndDeletedFalse(id).orElseThrow(() -> {
+            log.error("Patient not found to delete. ID: {}", id);
             return new PatientNotFoundException("Patient not found to delete. ID: " + id);
         });
         patient.setDeleted(true);
         this.patientRepository.save(patient);
+        log.info("Successfully deleted patient with ID: {}", id);
     }
 
     @Override
     @CachePut(value = "patients", key = "#id", unless = "#result == null")
     public GetPatientResponse restorePatient(Long id) {
+        log.trace("Restoring patient with ID: {}", id);
         Patient patient = this.patientRepository.findByIdAndDeletedTrue(id).orElseThrow(() -> {
+            log.error("Patient not found to restore. ID: {}", id);
             return new PatientNotFoundException("Patient not found to restore. ID: " + id);
         });
         patient.setDeleted(false);
         this.patientRepository.save(patient);
         GetPatientResponse patientResponse = this.patientMapper.toGetPatientResponse(patient);
+        log.info("Successfully restored patient with ID: {}", id);
         return patientResponse;
     }
 }
