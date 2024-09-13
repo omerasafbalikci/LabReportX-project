@@ -13,6 +13,8 @@ public interface UserService {
                                                                 String lastName, String username, String hospitalId, String email, String role, String gender,
                                                                 Boolean deleted);
 
+    String getUserByEmail(String email);
+
     GetUserResponse createUser(CreateUserRequest createUserRequest);
 
     GetUserResponse updateUser(UpdateUserRequest updateUserRequest);

@@ -1,4 +1,4 @@
-package com.lab.backend.auth.dao;
+package com.lab.backend.auth.repository;
 
 import com.lab.backend.auth.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,6 +9,12 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByUsernameAndDeletedIsFalse(String username);
+
+    Optional<User> findByIdAndDeletedIsFalse(Long id);
+
+    Optional<User> findByIdAndDeletedIsTrue(Long id);
+
+    Optional<User> findByEmailVerificationTokenAndDeletedIsFalse(String emailVerificationToken);
 
     Optional<User> findByResetTokenAndDeletedIsFalse(String token);
 

@@ -22,6 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -93,6 +94,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public String getUserByEmail(String email) {
+        Optional<User> optionalUser = this.userRepository.findByEmailAndDeletedFalse(email);
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            return user.getUsername();
+        } else {
+            throw new UserNotFoundException("No users registered to this email address were found: " + email);
+        }
+    }
+
+    @Override
     @Transactional
     public GetUserResponse createUser(CreateUserRequest createUserRequest) {
         if (this.userRepository.existsByUsernameAndDeletedIsFalse(createUserRequest.getUsername())) {
@@ -105,7 +117,7 @@ public class UserServiceImpl implements UserService {
         Set<String> roles = createUserRequest.getRoles().stream().map(Enum::toString).collect(Collectors.toSet());
 
         try {
-            CreateAuthUserRequest createAuthUserRequest = new CreateAuthUserRequest(createUserRequest.getUsername(), createUserRequest.getPassword(), roles);
+            CreateAuthUserRequest createAuthUserRequest = new CreateAuthUserRequest(createUserRequest.getUsername(), createUserRequest.getPassword(), createUserRequest.getEmail(), roles);
             this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_CREATE, createAuthUserRequest);
         } catch (Exception exception) {
             throw new RabbitMQException("Failed to send create message to RabbitMQ", exception);
@@ -127,6 +139,13 @@ public class UserServiceImpl implements UserService {
                 throw new UserAlreadyExistsException("Username is taken");
             }
             existingUser.setUsername(updateUserRequest.getUsername());
+
+            try {
+                UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(updateUserRequest.getId(), updateUserRequest.getUsername());
+                this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_UPDATE, updateAuthUserRequest);
+            } catch (Exception e) {
+                throw new RabbitMQException("Failed to send update message to RabbitMQ", e);
+            }
         }
         if (updateUserRequest.getEmail() != null && !existingUser.getEmail().equals(updateUserRequest.getEmail())) {
             if (this.userRepository.existsByEmailAndDeletedIsFalse(updateUserRequest.getEmail())) {
@@ -142,13 +161,6 @@ public class UserServiceImpl implements UserService {
         }
         if (updateUserRequest.getGender() != null && !existingUser.getGender().equals(updateUserRequest.getGender())) {
             existingUser.setGender(updateUserRequest.getGender());
-        }
-
-        try {
-            UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(updateUserRequest.getId(), updateUserRequest.getUsername());
-            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_UPDATE, updateAuthUserRequest);
-        } catch (Exception exception) {
-            throw new RabbitMQException("Failed to send update message to RabbitMQ", exception);
         }
         this.userRepository.save(existingUser);
         return this.userMapper.toGetUserResponse(existingUser);
@@ -198,8 +210,8 @@ public class UserServiceImpl implements UserService {
             throw new RoleAlreadyExistsException("User already has this Role. Role: " + role.toString());
         }
         user.getRoles().add(role);
-        String r = role.toString();
         try {
+            String r = role.toString();
             UpdateAuthUserRoleRequest updateAuthUserRoleRequest = new UpdateAuthUserRoleRequest(id, r);
             this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_ADD_ROLE, updateAuthUserRoleRequest);
         } catch (Exception exception) {
@@ -223,8 +235,8 @@ public class UserServiceImpl implements UserService {
             throw new RoleNotFoundException("The user does not own this role! Role: " + role);
         }
         user.getRoles().remove(role);
-        String r = role.toString();
         try {
+            String r = role.toString();
             UpdateAuthUserRoleRequest updateAuthUserRoleRequest = new UpdateAuthUserRoleRequest(id, r);
             this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_REMOVE_ROLE, updateAuthUserRoleRequest);
         } catch (Exception exception) {

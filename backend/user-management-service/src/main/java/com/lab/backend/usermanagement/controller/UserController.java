@@ -26,7 +26,7 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/filteredAndSorted")
+    @GetMapping("/filtered-and-sorted")
     public ResponseEntity<PagedResponse<GetUserResponse>> getAllUsersFilteredAndSorted(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "3") int size,
@@ -43,6 +43,11 @@ public class UserController {
     ) {
         PagedResponse<GetUserResponse> response = this.userService.getAllUsersFilteredAndSorted(page, size, sortBy, direction, firstName, lastName, username, hospitalId, email, role, gender, deleted);
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/email")
+    public String getUserByEmail (@RequestParam String email) {
+        return this.userService.getUserByEmail(email);
     }
 
     @PostMapping

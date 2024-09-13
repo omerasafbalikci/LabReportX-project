@@ -35,7 +35,7 @@ public class PatientController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/trIdNumber")
+    @GetMapping("/tr-id-number")
     public ResponseEntity<GetPatientResponse> getPatientByTrIdNumber(@RequestParam String trIdNumber) {
         log.trace("Received request to get patient by TR ID number: {}", trIdNumber);
         GetPatientResponse response = this.patientService.getPatientByTrIdNumber(trIdNumber);
@@ -43,7 +43,7 @@ public class PatientController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/chronicDiseases/{id}")
+    @GetMapping("/chronic-diseases/{id}")
     public ResponseEntity<Set<String>> getChronicDiseasesById(@PathVariable Long id) {
         log.trace("Received request to get chronic diseases for patient id: {}", id);
         Set<String> response = this.patientService.getChronicDiseasesById(id);
@@ -51,7 +51,7 @@ public class PatientController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/filteredAndSorted")
+    @GetMapping("/filtered-and-sorted")
     public ResponseEntity<PagedResponse<GetPatientResponse>> getAllPatientsFilteredAndSorted(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "3") int size,

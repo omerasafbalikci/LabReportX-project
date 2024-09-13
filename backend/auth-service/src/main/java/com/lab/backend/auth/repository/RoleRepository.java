@@ -1,4 +1,4 @@
-package com.lab.backend.auth.dao;
+package com.lab.backend.auth.repository;
 
 import com.lab.backend.auth.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {
-    Optional<Role> findByName(String user);
+    Optional<Role> findByName(String name);
 }

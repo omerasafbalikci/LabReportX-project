@@ -3,10 +3,15 @@ package com.lab.backend.usermanagement.utilities.mappers;
 import com.lab.backend.usermanagement.dto.requests.CreateUserRequest;
 import com.lab.backend.usermanagement.dto.responses.GetUserResponse;
 import com.lab.backend.usermanagement.entity.User;
+import com.lab.backend.usermanagement.utilities.HospitalIdGenerator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class UserMapper {
+    @Autowired
+    private HospitalIdGenerator hospitalIdGenerator;
+
     public User toUser(CreateUserRequest request) {
         if (request == null) {
             return null;
@@ -15,7 +20,7 @@ public class UserMapper {
         user.setFirstName(request.getFirstName());
         user.setLastName(request.getLastName());
         user.setUsername(request.getUsername());
-        user.setHospitalId();
+        user.setHospitalId(this.hospitalIdGenerator.generateUniqueHospitalId());
         user.setEmail(request.getEmail());
         user.setRoles(request.getRoles());
         user.setGender(request.getGender());

@@ -141,6 +141,10 @@ public class BarcodeServiceImpl implements BarcodeService {
             log.error("Invalid TR ID number format: {}", trIdNumber);
             throw new InvalidTrIdNumberException("Invalid TR ID number format.");
         }
+        if (!this.patientRepository.existsByTrIdNumberAndDeletedIsFalse(trIdNumber)) {
+            log.error("Patient not found with TR ID: {}", trIdNumber);
+            throw new PatientNotFoundException("Patient not found.");
+        }
         try {
             log.debug("Generating barcode for TR ID number: {}", trIdNumber);
             Writer writer = new QRCodeWriter();
