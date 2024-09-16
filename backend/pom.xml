@@ -21,6 +21,10 @@
 		<module>auth-service</module>
 		<module>user-management-service</module>
 		<module>patient-service</module>
+		<module>report-service</module>
+		<module>api-gateway</module>
+		<module>config-server</module>
+		<module>discovery-server</module>
 	</modules>
 
 	<properties>
