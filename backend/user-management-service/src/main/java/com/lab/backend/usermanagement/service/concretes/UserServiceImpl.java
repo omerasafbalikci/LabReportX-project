@@ -58,13 +58,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public GetUserResponse getUserById(Long id) {
-        log.trace("Fetching user by ID: {}", id);
         User user = this.userRepository.findByIdAndDeletedFalse(id).orElseThrow(() -> {
-            log.error("User not found with id: {}", id);
             return new UserNotFoundException("User not found with id: " + id);
         });
         GetUserResponse response = this.userMapper.toGetUserResponse(user);
-        log.info("Successfully fetched user by ID: {}", id);
         return response;
     }
 
@@ -94,7 +91,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String getUserByEmail(String email) {
+    public String getUsernameByEmail(String email) {
         Optional<User> optionalUser = this.userRepository.findByEmailAndDeletedFalse(email);
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
@@ -102,6 +99,55 @@ public class UserServiceImpl implements UserService {
         } else {
             throw new UserNotFoundException("No users registered to this email address were found: " + email);
         }
+    }
+
+    @Override
+    public GetUserResponse getCurrentUser(String username) {
+        User user = this.userRepository.findByUsernameAndDeletedFalse(username).orElseThrow(() -> {
+            return new UserNotFoundException("User not found with username: " + username);
+        });
+        GetUserResponse response = this.userMapper.toGetUserResponse(user);
+        return response;
+    }
+
+    @Override
+    @Transactional
+    public GetUserResponse updateCurrentUser(String username, UpdateUserRequest updateUserRequest) {
+        User existingUser = this.userRepository.findByUsernameAndDeletedFalse(username)
+                .orElseThrow(() -> {
+                    return new UserNotFoundException("User doesn't exist with username " + username);
+                });
+
+        if (updateUserRequest.getUsername() != null && !existingUser.getUsername().equals(updateUserRequest.getUsername())) {
+            if (this.userRepository.existsByUsernameAndDeletedIsFalse(updateUserRequest.getUsername())) {
+                throw new UserAlreadyExistsException("Username is taken");
+            }
+            existingUser.setUsername(updateUserRequest.getUsername());
+
+            try {
+                UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(existingUser.getId(), updateUserRequest.getUsername());
+                this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_UPDATE, updateAuthUserRequest);
+            } catch (Exception e) {
+                throw new RabbitMQException("Failed to send update message to RabbitMQ", e);
+            }
+        }
+        if (updateUserRequest.getEmail() != null && !existingUser.getEmail().equals(updateUserRequest.getEmail())) {
+            if (this.userRepository.existsByEmailAndDeletedIsFalse(updateUserRequest.getEmail())) {
+                throw new UserAlreadyExistsException("Email is already taken");
+            }
+            existingUser.setEmail(updateUserRequest.getEmail());
+        }
+        if (updateUserRequest.getFirstName() != null && !existingUser.getFirstName().equals(updateUserRequest.getFirstName())) {
+            existingUser.setFirstName(updateUserRequest.getFirstName());
+        }
+        if (updateUserRequest.getLastName() != null && !existingUser.getLastName().equals(updateUserRequest.getLastName())) {
+            existingUser.setLastName(updateUserRequest.getLastName());
+        }
+        if (updateUserRequest.getGender() != null && !existingUser.getGender().equals(updateUserRequest.getGender())) {
+            existingUser.setGender(updateUserRequest.getGender());
+        }
+        this.userRepository.save(existingUser);
+        return this.userMapper.toGetUserResponse(existingUser);
     }
 
     @Override
@@ -129,6 +175,9 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public GetUserResponse updateUser(UpdateUserRequest updateUserRequest) {
+        if (updateUserRequest.getId() == null) {
+            throw new UserNotFoundException("Id must not be null");
+        }
         User existingUser = this.userRepository.findByIdAndDeletedFalse(updateUserRequest.getId())
                 .orElseThrow(() -> {
                     return new UserNotFoundException("User doesn't exist with id " + updateUserRequest.getId());
@@ -224,7 +273,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public GetUserResponse removeRole(Long id, Role role) {
-        User user = this.userRepository.findByIdAndDeletedTrue(id)
+        User user = this.userRepository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> {
                     return new UserNotFoundException("User doesn't exist with id " + id);
                 });

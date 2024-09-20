@@ -4,10 +4,12 @@ import com.lab.backend.usermanagement.dto.requests.CreateUserRequest;
 import com.lab.backend.usermanagement.dto.responses.GetUserResponse;
 import com.lab.backend.usermanagement.entity.User;
 import com.lab.backend.usermanagement.utilities.HospitalIdGenerator;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@AllArgsConstructor
 public class UserMapper {
     @Autowired
     private HospitalIdGenerator hospitalIdGenerator;

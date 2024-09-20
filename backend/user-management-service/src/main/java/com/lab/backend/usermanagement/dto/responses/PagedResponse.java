@@ -1,6 +1,8 @@
 package com.lab.backend.usermanagement.dto.responses;
 
-import lombok.*;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -8,7 +10,6 @@ import java.util.List;
  * A generic class for paginated responses.
  *
  * @param <T> the type of objects contained in the paginated response
- *
  * @author Ömer Asaf BALIKÇI
  */
 

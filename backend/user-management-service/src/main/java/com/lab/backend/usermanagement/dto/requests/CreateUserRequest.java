@@ -26,9 +26,9 @@ public class CreateUserRequest {
     @NotBlank(message = "Email must not be blank")
     private String email;
     @NotBlank(message = "Password must not be blank")
-    @Size(min = 8,message = "Password must have at least 8 characters")
+    @Size(min = 8, message = "Password must have at least 8 characters")
     private String password;
-    @Size(min = 1,message = "User must have at least one role")
+    @Size(min = 1, message = "User must have at least one role")
     @NotNull(message = "Role must not be null")
     private Set<Role> roles;
     private Gender gender;

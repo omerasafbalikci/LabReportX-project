@@ -46,8 +46,20 @@ public class UserController {
     }
 
     @GetMapping("/email")
-    public String getUserByEmail (@RequestParam String email) {
-        return this.userService.getUserByEmail(email);
+    public String getUsernameByEmail(@RequestParam String email) {
+        return this.userService.getUsernameByEmail(email);
+    }
+
+    @GetMapping("/me")
+    public ResponseEntity<GetUserResponse> getCurrentUser(@RequestHeader("X-Username") String username) {
+        GetUserResponse response = this.userService.getCurrentUser(username);
+        return ResponseEntity.ok(response);
+    }
+
+    @PutMapping("/update/me")
+    public ResponseEntity<GetUserResponse> updateCurrentUser(@RequestHeader("X-Username") String username, @RequestBody @Valid UpdateUserRequest updateUserRequest) {
+        GetUserResponse response = this.userService.updateCurrentUser(username, updateUserRequest);
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping

@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
         <module name="auth-service" />
+        <module name="discovery-server" />
         <module name="user-management-service" />
         <module name="api-gateway" />
         <module name="patient-service" />
@@ -25,6 +26,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="auth-service" options="-parameters" />
       <module name="config-server" options="-parameters" />
+      <module name="discovery-server" options="-parameters" />
       <module name="patient-service" options="-parameters" />
       <module name="report-service" options="-parameters" />
       <module name="service-registry" options="-parameters" />
