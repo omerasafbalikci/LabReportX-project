@@ -1,5 +1,6 @@
 package com.lab.backend.auth.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,6 +25,7 @@ public class Role {
     @Column(name = "description")
     private String description;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "roles", cascade = CascadeType.DETACH)
     List<User> users;
 
