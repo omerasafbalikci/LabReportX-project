@@ -38,7 +38,7 @@ public class User {
     @Column(name = "reset_token_expiration")
     private Date resetTokenExpiration;
 
-    @ManyToMany(cascade = CascadeType.DETACH)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),

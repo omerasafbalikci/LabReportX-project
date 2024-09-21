@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+jwt:
+  secret-key: "6bc18dff62463c49343d083ae0e523fbfb88d4d45b4a9cb62e86d0c53bd9b870"
+  authorities-key: "roles"
+
+route:
+  auth: "lb://auth-service"
+  user: "lb://user-management-service"
+  patient: "lb://patient-service"
+  report: "lb://report-service"
+
+redis:
+  host: "localhost"
+  port: "6379"
+
+circuit-breaker-name: "circuit-breaker"
