@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TokenRepository extends JpaRepository<Token, String> {
+public interface TokenRepository extends JpaRepository<Token, Long> {
     @Query("SELECT t FROM tokens t WHERE t.user.id = :userId AND t.loggedOut = false")
     List<Token> findAllValidTokensByUser(@Param("userId") Long userId);
 }

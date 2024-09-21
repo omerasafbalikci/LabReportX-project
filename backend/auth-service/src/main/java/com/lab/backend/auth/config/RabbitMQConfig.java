@@ -1,4 +1,4 @@
-package com.lab.backend.usermanagement.config;
+package com.lab.backend.auth.config;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;

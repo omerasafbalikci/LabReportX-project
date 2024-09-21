@@ -95,7 +95,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<String> refreshToken(HttpServletRequest request) throws UsernameExtractionException, UnauthorizedException, RedisOperationException {
+    public List<String> refreshToken(HttpServletRequest request) throws UsernameExtractionException, InvalidTokenException, RedisOperationException {
         String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
 
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
@@ -125,7 +125,7 @@ public class UserServiceImpl implements UserService {
                 throw new UsernameExtractionException("Username extraction failed");
             }
         } else {
-            throw new UnauthorizedException("Invalid refresh token");
+            throw new InvalidTokenException("Invalid refresh token");
         }
     }
 
@@ -163,14 +163,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void logout(HttpServletRequest request) throws UnauthorizedException, RedisOperationException {
+    public void logout(HttpServletRequest request) throws InvalidTokenException, RedisOperationException {
         String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            throw new UnauthorizedException("Invalid token");
+            throw new InvalidTokenException("Invalid token");
         }
-
         String jwt = authHeader.substring(7);
-
         try (Jedis jedis = this.jedisPool.getResource()) {
             jedis.set("token:" + jwt + ":is_logged_out", "true");
         } catch (JedisException e) {
@@ -179,10 +177,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String changePassword(HttpServletRequest request, PasswordRequest passwordRequest) throws RedisOperationException, UnauthorizedException {
+    public String changePassword(HttpServletRequest request, PasswordRequest passwordRequest) throws RedisOperationException, InvalidTokenException {
         String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            throw new UnauthorizedException("Invalid token");
+            throw new InvalidTokenException("Invalid token");
         }
         String jwt = authHeader.substring(7);
         String username = this.jwtUtil.extractUsername(jwt);
@@ -217,21 +215,17 @@ public class UserServiceImpl implements UserService {
         } catch (Exception e) {
             throw new UnexpectedException("Error occurred while calling user management service: " + e);
         }
-
         if (username != null) {
             Optional<User> optionalUser = this.userRepository.findByUsernameAndDeletedIsFalse(username);
             if (optionalUser.isPresent()) {
                 User user = optionalUser.get();
-
                 String resetToken = generateResetToken();
-
                 user.setResetToken(resetToken);
                 user.setResetTokenExpiration(calculateResetTokenExpiration());
                 this.userRepository.save(user);
-
                 sendPasswordResetEmail(user.getUsername(), email, resetToken);
             } else {
-                throw new UserNotFoundException("User not found in local database with email: " + email);
+                throw new UserNotFoundException("User not found with email: " + email);
             }
         } else {
             throw new UserNotFoundException("User not found in user management service with email: " + email);
@@ -286,12 +280,6 @@ public class UserServiceImpl implements UserService {
 
     @RabbitListener(queues = "${rabbitmq.queue.create}")
     public void createUser(CreateAuthUserRequest createAuthUserRequest) {
-        if (this.userRepository.existsByUsernameAndDeletedIsFalse(createAuthUserRequest.getUsername())) {
-            throw new UsernameTakenException("Username is already taken! Username: " + createAuthUserRequest.getUsername());
-        }
-        if (createAuthUserRequest.getRoles().isEmpty()) {
-            throw new NoRolesException("No role found for registration!");
-        }
         User user = User.builder()
                 .username(createAuthUserRequest.getUsername())
                 .password(this.passwordEncoder.encode(createAuthUserRequest.getPassword()))
@@ -321,7 +309,6 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> {
                     return new UserNotFoundException("User with the given verification token not found");
                 });
-
         user.setEmailVerified(true);
         user.setEmailVerificationToken(null);
         this.userRepository.save(user);
@@ -329,9 +316,6 @@ public class UserServiceImpl implements UserService {
 
     @RabbitListener(queues = "${rabbitmq.queue.update}")
     public void updateUser(UpdateAuthUserRequest updateAuthUserRequest) {
-        if (this.userRepository.existsByUsernameAndDeletedIsFalse(updateAuthUserRequest.getUsername())) {
-            throw new UsernameTakenException("Username is already taken! Username: " + updateAuthUserRequest.getUsername());
-        }
         Optional<User> optionalUser = this.userRepository.findByIdAndDeletedIsFalse(updateAuthUserRequest.getId());
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();

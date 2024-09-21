@@ -5,8 +5,8 @@ import com.lab.backend.auth.dto.requests.PasswordRequest;
 import com.lab.backend.auth.dto.responses.AuthResponse;
 import com.lab.backend.auth.dto.responses.AuthStatus;
 import com.lab.backend.auth.service.abstracts.UserService;
+import com.lab.backend.auth.utilities.exceptions.InvalidTokenException;
 import com.lab.backend.auth.utilities.exceptions.RedisOperationException;
-import com.lab.backend.auth.utilities.exceptions.UnauthorizedException;
 import com.lab.backend.auth.utilities.exceptions.UsernameExtractionException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -32,20 +32,20 @@ public class UserController {
     }
 
     @GetMapping("/refresh")
-    public ResponseEntity<AuthResponse> refreshToken(HttpServletRequest request) throws RedisOperationException, UnauthorizedException, UsernameExtractionException {
+    public ResponseEntity<AuthResponse> refreshToken(HttpServletRequest request) throws RedisOperationException, InvalidTokenException, UsernameExtractionException {
         var tokens = this.userService.refreshToken(request);
         var authResponse = new AuthResponse(tokens.get(0), tokens.get(1), AuthStatus.TOKEN_REFRESHED_SUCCESSFULLY);
         return ResponseEntity.status(HttpStatus.OK).body(authResponse);
     }
 
     @PostMapping("/logout")
-    public ResponseEntity<String> logout(HttpServletRequest request) throws UnauthorizedException, RedisOperationException {
+    public ResponseEntity<String> logout(HttpServletRequest request) throws InvalidTokenException, RedisOperationException {
         this.userService.logout(request);
         return ResponseEntity.status(HttpStatus.OK).body("Logged out successfully.");
     }
 
     @PostMapping("/change-password")
-    public ResponseEntity<String> changePassword(HttpServletRequest request, @RequestBody @Valid PasswordRequest passwordRequest) throws RedisOperationException, UnauthorizedException {
+    public ResponseEntity<String> changePassword(HttpServletRequest request, @RequestBody @Valid PasswordRequest passwordRequest) throws RedisOperationException, InvalidTokenException {
         String response = this.userService.changePassword(request, passwordRequest);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
