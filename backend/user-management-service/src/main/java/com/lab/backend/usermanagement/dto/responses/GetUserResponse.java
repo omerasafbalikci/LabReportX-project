@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -18,6 +18,6 @@ public class GetUserResponse {
     private String username;
     private String hospitalId;
     private String email;
-    private Set<Role> roles;
+    private List<String> roles;
     private Gender gender;
 }

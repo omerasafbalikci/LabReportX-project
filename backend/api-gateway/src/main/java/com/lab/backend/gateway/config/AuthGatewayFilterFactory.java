@@ -10,8 +10,8 @@ import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFac
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 @Component
 @Log4j2
@@ -53,7 +53,7 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthG
                     exchange = exchange.mutate().request(modifiedRequest).build();
 
                     if (this.routeValidator.isRoleBasedAuthorizationNeeded.test(request)) {
-                        Set<String> roles = this.jwtUtil.getRoles(claims);
+                        List<String> roles = this.jwtUtil.getRoles(claims);
 
                         if (roles == null || roles.isEmpty()) {
                             throw new MissingRolesException("No roles found in token");
@@ -61,7 +61,7 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthG
 
                         String fullPath = request.getPath().toString();
                         String basePath = fullPath.split("/")[1];
-                        Set<String> requiredRoles = config.getRoleMapping().get("/" + basePath);
+                        List<String> requiredRoles = config.getRoleMapping().get("/" + basePath);
 
                         if (roles.stream().noneMatch(requiredRoles::contains)) {
                             throw new InsufficientRolesException("Insufficient roles");
@@ -79,9 +79,9 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthG
 
     @Getter
     public static class Config {
-        private Map<String, Set<String>> roleMapping;
+        private Map<String, List<String>> roleMapping;
 
-        public Config setRoleMapping(Map<String, Set<String>> roleMapping) {
+        public Config setRoleMapping(Map<String, List<String>> roleMapping) {
             this.roleMapping = roleMapping;
             return this;
         }

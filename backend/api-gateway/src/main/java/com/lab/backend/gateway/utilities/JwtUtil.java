@@ -17,7 +17,7 @@ import redis.clients.jedis.JedisPoolConfig;
 
 import javax.crypto.SecretKey;
 import java.util.Collections;
-import java.util.Set;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
@@ -78,15 +78,9 @@ public class JwtUtil {
         }
     }
 
-    public Set<String> getRoles(Claims claims) {
-        Object roles = claims.get(this.AUTHORITIES_KEY);
-        if (roles instanceof Set<?>) {
-            return ((Set<?>) roles).stream()
-                    .filter(role -> role instanceof String)
-                    .map(role -> (String) role)
-                    .collect(Collectors.toSet());
-        }
-        return Collections.emptySet();
+    public List<String> getRoles(Claims claims) {
+        return (List<String>) claims.get(this.AUTHORITIES_KEY);
+
     }
 
     private SecretKey getSignInKey() {

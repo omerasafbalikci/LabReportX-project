@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
 @Component
 @AllArgsConstructor
@@ -20,7 +20,7 @@ public class HospitalIdGenerator {
 
     public String generateUniqueHospitalId() {
         String hospitalId;
-        Set<String> existingIds = new HashSet<>(this.userRepository.findAllHospitalIdAndDeletedFalse());
+        List<String> existingIds = new ArrayList<>(this.userRepository.findAllHospitalIdAndDeletedFalse());
         do {
             hospitalId = generateRandomHospitalId();
         } while (existingIds.contains(hospitalId));

@@ -9,7 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Set;
+import java.util.List;
 
 @Component
 @RequiredArgsConstructor
@@ -33,7 +33,7 @@ public class Initializer implements CommandLineRunner {
                     .username("ozlembalikci")
                     .hospitalId("ABCDEF1")
                     .email("blkc.omerasaff@gmail.com")
-                    .roles(Set.of(Role.SECRETARY))
+                    .roles(List.of(Role.SECRETARY))
                     .gender(Gender.FEMALE)
                     .build());
         }
@@ -47,7 +47,7 @@ public class Initializer implements CommandLineRunner {
                     .username("kadircanbalikci")
                     .hospitalId("ABCDEF2")
                     .email("blkc.omerasaff@gmail.com")
-                    .roles(Set.of(Role.TECHNICIAN))
+                    .roles(List.of(Role.TECHNICIAN))
                     .gender(Gender.MALE)
                     .build());
         }
@@ -61,7 +61,7 @@ public class Initializer implements CommandLineRunner {
                     .username("omerasafbalikci")
                     .hospitalId("ABCDEF3")
                     .email("blkc.omerasaff@gmail.com")
-                    .roles(Set.of(Role.ADMIN))
+                    .roles(List.of(Role.ADMIN))
                     .gender(Gender.MALE)
                     .build());
         }
@@ -75,7 +75,7 @@ public class Initializer implements CommandLineRunner {
                     .username("super")
                     .hospitalId("ABCDEF4")
                     .email("blkc.omerasaff@gmail.com")
-                    .roles(Set.of(Role.SECRETARY, Role.TECHNICIAN, Role.ADMIN))
+                    .roles(List.of(Role.SECRETARY, Role.TECHNICIAN, Role.ADMIN))
                     .gender(Gender.MALE)
                     .build());
         }

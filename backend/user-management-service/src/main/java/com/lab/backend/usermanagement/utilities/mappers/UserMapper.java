@@ -2,11 +2,14 @@ package com.lab.backend.usermanagement.utilities.mappers;
 
 import com.lab.backend.usermanagement.dto.requests.CreateUserRequest;
 import com.lab.backend.usermanagement.dto.responses.GetUserResponse;
+import com.lab.backend.usermanagement.entity.Role;
 import com.lab.backend.usermanagement.entity.User;
 import com.lab.backend.usermanagement.utilities.HospitalIdGenerator;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 @AllArgsConstructor
@@ -33,6 +36,9 @@ public class UserMapper {
         if (user == null) {
             return null;
         }
+        List<String> roles = user.getRoles().stream()
+                .map(Role::name)
+                .toList();
         return new GetUserResponse(
                 user.getId(),
                 user.getFirstName(),
@@ -40,7 +46,7 @@ public class UserMapper {
                 user.getUsername(),
                 user.getHospitalId(),
                 user.getEmail(),
-                user.getRoles(),
+                roles,
                 user.getGender()
         );
     }

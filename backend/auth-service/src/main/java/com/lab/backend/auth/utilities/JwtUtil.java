@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 import java.util.function.Function;
 
 @Service
@@ -29,7 +29,7 @@ public class JwtUtil {
     @Value("${jwt.refresh-token-expiration}")
     private long REFRESH_TOKEN_EXPIRATION;
 
-    public String generateAccessToken(String username, Set<String> roles) {
+    public String generateAccessToken(String username, List<String> roles) {
         log.info("Generating access token for username: {}", username);
         Claims claims = Jwts.claims().subject(username).add(this.AUTHORITIES_KEY, roles).build();
         String accessToken = buildToken(claims, this.ACCESS_TOKEN_EXPIRATION);

@@ -3,7 +3,8 @@ package com.lab.backend.usermanagement.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User class represents a user entity in the database.
@@ -45,7 +46,7 @@ public class User {
     @ElementCollection(targetClass = Role.class)
     @Enumerated(value = EnumType.STRING)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
-    private Set<Role> roles;
+    private List<Role> roles = new ArrayList<>();
 
     @Enumerated(value = EnumType.STRING)
     @Column(name = "gender")

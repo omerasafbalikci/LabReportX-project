@@ -1,12 +1,12 @@
 package com.lab.backend.usermanagement.service.concretes;
 
-import com.lab.backend.usermanagement.repository.UserRepository;
-import com.lab.backend.usermanagement.repository.UserSpecification;
 import com.lab.backend.usermanagement.dto.requests.*;
 import com.lab.backend.usermanagement.dto.responses.GetUserResponse;
 import com.lab.backend.usermanagement.dto.responses.PagedResponse;
 import com.lab.backend.usermanagement.entity.Role;
 import com.lab.backend.usermanagement.entity.User;
+import com.lab.backend.usermanagement.repository.UserRepository;
+import com.lab.backend.usermanagement.repository.UserSpecification;
 import com.lab.backend.usermanagement.service.abstracts.UserService;
 import com.lab.backend.usermanagement.utilities.exceptions.*;
 import com.lab.backend.usermanagement.utilities.mappers.UserMapper;
@@ -23,7 +23,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -160,7 +159,7 @@ public class UserServiceImpl implements UserService {
             throw new UserAlreadyExistsException("Email '" + createUserRequest.getEmail() + "' is already taken");
         }
         User user = this.userMapper.toUser(createUserRequest);
-        Set<String> roles = createUserRequest.getRoles().stream().map(Enum::toString).collect(Collectors.toSet());
+        List<String> roles = createUserRequest.getRoles().stream().map(Enum::toString).collect(Collectors.toList());
 
         try {
             CreateAuthUserRequest createAuthUserRequest = new CreateAuthUserRequest(createUserRequest.getUsername(), createUserRequest.getPassword(), createUserRequest.getEmail(), roles);

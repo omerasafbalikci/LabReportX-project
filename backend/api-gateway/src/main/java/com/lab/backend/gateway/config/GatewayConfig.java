@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 @Configuration
 public class GatewayConfig {
@@ -27,18 +27,18 @@ public class GatewayConfig {
     @Value("${circuit-breaker-name}")
     private String CIRCUIT_BREAKER_NAME;
 
-    private final Map<String, Set<String>> endpointRoleMapping = new HashMap<>();
+    private final Map<String, List<String>> endpointRoleMapping = new HashMap<>();
 
     public GatewayConfig() {
-        this.endpointRoleMapping.put("/patients", Set.of("SECRETARY"));
-        this.endpointRoleMapping.put("/barcode", Set.of("SECRETARY"));
-        this.endpointRoleMapping.put("/reports", Set.of("TECHNICIAN"));
-        this.endpointRoleMapping.put("/users", Set.of("ADMIN"));
-        this.endpointRoleMapping.put("/users/me", Set.of("SECRETARY", "TECHNICIAN", "ADMIN"));
-        this.endpointRoleMapping.put("/users/update/me", Set.of("SECRETARY", "TECHNICIAN", "ADMIN"));
-        this.endpointRoleMapping.put("/auth/change-password", Set.of("SECRETARY", "TECHNICIAN", "ADMIN"));
-        this.endpointRoleMapping.put("/auth/refresh", Set.of("SECRETARY", "TECHNICIAN", "ADMIN"));
-        this.endpointRoleMapping.put("/auth/logout", Set.of("SECRETARY", "TECHNICIAN", "ADMIN"));
+        this.endpointRoleMapping.put("/patients", List.of("SECRETARY"));
+        this.endpointRoleMapping.put("/barcode", List.of("SECRETARY"));
+        this.endpointRoleMapping.put("/reports", List.of("TECHNICIAN"));
+        this.endpointRoleMapping.put("/users", List.of("ADMIN"));
+        this.endpointRoleMapping.put("/users/me", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
+        this.endpointRoleMapping.put("/users/update/me", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
+        this.endpointRoleMapping.put("/auth/change-password", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
+        this.endpointRoleMapping.put("/auth/refresh", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
+        this.endpointRoleMapping.put("/auth/logout", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
     }
 
     @Bean

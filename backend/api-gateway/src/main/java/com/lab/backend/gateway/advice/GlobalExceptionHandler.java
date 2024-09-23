@@ -1,81 +1,54 @@
 package com.lab.backend.gateway.advice;
 
 import com.lab.backend.gateway.utilities.exceptions.*;
-import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.boot.autoconfigure.web.WebProperties;
+import org.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler;
+import org.springframework.boot.web.reactive.error.ErrorAttributes;
+import org.springframework.context.ApplicationContext;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.http.codec.ServerCodecConfigurer;
+import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.function.server.*;
+import reactor.core.publisher.Mono;
 
-@RestControllerAdvice
-public class GlobalExceptionHandler {
-    @ExceptionHandler(TokenNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleTokenNotFoundException(TokenNotFoundException exception, HttpServletRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.NOT_FOUND, exception.getMessage());
-        errorResponse.setPath(request.getRequestURI());
-        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+@Component
+@Order(-2)
+public class GlobalExceptionHandler extends AbstractErrorWebExceptionHandler {
+    public GlobalExceptionHandler(ErrorAttributes errorAttributes, WebProperties webProperties, ApplicationContext applicationContext) {
+        super(errorAttributes, webProperties.getResources(), applicationContext);
+        setMessageWriters(ServerCodecConfigurer.create().getWriters());
     }
 
-    @ExceptionHandler(InsufficientRolesException.class)
-    public ResponseEntity<ErrorResponse> handleInsufficientRolesException(InsufficientRolesException exception, HttpServletRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.FORBIDDEN, exception.getMessage());
-        errorResponse.setPath(request.getRequestURI());
-        return new ResponseEntity<>(errorResponse, HttpStatus.FORBIDDEN);
+    @Override
+    protected RouterFunction<ServerResponse> getRoutingFunction(ErrorAttributes errorAttributes) {
+        return RouterFunctions.route(RequestPredicates.all(), this::renderErrorResponse);
     }
 
-    @ExceptionHandler(MissingAuthorizationHeaderException.class)
-    public ResponseEntity<ErrorResponse> handleMissingAuthorizationHeaderException(MissingAuthorizationHeaderException exception, HttpServletRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST, exception.getMessage());
-        errorResponse.setPath(request.getRequestURI());
-        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+    private Mono<ServerResponse> renderErrorResponse(ServerRequest request) {
+        Throwable error = getError(request);
+        HttpStatus status = determineHttpStatus(error);
+        ErrorResponse errorResponse = new ErrorResponse(status, error.getMessage(), request.path());
+
+        return ServerResponse.status(status).bodyValue(errorResponse);
     }
 
-    @ExceptionHandler(InvalidTokenException.class)
-    public ResponseEntity<ErrorResponse> handleInvalidTokenException(InvalidTokenException exception, HttpServletRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.UNAUTHORIZED, exception.getMessage());
-        errorResponse.setPath(request.getRequestURI());
-        return new ResponseEntity<>(errorResponse, HttpStatus.UNAUTHORIZED);
-    }
-
-    @ExceptionHandler(MissingRolesException.class)
-    public ResponseEntity<ErrorResponse> handleMissingRolesException(MissingRolesException exception, HttpServletRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.UNAUTHORIZED, exception.getMessage());
-        errorResponse.setPath(request.getRequestURI());
-        return new ResponseEntity<>(errorResponse, HttpStatus.UNAUTHORIZED);
-    }
-
-    @ExceptionHandler(LoggedOutTokenException.class)
-    public ResponseEntity<ErrorResponse> handleLoggedOutTokenException(LoggedOutTokenException exception, HttpServletRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.UNAUTHORIZED, exception.getMessage());
-        errorResponse.setPath(request.getRequestURI());
-        return new ResponseEntity<>(errorResponse, HttpStatus.UNAUTHORIZED);
-    }
-
-    @ExceptionHandler(AuthServiceUnavailableException.class)
-    public ResponseEntity<ErrorResponse> handleAuthServiceUnavailableException(AuthServiceUnavailableException exception, HttpServletRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.SERVICE_UNAVAILABLE, exception.getMessage());
-        errorResponse.setPath(request.getRequestURI());
-        return new ResponseEntity<>(errorResponse, HttpStatus.SERVICE_UNAVAILABLE);
-    }
-
-    @ExceptionHandler(UserServiceUnavailableException.class)
-    public ResponseEntity<ErrorResponse> handleUserServiceUnavailableException(UserServiceUnavailableException exception, HttpServletRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.SERVICE_UNAVAILABLE, exception.getMessage());
-        errorResponse.setPath(request.getRequestURI());
-        return new ResponseEntity<>(errorResponse, HttpStatus.SERVICE_UNAVAILABLE);
-    }
-
-    @ExceptionHandler(PatientServiceUnavailableException.class)
-    public ResponseEntity<ErrorResponse> handlePatientServiceUnavailableException(PatientServiceUnavailableException exception, HttpServletRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.SERVICE_UNAVAILABLE, exception.getMessage());
-        errorResponse.setPath(request.getRequestURI());
-        return new ResponseEntity<>(errorResponse, HttpStatus.SERVICE_UNAVAILABLE);
-    }
-
-    @ExceptionHandler(ReportServiceUnavailableException.class)
-    public ResponseEntity<ErrorResponse> handleReportServiceUnavailableException(ReportServiceUnavailableException exception, HttpServletRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.SERVICE_UNAVAILABLE, exception.getMessage());
-        errorResponse.setPath(request.getRequestURI());
-        return new ResponseEntity<>(errorResponse, HttpStatus.SERVICE_UNAVAILABLE);
+    private HttpStatus determineHttpStatus(Throwable error) {
+        if (error instanceof TokenNotFoundException) {
+            return HttpStatus.NOT_FOUND;
+        } else if (error instanceof InsufficientRolesException) {
+            return HttpStatus.FORBIDDEN;
+        } else if (error instanceof MissingAuthorizationHeaderException) {
+            return HttpStatus.BAD_REQUEST;
+        } else if (error instanceof InvalidTokenException) {
+            return HttpStatus.UNAUTHORIZED;
+        } else if (error instanceof MissingRolesException || error instanceof LoggedOutTokenException) {
+            return HttpStatus.UNAUTHORIZED;
+        } else if (error instanceof AuthServiceUnavailableException || error instanceof UserServiceUnavailableException ||
+                error instanceof PatientServiceUnavailableException || error instanceof ReportServiceUnavailableException) {
+            return HttpStatus.SERVICE_UNAVAILABLE;
+        } else {
+            return HttpStatus.INTERNAL_SERVER_ERROR;
+        }
     }
 }

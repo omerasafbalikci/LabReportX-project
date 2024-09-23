@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
@@ -20,7 +20,7 @@ public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificat
     Optional<User> findByUsernameAndDeletedFalse(String username);
 
     @Query("SELECT u.hospitalId FROM User u WHERE u.deleted = false")
-    Set<String> findAllHospitalIdAndDeletedFalse();
+    List<String> findAllHospitalIdAndDeletedFalse();
 
     boolean existsByUsernameAndDeletedIsFalse(String username);
 

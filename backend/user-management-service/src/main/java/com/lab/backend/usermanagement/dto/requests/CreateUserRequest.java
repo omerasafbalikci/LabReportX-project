@@ -10,7 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -30,6 +30,6 @@ public class CreateUserRequest {
     private String password;
     @Size(min = 1, message = "User must have at least one role")
     @NotNull(message = "Role must not be null")
-    private Set<Role> roles;
+    private List<Role> roles;
     private Gender gender;
 }

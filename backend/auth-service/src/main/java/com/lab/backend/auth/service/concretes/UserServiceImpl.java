@@ -138,14 +138,14 @@ public class UserServiceImpl implements UserService {
         this.tokenRepository.save(token);
 
         try (Jedis jedis = this.jedisPool.getResource()) {
-            jedis.set("token" + token.getId() + ":is_logged_out", "false");
+            jedis.set("token:" + token.getId() + ":is_logged_out", "false");
             jedis.set(jwt, String.valueOf(token.getId()));
         } catch (JedisException e) {
             throw new RedisOperationException("Failed to set token status in Redis ", e);
         }
     }
 
-    private void revokeAllTokensByUser(Long id) throws RedisOperationException {
+    private void revokeAllTokensByUser(long id) throws RedisOperationException {
         List<Token> validTokens = this.tokenRepository.findAllValidTokensByUser(id);
         if (validTokens.isEmpty()) {
             return;
@@ -169,8 +169,14 @@ public class UserServiceImpl implements UserService {
             throw new InvalidTokenException("Invalid token");
         }
         String jwt = authHeader.substring(7);
+        Token storedToken = this.tokenRepository.findByToken(jwt).orElse(null);
+        if (storedToken == null) {
+            throw new TokenNotFoundException("Token not found");
+        }
+        storedToken.setLoggedOut(true);
+        this.tokenRepository.save(storedToken);
         try (Jedis jedis = this.jedisPool.getResource()) {
-            jedis.set("token:" + jwt + ":is_logged_out", "true");
+            jedis.set("token:" + storedToken.getId() + ":is_logged_out", "true");
         } catch (JedisException e) {
             throw new RedisOperationException("Failed to log out token in Redis ", e);
         }
@@ -268,11 +274,11 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    private Set<String> getRolesAsString(Set<Role> roles) {
+    private List<String> getRolesAsString(List<Role> roles) {
         try {
             return roles.stream()
                     .map(Role::getName)
-                    .collect(Collectors.toSet());
+                    .collect(Collectors.toList());
         } finally {
             log.trace("Exiting getRolesAsString method in AuthServiceImpl");
         }
@@ -286,7 +292,7 @@ public class UserServiceImpl implements UserService {
                 .emailVerified(false)
                 .emailVerificationToken(UUID.randomUUID().toString())
                 .build();
-        Set<Role> roles = new HashSet<>();
+        List<Role> roles = new ArrayList<>();
         for (String role : createAuthUserRequest.getRoles()) {
             Optional<Role> roleOptional = this.roleRepository.findByName(role);
             roleOptional.ifPresent(roles::add);
