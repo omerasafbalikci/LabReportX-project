@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: user-management-service
+  rabbitmq:
+    host: localhost
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+rabbitmq:
+  exchange: user-exchange
+  queue:
+    create: user-queue-create
+    update: user-queue-update
+    delete: user-queue-delete
+    restore: user-queue-restore
+    addRole: user-queue-add-role
+    removeRole: user-queue-remove-role
+  routingKey:
+    create: user.create
+    update: user.update
+    delete: user.delete
+    restore: user.restore
+    addRole: user.add.role
+    removeRole: user.remove.role
