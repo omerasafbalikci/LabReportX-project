@@ -32,7 +32,7 @@ public class Initializer implements CommandLineRunner {
                     .lastName("Balıkçı")
                     .username("ozlembalikci")
                     .hospitalId("ABCDEF1")
-                    .email("blkc.omerasaff@gmail.com")
+                    .email("blkc.ozlem@gmail.com")
                     .roles(List.of(Role.SECRETARY))
                     .gender(Gender.FEMALE)
                     .build());
@@ -46,7 +46,7 @@ public class Initializer implements CommandLineRunner {
                     .lastName("Balıkçı")
                     .username("kadircanbalikci")
                     .hospitalId("ABCDEF2")
-                    .email("blkc.omerasaff@gmail.com")
+                    .email("blkc.kadir@gmail.com")
                     .roles(List.of(Role.TECHNICIAN))
                     .gender(Gender.MALE)
                     .build());
@@ -74,7 +74,7 @@ public class Initializer implements CommandLineRunner {
                     .lastName("Super")
                     .username("super")
                     .hospitalId("ABCDEF4")
-                    .email("blkc.omerasaff@gmail.com")
+                    .email("super@gmail.com")
                     .roles(List.of(Role.SECRETARY, Role.TECHNICIAN, Role.ADMIN))
                     .gender(Gender.MALE)
                     .build());

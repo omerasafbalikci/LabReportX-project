@@ -47,7 +47,7 @@ public class UserMapper {
                 user.getHospitalId(),
                 user.getEmail(),
                 roles,
-                user.getGender()
+                user.getGender().toString()
         );
     }
 }

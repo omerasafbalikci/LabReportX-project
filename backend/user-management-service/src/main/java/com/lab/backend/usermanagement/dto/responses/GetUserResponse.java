@@ -1,7 +1,5 @@
 package com.lab.backend.usermanagement.dto.responses;
 
-import com.lab.backend.usermanagement.entity.Gender;
-import com.lab.backend.usermanagement.entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,5 +17,5 @@ public class GetUserResponse {
     private String hospitalId;
     private String email;
     private List<String> roles;
-    private Gender gender;
+    private String gender;
 }

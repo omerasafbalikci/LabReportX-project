@@ -34,6 +34,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(UserAlreadyExistsException.class)
+    public ResponseEntity<Object> handleUserAlreadyExistsException(UserAlreadyExistsException exception, HttpServletRequest request) {
+        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.CONFLICT, exception.getMessage());
+        errorResponse.setPath(request.getRequestURI());
+        return new ResponseEntity<>(errorResponse, HttpStatus.CONFLICT);
+    }
+
     @ExceptionHandler(UnexpectedException.class)
     public ResponseEntity<Object> handleUnexpectedException(UnexpectedException exception, HttpServletRequest request) {
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage());

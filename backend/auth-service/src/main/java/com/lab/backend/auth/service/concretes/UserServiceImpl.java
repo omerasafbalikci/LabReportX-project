@@ -285,7 +285,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @RabbitListener(queues = "${rabbitmq.queue.create}")
-    public void createUser(CreateAuthUserRequest createAuthUserRequest) {
+    public void createUser(CreateAuthUserRequest createAuthUserRequest) throws UserAlreadyExistsException, NoRolesException, InvalidEmailFormatException, EmailSendingFailedException {
+        if (this.userRepository.existsByUsernameAndDeletedIsFalse(createAuthUserRequest.getUsername())) {
+            throw new UserAlreadyExistsException("Username '" + createAuthUserRequest.getUsername() + "' is already taken");
+        }
+        if (createAuthUserRequest.getRoles().isEmpty()) {
+            throw new NoRolesException("No role found for registration!");
+        }
         User user = User.builder()
                 .username(createAuthUserRequest.getUsername())
                 .password(this.passwordEncoder.encode(createAuthUserRequest.getPassword()))
@@ -321,11 +327,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @RabbitListener(queues = "${rabbitmq.queue.update}")
-    public void updateUser(UpdateAuthUserRequest updateAuthUserRequest) {
-        Optional<User> optionalUser = this.userRepository.findByIdAndDeletedIsFalse(updateAuthUserRequest.getId());
+    public void updateUser(UpdateAuthUserRequest updateAuthUserRequest) throws UserAlreadyExistsException, UserNotFoundException {
+        if (this.userRepository.existsByUsernameAndDeletedIsFalse(updateAuthUserRequest.getNewUsername())) {
+            throw new UserAlreadyExistsException("Username is already taken! Username: " + updateAuthUserRequest.getNewUsername());
+        }
+        Optional<User> optionalUser = this.userRepository.findByUsernameAndDeletedIsFalse(updateAuthUserRequest.getOldUsername());
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
-            user.setUsername(updateAuthUserRequest.getUsername());
+            user.setUsername(updateAuthUserRequest.getNewUsername());
             this.userRepository.save(user);
         } else {
             throw new UserNotFoundException("User not found");
@@ -333,8 +342,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @RabbitListener(queues = "${rabbitmq.queue.delete}")
-    public void deleteUser(Long id) throws RedisOperationException {
-        Optional<User> optionalUser = this.userRepository.findByIdAndDeletedIsFalse(id);
+    public void deleteUser(String username) throws RedisOperationException, UserNotFoundException {
+        Optional<User> optionalUser = this.userRepository.findByUsernameAndDeletedIsFalse(username);
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             user.setDeleted(true);
@@ -346,8 +355,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @RabbitListener(queues = "${rabbitmq.queue.restore}")
-    public void restoreUser(Long id) throws RedisOperationException {
-        Optional<User> optionalUser = this.userRepository.findByIdAndDeletedIsTrue(id);
+    public void restoreUser(String username) throws RedisOperationException, UserNotFoundException {
+        Optional<User> optionalUser = this.userRepository.findByUsernameAndDeletedIsFalse(username);
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             user.setDeleted(false);
@@ -359,8 +368,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @RabbitListener(queues = "${rabbitmq.queue.addRole}")
-    public void addRole(UpdateAuthUserRoleRequest updateAuthUserRoleRequest) {
-        Optional<User> optionalUser = this.userRepository.findByIdAndDeletedIsFalse(updateAuthUserRoleRequest.getId());
+    public void addRole(UpdateAuthUserRoleRequest updateAuthUserRoleRequest) throws RoleNotFoundException, UserNotFoundException {
+        Optional<User> optionalUser = this.userRepository.findByUsernameAndDeletedIsFalse(updateAuthUserRoleRequest.getUsername());
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             Optional<Role> optionalRole = this.roleRepository.findByName(updateAuthUserRoleRequest.getRole());
@@ -376,8 +385,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @RabbitListener(queues = "${rabbitmq.queue.removeRole}")
-    public void removeRole(UpdateAuthUserRoleRequest updateAuthUserRoleRequest) {
-        Optional<User> optionalUser = this.userRepository.findByIdAndDeletedIsFalse(updateAuthUserRoleRequest.getId());
+    public void removeRole(UpdateAuthUserRoleRequest updateAuthUserRoleRequest) throws RoleNotFoundException, UserNotFoundException {
+        Optional<User> optionalUser = this.userRepository.findByUsernameAndDeletedIsFalse(updateAuthUserRoleRequest.getUsername());
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             Optional<Role> optionalRole = this.roleRepository.findByName(updateAuthUserRoleRequest.getRole());

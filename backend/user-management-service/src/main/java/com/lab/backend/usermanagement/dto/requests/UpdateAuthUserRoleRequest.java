@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class UpdateAuthUserRoleRequest {
-    private Long id;
+    private String username;
     private String role;
 }

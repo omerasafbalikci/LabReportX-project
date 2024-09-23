@@ -117,6 +117,8 @@ public class UserServiceImpl implements UserService {
                     return new UserNotFoundException("User doesn't exist with username " + username);
                 });
 
+        String existingUsername = existingUser.getUsername();
+
         if (updateUserRequest.getUsername() != null && !existingUser.getUsername().equals(updateUserRequest.getUsername())) {
             if (this.userRepository.existsByUsernameAndDeletedIsFalse(updateUserRequest.getUsername())) {
                 throw new UserAlreadyExistsException("Username is taken");
@@ -124,7 +126,7 @@ public class UserServiceImpl implements UserService {
             existingUser.setUsername(updateUserRequest.getUsername());
 
             try {
-                UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(existingUser.getId(), updateUserRequest.getUsername());
+                UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(existingUsername, updateUserRequest.getUsername());
                 this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_UPDATE, updateAuthUserRequest);
             } catch (Exception e) {
                 throw new RabbitMQException("Failed to send update message to RabbitMQ", e);
@@ -182,6 +184,8 @@ public class UserServiceImpl implements UserService {
                     return new UserNotFoundException("User doesn't exist with id " + updateUserRequest.getId());
                 });
 
+        String existingUsername = existingUser.getUsername();
+
         if (updateUserRequest.getUsername() != null && !existingUser.getUsername().equals(updateUserRequest.getUsername())) {
             if (this.userRepository.existsByUsernameAndDeletedIsFalse(updateUserRequest.getUsername())) {
                 throw new UserAlreadyExistsException("Username is taken");
@@ -189,7 +193,7 @@ public class UserServiceImpl implements UserService {
             existingUser.setUsername(updateUserRequest.getUsername());
 
             try {
-                UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(updateUserRequest.getId(), updateUserRequest.getUsername());
+                UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(existingUsername, updateUserRequest.getUsername());
                 this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_UPDATE, updateAuthUserRequest);
             } catch (Exception e) {
                 throw new RabbitMQException("Failed to send update message to RabbitMQ", e);
@@ -221,9 +225,10 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> {
                     return new UserNotFoundException("User doesn't exist with id " + id);
                 });
+        String username = user.getUsername();
         user.setDeleted(true);
         try {
-            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_DELETE, id);
+            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_DELETE, username);
         } catch (Exception exception) {
             throw new RabbitMQException("Failed to send delete message to RabbitMQ", exception);
         }
@@ -237,9 +242,10 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> {
                     return new UserNotFoundException("User doesn't exist with id " + id);
                 });
+        String username = user.getUsername();
         user.setDeleted(false);
         try {
-            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_RESTORE, id);
+            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_RESTORE, username);
         } catch (Exception exception) {
             throw new RabbitMQException("Failed to send restore message to RabbitMQ", exception);
         }
@@ -254,13 +260,14 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> {
                     return new UserNotFoundException("User doesn't exist with id " + id);
                 });
+        String username = user.getUsername();
         if (user.getRoles().contains(role)) {
             throw new RoleAlreadyExistsException("User already has this Role. Role: " + role.toString());
         }
         user.getRoles().add(role);
         try {
             String r = role.toString();
-            UpdateAuthUserRoleRequest updateAuthUserRoleRequest = new UpdateAuthUserRoleRequest(id, r);
+            UpdateAuthUserRoleRequest updateAuthUserRoleRequest = new UpdateAuthUserRoleRequest(username, r);
             this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_ADD_ROLE, updateAuthUserRoleRequest);
         } catch (Exception exception) {
             throw new RabbitMQException("Failed to send add role message to RabbitMQ", exception);
@@ -276,6 +283,7 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> {
                     return new UserNotFoundException("User doesn't exist with id " + id);
                 });
+        String username = user.getUsername();
         if (user.getRoles().size() <= 1) {
             throw new SingleRoleRemovalException("Cannot remove role. User must have at least one role");
         }
@@ -285,7 +293,7 @@ public class UserServiceImpl implements UserService {
         user.getRoles().remove(role);
         try {
             String r = role.toString();
-            UpdateAuthUserRoleRequest updateAuthUserRoleRequest = new UpdateAuthUserRoleRequest(id, r);
+            UpdateAuthUserRoleRequest updateAuthUserRoleRequest = new UpdateAuthUserRoleRequest(username, r);
             this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_REMOVE_ROLE, updateAuthUserRoleRequest);
         } catch (Exception exception) {
             throw new RabbitMQException("Failed to send remove role message to RabbitMQ", exception);
