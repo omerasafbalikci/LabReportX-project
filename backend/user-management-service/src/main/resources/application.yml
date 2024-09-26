@@ -1,6 +1,5 @@
 spring:
   application:
     name: user-management-service
-  cloud:
-    config:
-      import: "configserver:http://localhost:8888"
+  config:
+    import: "configserver:http://localhost:8888"

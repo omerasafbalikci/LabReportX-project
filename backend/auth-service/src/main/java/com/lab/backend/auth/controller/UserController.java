@@ -51,7 +51,7 @@ public class UserController {
     }
 
     @PostMapping("/initiate-password-reset")
-    public ResponseEntity<String> initiatePasswordReset(@RequestParam("email") @Email(message = "It must be a valid email") String email) {
+    public ResponseEntity<String> initiatePasswordReset(@RequestParam("email") String email) {
         this.userService.initiatePasswordReset(email);
         return ResponseEntity.status(HttpStatus.OK).body("Password reset initiated. Check your email for further instructions.");
     }

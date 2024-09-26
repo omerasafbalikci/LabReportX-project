@@ -119,19 +119,6 @@ public class UserServiceImpl implements UserService {
 
         String existingUsername = existingUser.getUsername();
 
-        if (updateUserRequest.getUsername() != null && !existingUser.getUsername().equals(updateUserRequest.getUsername())) {
-            if (this.userRepository.existsByUsernameAndDeletedIsFalse(updateUserRequest.getUsername())) {
-                throw new UserAlreadyExistsException("Username is taken");
-            }
-            existingUser.setUsername(updateUserRequest.getUsername());
-
-            try {
-                UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(existingUsername, updateUserRequest.getUsername());
-                this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_UPDATE, updateAuthUserRequest);
-            } catch (Exception e) {
-                throw new RabbitMQException("Failed to send update message to RabbitMQ", e);
-            }
-        }
         if (updateUserRequest.getEmail() != null && !existingUser.getEmail().equals(updateUserRequest.getEmail())) {
             if (this.userRepository.existsByEmailAndDeletedIsFalse(updateUserRequest.getEmail())) {
                 throw new UserAlreadyExistsException("Email is already taken");
@@ -146,6 +133,19 @@ public class UserServiceImpl implements UserService {
         }
         if (updateUserRequest.getGender() != null && !existingUser.getGender().equals(updateUserRequest.getGender())) {
             existingUser.setGender(updateUserRequest.getGender());
+        }
+        if (updateUserRequest.getUsername() != null && !existingUser.getUsername().equals(updateUserRequest.getUsername())) {
+            if (this.userRepository.existsByUsernameAndDeletedIsFalse(updateUserRequest.getUsername())) {
+                throw new UserAlreadyExistsException("Username is taken");
+            }
+            existingUser.setUsername(updateUserRequest.getUsername());
+
+            try {
+                UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(existingUsername, updateUserRequest.getUsername());
+                this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_UPDATE, updateAuthUserRequest);
+            } catch (Exception e) {
+                throw new RabbitMQException("Failed to send update message to RabbitMQ", e);
+            }
         }
         this.userRepository.save(existingUser);
         return this.userMapper.toGetUserResponse(existingUser);
@@ -186,19 +186,6 @@ public class UserServiceImpl implements UserService {
 
         String existingUsername = existingUser.getUsername();
 
-        if (updateUserRequest.getUsername() != null && !existingUser.getUsername().equals(updateUserRequest.getUsername())) {
-            if (this.userRepository.existsByUsernameAndDeletedIsFalse(updateUserRequest.getUsername())) {
-                throw new UserAlreadyExistsException("Username is taken");
-            }
-            existingUser.setUsername(updateUserRequest.getUsername());
-
-            try {
-                UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(existingUsername, updateUserRequest.getUsername());
-                this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_UPDATE, updateAuthUserRequest);
-            } catch (Exception e) {
-                throw new RabbitMQException("Failed to send update message to RabbitMQ", e);
-            }
-        }
         if (updateUserRequest.getEmail() != null && !existingUser.getEmail().equals(updateUserRequest.getEmail())) {
             if (this.userRepository.existsByEmailAndDeletedIsFalse(updateUserRequest.getEmail())) {
                 throw new UserAlreadyExistsException("Email is already taken");
@@ -213,6 +200,19 @@ public class UserServiceImpl implements UserService {
         }
         if (updateUserRequest.getGender() != null && !existingUser.getGender().equals(updateUserRequest.getGender())) {
             existingUser.setGender(updateUserRequest.getGender());
+        }
+        if (updateUserRequest.getUsername() != null && !existingUser.getUsername().equals(updateUserRequest.getUsername())) {
+            if (this.userRepository.existsByUsernameAndDeletedIsFalse(updateUserRequest.getUsername())) {
+                throw new UserAlreadyExistsException("Username is taken");
+            }
+            existingUser.setUsername(updateUserRequest.getUsername());
+
+            try {
+                UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(existingUsername, updateUserRequest.getUsername());
+                this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_UPDATE, updateAuthUserRequest);
+            } catch (Exception e) {
+                throw new RabbitMQException("Failed to send update message to RabbitMQ", e);
+            }
         }
         this.userRepository.save(existingUser);
         return this.userMapper.toGetUserResponse(existingUser);

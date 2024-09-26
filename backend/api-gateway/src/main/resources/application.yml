@@ -1,6 +1,5 @@
 spring:
   application:
     name: api-gateway
-  cloud:
-    config:
-      import: "configserver:http://localhost:8888"
+  config:
+    import: "configserver:http://localhost:8888"

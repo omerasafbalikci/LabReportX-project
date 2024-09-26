@@ -1,6 +1,5 @@
 spring:
   application:
     name: discovery-server
-  cloud:
-    config:
-      import: "configserver:http://localhost:8888"
+  config:
+    import: "configserver:http://localhost:8888"

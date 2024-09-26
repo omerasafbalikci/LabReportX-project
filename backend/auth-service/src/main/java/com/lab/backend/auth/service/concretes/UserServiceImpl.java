@@ -257,6 +257,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String handlePasswordReset(String token, String newPassword) {
+        if (newPassword == null || newPassword.length() < 8) {
+            return "Password must be at least 8 characters long.";
+        }
         Optional<User> optionalUser = this.userRepository.findByResetTokenAndDeletedIsFalse(token);
 
         if (optionalUser.isPresent()) {
@@ -356,7 +359,7 @@ public class UserServiceImpl implements UserService {
 
     @RabbitListener(queues = "${rabbitmq.queue.restore}")
     public void restoreUser(String username) throws RedisOperationException, UserNotFoundException {
-        Optional<User> optionalUser = this.userRepository.findByUsernameAndDeletedIsFalse(username);
+        Optional<User> optionalUser = this.userRepository.findByUsernameAndDeletedIsTrue(username);
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             user.setDeleted(false);

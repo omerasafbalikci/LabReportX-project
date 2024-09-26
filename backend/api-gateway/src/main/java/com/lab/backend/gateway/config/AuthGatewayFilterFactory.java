@@ -60,8 +60,11 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthG
                         }
 
                         String fullPath = request.getPath().toString();
-                        String basePath = fullPath.split("/")[1];
-                        List<String> requiredRoles = config.getRoleMapping().get("/" + basePath);
+                        List<String> requiredRoles = config.getRoleMapping().get(fullPath);
+                        if (requiredRoles == null) {
+                            String basePath = fullPath.split("/")[1];
+                            requiredRoles = config.getRoleMapping().get("/" + basePath);
+                        }
 
                         if (roles.stream().noneMatch(requiredRoles::contains)) {
                             throw new InsufficientRolesException("Insufficient roles");

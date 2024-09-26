@@ -49,7 +49,6 @@ public class UserController {
     public String getUsernameByEmail(@RequestParam String email) {
         return this.userService.getUsernameByEmail(email);
     }
-
     @GetMapping("/me")
     public ResponseEntity<GetUserResponse> getCurrentUser(@RequestHeader("X-Username") String username) {
         GetUserResponse response = this.userService.getCurrentUser(username);
