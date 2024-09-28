@@ -7,8 +7,8 @@ import com.lab.backend.auth.entity.User;
 import com.lab.backend.auth.repository.RoleRepository;
 import com.lab.backend.auth.repository.TokenRepository;
 import com.lab.backend.auth.repository.UserRepository;
+import com.lab.backend.auth.service.abstracts.JwtService;
 import com.lab.backend.auth.service.abstracts.UserService;
-import com.lab.backend.auth.utilities.JwtUtil;
 import com.lab.backend.auth.utilities.exceptions.*;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final TokenRepository tokenRepository;
-    private final JwtUtil jwtUtil;
+    private final JwtService jwtService;
     private final UserDetailsService userDetailsService;
     private final MailService mailService;
     private JedisPool jedisPool;
@@ -85,8 +85,8 @@ public class UserServiceImpl implements UserService {
             throw new EmailNotVerifiedException("Email address not verified for user: " + authRequest.getUsername());
         }
 
-        String accessToken = this.jwtUtil.generateAccessToken(authRequest.getUsername(), getRolesAsString(user.getRoles()));
-        String refreshToken = this.jwtUtil.generateRefreshToken(authRequest.getUsername());
+        String accessToken = this.jwtService.generateAccessToken(authRequest.getUsername(), getRolesAsString(user.getRoles()));
+        String refreshToken = this.jwtService.generateRefreshToken(authRequest.getUsername());
 
         revokeAllTokensByUser(user.getId());
         saveUserToken(user, accessToken);
@@ -100,11 +100,11 @@ public class UserServiceImpl implements UserService {
 
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             String refreshToken = authHeader.substring(7);
-            String username = this.jwtUtil.extractUsername(refreshToken);
+            String username = this.jwtService.extractUsername(refreshToken);
 
             if (username != null) {
                 UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
-                if (userDetails != null && jwtUtil.isTokenValid(refreshToken, userDetails)) {
+                if (userDetails != null && jwtService.isTokenValid(refreshToken, userDetails)) {
                     User user = this.userRepository.findByUsernameAndDeletedIsFalse(username)
                             .orElseThrow(() -> {
                                 return new UserNotFoundException("User not found with username: " + username);
@@ -114,7 +114,7 @@ public class UserServiceImpl implements UserService {
                         throw new EmailNotVerifiedException("Email address not verified for user: " + username);
                     }
 
-                    String accessToken = this.jwtUtil.generateAccessToken(username, getRolesAsString(user.getRoles()));
+                    String accessToken = this.jwtService.generateAccessToken(username, getRolesAsString(user.getRoles()));
                     revokeAllTokensByUser(user.getId());
                     saveUserToken(user, accessToken);
                     return Arrays.asList(accessToken, refreshToken);
@@ -189,7 +189,7 @@ public class UserServiceImpl implements UserService {
             throw new InvalidTokenException("Invalid token");
         }
         String jwt = authHeader.substring(7);
-        String username = this.jwtUtil.extractUsername(jwt);
+        String username = this.jwtService.extractUsername(jwt);
         Optional<User> optionalUser = this.userRepository.findByUsernameAndDeletedIsFalse(username);
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();

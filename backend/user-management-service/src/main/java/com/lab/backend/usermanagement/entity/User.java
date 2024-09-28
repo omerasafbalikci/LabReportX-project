@@ -46,6 +46,7 @@ public class User {
     @ElementCollection(targetClass = Role.class)
     @Enumerated(value = EnumType.STRING)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
+    @Builder.Default
     private List<Role> roles = new ArrayList<>();
 
     @Enumerated(value = EnumType.STRING)

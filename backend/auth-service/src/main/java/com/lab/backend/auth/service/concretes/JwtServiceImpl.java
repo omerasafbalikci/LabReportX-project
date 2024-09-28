@@ -1,9 +1,11 @@
-package com.lab.backend.auth.utilities;
+package com.lab.backend.auth.service.concretes;
 
+import com.lab.backend.auth.service.abstracts.JwtService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,8 +17,9 @@ import java.util.List;
 import java.util.function.Function;
 
 @Service
+@RequiredArgsConstructor
 @Log4j2
-public class JwtUtil {
+public class JwtServiceImpl implements JwtService {
     @Value("${jwt.secret-key}")
     private String SECRET_KEY;
 
@@ -29,6 +32,7 @@ public class JwtUtil {
     @Value("${jwt.refresh-token-expiration}")
     private long REFRESH_TOKEN_EXPIRATION;
 
+    @Override
     public String generateAccessToken(String username, List<String> roles) {
         log.info("Generating access token for username: {}", username);
         Claims claims = Jwts.claims().subject(username).add(this.AUTHORITIES_KEY, roles).build();
@@ -37,6 +41,7 @@ public class JwtUtil {
         return accessToken;
     }
 
+    @Override
     public String generateRefreshToken(String username) {
         log.info("Generating refresh token for username: {}", username);
         Claims claims = Jwts.claims().subject(username).build();
@@ -57,6 +62,7 @@ public class JwtUtil {
         return token;
     }
 
+    @Override
     public String extractUsername(String token) {
         log.trace("Extracting username from token.");
         String username = extractClaim(token, Claims::getSubject);
@@ -83,6 +89,7 @@ public class JwtUtil {
         return claims;
     }
 
+    @Override
     public boolean isTokenValid(String token, UserDetails userDetails) {
         log.trace("Validating token for username: {}", userDetails.getUsername());
         String username = extractUsername(token);

@@ -8,7 +8,6 @@ target/
 /logs/
 /sonarqube/
 /postgres-sonarqube/
-.env
 
 ### STS ###
 .apt_generated

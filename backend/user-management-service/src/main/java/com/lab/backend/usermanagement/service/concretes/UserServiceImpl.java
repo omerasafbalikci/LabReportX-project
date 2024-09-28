@@ -65,9 +65,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public PagedResponse<GetUserResponse> getAllUsersFilteredAndSorted(int page, int size, String sortBy, String direction, String firstName,
-                                                                       String lastName, String username, String hospitalId, String email, String role, String gender,
-                                                                       Boolean deleted) {
+    public PagedResponse<GetUserResponse> getAllUsersFilteredAndSorted(int page, int size, String sortBy, String direction, String firstName, String lastName,
+                                                                       String username, String hospitalId, String email, String role, String gender, Boolean deleted) {
         Pageable pagingSort = PageRequest.of(page, size, Sort.Direction.valueOf(direction.toUpperCase()), sortBy);
         UserSpecification specification = new UserSpecification(firstName, lastName, username, hospitalId, email, role, gender, deleted);
         Page<User> userPage = this.userRepository.findAll(specification, pagingSort);

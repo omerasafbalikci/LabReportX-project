@@ -18,6 +18,7 @@ import java.util.regex.Pattern;
 public class MailService {
     @Value("${spring.mail.username}")
     private String fromEmail;
+
     private static final String EMAIL_REGEX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
     private final JavaMailSender javaMailSender;
 

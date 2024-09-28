@@ -32,28 +32,28 @@ public class Patient {
     @Column(name = "id", unique = true, nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "last_name", nullable = false)
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "tr_id_number", nullable = false, length = 11)
+    @Column(name = "tr_id_number", length = 11)
     private String trIdNumber;
 
-    @Column(name = "birth_date", nullable = false)
+    @Column(name = "birth_date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate birthDate;
 
     @Enumerated(value = EnumType.STRING)
-    @Column(name = "gender", nullable = false)
+    @Column(name = "gender")
     private Gender gender;
 
     @Enumerated(value = EnumType.STRING)
     @Column(name = "blood_type")
     private BloodType bloodType;
 
-    @Column(name = "phone_number", nullable = false)
+    @Column(name = "phone_number")
     private String phoneNumber;
 
     @Column(name = "email")

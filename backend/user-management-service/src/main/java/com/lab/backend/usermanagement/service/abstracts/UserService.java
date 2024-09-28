@@ -9,9 +9,8 @@ import com.lab.backend.usermanagement.entity.Role;
 public interface UserService {
     GetUserResponse getUserById(Long id);
 
-    PagedResponse<GetUserResponse> getAllUsersFilteredAndSorted(int page, int size, String sortBy, String direction, String firstName,
-                                                                String lastName, String username, String hospitalId, String email, String role, String gender,
-                                                                Boolean deleted);
+    PagedResponse<GetUserResponse> getAllUsersFilteredAndSorted(int page, int size, String sortBy, String direction, String firstName, String lastName,
+                                                                String username, String hospitalId, String email, String role, String gender, Boolean deleted);
 
     String getUsernameByEmail(String email);
 
