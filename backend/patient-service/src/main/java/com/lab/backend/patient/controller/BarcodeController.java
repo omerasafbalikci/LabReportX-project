@@ -20,9 +20,9 @@ public class BarcodeController {
     private final BarcodeService barcodeService;
 
     @GetMapping("/scan")
-    public ResponseEntity<GetPatientResponse> scanAndFetchPatient() {
+    public ResponseEntity<GetPatientResponse> scanAndSavePatient() {
         log.info("Received request to scan and fetch patient.");
-        GetPatientResponse response = this.barcodeService.scanAndFetchPatient();
+        GetPatientResponse response = this.barcodeService.scanAndSavePatient();
         log.info("Successfully fetched patient: {}", response);
         return ResponseEntity.ok(response);
     }

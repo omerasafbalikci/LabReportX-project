@@ -17,6 +17,4 @@ public interface ReportRepository extends JpaRepository<Report, Long>, JpaSpecif
 
     @Query("SELECT r.fileNumber FROM Report r WHERE r.deleted = false")
     List<String> findAllFileNumberAndDeletedFalse();
-
-
 }

@@ -80,6 +80,15 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
+    public String getEmail(String trIdNumber) {
+        Patient patient = this.patientRepository.findByTrIdNumberAndDeletedFalse(trIdNumber).orElseThrow(() -> {
+            log.error("Patient not found with TR ID number: {}", trIdNumber);
+            return new PatientNotFoundException("Patient not found with TR ID number: " + trIdNumber);
+        });
+        return patient.getEmail();
+    }
+
+    @Override
     public PagedResponse<GetPatientResponse> getAllPatientsFilteredAndSorted(int page, int size, String sortBy, String direction, String firstName,
                                                                              String lastName, String trIdNumber, String birthDate, String gender,
                                                                              String bloodType, String phoneNumber, String email, String chronicDisease,

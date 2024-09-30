@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 @Component
 public class RouteValidator {
     public static final List<String> openEndpoints = List.of(
-            "/auth"
+            "/auth", "/users/email"
     );
 
     public Predicate<ServerHttpRequest> isSecured =

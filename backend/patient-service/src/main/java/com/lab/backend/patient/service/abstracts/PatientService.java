@@ -20,6 +20,8 @@ public interface PatientService {
 
     Set<String> getChronicDiseasesById(Long id);
 
+    String getEmail(String trIdNumber);
+
     PagedResponse<GetPatientResponse> getAllPatientsFilteredAndSorted(int page, int size, String sortBy, String direction, String firstName,
                                                                       String lastName, String trIdNumber, String birthDate, String gender,
                                                                       String bloodType, String phoneNumber, String email, String chronicDisease,

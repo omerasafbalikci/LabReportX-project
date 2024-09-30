@@ -11,6 +11,7 @@ import com.lab.backend.patient.dto.responses.GetPatientResponse;
 import com.lab.backend.patient.entity.Patient;
 import com.lab.backend.patient.repository.PatientRepository;
 import com.lab.backend.patient.service.abstracts.BarcodeService;
+import com.lab.backend.patient.service.abstracts.PatientService;
 import com.lab.backend.patient.utilities.exceptions.CameraNotOpenedException;
 import com.lab.backend.patient.utilities.exceptions.InvalidTrIdNumberException;
 import com.lab.backend.patient.utilities.exceptions.PatientNotFoundException;
@@ -24,6 +25,7 @@ import org.opencv.core.MatOfByte;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.videoio.VideoCapture;
 import org.opencv.videoio.Videoio;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +34,7 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
@@ -49,7 +52,8 @@ public class BarcodeServiceImpl implements BarcodeService {
     }
 
     @Override
-    public GetPatientResponse scanAndFetchPatient() {
+    @CachePut(value = "patients", key = "#result.id", unless = "#result == null")
+    public GetPatientResponse scanAndSavePatient() {
         log.debug("Starting scanAndFetchPatient method.");
         VideoCapture camera = new VideoCapture(CAMERA_INDEX);
         if (!camera.isOpened()) {
@@ -69,7 +73,15 @@ public class BarcodeServiceImpl implements BarcodeService {
                 String barcodeData = readBarcodeFromImage(bufferedImage);
                 if (barcodeData != null) {
                     log.info("Barcode data read successfully: {}", barcodeData);
-                    return getPatientByTrIdNumber(barcodeData);
+                    GetPatientResponse patientResponse = getPatientByTrIdNumber(barcodeData);
+                    Patient patient = this.patientRepository.findByIdAndDeletedFalse(patientResponse.getId())
+                            .orElseThrow(() -> {
+                                log.error("Patient does not exist with id: {}", patientResponse.getId());
+                                return new PatientNotFoundException("Patient does not exist with id: " + patientResponse.getId());
+                            });
+                    patient.setLastPatientRegistrationTime(LocalDateTime.now());
+                    this.patientRepository.save(patient);
+                    return patientResponse;
                 } else {
                     log.warn("No barcode data found.");
                 }

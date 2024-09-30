@@ -35,7 +35,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.Base64;
+import java.util.List;
+import java.util.Objects;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -325,7 +328,7 @@ public class ReportServiceImpl implements ReportService {
             if (pdfBytes == null || pdfBytes.length == 0) {
                 throw new UnexpectedException("PDF data is empty or corrupted");
             }
-            String email = getEmail(encodedTrIdNumber);
+            String email = getEmail(jwt, encodedTrIdNumber);
             this.mailService.sendEmail(email, "Your Prescription", "Here is your prescription.", pdfBytes, "prescription.pdf");
             this.redisTemplate.delete("prescription:" + username);
             this.redisTemplate.delete("tc:" + username);
@@ -334,12 +337,13 @@ public class ReportServiceImpl implements ReportService {
         }
     }
 
-    private String getEmail(String trIdNumber) {
+    private String getEmail(String jwt, String trIdNumber) {
         String email;
         try {
             email = this.webClientBuilder.build().get()
                     .uri("http://patient-service/patients/email", uriBuilder ->
                             uriBuilder.queryParam("trIdNumber", trIdNumber).build())
+                    .header(HttpHeaders.AUTHORIZATION, "Bearer " + jwt)
                     .retrieve()
                     .bodyToMono(String.class)
                     .block();

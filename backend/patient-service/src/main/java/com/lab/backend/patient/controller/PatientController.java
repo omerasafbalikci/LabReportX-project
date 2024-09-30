@@ -51,6 +51,12 @@ public class PatientController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/email")
+    public ResponseEntity<String> getEmail(@RequestParam String trIdNumber) {
+        String response = this.patientService.getEmail(trIdNumber);
+        return ResponseEntity.ok(response);
+    }
+
     @GetMapping("/filtered-and-sorted")
     public ResponseEntity<PagedResponse<GetPatientResponse>> getAllPatientsFilteredAndSorted(
             @RequestParam(defaultValue = "0") int page,
