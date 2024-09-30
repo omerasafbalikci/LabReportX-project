@@ -22,7 +22,6 @@ public class ReportMapper {
         }
         Report report = new Report();
         report.setFileNumber(this.fileNumberGenerator.generateUniqueFileNumber());
-        report.setPatientTrIdNumber(request.getPatientTrIdNumber());
         report.setDiagnosisTitle(request.getDiagnosisTitle());
         report.setDiagnosisDetails(request.getDiagnosisDetails());
         report.setDate(LocalDateTime.now());

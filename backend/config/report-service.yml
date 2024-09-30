@@ -9,3 +9,19 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+
+pdf:
+  font-path: "fonts/times.ttf"
+  image-path: "/static/images/sevda.png"
+  hospital-name: "SEVDA HASTANESİ"
+
+chart:
+  font-path:
+    light: "fonts/rubik-light.ttf"
+    regular: "fonts/rubik-regular.ttf"
+  image-path:
+    gemini: "/static/images/gemini.png"
+    symbol: "/static/images/symbol.png"
+
+gemini:
+  api-key: AIzaSyCGsGASyqPU4uESMQ1gbCPxxlDHn2qyN-M
