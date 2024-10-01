@@ -32,7 +32,8 @@ public class GatewayConfig {
     public GatewayConfig() {
         this.endpointRoleMapping.put("/patients", List.of("SECRETARY"));
         this.endpointRoleMapping.put("/patients/tr-id-number", List.of("SECRETARY", "TECHNICIAN"));
-        this.endpointRoleMapping.put("/patients//email", List.of("SECRETARY", "TECHNICIAN"));
+        this.endpointRoleMapping.put("/patients/email", List.of("SECRETARY", "TECHNICIAN"));
+        this.endpointRoleMapping.put("/patients/check-tc", List.of("SECRETARY", "TECHNICIAN"));
         this.endpointRoleMapping.put("/barcode", List.of("SECRETARY"));
         this.endpointRoleMapping.put("/reports", List.of("TECHNICIAN"));
         this.endpointRoleMapping.put("/users", List.of("ADMIN"));

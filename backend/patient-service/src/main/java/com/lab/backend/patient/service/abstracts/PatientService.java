@@ -22,6 +22,8 @@ public interface PatientService {
 
     String getEmail(String trIdNumber);
 
+    Boolean checkTrIdNumber(String trIdNumber);
+
     PagedResponse<GetPatientResponse> getAllPatientsFilteredAndSorted(int page, int size, String sortBy, String direction, String firstName,
                                                                       String lastName, String trIdNumber, String birthDate, String gender,
                                                                       String bloodType, String phoneNumber, String email, String chronicDisease,

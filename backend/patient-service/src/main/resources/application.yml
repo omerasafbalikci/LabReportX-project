@@ -1,6 +1,5 @@
 spring:
   application:
     name: patient-service
-
-server:
-  port: 8083
+  config:
+    import: "configserver:http://localhost:8888"

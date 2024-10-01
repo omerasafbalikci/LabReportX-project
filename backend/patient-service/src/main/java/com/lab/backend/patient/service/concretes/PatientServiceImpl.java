@@ -89,6 +89,11 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
+    public Boolean checkTrIdNumber(String trIdNumber) {
+        return this.patientRepository.existsByTrIdNumberAndDeletedIsFalse(trIdNumber);
+    }
+
+    @Override
     public PagedResponse<GetPatientResponse> getAllPatientsFilteredAndSorted(int page, int size, String sortBy, String direction, String firstName,
                                                                              String lastName, String trIdNumber, String birthDate, String gender,
                                                                              String bloodType, String phoneNumber, String email, String chronicDisease,

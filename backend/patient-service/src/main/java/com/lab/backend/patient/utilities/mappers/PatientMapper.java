@@ -33,12 +33,12 @@ public class PatientMapper {
         patientResponse.setFirstName(patient.getFirstName());
         patientResponse.setLastName(patient.getLastName());
         patientResponse.setTrIdNumber(patient.getTrIdNumber());
-        patientResponse.setBirthDate(patient.getBirthDate());
-        patientResponse.setGender(patient.getGender());
-        patientResponse.setBloodType(patient.getBloodType());
+        patientResponse.setBirthDate(patient.getBirthDate().toString());
+        patientResponse.setGender(patient.getGender().toString());
+        patientResponse.setBloodType(patient.getBloodType().toString());
         patientResponse.setPhoneNumber(patient.getPhoneNumber());
         patientResponse.setEmail(patient.getEmail());
-        patientResponse.setLastPatientRegistrationTime(patient.getLastPatientRegistrationTime());
+        patientResponse.setLastPatientRegistrationTime(patient.getLastPatientRegistrationTime().toString());
         return patientResponse;
     }
 }

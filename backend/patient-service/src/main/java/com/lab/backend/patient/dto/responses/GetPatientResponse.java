@@ -24,10 +24,10 @@ public class GetPatientResponse implements Serializable {
     private String firstName;
     private String lastName;
     private String trIdNumber;
-    private LocalDate birthDate;
-    private Gender gender;
-    private BloodType bloodType;
+    private String birthDate;
+    private String gender;
+    private String bloodType;
     private String phoneNumber;
     private String email;
-    private LocalDateTime lastPatientRegistrationTime;
+    private String lastPatientRegistrationTime;
 }

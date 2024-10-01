@@ -57,6 +57,12 @@ public class PatientController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/check-tc")
+    public ResponseEntity<Boolean> checkTrIdNumber(@RequestParam String trIdNumber) {
+        Boolean response = this.patientService.checkTrIdNumber(trIdNumber);
+        return ResponseEntity.ok(response);
+    }
+
     @GetMapping("/filtered-and-sorted")
     public ResponseEntity<PagedResponse<GetPatientResponse>> getAllPatientsFilteredAndSorted(
             @RequestParam(defaultValue = "0") int page,

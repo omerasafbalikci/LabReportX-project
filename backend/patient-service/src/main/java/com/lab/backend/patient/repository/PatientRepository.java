@@ -3,6 +3,7 @@ package com.lab.backend.patient.repository;
 import com.lab.backend.patient.entity.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -24,5 +25,6 @@ public interface PatientRepository extends JpaRepository<Patient, Long>, JpaSpec
 
     boolean existsByTrIdNumberAndDeletedIsFalse(String trIdNumber);
 
+    @Query("SELECT p.chronicDiseases FROM Patient p WHERE p.id = :id AND p.deleted = false")
     Set<String> findChronicDiseasesByIdAndDeletedFalse(Long id);
 }
