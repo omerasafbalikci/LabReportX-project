@@ -28,7 +28,7 @@ public class PatientController {
     private final PatientService patientService;
 
     @GetMapping("/id/{id}")
-    public ResponseEntity<GetPatientResponse> getPatientById(@PathVariable Long id) {
+    public ResponseEntity<GetPatientResponse> getPatientById(@PathVariable("id") Long id) {
         log.trace("Received request to get patient by id: {}", id);
         GetPatientResponse response = this.patientService.getPatientById(id);
         log.info("Successfully fetched patient with id: {}", id);
@@ -44,7 +44,7 @@ public class PatientController {
     }
 
     @GetMapping("/chronic-diseases/{id}")
-    public ResponseEntity<Set<String>> getChronicDiseasesById(@PathVariable Long id) {
+    public ResponseEntity<Set<String>> getChronicDiseasesById(@PathVariable("id") Long id) {
         log.trace("Received request to get chronic diseases for patient id: {}", id);
         Set<String> response = this.patientService.getChronicDiseasesById(id);
         log.info("Successfully fetched chronic diseases for patient id: {}", id);
@@ -105,7 +105,7 @@ public class PatientController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deletePatient(@PathVariable Long id) {
+    public ResponseEntity<String> deletePatient(@PathVariable("id") Long id) {
         log.trace("Received request to delete patient with id: {}", id);
         this.patientService.deletePatient(id);
         log.info("Successfully deleted patient with id: {}", id);
@@ -113,7 +113,7 @@ public class PatientController {
     }
 
     @PutMapping("/restore/{id}")
-    public ResponseEntity<GetPatientResponse> restorePatient(@PathVariable Long id) {
+    public ResponseEntity<GetPatientResponse> restorePatient(@PathVariable("id") Long id) {
         log.trace("Received request to restore patient with id: {}", id);
         GetPatientResponse response = this.patientService.restorePatient(id);
         log.info("Successfully restored patient with id: {}", id);

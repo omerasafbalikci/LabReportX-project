@@ -80,8 +80,8 @@ public class PatientSpecification implements Specification<Patient> {
         }
         if (lastPatientRegistrationTime != null && !lastPatientRegistrationTime.isEmpty()) {
             List<DateTimeFormatter> formatters = Arrays.asList(
-                    DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSS"),
-                    DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS")
+                    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSS"),
+                    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS")
             );
             boolean parsed = false;
             for (DateTimeFormatter formatter : formatters) {

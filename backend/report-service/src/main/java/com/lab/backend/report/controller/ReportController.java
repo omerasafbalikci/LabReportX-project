@@ -29,7 +29,7 @@ public class ReportController {
     private final ReportService reportService;
 
     @GetMapping("/id/{id}")
-    public ResponseEntity<GetReportResponse> getReportById(@PathVariable Long id) {
+    public ResponseEntity<GetReportResponse> getReportById(@PathVariable("id") Long id) {
         GetReportResponse response = this.reportService.getReportById(id);
         return ResponseEntity.ok(response);
     }
@@ -97,37 +97,37 @@ public class ReportController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteReport(@PathVariable Long id) {
+    public ResponseEntity<String> deleteReport(@PathVariable("id") Long id) {
         this.reportService.deleteReport(id);
         return ResponseEntity.ok("Report has been successfully deleted.");
     }
 
     @PutMapping("/restore/{id}")
-    public ResponseEntity<GetReportResponse> restoreReport(@PathVariable Long id) {
+    public ResponseEntity<GetReportResponse> restoreReport(@PathVariable("id") Long id) {
         GetReportResponse response = this.reportService.restoreReport(id);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @PostMapping("/photo/{reportId}")
-    public ResponseEntity<String> addPhoto(@PathVariable Long reportId, @RequestParam("photo") MultipartFile photo) {
+    public ResponseEntity<String> addPhoto(@PathVariable("reportId") Long reportId, @RequestParam("photo") MultipartFile photo) {
         this.reportService.addPhoto(reportId, photo);
         return ResponseEntity.ok("Photo uploaded successfully.");
     }
 
     @GetMapping("/photo/{reportId}")
-    public ResponseEntity<byte[]> getPhoto(@PathVariable Long reportId) {
+    public ResponseEntity<byte[]> getPhoto(@PathVariable("reportId") Long reportId) {
         byte[] photoData = this.reportService.getPhoto(reportId);
         return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(photoData);
     }
 
     @DeleteMapping("/photo/{reportId}")
-    public ResponseEntity<String> deletePhoto(@PathVariable Long reportId) {
+    public ResponseEntity<String> deletePhoto(@PathVariable("reportId") Long reportId) {
         this.reportService.deletePhoto(reportId);
         return ResponseEntity.ok("Photo deleted successfully.");
     }
 
     @GetMapping("/report/{reportId}")
-    public ResponseEntity<Mono<byte[]>> getReportPdf(@PathVariable("id") Long reportId) {
+    public ResponseEntity<Mono<byte[]>> getReportPdf(@PathVariable("reportId") Long reportId) {
         Mono<byte[]> pdfBytes = this.reportService.getReportPdf(reportId);
 
         HttpHeaders headers = new HttpHeaders();
@@ -139,7 +139,7 @@ public class ReportController {
     }
 
     @GetMapping("/prescription/{reportId}")
-    public ResponseEntity<byte[]> getPrescription(@RequestHeader("X-Username") String username, @PathVariable("id") Long reportId) {
+    public ResponseEntity<byte[]> getPrescription(@RequestHeader("X-Username") String username, @PathVariable("reportId") Long reportId) {
         byte[] pdfBytes = this.reportService.getPrescription(username, reportId);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
