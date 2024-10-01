@@ -78,7 +78,7 @@ public class GeminiService {
 
         JsonObject safetySettings = new JsonObject();
         safetySettings.addProperty("category", "HARM_CATEGORY_HARASSMENT");
-        safetySettings.addProperty("thresold", "BLOCK_MEDIUM_AND_ABOVE");
+        safetySettings.addProperty("threshold", "BLOCK_MEDIUM_AND_ABOVE");
         JsonArray safetySettingsArray = new JsonArray();
         safetySettingsArray.add(safetySettings);
         requestJson.add("safetySettings", safetySettingsArray);
