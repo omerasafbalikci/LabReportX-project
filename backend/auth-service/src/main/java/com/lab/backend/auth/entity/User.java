@@ -3,8 +3,15 @@ package com.lab.backend.auth.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+/**
+ * User class represents a user entity in the database.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
 
 @Entity
 @Table(name = "users_auth")
@@ -43,7 +50,8 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    private List<Role> roles;
+    @Builder.Default
+    private List<Role> roles = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
     private List<Token> tokens;

@@ -8,6 +8,14 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 import java.util.Properties;
 
+/**
+ * The MailConfig class provides the necessary configuration for sending emails.
+ * This class configures the JavaMailSender interface to manage email sending operations
+ * with the required SMTP settings.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Configuration
 public class MailConfig {
     @Value("${spring.mail.username}")

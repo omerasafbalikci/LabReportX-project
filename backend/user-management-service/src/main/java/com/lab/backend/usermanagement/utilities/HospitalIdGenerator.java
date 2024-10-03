@@ -9,6 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * A utility class for generating unique hospital IDs.
+ * The generated IDs consist of uppercase letters and digits,
+ * with a fixed length defined by {@link #HOSPITAL_ID_LENGTH}.
+ * This class ensures that the generated hospital ID does not already exist in the database.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Component
 @AllArgsConstructor
 public class HospitalIdGenerator {

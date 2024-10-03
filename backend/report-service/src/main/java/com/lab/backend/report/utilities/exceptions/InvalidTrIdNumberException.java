@@ -1,7 +1,7 @@
-package com.lab.backend.patient.utilities.exceptions;
+package com.lab.backend.report.utilities.exceptions;
 
 /**
- * Exception thrown when an invalid TR ID number is encountered.
+ * Exception thrown when an invalid TR ID number format is detected.
  *
  * @author Ömer Asaf BALIKÇI
  */

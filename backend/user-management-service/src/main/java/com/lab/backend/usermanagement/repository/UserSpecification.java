@@ -10,6 +10,14 @@ import org.springframework.data.jpa.domain.Specification;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * UserSpecification is a class that implements {@link Specification} for the {@link User} entity.
+ * It is responsible for dynamically building SQL query predicates based on the provided filtering
+ * criteria.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @RequiredArgsConstructor
 public class UserSpecification implements Specification<User> {
     private final String firstName;

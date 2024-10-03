@@ -6,6 +6,12 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
+/**
+ * Report class represents a report entity in the database.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Entity
 @Table(name = "reports",
         indexes = {

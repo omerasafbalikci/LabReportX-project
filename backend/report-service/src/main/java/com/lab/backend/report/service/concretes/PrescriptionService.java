@@ -17,59 +17,64 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Service class responsible for generating PDF prescriptions based on diagnosis details.
+ * This service interacts with {@link GeminiService} to generate insights and uses iText for PDF generation.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Service
 @RequiredArgsConstructor
 @Log4j2
-public class DiagnosisService {
-    @Value("${chart.font-path.light}")
+public class PrescriptionService {
+    @Value("${prescription.font-path.light}")
     private String LIGHT_FONT_PATH;
 
-    @Value("${chart.font-path.regular}")
-    private String REGULAR_FONT_PATH;
-
-    @Value("${chart.image-path.gemini}")
+    @Value("${prescription.image-path.gemini}")
     private String GEMINI_IMAGE_PATH;
 
-    @Value("${chart.image-path.symbol}")
+    @Value("${prescription.image-path.symbol}")
     private String SYMBOL_IMAGE_PATH;
 
     private final GeminiService geminiService;
 
+    /**
+     * Generates a PDF prescription document based on the given diagnosis details.
+     *
+     * @param diagnosisDetails Details of the diagnosis to generate insights from.
+     * @return A byte array representing the generated PDF, or null if an error occurs.
+     */
     public byte[] generatePrescription(String diagnosisDetails) {
-        try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
+        log.info("Starting PDF generation for prescription.");
+        try (ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
             Document document = new Document();
-            PdfWriter.getInstance(document, baos);
+            PdfWriter.getInstance(document, byteArrayOutputStream);
             document.open();
-
-            // Fonts
+            log.debug("Loading light font from path: {}", LIGHT_FONT_PATH);
             BaseFont baseFontLight = BaseFont.createFont(LIGHT_FONT_PATH, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-            BaseFont baseFontRegular = BaseFont.createFont(REGULAR_FONT_PATH, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-            com.itextpdf.text.Font bold = new com.itextpdf.text.Font(baseFontRegular, 20, com.itextpdf.text.Font.BOLD);
-            com.itextpdf.text.Font boldBig = new com.itextpdf.text.Font(baseFontRegular, 30, com.itextpdf.text.Font.BOLD);
-            com.itextpdf.text.Font boldSmall = new com.itextpdf.text.Font(baseFontRegular, 14, com.itextpdf.text.Font.BOLD);
             com.itextpdf.text.Font lightSmall = new com.itextpdf.text.Font(baseFontLight, 12);
-            com.itextpdf.text.Font space = new com.itextpdf.text.Font(baseFontLight, 20, com.itextpdf.text.Font.BOLD);
 
-            // Adding Gemini Image
-            log.info("Gemini is active");
+            log.info("Gemini image is being added to the document.");
             try (InputStream inputStream = getClass().getResourceAsStream(GEMINI_IMAGE_PATH)) {
                 if (inputStream != null) {
                     com.itextpdf.text.Image image = com.itextpdf.text.Image.getInstance(IOUtils.toByteArray(inputStream));
                     image.scaleToFit(75, 75);
                     image.setAlignment(com.itextpdf.text.Image.ALIGN_CENTER);
                     document.add(image);
+                } else {
+                    log.warn("Gemini image not found at path: {}", GEMINI_IMAGE_PATH);
                 }
             }
 
             document.add(new Paragraph("\n"));
 
-            // Gemini Insight
-            log.info("Calling getInsight method in GeminiService");
+            log.info("Fetching insight data from GeminiService.");
             String diagnosisAnalysis = this.geminiService.getInsight(diagnosisDetails);
 
-            // Formatting and adding sale analysis
             if (diagnosisAnalysis != null) {
                 diagnosisAnalysis = diagnosisAnalysis.replace("\\*\\*", "").replace("##", "");
+                log.debug("Formatting diagnosis analysis into sentences.");
 
                 String[] sentencesArray = diagnosisAnalysis.split("(?<=[.!?])\\s*");
                 List<String> sentences = new ArrayList<>();
@@ -82,7 +87,7 @@ public class DiagnosisService {
                 aiTable.setWidths(new float[]{0.05f, 0.95f});
 
                 for (String sentence : sentences) {
-                    // Adding symbol image to the table
+                    log.debug("Adding symbol image and sentence to PDF table.");
                     try (InputStream symbolInputStream = getClass().getResourceAsStream(SYMBOL_IMAGE_PATH)) {
                         if (symbolInputStream != null) {
                             com.itextpdf.text.Image symbolImage = com.itextpdf.text.Image.getInstance(IOUtils.toByteArray(symbolInputStream));
@@ -95,24 +100,24 @@ public class DiagnosisService {
                             leftCell.setBorder(com.itextpdf.text.Rectangle.NO_BORDER);
 
                             aiTable.addCell(leftCell);
+                        } else {
+                            log.warn("Symbol image not found at path: {}", SYMBOL_IMAGE_PATH);
                         }
                     }
 
-                    // Adding sentence to the table
                     PdfPCell rightCell = new PdfPCell(new Phrase(sentence, lightSmall));
                     rightCell.setHorizontalAlignment(Element.ALIGN_LEFT);
                     rightCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
                     rightCell.setBorder(com.itextpdf.text.Rectangle.NO_BORDER);
-
                     aiTable.addCell(rightCell);
                 }
-
                 document.add(aiTable);
+            } else {
+                log.warn("No insight data returned from GeminiService.");
             }
-
-            // Closing document
             document.close();
-            return baos.toByteArray();
+            log.info("PDF generation completed successfully.");
+            return byteArrayOutputStream.toByteArray();
         } catch (DocumentException | IOException e) {
             log.error("Error generating prescription PDF", e);
             return null;

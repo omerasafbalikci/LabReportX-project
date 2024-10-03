@@ -1,14 +1,10 @@
 package com.lab.backend.patient.dto.responses;
 
-import com.lab.backend.patient.entity.BloodType;
-import com.lab.backend.patient.entity.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 /**
  * DTO for patient used as response.

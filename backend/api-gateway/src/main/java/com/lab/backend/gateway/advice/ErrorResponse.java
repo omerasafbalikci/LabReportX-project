@@ -8,6 +8,13 @@ import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
 
+/**
+ * ErrorResponse represents the structure of the error response returned by the API.
+ * It includes fields such as status, error, message, timestamp, and optional details like debugMessage and path.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)

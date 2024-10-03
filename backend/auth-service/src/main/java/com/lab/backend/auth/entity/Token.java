@@ -3,6 +3,12 @@ package com.lab.backend.auth.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+/**
+ * Token class represents a token entity in the database.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Entity(name = "tokens")
 @Getter
 @Setter

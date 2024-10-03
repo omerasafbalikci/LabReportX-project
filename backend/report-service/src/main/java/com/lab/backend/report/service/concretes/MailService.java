@@ -18,6 +18,12 @@ import org.springframework.stereotype.Service;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
+/**
+ * Service for sending emails with optional attachments.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Service
 @RequiredArgsConstructor
 @Log4j2
@@ -28,14 +34,32 @@ public class MailService {
     private static final String EMAIL_REGEX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
     private final JavaMailSender javaMailSender;
 
+    /**
+     * Sends an email to the specified recipient with the given subject and text.
+     * <p>
+     * If an attachment is provided, the email will be sent as a MIME message with the attachment included.
+     * </p>
+     *
+     * @param to             the recipient's email address
+     * @param subject        the subject of the email
+     * @param text           the body of the email
+     * @param attachment     optional byte array for the attachment
+     * @param attachmentName the name of the attachment file
+     * @throws InvalidEmailFormatException if the email configuration is invalid
+     * @throws EmailSendingFailedException if sending the email fails
+     */
     public void sendEmail(String to, String subject, String text, byte[] attachment, String attachmentName) {
+        log.info("Preparing to send email to: {}", to);
         if (fromEmail == null || fromEmail.isEmpty() || to == null || to.isEmpty()) {
+            log.error("Email configuration is missing. From: {}, To: {}", fromEmail, to);
             throw new InvalidEmailFormatException("Email configuration is missing.");
         }
         if (isEmailNotValid(fromEmail)) {
+            log.error("From email address format is invalid: {}", fromEmail);
             throw new InvalidEmailFormatException("From email address format is invalid: " + fromEmail);
         }
         if (isEmailNotValid(to)) {
+            log.error("Email address format is invalid: {}", to);
             throw new InvalidEmailFormatException("Email address format is invalid: " + to);
         }
         try {
@@ -45,11 +69,14 @@ public class MailService {
             message.setText(text);
             message.setFrom(this.fromEmail);
             if (attachment != null && attachment.length > 0) {
+                log.info("Sending email with attachment to: {}", to);
                 sendEmailWithAttachment(message, attachment, attachmentName);
             } else {
+                log.info("Sending email without attachment to: {}", to);
                 this.javaMailSender.send(message);
             }
         } catch (MailException e) {
+            log.error("Failed to send email: {}", e.getMessage());
             throw new EmailSendingFailedException("Failed to send email: " + e.getMessage());
         }
     }
@@ -60,6 +87,7 @@ public class MailService {
         try {
             helper = new MimeMessageHelper(mimeMessage, true);
         } catch (MessagingException e) {
+            log.error("Error initializing MimeMessageHelper: {}", e.getMessage());
             throw new UnexpectedException("Error initializing MimeMessageHelper: " + e.getMessage());
         }
         try {
@@ -69,7 +97,9 @@ public class MailService {
             helper.setFrom(Objects.requireNonNull(message.getFrom(), "Sender email cannot be null"));
             helper.addAttachment(attachmentName, new ByteArrayDataSource(attachment, "application/pdf"));
             this.javaMailSender.send(mimeMessage);
+            log.info("Email with attachment sent successfully to: {}", (Object) message.getTo());
         } catch (MessagingException e) {
+            log.error("Failed to send email with attachment: {}", e.getMessage());
             throw new EmailSendingFailedException("Failed to send email with attachment: " + e.getMessage());
         }
     }

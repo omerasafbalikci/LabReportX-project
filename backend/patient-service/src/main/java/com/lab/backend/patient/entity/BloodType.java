@@ -2,6 +2,8 @@ package com.lab.backend.patient.entity;
 
 /**
  * Enum for blood type of patient.
+ *
+ * @author Ömer Asaf BALIKÇI
  */
 
 public enum BloodType {

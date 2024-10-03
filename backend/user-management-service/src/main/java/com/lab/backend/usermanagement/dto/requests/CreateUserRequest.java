@@ -12,6 +12,12 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * DTO for user used as input.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

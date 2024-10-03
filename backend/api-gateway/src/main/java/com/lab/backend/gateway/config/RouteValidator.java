@@ -6,10 +6,18 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.function.Predicate;
 
+/**
+ * RouteValidator is a utility class responsible for determining which routes require security checks
+ * and role-based authorization in the application. It uses predefined open endpoints to bypass security checks
+ * and allows flexible configurations for secured routes.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Component
 public class RouteValidator {
     public static final List<String> openEndpoints = List.of(
-            "/auth", "/users/email"
+            "/auth"
     );
 
     public Predicate<ServerHttpRequest> isSecured =

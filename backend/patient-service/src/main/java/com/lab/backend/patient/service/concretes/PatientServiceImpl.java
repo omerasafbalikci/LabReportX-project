@@ -21,6 +21,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -40,6 +41,13 @@ public class PatientServiceImpl implements PatientService {
     private final PatientRepository patientRepository;
     private final PatientMapper patientMapper;
 
+    /**
+     * Retrieves a patient's details by their ID.
+     *
+     * @param id the ID of the patient to retrieve
+     * @return the patient details wrapped in a GetPatientResponse object
+     * @throws PatientNotFoundException if no patient is found with the given ID
+     */
     @Override
     @Cacheable(value = "patients", key = "#id", unless = "#result == null")
     public GetPatientResponse getPatientById(Long id) {
@@ -53,6 +61,13 @@ public class PatientServiceImpl implements PatientService {
         return response;
     }
 
+    /**
+     * Retrieves a patient's details by their TR ID number.
+     *
+     * @param trIdNumber the TR ID number of the patient to retrieve
+     * @return the patient details wrapped in a GetPatientResponse object
+     * @throws PatientNotFoundException if no patient is found with the given TR ID number
+     */
     @Override
     @Cacheable(value = "patients", key = "#trIdNumber", unless = "#result == null")
     public GetPatientResponse getPatientByTrIdNumber(String trIdNumber) {
@@ -66,6 +81,12 @@ public class PatientServiceImpl implements PatientService {
         return response;
     }
 
+    /**
+     * Retrieves a set of chronic diseases associated with a patient by their ID.
+     *
+     * @param id the ID of the patient to retrieve chronic diseases for
+     * @return a set of chronic diseases for the patient
+     */
     @Override
     @Cacheable(value = "chronicDiseases", key = "#id", unless = "#result == null")
     public Set<String> getChronicDiseasesById(Long id) {
@@ -79,20 +100,70 @@ public class PatientServiceImpl implements PatientService {
         return chronicDiseases;
     }
 
+    /**
+     * Retrieves the email of a patient based on their TR ID number.
+     *
+     * @param trIdNumber the TR ID number of the patient
+     * @return the email of the patient
+     * @throws PatientNotFoundException if no patient is found with the given TR ID number
+     */
     @Override
     public String getEmail(String trIdNumber) {
+        log.trace("Fetching email for patient with TR ID number: {}", trIdNumber);
         Patient patient = this.patientRepository.findByTrIdNumberAndDeletedFalse(trIdNumber).orElseThrow(() -> {
-            log.error("Patient not found with TR ID number: {}", trIdNumber);
+            log.error("Patient not found with TrIdNumber: {}", trIdNumber);
             return new PatientNotFoundException("Patient not found with TR ID number: " + trIdNumber);
         });
+        log.info("Successfully retrieved email for patient with TR ID number: {}", trIdNumber);
         return patient.getEmail();
     }
 
+    /**
+     * Checks if a patient is registered within the last 6 hours based on their TR ID number.
+     *
+     * @param trIdNumber the TR ID number of the patient
+     * @return true if the patient is registered within the last 6 hours, false otherwise
+     * @throws PatientNotFoundException if no patient is found with the given TR ID number
+     */
     @Override
-    public Boolean checkTrIdNumber(String trIdNumber) {
-        return this.patientRepository.existsByTrIdNumberAndDeletedIsFalse(trIdNumber);
+    public Boolean isPatientRegistered(String trIdNumber) {
+        log.trace("Checking registration time for patient with TR ID number: {}", trIdNumber);
+        Patient patient = this.patientRepository.findByTrIdNumberAndDeletedFalse(trIdNumber).orElseThrow(() -> {
+            log.error("Patient not found with TR ID number {}", trIdNumber);
+            return new PatientNotFoundException("Patient not found with TR ID number: " + trIdNumber);
+        });
+        LocalDateTime currentTime = LocalDateTime.now();
+        LocalDateTime lastRegistrationTime = patient.getLastPatientRegistrationTime();
+        Duration duration = Duration.between(lastRegistrationTime, currentTime);
+        boolean isRegisteredRecently = !(duration.toHours() > 6);
+        if (isRegisteredRecently) {
+            log.info("Patient with TR ID number {} is registered within the last 6 hours.", trIdNumber);
+        } else {
+            log.info("Patient with TR ID number {} is not registered within the last 6 hours.", trIdNumber);
+        }
+        return isRegisteredRecently;
     }
 
+    /**
+     * Retrieves a paginated list of patients filtered and sorted by the given parameters.
+     *
+     * @param page                        the page number to retrieve
+     * @param size                        the number of patients per page
+     * @param sortBy                      the field to sort by
+     * @param direction                   the sorting direction (ASC or DESC)
+     * @param firstName                   the first name filter
+     * @param lastName                    the last name filter
+     * @param trIdNumber                  the TR ID number filter
+     * @param birthDate                   the date of birth filter
+     * @param gender                      the gender filter
+     * @param bloodType                   the blood type filter
+     * @param phoneNumber                 the phone number filter
+     * @param email                       the email filter
+     * @param chronicDisease              the chronic disease filter
+     * @param lastPatientRegistrationTime the last registration time filter
+     * @param deleted                     the deletion status filter
+     * @return a paginated response containing the filtered and sorted patient list
+     */
     @Override
     public PagedResponse<GetPatientResponse> getAllPatientsFilteredAndSorted(int page, int size, String sortBy, String direction, String firstName,
                                                                              String lastName, String trIdNumber, String birthDate, String gender,
@@ -121,6 +192,12 @@ public class PatientServiceImpl implements PatientService {
         );
     }
 
+    /**
+     * Saves a new patient or updates an existing patient's registration time.
+     *
+     * @param createPatientRequest the request object containing patient data
+     * @return the saved patient details wrapped in a GetPatientResponse object
+     */
     @Override
     @CachePut(value = "patients", key = "#result.id", unless = "#result == null")
     public GetPatientResponse savePatient(CreatePatientRequest createPatientRequest) {
@@ -128,7 +205,6 @@ public class PatientServiceImpl implements PatientService {
         Patient savedPatient;
         Patient existingPatient = this.patientRepository.findByTrIdNumberAndDeletedFalse(createPatientRequest.getTrIdNumber())
                 .orElse(null);
-
         if (existingPatient != null) {
             log.debug("Patient already exists. Updating registration time for TR ID number: {}", createPatientRequest.getTrIdNumber());
             existingPatient.setLastPatientRegistrationTime(LocalDateTime.now());
@@ -144,6 +220,13 @@ public class PatientServiceImpl implements PatientService {
         return patientResponse;
     }
 
+    /**
+     * Updates an existing patient's details.
+     *
+     * @param updatePatientRequest the request object containing updated patient data
+     * @return the updated patient details wrapped in a GetPatientResponse object
+     * @throws PatientNotFoundException if no patient is found with the given ID
+     */
     @Override
     @CachePut(value = "patients", key = "#result.id", unless = "#result == null")
     public GetPatientResponse updatePatient(UpdatePatientRequest updatePatientRequest) {
@@ -174,6 +257,12 @@ public class PatientServiceImpl implements PatientService {
         }
     }
 
+    /**
+     * Marks a patient as deleted, effectively soft deleting the record.
+     *
+     * @param id the ID of the patient to delete
+     * @throws PatientNotFoundException if no patient is found with the given ID
+     */
     @Override
     @CacheEvict(value = "patients", key = "#id")
     public void deletePatient(Long id) {
@@ -187,6 +276,12 @@ public class PatientServiceImpl implements PatientService {
         log.info("Successfully deleted patient with ID: {}", id);
     }
 
+    /**
+     * Restores a soft-deleted patient record.
+     *
+     * @param id the ID of the patient to restore
+     * @throws PatientNotFoundException if no patient is found with the given ID
+     */
     @Override
     @CachePut(value = "patients", key = "#id", unless = "#result == null")
     public GetPatientResponse restorePatient(Long id) {

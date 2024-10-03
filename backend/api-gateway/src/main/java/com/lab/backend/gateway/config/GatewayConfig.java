@@ -10,6 +10,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * GatewayConfig is a configuration class for setting up routes and route filters in the Spring Cloud Gateway.
+ * It also defines role-based access control using the {@link AuthGatewayFilterFactory}.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Configuration
 public class GatewayConfig {
     @Value("${route.auth}")
@@ -29,11 +36,15 @@ public class GatewayConfig {
 
     private final Map<String, List<String>> endpointRoleMapping = new HashMap<>();
 
+    /**
+     * Constructs a GatewayConfig object and sets up the role mappings for various endpoints.
+     * Role mappings define which user roles are allowed to access specific endpoints.
+     */
     public GatewayConfig() {
         this.endpointRoleMapping.put("/patients", List.of("SECRETARY"));
         this.endpointRoleMapping.put("/patients/tr-id-number", List.of("SECRETARY", "TECHNICIAN"));
         this.endpointRoleMapping.put("/patients/email", List.of("SECRETARY", "TECHNICIAN"));
-        this.endpointRoleMapping.put("/patients/check-tc", List.of("SECRETARY", "TECHNICIAN"));
+        this.endpointRoleMapping.put("/patients/check-tr-id-number", List.of("SECRETARY", "TECHNICIAN"));
         this.endpointRoleMapping.put("/barcode", List.of("SECRETARY"));
         this.endpointRoleMapping.put("/reports", List.of("TECHNICIAN"));
         this.endpointRoleMapping.put("/users", List.of("ADMIN"));
@@ -41,6 +52,14 @@ public class GatewayConfig {
         this.endpointRoleMapping.put("/users/update/me", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
     }
 
+    /**
+     * Defines the routes for the application, setting up path matching, role-based authorization filters,
+     * and circuit breakers with fallback URIs for different services (auth, user management, patient, report).
+     *
+     * @param builder                  the RouteLocatorBuilder for defining routes and their filters.
+     * @param authGatewayFilterFactory the custom filter factory for JWT validation and role-based authorization.
+     * @return the constructed RouteLocator containing all routes and their configurations.
+     */
     @Bean
     public RouteLocator routes(RouteLocatorBuilder builder, AuthGatewayFilterFactory authGatewayFilterFactory) {
         return builder.routes()

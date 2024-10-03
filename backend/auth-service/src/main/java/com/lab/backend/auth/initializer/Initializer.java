@@ -11,6 +11,13 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ * This component initializes the application with default roles and users when the application starts.
+ * Implements {@link CommandLineRunner} to execute the initialization logic upon application startup.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Component
 @RequiredArgsConstructor
 public class Initializer implements CommandLineRunner {

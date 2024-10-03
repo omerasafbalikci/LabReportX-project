@@ -5,6 +5,13 @@ import com.lab.backend.patient.dto.responses.GetPatientResponse;
 import com.lab.backend.patient.entity.Patient;
 import org.springframework.stereotype.Component;
 
+/**
+ * Mapper class for converting between {@link CreatePatientRequest} and {@link Patient},
+ * as well as between {@link Patient} and {@link GetPatientResponse}.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Component
 public class PatientMapper {
     public Patient toPatient(CreatePatientRequest request) {

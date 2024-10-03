@@ -10,6 +10,12 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
+/**
+ * Mapper class to convert between Report entity and corresponding DTOs.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Component
 @AllArgsConstructor
 public class ReportMapper {

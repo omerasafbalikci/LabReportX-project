@@ -27,6 +27,12 @@ import java.util.Set;
 public class PatientController {
     private final PatientService patientService;
 
+    /**
+     * Retrieves a patient by their ID.
+     *
+     * @param id the ID of the patient
+     * @return ResponseEntity containing the {@link GetPatientResponse}
+     */
     @GetMapping("/id/{id}")
     public ResponseEntity<GetPatientResponse> getPatientById(@PathVariable("id") Long id) {
         log.trace("Received request to get patient by id: {}", id);
@@ -35,6 +41,12 @@ public class PatientController {
         return ResponseEntity.ok(response);
     }
 
+    /**
+     * Retrieves a patient by their TR ID number.
+     *
+     * @param trIdNumber the TR ID number of the patient
+     * @return ResponseEntity containing the {@link GetPatientResponse}
+     */
     @GetMapping("/tr-id-number")
     public ResponseEntity<GetPatientResponse> getPatientByTrIdNumber(@RequestParam String trIdNumber) {
         log.trace("Received request to get patient by TR ID number: {}", trIdNumber);
@@ -43,6 +55,12 @@ public class PatientController {
         return ResponseEntity.ok(response);
     }
 
+    /**
+     * Retrieves chronic diseases for a patient by their ID.
+     *
+     * @param id the ID of the patient
+     * @return ResponseEntity containing a set of chronic diseases
+     */
     @GetMapping("/chronic-diseases/{id}")
     public ResponseEntity<Set<String>> getChronicDiseasesById(@PathVariable("id") Long id) {
         log.trace("Received request to get chronic diseases for patient id: {}", id);
@@ -51,18 +69,59 @@ public class PatientController {
         return ResponseEntity.ok(response);
     }
 
+    /**
+     * Retrieves the email of a patient by their TR ID number.
+     *
+     * @param trIdNumber the TR ID number of the patient
+     * @return ResponseEntity containing the email of the patient
+     */
     @GetMapping("/email")
     public ResponseEntity<String> getEmail(@RequestParam String trIdNumber) {
+        log.trace("Received request to get email for TR ID number: {}", trIdNumber);
         String response = this.patientService.getEmail(trIdNumber);
+        log.info("Successfully fetched email for TR ID number: {}", trIdNumber);
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/check-tc")
-    public ResponseEntity<Boolean> checkTrIdNumber(@RequestParam String trIdNumber) {
-        Boolean response = this.patientService.checkTrIdNumber(trIdNumber);
+    /**
+     * Checks if a patient is registered with the specified TR ID number.
+     * This endpoint receives a TR ID number as a request parameter and
+     * returns a boolean value indicating whether the patient is registered
+     * within the last 6 hours.
+     *
+     * @param trIdNumber the TR ID number of the patient to check
+     * @return ResponseEntity containing a boolean value:
+     * true if the patient is registered within the last 6 hours,
+     * false otherwise
+     */
+    @GetMapping("/check-tr-id-number")
+    public ResponseEntity<Boolean> isPatientRegistered(@RequestParam String trIdNumber) {
+        log.trace("Received request to check existence of patient with TR ID number: {}", trIdNumber);
+        Boolean response = this.patientService.isPatientRegistered(trIdNumber);
+        log.info("TR ID number check for {} returned: {}", trIdNumber, response);
         return ResponseEntity.ok(response);
     }
 
+    /**
+     * Retrieves filtered and sorted list of patients based on various parameters.
+     *
+     * @param page                        the page number
+     * @param size                        the size of the page
+     * @param sortBy                      the field to sort by
+     * @param direction                   the direction of sorting (ASC or DESC)
+     * @param firstName                   the first name of the patient
+     * @param lastName                    the last name of the patient
+     * @param trIdNumber                  the TR ID number of the patient
+     * @param birthDate                   the date of birth of the patient
+     * @param gender                      the gender of the patient
+     * @param bloodType                   the blood type of the patient
+     * @param phoneNumber                 the phone number of the patient
+     * @param email                       the email of the patient
+     * @param chronicDisease              the chronic disease of the patient
+     * @param lastPatientRegistrationTime the last registration time of the patient
+     * @param deleted                     whether the patient is deleted
+     * @return ResponseEntity containing the paged and filtered list of patients
+     */
     @GetMapping("/filtered-and-sorted")
     public ResponseEntity<PagedResponse<GetPatientResponse>> getAllPatientsFilteredAndSorted(
             @RequestParam(defaultValue = "0") int page,
@@ -88,6 +147,12 @@ public class PatientController {
         return ResponseEntity.ok(response);
     }
 
+    /**
+     * Saves a new patient to the system.
+     *
+     * @param createPatientRequest the request containing the patient details
+     * @return ResponseEntity containing the saved patient's details
+     */
     @PostMapping
     public ResponseEntity<GetPatientResponse> savePatient(@RequestBody @Valid CreatePatientRequest createPatientRequest) {
         log.trace("Received request to save patient: {}", createPatientRequest);
@@ -96,6 +161,12 @@ public class PatientController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+    /**
+     * Updates an existing patient in the system.
+     *
+     * @param updatePatientRequest the request containing the updated patient details
+     * @return ResponseEntity containing the updated patient's details
+     */
     @PutMapping
     public ResponseEntity<GetPatientResponse> updatePatient(@RequestBody @Valid UpdatePatientRequest updatePatientRequest) {
         log.trace("Received request to update patient: {}", updatePatientRequest);
@@ -104,6 +175,12 @@ public class PatientController {
         return ResponseEntity.ok(response);
     }
 
+    /**
+     * Soft deletes a patient by their ID.
+     *
+     * @param id the ID of the patient to be deleted
+     * @return ResponseEntity containing a success message
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deletePatient(@PathVariable("id") Long id) {
         log.trace("Received request to delete patient with id: {}", id);
@@ -112,6 +189,12 @@ public class PatientController {
         return ResponseEntity.ok("Patient has been successfully deleted.");
     }
 
+    /**
+     * Restores a soft-deleted patient by their ID.
+     *
+     * @param id the ID of the patient to be restored
+     * @return ResponseEntity containing the restored patient's details
+     */
     @PutMapping("/restore/{id}")
     public ResponseEntity<GetPatientResponse> restorePatient(@PathVariable("id") Long id) {
         log.trace("Received request to restore patient with id: {}", id);

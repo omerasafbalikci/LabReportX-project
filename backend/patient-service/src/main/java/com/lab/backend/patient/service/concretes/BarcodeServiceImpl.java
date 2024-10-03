@@ -11,7 +11,6 @@ import com.lab.backend.patient.dto.responses.GetPatientResponse;
 import com.lab.backend.patient.entity.Patient;
 import com.lab.backend.patient.repository.PatientRepository;
 import com.lab.backend.patient.service.abstracts.BarcodeService;
-import com.lab.backend.patient.service.abstracts.PatientService;
 import com.lab.backend.patient.utilities.exceptions.CameraNotOpenedException;
 import com.lab.backend.patient.utilities.exceptions.InvalidTrIdNumberException;
 import com.lab.backend.patient.utilities.exceptions.PatientNotFoundException;
@@ -26,7 +25,6 @@ import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.videoio.VideoCapture;
 import org.opencv.videoio.Videoio;
 import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.imageio.ImageIO;
@@ -35,6 +33,14 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.time.LocalDateTime;
+
+/**
+ * This class implements the {@link BarcodeService} interface and handles the scanning
+ * and generation of barcodes related to patient information. It leverages the OpenCV
+ * library for capturing camera input and ZXing for barcode generation and decoding.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
 
 @Service
 @RequiredArgsConstructor
@@ -51,6 +57,15 @@ public class BarcodeServiceImpl implements BarcodeService {
         OpenCV.loadLocally();
     }
 
+    /**
+     * Scans a barcode using the default camera, retrieves the corresponding patient's information
+     * by their TR ID number, and updates their last registration time. The patient is saved in the
+     * cache after retrieval.
+     *
+     * @return GetPatientResponse the patient information or null if the barcode is not found.
+     * @throws CameraNotOpenedException if the camera cannot be opened.
+     * @throws UnexpectedException      if an error occurs while processing the barcode or frame.
+     */
     @Override
     @CachePut(value = "patients", key = "#result.id", unless = "#result == null")
     public GetPatientResponse scanAndSavePatient() {
@@ -95,6 +110,13 @@ public class BarcodeServiceImpl implements BarcodeService {
         return null;
     }
 
+    /**
+     * Converts an OpenCV {@link Mat} object to a {@link BufferedImage}.
+     *
+     * @param mat the matrix to be converted.
+     * @return the resulting BufferedImage.
+     * @throws UnexpectedException if an error occurs during the conversion process.
+     */
     private BufferedImage matToBufferedImage(Mat mat) {
         try {
             log.debug("Converting Mat to BufferedImage.");
@@ -108,11 +130,18 @@ public class BarcodeServiceImpl implements BarcodeService {
             }
         } catch (Exception e) {
             log.error("Failed to convert Mat to BufferedImage.", e);
-            throw new UnexpectedException("Failed to convert Mat to BufferedImage.");
+            throw new UnexpectedException("Failed to convert Mat to BufferedImage." + e);
         }
     }
 
-    @Cacheable(value = "patients", key = "#trIdNumber", unless = "#result == null")
+    /**
+     * Fetches a patient by their TR ID number from the database. If the patient is found,
+     * it returns their information, otherwise, throws a {@link PatientNotFoundException}.
+     *
+     * @param trIdNumber the TR ID number of the patient.
+     * @return the GetPatientResponse containing patient information.
+     * @throws PatientNotFoundException if the patient is not found in the database.
+     */
     private GetPatientResponse getPatientByTrIdNumber(String trIdNumber) {
         log.trace("Fetching patient by TR ID number: {}", trIdNumber);
         Patient patient = this.patientRepository.findByTrIdNumberAndDeletedFalse(trIdNumber).orElseThrow(() -> {
@@ -124,6 +153,13 @@ public class BarcodeServiceImpl implements BarcodeService {
         return response;
     }
 
+    /**
+     * Reads and decodes a barcode from the given image.
+     *
+     * @param bufferedImage the image containing the barcode.
+     * @return the decoded barcode data or null if not found.
+     * @throws UnexpectedException if an error occurs during barcode reading.
+     */
     private String readBarcodeFromImage(BufferedImage bufferedImage) {
         try {
             log.debug("Reading barcode from image.");
@@ -142,6 +178,16 @@ public class BarcodeServiceImpl implements BarcodeService {
         }
     }
 
+    /**
+     * Generates a QR code barcode for the specified TR ID number, validates it,
+     * and returns it as a byte array in PNG format.
+     *
+     * @param trIdNumber the TR ID number for which the barcode is generated.
+     * @return the generated barcode as a byte array in PNG format.
+     * @throws InvalidTrIdNumberException if the TR ID number is invalid.
+     * @throws PatientNotFoundException   if the patient with the given TR ID number does not exist.
+     * @throws UnexpectedException        if an error occurs while generating the barcode.
+     */
     @Override
     public byte[] generateBarcodeForPatient(String trIdNumber) {
         if (trIdNumber == null || trIdNumber.trim().isEmpty()) {

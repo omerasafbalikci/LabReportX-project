@@ -11,6 +11,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * RabbitMQConfig is a configuration class for setting up RabbitMQ components.
+ * This class defines the necessary queues, exchanges, and bindings for the messaging system.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Configuration
 public class RabbitMQConfig {
     @Value("${rabbitmq.exchange}")

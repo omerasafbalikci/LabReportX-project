@@ -15,6 +15,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Specification for filtering reports based on various criteria.
+ * Implements Spring Data JPA's Specification interface for dynamic queries.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 public class ReportSpecification implements Specification<Report> {
     private final String fileNumber;
     private final String patientTrIdNumber;
@@ -25,6 +32,18 @@ public class ReportSpecification implements Specification<Report> {
     private String technicianUsername;
     private final Boolean deleted;
 
+    /**
+     * Constructor for initializing the specification with all fields.
+     *
+     * @param fileNumber         the file number of the report
+     * @param patientTrIdNumber  the TR ID number of the patient
+     * @param diagnosisTitle     the title of the diagnosis
+     * @param diagnosisDetails   the details of the diagnosis
+     * @param date               the date of the report
+     * @param photoPath          the path to the photo associated with the report
+     * @param technicianUsername the username of the technician
+     * @param deleted            the deletion status of the report
+     */
     public ReportSpecification(String fileNumber, String patientTrIdNumber, String diagnosisTitle, String diagnosisDetails, String date, String photoPath, String technicianUsername, Boolean deleted) {
         this.fileNumber = fileNumber;
         this.patientTrIdNumber = patientTrIdNumber;
@@ -36,6 +55,17 @@ public class ReportSpecification implements Specification<Report> {
         this.deleted = deleted;
     }
 
+    /**
+     * Constructor for initializing the specification without the technician username.
+     *
+     * @param fileNumber        the file number of the report
+     * @param patientTrIdNumber the TR ID number of the patient
+     * @param diagnosisTitle    the title of the diagnosis
+     * @param diagnosisDetails  the details of the diagnosis
+     * @param date              the date of the report
+     * @param photoPath         the path to the photo associated with the report
+     * @param deleted           the deletion status of the report
+     */
     public ReportSpecification(String fileNumber, String patientTrIdNumber, String diagnosisTitle, String diagnosisDetails, String date, String photoPath, Boolean deleted) {
         this.fileNumber = fileNumber;
         this.patientTrIdNumber = patientTrIdNumber;

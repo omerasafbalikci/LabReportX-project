@@ -11,6 +11,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Initializer class is responsible for creating default users upon application startup.
+ * This class implements the {@link CommandLineRunner} interface and ensures that specific users
+ * with predefined roles are initialized in the database if they do not already exist.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Component
 @RequiredArgsConstructor
 public class Initializer implements CommandLineRunner {

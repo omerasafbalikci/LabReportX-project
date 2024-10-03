@@ -11,6 +11,13 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * ErrorResponse represents the structure of the error response returned by the API.
+ * It includes fields such as status, error, message, timestamp, and optional details like debugMessage and path.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)

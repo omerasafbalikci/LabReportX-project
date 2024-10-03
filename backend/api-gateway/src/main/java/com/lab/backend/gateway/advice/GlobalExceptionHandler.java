@@ -12,19 +12,46 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.*;
 import reactor.core.publisher.Mono;
 
+/**
+ * GlobalExceptionHandler handles exceptions in a Spring WebFlux application and
+ * returns custom error responses based on the type of exception.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Component
 @Order(-2)
 public class GlobalExceptionHandler extends AbstractErrorWebExceptionHandler {
+    /**
+     * Constructor to initialize GlobalExceptionHandler with necessary components.
+     *
+     * @param errorAttributes    the error attributes containing error details.
+     * @param webProperties      properties to configure web resources.
+     * @param applicationContext the application context.
+     */
     public GlobalExceptionHandler(ErrorAttributes errorAttributes, WebProperties webProperties, ApplicationContext applicationContext) {
         super(errorAttributes, webProperties.getResources(), applicationContext);
         setMessageWriters(ServerCodecConfigurer.create().getWriters());
     }
 
+    /**
+     * Defines a routing function that matches all requests and handles them with
+     * the {@link #renderErrorResponse(ServerRequest)} method.
+     *
+     * @param errorAttributes the error attributes to use for error handling.
+     * @return the RouterFunction that routes the error requests.
+     */
     @Override
     protected RouterFunction<ServerResponse> getRoutingFunction(ErrorAttributes errorAttributes) {
         return RouterFunctions.route(RequestPredicates.all(), this::renderErrorResponse);
     }
 
+    /**
+     * Renders the error response based on the type of error that occurred.
+     *
+     * @param request the server request that triggered the error.
+     * @return a Mono of ServerResponse with a structured error response.
+     */
     private Mono<ServerResponse> renderErrorResponse(ServerRequest request) {
         Throwable error = getError(request);
         HttpStatus status = determineHttpStatus(error);
@@ -33,6 +60,12 @@ public class GlobalExceptionHandler extends AbstractErrorWebExceptionHandler {
         return ServerResponse.status(status).bodyValue(errorResponse);
     }
 
+    /**
+     * Determines the appropriate HTTP status code based on the type of exception.
+     *
+     * @param error the exception that was thrown.
+     * @return the corresponding HTTP status.
+     */
     private HttpStatus determineHttpStatus(Throwable error) {
         if (error instanceof TokenNotFoundException) {
             return HttpStatus.NOT_FOUND;

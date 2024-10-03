@@ -14,6 +14,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Set;
 
+/**
+ * This class initializes the patient data when the application starts.
+ * It checks for the existence of specific patients by their TR ID number and adds them to the database
+ * if they do not exist. The initialization is performed as a CommandLineRunner, so it runs once on application startup.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Component
 @RequiredArgsConstructor
 public class Initializer implements CommandLineRunner {
@@ -21,7 +29,7 @@ public class Initializer implements CommandLineRunner {
 
     @Override
     @Transactional
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         initializePatient();
     }
 

@@ -9,6 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Utility class responsible for generating unique file numbers for reports.
+ * Ensures that the generated file number is unique and does not already exist in the database.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Component
 @AllArgsConstructor
 public class FileNumberGenerator {

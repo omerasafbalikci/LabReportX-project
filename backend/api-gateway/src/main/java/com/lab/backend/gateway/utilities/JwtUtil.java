@@ -16,9 +16,16 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 import javax.crypto.SecretKey;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
+
+/**
+ * Utility class for handling JWT token operations such as validation, role extraction, and checking if a token
+ * is logged out. This class also integrates Redis for token management.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
 
 @Component
 @Log4j2
@@ -37,8 +44,12 @@ public class JwtUtil {
 
     private JedisPool jedisPool;
 
+    /**
+     * Initializes the Jedis connection pool used for Redis operations.
+     */
     @PostConstruct
     public void init() {
+        log.info("Initializing Redis connection pool with host: {}, port: {}", redisHost, redisPort);
         JedisPoolConfig poolConfig = new JedisPoolConfig();
         poolConfig.setMaxTotal(128);
         poolConfig.setMaxIdle(128);
@@ -46,45 +57,90 @@ public class JwtUtil {
         poolConfig.setTestOnBorrow(true);
         poolConfig.setTestOnReturn(true);
         this.jedisPool = new JedisPool(poolConfig, redisHost, Integer.parseInt(redisPort));
+        log.info("Redis connection pool initialized successfully.");
     }
 
+    /**
+     * Validates the provided JWT token and returns the associated claims.
+     *
+     * @param token the JWT token to validate.
+     * @return the claims extracted from the token if valid.
+     * @throws InvalidTokenException if the token is invalid.
+     */
     public Claims getClaimsAndValidate(String token) {
+        log.debug("Validating token: {}", token);
         try {
-            return Jwts.parser().verifyWith(getSignInKey()).build().parseSignedClaims(token).getPayload();
+            Claims claims = Jwts.parser().verifyWith(getSignInKey()).build().parseSignedClaims(token).getPayload();
+            log.info("Token validated successfully. Claims: {}", claims);
+            return claims;
         } catch (JwtException | IllegalArgumentException exception) {
+            log.error("Invalid token: {}", token, exception);
             throw new InvalidTokenException("Invalid token");
-        } finally {
-
         }
     }
 
+    /**
+     * Checks if the provided token has been logged out using Redis.
+     *
+     * @param token the JWT token to check.
+     * @return true if the token is logged out, false otherwise.
+     * @throws TokenNotFoundException if the token or its status is not found in Redis.
+     */
     public boolean isLoggedOut(String token) {
+        log.debug("Checking if token is logged out: {}", token);
         try (Jedis jedis = this.jedisPool.getResource()) {
             String tokenIdStr = jedis.get(token);
             if (tokenIdStr == null) {
+                log.error("Token not found in Redis: {}", token);
                 throw new TokenNotFoundException("Token not found in Redis");
             }
 
             long tokenId = Long.parseLong(tokenIdStr);
             String key = "token:" + tokenId + ":is_logged_out";
-
             String value = jedis.get(key);
             if (value == null) {
+                log.error("Logout status information not found for token: {}", token);
                 throw new TokenNotFoundException("Token's logout status information not found in Redis");
             }
-            return Boolean.parseBoolean(value);
-        } finally {
-
+            boolean isLoggedOut = Boolean.parseBoolean(value);
+            log.info("Token {} logout status: {}", token, isLoggedOut);
+            return isLoggedOut;
         }
     }
 
+    /**
+     * Extracts roles from the provided claims.
+     *
+     * @param claims the claims extracted from the JWT token.
+     * @return a list of roles associated with the claims.
+     */
     public List<String> getRoles(Claims claims) {
-        return (List<String>) claims.get(this.AUTHORITIES_KEY);
-
+        log.debug("Extracting roles from claims: {}", claims);
+        Object rolesObject = claims.get(this.AUTHORITIES_KEY);
+        if (rolesObject instanceof List<?>) {
+            List<String> roles = new ArrayList<>();
+            for (Object role : (List<?>) rolesObject) {
+                if (role instanceof String) {
+                    roles.add((String) role);
+                }
+            }
+            log.info("Roles extracted: {}", roles);
+            return roles;
+        }
+        log.warn("No roles found in claims or roles are not of the expected type.");
+        return Collections.emptyList();
     }
 
+    /**
+     * Retrieves the secret key used for signing the JWT token.
+     *
+     * @return the secret key.
+     */
     private SecretKey getSignInKey() {
+        log.debug("Retrieving secret key for JWT validation.");
         byte[] keyBytes = Decoders.BASE64URL.decode(this.SECRET_KEY);
-        return Keys.hmacShaKeyFor(keyBytes);
+        SecretKey secretKey = Keys.hmacShaKeyFor(keyBytes);
+        log.debug("Secret key retrieved successfully.");
+        return secretKey;
     }
 }

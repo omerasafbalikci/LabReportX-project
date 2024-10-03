@@ -15,10 +15,9 @@ pdf:
   image-path: "/static/images/sevda.png"
   hospital-name: "SEVDA HASTANESİ"
 
-chart:
+prescription:
   font-path:
     light: "fonts/rubik-light.ttf"
-    regular: "fonts/rubik-regular.ttf"
   image-path:
     gemini: "/static/images/gemini.png"
     symbol: "/static/images/symbol.png"

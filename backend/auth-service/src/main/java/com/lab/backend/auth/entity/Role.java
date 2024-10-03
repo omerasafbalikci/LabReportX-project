@@ -7,6 +7,12 @@ import lombok.*;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Role class represents a role entity in the database.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Entity
 @Table(name = "roles")
 @Getter
