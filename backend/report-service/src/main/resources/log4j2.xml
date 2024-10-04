@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN" monitorInterval="30">
+<Configuration status="INFO" monitorInterval="30">
     <Properties>
         <!-- Define the log file location -->
         <Property name="LOG_DIR">logs</Property>
         <Property name="SERVICE">report-service</Property>
         <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %c{1} - %msg%n</Property>
-        <Property name="CONSOLE_LOG_PATTERN">%style{%d{yyyy-MM-dd HH:mm:ss.SSS}}{bright,cyan} [%style{%thread}{bright,green}] %highlight{%-5level} %style{%c{1}}{bright,yellow} - %msg%n</Property>
+        <Property name="CONSOLE_LOG_PATTERN">%style{%d{yyyy-MM-dd HH:mm:ss.SSS}}{bright,cyan}
+            [%style{%thread}{bright,green}] %highlight{%-5level} %style{%c{1}}{bright,yellow} - %msg%n
+        </Property>
         <Property name="CURRENT_DATE">${date:yyyy-MM-dd}</Property>
     </Properties>
 
@@ -18,15 +20,15 @@
         <!-- Rolling File Appender -->
         <RollingFile name="RollingFile" fileName="${LOG_DIR}/${SERVICE}/${CURRENT_DATE}.log"
                      filePattern="${LOG_DIR}/${SERVICE}-%d{yyyy-MM-dd}-%i.log">
-            <PatternLayout pattern="${LOG_PATTERN}" />
+            <PatternLayout pattern="${LOG_PATTERN}"/>
             <Policies>
-                <TimeBasedTriggeringPolicy />
-                <SizeBasedTriggeringPolicy size="10MB" />
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="10MB"/>
             </Policies>
             <DefaultRolloverStrategy max="5">
                 <Delete basePath="${LOG_DIR}" maxDepth="2">
-                    <IfFileName glob="*/api-gateway.*.log.gz" />
-                    <IfLastModified age="P30D" />
+                    <IfFileName glob="*/api-gateway.*.log.gz"/>
+                    <IfLastModified age="P30D"/>
                 </Delete>
             </DefaultRolloverStrategy>
         </RollingFile>
@@ -35,14 +37,14 @@
     <Loggers>
         <!-- Root Logger -->
         <Root level="INFO">
-            <AppenderRef ref="Console" />
-            <AppenderRef ref="RollingFile" />
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
         </Root>
 
         <!-- Application Loggers -->
-        <Logger name="com.lab.backend" level="trace" additivity="false">
-            <AppenderRef ref="Console" />
-            <AppenderRef ref="RollingFile" />
+        <Logger name="com.lab.backend" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
         </Logger>
     </Loggers>
 </Configuration>
