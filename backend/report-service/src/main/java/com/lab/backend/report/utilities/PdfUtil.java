@@ -41,7 +41,6 @@ public class PdfUtil {
             Font boldSmall = new Font(baseFont, 16, Font.BOLD);
             Font light = new Font(baseFont, 12);
             Font hyphen = new Font(baseFont, 12, Font.BOLD);
-            Font space = new Font(baseFont, 15, Font.BOLD);
 
             Paragraph hyphens = new Paragraph("-----------------------------------------------------------------------------------------", hyphen);
             hyphens.setAlignment(Paragraph.ALIGN_CENTER);

@@ -34,11 +34,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.time.LocalDateTime;
-import java.util.Base64;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -270,7 +266,7 @@ public class ReportServiceImpl implements ReportService {
         if (updateReportRequest.getDiagnosisDetails() != null && !existingReport.getDiagnosisDetails().equals(updateReportRequest.getDiagnosisDetails())) {
             existingReport.setDiagnosisDetails(updateReportRequest.getDiagnosisDetails());
         }
-        existingReport.setDate(LocalDateTime.now());
+        existingReport.setDate(new Date());
         this.reportRepository.save(existingReport);
         GetReportResponse response = this.reportMapper.toGetReportResponse(existingReport);
         log.info("Report with id: {} successfully updated by technician: {}", updateReportRequest.getId(), username);

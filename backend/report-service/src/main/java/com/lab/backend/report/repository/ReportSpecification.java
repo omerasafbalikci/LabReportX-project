@@ -1,6 +1,7 @@
 package com.lab.backend.report.repository;
 
 import com.lab.backend.report.entity.Report;
+import com.lab.backend.report.utilities.exceptions.UnexpectedException;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;
@@ -8,11 +9,10 @@ import jakarta.persistence.criteria.Root;
 import lombok.NonNull;
 import org.springframework.data.jpa.domain.Specification;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -104,17 +104,12 @@ public class ReportSpecification implements Specification<Report> {
             predicates.add(criteriaBuilder.like(root.get("diagnosisDetails"), "%" + diagnosisDetails + "%"));
         }
         if (date != null && !date.isEmpty()) {
-            List<DateTimeFormatter> formatters = Arrays.asList(
-                    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSS"),
-                    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS")
-            );
-            for (DateTimeFormatter formatter : formatters) {
-                try {
-                    LocalDateTime dateTime = LocalDateTime.parse(date, formatter);
-                    predicates.add(criteriaBuilder.equal(root.get("date"), dateTime));
-                    break;
-                } catch (DateTimeParseException ignored) {
-                }
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            try {
+                Date d = dateFormat.parse(date);
+                predicates.add(criteriaBuilder.equal(root.get("date"), d));
+            } catch (ParseException e) {
+                throw new UnexpectedException("Error parsing date: " + e);
             }
         }
         if (photoPath != null && !photoPath.isEmpty()) {

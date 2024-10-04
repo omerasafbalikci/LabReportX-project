@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * Mapper class to convert between Report entity and corresponding DTOs.
@@ -30,7 +30,7 @@ public class ReportMapper {
         report.setFileNumber(this.fileNumberGenerator.generateUniqueFileNumber());
         report.setDiagnosisTitle(request.getDiagnosisTitle());
         report.setDiagnosisDetails(request.getDiagnosisDetails());
-        report.setDate(LocalDateTime.now());
+        report.setDate(new Date());
         return report;
     }
 

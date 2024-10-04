@@ -1,10 +1,9 @@
 package com.lab.backend.report.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * Report class represents a report entity in the database.
@@ -40,9 +39,8 @@ public class Report {
     @Column(name = "diagnosis_details", columnDefinition = "TEXT")
     private String diagnosisDetails;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     @Column(name = "date")
-    private LocalDateTime date;
+    private Date date;
 
     @Column(name = "photo_path")
     private String photoPath;
