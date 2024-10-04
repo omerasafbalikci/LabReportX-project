@@ -23,9 +23,14 @@
                 <TimeBasedTriggeringPolicy />
                 <SizeBasedTriggeringPolicy size="10MB" />
             </Policies>
+            <DefaultRolloverStrategy max="5">
+                <Delete basePath="${LOG_DIR}" maxDepth="2">
+                    <IfFileName glob="*/api-gateway.*.log.gz" />
+                    <IfLastModified age="P30D" />
+                </Delete>
+            </DefaultRolloverStrategy>
         </RollingFile>
     </Appenders>
-
 
     <Loggers>
         <!-- Root Logger -->
@@ -35,10 +40,9 @@
         </Root>
 
         <!-- Application Loggers -->
-        <Logger name="com.bit" level="trace" additivity="false">
+        <Logger name="com.lab.backend" level="trace" additivity="false">
             <AppenderRef ref="Console" />
             <AppenderRef ref="RollingFile" />
-
         </Logger>
     </Loggers>
 </Configuration>
