@@ -1,0 +1,248 @@
+2024-10-04 03:21:58.561 [main] INFO  DiscoveryServerApplication - Starting DiscoveryServerApplication using Java 17.0.11 with PID 12248 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\discovery-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-04 03:21:58.577 [main] INFO  DiscoveryServerApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-04 03:21:58.608 [main] INFO  ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-10-04 03:21:58.608 [main] INFO  ConfigServerConfigDataLoader - Located environment: name=discovery-server, profiles=[default], label=null, version=41c1eb5d0fb78102079fc863c38e3f98f87782d4, state=null
+2024-10-04 03:21:59.793 [main] INFO  GenericScope - BeanFactory id=27fa30f8-6ad4-3c22-b5f7-660e2421446b
+2024-10-04 03:21:59.840 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-10-04 03:21:59.840 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-04 03:22:00.153 [main] INFO  TomcatWebServer - Tomcat initialized with port 8761 (http)
+2024-10-04 03:22:00.153 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2024-10-04 03:22:00.168 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-04 03:22:00.168 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-04 03:22:00.247 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-04 03:22:00.247 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1623 ms
+2024-10-04 03:22:01.247 [main] INFO  DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-10-04 03:22:01.247 [main] INFO  DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-10-04 03:22:01.434 [main] INFO  DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-10-04 03:22:01.434 [main] INFO  DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-10-04 03:22:02.625 [main] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-10-04 03:22:02.656 [main] INFO  InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-10-04 03:22:02.687 [main] INFO  DiscoveryClient - Initializing Eureka in region us-east-1
+2024-10-04 03:22:02.687 [main] INFO  DiscoveryClient - Client configured to neither register nor query for data.
+2024-10-04 03:22:02.687 [main] INFO  DiscoveryClient - Discovery Client initialized at timestamp 1728001322687 with initial instances count: 0
+2024-10-04 03:22:02.734 [main] INFO  DefaultEurekaServerContext - Initializing ...
+2024-10-04 03:22:02.734 [main] INFO  PeerEurekaNodes - Adding new peer nodes [http://localhost:8761/eureka/]
+2024-10-04 03:22:02.765 [main] INFO  DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-10-04 03:22:02.765 [main] INFO  DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-10-04 03:22:02.765 [main] INFO  DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-10-04 03:22:02.765 [main] INFO  DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-10-04 03:22:02.812 [main] INFO  PeerEurekaNodes - Replica node URL:  http://localhost:8761/eureka/
+2024-10-04 03:22:02.832 [main] INFO  AbstractInstanceRegistry - Finished initializing remote region registries. All known remote regions: []
+2024-10-04 03:22:02.833 [main] INFO  DefaultEurekaServerContext - Initialized
+2024-10-04 03:22:02.845 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-04 03:22:02.916 [main] INFO  EurekaServiceRegistry - Registering application DISCOVERY-SERVER with eureka with status UP
+2024-10-04 03:22:02.926 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8761"]
+2024-10-04 03:22:02.941 [Thread-10] INFO  EurekaServerBootstrap - isAws returned false
+2024-10-04 03:22:02.941 [Thread-10] INFO  EurekaServerBootstrap - Initialized server context
+2024-10-04 03:22:02.942 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Got 1 instances from neighboring DS node
+2024-10-04 03:22:02.942 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Renew threshold is: 1
+2024-10-04 03:22:02.942 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Changing status to UP
+2024-10-04 03:22:02.952 [Thread-10] INFO  EurekaServerInitializerConfiguration - Started Eureka Server
+2024-10-04 03:22:02.963 [main] INFO  TomcatWebServer - Tomcat started on port 8761 (http) with context path '/'
+2024-10-04 03:22:02.964 [main] INFO  EurekaAutoServiceRegistration - Updating port to 8761
+2024-10-04 03:22:03.089 [main] INFO  DiscoveryServerApplication - Started DiscoveryServerApplication in 6.8 seconds (process running for 8.018)
+2024-10-04 03:23:02.943 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:24:02.949 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2024-10-04 03:25:02.962 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 13ms
+2024-10-04 03:25:32.002 [SpringApplicationShutdownHook] INFO  EurekaServiceRegistry - Unregistering application DISCOVERY-SERVER with eureka with status DOWN
+2024-10-04 03:25:32.177 [SpringApplicationShutdownHook] INFO  EurekaServerBootstrap - Shutting down Eureka Server..
+2024-10-04 03:25:32.180 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shutting down ...
+2024-10-04 03:25:32.196 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shut down
+2024-10-04 03:25:32.196 [SpringApplicationShutdownHook] INFO  EurekaServerBootstrap - Eureka Service is now shutdown...
+2024-10-04 03:25:32.197 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shutting down ...
+2024-10-04 03:25:32.202 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shut down
+2024-10-04 03:25:32.211 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Shutting down DiscoveryClient ...
+2024-10-04 03:25:32.212 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Completed shut down of DiscoveryClient
+2024-10-04 03:25:49.191 [main] INFO  DiscoveryServerApplication - Starting DiscoveryServerApplication using Java 17.0.11 with PID 12952 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\discovery-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-04 03:25:49.199 [main] INFO  DiscoveryServerApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-04 03:25:49.236 [main] INFO  ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-10-04 03:25:49.236 [main] INFO  ConfigServerConfigDataLoader - Located environment: name=discovery-server, profiles=[default], label=null, version=41c1eb5d0fb78102079fc863c38e3f98f87782d4, state=null
+2024-10-04 03:25:50.579 [main] INFO  GenericScope - BeanFactory id=27fa30f8-6ad4-3c22-b5f7-660e2421446b
+2024-10-04 03:25:50.643 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-10-04 03:25:50.645 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-04 03:25:50.994 [main] INFO  TomcatWebServer - Tomcat initialized with port 8761 (http)
+2024-10-04 03:25:51.006 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2024-10-04 03:25:51.009 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-04 03:25:51.010 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-04 03:25:51.087 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-04 03:25:51.089 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1848 ms
+2024-10-04 03:25:52.474 [main] INFO  DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-10-04 03:25:52.474 [main] INFO  DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-10-04 03:25:52.673 [main] INFO  DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-10-04 03:25:52.674 [main] INFO  DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-10-04 03:25:53.963 [main] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-10-04 03:25:53.986 [main] INFO  InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-10-04 03:25:54.017 [main] INFO  DiscoveryClient - Initializing Eureka in region us-east-1
+2024-10-04 03:25:54.017 [main] INFO  DiscoveryClient - Client configured to neither register nor query for data.
+2024-10-04 03:25:54.025 [main] INFO  DiscoveryClient - Discovery Client initialized at timestamp 1728001554025 with initial instances count: 0
+2024-10-04 03:25:54.064 [main] INFO  DefaultEurekaServerContext - Initializing ...
+2024-10-04 03:25:54.066 [main] INFO  PeerEurekaNodes - Adding new peer nodes [http://localhost:8761/eureka/]
+2024-10-04 03:25:54.116 [main] INFO  DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-10-04 03:25:54.116 [main] INFO  DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-10-04 03:25:54.116 [main] INFO  DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-10-04 03:25:54.116 [main] INFO  DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-10-04 03:25:54.176 [main] INFO  PeerEurekaNodes - Replica node URL:  http://localhost:8761/eureka/
+2024-10-04 03:25:54.192 [main] INFO  AbstractInstanceRegistry - Finished initializing remote region registries. All known remote regions: []
+2024-10-04 03:25:54.193 [main] INFO  DefaultEurekaServerContext - Initialized
+2024-10-04 03:25:54.210 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-04 03:25:54.321 [main] INFO  EurekaServiceRegistry - Registering application DISCOVERY-SERVER with eureka with status UP
+2024-10-04 03:25:54.327 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8761"]
+2024-10-04 03:25:54.352 [Thread-10] INFO  EurekaServerBootstrap - isAws returned false
+2024-10-04 03:25:54.353 [Thread-10] INFO  EurekaServerBootstrap - Initialized server context
+2024-10-04 03:25:54.353 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Got 1 instances from neighboring DS node
+2024-10-04 03:25:54.353 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Renew threshold is: 1
+2024-10-04 03:25:54.354 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Changing status to UP
+2024-10-04 03:25:54.366 [Thread-10] INFO  EurekaServerInitializerConfiguration - Started Eureka Server
+2024-10-04 03:25:54.402 [main] INFO  TomcatWebServer - Tomcat started on port 8761 (http) with context path '/'
+2024-10-04 03:25:54.409 [main] INFO  EurekaAutoServiceRegistration - Updating port to 8761
+2024-10-04 03:25:54.579 [main] INFO  DiscoveryServerApplication - Started DiscoveryServerApplication in 7.25 seconds (process running for 8.354)
+2024-10-04 03:26:54.356 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:27:54.357 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:28:54.361 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2024-10-04 03:29:36.752 [SpringApplicationShutdownHook] INFO  EurekaServiceRegistry - Unregistering application DISCOVERY-SERVER with eureka with status DOWN
+2024-10-04 03:29:36.932 [SpringApplicationShutdownHook] INFO  EurekaServerBootstrap - Shutting down Eureka Server..
+2024-10-04 03:29:36.936 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shutting down ...
+2024-10-04 03:29:36.954 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shut down
+2024-10-04 03:29:36.954 [SpringApplicationShutdownHook] INFO  EurekaServerBootstrap - Eureka Service is now shutdown...
+2024-10-04 03:29:36.955 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shutting down ...
+2024-10-04 03:29:36.965 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shut down
+2024-10-04 03:29:36.980 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Shutting down DiscoveryClient ...
+2024-10-04 03:29:36.981 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Completed shut down of DiscoveryClient
+2024-10-04 03:29:47.012 [main] INFO  DiscoveryServerApplication - Starting DiscoveryServerApplication using Java 17.0.11 with PID 10828 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\discovery-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-04 03:29:47.020 [main] INFO  DiscoveryServerApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-04 03:29:47.062 [main] INFO  ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-10-04 03:29:47.062 [main] INFO  ConfigServerConfigDataLoader - Located environment: name=discovery-server, profiles=[default], label=null, version=41c1eb5d0fb78102079fc863c38e3f98f87782d4, state=null
+2024-10-04 03:29:48.417 [main] INFO  GenericScope - BeanFactory id=27fa30f8-6ad4-3c22-b5f7-660e2421446b
+2024-10-04 03:29:48.501 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-10-04 03:29:48.506 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-04 03:29:48.936 [main] INFO  TomcatWebServer - Tomcat initialized with port 8761 (http)
+2024-10-04 03:29:48.952 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2024-10-04 03:29:48.959 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-04 03:29:48.959 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-04 03:29:49.094 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-04 03:29:49.097 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2031 ms
+2024-10-04 03:29:50.347 [main] INFO  DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-10-04 03:29:50.347 [main] INFO  DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-10-04 03:29:50.549 [main] INFO  DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-10-04 03:29:50.549 [main] INFO  DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-10-04 03:29:51.994 [main] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-10-04 03:29:52.018 [main] INFO  InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-10-04 03:29:52.055 [main] INFO  DiscoveryClient - Initializing Eureka in region us-east-1
+2024-10-04 03:29:52.055 [main] INFO  DiscoveryClient - Client configured to neither register nor query for data.
+2024-10-04 03:29:52.062 [main] INFO  DiscoveryClient - Discovery Client initialized at timestamp 1728001792061 with initial instances count: 0
+2024-10-04 03:29:52.105 [main] INFO  DefaultEurekaServerContext - Initializing ...
+2024-10-04 03:29:52.107 [main] INFO  PeerEurekaNodes - Adding new peer nodes [http://localhost:8761/eureka/]
+2024-10-04 03:29:52.146 [main] INFO  DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-10-04 03:29:52.147 [main] INFO  DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-10-04 03:29:52.147 [main] INFO  DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-10-04 03:29:52.147 [main] INFO  DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-10-04 03:29:52.200 [main] INFO  PeerEurekaNodes - Replica node URL:  http://localhost:8761/eureka/
+2024-10-04 03:29:52.212 [main] INFO  AbstractInstanceRegistry - Finished initializing remote region registries. All known remote regions: []
+2024-10-04 03:29:52.213 [main] INFO  DefaultEurekaServerContext - Initialized
+2024-10-04 03:29:52.232 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-04 03:29:52.331 [main] INFO  EurekaServiceRegistry - Registering application DISCOVERY-SERVER with eureka with status UP
+2024-10-04 03:29:52.338 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8761"]
+2024-10-04 03:29:52.352 [Thread-10] INFO  EurekaServerBootstrap - isAws returned false
+2024-10-04 03:29:52.353 [Thread-10] INFO  EurekaServerBootstrap - Initialized server context
+2024-10-04 03:29:52.353 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Got 1 instances from neighboring DS node
+2024-10-04 03:29:52.354 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Renew threshold is: 1
+2024-10-04 03:29:52.354 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Changing status to UP
+2024-10-04 03:29:52.362 [Thread-10] INFO  EurekaServerInitializerConfiguration - Started Eureka Server
+2024-10-04 03:29:52.372 [main] INFO  TomcatWebServer - Tomcat started on port 8761 (http) with context path '/'
+2024-10-04 03:29:52.374 [main] INFO  EurekaAutoServiceRegistration - Updating port to 8761
+2024-10-04 03:29:52.551 [main] INFO  DiscoveryServerApplication - Started DiscoveryServerApplication in 7.379 seconds (process running for 8.593)
+2024-10-04 03:30:52.356 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:31:52.355 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:32:22.730 [http-nio-8761-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-04 03:32:22.731 [http-nio-8761-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-04 03:32:22.732 [http-nio-8761-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
+2024-10-04 03:32:22.978 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance API-GATEWAY/asaf:api-gateway:8080 with status UP (replication=false)
+2024-10-04 03:32:23.694 [http-nio-8761-exec-3] INFO  AbstractInstanceRegistry - Registered instance API-GATEWAY/asaf:api-gateway:8080 with status UP (replication=true)
+2024-10-04 03:32:52.363 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 8ms
+2024-10-04 03:33:11.167 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status UP (replication=false)
+2024-10-04 03:33:11.701 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status UP (replication=true)
+2024-10-04 03:33:52.364 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-10-04 03:33:56.335 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance USER-MANAGEMENT-SERVICE/asaf:user-management-service:8082 with status UP (replication=false)
+2024-10-04 03:33:56.903 [http-nio-8761-exec-1] INFO  AbstractInstanceRegistry - Registered instance USER-MANAGEMENT-SERVICE/asaf:user-management-service:8082 with status UP (replication=true)
+2024-10-04 03:34:50.916 [http-nio-8761-exec-5] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=false)
+2024-10-04 03:34:51.453 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=true)
+2024-10-04 03:34:52.365 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:35:27.759 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance REPORT-SERVICE/asaf:report-service:8084 with status UP (replication=false)
+2024-10-04 03:35:28.274 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance REPORT-SERVICE/asaf:report-service:8084 with status UP (replication=true)
+2024-10-04 03:35:52.365 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:36:52.380 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 14ms
+2024-10-04 03:37:52.381 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:38:52.381 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:39:52.382 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:40:52.383 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-10-04 03:41:52.395 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 12ms
+2024-10-04 03:42:52.396 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:43:52.396 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:44:52.236 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  PeerAwareInstanceRegistryImpl - Current renewal threshold is : 10
+2024-10-04 03:44:52.396 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:45:52.397 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-10-04 03:46:52.397 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:47:52.398 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-04 03:48:14.556 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance API-GATEWAY/asaf:api-gateway:8080 with status DOWN (replication=false)
+2024-10-04 03:48:14.704 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status DOWN (replication=false)
+2024-10-04 03:48:14.824 [SpringApplicationShutdownHook] INFO  EurekaServiceRegistry - Unregistering application DISCOVERY-SERVER with eureka with status DOWN
+2024-10-04 03:48:15.297 [SpringApplicationShutdownHook] INFO  EurekaServerBootstrap - Shutting down Eureka Server..
+2024-10-04 03:48:15.442 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shutting down ...
+2024-10-04 03:48:15.461 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2024-10-04 03:48:15.159 [TaskBatchingWorker-target_localhost-2] ERROR ReplicationTaskProcessor - Network level connection to peer localhost; retrying after delay
+jakarta.ws.rs.ProcessingException: org.apache.http.NoHttpResponseException: localhost:8761 failed to respond
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:534) ~[jersey-apache-connector-3.1.8.jar:?]
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:674) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:709) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:703) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:391) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:703) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:673) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345) ~[jersey-client-3.1.8.jar:?]
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116) ~[eureka-core-jersey3-2.0.2.jar:2.0.2]
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80) [eureka-core-2.0.2.jar:2.0.2]
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:190) [eureka-core-2.0.2.jar:2.0.2]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: org.apache.http.NoHttpResponseException: localhost:8761 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:486) ~[jersey-apache-connector-3.1.8.jar:?]
+	... 16 more
+2024-10-04 03:48:15.485 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2024-10-04 03:48:15.487 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2024-10-04 03:48:15.488 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2024-10-04 03:48:15.503 [Eureka-Jersey3Client-Conn-Cleaner2] ERROR EurekaJersey3ClientImpl - Cannot clean connections
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54) ~[jersey-client-3.1.8.jar:?]
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:347) [eureka-client-jersey3-2.0.2.jar:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-10-04 03:48:15.871 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shut down
+2024-10-04 03:48:15.872 [SpringApplicationShutdownHook] INFO  EurekaServerBootstrap - Eureka Service is now shutdown...
+2024-10-04 03:48:15.922 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shutting down ...
+2024-10-04 03:48:15.951 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shut down
+2024-10-04 03:48:16.559 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Shutting down DiscoveryClient ...
+2024-10-04 03:48:16.574 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Completed shut down of DiscoveryClient
