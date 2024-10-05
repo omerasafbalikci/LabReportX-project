@@ -28,20 +28,20 @@ public class ApplicationConfig {
     private final UserRepository userRepository;
 
     /**
-     * Configures the security filter chain for the application. Disables CSRF protection,
-     * permits all requests to "/auth/**" endpoints, requires authentication for other endpoints,
-     * and sets the session management policy to stateless for JWT authentication.
+     * Configures the security filter chain.
+     * Disables CSRF, allows public access to specific authentication endpoints,
+     * requires authentication for all other requests, and sets session management to stateless.
      *
-     * @param httpSecurity the {@link HttpSecurity} to configure
-     * @return the configured {@link SecurityFilterChain}
-     * @throws Exception if an error occurs while configuring security
+     * @param httpSecurity the security configuration
+     * @return the configured security filter chain
+     * @throws Exception if configuration fails
      */
     @Bean
-    public SecurityFilterChain jwtAuthFilter(HttpSecurity httpSecurity) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/auth/login", "/auth/initiate-password-reset", "/auth/reset-password", "/auth/verify-email").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

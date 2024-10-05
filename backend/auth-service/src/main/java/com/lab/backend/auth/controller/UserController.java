@@ -38,10 +38,10 @@ public class UserController {
      */
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody @Valid AuthRequest authRequest) throws RedisOperationException {
-        log.trace("Login request received for user: {}", authRequest.getUsername());
+        log.trace("Entering login method in UserController");
         var tokens = this.userService.login(authRequest);
         var authResponse = new AuthResponse(tokens.get(0), tokens.get(1), AuthStatus.LOGIN_SUCCESS);
-        log.info("User {} logged in successfully.", authRequest.getUsername());
+        log.trace("Exiting login method in UserController");
         return ResponseEntity.status(HttpStatus.OK).body(authResponse);
     }
 
@@ -56,10 +56,10 @@ public class UserController {
      */
     @GetMapping("/refresh")
     public ResponseEntity<AuthResponse> refreshToken(HttpServletRequest request) throws RedisOperationException, InvalidTokenException, UsernameExtractionException {
-        log.trace("Token refresh request received.");
+        log.trace("Entering refreshToken method in UserController");
         var tokens = this.userService.refreshToken(request);
         var authResponse = new AuthResponse(tokens.get(0), tokens.get(1), AuthStatus.TOKEN_REFRESHED_SUCCESSFULLY);
-        log.info("Token refreshed successfully.");
+        log.trace("Exiting refreshToken method in UserController");
         return ResponseEntity.status(HttpStatus.OK).body(authResponse);
     }
 
@@ -73,9 +73,9 @@ public class UserController {
      */
     @PostMapping("/logout")
     public ResponseEntity<String> logout(HttpServletRequest request) throws InvalidTokenException, RedisOperationException {
-        log.trace("Logout request received.");
+        log.trace("Entering logout method in UserController");
         this.userService.logout(request);
-        log.info("User logged out successfully.");
+        log.trace("Exiting logout method in UserController");
         return ResponseEntity.status(HttpStatus.OK).body("Logged out successfully.");
     }
 
@@ -90,9 +90,9 @@ public class UserController {
      */
     @PostMapping("/change-password")
     public ResponseEntity<String> changePassword(HttpServletRequest request, @RequestBody @Valid PasswordRequest passwordRequest) throws RedisOperationException, InvalidTokenException {
-        log.trace("Change password request received.");
+        log.trace("Entering changePassword method in UserController");
         String response = this.userService.changePassword(request, passwordRequest);
-        log.info("Password changed successfully.");
+        log.trace("Exiting changePassword method in UserController");
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
@@ -104,9 +104,9 @@ public class UserController {
      */
     @PostMapping("/initiate-password-reset")
     public ResponseEntity<String> initiatePasswordReset(@RequestParam("email") String email) {
-        log.trace("Initiating password reset for email: {}", email);
+        log.trace("Entering initiatePasswordReset method in UserController");
         this.userService.initiatePasswordReset(email);
-        log.info("Password reset initiated for email: {}", email);
+        log.trace("Exiting initiatePasswordReset method in UserController");
         return ResponseEntity.status(HttpStatus.OK).body("Password reset initiated. Check your email for further instructions.");
     }
 
@@ -119,9 +119,9 @@ public class UserController {
      */
     @PostMapping("/reset-password")
     public ResponseEntity<String> handlePasswordReset(@RequestParam("token") String token, @RequestParam("newPassword") String newPassword) {
-        log.trace("Handling password reset with token: {}", token);
+        log.trace("Entering handlePasswordReset method in UserController");
         String responseMessage = this.userService.handlePasswordReset(token, newPassword);
-        log.info("Password reset successfully.");
+        log.trace("Exiting handlePasswordReset method in UserController");
         return ResponseEntity.status(HttpStatus.OK).body(responseMessage);
     }
 
@@ -133,9 +133,9 @@ public class UserController {
      */
     @GetMapping("/verify-email")
     public ResponseEntity<String> verifyEmail(@RequestParam("token") String token) {
-        log.trace("Email verification request received with token: {}", token);
+        log.trace("Entering verifyEmail method in UserController");
         this.userService.verifyEmail(token);
-        log.info("Email verified successfully.");
+        log.trace("Exiting verifyEmail method in UserController");
         return ResponseEntity.status(HttpStatus.OK).body("Email verified successfully.");
     }
 }

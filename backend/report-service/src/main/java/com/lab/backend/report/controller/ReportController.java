@@ -44,25 +44,28 @@ public class ReportController {
      */
     @GetMapping("/id/{id}")
     public ResponseEntity<GetReportResponse> getReportById(@PathVariable("id") Long id) {
+        log.trace("Entering getReportById method in ReportController class");
         log.info("Retrieving report with ID: {}", id);
         GetReportResponse response = this.reportService.getReportById(id);
+        log.trace("Exiting getReportById method in ReportController class");
         return ResponseEntity.ok(response);
     }
 
     /**
      * Retrieves all reports filtered and sorted based on given parameters.
      *
-     * @param page              the page number to retrieve
-     * @param size              the number of reports per page
-     * @param sortBy            the field to sort by
-     * @param direction         the sort direction (ASC or DESC)
-     * @param fileNumber        optional file number filter
-     * @param patientTrIdNumber optional patient TR ID number filter
-     * @param diagnosisTitle    optional diagnosis title filter
-     * @param diagnosisDetails  optional diagnosis details filter
-     * @param date              optional date filter
-     * @param photoPath         optional photo path filter
-     * @param deleted           optional deleted status filter
+     * @param page               the page number to retrieve
+     * @param size               the number of reports per page
+     * @param sortBy             the field to sort by
+     * @param direction          the sort direction (ASC or DESC)
+     * @param fileNumber         optional file number filter
+     * @param patientTrIdNumber  optional patient TR ID number filter
+     * @param diagnosisTitle     optional diagnosis title filter
+     * @param diagnosisDetails   optional diagnosis details filter
+     * @param date               optional date filter
+     * @param photoPath          optional photo path filter
+     * @param technicianUsername the username of the technician
+     * @param deleted            optional deleted status filter
      * @return the ResponseEntity containing the paginated list of reports
      */
     @GetMapping("/filtered-and-sorted")
@@ -77,11 +80,14 @@ public class ReportController {
             @RequestParam(required = false) String diagnosisDetails,
             @RequestParam(required = false) String date,
             @RequestParam(required = false) String photoPath,
+            @RequestParam(required = false) String technicianUsername,
             @RequestParam(required = false) Boolean deleted
     ) {
-        log.info("Retrieving reports filtered and sorted: page={}, size={}, sortBy={}, direction={}, fileNumber={}, patientTrIdNumber={}, diagnosisTitle={}, diagnosisDetails={}, date={}, photoPath={}, deleted={}",
-                page, size, sortBy, direction, fileNumber, patientTrIdNumber, diagnosisTitle, diagnosisDetails, date, photoPath, deleted);
-        PagedResponse<GetReportResponse> response = this.reportService.getAllReportsFilteredAndSorted(page, size, sortBy, direction, fileNumber, patientTrIdNumber, diagnosisTitle, diagnosisDetails, date, photoPath, deleted);
+        log.trace("Entering getAllReportsFilteredAndSorted method in ReportController class");
+        log.info("Retrieving reports filtered and sorted: page={}, size={}, sortBy={}, direction={}, fileNumber={}, patientTrIdNumber={}, diagnosisTitle={}, diagnosisDetails={}, date={}, photoPath={}, technicianUsername={}, deleted={}",
+                page, size, sortBy, direction, fileNumber, patientTrIdNumber, diagnosisTitle, diagnosisDetails, date, photoPath, technicianUsername, deleted);
+        PagedResponse<GetReportResponse> response = this.reportService.getAllReportsFilteredAndSorted(page, size, sortBy, direction, fileNumber, patientTrIdNumber, diagnosisTitle, diagnosisDetails, date, photoPath, technicianUsername, deleted);
+        log.trace("Exiting getAllReportsFilteredAndSorted method in ReportController class");
         return ResponseEntity.ok(response);
     }
 
@@ -117,9 +123,11 @@ public class ReportController {
             @RequestParam(required = false) String photoPath,
             @RequestParam(required = false) Boolean deleted
     ) {
-        log.info("Retrieving reports for technician: page={}, size={}, sortBy={}, direction={}, fileNumber={}, patientTrIdNumber={}, diagnosisTitle={}, diagnosisDetails={}, date={}, photoPath={}, deleted={}",
-                page, size, sortBy, direction, fileNumber, patientTrIdNumber, diagnosisTitle, diagnosisDetails, date, photoPath, deleted);
+        log.trace("Entering getAllReportsByTechnician method in ReportController class");
+        log.info("Retrieving reports for technician: page={}, size={}, sortBy={}, direction={}, fileNumber={}, patientTrIdNumber={}, diagnosisTitle={}, diagnosisDetails={}, date={}, photoPath={}, username={}, deleted={}",
+                page, size, sortBy, direction, fileNumber, patientTrIdNumber, diagnosisTitle, diagnosisDetails, date, photoPath, username, deleted);
         PagedResponse<GetReportResponse> response = this.reportService.getReportsByTechnician(username, page, size, sortBy, direction, fileNumber, patientTrIdNumber, diagnosisTitle, diagnosisDetails, date, photoPath, deleted);
+        log.trace("Exiting getAllReportsByTechnician method in ReportController class");
         return ResponseEntity.ok(response);
     }
 
@@ -132,10 +140,12 @@ public class ReportController {
      */
     @GetMapping("/check-tr-id")
     public ResponseEntity<String> checkTrIdNumber(@RequestHeader("X-Username") String username, @RequestParam String trIdNumber) {
+        log.trace("Entering checkTrIdNumber method in ReportController class");
         log.info("Checking TR ID number: {} for user: {}", trIdNumber, username);
         String responseMessage;
         try {
             responseMessage = this.reportService.checkTrIdNumber(username, trIdNumber);
+            log.trace("Exiting checkTrIdNumber method in ReportController class");
             return ResponseEntity.ok(responseMessage);
         } catch (InvalidTrIdNumberException e) {
             log.error("Invalid TR ID number: {}", e.getMessage());
@@ -155,8 +165,10 @@ public class ReportController {
      */
     @PostMapping
     public ResponseEntity<GetReportResponse> addReport(@RequestHeader("X-Username") String username, @RequestBody @Valid CreateReportRequest createReportRequest) {
+        log.trace("Entering addReport method in ReportController class");
         log.info("Adding the report by the user: {}", username);
         GetReportResponse response = this.reportService.addReport(username, createReportRequest);
+        log.trace("Exiting addReport method in ReportController class");
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
@@ -169,8 +181,10 @@ public class ReportController {
      */
     @PutMapping
     public ResponseEntity<GetReportResponse> updateReport(@RequestHeader("X-Username") String username, @RequestBody @Valid UpdateReportRequest updateReportRequest) {
+        log.trace("Entering updateReport method in ReportController class");
         log.info("Updating the report by the user: {}", username);
         GetReportResponse response = this.reportService.updateReport(username, updateReportRequest);
+        log.trace("Exiting updateReport method in ReportController class");
         return ResponseEntity.ok(response);
     }
 
@@ -183,8 +197,10 @@ public class ReportController {
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteReport(@RequestHeader("X-Username") String username, @PathVariable("id") Long id) {
+        log.trace("Entering deleteReport method in ReportController class");
         log.info("Deleting the report with ID: {} by the user: {}", id, username);
         this.reportService.deleteReport(username, id);
+        log.trace("Exiting deleteReport method in ReportController class");
         return ResponseEntity.ok("Report has been successfully deleted.");
     }
 
@@ -197,8 +213,10 @@ public class ReportController {
      */
     @PutMapping("/restore/{id}")
     public ResponseEntity<GetReportResponse> restoreReport(@RequestHeader("X-Username") String username, @PathVariable("id") Long id) {
+        log.trace("Entering restoreReport method in ReportController class");
         log.info("Restoring the report with ID: {} by the user: {}", id, username);
         GetReportResponse response = this.reportService.restoreReport(username, id);
+        log.trace("Exiting restoreReport method in ReportController class");
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
@@ -212,8 +230,10 @@ public class ReportController {
      */
     @PostMapping("/photo/{reportId}")
     public ResponseEntity<String> addPhoto(@RequestHeader("X-Username") String username, @PathVariable("reportId") Long reportId, @RequestParam("photo") MultipartFile photo) {
+        log.trace("Entering addPhoto method in ReportController class");
         log.info("Uploading photo for report ID: {} by user: {}", reportId, username);
         this.reportService.addPhoto(username, reportId, photo);
+        log.trace("Exiting addPhoto method in ReportController class");
         return ResponseEntity.ok("Photo uploaded successfully.");
     }
 
@@ -226,8 +246,10 @@ public class ReportController {
      */
     @GetMapping("/photo/{reportId}")
     public ResponseEntity<byte[]> getPhoto(@RequestHeader("X-Username") String username, @PathVariable("reportId") Long reportId) {
+        log.trace("Entering getPhoto method in ReportController class");
         log.info("Fetching photo for report ID: {} by user: {}", reportId, username);
         byte[] photoData = this.reportService.getPhoto(username, reportId);
+        log.trace("Exiting getPhoto method in ReportController class");
         return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(photoData);
     }
 
@@ -240,8 +262,10 @@ public class ReportController {
      */
     @DeleteMapping("/photo/{reportId}")
     public ResponseEntity<String> deletePhoto(@RequestHeader("X-Username") String username, @PathVariable("reportId") Long reportId) {
+        log.trace("Entering deletePhoto method in ReportController class");
         log.info("Deleting photo for report ID: {} by user: {}", reportId, username);
         this.reportService.deletePhoto(username, reportId);
+        log.trace("Exiting deletePhoto method in ReportController class");
         return ResponseEntity.ok("Photo deleted successfully.");
     }
 
@@ -253,12 +277,14 @@ public class ReportController {
      */
     @GetMapping("/report/{reportId}")
     public ResponseEntity<Mono<byte[]>> getReportPdf(@PathVariable("reportId") Long reportId) {
+        log.trace("Entering getReportPdf method in ReportController class");
         log.info("Fetching PDF report for report ID: {}", reportId);
         Mono<byte[]> pdfBytes = this.reportService.getReportPdf(reportId);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_PDF);
         headers.setContentDispositionFormData("filename", "report" + reportId + ".pdf");
         headers.setCacheControl("must-revalidate, post-check=0, pre-check=0");
+        log.trace("Exiting getReportPdf method in ReportController class");
         return new ResponseEntity<>(pdfBytes, headers, HttpStatus.OK);
     }
 
@@ -271,6 +297,7 @@ public class ReportController {
      */
     @GetMapping("/prescription/{reportId}")
     public ResponseEntity<byte[]> getPrescription(@RequestHeader("X-Username") String username, @PathVariable("reportId") Long reportId) {
+        log.trace("Entering getPrescription method in ReportController class");
         log.info("Fetching prescription for report ID: {} by user: {}", reportId, username);
         byte[] pdfBytes = this.reportService.getPrescription(username, reportId);
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -278,6 +305,7 @@ public class ReportController {
         headers.setContentType(MediaType.APPLICATION_PDF);
         headers.setContentDispositionFormData("filename", "patient" + "-prescription_" + dateFormat.format(new Date()) + ".pdf");
         headers.setCacheControl("must-revalidate, post-check=0, pre-check=0");
+        log.trace("Exiting getPrescription method in ReportController class");
         return new ResponseEntity<>(pdfBytes, headers, HttpStatus.OK);
     }
 
@@ -289,9 +317,11 @@ public class ReportController {
      */
     @PostMapping("/prescription/send")
     public ResponseEntity<String> sendPrescription(@RequestHeader("X-Username") String username) {
+        log.trace("Entering sendPrescription method in ReportController class");
         log.info("Sending prescription for user: {}", username);
         try {
             this.reportService.sendPrescription(username);
+            log.trace("Exiting sendPrescription method in ReportController class");
             return new ResponseEntity<>("Prescription sent successfully.", HttpStatus.OK);
         } catch (UnexpectedException ex) {
             log.error("Error sending prescription for user: {}", username, ex);

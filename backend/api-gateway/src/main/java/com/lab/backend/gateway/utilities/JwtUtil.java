@@ -49,7 +49,7 @@ public class JwtUtil {
      */
     @PostConstruct
     public void init() {
-        log.info("Initializing Redis connection pool with host: {}, port: {}", redisHost, redisPort);
+        log.trace("Initializing Redis connection pool with host: {}, port: {}", redisHost, redisPort);
         JedisPoolConfig poolConfig = new JedisPoolConfig();
         poolConfig.setMaxTotal(128);
         poolConfig.setMaxIdle(128);
@@ -57,7 +57,7 @@ public class JwtUtil {
         poolConfig.setTestOnBorrow(true);
         poolConfig.setTestOnReturn(true);
         this.jedisPool = new JedisPool(poolConfig, redisHost, Integer.parseInt(redisPort));
-        log.info("Redis connection pool initialized successfully.");
+        log.trace("Redis connection pool initialized successfully.");
     }
 
     /**
@@ -68,6 +68,7 @@ public class JwtUtil {
      * @throws InvalidTokenException if the token is invalid.
      */
     public Claims getClaimsAndValidate(String token) {
+        log.trace("Entering getClaimsAndValidate method in JwtUtils");
         log.debug("Validating token: {}", token);
         try {
             Claims claims = Jwts.parser().verifyWith(getSignInKey()).build().parseSignedClaims(token).getPayload();
@@ -76,6 +77,8 @@ public class JwtUtil {
         } catch (JwtException | IllegalArgumentException exception) {
             log.error("Invalid token: {}", token, exception);
             throw new InvalidTokenException("Invalid token");
+        } finally {
+            log.trace("Exiting getClaimsAndValidate method in JwtUtils");
         }
     }
 
@@ -87,6 +90,7 @@ public class JwtUtil {
      * @throws TokenNotFoundException if the token or its status is not found in Redis.
      */
     public boolean isLoggedOut(String token) {
+        log.trace("Entering isLoggedOut method in JwtUtils");
         log.debug("Checking if token is logged out: {}", token);
         try (Jedis jedis = this.jedisPool.getResource()) {
             String tokenIdStr = jedis.get(token);
@@ -105,6 +109,8 @@ public class JwtUtil {
             boolean isLoggedOut = Boolean.parseBoolean(value);
             log.info("Token {} logout status: {}", token, isLoggedOut);
             return isLoggedOut;
+        } finally {
+            log.trace("Exiting isLoggedOut method in JwtUtils");
         }
     }
 
@@ -115,6 +121,7 @@ public class JwtUtil {
      * @return a list of roles associated with the claims.
      */
     public List<String> getRoles(Claims claims) {
+        log.trace("Entering getRoles method in JwtUtils");
         log.debug("Extracting roles from claims: {}", claims);
         Object rolesObject = claims.get(this.AUTHORITIES_KEY);
         if (rolesObject instanceof List<?>) {
@@ -125,6 +132,7 @@ public class JwtUtil {
                 }
             }
             log.info("Roles extracted: {}", roles);
+            log.trace("Exiting getRoles method in JwtUtils");
             return roles;
         }
         log.warn("No roles found in claims or roles are not of the expected type.");
@@ -137,10 +145,12 @@ public class JwtUtil {
      * @return the secret key.
      */
     private SecretKey getSignInKey() {
+        log.trace("Entering getSignInKey method in JwtUtils");
         log.debug("Retrieving secret key for JWT validation.");
         byte[] keyBytes = Decoders.BASE64URL.decode(this.SECRET_KEY);
         SecretKey secretKey = Keys.hmacShaKeyFor(keyBytes);
         log.debug("Secret key retrieved successfully.");
+        log.trace("Exiting getSignInKey method in JwtUtils");
         return secretKey;
     }
 }

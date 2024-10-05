@@ -49,6 +49,7 @@ public class MailService {
      * @throws EmailSendingFailedException if sending the email fails
      */
     public void sendEmail(String to, String subject, String text, byte[] attachment, String attachmentName) {
+        log.trace("Entering sendEmail method in MailService");
         log.info("Preparing to send email to: {}", to);
         if (fromEmail == null || fromEmail.isEmpty() || to == null || to.isEmpty()) {
             log.error("Email configuration is missing. From: {}, To: {}", fromEmail, to);
@@ -79,9 +80,11 @@ public class MailService {
             log.error("Failed to send email: {}", e.getMessage());
             throw new EmailSendingFailedException("Failed to send email: " + e.getMessage());
         }
+        log.trace("Exiting sendEmail method in MailService");
     }
 
     private void sendEmailWithAttachment(SimpleMailMessage message, byte[] attachment, String attachmentName) {
+        log.trace("Entering sendEmailWithAttachment method in MailService");
         MimeMessage mimeMessage = this.javaMailSender.createMimeMessage();
         MimeMessageHelper helper;
         try {
@@ -102,6 +105,7 @@ public class MailService {
             log.error("Failed to send email with attachment: {}", e.getMessage());
             throw new EmailSendingFailedException("Failed to send email with attachment: " + e.getMessage());
         }
+        log.trace("Exiting sendEmailWithAttachment method in MailService");
     }
 
     private boolean isEmailNotValid(String email) {

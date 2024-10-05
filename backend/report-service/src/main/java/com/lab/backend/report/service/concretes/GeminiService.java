@@ -39,6 +39,7 @@ public class GeminiService {
      * @throws IOException If there is an issue with the HTTP connection or reading the response.
      */
     public String getInsight(String data) throws IOException {
+        log.trace("Entering getInsight method in GeminiService");
         String ENDPOINT_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + GEMINI_API_KEY;
 
         JsonObject requestJson = getJsonObject(data);
@@ -50,7 +51,7 @@ public class GeminiService {
         log.info("Sending request to Gemini API at {}", ENDPOINT_URL);
         try (DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
             wr.write(requestJson.toString().getBytes(StandardCharsets.UTF_8));
-            log.trace("Request body sent: {}", requestJson.toString());
+            log.info("Request body sent: {}", requestJson.toString());
         }
 
         try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
@@ -72,6 +73,7 @@ public class GeminiService {
             JsonElement partElement = newPartsArray.get(0);
             JsonObject partObject = partElement.getAsJsonObject();
             log.info("Insight generated successfully.");
+            log.trace("Exiting getInsight method in GeminiService");
             return partObject.get("text").getAsString();
         } catch (Exception exception) {
             log.error("Gemini connection failed: {}", exception.getMessage());
@@ -86,6 +88,7 @@ public class GeminiService {
      * @return The constructed JSON object.
      */
     private JsonObject getJsonObject(String data) {
+        log.trace("Entering getJsonObject method in GeminiService");
         JsonObject requestJson = new JsonObject();
         JsonArray contentsArray = getJsonElements(data);
         requestJson.add("contents", contentsArray);
@@ -104,7 +107,8 @@ public class GeminiService {
         JsonArray safetySettingsArray = new JsonArray();
         safetySettingsArray.add(safetySettings);
         requestJson.add("safetySettings", safetySettingsArray);
-        log.trace("Generated JSON object for request: {}", requestJson);
+        log.info("Generated JSON object for request: {}", requestJson);
+        log.trace("Exiting getJsonObject method in GeminiService");
         return requestJson;
     }
 
@@ -115,6 +119,7 @@ public class GeminiService {
      * @return The constructed JSON array of elements.
      */
     private JsonArray getJsonElements(String data) {
+        log.trace("Entering getJsonElements method in GeminiService");
         JsonObject userPart = new JsonObject();
         userPart.addProperty("text", "You are working with a patient report generation system. Please analyze the diagnosis details provided below. Based on this, give simple recommendations for the patient's diet and lifestyle. Avoid listing items, and instead, write it as a short paragraph. Keep it concise, around 200 words.\n" + data);
         JsonObject userContent = new JsonObject();
@@ -124,7 +129,8 @@ public class GeminiService {
         userContent.add("parts", partsArray);
         JsonArray contentsArray = new JsonArray();
         contentsArray.add(userContent);
-        log.trace("Generated JSON elements for request: {}", contentsArray);
+        log.info("Generated JSON elements for request: {}", contentsArray);
+        log.trace("Exiting getJsonElements method in GeminiService");
         return contentsArray;
     }
 }

@@ -53,9 +53,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                     return new SimpleGrantedAuthority(roleName);
                 })
                 .collect(Collectors.toSet());
-        log.trace("User authorities: {}", authorities);
+        log.info("User authorities: {}", authorities);
         org.springframework.security.core.userdetails.User userDetails = new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);
-        log.trace("Returning userDetails for username: {}", user.getUsername());
+        log.trace("Exiting loadUserByUsername method in UserDetailsServiceImpl with username: {}", user.getUsername());
         return userDetails;
     }
 }

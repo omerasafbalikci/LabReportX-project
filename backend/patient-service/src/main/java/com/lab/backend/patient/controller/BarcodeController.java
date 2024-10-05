@@ -35,11 +35,11 @@ public class BarcodeController {
      */
     @GetMapping("/scan")
     public ResponseEntity<GetPatientResponse> scanAndSavePatient() {
-        log.trace("Entering scanAndSavePatient method.");
+        log.trace("Entering scanAndSavePatient method in BarcodeController class");
         log.info("Received request to scan and fetch patient.");
         GetPatientResponse response = this.barcodeService.scanAndSavePatient();
         log.info("Successfully fetched patient: {}", response);
-        log.trace("Exiting scanAndSavePatient method.");
+        log.trace("Exiting scanAndSavePatient method in BarcodeController class");
         return ResponseEntity.ok(response);
     }
 
@@ -52,7 +52,7 @@ public class BarcodeController {
      */
     @GetMapping("/generate")
     public ResponseEntity<byte[]> generateBarcodeForPatient(@RequestParam String trIdNumber) {
-        log.trace("Entering generateBarcodeForPatient method.");
+        log.trace("Entering generateBarcodeForPatient method in BarcodeController class");
         log.debug("Received request to generate barcode for TR ID number: {}", trIdNumber);
         try {
             byte[] barcode = this.barcodeService.generateBarcodeForPatient(trIdNumber);
@@ -60,11 +60,10 @@ public class BarcodeController {
             headers.set(HttpHeaders.CONTENT_TYPE, "image/png");
             headers.setContentLength(barcode.length);
             log.debug("Barcode generated successfully for TR ID number: {}", trIdNumber);
-            log.trace("Exiting generateBarcodeForPatient method.");
+            log.trace("Exiting generateBarcodeForPatient method in BarcodeController class");
             return new ResponseEntity<>(barcode, headers, HttpStatus.OK);
         } catch (Exception e) {
             log.error("Error occurred while generating barcode for TR ID number: {}", trIdNumber, e);
-            log.trace("Exiting generateBarcodeForPatient method with error.");
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

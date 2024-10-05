@@ -47,10 +47,10 @@ public class JwtServiceImpl implements JwtService {
      */
     @Override
     public String generateAccessToken(String username, List<String> roles) {
-        log.info("Generating access token for username: {}", username);
+        log.trace("Entering generateAccessToken method in JwtUtils class with username: {}", username);
         Claims claims = Jwts.claims().subject(username).add(this.AUTHORITIES_KEY, roles).build();
         String accessToken = buildToken(claims, this.ACCESS_TOKEN_EXPIRATION);
-        log.debug("Generated access token: {}", accessToken);
+        log.trace("Exiting generateAccessToken method in JwtUtils class with accessToken: {}", accessToken);
         return accessToken;
     }
 
@@ -62,10 +62,10 @@ public class JwtServiceImpl implements JwtService {
      */
     @Override
     public String generateRefreshToken(String username) {
-        log.info("Generating refresh token for username: {}", username);
+        log.trace("Entering generateRefreshToken method in JwtUtils class with username: {}", username);
         Claims claims = Jwts.claims().subject(username).build();
         String refreshToken = buildToken(claims, this.REFRESH_TOKEN_EXPIRATION);
-        log.debug("Generated refresh token: {}", refreshToken);
+        log.trace("Exiting generateRefreshToken method in JwtUtils class with refreshToken: {}", refreshToken);
         return refreshToken;
     }
 
@@ -77,14 +77,14 @@ public class JwtServiceImpl implements JwtService {
      * @return the generated token
      */
     private String buildToken(Claims claims, long expiration) {
-        log.trace("Building token with claims: {} and expiration: {}", claims, expiration);
+        log.trace("Entering buildToken method in JwtUtils class with claims and expiration: {}", expiration);
         String token = Jwts.builder()
                 .claims(claims)
                 .issuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + expiration))
                 .signWith(getSignInKey())
                 .compact();
-        log.trace("Built token: {}", token);
+        log.trace("Exiting buildToken method in JwtUtils class with token: {}", token);
         return token;
     }
 
@@ -96,9 +96,9 @@ public class JwtServiceImpl implements JwtService {
      */
     @Override
     public String extractUsername(String token) {
-        log.trace("Extracting username from token.");
+        log.trace("Entering extractUsername method in JwtUtils class");
         String username = extractClaim(token, Claims::getSubject);
-        log.debug("Extracted username: {}", username);
+        log.trace("Exiting extractUsername method in JwtUtils class with username: {}", username);
         return username;
     }
 
@@ -111,9 +111,10 @@ public class JwtServiceImpl implements JwtService {
      * @return the extracted claim
      */
     private <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+        log.trace("Entering extractClaim method in JwtUtils class");
         Claims claims = extractAllClaims(token);
         T claim = claimsResolver.apply(claims);
-        log.trace("Extracted claim: {}", claim);
+        log.trace("Exiting extractClaim method in JwtUtils class with claim: {}", claim);
         return claim;
     }
 
@@ -124,14 +125,14 @@ public class JwtServiceImpl implements JwtService {
      * @return the extracted claims
      */
     private Claims extractAllClaims(String token) {
-        log.trace("Extracting all claims from token.");
+        log.trace("Entering extractAllClaims method in JwtUtils class");
         Claims claims = Jwts
                 .parser()
                 .verifyWith(getSignInKey())
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
-        log.trace("Extracted claims: {}", claims);
+        log.trace("Exiting extractAllClaims method in JwtUtils class");
         return claims;
     }
 
@@ -144,10 +145,10 @@ public class JwtServiceImpl implements JwtService {
      */
     @Override
     public boolean isTokenValid(String token, UserDetails userDetails) {
-        log.trace("Validating token for username: {}", userDetails.getUsername());
+        log.trace("Entering isTokenValid method in JwtUtils class with token and user: {}", userDetails.getUsername());
         String username = extractUsername(token);
         boolean isValid = (username.equals(userDetails.getUsername())) && (!isTokenExpired(token));
-        log.debug("Token valid: {}", isValid);
+        log.trace("Exiting isTokenValid method in JwtUtils class with result: {}", isValid);
         return isValid;
     }
 
@@ -158,8 +159,9 @@ public class JwtServiceImpl implements JwtService {
      * @return true if the token has expired, false otherwise
      */
     private boolean isTokenExpired(String token) {
+        log.trace("Entering isTokenExpired method in JwtUtils class");
         boolean isExpired = extractExpiration(token).before(new Date());
-        log.debug("Token expired: {}", isExpired);
+        log.trace("Exiting isTokenExpired method in JwtUtils class with result: {}", isExpired);
         return isExpired;
     }
 
@@ -170,9 +172,9 @@ public class JwtServiceImpl implements JwtService {
      * @return the expiration date
      */
     private Date extractExpiration(String token) {
-        log.trace("Extracting expiration from token.");
+        log.trace("Entering extractExpiration method in JwtUtils class");
         Date expiration = extractClaim(token, Claims::getExpiration);
-        log.debug("Extracted expiration date: {}", expiration);
+        log.trace("Exiting extractExpiration method in JwtUtils class with expiration date: {}", expiration);
         return expiration;
     }
 
@@ -182,10 +184,10 @@ public class JwtServiceImpl implements JwtService {
      * @return the {@link SecretKey} used for signing the JWT
      */
     private SecretKey getSignInKey() {
-        log.trace("Generating sign-in key.");
+        log.trace("Entering getSignInKey method in JwtUtils class");
         byte[] keyBytes = Decoders.BASE64URL.decode(this.SECRET_KEY);
         SecretKey secretKey = Keys.hmacShaKeyFor(keyBytes);
-        log.trace("Generated sign-in key.");
+        log.trace("Exiting getSignInKey method in JwtUtils class with key");
         return secretKey;
     }
 }

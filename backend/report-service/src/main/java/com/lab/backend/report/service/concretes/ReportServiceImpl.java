@@ -68,6 +68,7 @@ public class ReportServiceImpl implements ReportService {
      */
     @Override
     public GetReportResponse getReportById(Long id) {
+        log.trace("Entering getReportById method in ReportServiceImpl");
         log.debug("Fetching report with ID: {}", id);
         Report report = this.reportRepository.findByIdAndDeletedFalse(id).orElseThrow(() -> {
             log.error("Report not found with ID: {}", id);
@@ -75,38 +76,42 @@ public class ReportServiceImpl implements ReportService {
         });
         GetReportResponse response = this.reportMapper.toGetReportResponse(report);
         log.info("Report found: {}", response);
+        log.trace("Exiting getReportById method in ReportServiceImpl");
         return response;
     }
 
     /**
      * Retrieves all reports filtered and sorted.
      *
-     * @param page              the page number
-     * @param size              the page size
-     * @param sortBy            the attribute to sort by
-     * @param direction         the sort direction (ASC or DESC)
-     * @param fileNumber        the file number to filter by
-     * @param patientTrIdNumber the TR ID number of the patient
-     * @param diagnosisTitle    the diagnosis title to filter by
-     * @param diagnosisDetails  the diagnosis details to filter by
-     * @param date              the report date to filter by
-     * @param photoPath         the photo path to filter by
-     * @param deleted           whether to include deleted reports
+     * @param page               the page number
+     * @param size               the page size
+     * @param sortBy             the attribute to sort by
+     * @param direction          the sort direction (ASC or DESC)
+     * @param fileNumber         the file number to filter by
+     * @param patientTrIdNumber  the TR ID number of the patient
+     * @param diagnosisTitle     the diagnosis title to filter by
+     * @param diagnosisDetails   the diagnosis details to filter by
+     * @param date               the report date to filter by
+     * @param photoPath          the photo path to filter by
+     * @param technicianUsername the username of the technician
+     * @param deleted            whether to include deleted reports
      * @return PagedResponse containing the list of reports
      */
     @Override
     public PagedResponse<GetReportResponse> getAllReportsFilteredAndSorted(int page, int size, String sortBy, String direction, String fileNumber,
                                                                            String patientTrIdNumber, String diagnosisTitle, String diagnosisDetails, String date,
-                                                                           String photoPath, Boolean deleted) {
+                                                                           String photoPath, String technicianUsername, Boolean deleted) {
+        log.trace("Entering getAllReportsFilteredAndSorted method in ReportServiceImpl");
         log.debug("Fetching all reports with filters - Page: {}, Size: {}, SortBy: {}, Direction: {}", page, size, sortBy, direction);
         Pageable pagingSort = PageRequest.of(page, size, Sort.Direction.valueOf(direction.toUpperCase()), sortBy);
-        ReportSpecification specification = new ReportSpecification(fileNumber, patientTrIdNumber, diagnosisTitle, diagnosisDetails, date, photoPath, deleted);
+        ReportSpecification specification = new ReportSpecification(fileNumber, patientTrIdNumber, diagnosisTitle, diagnosisDetails, date, photoPath, technicianUsername, deleted);
         Page<Report> userPage = this.reportRepository.findAll(specification, pagingSort);
         List<GetReportResponse> reportResponses = userPage.getContent()
                 .stream()
                 .map(this.reportMapper::toGetReportResponse)
                 .toList();
         log.info("Total reports found: {}", userPage.getTotalElements());
+        log.trace("Exiting getAllReportsFilteredAndSorted method in ReportServiceImpl");
         return new PagedResponse<>(
                 reportResponses,
                 userPage.getNumber(),
@@ -141,15 +146,17 @@ public class ReportServiceImpl implements ReportService {
     public PagedResponse<GetReportResponse> getReportsByTechnician(String username, int page, int size, String sortBy, String direction, String fileNumber,
                                                                    String patientTrIdNumber, String diagnosisTitle, String diagnosisDetails, String date,
                                                                    String photoPath, Boolean deleted) {
+        log.trace("Entering getReportsByTechnician method in ReportServiceImpl");
         log.debug("Fetching reports for technician: {} with filters - Page: {}, Size: {}, SortBy: {}, Direction: {}", username, page, size, sortBy, direction);
         Pageable pagingSort = PageRequest.of(page, size, Sort.Direction.valueOf(direction.toUpperCase()), sortBy);
-        ReportSpecification specification = new ReportSpecification(username, fileNumber, patientTrIdNumber, diagnosisTitle, diagnosisDetails, date, photoPath, deleted);
+        ReportSpecification specification = new ReportSpecification(fileNumber, patientTrIdNumber, diagnosisTitle, diagnosisDetails, date, photoPath, username, deleted);
         Page<Report> userPage = this.reportRepository.findAll(specification, pagingSort);
         List<GetReportResponse> reportResponses = userPage.getContent()
                 .stream()
                 .map(this.reportMapper::toGetReportResponse)
                 .toList();
         log.info("Total reports found for technician {}: {}", username, userPage.getTotalElements());
+        log.trace("Exiting getReportsByTechnician method in ReportServiceImpl");
         return new PagedResponse<>(
                 reportResponses,
                 userPage.getNumber(),
@@ -175,6 +182,7 @@ public class ReportServiceImpl implements ReportService {
      */
     @Override
     public String checkTrIdNumber(String username, String trIdNumber) {
+        log.trace("Entering checkTrIdNumber method in ReportServiceImpl");
         String trIdRegex = "^[1-9][0-9]{10}$";
         Pattern pattern = Pattern.compile(trIdRegex);
         Matcher matcher = pattern.matcher(trIdNumber);
@@ -203,6 +211,7 @@ public class ReportServiceImpl implements ReportService {
             this.redisTemplate.delete("validTcForReport:" + username);
             this.redisTemplate.opsForValue().set("validTcForReport:" + username, trIdNumber, 1, TimeUnit.HOURS);
             log.info("TR ID number {} is valid for user {}. Redirecting to report creation...", trIdNumber, username);
+            log.trace("Exiting checkTrIdNumber method in ReportServiceImpl");
             return "TR ID number is valid. Redirecting to report creation...";
         } else {
             log.error("TR ID number {} is invalid or not found for user {}.", trIdNumber, username);
@@ -220,6 +229,7 @@ public class ReportServiceImpl implements ReportService {
      */
     @Override
     public GetReportResponse addReport(String username, CreateReportRequest createReportRequest) {
+        log.trace("Entering addReport method in ReportServiceImpl");
         log.debug("Adding report for user: {}", username);
         String trIdNumber = this.redisTemplate.opsForValue().get("validTcForReport:" + username);
         if (trIdNumber != null) {
@@ -230,6 +240,7 @@ public class ReportServiceImpl implements ReportService {
             this.redisTemplate.delete("validTcForReport:" + username);
             GetReportResponse response = this.reportMapper.toGetReportResponse(report);
             log.info("Report added successfully: {}", response);
+            log.trace("Exiting addReport method in ReportServiceImpl");
             return response;
         } else {
             log.error("TR ID number not found in Redis for user: {}", username);
@@ -248,18 +259,17 @@ public class ReportServiceImpl implements ReportService {
      */
     @Override
     public GetReportResponse updateReport(String username, UpdateReportRequest updateReportRequest) {
+        log.trace("Entering updateReport method in ReportServiceImpl");
         log.debug("Updating report with id: {} by technician: {}", updateReportRequest.getId(), username);
         Report existingReport = this.reportRepository.findByIdAndDeletedFalse(updateReportRequest.getId())
                 .orElseThrow(() -> {
                     log.error("Report with id {} not found", updateReportRequest.getId());
                     return new ReportNotFoundException("Report doesn't exist with id " + updateReportRequest.getId());
                 });
-
         if (!username.equals(existingReport.getTechnicianUsername())) {
             log.error("Unauthorized update attempt by user: {} on report id: {}", username, updateReportRequest.getId());
             throw new UnauthorizedAccessException("You are not authorized to update this report.");
         }
-
         if (updateReportRequest.getDiagnosisTitle() != null && !existingReport.getDiagnosisTitle().equals(updateReportRequest.getDiagnosisTitle())) {
             existingReport.setDiagnosisTitle(updateReportRequest.getDiagnosisTitle());
         }
@@ -270,6 +280,7 @@ public class ReportServiceImpl implements ReportService {
         this.reportRepository.save(existingReport);
         GetReportResponse response = this.reportMapper.toGetReportResponse(existingReport);
         log.info("Report with id: {} successfully updated by technician: {}", updateReportRequest.getId(), username);
+        log.trace("Exiting updateReport method in ReportServiceImpl");
         return response;
     }
 
@@ -283,6 +294,7 @@ public class ReportServiceImpl implements ReportService {
      */
     @Override
     public void deleteReport(String username, Long id) {
+        log.trace("Entering deleteReport method in ReportServiceImpl");
         log.debug("Attempting to delete report with id: {} by technician: {}", id, username);
         Report report = this.reportRepository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> {
@@ -296,6 +308,7 @@ public class ReportServiceImpl implements ReportService {
         report.setDeleted(true);
         this.reportRepository.save(report);
         log.info("Report with id: {} successfully deleted by technician: {}", id, username);
+        log.trace("Exiting deleteReport method in ReportServiceImpl");
     }
 
     /**
@@ -309,6 +322,7 @@ public class ReportServiceImpl implements ReportService {
      */
     @Override
     public GetReportResponse restoreReport(String username, Long id) {
+        log.trace("Entering restoreReport method in ReportServiceImpl");
         log.debug("Attempting to restore report with id: {} by technician: {}", id, username);
         Report report = this.reportRepository.findByIdAndDeletedTrue(id)
                 .orElseThrow(() -> {
@@ -323,6 +337,7 @@ public class ReportServiceImpl implements ReportService {
         this.reportRepository.save(report);
         GetReportResponse response = this.reportMapper.toGetReportResponse(report);
         log.info("Report with id: {} successfully restored by technician: {}", id, username);
+        log.trace("Exiting restoreReport method in ReportServiceImpl");
         return response;
     }
 
@@ -338,6 +353,7 @@ public class ReportServiceImpl implements ReportService {
      */
     @Override
     public void addPhoto(String username, Long reportId, MultipartFile photo) {
+        log.trace("Entering addPhoto method in ReportServiceImpl");
         log.debug("Adding photo to report with id: {} by technician: {}", reportId, username);
         Report report = this.reportRepository.findByIdAndDeletedFalse(reportId)
                 .orElseThrow(() -> {
@@ -348,9 +364,18 @@ public class ReportServiceImpl implements ReportService {
             log.error("Unauthorized photo upload attempt by user: {} on report id: {}", username, reportId);
             throw new UnauthorizedAccessException("You are not authorized to restore this report.");
         }
-        String uploadDir = "backend/uploads/photos/";
+        String photoPath = report.getPhotoPath();
+        if (photoPath != null) {
+            log.error("Attempted to add a photo to report with id: {} which already has a photo", reportId);
+            throw new FileStorageException("A photo has already been uploaded for this report.");
+        }
         String originalFileName = StringUtils.cleanPath(Objects.requireNonNull(photo.getOriginalFilename()));
         String fileExtension = getFileExtension(originalFileName);
+        if (!isSupportedFileFormat(fileExtension)) {
+            log.error("Unsupported file format: {} for report id: {}", fileExtension, reportId);
+            throw new FileStorageException("Unsupported file format. Only PNG and JPG are allowed.");
+        }
+        String uploadDir = "backend/uploads/photos/";
         String newFileName = UUID.randomUUID() + "." + fileExtension;
         try {
             Path uploadPath = Paths.get(uploadDir + newFileName);
@@ -363,6 +388,12 @@ public class ReportServiceImpl implements ReportService {
             log.error("Error occurred while uploading photo for report id: {}", reportId, exception);
             throw new FileStorageException("Could not store file " + newFileName + ". Please try again! " + exception);
         }
+        log.trace("Exiting addPhoto method in ReportServiceImpl");
+    }
+
+    // Helper method to check if the file extension is supported
+    private boolean isSupportedFileFormat(String fileExtension) {
+        return "png".equalsIgnoreCase(fileExtension) || "jpg".equalsIgnoreCase(fileExtension) || "jpeg".equalsIgnoreCase(fileExtension);
     }
 
     // Helper method to extract file extension.
@@ -382,6 +413,7 @@ public class ReportServiceImpl implements ReportService {
      */
     @Override
     public byte[] getPhoto(String username, Long reportId) {
+        log.trace("Entering getPhoto method in ReportServiceImpl");
         log.debug("Fetching photo for report with id: {} by technician: {}", reportId, username);
         Report report = this.reportRepository.findByIdAndDeletedFalse(reportId)
                 .orElseThrow(() -> {
@@ -400,6 +432,7 @@ public class ReportServiceImpl implements ReportService {
         try {
             log.debug("Reading photo from path: {}", photoPath);
             Path filePath = Paths.get(photoPath);
+            log.trace("Exiting getPhoto method in ReportServiceImpl");
             return Files.readAllBytes(filePath);
         } catch (IOException exception) {
             log.error("Could not read file at path: {} for report id: {}", photoPath, reportId, exception);
@@ -418,6 +451,7 @@ public class ReportServiceImpl implements ReportService {
      */
     @Override
     public void deletePhoto(String username, Long reportId) {
+        log.trace("Entering deletePhoto method in ReportServiceImpl");
         log.debug("Attempting to delete photo for report id: {} by technician: {}", reportId, username);
         Report report = this.reportRepository.findByIdAndDeletedFalse(reportId)
                 .orElseThrow(() -> {
@@ -444,6 +478,7 @@ public class ReportServiceImpl implements ReportService {
             log.error("Could not delete file at path: {} for report id: {}", photoPath, reportId, exception);
             throw new FileStorageException("Could not delete file: " + photoPath + ". Please try again! " + exception);
         }
+        log.trace("Exiting deletePhoto method in ReportServiceImpl");
     }
 
     /**
@@ -456,6 +491,7 @@ public class ReportServiceImpl implements ReportService {
      * @throws PatientNotFoundException   if the patient is not found.
      */
     private Mono<GetPatientResponse> getPatientByTrIdNumber(String jwt, String trIdNumber) {
+        log.trace("Entering getPatientByTrIdNumber method in ReportServiceImpl");
         log.debug("Fetching patient information for TR ID number: {}", trIdNumber);
         String trIdRegex = "^[1-9][0-9]{10}$";
         Pattern pattern = Pattern.compile(trIdRegex);
@@ -465,6 +501,7 @@ public class ReportServiceImpl implements ReportService {
             throw new InvalidTrIdNumberException("Invalid TR ID number format");
         }
 
+        log.trace("Exiting getPatientByTrIdNumber method in ReportServiceImpl");
         return this.webClientBuilder.build().get()
                 .uri("http://patient-service/patients/tr-id-number", uriBuilder ->
                         uriBuilder.queryParam("trIdNumber", trIdNumber).build())
@@ -492,12 +529,14 @@ public class ReportServiceImpl implements ReportService {
      */
     @Override
     public Mono<byte[]> getReportPdf(Long reportId) {
+        log.trace("Entering getReportPdf method in ReportServiceImpl");
         log.debug("Generating PDF for report id: {}", reportId);
         Report report = this.reportRepository.findByIdAndDeletedFalse(reportId).orElseThrow(() -> {
             log.error("Report with id: {} not found", reportId);
             return new ReportNotFoundException("Report not found with id: " + reportId);
         });
         GetReportResponse reportResponse = this.reportMapper.toGetReportResponse(report);
+        log.trace("Exiting getReportPdf method in ReportServiceImpl");
         return getPatientByTrIdNumber(jwt, reportResponse.getPatientTrIdNumber())
                 .flatMap(patientResponse -> {
                     byte[] pdfBytes = this.pdfUtil.generatePdf(reportResponse, patientResponse);
@@ -517,6 +556,7 @@ public class ReportServiceImpl implements ReportService {
      */
     @Override
     public byte[] getPrescription(String username, Long reportId) {
+        log.trace("Entering getPrescription method in ReportServiceImpl");
         log.debug("Generating prescription for report id: {}", reportId);
         Report report = this.reportRepository.findByIdAndDeletedFalse(reportId)
                 .orElseThrow(() -> {
@@ -529,6 +569,7 @@ public class ReportServiceImpl implements ReportService {
         this.redisTemplate.opsForValue().set("prescription:" + username, Base64.getEncoder().encodeToString(pdfBytes), 1, TimeUnit.HOURS);
         this.redisTemplate.opsForValue().set("trIdNumber:" + username, report.getPatientTrIdNumber(), 1, TimeUnit.HOURS);
         log.info("Successfully generated and cached prescription for username: {}", username);
+        log.trace("Exiting getPrescription method in ReportServiceImpl");
         return pdfBytes;
     }
 
@@ -540,6 +581,7 @@ public class ReportServiceImpl implements ReportService {
      */
     @Override
     public void sendPrescription(String username) {
+        log.trace("Entering sendPrescription method in ReportServiceImpl");
         log.debug("Sending prescription email for username: {}", username);
         String encodedPrescription = this.redisTemplate.opsForValue().get("prescription:" + username);
         String encodedTrIdNumber = this.redisTemplate.opsForValue().get("trIdNumber:" + username);
@@ -558,6 +600,7 @@ public class ReportServiceImpl implements ReportService {
             log.error("Cached prescription or TR ID number not found for username: {}", username);
             throw new UnexpectedException("Prescription or TR ID number null in Redis");
         }
+        log.trace("Exiting sendPrescription method in ReportServiceImpl");
     }
 
     /**
@@ -571,7 +614,8 @@ public class ReportServiceImpl implements ReportService {
      * @throws EmailNullException       if the email retrieved is null or empty.
      */
     private String getEmail(String jwt, String trIdNumber) {
-        log.trace("Entering getEmail method with TR ID number: {}", trIdNumber);
+        log.trace("Entering getEmail method in ReportServiceImpl");
+        log.info("Entering getEmail method with TR ID number: {}", trIdNumber);
         String email;
         try {
             log.debug("Calling patient service to retrieve email for TR ID number: {}", trIdNumber);
@@ -592,6 +636,7 @@ public class ReportServiceImpl implements ReportService {
         }
         if (email != null) {
             log.info("Successfully retrieved email for TR ID number: {}", trIdNumber);
+            log.trace("Exiting getEmail method in ReportServiceImpl");
             return email;
         } else {
             log.error("Email is null or empty for TR ID number: {}", trIdNumber);

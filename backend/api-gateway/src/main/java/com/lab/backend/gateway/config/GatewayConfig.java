@@ -50,6 +50,9 @@ public class GatewayConfig {
         this.endpointRoleMapping.put("/users", List.of("ADMIN"));
         this.endpointRoleMapping.put("/users/me", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
         this.endpointRoleMapping.put("/users/update/me", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
+        this.endpointRoleMapping.put("/auth/refresh", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
+        this.endpointRoleMapping.put("/auth/logout", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
+        this.endpointRoleMapping.put("/auth/change-password", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
     }
 
     /**

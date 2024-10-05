@@ -69,6 +69,7 @@ public class BarcodeServiceImpl implements BarcodeService {
     @Override
     @CachePut(value = "patients", key = "#result.id", unless = "#result == null")
     public GetPatientResponse scanAndSavePatient() {
+        log.trace("Entering scanAndSavePatient method in BarcodeServiceImpl");
         log.debug("Starting scanAndFetchPatient method.");
         VideoCapture camera = new VideoCapture(CAMERA_INDEX);
         if (!camera.isOpened()) {
@@ -77,7 +78,7 @@ public class BarcodeServiceImpl implements BarcodeService {
         }
 
         try {
-            log.trace("Setting camera properties: width={}, height={}", FRAME_WIDTH, FRAME_HEIGHT);
+            log.info("Setting camera properties: width={}, height={}", FRAME_WIDTH, FRAME_HEIGHT);
             camera.set(Videoio.CAP_PROP_FRAME_WIDTH, FRAME_WIDTH);
             camera.set(Videoio.CAP_PROP_FRAME_HEIGHT, FRAME_HEIGHT);
 
@@ -106,6 +107,7 @@ public class BarcodeServiceImpl implements BarcodeService {
         } finally {
             camera.release();
             log.debug("Camera released.");
+            log.trace("Exiting scanAndSavePatient method in BarcodeServiceImpl");
         }
         return null;
     }
@@ -118,6 +120,7 @@ public class BarcodeServiceImpl implements BarcodeService {
      * @throws UnexpectedException if an error occurs during the conversion process.
      */
     private BufferedImage matToBufferedImage(Mat mat) {
+        log.trace("Entering matToBufferedImage method in BarcodeServiceImpl");
         try {
             log.debug("Converting Mat to BufferedImage.");
             MatOfByte mob = new MatOfByte();
@@ -125,7 +128,7 @@ public class BarcodeServiceImpl implements BarcodeService {
             byte[] byteArray = mob.toArray();
             try (ByteArrayInputStream bis = new ByteArrayInputStream(byteArray)) {
                 BufferedImage bufferedImage = ImageIO.read(bis);
-                log.trace("BufferedImage created from Mat.");
+                log.trace("Exiting matToBufferedImage method in BarcodeServiceImpl");
                 return bufferedImage;
             }
         } catch (Exception e) {
@@ -143,13 +146,15 @@ public class BarcodeServiceImpl implements BarcodeService {
      * @throws PatientNotFoundException if the patient is not found in the database.
      */
     private GetPatientResponse getPatientByTrIdNumber(String trIdNumber) {
-        log.trace("Fetching patient by TR ID number: {}", trIdNumber);
+        log.trace("Entering getPatientByTrIdNumber method in BarcodeServiceImpl");
+        log.info("Fetching patient by TR ID number: {}", trIdNumber);
         Patient patient = this.patientRepository.findByTrIdNumberAndDeletedFalse(trIdNumber).orElseThrow(() -> {
             log.error("Patient not found with TR ID number: {}", trIdNumber);
             return new PatientNotFoundException("Patient not found with TR ID number: " + trIdNumber);
         });
         GetPatientResponse response = this.patientMapper.toGetPatientResponse(patient);
         log.info("Successfully fetched patient by TR ID number: {}", trIdNumber);
+        log.trace("Exiting getPatientByTrIdNumber method in BarcodeServiceImpl");
         return response;
     }
 
@@ -161,13 +166,15 @@ public class BarcodeServiceImpl implements BarcodeService {
      * @throws UnexpectedException if an error occurs during barcode reading.
      */
     private String readBarcodeFromImage(BufferedImage bufferedImage) {
+        log.trace("Entering readBarcodeFromImage method in BarcodeServiceImpl");
         try {
             log.debug("Reading barcode from image.");
             LuminanceSource source = new BufferedImageLuminanceSource(bufferedImage);
             BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
             Result result = new QRCodeReader().decode(bitmap);
             String barcodeText = result.getText();
-            log.trace("Barcode data extracted: {}", barcodeText);
+            log.info("Barcode data extracted: {}", barcodeText);
+            log.trace("Exiting readBarcodeFromImage method in BarcodeServiceImpl");
             return barcodeText;
         } catch (NotFoundException e) {
             log.error("Barcode not found in image.", e);
@@ -190,6 +197,7 @@ public class BarcodeServiceImpl implements BarcodeService {
      */
     @Override
     public byte[] generateBarcodeForPatient(String trIdNumber) {
+        log.trace("Entering generateBarcodeForPatient method in BarcodeServiceImpl");
         if (trIdNumber == null || trIdNumber.trim().isEmpty()) {
             log.error("TR ID number is null or empty.");
             throw new InvalidTrIdNumberException("TR ID number cannot be null or empty.");
@@ -210,7 +218,8 @@ public class BarcodeServiceImpl implements BarcodeService {
             try (ByteArrayOutputStream os = new ByteArrayOutputStream()) {
                 MatrixToImageWriter.writeToStream(bitMatrix, "PNG", os);
                 byte[] barcodeBytes = os.toByteArray();
-                log.trace("Barcode generated successfully, byte array length: {}", barcodeBytes.length);
+                log.info("Barcode generated successfully, byte array length: {}", barcodeBytes.length);
+                log.trace("Exiting generateBarcodeForPatient method in BarcodeServiceImpl");
                 return barcodeBytes;
             }
         } catch (WriterException e) {

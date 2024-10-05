@@ -35,9 +35,11 @@ public class UserController {
      */
     @GetMapping("/id/{id}")
     public ResponseEntity<GetUserResponse> getUserById(@PathVariable Long id) {
+        log.trace("Entering getUserById method in UserController class");
         log.info("Fetching user by id: {}", id);
         GetUserResponse response = this.userService.getUserById(id);
         log.info("User with id {} retrieved successfully", id);
+        log.trace("Exiting getUserById method in UserController class");
         return ResponseEntity.ok(response);
     }
 
@@ -73,10 +75,12 @@ public class UserController {
             @RequestParam(required = false) String gender,
             @RequestParam(required = false) Boolean deleted
     ) {
+        log.trace("Entering getAllUsersFilteredAndSorted method in UserController class");
         log.info("Fetching users with filters - page: {}, size: {}, sortBy: {}, direction: {}, firstName: {}, lastName: {}, username: {}, hospitalId: {}, email: {}, role: {}, gender: {}, deleted: {}",
                 page, size, sortBy, direction, firstName, lastName, username, hospitalId, email, role, gender, deleted);
         PagedResponse<GetUserResponse> response = this.userService.getAllUsersFilteredAndSorted(page, size, sortBy, direction, firstName, lastName, username, hospitalId, email, role, gender, deleted);
         log.info("Users filtered and sorted fetched successfully");
+        log.trace("Exiting getAllUsersFilteredAndSorted method in UserController class");
         return ResponseEntity.ok(response);
     }
 
@@ -88,7 +92,9 @@ public class UserController {
      */
     @GetMapping("/email")
     public String getUsernameByEmail(@RequestParam String email) {
+        log.trace("Entering getUsernameByEmail method in UserController class");
         log.info("Fetching username by email: {}", email);
+        log.trace("Exiting getUsernameByEmail method in UserController class");
         return this.userService.getUsernameByEmail(email);
     }
 
@@ -100,9 +106,11 @@ public class UserController {
      */
     @GetMapping("/me")
     public ResponseEntity<GetUserResponse> getCurrentUser(@RequestHeader("X-Username") String username) {
+        log.trace("Entering getCurrentUser method in UserController class");
         log.info("Fetching current user by username: {}", username);
         GetUserResponse response = this.userService.getCurrentUser(username);
         log.info("Current user retrieved successfully");
+        log.trace("Exiting getCurrentUser method in UserController class");
         return ResponseEntity.ok(response);
     }
 
@@ -115,9 +123,11 @@ public class UserController {
      */
     @PutMapping("/update/me")
     public ResponseEntity<GetUserResponse> updateCurrentUser(@RequestHeader("X-Username") String username, @RequestBody @Valid UpdateUserRequest updateUserRequest) {
+        log.trace("Entering updateCurrentUser method in UserController class");
         log.info("Updating current user with username: {}", username);
         GetUserResponse response = this.userService.updateCurrentUser(username, updateUserRequest);
         log.info("Current user updated successfully");
+        log.trace("Exiting updateCurrentUser method in UserController class");
         return ResponseEntity.ok(response);
     }
 
@@ -129,9 +139,11 @@ public class UserController {
      */
     @PostMapping
     public ResponseEntity<GetUserResponse> createUser(@RequestBody @Valid CreateUserRequest createUserRequest) {
+        log.trace("Entering createUser method in UserController class");
         log.info("Creating a new user with details: {}", createUserRequest);
         GetUserResponse response = this.userService.createUser(createUserRequest);
         log.info("User created successfully");
+        log.trace("Exiting createUser method in UserController class");
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
@@ -143,9 +155,11 @@ public class UserController {
      */
     @PutMapping
     public ResponseEntity<GetUserResponse> updateUser(@RequestBody @Valid UpdateUserRequest updateUserRequest) {
+        log.trace("Entering updateUser method in UserController class");
         log.info("Updating user with details: {}", updateUserRequest);
         GetUserResponse response = this.userService.updateUser(updateUserRequest);
         log.info("User updated successfully");
+        log.trace("Exiting updateUser method in UserController class");
         return ResponseEntity.ok(response);
     }
 
@@ -157,9 +171,11 @@ public class UserController {
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+        log.trace("Entering deleteUser method in UserController class");
         log.info("Deleting user with id: {}", id);
         this.userService.deleteUser(id);
         log.info("User with id {} deleted successfully", id);
+        log.trace("Exiting deleteUser method in UserController class");
         return ResponseEntity.ok("User has been successfully deleted.");
     }
 
@@ -171,9 +187,11 @@ public class UserController {
      */
     @PutMapping("/restore/{id}")
     public ResponseEntity<GetUserResponse> restoreUser(@PathVariable Long id) {
+        log.trace("Entering restoreUser method in UserController class");
         log.info("Restoring user with id: {}", id);
         GetUserResponse response = this.userService.restoreUser(id);
         log.info("User with id {} restored successfully", id);
+        log.trace("Exiting restoreUser method in UserController class");
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
@@ -186,9 +204,11 @@ public class UserController {
      */
     @PutMapping("/role/add/{userId}")
     public ResponseEntity<GetUserResponse> addRole(@PathVariable("userId") Long id, @RequestBody Role role) {
+        log.trace("Entering addRole method in UserController class");
         log.info("Adding role to user with id: {}", id);
         GetUserResponse response = this.userService.addRole(id, role);
         log.info("Role added to user with id {} successfully", id);
+        log.trace("Exiting addRole method in UserController class");
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
@@ -201,9 +221,11 @@ public class UserController {
      */
     @PutMapping("/role/remove/{userId}")
     public ResponseEntity<GetUserResponse> removeRole(@PathVariable("userId") Long id, @RequestBody Role role) {
+        log.trace("Entering removeRole method in UserController class");
         log.info("Removing role from user with id: {}", id);
         GetUserResponse response = this.userService.removeRole(id, role);
         log.info("Role removed from user with id {} successfully", id);
+        log.trace("Exiting removeRole method in UserController class");
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 }

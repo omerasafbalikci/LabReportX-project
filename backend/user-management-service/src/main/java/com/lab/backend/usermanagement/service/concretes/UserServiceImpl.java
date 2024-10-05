@@ -72,6 +72,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public GetUserResponse getUserById(Long id) {
+        log.trace("Entering getUserById method in UserServiceImpl");
         log.info("Fetching user by ID: {}", id);
         User user = this.userRepository.findByIdAndDeletedFalse(id).orElseThrow(() -> {
             log.error("User not found with ID: {}", id);
@@ -79,6 +80,7 @@ public class UserServiceImpl implements UserService {
         });
         GetUserResponse response = this.userMapper.toGetUserResponse(user);
         log.debug("Fetched user: {}", response);
+        log.trace("Exiting getUserById method in UserServiceImpl");
         return response;
     }
 
@@ -102,6 +104,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public PagedResponse<GetUserResponse> getAllUsersFilteredAndSorted(int page, int size, String sortBy, String direction, String firstName, String lastName,
                                                                        String username, String hospitalId, String email, String role, String gender, Boolean deleted) {
+        log.trace("Entering getAllUsersFilteredAndSorted method in UserServiceImpl");
         log.info("Fetching users with filters: page={}, size={}, sortBy={}, direction={}", page, size, sortBy, direction);
         Pageable pagingSort = PageRequest.of(page, size, Sort.Direction.valueOf(direction.toUpperCase()), sortBy);
         UserSpecification specification = new UserSpecification(firstName, lastName, username, hospitalId, email, role, gender, deleted);
@@ -111,6 +114,7 @@ public class UserServiceImpl implements UserService {
                 .map(this.userMapper::toGetUserResponse)
                 .toList();
         log.debug("Fetched {} users", userResponses.size());
+        log.trace("Exiting getAllUsersFilteredAndSorted method in UserServiceImpl");
         return new PagedResponse<>(
                 userResponses,
                 userPage.getNumber(),
@@ -133,11 +137,13 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public String getUsernameByEmail(String email) {
+        log.trace("Entering getUsernameByEmail method in UserServiceImpl");
         log.info("Fetching username by email: {}", email);
         Optional<User> optionalUser = this.userRepository.findByEmailAndDeletedFalse(email);
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             log.debug("Found username: {}", user.getUsername());
+            log.trace("Exiting getUsernameByEmail method in UserServiceImpl");
             return user.getUsername();
         } else {
             log.error("No users registered to this email address: {}", email);
@@ -154,6 +160,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public GetUserResponse getCurrentUser(String username) {
+        log.trace("Entering getCurrentUser method in UserServiceImpl");
         log.info("Fetching current user by username: {}", username);
         User user = this.userRepository.findByUsernameAndDeletedFalse(username).orElseThrow(() -> {
             log.error("User not found with username: {}", username);
@@ -161,6 +168,7 @@ public class UserServiceImpl implements UserService {
         });
         GetUserResponse response = this.userMapper.toGetUserResponse(user);
         log.debug("Fetched current user: {}", response);
+        log.trace("Exiting getCurrentUser method in UserServiceImpl");
         return response;
     }
 
@@ -177,6 +185,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public GetUserResponse updateCurrentUser(String username, UpdateUserRequest updateUserRequest) {
+        log.trace("Entering updateCurrentUser method in UserServiceImpl");
         log.info("Updating current user: {}", username);
         User existingUser = this.userRepository.findByUsernameAndDeletedFalse(username)
                 .orElseThrow(() -> {
@@ -224,6 +233,7 @@ public class UserServiceImpl implements UserService {
         }
         this.userRepository.save(existingUser);
         log.debug("Saved updated user: {}", existingUser);
+        log.trace("Exiting updateCurrentUser method in UserServiceImpl");
         return this.userMapper.toGetUserResponse(existingUser);
     }
 
@@ -238,6 +248,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public GetUserResponse createUser(CreateUserRequest createUserRequest) {
+        log.trace("Entering createUser method in UserServiceImpl");
         log.debug("Creating user with username: {}", createUserRequest.getUsername());
         if (this.userRepository.existsByUsernameAndDeletedIsFalse(createUserRequest.getUsername())) {
             log.error("Username '{}' is already taken", createUserRequest.getUsername());
@@ -260,6 +271,7 @@ public class UserServiceImpl implements UserService {
         }
         this.userRepository.save(user);
         log.info("User created successfully: {}", user.getUsername());
+        log.trace("Exiting createUser method in UserServiceImpl");
         return this.userMapper.toGetUserResponse(user);
     }
 
@@ -275,6 +287,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public GetUserResponse updateUser(UpdateUserRequest updateUserRequest) {
+        log.trace("Entering updateUser method in UserServiceImpl");
         log.debug("Updating user with id: {}", updateUserRequest.getId());
         if (updateUserRequest.getId() == null) {
             log.error("Id must not be null");
@@ -322,6 +335,7 @@ public class UserServiceImpl implements UserService {
         }
         this.userRepository.save(existingUser);
         log.info("User updated successfully: {}", existingUser.getUsername());
+        log.trace("Exiting updateUser method in UserServiceImpl");
         return this.userMapper.toGetUserResponse(existingUser);
     }
 
@@ -335,6 +349,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void deleteUser(Long id) {
+        log.trace("Entering deleteUser method in UserServiceImpl");
         log.debug("Deleting user with id: {}", id);
         User user = this.userRepository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> {
@@ -352,6 +367,7 @@ public class UserServiceImpl implements UserService {
         }
         this.userRepository.save(user);
         log.info("User deleted successfully: {}", username);
+        log.trace("Exiting deleteUser method in UserServiceImpl");
     }
 
     /**
@@ -363,6 +379,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public GetUserResponse restoreUser(Long id) {
+        log.trace("Entering restoreUser method in UserServiceImpl");
         log.debug("Restoring user with id: {}", id);
         User user = this.userRepository.findByIdAndDeletedTrue(id)
                 .orElseThrow(() -> {
@@ -380,6 +397,7 @@ public class UserServiceImpl implements UserService {
         }
         this.userRepository.save(user);
         log.info("User restored successfully: {}", username);
+        log.trace("Exiting restoreUser method in UserServiceImpl");
         return this.userMapper.toGetUserResponse(user);
     }
 
@@ -396,6 +414,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public GetUserResponse addRole(Long id, Role role) {
+        log.trace("Entering addRole method in UserServiceImpl");
         log.info("Adding role '{}' to user with id '{}'", role, id);
         User user = this.userRepository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> {
@@ -419,6 +438,7 @@ public class UserServiceImpl implements UserService {
         }
         this.userRepository.save(user);
         log.info("Role '{}' added successfully to user '{}'", role, username);
+        log.trace("Exiting addRole method in UserServiceImpl");
         return this.userMapper.toGetUserResponse(user);
     }
 
@@ -436,6 +456,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public GetUserResponse removeRole(Long id, Role role) {
+        log.trace("Entering removeRole method in UserServiceImpl");
         log.info("Removing role '{}' from user with id '{}'", role, id);
         User user = this.userRepository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> {
@@ -463,6 +484,7 @@ public class UserServiceImpl implements UserService {
         }
         this.userRepository.save(user);
         log.info("Role '{}' removed successfully from user '{}'", role, username);
+        log.trace("Exiting removeRole method in UserServiceImpl");
         return this.userMapper.toGetUserResponse(user);
     }
 }

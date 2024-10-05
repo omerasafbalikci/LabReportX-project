@@ -113,6 +113,21 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     /**
+     * Handles the TokenNotFoundException.
+     * Occurs when the specified token is not found in the system.
+     *
+     * @param exception the thrown TokenNotFoundException
+     * @param request   the HTTP request during which the exception occurred
+     * @return ResponseEntity containing the error response and NOT_FOUND (404) status code
+     */
+    @ExceptionHandler(TokenNotFoundException.class)
+    public ResponseEntity<Object> handleTokenNotFoundException(TokenNotFoundException exception, HttpServletRequest request) {
+        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.NOT_FOUND, exception.getMessage());
+        errorResponse.setPath(request.getRequestURI());
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+
+    /**
      * Handles the RedisOperationException.
      * Occurs when an issue arises during Redis operations.
      *

@@ -56,27 +56,6 @@ public class ReportSpecification implements Specification<Report> {
     }
 
     /**
-     * Constructor for initializing the specification without the technician username.
-     *
-     * @param fileNumber        the file number of the report
-     * @param patientTrIdNumber the TR ID number of the patient
-     * @param diagnosisTitle    the title of the diagnosis
-     * @param diagnosisDetails  the details of the diagnosis
-     * @param date              the date of the report
-     * @param photoPath         the path to the photo associated with the report
-     * @param deleted           the deletion status of the report
-     */
-    public ReportSpecification(String fileNumber, String patientTrIdNumber, String diagnosisTitle, String diagnosisDetails, String date, String photoPath, Boolean deleted) {
-        this.fileNumber = fileNumber;
-        this.patientTrIdNumber = patientTrIdNumber;
-        this.diagnosisTitle = diagnosisTitle;
-        this.diagnosisDetails = diagnosisDetails;
-        this.date = date;
-        this.photoPath = photoPath;
-        this.deleted = deleted;
-    }
-
-    /**
      * Constructs a {@link Predicate} based on the filtering criteria provided.
      *
      * @param root            the root
@@ -88,9 +67,6 @@ public class ReportSpecification implements Specification<Report> {
     public Predicate toPredicate(@NonNull Root<Report> root, CriteriaQuery<?> query, @NonNull CriteriaBuilder criteriaBuilder) {
         List<Predicate> predicates = new ArrayList<>();
 
-        if (technicianUsername != null && !technicianUsername.isEmpty()) {
-            predicates.add(criteriaBuilder.equal(root.get("technicianUsername"), technicianUsername));
-        }
         if (fileNumber != null && !fileNumber.isEmpty()) {
             predicates.add(criteriaBuilder.equal(root.get("fileNumber"), fileNumber));
         }
@@ -111,6 +87,9 @@ public class ReportSpecification implements Specification<Report> {
             } catch (ParseException e) {
                 throw new UnexpectedException("Error parsing date: " + e);
             }
+        }
+        if (technicianUsername != null && !technicianUsername.isEmpty()) {
+            predicates.add(criteriaBuilder.equal(root.get("technicianUsername"), technicianUsername));
         }
         if (photoPath != null && !photoPath.isEmpty()) {
             predicates.add(criteriaBuilder.like(root.get("photoPath"), "%" + photoPath + "%"));

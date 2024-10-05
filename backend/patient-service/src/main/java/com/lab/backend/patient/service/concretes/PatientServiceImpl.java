@@ -8,6 +8,7 @@ import com.lab.backend.patient.entity.Patient;
 import com.lab.backend.patient.repository.PatientRepository;
 import com.lab.backend.patient.repository.PatientSpecification;
 import com.lab.backend.patient.service.abstracts.PatientService;
+import com.lab.backend.patient.utilities.exceptions.PatientAlreadyExistsException;
 import com.lab.backend.patient.utilities.exceptions.PatientNotFoundException;
 import com.lab.backend.patient.utilities.mappers.PatientMapper;
 import lombok.RequiredArgsConstructor;
@@ -51,13 +52,15 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @Cacheable(value = "patients", key = "#id", unless = "#result == null")
     public GetPatientResponse getPatientById(Long id) {
-        log.trace("Fetching patient by ID: {}", id);
+        log.trace("Entering getPatientById method in PatientServiceImpl");
+        log.info("Fetching patient by ID: {}", id);
         Patient patient = this.patientRepository.findByIdAndDeletedFalse(id).orElseThrow(() -> {
             log.error("Patient not found with id: {}", id);
             return new PatientNotFoundException("Patient not found with id: " + id);
         });
         GetPatientResponse response = this.patientMapper.toGetPatientResponse(patient);
         log.info("Successfully fetched patient by ID: {}", id);
+        log.trace("Exiting getPatientById method in PatientServiceImpl");
         return response;
     }
 
@@ -71,13 +74,15 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @Cacheable(value = "patients", key = "#trIdNumber", unless = "#result == null")
     public GetPatientResponse getPatientByTrIdNumber(String trIdNumber) {
-        log.trace("Fetching patient by TR ID number: {}", trIdNumber);
+        log.trace("Entering getPatientByTrIdNumber method in PatientServiceImpl");
+        log.info("Fetching patient by TR ID number: {}", trIdNumber);
         Patient patient = this.patientRepository.findByTrIdNumberAndDeletedFalse(trIdNumber).orElseThrow(() -> {
             log.error("Patient not found with TR ID number: {}", trIdNumber);
             return new PatientNotFoundException("Patient not found with TR ID number: " + trIdNumber);
         });
         GetPatientResponse response = this.patientMapper.toGetPatientResponse(patient);
         log.info("Successfully fetched patient by TR ID number: {}", trIdNumber);
+        log.trace("Exiting getPatientByTrIdNumber method in PatientServiceImpl");
         return response;
     }
 
@@ -90,13 +95,15 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @Cacheable(value = "chronicDiseases", key = "#id", unless = "#result == null")
     public Set<String> getChronicDiseasesById(Long id) {
-        log.trace("Fetching chronic diseases by ID: {}", id);
+        log.trace("Entering getChronicDiseasesById method in PatientServiceImpl");
+        log.info("Fetching chronic diseases by ID: {}", id);
         Set<String> chronicDiseases = this.patientRepository.findChronicDiseasesByIdAndDeletedFalse(id);
         if (chronicDiseases == null) {
             log.warn("No chronic diseases found for patient ID: {}", id);
             chronicDiseases = Collections.emptySet();
         }
         log.info("Successfully fetched chronic diseases by ID: {}", id);
+        log.trace("Exiting getChronicDiseasesById method in PatientServiceImpl");
         return chronicDiseases;
     }
 
@@ -109,12 +116,14 @@ public class PatientServiceImpl implements PatientService {
      */
     @Override
     public String getEmail(String trIdNumber) {
-        log.trace("Fetching email for patient with TR ID number: {}", trIdNumber);
+        log.trace("Entering getEmail method in PatientServiceImpl");
+        log.info("Fetching email for patient with TR ID number: {}", trIdNumber);
         Patient patient = this.patientRepository.findByTrIdNumberAndDeletedFalse(trIdNumber).orElseThrow(() -> {
             log.error("Patient not found with TrIdNumber: {}", trIdNumber);
             return new PatientNotFoundException("Patient not found with TR ID number: " + trIdNumber);
         });
         log.info("Successfully retrieved email for patient with TR ID number: {}", trIdNumber);
+        log.trace("Exiting getEmail method in PatientServiceImpl");
         return patient.getEmail();
     }
 
@@ -127,7 +136,8 @@ public class PatientServiceImpl implements PatientService {
      */
     @Override
     public Boolean isPatientRegistered(String trIdNumber) {
-        log.trace("Checking registration time for patient with TR ID number: {}", trIdNumber);
+        log.trace("Entering isPatientRegistered method in PatientServiceImpl");
+        log.info("Checking registration time for patient with TR ID number: {}", trIdNumber);
         Patient patient = this.patientRepository.findByTrIdNumberAndDeletedFalse(trIdNumber).orElseThrow(() -> {
             log.error("Patient not found with TR ID number {}", trIdNumber);
             return new PatientNotFoundException("Patient not found with TR ID number: " + trIdNumber);
@@ -141,6 +151,7 @@ public class PatientServiceImpl implements PatientService {
         } else {
             log.info("Patient with TR ID number {} is not registered within the last 6 hours.", trIdNumber);
         }
+        log.trace("Exiting isPatientRegistered method in PatientServiceImpl");
         return isRegisteredRecently;
     }
 
@@ -169,6 +180,7 @@ public class PatientServiceImpl implements PatientService {
                                                                              String lastName, String trIdNumber, String birthDate, String gender,
                                                                              String bloodType, String phoneNumber, String email, String chronicDisease,
                                                                              String lastPatientRegistrationTime, Boolean deleted) {
+        log.trace("Entering getAllPatientsFilteredAndSorted method in PatientServiceImpl");
         log.debug("Fetching all patients with filters: page={}, size={}, sortBy={}, direction={}, firstName={}, lastName={}, trIdNumber={}, birthDate={}, gender={}, bloodType={}, phoneNumber={}, email={}, chronicDisease={}, lastPatientRegistrationTime={}, deleted={}",
                 page, size, sortBy, direction, firstName, lastName, trIdNumber, birthDate, gender, bloodType, phoneNumber, email, chronicDisease, lastPatientRegistrationTime, deleted);
         Pageable pagingSort = PageRequest.of(page, size, Sort.Direction.valueOf(direction.toUpperCase()), sortBy);
@@ -179,6 +191,7 @@ public class PatientServiceImpl implements PatientService {
                 .map(this.patientMapper::toGetPatientResponse)
                 .toList();
         log.info("Successfully fetched patients with filters: page={}, size={}, totalPages={}, totalElements={}", page, size, patientPage.getTotalPages(), patientPage.getTotalElements());
+        log.trace("Exiting getAllPatientsFilteredAndSorted method in PatientServiceImpl");
         return new PagedResponse<>(
                 patientResponses,
                 patientPage.getNumber(),
@@ -201,7 +214,8 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @CachePut(value = "patients", key = "#result.id", unless = "#result == null")
     public GetPatientResponse savePatient(CreatePatientRequest createPatientRequest) {
-        log.trace("Saving patient with TR ID number: {}", createPatientRequest.getTrIdNumber());
+        log.trace("Entering savePatient method in PatientServiceImpl");
+        log.info("Saving patient with TR ID number: {}", createPatientRequest.getTrIdNumber());
         Patient savedPatient;
         Patient existingPatient = this.patientRepository.findByTrIdNumberAndDeletedFalse(createPatientRequest.getTrIdNumber())
                 .orElse(null);
@@ -217,6 +231,7 @@ public class PatientServiceImpl implements PatientService {
         }
         GetPatientResponse patientResponse = this.patientMapper.toGetPatientResponse(savedPatient);
         log.info("Successfully saved patient with ID: {}", savedPatient.getId());
+        log.trace("Exiting savePatient method in PatientServiceImpl");
         return patientResponse;
     }
 
@@ -230,15 +245,23 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @CachePut(value = "patients", key = "#result.id", unless = "#result == null")
     public GetPatientResponse updatePatient(UpdatePatientRequest updatePatientRequest) {
-        log.trace("Updating patient with ID: {}", updatePatientRequest.getId());
+        log.trace("Entering updatePatient method in PatientServiceImpl");
+        log.info("Updating patient with ID: {}", updatePatientRequest.getId());
         Patient existingPatient = this.patientRepository.findByIdAndDeletedFalse(updatePatientRequest.getId())
                 .orElseThrow(() -> {
                     log.error("Patient does not exist with id: {}", updatePatientRequest.getId());
                     return new PatientNotFoundException("Patient does not exist with id: " + updatePatientRequest.getId());
                 });
+        if (updatePatientRequest.getTrIdNumber() != null && !updatePatientRequest.getTrIdNumber().equals(existingPatient.getTrIdNumber())) {
+            boolean trIdExists = this.patientRepository.existsByTrIdNumberAndDeletedIsFalse(updatePatientRequest.getTrIdNumber());
+            if (trIdExists) {
+                log.error("Patient already exists with TR ID number: {}", updatePatientRequest.getTrIdNumber());
+                throw new PatientAlreadyExistsException("Patient already exists with TR ID number: " + updatePatientRequest.getTrIdNumber());
+            }
+            existingPatient.setTrIdNumber(updatePatientRequest.getTrIdNumber());
+        }
         updatePatientFieldIfNotNull(existingPatient::setFirstName, updatePatientRequest.getFirstName());
         updatePatientFieldIfNotNull(existingPatient::setLastName, updatePatientRequest.getLastName());
-        updatePatientFieldIfNotNull(existingPatient::setTrIdNumber, updatePatientRequest.getTrIdNumber());
         updatePatientFieldIfNotNull(existingPatient::setBirthDate, updatePatientRequest.getBirthDate());
         updatePatientFieldIfNotNull(existingPatient::setGender, updatePatientRequest.getGender());
         updatePatientFieldIfNotNull(existingPatient::setBloodType, updatePatientRequest.getBloodType());
@@ -248,6 +271,7 @@ public class PatientServiceImpl implements PatientService {
         this.patientRepository.save(existingPatient);
         GetPatientResponse patientResponse = this.patientMapper.toGetPatientResponse(existingPatient);
         log.info("Successfully updated patient with ID: {}", updatePatientRequest.getId());
+        log.trace("Exiting updatePatient method in PatientServiceImpl");
         return patientResponse;
     }
 
@@ -266,7 +290,8 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @CacheEvict(value = "patients", key = "#id")
     public void deletePatient(Long id) {
-        log.trace("Deleting patient with ID: {}", id);
+        log.trace("Entering deletePatient method in PatientServiceImpl");
+        log.info("Deleting patient with ID: {}", id);
         Patient patient = this.patientRepository.findByIdAndDeletedFalse(id).orElseThrow(() -> {
             log.error("Patient not found to delete. ID: {}", id);
             return new PatientNotFoundException("Patient not found to delete. ID: " + id);
@@ -274,6 +299,7 @@ public class PatientServiceImpl implements PatientService {
         patient.setDeleted(true);
         this.patientRepository.save(patient);
         log.info("Successfully deleted patient with ID: {}", id);
+        log.trace("Exiting deletePatient method in PatientServiceImpl");
     }
 
     /**
@@ -285,7 +311,8 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @CachePut(value = "patients", key = "#id", unless = "#result == null")
     public GetPatientResponse restorePatient(Long id) {
-        log.trace("Restoring patient with ID: {}", id);
+        log.trace("Entering restorePatient method in PatientServiceImpl");
+        log.info("Restoring patient with ID: {}", id);
         Patient patient = this.patientRepository.findByIdAndDeletedTrue(id).orElseThrow(() -> {
             log.error("Patient not found to restore. ID: {}", id);
             return new PatientNotFoundException("Patient not found to restore. ID: " + id);
@@ -294,6 +321,7 @@ public class PatientServiceImpl implements PatientService {
         this.patientRepository.save(patient);
         GetPatientResponse patientResponse = this.patientMapper.toGetPatientResponse(patient);
         log.info("Successfully restored patient with ID: {}", id);
+        log.trace("Exiting restorePatient method in PatientServiceImpl");
         return patientResponse;
     }
 }

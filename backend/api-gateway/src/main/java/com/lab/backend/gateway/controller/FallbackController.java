@@ -29,11 +29,12 @@ public class FallbackController {
      */
     @RequestMapping(value = "/fallback/auth", method = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
     public ResponseEntity<String> fallbackAuth() {
-        log.error("Auth service is unavailable, executing fallback method");
+        log.trace("Entering fallbackAuth method in FallbackController");
         try {
+            log.error("Auth service is unavailable, executing fallback method");
             throw new AuthServiceUnavailableException("Auth service is temporarily unavailable. Please try again later.");
         } finally {
-            log.info("FallbackAuth executed");
+            log.trace("Exiting fallbackAuth method in FallbackController");
         }
     }
 
@@ -46,11 +47,12 @@ public class FallbackController {
      */
     @RequestMapping(value = "/fallback/user", method = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
     public ResponseEntity<String> fallbackUser() {
-        log.error("User service is unavailable, executing fallback method");
+        log.trace("Entering fallbackUser method in FallbackController");
         try {
+            log.error("User service is unavailable, executing fallback method");
             throw new UserServiceUnavailableException("User management service is temporarily unavailable. Please try again later.");
         } finally {
-            log.info("FallbackUser executed");
+            log.trace("Exiting fallbackUser method in FallbackController");
         }
     }
 
@@ -63,11 +65,12 @@ public class FallbackController {
      */
     @RequestMapping(value = "/fallback/patient", method = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
     public ResponseEntity<String> fallbackPatient() {
-        log.error("Patient service is unavailable, executing fallback method");
+        log.trace("Entering fallbackPatient method in FallbackController");
         try {
+            log.error("Patient service is unavailable, executing fallback method");
             throw new PatientServiceUnavailableException("Patient service is temporarily unavailable. Please try again later.");
         } finally {
-            log.info("FallbackPatient executed");
+            log.trace("Exiting fallbackPatient method in FallbackController");
         }
     }
 
@@ -80,11 +83,12 @@ public class FallbackController {
      */
     @RequestMapping(value = "/fallback/report", method = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
     public ResponseEntity<String> fallbackReport() {
-        log.error("Report service is unavailable, executing fallback method");
+        log.trace("Entering fallbackReport method in FallbackController");
         try {
+            log.error("Report service is unavailable, executing fallback method");
             throw new ReportServiceUnavailableException("Report service is temporarily unavailable. Please try again later.");
         } finally {
-            log.info("FallbackReport executed");
+            log.trace("Exiting fallbackReport method in FallbackController");
         }
     }
 }

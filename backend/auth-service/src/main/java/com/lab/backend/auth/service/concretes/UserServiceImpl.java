@@ -64,14 +64,15 @@ public class UserServiceImpl implements UserService {
 
     @PostConstruct
     public void init() {
-        log.info("Initializing JedisPool with Redis Host: {} and Port: {}", redisHost, redisPort);
+        log.trace("Initializing JedisPool with Redis Host: {} and Port: {}", redisHost, redisPort);
         this.jedisPool = new JedisPool(redisHost, Integer.parseInt(redisPort));
+        log.trace("Exiting init method in UserServiceImpl");
     }
 
     @PreDestroy
     public void shutDown() {
         if (jedisPool != null) {
-            log.info("Shutting down JedisPool");
+            log.trace("Shutting down JedisPool");
             jedisPool.close();
         }
     }
@@ -85,6 +86,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public List<String> login(AuthRequest authRequest) throws RedisOperationException {
+        log.trace("Entering login method in UserServiceImpl");
         log.debug("Attempting to authenticate user: {}", authRequest.getUsername());
         try {
             this.authenticationManager.authenticate(
@@ -109,7 +111,7 @@ public class UserServiceImpl implements UserService {
 
         revokeAllTokensByUser(user.getId());
         saveUserToken(user, accessToken);
-        log.info("Tokens generated for user: {}", authRequest.getUsername());
+        log.trace("Exiting login method in UserServiceImpl");
         return Arrays.asList(accessToken, refreshToken);
     }
 
@@ -124,12 +126,13 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public List<String> refreshToken(HttpServletRequest request) throws UsernameExtractionException, InvalidTokenException, RedisOperationException {
+        log.trace("Entering refreshToken method in UserServiceImpl");
         String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
         log.debug("Attempting to refresh token");
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             String refreshToken = authHeader.substring(7);
             String username = this.jwtService.extractUsername(refreshToken);
-            log.trace("Extracted username from refresh token: {}", username);
+            log.info("Extracted username from refresh token: {}", username);
             if (username != null) {
                 UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
                 if (userDetails != null && jwtService.isTokenValid(refreshToken, userDetails)) {
@@ -146,6 +149,7 @@ public class UserServiceImpl implements UserService {
                     String accessToken = this.jwtService.generateAccessToken(username, getRolesAsString(user.getRoles()));
                     revokeAllTokensByUser(user.getId());
                     saveUserToken(user, accessToken);
+                    log.trace("Exiting refreshToken method in UserServiceImpl");
                     return Arrays.asList(accessToken, refreshToken);
                 } else {
                     log.error("Token invalid for user: {}", username);
@@ -169,6 +173,7 @@ public class UserServiceImpl implements UserService {
      * @throws RedisOperationException if there is an issue interacting with Redis.
      */
     private void saveUserToken(User user, String jwt) throws RedisOperationException {
+        log.trace("Entering saveUserToken method in UserServiceImpl");
         log.debug("Saving token for user: {}", user.getUsername());
         Token token = Token.builder()
                 .token(jwt)
@@ -180,11 +185,12 @@ public class UserServiceImpl implements UserService {
         try (Jedis jedis = this.jedisPool.getResource()) {
             jedis.set("token:" + token.getId() + ":is_logged_out", "false");
             jedis.set(jwt, String.valueOf(token.getId()));
-            log.trace("Token saved in Redis for user: {}", user.getUsername());
+            log.info("Token saved in Redis for user: {}", user.getUsername());
         } catch (JedisException e) {
             log.error("Failed to save token in Redis for user: {}", user.getUsername());
             throw new RedisOperationException("Failed to set token status in Redis ", e);
         }
+        log.trace("Exiting saveUserToken method in UserServiceImpl");
     }
 
     /**
@@ -194,10 +200,11 @@ public class UserServiceImpl implements UserService {
      * @throws RedisOperationException if there is an issue interacting with Redis.
      */
     private void revokeAllTokensByUser(long id) throws RedisOperationException {
+        log.trace("Entering revokeAllTokensByUser method in UserServiceImpl");
         log.debug("Revoking all tokens for user ID: {}", id);
         List<Token> validTokens = this.tokenRepository.findAllValidTokensByUser(id);
         if (validTokens.isEmpty()) {
-            log.trace("No valid tokens found for user ID: {}", id);
+            log.info("No valid tokens found for user ID: {}", id);
             return;
         }
 
@@ -205,13 +212,14 @@ public class UserServiceImpl implements UserService {
             for (Token token : validTokens) {
                 token.setLoggedOut(true);
                 jedis.set("token:" + token.getId() + ":is_logged_out", "true");
-                log.trace("Token revoked for user ID: {}", id);
+                log.info("Token revoked for user ID: {}", id);
             }
         } catch (JedisException e) {
             log.error("Failed to revoke tokens in Redis for user ID: {}", id);
             throw new RedisOperationException("Failed to set token status in Redis ", e);
         }
         this.tokenRepository.saveAll(validTokens);
+        log.trace("Exiting revokeAllTokensByUser method in UserServiceImpl");
     }
 
     /**
@@ -223,6 +231,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void logout(HttpServletRequest request) throws InvalidTokenException, RedisOperationException {
+        log.trace("Entering logout method in UserServiceImpl");
         log.debug("Logout initiated");
         String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
@@ -244,6 +253,7 @@ public class UserServiceImpl implements UserService {
             log.error("Failed to log out token in Redis", e);
             throw new RedisOperationException("Failed to log out token in Redis ", e);
         }
+        log.trace("Exiting logout method in UserServiceImpl");
     }
 
     /**
@@ -257,6 +267,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public String changePassword(HttpServletRequest request, PasswordRequest passwordRequest) throws RedisOperationException, InvalidTokenException {
+        log.trace("Entering changePassword method in UserServiceImpl");
         log.debug("Password change request initiated");
         String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
@@ -273,6 +284,7 @@ public class UserServiceImpl implements UserService {
                 this.userRepository.save(user);
                 revokeAllTokensByUser(user.getId());
                 log.info("Password changed successfully for user: {}", username);
+                log.trace("Exiting changePassword method in UserServiceImpl");
                 return "Password changed successfully.";
             } else {
                 log.error("Old password is incorrect for user: {}", username);
@@ -291,6 +303,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void initiatePasswordReset(String email) {
+        log.trace("Entering initiatePasswordReset method in UserServiceImpl");
         String EMAIL_REGEX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
         Pattern pattern = Pattern.compile(EMAIL_REGEX);
         if (!pattern.matcher(email).matches()) {
@@ -330,6 +343,7 @@ public class UserServiceImpl implements UserService {
             log.error("User not found in user management service for email: {}", email);
             throw new UserNotFoundException("User not found in user management service with email: " + email);
         }
+        log.trace("Exiting initiatePasswordReset method in UserServiceImpl");
     }
 
     /**
@@ -361,10 +375,12 @@ public class UserServiceImpl implements UserService {
      * @param resetToken the generated reset token to be included in the email link
      */
     private void sendPasswordResetEmail(String username, String userMail, String resetToken) {
+        log.trace("Entering sendPasswordResetEmail method in UserServiceImpl");
         String resetUrl = "http://localhost:8080/auth/reset-password?token=" + resetToken;
         String message = String.format("Hello %s,\n\nYou requested a password reset. Please use the following link to reset your password:\n%s\n\nIf you did not request this, please ignore this email.\n\nÖMER ASAF BALIKÇI", username, resetUrl);
 
         this.mailService.sendEmail(userMail, "Password Reset Request", message);
+        log.trace("Exiting sendPasswordResetEmail method in UserServiceImpl");
     }
 
     /**
@@ -376,6 +392,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public String handlePasswordReset(String token, String newPassword) {
+        log.trace("Entering handlePasswordReset method in UserServiceImpl");
         log.debug("Handling password reset for token: {}", token);
         if (newPassword == null || newPassword.length() < 8) {
             log.error("New password does not meet the minimum length requirement");
@@ -393,6 +410,7 @@ public class UserServiceImpl implements UserService {
             user.setResetTokenExpiration(null);
             this.userRepository.save(user);
             log.info("Password reset successfully for user: {}", user.getUsername());
+            log.trace("Exiting handlePasswordReset method in UserServiceImpl");
             return "Password reset successfully.";
         } else {
             log.error("Invalid reset token provided");
@@ -407,13 +425,13 @@ public class UserServiceImpl implements UserService {
      * @return a list of role names as strings
      */
     private List<String> getRolesAsString(List<Role> roles) {
-        log.trace("Entering getRolesAsString method");
+        log.trace("Entering getRolesAsString method in UserServiceImpl");
         try {
             return roles.stream()
                     .map(Role::getName)
                     .collect(Collectors.toList());
         } finally {
-            log.trace("Exiting getRolesAsString method");
+            log.trace("Exiting getRolesAsString method in UserServiceImpl");
         }
     }
 
@@ -428,7 +446,7 @@ public class UserServiceImpl implements UserService {
      */
     @RabbitListener(queues = "${rabbitmq.queue.create}")
     public void createUser(CreateAuthUserRequest createAuthUserRequest) throws UserAlreadyExistsException, NoRolesException, InvalidEmailFormatException, EmailSendingFailedException {
-        log.trace("Entering createUser method with request: {}", createAuthUserRequest);
+        log.trace("Entering createUser method in UserServiceImpl");
         if (this.userRepository.existsByUsernameAndDeletedIsFalse(createAuthUserRequest.getUsername())) {
             log.error("Username '{}' is already taken", createAuthUserRequest.getUsername());
             throw new UserAlreadyExistsException("Username '" + createAuthUserRequest.getUsername() + "' is already taken");
@@ -460,6 +478,7 @@ public class UserServiceImpl implements UserService {
         String emailBody = "Please click the following link to verify your email address: " + verificationLink;
         this.mailService.sendEmail(createAuthUserRequest.getEmail(), emailSubject, emailBody);
         log.info("Verification email sent to '{}'", createAuthUserRequest.getEmail());
+        log.trace("Exiting createUser method in UserServiceImpl");
     }
 
     /**
@@ -470,6 +489,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void verifyEmail(String token) {
+        log.trace("Entering verifyEmail method in UserServiceImpl");
         User user = this.userRepository.findByEmailVerificationTokenAndDeletedIsFalse(token)
                 .orElseThrow(() -> {
                     log.error("User with the given verification token not found");
@@ -479,6 +499,7 @@ public class UserServiceImpl implements UserService {
         user.setEmailVerificationToken(null);
         this.userRepository.save(user);
         log.info("Email verified for user: {}", user.getUsername());
+        log.trace("Exiting verifyEmail method in UserServiceImpl");
     }
 
     /**
@@ -490,7 +511,7 @@ public class UserServiceImpl implements UserService {
      */
     @RabbitListener(queues = "${rabbitmq.queue.update}")
     public void updateUser(UpdateAuthUserRequest updateAuthUserRequest) throws UserAlreadyExistsException, UserNotFoundException {
-        log.trace("Entering updateUser method with request: {}", updateAuthUserRequest);
+        log.trace("Entering updateUser method in UserServiceImpl");
         if (this.userRepository.existsByUsernameAndDeletedIsFalse(updateAuthUserRequest.getNewUsername())) {
             log.error("Username is already taken: {}", updateAuthUserRequest.getNewUsername());
             throw new UserAlreadyExistsException("Username is already taken! Username: " + updateAuthUserRequest.getNewUsername());
@@ -505,6 +526,7 @@ public class UserServiceImpl implements UserService {
             log.error("User not found");
             throw new UserNotFoundException("User not found");
         }
+        log.trace("Exiting updateUser method in UserServiceImpl");
     }
 
     /**
@@ -516,7 +538,7 @@ public class UserServiceImpl implements UserService {
      */
     @RabbitListener(queues = "${rabbitmq.queue.delete}")
     public void deleteUser(String username) throws RedisOperationException, UserNotFoundException {
-        log.trace("Entering deleteUser method for username: {}", username);
+        log.trace("Entering deleteUser method in UserServiceImpl");
         Optional<User> optionalUser = this.userRepository.findByUsernameAndDeletedIsFalse(username);
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
@@ -528,6 +550,7 @@ public class UserServiceImpl implements UserService {
             log.error("User not found: {}", username);
             throw new UserNotFoundException("User not found");
         }
+        log.trace("Exiting deleteUser method in UserServiceImpl");
     }
 
     /**
@@ -539,7 +562,7 @@ public class UserServiceImpl implements UserService {
      */
     @RabbitListener(queues = "${rabbitmq.queue.restore}")
     public void restoreUser(String username) throws RedisOperationException, UserNotFoundException {
-        log.trace("Entering restoreUser method for username: {}", username);
+        log.trace("Entering restoreUser method in UserServiceImpl");
         Optional<User> optionalUser = this.userRepository.findByUsernameAndDeletedIsTrue(username);
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
@@ -551,6 +574,7 @@ public class UserServiceImpl implements UserService {
             log.error("User not found to restore: {}", username);
             throw new UserNotFoundException("User not found");
         }
+        log.trace("Exiting restoreUser method in UserServiceImpl");
     }
 
     /**
@@ -562,7 +586,7 @@ public class UserServiceImpl implements UserService {
      */
     @RabbitListener(queues = "${rabbitmq.queue.addRole}")
     public void addRole(UpdateAuthUserRoleRequest updateAuthUserRoleRequest) throws RoleNotFoundException, UserNotFoundException {
-        log.trace("Entering addRole method with request: {}", updateAuthUserRoleRequest);
+        log.trace("Entering addRole method in UserServiceImpl");
         Optional<User> optionalUser = this.userRepository.findByUsernameAndDeletedIsFalse(updateAuthUserRoleRequest.getUsername());
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
@@ -579,6 +603,7 @@ public class UserServiceImpl implements UserService {
             log.error("No user found to add role: {}", updateAuthUserRoleRequest.getUsername());
             throw new UserNotFoundException("User not found");
         }
+        log.trace("Exiting addRole method in UserServiceImpl");
     }
 
     /**
@@ -590,7 +615,7 @@ public class UserServiceImpl implements UserService {
      */
     @RabbitListener(queues = "${rabbitmq.queue.removeRole}")
     public void removeRole(UpdateAuthUserRoleRequest updateAuthUserRoleRequest) throws RoleNotFoundException, UserNotFoundException {
-        log.trace("Entering removeRole method with request: {}", updateAuthUserRoleRequest);
+        log.trace("Entering removeRole method in UserServiceImpl");
         Optional<User> optionalUser = this.userRepository.findByUsernameAndDeletedIsFalse(updateAuthUserRoleRequest.getUsername());
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
@@ -607,5 +632,6 @@ public class UserServiceImpl implements UserService {
             log.error("No user found to remove role: {}", updateAuthUserRoleRequest.getUsername());
             throw new UserNotFoundException("User not found");
         }
+        log.trace("Exiting removeRole method in UserServiceImpl");
     }
 }

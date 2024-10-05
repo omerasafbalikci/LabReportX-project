@@ -25,22 +25,23 @@ public interface ReportService {
     /**
      * Retrieves all reports with optional filtering and sorting.
      *
-     * @param page              the page number to retrieve
-     * @param size              the number of records per page
-     * @param sortBy            the field to sort by
-     * @param direction         the sort direction (asc or desc)
-     * @param fileNumber        optional file number filter
-     * @param patientTrIdNumber optional patient TR ID number filter
-     * @param diagnosisTitle    optional diagnosis title filter
-     * @param diagnosisDetails  optional diagnosis details filter
-     * @param date              optional date filter
-     * @param photoPath         optional photo path filter
-     * @param deleted           optional filter to include/exclude deleted reports
+     * @param page               the page number to retrieve
+     * @param size               the number of records per page
+     * @param sortBy             the field to sort by
+     * @param direction          the sort direction (asc or desc)
+     * @param fileNumber         optional file number filter
+     * @param patientTrIdNumber  optional patient TR ID number filter
+     * @param diagnosisTitle     optional diagnosis title filter
+     * @param diagnosisDetails   optional diagnosis details filter
+     * @param date               optional date filter
+     * @param photoPath          optional photo path filter
+     * @param technicianUsername the username of the technician
+     * @param deleted            optional filter to include/exclude deleted reports
      * @return a paged response containing the list of filtered and sorted reports
      */
     PagedResponse<GetReportResponse> getAllReportsFilteredAndSorted(int page, int size, String sortBy, String direction, String fileNumber,
                                                                     String patientTrIdNumber, String diagnosisTitle, String diagnosisDetails, String date,
-                                                                    String photoPath, Boolean deleted);
+                                                                    String photoPath, String technicianUsername, Boolean deleted);
 
     /**
      * Retrieves reports assigned to a specific technician with optional filtering and sorting.

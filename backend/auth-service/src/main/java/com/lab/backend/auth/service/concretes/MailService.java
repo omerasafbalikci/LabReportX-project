@@ -38,7 +38,8 @@ public class MailService {
      * @throws EmailSendingFailedException if the email could not be sent due to a mail server issue
      */
     public void sendEmail(String to, String subject, String text) {
-        log.trace("Entering sendEmail method with parameters - to: {}, subject: {}, text length: {}", to, subject, text.length());
+        log.trace("Entering sendEmail method in MailService");
+        log.info("Entering sendEmail method with parameters - to: {}, subject: {}, text length: {}", to, subject, text.length());
         if (fromEmail == null || fromEmail.isEmpty() || to == null || to.isEmpty()) {
             log.error("Email configuration is missing. From email or recipient email is null or empty.");
             throw new InvalidEmailFormatException("Email configuration is missing.");
@@ -64,7 +65,7 @@ public class MailService {
             log.error("Failed to send email to {}. Exception: {}", to, e.getMessage());
             throw new EmailSendingFailedException("Failed to send email: " + e.getMessage());
         }
-        log.trace("Exiting sendEmail method");
+        log.trace("Exiting sendEmail method in MailService");
     }
 
     /**

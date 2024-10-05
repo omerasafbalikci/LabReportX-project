@@ -46,6 +46,7 @@ public class PrescriptionService {
      * @return A byte array representing the generated PDF, or null if an error occurs.
      */
     public byte[] generatePrescription(String diagnosisDetails) {
+        log.trace("Entering generatePrescription method in PrescriptionService");
         log.info("Starting PDF generation for prescription.");
         try (ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
             Document document = new Document();
@@ -117,6 +118,7 @@ public class PrescriptionService {
             }
             document.close();
             log.info("PDF generation completed successfully.");
+            log.trace("Exiting generatePrescription method in PrescriptionService");
             return byteArrayOutputStream.toByteArray();
         } catch (DocumentException | IOException e) {
             log.error("Error generating prescription PDF", e);

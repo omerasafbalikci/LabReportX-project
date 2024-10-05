@@ -29,8 +29,8 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthG
     /**
      * Constructs the filter with the necessary dependencies.
      *
-     * @param jwtUtil         utility class for handling JWT operations.
-     * @param routeValidator  utility for determining secured routes and role-based access.
+     * @param jwtUtil        utility class for handling JWT operations.
+     * @param routeValidator utility for determining secured routes and role-based access.
      */
     public AuthGatewayFilterFactory(JwtUtil jwtUtil, RouteValidator routeValidator) {
         super(Config.class);
@@ -46,9 +46,10 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthG
      */
     @Override
     public GatewayFilter apply(Config config) {
+        log.trace("Entering apply method in AuthGatewayFilterFactory class");
         return (exchange, chain) -> {
             ServerHttpRequest request = exchange.getRequest();
-            log.trace("Processing request for path: {}", request.getPath());
+            log.info("Processing request for path: {}", request.getPath());
 
             if (this.routeValidator.isSecured.test(request)) {
                 log.debug("Request is to a secured route: {}", request.getPath());
@@ -92,6 +93,7 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthG
                         }
                         log.info("User {} authorized for path: {}", username, fullPath);
                     }
+                    log.trace("Exiting apply method in AuthGatewayFilterFactory class with successful authentication");
                     return chain.filter(exchange);
                 } else {
                     log.error("Missing or invalid authorization header for request path: {}", request.getPath());

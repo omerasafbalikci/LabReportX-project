@@ -35,9 +35,10 @@ public class PatientController {
      */
     @GetMapping("/id/{id}")
     public ResponseEntity<GetPatientResponse> getPatientById(@PathVariable("id") Long id) {
-        log.trace("Received request to get patient by id: {}", id);
+        log.trace("Entering getPatientById method in PatientController class");
         GetPatientResponse response = this.patientService.getPatientById(id);
         log.info("Successfully fetched patient with id: {}", id);
+        log.trace("Exiting getPatientById method in PatientController class");
         return ResponseEntity.ok(response);
     }
 
@@ -49,9 +50,10 @@ public class PatientController {
      */
     @GetMapping("/tr-id-number")
     public ResponseEntity<GetPatientResponse> getPatientByTrIdNumber(@RequestParam String trIdNumber) {
-        log.trace("Received request to get patient by TR ID number: {}", trIdNumber);
+        log.trace("Entering getPatientByTrIdNumber method in PatientController class");
         GetPatientResponse response = this.patientService.getPatientByTrIdNumber(trIdNumber);
         log.info("Successfully fetched patient with TR ID number: {}", trIdNumber);
+        log.trace("Exiting getPatientByTrIdNumber method in PatientController class");
         return ResponseEntity.ok(response);
     }
 
@@ -63,9 +65,10 @@ public class PatientController {
      */
     @GetMapping("/chronic-diseases/{id}")
     public ResponseEntity<Set<String>> getChronicDiseasesById(@PathVariable("id") Long id) {
-        log.trace("Received request to get chronic diseases for patient id: {}", id);
+        log.trace("Entering getChronicDiseasesById method in PatientController class");
         Set<String> response = this.patientService.getChronicDiseasesById(id);
         log.info("Successfully fetched chronic diseases for patient id: {}", id);
+        log.trace("Exiting getChronicDiseasesById method in PatientController class");
         return ResponseEntity.ok(response);
     }
 
@@ -77,9 +80,10 @@ public class PatientController {
      */
     @GetMapping("/email")
     public ResponseEntity<String> getEmail(@RequestParam String trIdNumber) {
-        log.trace("Received request to get email for TR ID number: {}", trIdNumber);
+        log.trace("Entering getEmail method in PatientController class");
         String response = this.patientService.getEmail(trIdNumber);
         log.info("Successfully fetched email for TR ID number: {}", trIdNumber);
+        log.trace("Exiting getEmail method in PatientController class");
         return ResponseEntity.ok(response);
     }
 
@@ -96,9 +100,10 @@ public class PatientController {
      */
     @GetMapping("/check-tr-id-number")
     public ResponseEntity<Boolean> isPatientRegistered(@RequestParam String trIdNumber) {
-        log.trace("Received request to check existence of patient with TR ID number: {}", trIdNumber);
+        log.trace("Entering isPatientRegistered method in PatientController class");
         Boolean response = this.patientService.isPatientRegistered(trIdNumber);
         log.info("TR ID number check for {} returned: {}", trIdNumber, response);
+        log.trace("Exiting isPatientRegistered method in PatientController class");
         return ResponseEntity.ok(response);
     }
 
@@ -140,10 +145,12 @@ public class PatientController {
             @RequestParam(required = false) String lastPatientRegistrationTime,
             @RequestParam(required = false) Boolean deleted
     ) {
-        log.trace("Received request for filtered and sorted patients with parameters: page={}, size={}, sortBy={}, direction={}, firstName={}, lastName={}, trIdNumber={}, birthDate={}, gender={}, bloodType={}, phoneNumber={}, email={}, chronicDisease={}, lastPatientRegistrationTime={}, deleted={}",
+        log.trace("Entering getAllPatientsFilteredAndSorted method in PatientController class");
+        log.info("Received request for filtered and sorted patients with parameters: page={}, size={}, sortBy={}, direction={}, firstName={}, lastName={}, trIdNumber={}, birthDate={}, gender={}, bloodType={}, phoneNumber={}, email={}, chronicDisease={}, lastPatientRegistrationTime={}, deleted={}",
                 page, size, sortBy, direction, firstName, lastName, trIdNumber, birthDate, gender, bloodType, phoneNumber, email, chronicDisease, lastPatientRegistrationTime, deleted);
         PagedResponse<GetPatientResponse> response = this.patientService.getAllPatientsFilteredAndSorted(page, size, sortBy, direction, firstName, lastName, trIdNumber, birthDate, gender, bloodType, phoneNumber, email, chronicDisease, lastPatientRegistrationTime, deleted);
         log.info("Successfully fetched filtered and sorted patients.");
+        log.trace("Exiting getAllPatientsFilteredAndSorted method in PatientController class");
         return ResponseEntity.ok(response);
     }
 
@@ -155,9 +162,10 @@ public class PatientController {
      */
     @PostMapping
     public ResponseEntity<GetPatientResponse> savePatient(@RequestBody @Valid CreatePatientRequest createPatientRequest) {
-        log.trace("Received request to save patient: {}", createPatientRequest);
+        log.trace("Entering savePatient method in PatientController class");
         GetPatientResponse response = this.patientService.savePatient(createPatientRequest);
         log.info("Successfully saved patient: {}", response);
+        log.trace("Exiting savePatient method in PatientController class");
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
@@ -169,9 +177,10 @@ public class PatientController {
      */
     @PutMapping
     public ResponseEntity<GetPatientResponse> updatePatient(@RequestBody @Valid UpdatePatientRequest updatePatientRequest) {
-        log.trace("Received request to update patient: {}", updatePatientRequest);
+        log.trace("Entering updatePatient method in PatientController class");
         GetPatientResponse response = this.patientService.updatePatient(updatePatientRequest);
         log.info("Successfully updated patient: {}", response);
+        log.trace("Exiting updatePatient method in PatientController class");
         return ResponseEntity.ok(response);
     }
 
@@ -183,9 +192,10 @@ public class PatientController {
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deletePatient(@PathVariable("id") Long id) {
-        log.trace("Received request to delete patient with id: {}", id);
+        log.trace("Entering deletePatient method in PatientController class");
         this.patientService.deletePatient(id);
         log.info("Successfully deleted patient with id: {}", id);
+        log.trace("Exiting deletePatient method in PatientController class");
         return ResponseEntity.ok("Patient has been successfully deleted.");
     }
 
@@ -197,9 +207,10 @@ public class PatientController {
      */
     @PutMapping("/restore/{id}")
     public ResponseEntity<GetPatientResponse> restorePatient(@PathVariable("id") Long id) {
-        log.trace("Received request to restore patient with id: {}", id);
+        log.trace("Entering restorePatient method in PatientController class");
         GetPatientResponse response = this.patientService.restorePatient(id);
         log.info("Successfully restored patient with id: {}", id);
+        log.trace("Exiting restorePatient method in PatientController class");
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 }
