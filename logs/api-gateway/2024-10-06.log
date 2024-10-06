@@ -1347,3 +1347,470 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) [spring-boot-3.3.3.jar:3.3.3]
 	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
 2024-10-06 03:30:13.438 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Completed shut down of DiscoveryClient
+2024-10-06 14:34:56.954 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-10-06 14:34:57.017 [main] INFO  ApiGatewayApplication - Starting ApiGatewayApplication using Java 17.0.11 with PID 2548 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\api-gateway\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-06 14:34:57.111 [main] DEBUG ApiGatewayApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-10-06 14:34:57.111 [main] INFO  ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-06 14:34:57.157 [main] INFO  ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-10-06 14:34:57.157 [main] INFO  ConfigServerConfigDataLoader - Located environment: name=api-gateway, profiles=[default], label=null, version=282fc270e9ee77526021140f29cb5c0d0863bb3e, state=null
+2024-10-06 14:34:59.750 [main] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-06 14:34:59.750 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-10-06 14:34:59.797 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2024-10-06 14:35:00.204 [main] INFO  GenericScope - BeanFactory id=6f432307-047c-3c0e-babd-e966faf517ec
+2024-10-06 14:35:00.266 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-10-06 14:35:00.266 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-06 14:35:00.282 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-10-06 14:35:00.282 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-06 14:35:00.282 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-06 14:35:00.782 [main] TRACE JwtUtil - Initializing Redis connection pool with host: localhost, port: 6379
+2024-10-06 14:35:00.813 [main] TRACE JwtUtil - Redis connection pool initialized successfully.
+2024-10-06 14:35:00.844 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-06 14:35:00.969 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-06 14:35:00.969 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-06 14:35:00.985 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2024-10-06 14:35:02.185 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2024-10-06 14:35:02.626 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-06 14:35:02.958 [main] INFO  DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-10-06 14:35:02.989 [main] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-10-06 14:35:03.054 [main] INFO  InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-10-06 14:35:03.101 [main] INFO  DiscoveryClient - Initializing Eureka in region us-east-1
+2024-10-06 14:35:03.101 [main] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 14:35:03.117 [main] INFO  DiscoveryClient - Disable delta property : false
+2024-10-06 14:35:03.117 [main] INFO  DiscoveryClient - Single vip registry refresh property : null
+2024-10-06 14:35:03.117 [main] INFO  DiscoveryClient - Force full registry fetch : false
+2024-10-06 14:35:03.117 [main] INFO  DiscoveryClient - Application is null : false
+2024-10-06 14:35:03.117 [main] INFO  DiscoveryClient - Registered Applications size is zero : true
+2024-10-06 14:35:03.117 [main] INFO  DiscoveryClient - Application version is -1: true
+2024-10-06 14:35:03.117 [main] INFO  DiscoveryClient - Getting all instance registry info from the eureka server
+2024-10-06 14:35:03.669 [main] INFO  DiscoveryClient - The response status is 200
+2024-10-06 14:35:03.669 [main] INFO  DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-10-06 14:35:03.669 [main] INFO  InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-10-06 14:35:03.685 [main] INFO  DiscoveryClient - Discovery Client initialized at timestamp 1728214503685 with initial instances count: 0
+2024-10-06 14:35:03.685 [main] INFO  EurekaServiceRegistry - Registering application API-GATEWAY with eureka with status UP
+2024-10-06 14:35:03.685 [main] INFO  DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1728214503685, current=UP, previous=STARTING]
+2024-10-06 14:35:03.685 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_API-GATEWAY/asaf:api-gateway:8080: registering service...
+2024-10-06 14:35:03.790 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_API-GATEWAY/asaf:api-gateway:8080 - registration status: 204
+2024-10-06 14:35:03.842 [main] INFO  NettyWebServer - Netty started on port 8080 (http)
+2024-10-06 14:35:03.842 [main] INFO  EurekaAutoServiceRegistration - Updating port to 8080
+2024-10-06 14:35:04.095 [main] INFO  ApiGatewayApplication - Started ApiGatewayApplication in 8.973 seconds (process running for 10.364)
+2024-10-06 14:35:33.687 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Disable delta property : false
+2024-10-06 14:35:33.688 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Single vip registry refresh property : null
+2024-10-06 14:35:33.689 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Force full registry fetch : false
+2024-10-06 14:35:33.689 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Application is null : false
+2024-10-06 14:35:33.689 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Registered Applications size is zero : true
+2024-10-06 14:35:33.689 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Application version is -1: false
+2024-10-06 14:35:33.689 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Getting all instance registry info from the eureka server
+2024-10-06 14:35:33.717 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - The response status is 200
+2024-10-06 14:40:03.167 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 14:45:03.212 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 14:50:03.223 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 14:55:03.233 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 15:00:03.248 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 15:05:03.251 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 15:09:49.333 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 15:09:49.335 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 15:09:49.336 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 15:09:49.336 [reactor-http-nio-3] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 15:09:49.336 [reactor-http-nio-3] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 15:09:49.505 [reactor-http-nio-3] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 15:09:49.505 [reactor-http-nio-3] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 15:09:49.511 [reactor-http-nio-3] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 15:09:49.511 [reactor-http-nio-3] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 15:09:49.630 [reactor-http-nio-3] ERROR JwtUtil - Invalid token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+io.jsonwebtoken.ExpiredJwtException: JWT expired 39785622 milliseconds ago at 2024-10-06T01:06:44.000Z. Current time: 2024-10-06T12:09:49.622Z. Allowed clock skew: 0 milliseconds.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:691) ~[jjwt-impl-0.12.6.jar:0.12.6]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:364) ~[jjwt-impl-0.12.6.jar:0.12.6]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:94) ~[jjwt-impl-0.12.6.jar:0.12.6]
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:36) ~[jjwt-impl-0.12.6.jar:0.12.6]
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:29) ~[jjwt-impl-0.12.6.jar:0.12.6]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseSignedClaims(DefaultJwtParser.java:830) ~[jjwt-impl-0.12.6.jar:0.12.6]
+	at com.lab.backend.gateway.utilities.JwtUtil.getClaimsAndValidate(JwtUtil.java:74) ~[classes/:?]
+	at com.lab.backend.gateway.config.AuthGatewayFilterFactory.lambda$apply$0(AuthGatewayFilterFactory.java:60) ~[classes/:?]
+	at org.springframework.cloud.gateway.filter.OrderedGatewayFilter.filter(OrderedGatewayFilter.java:44) ~[spring-cloud-gateway-server-4.1.2.jar:4.1.2]
+	at org.springframework.cloud.gateway.handler.FilteringWebHandler$DefaultGatewayFilterChain.lambda$filter$0(FilteringWebHandler.java:127) ~[spring-cloud-gateway-server-4.1.2.jar:4.1.2]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:45) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.innerNext(FluxConcatMapNoPrefetch.java:259) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onNext(FluxConcatMap.java:865) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:122) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:122) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:122) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.innerNext(FluxConcatMapNoPrefetch.java:259) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onNext(FluxConcatMap.java:865) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:180) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoFilterWhen$MonoFilterWhenMain.onNext(MonoFilterWhen.java:136) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2571) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoFilterWhen$MonoFilterWhenMain.request(MonoFilterWhen.java:183) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.request(MonoPeekTerminal.java:139) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2367) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onSubscribe(FluxOnErrorResume.java:74) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onSubscribe(MonoPeekTerminal.java:152) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoFilterWhen$MonoFilterWhenMain.onSubscribe(MonoFilterWhen.java:100) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:55) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:207) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxDematerialize$DematerializeSubscriber.onNext(FluxDematerialize.java:98) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxDematerialize$DematerializeSubscriber.onNext(FluxDematerialize.java:44) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.slowPath(FluxIterable.java:335) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:294) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxDematerialize$DematerializeSubscriber.request(FluxDematerialize.java:127) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.innerComplete(FluxConcatMapNoPrefetch.java:275) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onComplete(FluxConcatMap.java:889) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2231) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onComplete(MonoPeekTerminal.java:299) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoFilterWhen$MonoFilterWhenMain.onNext(MonoFilterWhen.java:141) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2571) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoFilterWhen$MonoFilterWhenMain.request(MonoFilterWhen.java:183) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.request(MonoPeekTerminal.java:139) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.request(Operators.java:2331) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.request(Operators.java:2331) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:339) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxMap$MapSubscriber.request(FluxMap.java:164) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxMap$MapSubscriber.request(FluxMap.java:164) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.request(Operators.java:2331) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxMap$MapSubscriber.request(FluxMap.java:164) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.request(Operators.java:2331) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:339) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoNext$NextSubscriber.request(MonoNext.java:108) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2367) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:2241) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onSubscribe(MonoNext.java:70) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onSubscribe(FluxConcatMapNoPrefetch.java:164) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:201) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) [reactor-core-3.6.9.jar:3.6.9]
+	at reactor.netty.http.server.HttpServer$HttpServerHandle.onStateChange(HttpServer.java:1176) [reactor-netty-http-1.1.22.jar:1.1.22]
+	at reactor.netty.ReactorNetty$CompositeConnectionObserver.onStateChange(ReactorNetty.java:715) [reactor-netty-core-1.1.22.jar:1.1.22]
+	at reactor.netty.transport.ServerTransport$ChildObserver.onStateChange(ServerTransport.java:481) [reactor-netty-core-1.1.22.jar:1.1.22]
+	at reactor.netty.http.server.HttpServerOperations.handleDefaultHttpRequest(HttpServerOperations.java:829) [reactor-netty-http-1.1.22.jar:1.1.22]
+	at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:774) [reactor-netty-http-1.1.22.jar:1.1.22]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115) [reactor-netty-core-1.1.22.jar:1.1.22]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:262) [reactor-netty-http-1.1.22.jar:1.1.22]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) [netty-codec-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) [netty-codec-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) [netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) [netty-common-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) [netty-common-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) [netty-common-4.1.112.Final.jar:4.1.112.Final]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-10-06 15:09:49.658 [reactor-http-nio-3] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 15:10:03.254 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 15:10:05.227 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 15:10:05.227 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 15:10:05.227 [reactor-http-nio-3] ERROR AuthGatewayFilterFactory - Missing or invalid authorization header for request path: /barcode/generate
+2024-10-06 15:10:11.018 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Processing request for path: /auth/login
+2024-10-06 15:10:11.018 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: /auth/login
+2024-10-06 15:12:04.508 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-10-06 15:12:04.509 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-10-06 15:12:04.509 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgyMTY2MTMsImV4cCI6MTcyODIyMDIxM30.i501kzNJfywgefdKCGFmF4qmKw4d7IVg3Y7pWIpNUZBqClfEBeieRI34JWWtGJ7j
+2024-10-06 15:12:04.509 [reactor-http-nio-5] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 15:12:04.509 [reactor-http-nio-5] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgyMTY2MTMsImV4cCI6MTcyODIyMDIxM30.i501kzNJfywgefdKCGFmF4qmKw4d7IVg3Y7pWIpNUZBqClfEBeieRI34JWWtGJ7j
+2024-10-06 15:12:04.509 [reactor-http-nio-5] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 15:12:04.509 [reactor-http-nio-5] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 15:12:04.509 [reactor-http-nio-5] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 15:12:04.509 [reactor-http-nio-5] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 15:12:04.519 [reactor-http-nio-5] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728216613, exp=1728220213}
+2024-10-06 15:12:04.519 [reactor-http-nio-5] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 15:12:04.520 [reactor-http-nio-5] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 15:12:04.520 [reactor-http-nio-5] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgyMTY2MTMsImV4cCI6MTcyODIyMDIxM30.i501kzNJfywgefdKCGFmF4qmKw4d7IVg3Y7pWIpNUZBqClfEBeieRI34JWWtGJ7j
+2024-10-06 15:12:04.522 [reactor-http-nio-5] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgyMTY2MTMsImV4cCI6MTcyODIyMDIxM30.i501kzNJfywgefdKCGFmF4qmKw4d7IVg3Y7pWIpNUZBqClfEBeieRI34JWWtGJ7j logout status: false
+2024-10-06 15:12:04.522 [reactor-http-nio-5] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 15:12:04.523 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 15:12:04.526 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-10-06 15:12:04.526 [reactor-http-nio-5] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 15:12:04.526 [reactor-http-nio-5] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728216613, exp=1728220213}
+2024-10-06 15:12:04.526 [reactor-http-nio-5] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 15:12:04.526 [reactor-http-nio-5] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 15:12:04.527 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-10-06 15:12:04.528 [reactor-http-nio-5] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 15:12:14.040 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-10-06 15:12:14.040 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-10-06 15:12:14.040 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgyMTY2MTMsImV4cCI6MTcyODIyMDIxM30.i501kzNJfywgefdKCGFmF4qmKw4d7IVg3Y7pWIpNUZBqClfEBeieRI34JWWtGJ7j
+2024-10-06 15:12:14.040 [reactor-http-nio-5] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 15:12:14.041 [reactor-http-nio-5] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgyMTY2MTMsImV4cCI6MTcyODIyMDIxM30.i501kzNJfywgefdKCGFmF4qmKw4d7IVg3Y7pWIpNUZBqClfEBeieRI34JWWtGJ7j
+2024-10-06 15:12:14.041 [reactor-http-nio-5] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 15:12:14.041 [reactor-http-nio-5] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 15:12:14.041 [reactor-http-nio-5] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 15:12:14.041 [reactor-http-nio-5] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 15:12:14.043 [reactor-http-nio-5] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728216613, exp=1728220213}
+2024-10-06 15:12:14.043 [reactor-http-nio-5] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 15:12:14.043 [reactor-http-nio-5] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 15:12:14.043 [reactor-http-nio-5] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgyMTY2MTMsImV4cCI6MTcyODIyMDIxM30.i501kzNJfywgefdKCGFmF4qmKw4d7IVg3Y7pWIpNUZBqClfEBeieRI34JWWtGJ7j
+2024-10-06 15:12:14.044 [reactor-http-nio-5] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgyMTY2MTMsImV4cCI6MTcyODIyMDIxM30.i501kzNJfywgefdKCGFmF4qmKw4d7IVg3Y7pWIpNUZBqClfEBeieRI34JWWtGJ7j logout status: false
+2024-10-06 15:12:14.044 [reactor-http-nio-5] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 15:12:14.045 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 15:12:14.046 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-10-06 15:12:14.046 [reactor-http-nio-5] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 15:12:14.046 [reactor-http-nio-5] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728216613, exp=1728220213}
+2024-10-06 15:12:14.046 [reactor-http-nio-5] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 15:12:14.046 [reactor-http-nio-5] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 15:12:14.047 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-10-06 15:12:14.047 [reactor-http-nio-5] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 15:13:10.116 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-10-06 15:13:10.116 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-10-06 15:13:10.116 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgyMTY2MTMsImV4cCI6MTcyODIyMDIxM30.i501kzNJfywgefdKCGFmF4qmKw4d7IVg3Y7pWIpNUZBqClfEBeieRI34JWWtGJ7j
+2024-10-06 15:13:10.116 [reactor-http-nio-5] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 15:13:10.116 [reactor-http-nio-5] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgyMTY2MTMsImV4cCI6MTcyODIyMDIxM30.i501kzNJfywgefdKCGFmF4qmKw4d7IVg3Y7pWIpNUZBqClfEBeieRI34JWWtGJ7j
+2024-10-06 15:13:10.117 [reactor-http-nio-5] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 15:13:10.117 [reactor-http-nio-5] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 15:13:10.117 [reactor-http-nio-5] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 15:13:10.117 [reactor-http-nio-5] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 15:13:10.119 [reactor-http-nio-5] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728216613, exp=1728220213}
+2024-10-06 15:13:10.119 [reactor-http-nio-5] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 15:13:10.119 [reactor-http-nio-5] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 15:13:10.119 [reactor-http-nio-5] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgyMTY2MTMsImV4cCI6MTcyODIyMDIxM30.i501kzNJfywgefdKCGFmF4qmKw4d7IVg3Y7pWIpNUZBqClfEBeieRI34JWWtGJ7j
+2024-10-06 15:13:10.128 [reactor-http-nio-5] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgyMTY2MTMsImV4cCI6MTcyODIyMDIxM30.i501kzNJfywgefdKCGFmF4qmKw4d7IVg3Y7pWIpNUZBqClfEBeieRI34JWWtGJ7j logout status: false
+2024-10-06 15:13:10.129 [reactor-http-nio-5] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 15:13:10.129 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 15:13:10.129 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-10-06 15:13:10.130 [reactor-http-nio-5] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 15:13:10.130 [reactor-http-nio-5] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728216613, exp=1728220213}
+2024-10-06 15:13:10.130 [reactor-http-nio-5] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 15:13:10.131 [reactor-http-nio-5] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 15:13:10.131 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-10-06 15:13:10.131 [reactor-http-nio-5] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 15:15:03.256 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 15:17:24.621 [SpringApplicationShutdownHook] INFO  EurekaServiceRegistry - Unregistering application API-GATEWAY with eureka with status DOWN
+2024-10-06 15:17:24.621 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1728217044621, current=DOWN, previous=UP]
+2024-10-06 15:17:24.621 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_API-GATEWAY/asaf:api-gateway:8080: registering service...
+2024-10-06 15:17:24.654 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_API-GATEWAY/asaf:api-gateway:8080 - registration status: 204
+2024-10-06 15:17:28.145 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Shutting down DiscoveryClient ...
+2024-10-06 15:17:31.159 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Unregistering ...
+2024-10-06 15:17:31.174 [SpringApplicationShutdownHook] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
+	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:297)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:103)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-10-06 15:17:31.174 [SpringApplicationShutdownHook] WARN  RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-10-06 15:17:31.174 [SpringApplicationShutdownHook] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
+	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:297)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:103)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-10-06 15:17:31.174 [SpringApplicationShutdownHook] WARN  RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-10-06 15:17:31.174 [SpringApplicationShutdownHook] ERROR DiscoveryClient - DiscoveryClient_API-GATEWAY/asaf:api-gateway:8080 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892) ~[eureka-client-2.0.2.jar:2.0.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389) ~[spring-cloud-context-4.1.2.jar:4.1.2]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-4.1.2.jar:4.1.2]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-3.3.3.jar:3.3.3]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) [?:?]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) [spring-boot-3.3.3.jar:3.3.3]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-10-06 15:17:31.190 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Completed shut down of DiscoveryClient

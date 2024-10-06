@@ -199,3 +199,227 @@ java.lang.IllegalStateException: Client instance has been closed.
 2024-10-06 03:30:08.828 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shut down
 2024-10-06 03:30:08.989 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Shutting down DiscoveryClient ...
 2024-10-06 03:30:08.989 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Completed shut down of DiscoveryClient
+2024-10-06 14:34:07.050 [main] INFO  DiscoveryServerApplication - Starting DiscoveryServerApplication using Java 17.0.11 with PID 13928 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\discovery-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-06 14:34:07.112 [main] DEBUG DiscoveryServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-10-06 14:34:07.112 [main] INFO  DiscoveryServerApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-06 14:34:07.144 [main] INFO  ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-10-06 14:34:07.144 [main] INFO  ConfigServerConfigDataLoader - Located environment: name=discovery-server, profiles=[default], label=null, version=282fc270e9ee77526021140f29cb5c0d0863bb3e, state=null
+2024-10-06 14:34:08.631 [main] INFO  GenericScope - BeanFactory id=0e23388f-a466-3c71-a7d6-187692bb51af
+2024-10-06 14:34:08.694 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-10-06 14:34:08.694 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-06 14:34:09.084 [main] INFO  TomcatWebServer - Tomcat initialized with port 8761 (http)
+2024-10-06 14:34:09.100 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2024-10-06 14:34:09.115 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-06 14:34:09.115 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-06 14:34:09.210 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-06 14:34:09.210 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2051 ms
+2024-10-06 14:34:17.369 [main] INFO  DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-10-06 14:34:17.369 [main] INFO  DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-10-06 14:34:17.557 [main] INFO  DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-10-06 14:34:17.557 [main] INFO  DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-10-06 14:34:18.838 [main] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-10-06 14:34:18.869 [main] INFO  InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-10-06 14:34:18.916 [main] INFO  DiscoveryClient - Initializing Eureka in region us-east-1
+2024-10-06 14:34:18.916 [main] INFO  DiscoveryClient - Client configured to neither register nor query for data.
+2024-10-06 14:34:18.947 [main] INFO  DiscoveryClient - Discovery Client initialized at timestamp 1728214458947 with initial instances count: 0
+2024-10-06 14:34:19.010 [main] INFO  DefaultEurekaServerContext - Initializing ...
+2024-10-06 14:34:19.010 [main] INFO  PeerEurekaNodes - Adding new peer nodes [http://localhost:8761/eureka/]
+2024-10-06 14:34:19.057 [main] INFO  DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-10-06 14:34:19.057 [main] INFO  DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-10-06 14:34:19.057 [main] INFO  DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-10-06 14:34:19.057 [main] INFO  DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-10-06 14:34:19.135 [main] INFO  PeerEurekaNodes - Replica node URL:  http://localhost:8761/eureka/
+2024-10-06 14:34:19.158 [main] INFO  AbstractInstanceRegistry - Finished initializing remote region registries. All known remote regions: []
+2024-10-06 14:34:19.159 [main] INFO  DefaultEurekaServerContext - Initialized
+2024-10-06 14:34:19.172 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-06 14:34:19.239 [main] INFO  EurekaServiceRegistry - Registering application DISCOVERY-SERVER with eureka with status UP
+2024-10-06 14:34:19.246 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8761"]
+2024-10-06 14:34:19.258 [Thread-10] INFO  EurekaServerBootstrap - isAws returned false
+2024-10-06 14:34:19.259 [Thread-10] INFO  EurekaServerBootstrap - Initialized server context
+2024-10-06 14:34:19.260 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Got 1 instances from neighboring DS node
+2024-10-06 14:34:19.260 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Renew threshold is: 1
+2024-10-06 14:34:19.260 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Changing status to UP
+2024-10-06 14:34:19.269 [Thread-10] INFO  EurekaServerInitializerConfiguration - Started Eureka Server
+2024-10-06 14:34:19.304 [main] INFO  TomcatWebServer - Tomcat started on port 8761 (http) with context path '/'
+2024-10-06 14:34:19.307 [main] INFO  EurekaAutoServiceRegistration - Updating port to 8761
+2024-10-06 14:34:19.524 [main] INFO  DiscoveryServerApplication - Started DiscoveryServerApplication in 16.656 seconds (process running for 18.237)
+2024-10-06 14:35:03.494 [http-nio-8761-exec-2] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-06 14:35:03.494 [http-nio-8761-exec-2] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-06 14:35:03.510 [http-nio-8761-exec-2] INFO  DispatcherServlet - Completed initialization in 16 ms
+2024-10-06 14:35:03.790 [http-nio-8761-exec-1] INFO  AbstractInstanceRegistry - Registered instance API-GATEWAY/asaf:api-gateway:8080 with status UP (replication=false)
+2024-10-06 14:35:04.441 [http-nio-8761-exec-3] INFO  AbstractInstanceRegistry - Registered instance API-GATEWAY/asaf:api-gateway:8080 with status UP (replication=true)
+2024-10-06 14:35:19.273 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 14:35:43.483 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status UP (replication=false)
+2024-10-06 14:35:44.010 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status UP (replication=true)
+2024-10-06 14:35:44.210 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status DOWN (replication=false)
+2024-10-06 14:35:44.720 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status DOWN (replication=true)
+2024-10-06 14:36:19.286 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 13ms
+2024-10-06 14:36:29.456 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status UP (replication=false)
+2024-10-06 14:36:29.968 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status UP (replication=true)
+2024-10-06 14:37:06.244 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance USER-MANAGEMENT-SERVICE/asaf:user-management-service:8082 with status UP (replication=false)
+2024-10-06 14:37:06.775 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance USER-MANAGEMENT-SERVICE/asaf:user-management-service:8082 with status UP (replication=true)
+2024-10-06 14:37:19.296 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 10ms
+2024-10-06 14:37:37.226 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2024-10-06 14:37:37.227 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connect to http://localhost:9411 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information)
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connect to http://localhost:9411 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:830) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:691) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinRestTemplateSender.postSpans(ZipkinRestTemplateSender.java:50) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:68) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:40) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123) ~[zipkin-reporter-3.4.0.jar:?]
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266) [zipkin-reporter-3.4.0.jar:?]
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352) [zipkin-reporter-3.4.0.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:9411 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[?:?]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[?:?]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[?:?]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[?:?]
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91) ~[httpclient5-5.3.1.jar:5.3.1]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[?:?]
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889) ~[spring-web-6.1.12.jar:6.1.12]
+	... 9 more
+2024-10-06 14:38:19.301 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2024-10-06 14:39:19.315 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 14ms
+2024-10-06 14:39:50.125 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=false)
+2024-10-06 14:39:50.658 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=true)
+2024-10-06 14:40:18.716 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance REPORT-SERVICE/asaf:report-service:8084 with status UP (replication=false)
+2024-10-06 14:40:19.225 [http-nio-8761-exec-3] INFO  AbstractInstanceRegistry - Registered instance REPORT-SERVICE/asaf:report-service:8084 with status UP (replication=true)
+2024-10-06 14:40:19.323 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 8ms
+2024-10-06 14:41:19.337 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 13ms
+2024-10-06 14:42:19.345 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 7ms
+2024-10-06 14:43:19.346 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 14:44:19.354 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 8ms
+2024-10-06 14:45:19.355 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-10-06 14:46:19.355 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 14:47:19.363 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 7ms
+2024-10-06 14:48:19.363 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 14:49:19.183 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  PeerAwareInstanceRegistryImpl - Current renewal threshold is : 10
+2024-10-06 14:49:19.368 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2024-10-06 14:50:19.369 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 14:51:19.370 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 14:52:19.370 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 14:53:19.371 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 14:54:19.371 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 14:55:19.372 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 14:56:19.373 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 14:57:19.374 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-10-06 14:58:19.375 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 14:59:19.376 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 15:00:19.376 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 15:01:19.377 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 15:02:19.377 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 15:03:19.377 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 15:04:19.167 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  PeerAwareInstanceRegistryImpl - Current renewal threshold is : 10
+2024-10-06 15:04:19.377 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 15:05:19.392 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 14ms
+2024-10-06 15:06:19.392 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 15:07:19.392 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 15:08:19.393 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-10-06 15:09:19.394 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 15:10:19.394 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 15:11:19.406 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 12ms
+2024-10-06 15:12:19.407 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-10-06 15:13:19.407 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 15:14:19.408 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-10-06 15:14:25.645 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance REPORT-SERVICE/asaf:report-service:8084 with status DOWN (replication=false)
+2024-10-06 15:14:26.167 [http-nio-8761-exec-7] INFO  AbstractInstanceRegistry - Registered instance REPORT-SERVICE/asaf:report-service:8084 with status DOWN (replication=true)
+2024-10-06 15:15:19.410 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-10-06 15:16:19.412 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-10-06 15:16:19.412 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Evicting 1 items (expired=1, evictionLimit=1)
+2024-10-06 15:16:19.412 [Eureka-EvictionTimer] WARN  AbstractInstanceRegistry - DS: Registry: expired lease for REPORT-SERVICE/asaf:report-service:8084
+2024-10-06 15:16:19.427 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Cancelled instance REPORT-SERVICE/asaf:report-service:8084 (replication=false)
+2024-10-06 15:17:19.422 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 10ms
+2024-10-06 15:17:24.653 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance API-GATEWAY/asaf:api-gateway:8080 with status DOWN (replication=false)
+2024-10-06 15:17:24.674 [SpringApplicationShutdownHook] INFO  EurekaServiceRegistry - Unregistering application DISCOVERY-SERVER with eureka with status DOWN
+2024-10-06 15:17:24.705 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=false)
+2024-10-06 15:17:24.720 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status DOWN (replication=false)
+2024-10-06 15:17:25.187 [TaskBatchingWorker-target_localhost-4] ERROR ReplicationTaskProcessor - Network level connection to peer localhost; retrying after delay
+jakarta.ws.rs.ProcessingException: org.apache.http.NoHttpResponseException: localhost:8761 failed to respond
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:534) ~[jersey-apache-connector-3.1.8.jar:?]
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:674) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:709) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:703) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:391) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:703) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:673) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345) ~[jersey-client-3.1.8.jar:?]
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116) ~[eureka-core-jersey3-2.0.2.jar:2.0.2]
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80) [eureka-core-2.0.2.jar:2.0.2]
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:190) [eureka-core-2.0.2.jar:2.0.2]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: org.apache.http.NoHttpResponseException: localhost:8761 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:486) ~[jersey-apache-connector-3.1.8.jar:?]
+	... 16 more
+2024-10-06 15:17:25.314 [TaskBatchingWorker-target_localhost-6] INFO  RetryExec - I/O exception (java.net.SocketException) caught when processing request to {}->http://localhost:8761: An established connection was aborted by the software in your host machine
+2024-10-06 15:17:25.410 [SpringApplicationShutdownHook] INFO  EurekaServerBootstrap - Shutting down Eureka Server..
+2024-10-06 15:17:25.426 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shutting down ...
+2024-10-06 15:17:25.443 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2024-10-06 15:17:25.444 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2024-10-06 15:17:25.444 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2024-10-06 15:17:25.444 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2024-10-06 15:17:25.460 [Eureka-Jersey3Client-Conn-Cleaner2] ERROR EurekaJersey3ClientImpl - Cannot clean connections
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54) ~[jersey-client-3.1.8.jar:?]
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:347) [eureka-client-jersey3-2.0.2.jar:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-10-06 15:17:25.519 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shut down
+2024-10-06 15:17:25.519 [SpringApplicationShutdownHook] INFO  EurekaServerBootstrap - Eureka Service is now shutdown...
+2024-10-06 15:17:25.535 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shutting down ...
+2024-10-06 15:17:25.566 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shut down
+2024-10-06 15:17:26.563 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Shutting down DiscoveryClient ...
+2024-10-06 15:17:26.563 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Completed shut down of DiscoveryClient
