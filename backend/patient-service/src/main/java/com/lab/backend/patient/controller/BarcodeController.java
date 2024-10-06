@@ -54,17 +54,12 @@ public class BarcodeController {
     public ResponseEntity<byte[]> generateBarcodeForPatient(@RequestParam String trIdNumber) {
         log.trace("Entering generateBarcodeForPatient method in BarcodeController class");
         log.debug("Received request to generate barcode for TR ID number: {}", trIdNumber);
-        try {
-            byte[] barcode = this.barcodeService.generateBarcodeForPatient(trIdNumber);
-            HttpHeaders headers = new HttpHeaders();
-            headers.set(HttpHeaders.CONTENT_TYPE, "image/png");
-            headers.setContentLength(barcode.length);
-            log.debug("Barcode generated successfully for TR ID number: {}", trIdNumber);
-            log.trace("Exiting generateBarcodeForPatient method in BarcodeController class");
-            return new ResponseEntity<>(barcode, headers, HttpStatus.OK);
-        } catch (Exception e) {
-            log.error("Error occurred while generating barcode for TR ID number: {}", trIdNumber, e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        byte[] barcode = this.barcodeService.generateBarcodeForPatient(trIdNumber);
+        HttpHeaders headers = new HttpHeaders();
+        headers.set(HttpHeaders.CONTENT_TYPE, "image/png");
+        headers.setContentLength(barcode.length);
+        log.debug("Barcode generated successfully for TR ID number: {}", trIdNumber);
+        log.trace("Exiting generateBarcodeForPatient method in BarcodeController class");
+        return new ResponseEntity<>(barcode, headers, HttpStatus.OK);
     }
 }

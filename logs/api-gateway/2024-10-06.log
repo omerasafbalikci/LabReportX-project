@@ -1,0 +1,1349 @@
+2024-10-06 03:03:11.847 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-10-06 03:03:11.892 [main] INFO  ApiGatewayApplication - Starting ApiGatewayApplication using Java 17.0.11 with PID 14040 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\api-gateway\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-06 03:03:11.895 [main] DEBUG ApiGatewayApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-10-06 03:03:11.896 [main] INFO  ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-06 03:03:11.973 [main] INFO  ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-10-06 03:03:11.973 [main] INFO  ConfigServerConfigDataLoader - Located environment: name=api-gateway, profiles=[default], label=null, version=aa13d2cfda5218bcc62cb2a4616c416cbbb509ef, state=null
+2024-10-06 03:03:13.601 [main] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-06 03:03:13.604 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-10-06 03:03:13.647 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2024-10-06 03:03:14.216 [main] INFO  GenericScope - BeanFactory id=6f432307-047c-3c0e-babd-e966faf517ec
+2024-10-06 03:03:14.319 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-10-06 03:03:14.322 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-06 03:03:14.324 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-10-06 03:03:14.326 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-06 03:03:14.328 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-06 03:03:14.822 [main] TRACE JwtUtil - Initializing Redis connection pool with host: localhost, port: 6379
+2024-10-06 03:03:14.842 [main] TRACE JwtUtil - Redis connection pool initialized successfully.
+2024-10-06 03:03:14.880 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-06 03:03:15.102 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-06 03:03:15.104 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-06 03:03:15.105 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-06 03:03:16.466 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2024-10-06 03:03:16.466 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2024-10-06 03:03:16.467 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2024-10-06 03:03:16.467 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2024-10-06 03:03:16.467 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2024-10-06 03:03:16.467 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2024-10-06 03:03:16.467 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2024-10-06 03:03:16.467 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2024-10-06 03:03:16.467 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2024-10-06 03:03:16.467 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2024-10-06 03:03:16.467 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2024-10-06 03:03:16.467 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2024-10-06 03:03:16.468 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2024-10-06 03:03:16.468 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2024-10-06 03:03:17.006 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-06 03:03:17.397 [main] INFO  DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-10-06 03:03:17.444 [main] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-10-06 03:03:17.545 [main] INFO  InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-10-06 03:03:17.615 [main] INFO  DiscoveryClient - Initializing Eureka in region us-east-1
+2024-10-06 03:03:17.622 [main] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 03:03:17.668 [main] INFO  DiscoveryClient - Disable delta property : false
+2024-10-06 03:03:17.669 [main] INFO  DiscoveryClient - Single vip registry refresh property : null
+2024-10-06 03:03:17.669 [main] INFO  DiscoveryClient - Force full registry fetch : false
+2024-10-06 03:03:17.669 [main] INFO  DiscoveryClient - Application is null : false
+2024-10-06 03:03:17.669 [main] INFO  DiscoveryClient - Registered Applications size is zero : true
+2024-10-06 03:03:17.669 [main] INFO  DiscoveryClient - Application version is -1: true
+2024-10-06 03:03:17.669 [main] INFO  DiscoveryClient - Getting all instance registry info from the eureka server
+2024-10-06 03:03:18.337 [main] INFO  DiscoveryClient - The response status is 200
+2024-10-06 03:03:18.342 [main] INFO  DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-10-06 03:03:18.349 [main] INFO  InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-10-06 03:03:18.358 [main] INFO  DiscoveryClient - Discovery Client initialized at timestamp 1728172998358 with initial instances count: 0
+2024-10-06 03:03:18.361 [main] INFO  EurekaServiceRegistry - Registering application API-GATEWAY with eureka with status UP
+2024-10-06 03:03:18.363 [main] INFO  DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1728172998363, current=UP, previous=STARTING]
+2024-10-06 03:03:18.368 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_API-GATEWAY/asaf:api-gateway:8080: registering service...
+2024-10-06 03:03:18.579 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_API-GATEWAY/asaf:api-gateway:8080 - registration status: 204
+2024-10-06 03:03:18.636 [main] INFO  NettyWebServer - Netty started on port 8080 (http)
+2024-10-06 03:03:18.639 [main] INFO  EurekaAutoServiceRegistration - Updating port to 8080
+2024-10-06 03:03:18.913 [main] INFO  ApiGatewayApplication - Started ApiGatewayApplication in 9.193 seconds (process running for 10.658)
+2024-10-06 03:03:48.352 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Disable delta property : false
+2024-10-06 03:03:48.352 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Single vip registry refresh property : null
+2024-10-06 03:03:48.353 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Force full registry fetch : false
+2024-10-06 03:03:48.353 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Application is null : false
+2024-10-06 03:03:48.353 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Registered Applications size is zero : true
+2024-10-06 03:03:48.353 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Application version is -1: false
+2024-10-06 03:03:48.353 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Getting all instance registry info from the eureka server
+2024-10-06 03:03:48.383 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - The response status is 200
+2024-10-06 03:05:12.328 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Processing request for path: /auth/login
+2024-10-06 03:05:12.330 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: /auth/login
+2024-10-06 03:05:33.111 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Processing request for path: /auth/change-password
+2024-10-06 03:05:33.112 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /auth/change-password
+2024-10-06 03:05:33.112 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3
+2024-10-06 03:05:33.112 [reactor-http-nio-3] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:05:33.112 [reactor-http-nio-3] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3
+2024-10-06 03:05:33.182 [reactor-http-nio-3] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:05:33.182 [reactor-http-nio-3] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:05:33.184 [reactor-http-nio-3] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:05:33.184 [reactor-http-nio-3] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:05:33.215 [reactor-http-nio-3] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173113, exp=1728176713}
+2024-10-06 03:05:33.216 [reactor-http-nio-3] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:05:33.216 [reactor-http-nio-3] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:05:33.216 [reactor-http-nio-3] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3
+2024-10-06 03:05:33.217 [reactor-http-nio-3] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3 logout status: false
+2024-10-06 03:05:33.217 [reactor-http-nio-3] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:05:33.217 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:05:33.222 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /auth/change-password
+2024-10-06 03:05:33.222 [reactor-http-nio-3] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:05:33.222 [reactor-http-nio-3] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173113, exp=1728176713}
+2024-10-06 03:05:33.222 [reactor-http-nio-3] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:05:33.222 [reactor-http-nio-3] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:05:33.222 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - User super authorized for path: /auth/change-password
+2024-10-06 03:05:33.222 [reactor-http-nio-3] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:05:45.549 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Processing request for path: /auth/refresh
+2024-10-06 03:05:45.549 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /auth/refresh
+2024-10-06 03:05:45.549 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3
+2024-10-06 03:05:45.549 [reactor-http-nio-3] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:05:45.549 [reactor-http-nio-3] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3
+2024-10-06 03:05:45.549 [reactor-http-nio-3] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:05:45.550 [reactor-http-nio-3] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:05:45.550 [reactor-http-nio-3] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:05:45.550 [reactor-http-nio-3] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:05:45.551 [reactor-http-nio-3] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173113, exp=1728176713}
+2024-10-06 03:05:45.552 [reactor-http-nio-3] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:05:45.552 [reactor-http-nio-3] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:05:45.552 [reactor-http-nio-3] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3
+2024-10-06 03:05:45.554 [reactor-http-nio-3] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3 logout status: true
+2024-10-06 03:05:45.554 [reactor-http-nio-3] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:05:45.554 [reactor-http-nio-3] ERROR AuthGatewayFilterFactory - Token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3
+2024-10-06 03:05:46.676 [AsyncReporter{ZipkinWebClientSender{http://localhost:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2024-10-06 03:05:46.677 [AsyncReporter{ZipkinWebClientSender{http://localhost:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Dropped 1 spans due to WebClientRequestException(Connection refused: no further information: localhost/127.0.0.1:9411)
+org.springframework.web.reactive.function.client.WebClientRequestException: Connection refused: no further information: localhost/127.0.0.1:9411
+	at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:136) ~[spring-webflux-6.1.12.jar:6.1.12]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to POST http://localhost:9411/api/v2/spans [DefaultWebClient]
+Original Stack Trace:
+		at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:136) ~[spring-webflux-6.1.12.jar:6.1.12]
+		at reactor.core.publisher.MonoErrorSupplied.subscribe(MonoErrorSupplied.java:55) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onError(MonoNext.java:93) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyMain.onError(MonoFlatMapMany.java:205) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.whenError(FluxRetryWhen.java:229) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenOtherSubscriber.onError(FluxRetryWhen.java:279) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.maybeOnError(FluxConcatMapNoPrefetch.java:327) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:212) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.SinkManyEmitterProcessor.drain(SinkManyEmitterProcessor.java:476) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.SinkManyEmitterProcessor$EmitterInner.drainParent(SinkManyEmitterProcessor.java:620) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxPublish$PubSubInner.request(FluxPublish.java:874) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:337) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.Operators$DeferredSubscription.request(Operators.java:1743) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.onError(FluxRetryWhen.java:196) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.netty.http.client.HttpClientConnect$MonoHttpConnect$ClientTransportSubscriber.onError(HttpClientConnect.java:311) ~[reactor-netty-http-1.1.22.jar:1.1.22]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$DisposableAcquire.onError(DefaultPooledConnectionProvider.java:172) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at reactor.netty.internal.shaded.reactor.pool.AbstractPool$Borrower.fail(AbstractPool.java:480) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at reactor.netty.internal.shaded.reactor.pool.SimpleDequePool.lambda$drainLoop$9(SimpleDequePool.java:436) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at reactor.core.publisher.FluxDoOnEach$DoOnEachSubscriber.onError(FluxDoOnEach.java:186) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$PooledConnectionAllocator$PooledConnectionInitializer.onError(DefaultPooledConnectionProvider.java:583) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondError(MonoFlatMap.java:241) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.MonoFlatMap$FlatMapInner.onError(MonoFlatMap.java:315) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.tryFailure(TransportConnector.java:576) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.setFailure(TransportConnector.java:522) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at reactor.netty.transport.TransportConnector.lambda$doConnect$7(TransportConnector.java:261) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:326) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:342) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:104) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.Mono.block(Mono.java:1779) ~[reactor-core-3.6.9.jar:3.6.9]
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinWebClientSender.postSpans(ZipkinWebClientSender.java:58) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:68) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:40) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+		at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123) ~[zipkin-reporter-3.4.0.jar:?]
+		at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266) [zipkin-reporter-3.4.0.jar:?]
+		at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352) [zipkin-reporter-3.4.0.jar:?]
+		at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:9411
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[?:?]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[?:?]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:336) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:339) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-10-06 03:06:30.422 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:06:30.423 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:06:30.423 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3
+2024-10-06 03:06:30.423 [reactor-http-nio-3] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:06:30.423 [reactor-http-nio-3] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3
+2024-10-06 03:06:30.423 [reactor-http-nio-3] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:06:30.424 [reactor-http-nio-3] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:06:30.424 [reactor-http-nio-3] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:06:30.424 [reactor-http-nio-3] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:06:30.426 [reactor-http-nio-3] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173113, exp=1728176713}
+2024-10-06 03:06:30.426 [reactor-http-nio-3] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:06:30.426 [reactor-http-nio-3] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:06:30.427 [reactor-http-nio-3] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3
+2024-10-06 03:06:30.427 [reactor-http-nio-3] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3 logout status: true
+2024-10-06 03:06:30.428 [reactor-http-nio-3] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:06:30.428 [reactor-http-nio-3] ERROR AuthGatewayFilterFactory - Token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMxMTMsImV4cCI6MTcyODE3NjcxM30.vWLauYLOcTxnFXBCGT5_OZ5mnv4lUdsqH7iiM9JdYwx8FErDFOBKHRMRsCZvK3K3
+2024-10-06 03:06:33.916 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Processing request for path: /auth/login
+2024-10-06 03:06:33.916 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: /auth/login
+2024-10-06 03:06:44.173 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Processing request for path: /auth/login
+2024-10-06 03:06:44.173 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: /auth/login
+2024-10-06 03:07:20.234 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:07:20.235 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:07:20.235 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:07:20.235 [reactor-http-nio-3] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:07:20.235 [reactor-http-nio-3] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:07:20.235 [reactor-http-nio-3] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:07:20.235 [reactor-http-nio-3] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:07:20.235 [reactor-http-nio-3] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:07:20.235 [reactor-http-nio-3] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:07:20.236 [reactor-http-nio-3] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:07:20.237 [reactor-http-nio-3] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:07:20.237 [reactor-http-nio-3] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:07:20.237 [reactor-http-nio-3] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:07:20.237 [reactor-http-nio-3] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:07:20.237 [reactor-http-nio-3] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:07:20.238 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:07:20.238 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:07:20.238 [reactor-http-nio-3] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:07:20.238 [reactor-http-nio-3] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:07:20.238 [reactor-http-nio-3] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:07:20.238 [reactor-http-nio-3] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:07:20.239 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:07:20.239 [reactor-http-nio-3] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:08:17.689 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 03:13:17.695 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 03:13:45.648 [reactor-http-nio-6] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:13:45.652 [reactor-http-nio-6] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:13:45.652 [reactor-http-nio-6] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:13:45.652 [reactor-http-nio-6] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:13:45.652 [reactor-http-nio-6] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:13:45.652 [reactor-http-nio-6] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:13:45.652 [reactor-http-nio-6] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:13:45.652 [reactor-http-nio-6] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:13:45.652 [reactor-http-nio-6] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:13:45.653 [reactor-http-nio-6] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:13:45.654 [reactor-http-nio-6] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:13:45.654 [reactor-http-nio-6] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:13:45.654 [reactor-http-nio-6] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:13:45.655 [reactor-http-nio-6] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:13:45.655 [reactor-http-nio-6] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:13:45.655 [reactor-http-nio-6] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:13:45.655 [reactor-http-nio-6] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:13:45.656 [reactor-http-nio-6] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:13:45.656 [reactor-http-nio-6] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:13:45.656 [reactor-http-nio-6] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:13:45.656 [reactor-http-nio-6] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:13:45.656 [reactor-http-nio-6] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:13:45.656 [reactor-http-nio-6] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:18:17.697 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 03:23:17.699 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 03:27:08.035 [reactor-http-nio-8] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/scan
+2024-10-06 03:27:08.036 [reactor-http-nio-8] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/scan
+2024-10-06 03:27:08.036 [reactor-http-nio-8] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:27:08.036 [reactor-http-nio-8] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:27:08.036 [reactor-http-nio-8] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:27:08.036 [reactor-http-nio-8] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:27:08.036 [reactor-http-nio-8] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:27:08.036 [reactor-http-nio-8] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:27:08.036 [reactor-http-nio-8] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:27:08.037 [reactor-http-nio-8] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:27:08.037 [reactor-http-nio-8] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:27:08.038 [reactor-http-nio-8] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:27:08.038 [reactor-http-nio-8] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:27:08.038 [reactor-http-nio-8] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:27:08.038 [reactor-http-nio-8] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:27:08.039 [reactor-http-nio-8] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:27:08.039 [reactor-http-nio-8] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/scan
+2024-10-06 03:27:08.039 [reactor-http-nio-8] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:27:08.039 [reactor-http-nio-8] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:27:08.039 [reactor-http-nio-8] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:27:08.039 [reactor-http-nio-8] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:27:08.039 [reactor-http-nio-8] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/scan
+2024-10-06 03:27:08.039 [reactor-http-nio-8] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:28:17.710 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-10-06 03:29:18.987 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:18.988 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:18.988 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:18.988 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:18.988 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:18.988 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:18.988 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:18.988 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:18.988 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:18.990 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:18.990 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:18.990 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:18.990 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:18.990 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:18.991 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:18.991 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:18.991 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:18.991 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:18.991 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:18.991 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:18.991 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:18.991 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:18.992 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:18.994 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:19.112 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:19.112 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:19.113 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:23.837 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:23.837 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:23.837 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:23.837 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:23.837 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:23.837 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:23.837 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:23.837 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:23.837 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:23.839 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:23.839 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:23.839 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:23.839 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:23.840 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:23.840 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:23.840 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:23.840 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:23.840 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:23.840 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:23.840 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:23.841 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:23.841 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:23.841 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:23.843 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:23.845 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:23.845 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:23.845 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:24.978 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:24.979 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:24.980 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:24.980 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:24.980 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:24.980 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:24.980 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:24.980 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:24.980 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:24.982 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:24.982 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:24.982 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:24.982 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:24.983 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:24.983 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:24.983 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:24.984 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:24.984 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:24.984 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:24.984 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:24.984 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:24.984 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:24.984 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:24.985 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:24.987 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:24.987 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:24.987 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:25.976 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:25.977 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:25.977 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:25.977 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:25.977 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:25.977 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:25.977 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:25.977 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:25.977 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:25.984 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:25.984 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:25.984 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:25.984 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:25.985 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:25.985 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:25.986 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:25.986 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:25.986 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:25.986 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:25.986 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:25.986 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:25.987 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:25.987 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:25.988 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:25.989 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:25.989 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:25.989 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:27.242 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:27.242 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:27.242 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:27.242 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:27.243 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:27.243 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:27.243 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:27.243 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:27.243 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:27.250 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:27.250 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:27.250 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:27.250 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:27.251 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:27.252 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:27.252 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:27.252 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:27.253 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:27.253 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:27.253 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:27.253 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:27.253 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:27.253 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:27.255 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:27.285 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:27.286 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:27.286 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:28.143 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:28.143 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:28.143 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:28.143 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:28.143 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:28.144 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:28.144 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:28.144 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:28.144 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:28.146 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:28.146 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:28.147 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:28.147 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:28.148 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:28.148 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:28.148 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:28.148 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:28.148 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:28.149 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:28.149 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:28.149 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:28.149 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:28.149 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:28.151 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:28.152 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:28.152 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:30.575 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:30.575 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:30.575 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:30.575 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:30.575 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:30.575 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:30.575 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:30.576 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:30.576 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:30.578 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:30.578 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:30.578 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:30.578 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:30.579 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:30.580 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:30.580 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:30.580 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:30.580 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:30.580 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:30.581 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:30.581 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:30.581 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:30.581 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:30.588 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:30.589 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:30.589 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:30.589 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:32.855 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:32.855 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:32.855 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:32.855 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:32.855 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:32.856 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:32.856 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:32.856 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:32.856 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:32.857 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:32.857 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:32.857 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:32.857 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:32.858 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:32.859 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:32.859 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:32.859 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:32.859 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:32.859 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:32.860 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:32.860 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:32.860 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:32.860 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:32.861 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:32.863 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:32.863 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:32.863 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:33.663 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:33.663 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:33.663 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:33.663 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:33.663 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:33.663 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:33.663 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:33.663 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:33.663 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:33.664 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:33.664 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:33.664 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:33.664 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:33.665 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:33.665 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:33.665 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:33.665 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:33.665 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:33.665 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:33.666 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:33.666 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:33.666 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:33.666 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:33.666 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:33.668 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:33.668 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:33.668 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:34.437 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:34.438 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:34.438 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:34.438 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:34.438 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:34.439 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:34.439 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:34.440 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:34.440 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:34.442 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:34.442 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:34.443 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:34.443 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:34.444 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:34.444 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:34.445 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:34.445 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:34.445 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:34.446 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:34.446 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:34.446 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:34.446 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:34.446 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:34.447 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:34.448 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:34.449 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:34.449 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:35.217 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:35.217 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:35.217 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:35.217 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:35.217 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:35.217 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:35.217 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:35.217 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:35.217 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:35.217 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:35.217 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:35.217 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:35.217 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:35.218 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:35.218 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:35.219 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:35.219 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:35.219 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:35.219 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:35.224 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:35.224 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:35.225 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:35.225 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:35.229 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:35.231 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:35.231 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:35.231 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:35.969 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:35.969 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:35.969 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:35.969 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:35.969 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:35.969 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:35.969 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:35.969 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:35.970 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:35.971 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:35.971 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:35.971 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:35.971 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:35.972 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:35.972 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:35.973 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:35.973 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:35.973 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:35.973 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:35.976 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:35.977 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:35.977 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:35.977 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:35.980 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:35.981 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:35.981 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:35.982 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:36.792 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:36.793 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:36.793 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:36.793 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:36.793 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:36.793 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:36.793 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:36.793 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:36.793 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:36.795 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:36.795 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:36.795 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:36.795 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:36.796 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:36.796 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:36.796 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:36.797 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:36.797 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:36.797 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:36.797 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:36.797 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:36.797 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:36.797 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:36.798 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:36.799 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:36.799 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:36.800 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:37.590 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:37.590 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:37.590 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:37.590 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:37.590 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:37.590 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:37.590 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:37.591 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:37.591 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:37.592 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:37.592 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:37.592 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:37.592 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:37.593 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:37.593 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:37.593 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:37.594 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:37.594 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:37.594 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:37.594 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:37.594 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:37.594 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:37.594 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:37.595 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:37.596 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:37.596 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:37.596 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:38.228 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:38.229 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:38.229 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:38.229 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:38.229 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:38.229 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:38.229 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:38.229 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:38.229 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:38.232 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:38.232 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:38.232 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:38.232 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:38.233 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:38.233 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:38.233 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:38.233 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:38.233 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:38.234 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:38.234 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:38.234 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:38.234 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:38.234 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:38.235 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:38.236 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:38.236 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:38.237 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:38.906 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:38.907 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:38.907 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:38.907 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:38.907 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:38.907 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:38.907 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:38.907 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:38.907 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:38.908 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:38.908 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:38.908 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:38.908 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:38.909 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:38.909 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:38.909 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:38.909 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:38.909 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:38.909 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:38.909 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:38.909 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:38.910 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:38.910 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:38.910 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:38.916 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:38.916 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:38.916 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:39.550 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:39.550 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:39.550 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:39.550 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:39.550 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:39.550 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:39.550 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:39.550 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:39.550 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:39.551 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:39.551 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:39.551 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:39.551 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:39.551 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:39.552 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:39.552 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:39.552 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:39.552 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:39.552 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:39.552 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:39.552 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:39.552 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:39.552 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:39.553 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:39.553 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:39.553 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:40.220 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:40.226 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:40.226 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:40.226 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:40.226 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:40.226 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:40.226 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:40.226 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:40.226 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:40.227 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:40.227 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:40.227 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:40.227 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:40.228 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:40.228 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:40.228 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:40.228 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:40.229 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:40.229 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:40.229 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:40.229 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:40.229 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:40.229 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:40.230 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:40.231 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:40.231 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:40.231 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:40.884 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:40.885 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:40.885 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:40.885 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:40.885 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:40.885 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:40.885 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:40.885 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:40.885 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:40.885 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:40.885 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:40.885 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:40.885 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:40.886 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:40.886 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:40.886 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:40.886 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:40.886 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:40.886 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:40.886 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:40.886 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:40.886 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:40.886 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:40.887 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:40.888 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:40.888 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:40.889 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:41.633 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:41.634 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:41.634 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:41.634 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:41.634 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:41.634 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:41.634 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:41.634 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:41.634 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:41.641 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:41.641 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:41.641 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:41.641 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:41.642 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:41.642 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:41.643 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:41.643 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:41.643 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:41.643 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:41.643 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:41.643 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:41.643 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:41.643 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:41.644 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:41.646 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:41.646 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:41.646 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:42.231 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:42.231 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:42.231 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:42.231 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:42.231 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:42.231 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:42.231 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:42.231 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:42.231 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:42.232 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:42.232 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:42.232 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:42.232 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:42.233 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:42.233 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:42.233 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:42.233 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:42.233 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:42.233 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:42.233 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:42.233 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:42.233 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:42.233 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:42.234 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:42.234 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:42.234 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:42.235 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:42.798 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:42.798 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:42.798 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:42.798 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:42.798 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:42.799 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:42.799 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:42.799 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:42.799 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:42.799 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:42.799 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:42.799 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:42.799 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:42.800 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:42.800 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:42.800 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:42.801 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:42.801 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:42.801 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:42.801 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:42.801 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:42.801 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:42.801 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:42.802 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:42.803 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:42.803 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:42.803 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:43.424 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:43.424 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:43.424 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:43.424 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:43.424 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:43.424 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:43.424 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:43.424 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:43.424 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:43.424 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:43.424 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:43.424 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:43.424 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:43.425 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:43.425 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:43.425 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:43.425 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:43.425 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:43.426 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:43.426 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:43.426 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:43.426 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:43.426 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:43.428 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:43.428 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:43.428 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:43.429 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:44.047 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:44.047 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:44.047 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:44.047 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:44.048 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:44.048 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:44.048 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:44.048 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:44.048 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:44.048 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:44.048 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:44.048 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:44.048 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:44.049 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:44.049 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:44.049 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:44.049 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:44.049 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:44.049 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:44.049 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:44.049 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:44.049 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:44.049 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:44.050 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:44.051 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:44.051 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:44.052 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:44.709 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:44.709 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:44.709 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:44.709 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:44.709 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:44.709 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:44.709 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:44.710 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:44.710 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:44.710 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:44.710 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:44.710 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:44.710 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:44.711 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:44.711 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:44.711 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:44.711 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:44.711 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:44.711 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:44.711 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:44.711 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:44.711 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:44.711 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:44.712 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:44.713 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:44.713 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:44.713 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:45.603 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:45.603 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:45.603 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:45.603 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:45.603 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:45.603 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:45.603 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:45.603 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:45.604 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:45.604 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:45.604 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:45.604 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:45.604 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:45.605 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:45.606 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:45.606 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:45.606 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:45.606 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:45.606 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:45.606 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:45.606 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:45.606 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:45.606 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:45.607 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:45.609 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:45.609 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:45.609 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:46.348 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:46.348 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:46.348 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:46.348 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:46.348 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:46.348 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:46.348 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:46.348 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:46.348 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:46.349 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:46.350 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:46.350 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:46.350 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:46.350 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:46.350 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:46.351 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:46.351 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:46.351 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:46.351 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:46.351 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:46.351 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:46.351 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:46.351 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:46.352 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:46.353 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:46.353 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:46.353 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:47.138 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:47.139 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:47.139 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:47.139 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:47.139 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:47.139 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:47.139 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:47.139 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:47.139 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:47.140 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:47.140 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:47.140 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:47.140 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:47.141 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:47.141 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:47.141 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:47.141 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:47.141 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:47.141 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:47.141 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:47.141 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:47.141 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:47.141 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:47.142 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:47.142 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:47.142 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:47.773 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:47.773 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:47.773 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:47.773 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:47.773 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:47.773 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:47.773 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:47.774 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:47.774 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:47.775 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:47.775 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:47.775 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:47.775 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:47.775 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:47.776 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:47.776 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:47.776 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:47.776 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:47.776 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:47.776 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:47.776 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:47.776 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:47.776 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:47.777 [reactor-http-nio-2] WARN  RoundRobinLoadBalancer - No servers available for service: patient-service
+2024-10-06 03:29:47.778 [reactor-http-nio-2] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-10-06 03:29:47.778 [reactor-http-nio-2] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-10-06 03:29:47.778 [reactor-http-nio-2] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-10-06 03:29:49.896 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:49.897 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:49.897 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:49.897 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:49.897 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:49.897 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:49.897 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:49.897 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:49.897 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:49.898 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:49.898 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:49.898 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:49.898 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:49.898 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:49.898 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:49.899 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:49.899 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:49.899 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:49.899 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:49.899 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:49.899 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:49.899 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:49.899 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:54.546 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:54.546 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:54.546 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:54.546 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:54.546 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:54.546 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:54.546 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:54.546 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:54.546 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:54.547 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:54.547 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:54.547 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:54.547 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:54.548 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:54.548 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:54.548 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:54.548 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:54.548 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:54.548 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:54.548 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:54.548 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:54.549 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:54.549 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:29:59.718 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:29:59.718 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:29:59.718 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:59.718 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:59.719 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:59.719 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:29:59.719 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:29:59.719 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:29:59.719 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:29:59.719 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:59.719 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:29:59.719 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:29:59.719 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:29:59.720 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:29:59.720 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:29:59.720 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:29:59.720 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:29:59.720 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:29:59.720 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:29:59.720 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:29:59.720 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:29:59.720 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:29:59.720 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:30:02.780 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Processing request for path: /barcode/generate
+2024-10-06 03:30:02.781 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /barcode/generate
+2024-10-06 03:30:02.781 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:30:02.781 [reactor-http-nio-2] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-10-06 03:30:02.781 [reactor-http-nio-2] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:30:02.781 [reactor-http-nio-2] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-10-06 03:30:02.781 [reactor-http-nio-2] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-10-06 03:30:02.781 [reactor-http-nio-2] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-10-06 03:30:02.781 [reactor-http-nio-2] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-10-06 03:30:02.782 [reactor-http-nio-2] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:30:02.782 [reactor-http-nio-2] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-10-06 03:30:02.782 [reactor-http-nio-2] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-06 03:30:02.782 [reactor-http-nio-2] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv
+2024-10-06 03:30:02.782 [reactor-http-nio-2] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MjgxNzMyMDQsImV4cCI6MTcyODE3NjgwNH0.1cMQ7To05dJ3k5Ma-0TZ-2mEFduCJd4DToprPlZp8zuWESdpumOhGrd7oH-6qUxv logout status: false
+2024-10-06 03:30:02.783 [reactor-http-nio-2] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-06 03:30:02.783 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-10-06 03:30:02.783 [reactor-http-nio-2] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /barcode/generate
+2024-10-06 03:30:02.783 [reactor-http-nio-2] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-06 03:30:02.783 [reactor-http-nio-2] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1728173204, exp=1728176804}
+2024-10-06 03:30:02.783 [reactor-http-nio-2] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-10-06 03:30:02.783 [reactor-http-nio-2] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-10-06 03:30:02.783 [reactor-http-nio-2] INFO  AuthGatewayFilterFactory - User super authorized for path: /barcode/generate
+2024-10-06 03:30:02.783 [reactor-http-nio-2] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-06 03:30:08.015 [SpringApplicationShutdownHook] INFO  EurekaServiceRegistry - Unregistering application API-GATEWAY with eureka with status DOWN
+2024-10-06 03:30:08.017 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1728174608017, current=DOWN, previous=UP]
+2024-10-06 03:30:08.019 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_API-GATEWAY/asaf:api-gateway:8080: registering service...
+2024-10-06 03:30:08.066 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_API-GATEWAY/asaf:api-gateway:8080 - registration status: 204
+2024-10-06 03:30:10.374 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Shutting down DiscoveryClient ...
+2024-10-06 03:30:13.385 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Unregistering ...
+2024-10-06 03:30:13.419 [SpringApplicationShutdownHook] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
+	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:297)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:103)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-10-06 03:30:13.419 [SpringApplicationShutdownHook] WARN  RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-10-06 03:30:13.422 [SpringApplicationShutdownHook] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
+	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:297)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:103)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-10-06 03:30:13.422 [SpringApplicationShutdownHook] WARN  RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-10-06 03:30:13.422 [SpringApplicationShutdownHook] ERROR DiscoveryClient - DiscoveryClient_API-GATEWAY/asaf:api-gateway:8080 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892) ~[eureka-client-2.0.2.jar:2.0.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389) ~[spring-cloud-context-4.1.2.jar:4.1.2]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-4.1.2.jar:4.1.2]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-3.3.3.jar:3.3.3]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) [?:?]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) [spring-boot-3.3.3.jar:3.3.3]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-10-06 03:30:13.438 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Completed shut down of DiscoveryClient

@@ -1,0 +1,79 @@
+2024-10-06 03:02:41.262 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-10-06 03:02:41.325 [main] INFO  ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.11 with PID 15112 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\config-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-06 03:02:41.325 [main] DEBUG ConfigServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-10-06 03:02:41.326 [main] INFO  ConfigServerApplication - The following 1 profile is active: "git"
+2024-10-06 03:02:42.988 [main] INFO  GenericScope - BeanFactory id=a28324e9-68a8-3d01-a64d-473499cd2c74
+2024-10-06 03:02:43.484 [main] INFO  TomcatWebServer - Tomcat initialized with port 8888 (http)
+2024-10-06 03:02:43.518 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-06 03:02:43.526 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-06 03:02:43.527 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-06 03:02:43.617 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-06 03:02:43.620 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2236 ms
+2024-10-06 03:02:50.846 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-06 03:02:50.918 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-06 03:02:50.949 [main] INFO  TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
+2024-10-06 03:02:51.131 [main] INFO  ConfigServerApplication - Started ConfigServerApplication in 10.53 seconds (process running for 11.835)
+2024-10-06 03:02:57.102 [http-nio-8888-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-06 03:02:57.102 [http-nio-8888-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-06 03:02:57.104 [http-nio-8888-exec-1] INFO  DispatcherServlet - Completed initialization in 2 ms
+2024-10-06 03:02:58.509 [http-nio-8888-exec-1] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-16629802380810587337\backend\config\discovery-server.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-16629802380810587337/backend/config/'
+2024-10-06 03:03:11.538 [http-nio-8888-exec-2] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-16629802380810587337\backend\config\api-gateway.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-16629802380810587337/backend/config/'
+2024-10-06 03:03:39.878 [http-nio-8888-exec-3] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-16629802380810587337\backend\config\auth-service.properties]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-16629802380810587337/backend/config/'
+2024-10-06 03:03:39.878 [http-nio-8888-exec-3] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-16629802380810587337\backend\config\auth-service.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-16629802380810587337/backend/config/'
+2024-10-06 03:04:03.129 [http-nio-8888-exec-5] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-16629802380810587337\backend\config\user-management-service.properties]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-16629802380810587337/backend/config/'
+2024-10-06 03:04:03.131 [http-nio-8888-exec-5] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-16629802380810587337\backend\config\user-management-service.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-16629802380810587337/backend/config/'
+2024-10-06 03:04:04.212 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2024-10-06 03:04:04.213 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Dropped 3 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connect to http://localhost:9411 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information)
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connect to http://localhost:9411 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:830) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:691) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinRestTemplateSender.postSpans(ZipkinRestTemplateSender.java:50) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:68) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:40) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123) ~[zipkin-reporter-3.4.0.jar:?]
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266) [zipkin-reporter-3.4.0.jar:?]
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352) [zipkin-reporter-3.4.0.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:9411 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[?:?]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[?:?]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[?:?]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[?:?]
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91) ~[httpclient5-5.3.1.jar:5.3.1]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[?:?]
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889) ~[spring-web-6.1.12.jar:6.1.12]
+	... 9 more
+2024-10-06 03:04:26.287 [http-nio-8888-exec-7] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-16629802380810587337\backend\config\patient-service.properties]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-16629802380810587337/backend/config/'
+2024-10-06 03:04:26.288 [http-nio-8888-exec-7] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-16629802380810587337\backend\config\patient-service.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-16629802380810587337/backend/config/'
+2024-10-06 03:04:47.069 [http-nio-8888-exec-9] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-16629802380810587337\backend\config\report-service.properties]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-16629802380810587337/backend/config/'
+2024-10-06 03:04:47.069 [http-nio-8888-exec-9] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-16629802380810587337\backend\config\report-service.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-16629802380810587337/backend/config/'
+2024-10-06 03:28:38.845 [http-nio-8888-exec-3] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-16629802380810587337\backend\config\patient-service.properties]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-16629802380810587337/backend/config/'
+2024-10-06 03:28:38.847 [http-nio-8888-exec-3] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-16629802380810587337\backend\config\patient-service.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-16629802380810587337/backend/config/'
+2024-10-06 03:30:08.047 [Thread-2] WARN  MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\omera\AppData\Local\Temp\config-repo-16629802380810587337\.git\objects\pack\pack-25329415b1cde472c6f1ee52c85de215f07b5efb.idx

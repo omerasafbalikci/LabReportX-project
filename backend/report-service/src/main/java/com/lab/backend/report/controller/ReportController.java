@@ -5,8 +5,6 @@ import com.lab.backend.report.dto.requests.UpdateReportRequest;
 import com.lab.backend.report.dto.responses.GetReportResponse;
 import com.lab.backend.report.dto.responses.PagedResponse;
 import com.lab.backend.report.service.abstracts.ReportService;
-import com.lab.backend.report.utilities.exceptions.InvalidTrIdNumberException;
-import com.lab.backend.report.utilities.exceptions.UnexpectedException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -142,18 +140,9 @@ public class ReportController {
     public ResponseEntity<String> checkTrIdNumber(@RequestHeader("X-Username") String username, @RequestParam String trIdNumber) {
         log.trace("Entering checkTrIdNumber method in ReportController class");
         log.info("Checking TR ID number: {} for user: {}", trIdNumber, username);
-        String responseMessage;
-        try {
-            responseMessage = this.reportService.checkTrIdNumber(username, trIdNumber);
-            log.trace("Exiting checkTrIdNumber method in ReportController class");
-            return ResponseEntity.ok(responseMessage);
-        } catch (InvalidTrIdNumberException e) {
-            log.error("Invalid TR ID number: {}", e.getMessage());
-            return ResponseEntity.badRequest().body(e.getMessage());
-        } catch (UnexpectedException e) {
-            log.error("Unexpected error occurred: {}", e.getMessage());
-            return ResponseEntity.status(500).body(e.getMessage());
-        }
+        String responseMessage = this.reportService.checkTrIdNumber(username, trIdNumber);
+        log.trace("Exiting checkTrIdNumber method in ReportController class");
+        return ResponseEntity.ok(responseMessage);
     }
 
     /**
@@ -319,13 +308,8 @@ public class ReportController {
     public ResponseEntity<String> sendPrescription(@RequestHeader("X-Username") String username) {
         log.trace("Entering sendPrescription method in ReportController class");
         log.info("Sending prescription for user: {}", username);
-        try {
-            this.reportService.sendPrescription(username);
-            log.trace("Exiting sendPrescription method in ReportController class");
-            return new ResponseEntity<>("Prescription sent successfully.", HttpStatus.OK);
-        } catch (UnexpectedException ex) {
-            log.error("Error sending prescription for user: {}", username, ex);
-            return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        this.reportService.sendPrescription(username);
+        log.trace("Exiting sendPrescription method in ReportController class");
+        return new ResponseEntity<>("Prescription sent successfully.", HttpStatus.OK);
     }
 }
