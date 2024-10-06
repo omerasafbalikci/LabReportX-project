@@ -72,19 +72,19 @@ public class PdfUtil {
             document.add(title);
             document.add(new Paragraph(" "));
 
-            document.add(new Paragraph("Tarih: " + reportResponse.getDate(), light));
-            document.add(new Paragraph("Dosya Numarası: " + reportResponse.getFileNumber(), light));
+            document.add(new Paragraph("Tarih              : " + reportResponse.getDate(), light));
+            document.add(new Paragraph("Dosya Numarası     : " + reportResponse.getFileNumber(), light));
 
             document.add(hyphens);
             Paragraph patientInfoTitle = new Paragraph("HASTA BİLGİLERİ", boldSmall);
             document.add(patientInfoTitle);
-            document.add(new Paragraph("Adı: " + patientResponse.getFirstName(), light));
-            document.add(new Paragraph("Soyadı: " + patientResponse.getLastName(), light));
-            document.add(new Paragraph("TC Kimlik No: " + patientResponse.getTrIdNumber(), light));
-            document.add(new Paragraph("Doğum Tarihi: " + patientResponse.getBirthDate(), light));
-            document.add(new Paragraph("Cinsiyet: " + patientResponse.getGender(), light));
-            document.add(new Paragraph("Kan Grubu: " + patientResponse.getBloodType(), light));
-            document.add(new Paragraph("Telefon Numarası: " + patientResponse.getPhoneNumber(), light));
+            document.add(new Paragraph("Adı                : " + patientResponse.getFirstName(), light));
+            document.add(new Paragraph("Soyadı             : " + patientResponse.getLastName(), light));
+            document.add(new Paragraph("TC Kimlik No       : " + patientResponse.getTrIdNumber(), light));
+            document.add(new Paragraph("Doğum Tarihi       : " + patientResponse.getBirthDate(), light));
+            document.add(new Paragraph("Cinsiyet           : " + patientResponse.getGender(), light));
+            document.add(new Paragraph("Kan Grubu          : " + patientResponse.getBloodType(), light));
+            document.add(new Paragraph("Telefon Numarası   : " + patientResponse.getPhoneNumber(), light));
 
             document.add(hyphens);
             Paragraph diagnosisTitle = new Paragraph("TANI", boldSmall);
