@@ -7,6 +7,7 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.lab.backend.report.dto.responses.GetPatientResponse;
 import com.lab.backend.report.dto.responses.GetReportResponse;
+import com.lab.backend.report.utilities.exceptions.UnexpectedException;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,6 +16,15 @@ import org.springframework.stereotype.Component;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
+/**
+ * PdfUtil class is responsible for generating PDF documents for patient reports.
+ * This utility generates a PDF based on the patient information and report details
+ * passed as arguments. It uses a custom font, images, and formats the document to fit
+ * a professional standard.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
 
 @Component
 @Log4j2
@@ -28,7 +38,17 @@ public class PdfUtil {
     @Value("${pdf.hospital-name}")
     private String HOSPITAL_NAME;
 
+    /**
+     * Generates a PDF document for a patient's report based on the provided
+     * report and patient details.
+     *
+     * @param reportResponse  The report details including the diagnosis, technician info, etc.
+     * @param patientResponse The patient details including name, contact info, etc.
+     * @return A byte array containing the generated PDF document.
+     */
     public byte[] generatePdf(GetReportResponse reportResponse, GetPatientResponse patientResponse) {
+        log.trace("Entering generatePdf method in PdfUtil");
+        log.info("Generating PDF for report: {} and patient: {}", reportResponse.getFileNumber(), patientResponse.getTrIdNumber());
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             Document document = new Document(PageSize.A4);
@@ -37,12 +57,12 @@ public class PdfUtil {
             document.open();
 
             BaseFont baseFont = BaseFont.createFont(FONT_PATH, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-            Font boldBig = new Font(baseFont, 24, Font.BOLD);
-            Font boldSmall = new Font(baseFont, 16, Font.BOLD);
-            Font light = new Font(baseFont, 12);
-            Font hyphen = new Font(baseFont, 12, Font.BOLD);
+            Font boldBig = new Font(baseFont, 22, Font.BOLD);
+            Font boldSmall = new Font(baseFont, 14, Font.BOLD);
+            Font light = new Font(baseFont, 10);
+            Font hyphen = new Font(baseFont, 10, Font.BOLD);
 
-            Paragraph hyphens = new Paragraph("-----------------------------------------------------------------------------------------", hyphen);
+            Paragraph hyphens = new Paragraph("----------------------------------------------------------------------------------------------------------------------------", hyphen);
             hyphens.setAlignment(Paragraph.ALIGN_CENTER);
 
             document.add(new Paragraph("\n"));
@@ -54,7 +74,6 @@ public class PdfUtil {
 
             document.add(new Paragraph("Tarih: " + reportResponse.getDate(), light));
             document.add(new Paragraph("Dosya Numarası: " + reportResponse.getFileNumber(), light));
-            document.add(new Paragraph(" "));
 
             document.add(hyphens);
             Paragraph patientInfoTitle = new Paragraph("HASTA BİLGİLERİ", boldSmall);
@@ -67,7 +86,6 @@ public class PdfUtil {
             document.add(new Paragraph("Kan Grubu: " + patientResponse.getBloodType(), light));
             document.add(new Paragraph("Telefon: " + patientResponse.getPhoneNumber(), light));
             document.add(new Paragraph("E-posta: " + patientResponse.getEmail(), light));
-            document.add(new Paragraph(" "));
 
             document.add(hyphens);
             Paragraph diagnosisTitle = new Paragraph("TANI", boldSmall);
@@ -80,7 +98,7 @@ public class PdfUtil {
             document.add(new Paragraph(" "));
 
             Image photo = Image.getInstance(reportResponse.getPhotoPath());
-            photo.scaleToFit(250, 250);
+            photo.scaleToFit(350, 270);
             photo.setAlignment(Element.ALIGN_CENTER);
             document.add(photo);
             document.add(new Paragraph(" "));
@@ -91,7 +109,7 @@ public class PdfUtil {
             document.add(new Paragraph(" "));
 
             PdfPTable table = new PdfPTable(1);
-            PdfPCell cell = new PdfPCell(new Paragraph("İmza:"));
+            PdfPCell cell = new PdfPCell();
             cell.setFixedHeight(50);
             cell.setBorderWidth(1);
             cell.setBorder(Rectangle.BOX);
@@ -110,16 +128,20 @@ public class PdfUtil {
             try (InputStream inputStream = getClass().getResourceAsStream(this.IMAGE_PATH)) {
                 if (inputStream != null) {
                     Image image = Image.getInstance(IOUtils.toByteArray(inputStream));
-                    image.scaleToFit(100, 100);
+                    image.scaleToFit(50, 50);
                     image.setAlignment(Image.ALIGN_CENTER);
                     document.add(image);
-                    document.add(new Paragraph("\n"));
+                } else {
+                    log.warn("Logo image not found at path: {}", IMAGE_PATH);
                 }
             }
             document.close();
+            log.info("PDF generated successfully for report: {} and patient: {}", reportResponse.getFileNumber(), patientResponse.getTrIdNumber());
+            log.trace("Exiting generatePdf method in PdfUtil");
             return byteArrayOutputStream.toByteArray();
         } catch (DocumentException | IOException e) {
-            throw new RuntimeException(e);
+            log.error("Error occurred while generating PDF for report: {} and patient: {}", reportResponse.getFileNumber(), patientResponse.getTrIdNumber(), e);
+            throw new UnexpectedException("Error occurred while generating the PDF document" + e);
         }
     }
 }
