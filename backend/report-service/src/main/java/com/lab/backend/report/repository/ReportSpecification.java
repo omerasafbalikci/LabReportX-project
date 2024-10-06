@@ -29,7 +29,7 @@ public class ReportSpecification implements Specification<Report> {
     private final String diagnosisDetails;
     private final String date;
     private final String photoPath;
-    private String technicianUsername;
+    private final String technicianUsername;
     private final Boolean deleted;
 
     /**
@@ -80,7 +80,7 @@ public class ReportSpecification implements Specification<Report> {
             predicates.add(criteriaBuilder.like(root.get("diagnosisDetails"), "%" + diagnosisDetails + "%"));
         }
         if (date != null && !date.isEmpty()) {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
             try {
                 Date d = dateFormat.parse(date);
                 predicates.add(criteriaBuilder.equal(root.get("date"), d));

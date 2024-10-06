@@ -62,7 +62,7 @@ public class PdfUtil {
             Font light = new Font(baseFont, 10);
             Font hyphen = new Font(baseFont, 10, Font.BOLD);
 
-            Paragraph hyphens = new Paragraph("----------------------------------------------------------------------------------------------------------------------------", hyphen);
+            Paragraph hyphens = new Paragraph("-------------------------------------------------------------------------------------------------------------------------------------------------------------", hyphen);
             hyphens.setAlignment(Paragraph.ALIGN_CENTER);
 
             document.add(new Paragraph("\n"));
@@ -84,8 +84,7 @@ public class PdfUtil {
             document.add(new Paragraph("Doğum Tarihi: " + patientResponse.getBirthDate(), light));
             document.add(new Paragraph("Cinsiyet: " + patientResponse.getGender(), light));
             document.add(new Paragraph("Kan Grubu: " + patientResponse.getBloodType(), light));
-            document.add(new Paragraph("Telefon: " + patientResponse.getPhoneNumber(), light));
-            document.add(new Paragraph("E-posta: " + patientResponse.getEmail(), light));
+            document.add(new Paragraph("Telefon Numarası: " + patientResponse.getPhoneNumber(), light));
 
             document.add(hyphens);
             Paragraph diagnosisTitle = new Paragraph("TANI", boldSmall);
@@ -94,14 +93,29 @@ public class PdfUtil {
 
             Paragraph diagnosisDetails = new Paragraph("TANI DETAYLARI", boldSmall);
             document.add(diagnosisDetails);
-            document.add(new Paragraph(reportResponse.getDiagnosisDetails(), light));
+            PdfPTable diagnosisTable = new PdfPTable(1);
+            diagnosisTable.setWidthPercentage(100);
+            PdfPCell diagnosisDetailsCell = new PdfPCell(new Paragraph(reportResponse.getDiagnosisDetails(), light));
+            diagnosisDetailsCell.setFixedHeight(50);
+            diagnosisDetailsCell.setVerticalAlignment(Element.ALIGN_TOP);
+            diagnosisDetailsCell.setBorder(Rectangle.NO_BORDER);
+            diagnosisTable.addCell(diagnosisDetailsCell);
+            document.add(diagnosisTable);
             document.add(new Paragraph(" "));
 
-            Image photo = Image.getInstance(reportResponse.getPhotoPath());
-            photo.scaleToFit(350, 270);
-            photo.setAlignment(Element.ALIGN_CENTER);
-            document.add(photo);
-            document.add(new Paragraph(" "));
+            if (reportResponse.getPhotoPath() != null) {
+                Image photo = Image.getInstance(reportResponse.getPhotoPath());
+                photo.scaleAbsolute(document.getPageSize().getWidth() - document.leftMargin() - document.rightMargin(), 160);
+                photo.setAlignment(Element.ALIGN_CENTER);
+                document.add(photo);
+                document.add(new Paragraph(" "));
+            } else {
+                Paragraph emptySpace = new Paragraph(" ", new Font(baseFont, 12));
+                emptySpace.setSpacingBefore(160);
+                emptySpace.setAlignment(Element.ALIGN_CENTER);
+                document.add(emptySpace);
+                document.add(new Paragraph(" "));
+            }
 
             Paragraph technician = new Paragraph("Teknisyen: " + reportResponse.getTechnicianUsername(), light);
             technician.setAlignment(Element.ALIGN_RIGHT);
@@ -115,15 +129,12 @@ public class PdfUtil {
             cell.setBorder(Rectangle.BOX);
             cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
             cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-            table.setWidthPercentage(30);
+            table.setWidthPercentage(20);
             table.setHorizontalAlignment(Element.ALIGN_RIGHT);
             table.addCell(cell);
             document.add(table);
             document.add(new Paragraph(" "));
-
-            Paragraph hospitalName = new Paragraph(HOSPITAL_NAME, light);
-            hospitalName.setAlignment(Element.ALIGN_CENTER);
-            document.add(hospitalName);
+            document.add(new Paragraph(" "));
 
             try (InputStream inputStream = getClass().getResourceAsStream(this.IMAGE_PATH)) {
                 if (inputStream != null) {
@@ -135,6 +146,9 @@ public class PdfUtil {
                     log.warn("Logo image not found at path: {}", IMAGE_PATH);
                 }
             }
+            Paragraph hospitalName = new Paragraph(HOSPITAL_NAME, light);
+            hospitalName.setAlignment(Element.ALIGN_CENTER);
+            document.add(hospitalName);
             document.close();
             log.info("PDF generated successfully for report: {} and patient: {}", reportResponse.getFileNumber(), patientResponse.getTrIdNumber());
             log.trace("Exiting generatePdf method in PdfUtil");
