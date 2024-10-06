@@ -29,8 +29,8 @@ public class ApplicationConfig {
 
     /**
      * Configures the security filter chain.
-     * Disables CSRF, allows public access to specific authentication endpoints,
-     * requires authentication for all other requests, and sets session management to stateless.
+     * Disables CSRF protection, allows public access to all requests,
+     * and sets session management to stateless.
      *
      * @param httpSecurity the security configuration
      * @return the configured security filter chain
@@ -41,8 +41,7 @@ public class ApplicationConfig {
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/login", "/auth/initiate-password-reset", "/auth/reset-password", "/auth/verify-email").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .build();
