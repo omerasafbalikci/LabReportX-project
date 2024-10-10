@@ -11,6 +11,8 @@ services:
       - "80:80"
     networks:
       - nginx
+    depends_on:
+      - api-gateway
 
   # PROMETHEUS
   prometheus:
@@ -48,43 +50,40 @@ services:
 
   # ELK STACK
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.1
+    image: elasticsearch:8.15.2
     container_name: elasticsearch
     environment:
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      - "ES_JAVA_OPTS=-Xms512m -Xms512m"
       - "discovery.type=single-node"
-      - "xpack.security.enabled=false"
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
+      - xpack.security.enabled=false
     ports:
       - "9200:9200"
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health | grep -q '\"status\"' || exit 1"]
-      interval: 30s
+      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
       timeout: 10s
-      retries: 3
-    restart: unless-stopped
+      retries: 10
+      start_period: 30s
     networks:
       - elk-stack
 
   logstash:
-    image: docker.elastic.co/logstash/logstash:8.15.1
+    image: logstash:8.15.2
     container_name: logstash
     environment:
-      LS_JAVA_OPTS: "-Xmx512m  -Xms512m"
+      LS_JAVA_OPTS: "-Xmx256m  -Xms256m"
     ports:
-      - "5044:5044"
+      - "5000:5000/tcp"
+      - "9600:9600"
     volumes:
-      - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:9600/_node/pipelines | grep -q '\"pipeline\"' || exit 1"]
-      interval: 30s
+      test: ["CMD-SHELL", "curl -f http://localhost:9600/_node/pipelines || exit 1"]
+      interval: 10s
       timeout: 10s
-      retries: 5
-    restart: unless-stopped
+      retries: 15
+      start_period: 30s
     networks:
       - elk-stack
     depends_on:
@@ -92,18 +91,12 @@ services:
         condition: service_healthy
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:8.15.1
+    image: kibana:8.15.2
     container_name: kibana
     environment:
-      - "ELASTICSEARCH_HOSTS=http://elasticsearch:9200"
+      ELASTICSEARCH_HOSTS: '["http://elasticsearch:9200"]'
     ports:
       - "5601:5601"
-    healthcheck:
-      test: ["CMD-SHELL", "curl -s http://localhost:5601/api/status | grep -q '\"state\":\"green\"' || exit 1"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-    restart: unless-stopped
     networks:
       - elk-stack
     depends_on:
@@ -115,12 +108,23 @@ services:
     image: redis:alpine
     container_name: redis
     ports:
-      - "6379:6379"
+      - "6380:6380"
     volumes:
-      - redis-data:/data
-    restart: unless-stopped
+      - ./redis:/data
+    command: --port 6380
     networks:
       - redis
+    restart: always
+
+  # RABBITMQ
+  rabbitmq:
+    image: rabbitmq:alpine
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+    networks:
+      - rabbitmq
+    restart: always
 
   # ZIPKIN
   zipkin:
@@ -128,59 +132,188 @@ services:
     container_name: zipkin
     ports:
       - "9411:9411"
-    restart: unless-stopped
     networks:
       - tracing
+    restart: always
 
   # POSTGRES DATABASES
+  postgres-auth:
+    image: postgres-alpine
+    container_name: postgres-auth
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: auth-service
+    ports:
+      - "5433:5433"
+    command: -p 5433
+    networks:
+      - postgres
+    restart: always
+
+  postgres-user:
+    image: postgres-alpine
+    container_name: postgres-user
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: user-management-service
+    ports:
+      - "5434:5434"
+    command: -p 5434
+    networks:
+      - postgres
+    restart: always
+
   postgres-patient:
-    image: postgres:13-alpine
+    image: postgres-alpine
     container_name: postgres-patient
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: patient-service
     ports:
-      - "5432:5432"
-    volumes:
-      - postgres-patient-data:/var/lib/postgresql/data
-    restart: unless-stopped
+      - "5435:5435"
+    command: -p 5435
     networks:
       - postgres
+    restart: always
+
+  postgres-report:
+    image: postgres-alpine
+    container_name: postgres-report
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: report-service
+    ports:
+      - "5436:5436"
+    command: -p 5436
+    networks:
+      - postgres
+    restart: always
 
   # MAIN SERVICES
-  patient-service:
-    image: omerasaf/patient-service:latest
-    container_name: patient-service
+  discovery-server:
+    container_name: discovery-server
+    image: omerasafbalikci/discovery-server:latest
     environment:
-      - "SPRING_PROFILES_ACTIVE=docker"
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "8761:8761"
     volumes:
       - ./logs:/logs
     networks:
       - elk-stack
+      - discovery
+      - tracing
+    depends_on:
+      logstash:
+        condition: service_healthy
+      zipkin:
+        condition: service_started
+
+  api-gateway:
+    container_name: api-gateway
+    image: omerasafbalikci/api-gateway:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "8080"
+    volumes:
+      - ./logs:/logs
+    networks:
+      - elk-stack
+      - discovery
+      - tracing
+      - redis
+      - nginx
+    depends_on:
+      - discovery-server
+      - redis
+
+  auth-service:
+    container_name: auth-service
+    image: omerasafbalikci/auth-service:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "8080"
+    volumes:
+      - ./logs:/logs
+    networks:
+      - elk-stack
+      - discovery
+      - postgres
+      - tracing
+      - redis
+      - rabbitmq
+    depends_on:
+      - api-gateway
+      - rabbitmq
+      - postgres-auth
+
+  user-service:
+    container_name: user-service
+    image: omerasafbalikci/user-management-service:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "8080"
+    volumes:
+      - ./logs:/logs
+    networks:
+      - elk-stack
+      - discovery
+      - postgres
+      - tracing
+      - rabbitmq
+    depends_on:
+      - api-gateway
+      - auth-service
+      - postgres-user
+
+  patient-service:
+    container_name: patient-service
+    image: omerasafbalikci/patient-service:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    volumes:
+      - ./logs:/logs
+    networks:
+      - elk-stack
+      - discovery
       - postgres
       - redis
       - tracing
     depends_on:
       - postgres-patient
+      - api-gateway
+
+  report-service:
+    container_name: report-service
+    image: omerasafbalikci/report-service:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    volumes:
+      - ./logs:/logs
+    networks:
+      - elk-stack
+      - discovery
+      - postgres
       - redis
-      - zipkin
-      - elasticsearch
-    healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
+      - tracing
+    depends_on:
+      - postgres-report
+      - patient-service
+      - api-gateway
 
 networks:
+  discovery:
   nginx:
   elk-stack:
   postgres:
   redis:
   tracing:
   monitoring:
-
-volumes:
-  grafana-storage:
-  redis-data:
-  postgres-patient-data:
+  rabbitmq:

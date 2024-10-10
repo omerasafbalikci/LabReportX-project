@@ -15,8 +15,8 @@ eureka:
 jwt:
   secret-key: "6bc18dff62463c49343d083ae0e523fbfb88d4d45b4a9cb62e86d0c53bd9b870"
   authorities-key: "roles"
-  access-token-expiration: 3600000
-  refresh-token-expiration: 86400000
+  access-token-expiration: 3600000 # an hour
+  refresh-token-expiration: 86400000 # a day
 
 redis:
   host: "localhost"

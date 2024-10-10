@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: auth-service
+  rabbitmq:
+    host: rabbitmq
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka
+  instance:
+    hostname: auth-service
+
+redis:
+  host: "redis"
+  port: "6380"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+  endpoint:
+    prometheus:
+      enabled: true
+    metrics:
+      enabled: true
+  zipkin:
+    tracing:
+      endpoint: "http://zipkin:9411/api/v2/spans"
+  tracing:
+    sampling:
+      probability: 1.0

@@ -1,0 +1,27 @@
+spring:
+  rabbitmq:
+    host: rabbitmq
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka
+  instance:
+    hostname: user-management-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+  endpoint:
+    prometheus:
+      enabled: true
+    metrics:
+      enabled: true
+  zipkin:
+    tracing:
+      endpoint: "http://zipkin:9411/api/v2/spans"
+  tracing:
+    sampling:
+      probability: 1.0
