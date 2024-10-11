@@ -22,7 +22,7 @@ services:
     ports:
       - "9090:9090"
     healthcheck:
-      test: ["CMD-SHELL", "wget --spider http://localhost:9090 || exit 1"]
+      test: [ "CMD-SHELL", "wget --spider http://localhost:9090 || exit 1" ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -40,7 +40,7 @@ services:
     volumes:
       - grafana-storage:/var/lib/grafana
     healthcheck:
-      test: ["CMD-SHELL", "wget --spider http://localhost:3000/api/health || exit 1"]
+      test: [ "CMD-SHELL", "wget --spider http://localhost:3000/api/health || exit 1" ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -60,7 +60,7 @@ services:
     ports:
       - "9200:9200"
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health || exit 1"]
+      test: [ "CMD-SHELL", "curl -f http://localhost:9200/_cluster/health || exit 1" ]
       interval: 10s
       timeout: 10s
       retries: 10
@@ -79,7 +79,7 @@ services:
     volumes:
       - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:9600/_node/pipelines || exit 1"]
+      test: [ "CMD-SHELL", "curl -f http://localhost:9600/_node/pipelines || exit 1" ]
       interval: 10s
       timeout: 10s
       retries: 15
@@ -194,6 +194,16 @@ services:
     restart: always
 
   # MAIN SERVICES
+  config-server:
+    container_name: config-server
+    image: omerasafbalikci/config-server:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "8888:8888"
+    networks:
+      - elk-stack
+
   discovery-server:
     container_name: discovery-server
     image: omerasafbalikci/discovery-server:latest
@@ -208,6 +218,8 @@ services:
       - discovery
       - tracing
     depends_on:
+      config-server:
+        condition: service_healthy
       logstash:
         condition: service_healthy
       zipkin:
@@ -258,8 +270,6 @@ services:
     image: omerasafbalikci/user-management-service:latest
     environment:
       - SPRING_PROFILES_ACTIVE=docker
-    ports:
-      - "8080"
     volumes:
       - ./logs:/logs
     networks:
