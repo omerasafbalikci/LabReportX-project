@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * DTO for report used as response.
  *
@@ -13,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetReportResponse {
+public class GetReportResponse implements Serializable {
     private Long id;
     private String fileNumber;
     private String patientTrIdNumber;

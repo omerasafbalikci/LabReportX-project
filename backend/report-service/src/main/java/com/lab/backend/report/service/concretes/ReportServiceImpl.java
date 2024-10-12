@@ -15,6 +15,9 @@ import com.lab.backend.report.utilities.mappers.ReportMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.apache.http.HttpHeaders;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -67,6 +70,7 @@ public class ReportServiceImpl implements ReportService {
      * @throws ReportNotFoundException if the report is not found
      */
     @Override
+    @Cacheable(value = "reports", key = "#id", unless = "#result == null")
     public GetReportResponse getReportById(Long id) {
         log.trace("Entering getReportById method in ReportServiceImpl");
         log.debug("Fetching report with ID: {}", id);
@@ -228,6 +232,7 @@ public class ReportServiceImpl implements ReportService {
      * @throws InvalidTrIdNumberException if the TR ID number is not found
      */
     @Override
+    @CachePut(value = "reports", key = "#result.id", unless = "#result == null")
     public GetReportResponse addReport(String username, CreateReportRequest createReportRequest) {
         log.trace("Entering addReport method in ReportServiceImpl");
         log.debug("Adding report for user: {}", username);
@@ -258,6 +263,7 @@ public class ReportServiceImpl implements ReportService {
      * @throws UnauthorizedAccessException if the user is not authorized to update the report.
      */
     @Override
+    @CachePut(value = "reports", key = "#result.id", unless = "#result == null")
     public GetReportResponse updateReport(String username, UpdateReportRequest updateReportRequest) {
         log.trace("Entering updateReport method in ReportServiceImpl");
         log.debug("Updating report with id: {} by technician: {}", updateReportRequest.getId(), username);
@@ -293,6 +299,7 @@ public class ReportServiceImpl implements ReportService {
      * @throws UnauthorizedAccessException if the user is not authorized to delete the report.
      */
     @Override
+    @CacheEvict(value = "reports", key = "#id")
     public void deleteReport(String username, Long id) {
         log.trace("Entering deleteReport method in ReportServiceImpl");
         log.debug("Attempting to delete report with id: {} by technician: {}", id, username);
@@ -321,6 +328,7 @@ public class ReportServiceImpl implements ReportService {
      * @throws UnauthorizedAccessException if the user is not authorized to restore the report.
      */
     @Override
+    @CachePut(value = "reports", key = "#id", unless = "#result == null")
     public GetReportResponse restoreReport(String username, Long id) {
         log.trace("Entering restoreReport method in ReportServiceImpl");
         log.debug("Attempting to restore report with id: {} by technician: {}", id, username);
@@ -352,6 +360,7 @@ public class ReportServiceImpl implements ReportService {
      * @throws FileStorageException        if the photo could not be stored due to an I/O error.
      */
     @Override
+    @Cacheable(value = "reports", key = "#reportId", unless = "#result == null")
     public void addPhoto(String username, Long reportId, MultipartFile photo) {
         log.trace("Entering addPhoto method in ReportServiceImpl");
         log.debug("Adding photo to report with id: {} by technician: {}", reportId, username);
@@ -412,6 +421,7 @@ public class ReportServiceImpl implements ReportService {
      * @throws FileStorageException        if the photo cannot be found or read.
      */
     @Override
+    @Cacheable(value = "reports", key = "#reportId", unless = "#result == null")
     public byte[] getPhoto(String username, Long reportId) {
         log.trace("Entering getPhoto method in ReportServiceImpl");
         log.debug("Fetching photo for report with id: {} by technician: {}", reportId, username);
@@ -450,6 +460,7 @@ public class ReportServiceImpl implements ReportService {
      * @throws FileStorageException        if the photo cannot be found or deleted.
      */
     @Override
+    @Cacheable(value = "reports", key = "#reportId", unless = "#result == null")
     public void deletePhoto(String username, Long reportId) {
         log.trace("Entering deletePhoto method in ReportServiceImpl");
         log.debug("Attempting to delete photo for report id: {} by technician: {}", reportId, username);
