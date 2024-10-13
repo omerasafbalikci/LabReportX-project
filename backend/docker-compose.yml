@@ -200,11 +200,6 @@ services:
       - "8888:8888"
     volumes:
       - ./logs:/logs
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8888/actuator/health" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
     networks:
       - elk-stack
 
@@ -223,7 +218,7 @@ services:
       - tracing
     depends_on:
       config-server:
-        condition: service_healthy
+        condition: service_started
       logstash:
         condition: service_healthy
       zipkin:
@@ -253,8 +248,6 @@ services:
     image: omerasafbalikci/auth-service:latest
     environment:
       - SPRING_PROFILES_ACTIVE=docker
-    ports:
-      - "8080"
     volumes:
       - ./logs:/logs
     networks:

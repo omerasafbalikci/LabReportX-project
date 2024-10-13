@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: user-management-service
+  config:
+    import: "configserver:http://config-server:8888"
