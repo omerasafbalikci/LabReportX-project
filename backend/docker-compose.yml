@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   # NGINX
   nginx:
@@ -137,7 +135,7 @@ services:
 
   # POSTGRES DATABASES
   postgres-auth:
-    image: postgres-alpine
+    image: postgres:alpine
     container_name: postgres-auth
     environment:
       POSTGRES_USER: postgres
@@ -151,7 +149,7 @@ services:
     restart: always
 
   postgres-user:
-    image: postgres-alpine
+    image: postgres:alpine
     container_name: postgres-user
     environment:
       POSTGRES_USER: postgres
@@ -165,7 +163,7 @@ services:
     restart: always
 
   postgres-patient:
-    image: postgres-alpine
+    image: postgres:alpine
     container_name: postgres-patient
     environment:
       POSTGRES_USER: postgres
@@ -179,7 +177,7 @@ services:
     restart: always
 
   postgres-report:
-    image: postgres-alpine
+    image: postgres:alpine
     container_name: postgres-report
     environment:
       POSTGRES_USER: postgres
@@ -202,6 +200,11 @@ services:
       - "8888:8888"
     volumes:
       - ./logs:/logs
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8888/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
     networks:
       - elk-stack
 
