@@ -1,0 +1,28 @@
+2024-10-18 00:04:40.334 [main] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-18 00:04:40.337 [main] DEBUG JwtUtil - Checking if token is logged out: loggedOutToken
+2024-10-18 00:04:40.343 [main] INFO  JwtUtil - Token loggedOutToken logout status: true
+2024-10-18 00:04:40.343 [main] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-18 00:17:26.252 [main] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-18 00:17:26.252 [main] DEBUG JwtUtil - Checking if token is logged out: notLoggedOutToken
+2024-10-18 00:17:26.252 [main] INFO  JwtUtil - Token notLoggedOutToken logout status: false
+2024-10-18 00:17:26.267 [main] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-18 00:17:51.542 [main] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-18 00:17:51.557 [main] DEBUG JwtUtil - Checking if token is logged out: notLoggedOutToken
+2024-10-18 00:17:51.557 [main] INFO  JwtUtil - Token notLoggedOutToken logout status: false
+2024-10-18 00:17:51.557 [main] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-18 00:21:36.390 [main] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-18 00:21:36.390 [main] DEBUG JwtUtil - Checking if token is logged out: nonExistentToken
+2024-10-18 00:21:36.406 [main] ERROR JwtUtil - Token not found in Redis: nonExistentToken
+2024-10-18 00:21:36.406 [main] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-18 00:24:58.348 [main] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-18 00:24:58.348 [main] DEBUG JwtUtil - Checking if token is logged out: token
+2024-10-18 00:24:58.364 [main] ERROR JwtUtil - Logout status information not found for token: token
+2024-10-18 00:24:58.364 [main] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-18 00:37:53.580 [main] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-10-18 00:37:53.580 [main] DEBUG JwtUtil - Checking if token is logged out: token
+2024-10-18 00:37:53.590 [main] ERROR JwtUtil - Logout status information not found for token: token
+2024-10-18 00:37:53.590 [main] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-10-18 00:51:28.674 [main] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-10-18 00:51:28.674 [main] DEBUG JwtUtil - Extracting roles from claims: {}
+2024-10-18 00:51:28.674 [main] INFO  JwtUtil - Roles extracted: [ROLE_ADMIN]
+2024-10-18 00:51:28.674 [main] TRACE JwtUtil - Exiting getRoles method in JwtUtils

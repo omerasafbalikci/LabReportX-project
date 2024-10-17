@@ -1,0 +1,139 @@
+2024-10-18 01:59:06.994 [main] TRACE UserController - Entering login method in UserController
+2024-10-18 01:59:07.005 [main] TRACE UserController - Exiting login method in UserController
+2024-10-18 02:03:29.463 [main] TRACE UserController - Entering refreshToken method in UserController
+2024-10-18 02:03:29.487 [main] TRACE UserController - Exiting refreshToken method in UserController
+2024-10-18 02:09:58.599 [main] TRACE UserController - Entering logout method in UserController
+2024-10-18 02:09:58.613 [main] TRACE UserController - Exiting logout method in UserController
+2024-10-18 02:11:47.448 [main] TRACE UserController - Entering changePassword method in UserController
+2024-10-18 02:11:47.465 [main] TRACE UserController - Exiting changePassword method in UserController
+2024-10-18 02:12:47.877 [main] TRACE UserController - Entering initiatePasswordReset method in UserController
+2024-10-18 02:12:47.898 [main] TRACE UserController - Exiting initiatePasswordReset method in UserController
+2024-10-18 02:13:20.550 [main] TRACE UserController - Entering handlePasswordReset method in UserController
+2024-10-18 02:13:20.559 [main] TRACE UserController - Exiting handlePasswordReset method in UserController
+2024-10-18 02:13:54.535 [main] TRACE UserController - Entering verifyEmail method in UserController
+2024-10-18 02:13:54.559 [main] TRACE UserController - Exiting verifyEmail method in UserController
+2024-10-18 02:23:46.240 [main] TRACE JwtServiceImpl - Entering generateAccessToken method in JwtUtils class with username: user
+2024-10-18 02:23:46.277 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 3600000
+2024-10-18 02:23:46.319 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:23:46.321 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:23:46.486 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjkyMDc0MjYsImV4cCI6MTcyOTIxMTAyNn0._zdzQZ7Oc8-1LqPwWypIIv4S-uaDyOPRqUGjT78JV0c
+2024-10-18 02:23:46.486 [main] TRACE JwtServiceImpl - Exiting generateAccessToken method in JwtUtils class with accessToken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjkyMDc0MjYsImV4cCI6MTcyOTIxMTAyNn0._zdzQZ7Oc8-1LqPwWypIIv4S-uaDyOPRqUGjT78JV0c
+2024-10-18 02:23:46.487 [main] TRACE JwtServiceImpl - Entering extractUsername method in JwtUtils class
+2024-10-18 02:23:46.487 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-10-18 02:23:46.488 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-10-18 02:23:46.511 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:23:46.511 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:23:46.552 [main] TRACE JwtServiceImpl - Exiting extractAllClaims method in JwtUtils class
+2024-10-18 02:23:46.553 [main] TRACE JwtServiceImpl - Exiting extractClaim method in JwtUtils class with claim: user
+2024-10-18 02:23:46.553 [main] TRACE JwtServiceImpl - Exiting extractUsername method in JwtUtils class with username: user
+2024-10-18 02:28:47.147 [main] TRACE JwtServiceImpl - Entering generateAccessToken method in JwtUtils class with username: user
+2024-10-18 02:28:47.177 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 3600000
+2024-10-18 02:28:47.206 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:28:47.208 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:28:47.317 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjkyMDc3MjcsImV4cCI6MTcyOTIxMTMyN30.4l9bM3fjgcawvQ36ywYou2JW13m6dER_Zyuj0KoEpb8
+2024-10-18 02:28:47.317 [main] TRACE JwtServiceImpl - Exiting generateAccessToken method in JwtUtils class with accessToken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjkyMDc3MjcsImV4cCI6MTcyOTIxMTMyN30.4l9bM3fjgcawvQ36ywYou2JW13m6dER_Zyuj0KoEpb8
+2024-10-18 02:28:47.320 [main] TRACE JwtServiceImpl - Entering isTokenValid method in JwtUtils class with token and user: user
+2024-10-18 02:28:47.320 [main] TRACE JwtServiceImpl - Entering extractUsername method in JwtUtils class
+2024-10-18 02:28:47.321 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-10-18 02:28:47.321 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-10-18 02:28:47.341 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:28:47.341 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:28:47.372 [main] TRACE JwtServiceImpl - Exiting extractAllClaims method in JwtUtils class
+2024-10-18 02:28:47.372 [main] TRACE JwtServiceImpl - Exiting extractClaim method in JwtUtils class with claim: user
+2024-10-18 02:28:47.372 [main] TRACE JwtServiceImpl - Exiting extractUsername method in JwtUtils class with username: user
+2024-10-18 02:28:47.372 [main] TRACE JwtServiceImpl - Entering isTokenExpired method in JwtUtils class
+2024-10-18 02:28:47.372 [main] TRACE JwtServiceImpl - Entering extractExpiration method in JwtUtils class
+2024-10-18 02:28:47.373 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-10-18 02:28:47.373 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-10-18 02:28:47.373 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:28:47.373 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:28:47.373 [main] TRACE JwtServiceImpl - Exiting extractAllClaims method in JwtUtils class
+2024-10-18 02:28:47.374 [main] TRACE JwtServiceImpl - Exiting extractClaim method in JwtUtils class with claim: 2024-10-18T03:28:47.000+0300
+2024-10-18 02:28:47.376 [main] TRACE JwtServiceImpl - Exiting extractExpiration method in JwtUtils class with expiration date: 2024-10-18T03:28:47.000+0300
+2024-10-18 02:28:47.376 [main] TRACE JwtServiceImpl - Exiting isTokenExpired method in JwtUtils class with result: false
+2024-10-18 02:28:47.377 [main] TRACE JwtServiceImpl - Exiting isTokenValid method in JwtUtils class with result: true
+2024-10-18 02:33:15.634 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 3600000
+2024-10-18 02:33:15.672 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:33:15.674 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:33:15.789 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzI5MjA3OTk1LCJleHAiOjE3MjkyMTE1OTV9._i3mkvP4O52ccLbBhp5jx8iFbfvBc8dVZ5v99QZtYJk
+2024-10-18 02:33:15.810 [main] TRACE JwtServiceImpl - Entering extractUsername method in JwtUtils class
+2024-10-18 02:33:15.811 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-10-18 02:33:15.811 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-10-18 02:33:15.827 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:33:15.827 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:33:15.844 [main] TRACE JwtServiceImpl - Entering generateAccessToken method in JwtUtils class with username: user
+2024-10-18 02:33:15.844 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 3600000
+2024-10-18 02:33:15.845 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:33:15.845 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:33:15.846 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTcyOTIwNzk5NSwiZXhwIjoxNzI5MjExNTk1fQ.0F4jwIGypBHebLm3i3wczZ0tf-KHgE76Jr3LK3byz8s
+2024-10-18 02:33:15.847 [main] TRACE JwtServiceImpl - Exiting generateAccessToken method in JwtUtils class with accessToken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTcyOTIwNzk5NSwiZXhwIjoxNzI5MjExNTk1fQ.0F4jwIGypBHebLm3i3wczZ0tf-KHgE76Jr3LK3byz8s
+2024-10-18 02:33:15.847 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-10-18 02:33:15.847 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-10-18 02:33:15.847 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:33:15.847 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:33:15.872 [main] TRACE JwtServiceImpl - Exiting extractAllClaims method in JwtUtils class
+2024-10-18 02:33:15.872 [main] TRACE JwtServiceImpl - Exiting extractClaim method in JwtUtils class with claim: user
+2024-10-18 02:33:15.879 [main] TRACE JwtServiceImpl - Entering generateRefreshToken method in JwtUtils class with username: user
+2024-10-18 02:33:15.879 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 86400000
+2024-10-18 02:33:15.879 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:33:15.880 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:33:15.880 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzI5MjA3OTk1LCJleHAiOjE3MjkyOTQzOTV9.PhrUaPOVnSZvSK2opQOMcpPcPuViz4oNsArMSM8dnT8
+2024-10-18 02:33:15.881 [main] TRACE JwtServiceImpl - Exiting generateRefreshToken method in JwtUtils class with refreshToken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzI5MjA3OTk1LCJleHAiOjE3MjkyOTQzOTV9.PhrUaPOVnSZvSK2opQOMcpPcPuViz4oNsArMSM8dnT8
+2024-10-18 02:33:15.887 [main] TRACE JwtServiceImpl - Entering generateAccessToken method in JwtUtils class with username: user
+2024-10-18 02:33:15.887 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 3600000
+2024-10-18 02:33:15.887 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:33:15.887 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:33:15.888 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjkyMDc5OTUsImV4cCI6MTcyOTIxMTU5NX0.jbyUGe9eitRDqgqH1cKrrH57PBY9ZQjdi7EPpAOPO-E
+2024-10-18 02:33:15.889 [main] TRACE JwtServiceImpl - Exiting generateAccessToken method in JwtUtils class with accessToken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjkyMDc5OTUsImV4cCI6MTcyOTIxMTU5NX0.jbyUGe9eitRDqgqH1cKrrH57PBY9ZQjdi7EPpAOPO-E
+2024-10-18 02:33:15.889 [main] TRACE JwtServiceImpl - Entering extractUsername method in JwtUtils class
+2024-10-18 02:33:15.889 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-10-18 02:33:15.889 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-10-18 02:33:15.889 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:33:15.889 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:33:15.890 [main] TRACE JwtServiceImpl - Exiting extractAllClaims method in JwtUtils class
+2024-10-18 02:33:15.891 [main] TRACE JwtServiceImpl - Exiting extractClaim method in JwtUtils class with claim: user
+2024-10-18 02:33:15.891 [main] TRACE JwtServiceImpl - Exiting extractUsername method in JwtUtils class with username: user
+2024-10-18 02:33:15.897 [main] TRACE JwtServiceImpl - Entering generateAccessToken method in JwtUtils class with username: user
+2024-10-18 02:33:15.897 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 3600000
+2024-10-18 02:33:15.897 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:33:15.898 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:33:15.899 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTcyOTIwNzk5NSwiZXhwIjoxNzI5MjExNTk1fQ.0F4jwIGypBHebLm3i3wczZ0tf-KHgE76Jr3LK3byz8s
+2024-10-18 02:33:15.899 [main] TRACE JwtServiceImpl - Exiting generateAccessToken method in JwtUtils class with accessToken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTcyOTIwNzk5NSwiZXhwIjoxNzI5MjExNTk1fQ.0F4jwIGypBHebLm3i3wczZ0tf-KHgE76Jr3LK3byz8s
+2024-10-18 02:33:15.922 [main] TRACE JwtServiceImpl - Entering generateAccessToken method in JwtUtils class with username: user
+2024-10-18 02:33:15.923 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 3600000
+2024-10-18 02:33:15.923 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:33:15.923 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:33:15.923 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjkyMDc5OTUsImV4cCI6MTcyOTIxMTU5NX0.jbyUGe9eitRDqgqH1cKrrH57PBY9ZQjdi7EPpAOPO-E
+2024-10-18 02:33:15.923 [main] TRACE JwtServiceImpl - Exiting generateAccessToken method in JwtUtils class with accessToken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjkyMDc5OTUsImV4cCI6MTcyOTIxMTU5NX0.jbyUGe9eitRDqgqH1cKrrH57PBY9ZQjdi7EPpAOPO-E
+2024-10-18 02:33:15.926 [main] TRACE JwtServiceImpl - Entering isTokenValid method in JwtUtils class with token and user: user
+2024-10-18 02:33:15.926 [main] TRACE JwtServiceImpl - Entering extractUsername method in JwtUtils class
+2024-10-18 02:33:15.926 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-10-18 02:33:15.926 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-10-18 02:33:15.926 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:33:15.926 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:33:15.927 [main] TRACE JwtServiceImpl - Exiting extractAllClaims method in JwtUtils class
+2024-10-18 02:33:15.927 [main] TRACE JwtServiceImpl - Exiting extractClaim method in JwtUtils class with claim: user
+2024-10-18 02:33:15.927 [main] TRACE JwtServiceImpl - Exiting extractUsername method in JwtUtils class with username: user
+2024-10-18 02:33:15.927 [main] TRACE JwtServiceImpl - Entering isTokenExpired method in JwtUtils class
+2024-10-18 02:33:15.927 [main] TRACE JwtServiceImpl - Entering extractExpiration method in JwtUtils class
+2024-10-18 02:33:15.927 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-10-18 02:33:15.928 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-10-18 02:33:15.928 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:33:15.928 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:33:15.929 [main] TRACE JwtServiceImpl - Exiting extractAllClaims method in JwtUtils class
+2024-10-18 02:33:15.929 [main] TRACE JwtServiceImpl - Exiting extractClaim method in JwtUtils class with claim: 2024-10-18T03:33:15.000+0300
+2024-10-18 02:33:15.931 [main] TRACE JwtServiceImpl - Exiting extractExpiration method in JwtUtils class with expiration date: 2024-10-18T03:33:15.000+0300
+2024-10-18 02:33:15.931 [main] TRACE JwtServiceImpl - Exiting isTokenExpired method in JwtUtils class with result: false
+2024-10-18 02:33:15.931 [main] TRACE JwtServiceImpl - Exiting isTokenValid method in JwtUtils class with result: true
+2024-10-18 02:34:34.586 [main] TRACE JwtServiceImpl - Entering extractUsername method in JwtUtils class
+2024-10-18 02:34:34.593 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-10-18 02:34:34.594 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-10-18 02:34:34.675 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-10-18 02:34:34.679 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-10-18 02:46:30.849 [main] TRACE UserDetailsServiceImpl - Entering loadUserByUsername with username: testuser
+2024-10-18 02:46:30.863 [main] INFO  UserDetailsServiceImpl - User found: testuser
+2024-10-18 02:46:30.869 [main] DEBUG UserDetailsServiceImpl - Mapping role USER to authority ROLE_USER
+2024-10-18 02:46:30.871 [main] INFO  UserDetailsServiceImpl - User authorities: [ROLE_USER]
+2024-10-18 02:46:30.881 [main] TRACE UserDetailsServiceImpl - Exiting loadUserByUsername method in UserDetailsServiceImpl with username: testuser
+2024-10-18 02:47:46.307 [main] TRACE UserDetailsServiceImpl - Entering loadUserByUsername with username: nonexistentuser
+2024-10-18 02:47:46.318 [main] ERROR UserDetailsServiceImpl - User not found with username: nonexistentuser

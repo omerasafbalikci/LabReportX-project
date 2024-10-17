@@ -75,7 +75,7 @@ public class JwtUtil {
             log.info("Token validated successfully. Claims: {}", claims);
             return claims;
         } catch (JwtException | IllegalArgumentException exception) {
-            log.error("Invalid token: {}", token, exception);
+            log.error("Error while parsing token: {}", exception.getMessage());
             throw new InvalidTokenException("Invalid token");
         } finally {
             log.trace("Exiting getClaimsAndValidate method in JwtUtils");

@@ -35,6 +35,10 @@ public class Role {
     @ManyToMany(mappedBy = "roles", cascade = CascadeType.DETACH)
     List<User> users;
 
+    public Role(String name) {
+        this.name = name;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -194,8 +194,6 @@ services:
   config-server:
     container_name: config-server
     image: omerasafbalikci/config-server:latest
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
     ports:
       - "8888:8888"
     volumes:

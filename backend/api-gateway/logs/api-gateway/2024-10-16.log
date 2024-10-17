@@ -1,0 +1,275 @@
+2024-10-16 00:10:16.610 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 00:10:16.629 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 00:10:16.631 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 00:10:16.631 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 00:10:16.633 [main] INFO  AuthGatewayFilterFactory - Authenticated user: null
+2024-10-16 00:14:27.792 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 00:14:27.810 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 00:14:27.812 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 00:14:27.812 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 00:14:27.813 [main] INFO  AuthGatewayFilterFactory - Authenticated user: null
+2024-10-16 00:27:12.269 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 00:27:12.282 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 00:27:12.286 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 00:27:12.286 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 00:27:12.287 [main] INFO  AuthGatewayFilterFactory - Authenticated user: null
+2024-10-16 00:30:56.521 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 00:30:56.539 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 00:30:56.541 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 00:30:56.541 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 00:30:56.543 [main] INFO  AuthGatewayFilterFactory - Authenticated user: null
+2024-10-16 00:33:25.972 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 00:33:26.003 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 00:33:26.006 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 00:33:26.006 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 00:33:26.009 [main] INFO  AuthGatewayFilterFactory - Authenticated user: null
+2024-10-16 00:57:57.322 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 00:57:57.341 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 00:57:57.343 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 00:57:57.343 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 00:57:57.345 [main] INFO  AuthGatewayFilterFactory - Authenticated user: null
+2024-10-16 01:00:30.280 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 01:00:30.292 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 01:00:30.293 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 01:00:30.293 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 01:00:30.295 [main] INFO  AuthGatewayFilterFactory - Authenticated user: null
+2024-10-16 01:01:23.030 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 01:01:23.048 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 01:01:23.050 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 01:01:23.050 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 01:01:23.052 [main] INFO  AuthGatewayFilterFactory - Authenticated user: null
+2024-10-16 01:06:36.995 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 01:06:37.007 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 01:06:37.009 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 01:06:37.010 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 01:06:37.012 [main] INFO  AuthGatewayFilterFactory - Authenticated user: mockedUsername
+2024-10-16 01:10:52.815 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 01:10:52.824 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 01:10:52.826 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 01:10:52.826 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 01:10:52.828 [main] INFO  AuthGatewayFilterFactory - Authenticated user: mockedUsername
+2024-10-16 01:21:53.887 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 01:21:53.903 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 01:21:53.903 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 01:21:53.903 [main] DEBUG AuthGatewayFilterFactory - Extracted token: LoggedOutToken
+2024-10-16 01:21:53.903 [main] ERROR AuthGatewayFilterFactory - Token is logged out: LoggedOutToken
+2024-10-16 19:25:25.120 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 19:25:25.140 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 19:25:25.140 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 19:25:25.140 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 19:25:25.140 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 19:27:25.384 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 19:27:25.400 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 19:27:25.400 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 19:27:25.408 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 19:27:25.409 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 19:28:47.316 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 19:28:47.347 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 19:28:47.349 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 19:28:47.349 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 19:28:47.351 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 19:28:47.352 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: null
+2024-10-16 19:28:47.353 [main] ERROR AuthGatewayFilterFactory - No roles found in token for user: testuser
+2024-10-16 20:00:35.027 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 20:00:35.047 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 20:00:35.054 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 20:00:35.054 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 20:00:35.054 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 20:00:35.054 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: null
+2024-10-16 20:00:35.054 [main] ERROR AuthGatewayFilterFactory - No roles found in token for user: testuser
+2024-10-16 20:07:03.734 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 20:07:03.747 [main] INFO  AuthGatewayFilterFactory - Processing request for path: /secure
+2024-10-16 20:07:03.747 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /secure
+2024-10-16 20:07:03.747 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 20:07:03.747 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 20:07:03.753 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /secure
+2024-10-16 20:07:03.754 [main] INFO  AuthGatewayFilterFactory - User testuser authorized for path: /secure
+2024-10-16 20:07:03.754 [main] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-16 20:45:04.789 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 20:45:04.816 [main] INFO  AuthGatewayFilterFactory - Processing request for path: /secure
+2024-10-16 20:45:04.818 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /secure
+2024-10-16 20:45:04.818 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 20:45:04.820 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 20:45:04.821 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /secure
+2024-10-16 20:45:04.822 [main] INFO  AuthGatewayFilterFactory - User testuser authorized for path: /secure
+2024-10-16 20:45:04.822 [main] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-16 21:36:15.654 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:36:15.672 [main] INFO  AuthGatewayFilterFactory - Processing request for path: /secure
+2024-10-16 21:36:15.674 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /secure
+2024-10-16 21:36:15.675 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 21:36:15.677 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 21:36:15.678 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /secure
+2024-10-16 21:36:15.679 [main] INFO  AuthGatewayFilterFactory - User testuser authorized for path: /secure
+2024-10-16 21:36:15.679 [main] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-16 21:37:26.292 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:37:26.302 [main] INFO  AuthGatewayFilterFactory - Processing request for path: /user/me
+2024-10-16 21:37:26.304 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /user/me
+2024-10-16 21:37:26.304 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 21:37:26.306 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 21:37:26.307 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /user/me
+2024-10-16 21:41:37.752 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:41:37.762 [main] INFO  AuthGatewayFilterFactory - Processing request for path: /secure
+2024-10-16 21:41:37.763 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /secure
+2024-10-16 21:41:37.764 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 21:41:37.765 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 21:41:37.766 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /secure
+2024-10-16 21:41:37.766 [main] INFO  AuthGatewayFilterFactory - User testuser authorized for path: /secure
+2024-10-16 21:41:37.766 [main] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-16 21:41:55.565 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:41:55.575 [main] INFO  AuthGatewayFilterFactory - Processing request for path: /user/me
+2024-10-16 21:41:55.576 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /user/me
+2024-10-16 21:41:55.577 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 21:41:55.579 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 21:41:55.580 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /user/me
+2024-10-16 21:46:05.791 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:46:05.791 [main] INFO  AuthGatewayFilterFactory - Processing request for path: /user/me
+2024-10-16 21:46:05.791 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /user/me
+2024-10-16 21:46:05.806 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 21:46:05.806 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 21:46:05.806 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /user/me
+2024-10-16 21:46:05.806 [main] ERROR AuthGatewayFilterFactory - User testuser does not have sufficient roles for path: /user/me
+2024-10-16 21:47:43.814 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:47:43.830 [main] INFO  AuthGatewayFilterFactory - Processing request for path: /user/me
+2024-10-16 21:47:43.830 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /user/me
+2024-10-16 21:47:43.830 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 21:47:43.830 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 21:47:43.830 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /user/me
+2024-10-16 21:47:43.830 [main] INFO  AuthGatewayFilterFactory - User testuser authorized for path: /user/me
+2024-10-16 21:47:43.830 [main] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-16 21:48:12.314 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:48:12.329 [main] INFO  AuthGatewayFilterFactory - Processing request for path: /user/me
+2024-10-16 21:48:12.329 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /user/me
+2024-10-16 21:48:12.329 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 21:48:12.329 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 21:48:12.329 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /user/me
+2024-10-16 21:48:12.329 [main] ERROR AuthGatewayFilterFactory - User testuser does not have sufficient roles for path: /user/me
+2024-10-16 21:49:02.082 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:49:02.097 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 21:49:02.097 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 21:49:02.097 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 21:49:02.097 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 21:49:02.097 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: null
+2024-10-16 21:49:02.097 [main] ERROR AuthGatewayFilterFactory - No roles found in token for user: testuser
+2024-10-16 21:49:02.191 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:49:02.207 [main] INFO  AuthGatewayFilterFactory - Processing request for path: /user/me
+2024-10-16 21:49:02.207 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /user/me
+2024-10-16 21:49:02.207 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 21:49:02.207 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 21:49:02.207 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /user/me
+2024-10-16 21:49:02.207 [main] ERROR AuthGatewayFilterFactory - User testuser does not have sufficient roles for path: /user/me
+2024-10-16 21:49:02.207 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:49:02.223 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 21:49:02.223 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 21:49:02.223 [main] ERROR AuthGatewayFilterFactory - Missing or invalid authorization header for request path: null
+2024-10-16 21:49:02.223 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:49:02.223 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 21:49:02.223 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 21:49:02.223 [main] DEBUG AuthGatewayFilterFactory - Extracted token: InvalidToken
+2024-10-16 21:49:02.223 [main] ERROR AuthGatewayFilterFactory - Invalid token for request path: null
+2024-10-16 21:49:02.238 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:49:02.238 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 21:49:02.238 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 21:49:02.238 [main] ERROR AuthGatewayFilterFactory - Missing or invalid authorization header for request path: null
+2024-10-16 21:49:02.257 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:49:02.257 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 21:49:02.257 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 21:49:02.257 [main] DEBUG AuthGatewayFilterFactory - Extracted token: LoggedOutToken
+2024-10-16 21:49:02.257 [main] ERROR AuthGatewayFilterFactory - Token is logged out: LoggedOutToken
+2024-10-16 21:49:02.273 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:49:02.273 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 21:49:02.273 [main] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: null
+2024-10-16 21:52:14.491 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:52:14.506 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 21:52:14.506 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 21:52:14.506 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 21:52:14.506 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 21:52:14.506 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: null
+2024-10-16 21:52:14.506 [main] ERROR AuthGatewayFilterFactory - No roles found in token for user: testuser
+2024-10-16 21:54:37.076 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 21:54:37.076 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 21:54:37.091 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 21:54:37.091 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 21:54:37.091 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 21:54:37.091 [main] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-16 22:15:26.536 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:15:26.552 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:15:26.552 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 22:15:26.552 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 22:15:26.552 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 22:15:26.552 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: null
+2024-10-16 22:15:26.552 [main] ERROR AuthGatewayFilterFactory - No roles found in token for user: testuser
+2024-10-16 22:15:26.614 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:15:26.614 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:15:26.614 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 22:15:26.614 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 22:15:26.614 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 22:15:26.614 [main] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-16 22:15:26.677 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:15:26.677 [main] INFO  AuthGatewayFilterFactory - Processing request for path: /user/me
+2024-10-16 22:15:26.677 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /user/me
+2024-10-16 22:15:26.677 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 22:15:26.677 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 22:15:26.693 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /user/me
+2024-10-16 22:15:26.693 [main] ERROR AuthGatewayFilterFactory - User testuser does not have sufficient roles for path: /user/me
+2024-10-16 22:15:26.693 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:15:26.693 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:15:26.693 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 22:15:26.693 [main] ERROR AuthGatewayFilterFactory - Missing or invalid authorization header for request path: null
+2024-10-16 22:15:26.709 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:15:26.709 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:15:26.709 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 22:15:26.709 [main] DEBUG AuthGatewayFilterFactory - Extracted token: InvalidToken
+2024-10-16 22:15:26.709 [main] ERROR AuthGatewayFilterFactory - Invalid token for request path: null
+2024-10-16 22:15:26.725 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:15:26.725 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:15:26.725 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 22:15:26.725 [main] ERROR AuthGatewayFilterFactory - Missing or invalid authorization header for request path: null
+2024-10-16 22:15:26.725 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:15:26.725 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:15:26.725 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 22:15:26.725 [main] DEBUG AuthGatewayFilterFactory - Extracted token: LoggedOutToken
+2024-10-16 22:15:26.725 [main] ERROR AuthGatewayFilterFactory - Token is logged out: LoggedOutToken
+2024-10-16 22:15:26.740 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:15:26.740 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:15:26.740 [main] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: null
+2024-10-16 22:16:20.105 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:16:20.121 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:16:20.121 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 22:16:20.121 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 22:16:20.137 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 22:16:20.137 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: null
+2024-10-16 22:16:20.137 [main] ERROR AuthGatewayFilterFactory - No roles found in token for user: testuser
+2024-10-16 22:16:20.199 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:16:20.199 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:16:20.199 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 22:16:20.199 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 22:16:20.199 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 22:16:20.199 [main] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-10-16 22:16:20.246 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:16:20.262 [main] INFO  AuthGatewayFilterFactory - Processing request for path: /user/me
+2024-10-16 22:16:20.262 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /user/me
+2024-10-16 22:16:20.262 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-16 22:16:20.262 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-10-16 22:16:20.262 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /user/me
+2024-10-16 22:16:20.262 [main] ERROR AuthGatewayFilterFactory - User testuser does not have sufficient roles for path: /user/me
+2024-10-16 22:16:20.262 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:16:20.262 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:16:20.262 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 22:16:20.262 [main] ERROR AuthGatewayFilterFactory - Missing or invalid authorization header for request path: null
+2024-10-16 22:16:20.277 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:16:20.277 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:16:20.277 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 22:16:20.277 [main] DEBUG AuthGatewayFilterFactory - Extracted token: InvalidToken
+2024-10-16 22:16:20.277 [main] ERROR AuthGatewayFilterFactory - Invalid token for request path: null
+2024-10-16 22:16:20.277 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:16:20.293 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:16:20.293 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 22:16:20.293 [main] ERROR AuthGatewayFilterFactory - Missing or invalid authorization header for request path: null
+2024-10-16 22:16:20.293 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:16:20.293 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:16:20.293 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-16 22:16:20.293 [main] DEBUG AuthGatewayFilterFactory - Extracted token: LoggedOutToken
+2024-10-16 22:16:20.293 [main] ERROR AuthGatewayFilterFactory - Token is logged out: LoggedOutToken
+2024-10-16 22:16:20.309 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-16 22:16:20.309 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-16 22:16:20.309 [main] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: null

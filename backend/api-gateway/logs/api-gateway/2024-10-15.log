@@ -1,0 +1,48 @@
+2024-10-15 21:12:31.728 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-15 21:12:31.735 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-15 21:12:31.738 [main] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: null
+2024-10-15 22:23:59.875 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-15 22:23:59.883 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-15 22:23:59.886 [main] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: null
+2024-10-15 22:36:34.591 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-15 22:36:34.606 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-15 22:36:34.606 [main] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: null
+2024-10-15 22:37:20.588 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-15 22:37:20.595 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-15 22:37:20.598 [main] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: null
+2024-10-15 22:53:25.488 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-15 22:53:25.498 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-15 22:53:25.501 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-15 22:53:25.501 [main] ERROR AuthGatewayFilterFactory - Missing or invalid authorization header for request path: null
+2024-10-15 22:56:34.213 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-15 22:56:34.219 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-15 22:56:34.221 [main] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: null
+2024-10-15 22:57:01.172 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-15 22:57:01.208 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-15 22:57:01.211 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-15 22:57:01.212 [main] ERROR AuthGatewayFilterFactory - Missing or invalid authorization header for request path: null
+2024-10-15 23:10:45.276 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-15 23:10:45.308 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-15 23:10:45.311 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-15 23:10:45.311 [main] DEBUG AuthGatewayFilterFactory - Extracted token: InvalidToken
+2024-10-15 23:10:45.313 [main] ERROR AuthGatewayFilterFactory - Invalid token for request path: null
+2024-10-15 23:14:56.326 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-15 23:14:56.356 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-15 23:14:56.358 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-15 23:14:56.358 [main] DEBUG AuthGatewayFilterFactory - Extracted token: LoggedOutToken
+2024-10-15 23:14:56.361 [main] ERROR AuthGatewayFilterFactory - Token is logged out: LoggedOutToken
+2024-10-15 23:24:41.537 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-15 23:24:41.558 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-15 23:24:41.559 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-15 23:24:41.560 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-15 23:24:41.562 [main] INFO  AuthGatewayFilterFactory - Authenticated user: null
+2024-10-15 23:25:05.939 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-15 23:25:05.954 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-15 23:25:05.955 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-15 23:25:05.956 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-15 23:25:05.957 [main] INFO  AuthGatewayFilterFactory - Authenticated user: null
+2024-10-15 23:26:17.009 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-10-15 23:26:17.021 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-10-15 23:26:17.023 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-10-15 23:26:17.023 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-10-15 23:26:17.024 [main] INFO  AuthGatewayFilterFactory - Authenticated user: null

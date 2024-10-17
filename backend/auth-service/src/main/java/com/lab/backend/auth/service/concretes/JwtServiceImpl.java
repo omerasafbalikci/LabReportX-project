@@ -76,7 +76,7 @@ public class JwtServiceImpl implements JwtService {
      * @param expiration the token expiration time in milliseconds
      * @return the generated token
      */
-    private String buildToken(Claims claims, long expiration) {
+    public String buildToken(Claims claims, long expiration) {
         log.trace("Entering buildToken method in JwtUtils class with claims and expiration: {}", expiration);
         String token = Jwts.builder()
                 .claims(claims)
@@ -110,7 +110,7 @@ public class JwtServiceImpl implements JwtService {
      * @param <T>            the type of the claim
      * @return the extracted claim
      */
-    private <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
         log.trace("Entering extractClaim method in JwtUtils class");
         Claims claims = extractAllClaims(token);
         T claim = claimsResolver.apply(claims);
