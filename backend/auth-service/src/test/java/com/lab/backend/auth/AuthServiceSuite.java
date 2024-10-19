@@ -6,7 +6,7 @@ import org.junit.platform.suite.api.Suite;
 @Suite
 @SelectPackages({
         "com.lab.backend.auth.controller",
-        "com.lab.backend.auth.service",
+        "com.lab.backend.auth.service.concretes"
 })
 class AuthServiceSuite {
 }

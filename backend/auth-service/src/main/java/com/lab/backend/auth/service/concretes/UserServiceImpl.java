@@ -152,8 +152,8 @@ public class UserServiceImpl implements UserService {
                     log.trace("Exiting refreshToken method in UserServiceImpl");
                     return Arrays.asList(accessToken, refreshToken);
                 } else {
-                    log.error("Token invalid for user: {}", username);
-                    throw new InvalidTokenException("Invalid refresh token");
+                    log.error("User not found : {}", username);
+                    throw new UserNotFoundException("User not found");
                 }
             } else {
                 log.error("Username extraction failed from token");
@@ -172,7 +172,7 @@ public class UserServiceImpl implements UserService {
      * @param jwt  the JWT token to be saved.
      * @throws RedisOperationException if there is an issue interacting with Redis.
      */
-    private void saveUserToken(User user, String jwt) throws RedisOperationException {
+    public void saveUserToken(User user, String jwt) throws RedisOperationException {
         log.trace("Entering saveUserToken method in UserServiceImpl");
         log.debug("Saving token for user: {}", user.getUsername());
         Token token = Token.builder()
@@ -351,7 +351,7 @@ public class UserServiceImpl implements UserService {
      *
      * @return a randomly generated UUID as a string representing the reset token
      */
-    private String generateResetToken() {
+    public String generateResetToken() {
         return UUID.randomUUID().toString();
     }
 
@@ -361,7 +361,7 @@ public class UserServiceImpl implements UserService {
      *
      * @return a Date object representing the expiration time of the reset token
      */
-    private Date calculateResetTokenExpiration() {
+    public Date calculateResetTokenExpiration() {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.HOUR, 1);
         return calendar.getTime();
@@ -374,7 +374,7 @@ public class UserServiceImpl implements UserService {
      * @param userMail   the email address of the user to which the reset email will be sent
      * @param resetToken the generated reset token to be included in the email link
      */
-    private void sendPasswordResetEmail(String username, String userMail, String resetToken) {
+    public void sendPasswordResetEmail(String username, String userMail, String resetToken) {
         log.trace("Entering sendPasswordResetEmail method in UserServiceImpl");
         String resetUrl = "http://localhost:8080/auth/reset-password?token=" + resetToken;
         String message = String.format("Hello %s,\n\nYou requested a password reset. Please use the following link to reset your password:\n%s\n\nIf you did not request this, please ignore this email.\n\nÖMER ASAF BALIKÇI", username, resetUrl);

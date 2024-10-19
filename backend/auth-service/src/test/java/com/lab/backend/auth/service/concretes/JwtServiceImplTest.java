@@ -1,6 +1,5 @@
-package com.lab.backend.auth.service;
+package com.lab.backend.auth.service.concretes;
 
-import com.lab.backend.auth.service.concretes.JwtServiceImpl;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;

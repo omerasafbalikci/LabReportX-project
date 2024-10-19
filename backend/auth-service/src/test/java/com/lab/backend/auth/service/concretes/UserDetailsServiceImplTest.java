@@ -1,9 +1,8 @@
-package com.lab.backend.auth.service;
+package com.lab.backend.auth.service.concretes;
 
 import com.lab.backend.auth.entity.Role;
 import com.lab.backend.auth.entity.User;
 import com.lab.backend.auth.repository.UserRepository;
-import com.lab.backend.auth.service.concretes.UserDetailsServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
