@@ -1,0 +1,426 @@
+2024-10-20 01:37:17.598 [main] TRACE UserController - Entering getUserById method in UserController class
+2024-10-20 01:37:17.603 [main] INFO  UserController - Fetching user by id: 1
+2024-10-20 01:37:17.606 [main] INFO  UserController - User with id 1 retrieved successfully
+2024-10-20 01:37:17.606 [main] TRACE UserController - Exiting getUserById method in UserController class
+2024-10-20 01:38:12.640 [main] TRACE UserController - Entering getAllUsersFilteredAndSorted method in UserController class
+2024-10-20 01:38:12.640 [main] INFO  UserController - Fetching users with filters - page: 0, size: 3, sortBy: id, direction: ASC, firstName: null, lastName: null, username: null, hospitalId: null, email: null, role: null, gender: null, deleted: null
+2024-10-20 01:38:12.652 [main] INFO  UserController - Users filtered and sorted fetched successfully
+2024-10-20 01:38:12.652 [main] TRACE UserController - Exiting getAllUsersFilteredAndSorted method in UserController class
+2024-10-20 01:38:33.699 [main] TRACE UserController - Entering getUsernameByEmail method in UserController class
+2024-10-20 01:38:33.699 [main] INFO  UserController - Fetching username by email: test@example.com
+2024-10-20 01:38:33.699 [main] TRACE UserController - Exiting getUsernameByEmail method in UserController class
+2024-10-20 01:38:55.219 [main] TRACE UserController - Entering getCurrentUser method in UserController class
+2024-10-20 01:38:55.219 [main] INFO  UserController - Fetching current user by username: testUser
+2024-10-20 01:38:55.229 [main] INFO  UserController - Current user retrieved successfully
+2024-10-20 01:38:55.229 [main] TRACE UserController - Exiting getCurrentUser method in UserController class
+2024-10-20 01:39:39.102 [main] TRACE UserController - Entering createUser method in UserController class
+2024-10-20 01:39:39.102 [main] INFO  UserController - Creating a new user with details: CreateUserRequest(firstName=null, lastName=null, username=null, email=null, password=null, roles=null, gender=null)
+2024-10-20 01:39:39.119 [main] INFO  UserController - User created successfully
+2024-10-20 01:39:39.119 [main] TRACE UserController - Exiting createUser method in UserController class
+2024-10-20 01:40:01.219 [main] TRACE UserController - Entering updateUser method in UserController class
+2024-10-20 01:40:01.223 [main] INFO  UserController - Updating user with details: UpdateUserRequest(id=null, firstName=null, lastName=null, username=null, email=null, gender=null)
+2024-10-20 01:40:01.229 [main] INFO  UserController - User updated successfully
+2024-10-20 01:40:01.229 [main] TRACE UserController - Exiting updateUser method in UserController class
+2024-10-20 01:40:20.209 [main] TRACE UserController - Entering deleteUser method in UserController class
+2024-10-20 01:40:20.210 [main] INFO  UserController - Deleting user with id: 1
+2024-10-20 01:40:20.224 [main] INFO  UserController - User with id 1 deleted successfully
+2024-10-20 01:40:20.224 [main] TRACE UserController - Exiting deleteUser method in UserController class
+2024-10-20 01:40:48.153 [main] TRACE UserController - Entering restoreUser method in UserController class
+2024-10-20 01:40:48.153 [main] INFO  UserController - Restoring user with id: 1
+2024-10-20 01:40:48.159 [main] INFO  UserController - User with id 1 restored successfully
+2024-10-20 01:40:48.159 [main] TRACE UserController - Exiting restoreUser method in UserController class
+2024-10-20 01:41:19.367 [main] TRACE UserController - Entering addRole method in UserController class
+2024-10-20 01:41:19.372 [main] INFO  UserController - Adding role to user with id: 1
+2024-10-20 01:41:19.372 [main] INFO  UserController - Role added to user with id 1 successfully
+2024-10-20 01:41:19.372 [main] TRACE UserController - Exiting addRole method in UserController class
+2024-10-20 01:41:39.942 [main] TRACE UserController - Entering removeRole method in UserController class
+2024-10-20 01:41:39.942 [main] INFO  UserController - Removing role from user with id: 1
+2024-10-20 01:41:39.942 [main] INFO  UserController - Role removed from user with id 1 successfully
+2024-10-20 01:41:39.942 [main] TRACE UserController - Exiting removeRole method in UserController class
+2024-10-20 01:42:04.448 [main] TRACE UserController - Entering addRole method in UserController class
+2024-10-20 01:42:04.456 [main] INFO  UserController - Adding role to user with id: 1
+2024-10-20 01:42:04.456 [main] INFO  UserController - Role added to user with id 1 successfully
+2024-10-20 01:42:04.456 [main] TRACE UserController - Exiting addRole method in UserController class
+2024-10-20 01:42:04.492 [main] TRACE UserController - Entering getUsernameByEmail method in UserController class
+2024-10-20 01:42:04.492 [main] INFO  UserController - Fetching username by email: test@example.com
+2024-10-20 01:42:04.492 [main] TRACE UserController - Exiting getUsernameByEmail method in UserController class
+2024-10-20 01:42:04.492 [main] TRACE UserController - Entering getCurrentUser method in UserController class
+2024-10-20 01:42:04.492 [main] INFO  UserController - Fetching current user by username: testUser
+2024-10-20 01:42:04.492 [main] INFO  UserController - Current user retrieved successfully
+2024-10-20 01:42:04.492 [main] TRACE UserController - Exiting getCurrentUser method in UserController class
+2024-10-20 01:42:04.502 [main] TRACE UserController - Entering updateUser method in UserController class
+2024-10-20 01:42:04.502 [main] INFO  UserController - Updating user with details: UpdateUserRequest(id=null, firstName=null, lastName=null, username=null, email=null, gender=null)
+2024-10-20 01:42:04.504 [main] INFO  UserController - User updated successfully
+2024-10-20 01:42:04.504 [main] TRACE UserController - Exiting updateUser method in UserController class
+2024-10-20 01:42:04.512 [main] TRACE UserController - Entering restoreUser method in UserController class
+2024-10-20 01:42:04.512 [main] INFO  UserController - Restoring user with id: 1
+2024-10-20 01:42:04.512 [main] INFO  UserController - User with id 1 restored successfully
+2024-10-20 01:42:04.512 [main] TRACE UserController - Exiting restoreUser method in UserController class
+2024-10-20 01:42:04.520 [main] TRACE UserController - Entering getAllUsersFilteredAndSorted method in UserController class
+2024-10-20 01:42:04.522 [main] INFO  UserController - Fetching users with filters - page: 0, size: 3, sortBy: id, direction: ASC, firstName: null, lastName: null, username: null, hospitalId: null, email: null, role: null, gender: null, deleted: null
+2024-10-20 01:42:04.522 [main] INFO  UserController - Users filtered and sorted fetched successfully
+2024-10-20 01:42:04.522 [main] TRACE UserController - Exiting getAllUsersFilteredAndSorted method in UserController class
+2024-10-20 01:42:04.522 [main] TRACE UserController - Entering removeRole method in UserController class
+2024-10-20 01:42:04.522 [main] INFO  UserController - Removing role from user with id: 1
+2024-10-20 01:42:04.522 [main] INFO  UserController - Role removed from user with id 1 successfully
+2024-10-20 01:42:04.522 [main] TRACE UserController - Exiting removeRole method in UserController class
+2024-10-20 01:42:04.532 [main] TRACE UserController - Entering createUser method in UserController class
+2024-10-20 01:42:04.532 [main] INFO  UserController - Creating a new user with details: CreateUserRequest(firstName=null, lastName=null, username=null, email=null, password=null, roles=null, gender=null)
+2024-10-20 01:42:04.536 [main] INFO  UserController - User created successfully
+2024-10-20 01:42:04.536 [main] TRACE UserController - Exiting createUser method in UserController class
+2024-10-20 01:42:04.542 [main] TRACE UserController - Entering deleteUser method in UserController class
+2024-10-20 01:42:04.542 [main] INFO  UserController - Deleting user with id: 1
+2024-10-20 01:42:04.542 [main] INFO  UserController - User with id 1 deleted successfully
+2024-10-20 01:42:04.542 [main] TRACE UserController - Exiting deleteUser method in UserController class
+2024-10-20 01:42:04.547 [main] TRACE UserController - Entering getUserById method in UserController class
+2024-10-20 01:42:04.547 [main] INFO  UserController - Fetching user by id: 1
+2024-10-20 01:42:04.548 [main] INFO  UserController - User with id 1 retrieved successfully
+2024-10-20 01:42:04.548 [main] TRACE UserController - Exiting getUserById method in UserController class
+2024-10-20 01:43:49.131 [main] TRACE UserController - Entering updateCurrentUser method in UserController class
+2024-10-20 01:43:49.131 [main] INFO  UserController - Updating current user with username: testUser
+2024-10-20 01:43:49.142 [main] INFO  UserController - Current user updated successfully
+2024-10-20 01:43:49.142 [main] TRACE UserController - Exiting updateCurrentUser method in UserController class
+2024-10-20 02:06:26.566 [main] TRACE UserServiceImpl - Entering getUserById method in UserServiceImpl
+2024-10-20 02:06:26.574 [main] INFO  UserServiceImpl - Fetching user by ID: 1
+2024-10-20 02:06:26.582 [main] DEBUG UserServiceImpl - Fetched user: GetUserResponse(id=null, firstName=null, lastName=null, username=testUser, hospitalId=null, email=null, roles=null, gender=null)
+2024-10-20 02:06:26.590 [main] TRACE UserServiceImpl - Exiting getUserById method in UserServiceImpl
+2024-10-20 02:09:31.753 [main] TRACE UserServiceImpl - Entering getUserById method in UserServiceImpl
+2024-10-20 02:09:31.763 [main] INFO  UserServiceImpl - Fetching user by ID: 1
+2024-10-20 02:09:31.768 [main] ERROR UserServiceImpl - User not found with ID: 1
+2024-10-20 02:11:37.328 [main] TRACE UserServiceImpl - Entering getAllUsersFilteredAndSorted method in UserServiceImpl
+2024-10-20 02:11:37.343 [main] INFO  UserServiceImpl - Fetching users with filters: page=0, size=10, sortBy=username, direction=ASC
+2024-10-20 02:11:37.373 [main] DEBUG UserServiceImpl - Fetched 1 users
+2024-10-20 02:11:37.378 [main] TRACE UserServiceImpl - Exiting getAllUsersFilteredAndSorted method in UserServiceImpl
+2024-10-20 02:14:52.928 [main] TRACE UserServiceImpl - Entering getUsernameByEmail method in UserServiceImpl
+2024-10-20 02:14:52.942 [main] INFO  UserServiceImpl - Fetching username by email: test@example.com
+2024-10-20 02:14:52.948 [main] DEBUG UserServiceImpl - Found username: testUser
+2024-10-20 02:14:52.948 [main] TRACE UserServiceImpl - Exiting getUsernameByEmail method in UserServiceImpl
+2024-10-20 02:15:16.345 [main] TRACE UserServiceImpl - Entering getUsernameByEmail method in UserServiceImpl
+2024-10-20 02:15:16.355 [main] INFO  UserServiceImpl - Fetching username by email: test@example.com
+2024-10-20 02:15:16.358 [main] ERROR UserServiceImpl - No users registered to this email address: test@example.com
+2024-10-20 02:16:06.741 [main] TRACE UserServiceImpl - Entering getCurrentUser method in UserServiceImpl
+2024-10-20 02:16:06.751 [main] INFO  UserServiceImpl - Fetching current user by username: testUser
+2024-10-20 02:16:06.751 [main] DEBUG UserServiceImpl - Fetched current user: GetUserResponse(id=null, firstName=null, lastName=null, username=testUser, hospitalId=null, email=null, roles=null, gender=null)
+2024-10-20 02:16:06.766 [main] TRACE UserServiceImpl - Exiting getCurrentUser method in UserServiceImpl
+2024-10-20 02:16:40.543 [main] TRACE UserServiceImpl - Entering getCurrentUser method in UserServiceImpl
+2024-10-20 02:16:40.551 [main] INFO  UserServiceImpl - Fetching current user by username: testUser
+2024-10-20 02:16:40.561 [main] ERROR UserServiceImpl - User not found with username: testUser
+2024-10-20 02:17:29.981 [main] TRACE UserServiceImpl - Entering updateCurrentUser method in UserServiceImpl
+2024-10-20 02:17:29.991 [main] INFO  UserServiceImpl - Updating current user: testUser
+2024-10-20 02:17:30.004 [main] DEBUG UserServiceImpl - Updated first name for user: com.lab.backend.usermanagement.entity.User@36359723
+2024-10-20 02:17:30.004 [main] DEBUG UserServiceImpl - Saved updated user: com.lab.backend.usermanagement.entity.User@36359723
+2024-10-20 02:17:30.004 [main] TRACE UserServiceImpl - Exiting updateCurrentUser method in UserServiceImpl
+2024-10-20 02:18:34.734 [main] TRACE UserServiceImpl - Entering updateCurrentUser method in UserServiceImpl
+2024-10-20 02:18:34.759 [main] INFO  UserServiceImpl - Updating current user: testUser
+2024-10-20 02:18:34.774 [main] ERROR UserServiceImpl - User doesn't exist with username: testUser
+2024-10-20 02:30:41.924 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 02:30:41.924 [main] DEBUG UserServiceImpl - Creating user with username: existingUser
+2024-10-20 02:30:41.940 [main] ERROR UserServiceImpl - Username 'existingUser' is already taken
+2024-10-20 02:40:10.172 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 02:40:10.188 [main] DEBUG UserServiceImpl - Creating user with username: null
+2024-10-20 02:40:10.188 [main] ERROR UserServiceImpl - Email 'existingEmail@example.com' is already taken
+2024-10-20 02:44:07.587 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 02:44:07.603 [main] DEBUG UserServiceImpl - Creating user with username: null
+2024-10-20 02:44:07.603 [main] ERROR UserServiceImpl - Email 'existingEmail@example.com' is already taken
+2024-10-20 02:44:35.516 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 02:44:35.532 [main] DEBUG UserServiceImpl - Creating user with username: existingUser
+2024-10-20 02:44:35.547 [main] ERROR UserServiceImpl - Username 'existingUser' is already taken
+2024-10-20 02:45:21.191 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 02:45:21.207 [main] DEBUG UserServiceImpl - Creating user with username: newUser
+2024-10-20 02:47:09.446 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 02:47:09.461 [main] DEBUG UserServiceImpl - Creating user with username: newUser
+2024-10-20 02:48:45.628 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 02:48:45.628 [main] DEBUG UserServiceImpl - Creating user with username: null
+2024-10-20 02:48:45.643 [main] ERROR UserServiceImpl - Email 'existingEmail@example.com' is already taken
+2024-10-20 02:49:34.594 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 02:49:34.610 [main] DEBUG UserServiceImpl - Creating user with username: null
+2024-10-20 02:49:34.610 [main] ERROR UserServiceImpl - Email 'existingEmail@example.com' is already taken
+2024-10-20 02:49:53.995 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 02:49:53.995 [main] DEBUG UserServiceImpl - Creating user with username: newUser
+2024-10-20 02:49:54.026 [main] INFO  UserServiceImpl - Sent create message to RabbitMQ for user: newUser
+2024-10-20 02:52:14.668 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 02:52:14.684 [main] DEBUG UserServiceImpl - Creating user with username: newUser
+2024-10-20 02:52:45.610 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 02:52:45.625 [main] DEBUG UserServiceImpl - Creating user with username: newUser
+2024-10-20 02:53:47.363 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 02:53:47.363 [main] DEBUG UserServiceImpl - Creating user with username: newUser
+2024-10-20 02:53:47.394 [main] INFO  UserServiceImpl - Sent create message to RabbitMQ for user: newUser
+2024-10-20 02:53:47.394 [main] INFO  UserServiceImpl - User created successfully: newUser
+2024-10-20 02:53:47.394 [main] TRACE UserServiceImpl - Exiting createUser method in UserServiceImpl
+2024-10-20 02:54:20.360 [main] TRACE UserServiceImpl - Entering updateUser method in UserServiceImpl
+2024-10-20 02:54:20.376 [main] DEBUG UserServiceImpl - Updating user with id: 1
+2024-10-20 02:54:20.376 [main] ERROR UserServiceImpl - User doesn't exist with id 1
+2024-10-20 02:55:15.987 [main] TRACE UserServiceImpl - Entering updateUser method in UserServiceImpl
+2024-10-20 02:55:16.003 [main] DEBUG UserServiceImpl - Updating user with id: 1
+2024-10-20 02:55:16.003 [main] ERROR UserServiceImpl - Username is taken newUsername
+2024-10-20 02:56:25.015 [main] TRACE UserServiceImpl - Entering deleteUser method in UserServiceImpl
+2024-10-20 02:56:25.031 [main] DEBUG UserServiceImpl - Deleting user with id: 1
+2024-10-20 02:56:25.031 [main] ERROR UserServiceImpl - User doesn't exist with id: 1
+2024-10-20 02:56:54.662 [main] TRACE UserServiceImpl - Entering deleteUser method in UserServiceImpl
+2024-10-20 02:56:54.662 [main] DEBUG UserServiceImpl - Deleting user with id: 1
+2024-10-20 02:56:54.678 [main] INFO  UserServiceImpl - Sent delete message to RabbitMQ for user: userToDelete
+2024-10-20 02:56:54.678 [main] INFO  UserServiceImpl - User deleted successfully: userToDelete
+2024-10-20 02:56:54.678 [main] TRACE UserServiceImpl - Exiting deleteUser method in UserServiceImpl
+2024-10-20 02:57:27.970 [main] TRACE UserServiceImpl - Entering restoreUser method in UserServiceImpl
+2024-10-20 02:57:27.970 [main] DEBUG UserServiceImpl - Restoring user with id: 1
+2024-10-20 02:57:27.970 [main] ERROR UserServiceImpl - User does not exist with id 1
+2024-10-20 02:57:50.977 [main] TRACE UserServiceImpl - Entering restoreUser method in UserServiceImpl
+2024-10-20 02:57:50.977 [main] DEBUG UserServiceImpl - Restoring user with id: 1
+2024-10-20 02:57:50.992 [main] INFO  UserServiceImpl - Sent restore message to RabbitMQ for user: userToRestore
+2024-10-20 02:57:50.992 [main] INFO  UserServiceImpl - User restored successfully: userToRestore
+2024-10-20 02:57:50.992 [main] TRACE UserServiceImpl - Exiting restoreUser method in UserServiceImpl
+2024-10-20 03:03:02.688 [main] TRACE UserServiceImpl - Entering updateUser method in UserServiceImpl
+2024-10-20 03:03:02.688 [main] DEBUG UserServiceImpl - Updating user with id: null
+2024-10-20 03:03:02.688 [main] ERROR UserServiceImpl - Id must not be null
+2024-10-20 03:03:33.377 [main] TRACE UserServiceImpl - Entering updateUser method in UserServiceImpl
+2024-10-20 03:03:33.393 [main] DEBUG UserServiceImpl - Updating user with id: 1
+2024-10-20 03:03:33.393 [main] ERROR UserServiceImpl - Email is already taken newEmail@example.com
+2024-10-20 03:04:45.772 [main] TRACE UserServiceImpl - Entering updateUser method in UserServiceImpl
+2024-10-20 03:04:45.772 [main] DEBUG UserServiceImpl - Updating user with id: 1
+2024-10-20 03:04:45.772 [main] ERROR UserServiceImpl - User doesn't exist with id 1
+2024-10-20 03:07:25.494 [main] TRACE UserServiceImpl - Entering addRole method in UserServiceImpl
+2024-10-20 03:07:25.494 [main] INFO  UserServiceImpl - Adding role 'ADMIN' to user with id '1'
+2024-10-20 03:07:25.510 [main] ERROR UserServiceImpl - User not found with id '1'
+2024-10-20 03:07:52.178 [main] TRACE UserServiceImpl - Entering addRole method in UserServiceImpl
+2024-10-20 03:07:52.194 [main] INFO  UserServiceImpl - Adding role 'ADMIN' to user with id '1'
+2024-10-20 03:07:52.194 [main] ERROR UserServiceImpl - User 'existingUser' already has this role: 'ADMIN'
+2024-10-20 03:08:22.329 [main] TRACE UserServiceImpl - Entering addRole method in UserServiceImpl
+2024-10-20 03:08:22.329 [main] INFO  UserServiceImpl - Adding role 'ADMIN' to user with id '1'
+2024-10-20 03:08:22.360 [main] INFO  UserServiceImpl - Successfully sent add role message for user 'existingUser'
+2024-10-20 03:08:22.360 [main] INFO  UserServiceImpl - Role 'ADMIN' added successfully to user 'existingUser'
+2024-10-20 03:08:22.360 [main] TRACE UserServiceImpl - Exiting addRole method in UserServiceImpl
+2024-10-20 03:11:38.077 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-10-20 03:11:38.077 [main] INFO  UserServiceImpl - Removing role 'ADMIN' from user with id '1'
+2024-10-20 03:11:38.093 [main] ERROR UserServiceImpl - User not found with id: '1'
+2024-10-20 03:11:57.662 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-10-20 03:11:57.677 [main] INFO  UserServiceImpl - Removing role 'ADMIN' from user with id '1'
+2024-10-20 03:11:57.677 [main] ERROR UserServiceImpl - Cannot remove role. User 'existingUser' must have at least one role
+2024-10-20 03:12:23.125 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-10-20 03:12:23.125 [main] INFO  UserServiceImpl - Removing role 'TECHNICIAN' from user with id '1'
+2024-10-20 03:12:23.141 [main] ERROR UserServiceImpl - Cannot remove role. User 'existingUser' must have at least one role
+2024-10-20 03:13:21.617 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-10-20 03:13:21.617 [main] INFO  UserServiceImpl - Removing role 'ADMIN' from user with id '1'
+2024-10-20 03:13:21.633 [main] ERROR UserServiceImpl - Cannot remove role. User 'existingUser' must have at least one role
+2024-10-20 03:13:50.916 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-10-20 03:13:50.932 [main] INFO  UserServiceImpl - Removing role 'ADMIN' from user with id '1'
+2024-10-20 03:13:50.948 [main] INFO  UserServiceImpl - Successfully sent remove role message for user 'existingUser'
+2024-10-20 03:13:50.948 [main] INFO  UserServiceImpl - Role 'ADMIN' removed successfully from user 'existingUser'
+2024-10-20 03:13:50.948 [main] TRACE UserServiceImpl - Exiting removeRole method in UserServiceImpl
+2024-10-20 03:15:39.884 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-10-20 03:15:39.884 [main] INFO  UserServiceImpl - Removing role 'ADMIN' from user with id '1'
+2024-10-20 03:15:39.915 [main] INFO  UserServiceImpl - Successfully sent remove role message for user 'existingUser'
+2024-10-20 03:15:39.915 [main] INFO  UserServiceImpl - Role 'ADMIN' removed successfully from user 'existingUser'
+2024-10-20 03:15:39.915 [main] TRACE UserServiceImpl - Exiting removeRole method in UserServiceImpl
+2024-10-20 03:16:22.153 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-10-20 03:16:22.169 [main] INFO  UserServiceImpl - Removing role 'ADMIN' from user with id '1'
+2024-10-20 03:16:22.200 [main] ERROR UserServiceImpl - Failed to send remove role message to RabbitMQ for user 'existingUser'
+org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'convertAndSend' method:
+    rabbitTemplate.convertAndSend(
+    null,
+    null,
+    UpdateAuthUserRoleRequest(username=existingUser, role=ADMIN)
+);
+    -> at com.lab.backend.usermanagement.service.concretes.UserServiceImpl.removeRole(UserServiceImpl.java:479)
+ - has following stubbing(s) with different arguments:
+    1. rabbitTemplate.convertAndSend(
+    "",
+    "",
+    Optional.empty
+);
+      -> at com.lab.backend.usermanagement.service.concretes.UserServiceImplTest.removeRole_whenValidRequest_shouldRemoveRoleSuccessfully(UserServiceImplTest.java:451)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.convertAndSend(RabbitTemplate.java:1181) ~[spring-rabbit-3.1.7.jar:3.1.7]
+	at com.lab.backend.usermanagement.service.concretes.UserServiceImpl.removeRole(UserServiceImpl.java:479) ~[classes/:?]
+	at com.lab.backend.usermanagement.service.concretes.UserServiceImpl.removeRole(UserServiceImpl.java:459) ~[classes/:?]
+	at com.lab.backend.usermanagement.service.concretes.UserServiceImplTest.removeRole_whenValidRequest_shouldRemoveRoleSuccessfully(UserServiceImplTest.java:454) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728) ~[junit-platform-commons-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57) [junit5-rt.jar:?]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) [idea_rt.jar:?]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55) [junit-rt.jar:?]
+2024-10-20 03:17:31.830 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-10-20 03:17:31.846 [main] INFO  UserServiceImpl - Removing role 'ADMIN' from user with id '1'
+2024-10-20 03:17:31.861 [main] INFO  UserServiceImpl - Successfully sent remove role message for user 'existingUser'
+2024-10-20 03:17:31.877 [main] INFO  UserServiceImpl - Role 'ADMIN' removed successfully from user 'existingUser'
+2024-10-20 03:17:31.877 [main] TRACE UserServiceImpl - Exiting removeRole method in UserServiceImpl
+2024-10-20 03:20:27.592 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-10-20 03:20:27.592 [main] INFO  UserServiceImpl - Removing role 'ADMIN' from user with id '1'
+2024-10-20 03:20:27.623 [main] INFO  UserServiceImpl - Successfully sent remove role message for user 'existingUser'
+2024-10-20 03:20:27.623 [main] INFO  UserServiceImpl - Role 'ADMIN' removed successfully from user 'existingUser'
+2024-10-20 03:20:27.623 [main] TRACE UserServiceImpl - Exiting removeRole method in UserServiceImpl
+2024-10-20 03:23:09.435 [main] TRACE UserServiceImpl - Entering addRole method in UserServiceImpl
+2024-10-20 03:23:09.450 [main] INFO  UserServiceImpl - Adding role 'ADMIN' to user with id '1'
+2024-10-20 03:23:09.450 [main] ERROR UserServiceImpl - User 'existingUser' already has this role: 'ADMIN'
+2024-10-20 03:23:47.767 [main] TRACE UserServiceImpl - Entering addRole method in UserServiceImpl
+2024-10-20 03:23:47.783 [main] INFO  UserServiceImpl - Adding role 'TECHNICIAN' to user with id '1'
+2024-10-20 03:23:47.798 [main] INFO  UserServiceImpl - Successfully sent add role message for user 'existingUser'
+2024-10-20 03:23:47.798 [main] INFO  UserServiceImpl - Role 'TECHNICIAN' added successfully to user 'existingUser'
+2024-10-20 03:23:47.798 [main] TRACE UserServiceImpl - Exiting addRole method in UserServiceImpl
+2024-10-20 03:24:42.709 [main] TRACE UserServiceImpl - Entering updateCurrentUser method in UserServiceImpl
+2024-10-20 03:24:42.724 [main] INFO  UserServiceImpl - Updating current user: testUser
+2024-10-20 03:24:42.724 [main] DEBUG UserServiceImpl - Updated first name for user: com.lab.backend.usermanagement.entity.User@4ea56bdb
+2024-10-20 03:24:42.724 [main] DEBUG UserServiceImpl - Saved updated user: com.lab.backend.usermanagement.entity.User@4ea56bdb
+2024-10-20 03:24:42.724 [main] TRACE UserServiceImpl - Exiting updateCurrentUser method in UserServiceImpl
+2024-10-20 03:24:42.771 [main] TRACE UserServiceImpl - Entering getAllUsersFilteredAndSorted method in UserServiceImpl
+2024-10-20 03:24:42.771 [main] INFO  UserServiceImpl - Fetching users with filters: page=0, size=10, sortBy=username, direction=ASC
+2024-10-20 03:24:42.771 [main] DEBUG UserServiceImpl - Fetched 1 users
+2024-10-20 03:24:42.771 [main] TRACE UserServiceImpl - Exiting getAllUsersFilteredAndSorted method in UserServiceImpl
+2024-10-20 03:24:42.787 [main] TRACE UserServiceImpl - Entering updateUser method in UserServiceImpl
+2024-10-20 03:24:42.787 [main] DEBUG UserServiceImpl - Updating user with id: 1
+2024-10-20 03:24:42.787 [main] ERROR UserServiceImpl - User doesn't exist with id 1
+2024-10-20 03:24:42.787 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 03:24:42.787 [main] DEBUG UserServiceImpl - Creating user with username: newUser
+2024-10-20 03:24:42.802 [main] INFO  UserServiceImpl - Sent create message to RabbitMQ for user: newUser
+2024-10-20 03:24:42.802 [main] INFO  UserServiceImpl - User created successfully: newUser
+2024-10-20 03:24:42.802 [main] TRACE UserServiceImpl - Exiting createUser method in UserServiceImpl
+2024-10-20 03:24:42.802 [main] TRACE UserServiceImpl - Entering getUsernameByEmail method in UserServiceImpl
+2024-10-20 03:24:42.802 [main] INFO  UserServiceImpl - Fetching username by email: test@example.com
+2024-10-20 03:24:42.802 [main] DEBUG UserServiceImpl - Found username: testUser
+2024-10-20 03:24:42.802 [main] TRACE UserServiceImpl - Exiting getUsernameByEmail method in UserServiceImpl
+2024-10-20 03:24:42.818 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 03:24:42.818 [main] DEBUG UserServiceImpl - Creating user with username: null
+2024-10-20 03:24:42.818 [main] ERROR UserServiceImpl - Email 'existingEmail@example.com' is already taken
+2024-10-20 03:24:42.834 [main] TRACE UserServiceImpl - Entering getUserById method in UserServiceImpl
+2024-10-20 03:24:42.834 [main] INFO  UserServiceImpl - Fetching user by ID: 1
+2024-10-20 03:24:42.834 [main] DEBUG UserServiceImpl - Fetched user: GetUserResponse(id=null, firstName=null, lastName=null, username=testUser, hospitalId=null, email=null, roles=null, gender=null)
+2024-10-20 03:24:42.834 [main] TRACE UserServiceImpl - Exiting getUserById method in UserServiceImpl
+2024-10-20 03:24:42.849 [main] TRACE UserServiceImpl - Entering getCurrentUser method in UserServiceImpl
+2024-10-20 03:24:42.849 [main] INFO  UserServiceImpl - Fetching current user by username: testUser
+2024-10-20 03:24:42.849 [main] DEBUG UserServiceImpl - Fetched current user: GetUserResponse(id=null, firstName=null, lastName=null, username=testUser, hospitalId=null, email=null, roles=null, gender=null)
+2024-10-20 03:24:42.849 [main] TRACE UserServiceImpl - Exiting getCurrentUser method in UserServiceImpl
+2024-10-20 03:24:42.865 [main] TRACE UserServiceImpl - Entering updateUser method in UserServiceImpl
+2024-10-20 03:24:42.865 [main] DEBUG UserServiceImpl - Updating user with id: null
+2024-10-20 03:24:42.865 [main] ERROR UserServiceImpl - Id must not be null
+2024-10-20 03:24:42.865 [main] TRACE UserServiceImpl - Entering restoreUser method in UserServiceImpl
+2024-10-20 03:24:42.865 [main] DEBUG UserServiceImpl - Restoring user with id: 1
+2024-10-20 03:24:42.865 [main] INFO  UserServiceImpl - Sent restore message to RabbitMQ for user: userToRestore
+2024-10-20 03:24:42.865 [main] INFO  UserServiceImpl - User restored successfully: userToRestore
+2024-10-20 03:24:42.865 [main] TRACE UserServiceImpl - Exiting restoreUser method in UserServiceImpl
+2024-10-20 03:24:42.881 [main] TRACE UserServiceImpl - Entering getUserById method in UserServiceImpl
+2024-10-20 03:24:42.881 [main] INFO  UserServiceImpl - Fetching user by ID: 1
+2024-10-20 03:24:42.881 [main] ERROR UserServiceImpl - User not found with ID: 1
+2024-10-20 03:24:42.881 [main] TRACE UserServiceImpl - Entering updateUser method in UserServiceImpl
+2024-10-20 03:24:42.881 [main] DEBUG UserServiceImpl - Updating user with id: 1
+2024-10-20 03:24:42.881 [main] ERROR UserServiceImpl - Email is already taken newEmail@example.com
+2024-10-20 03:24:42.881 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-10-20 03:24:42.881 [main] INFO  UserServiceImpl - Removing role 'ADMIN' from user with id '1'
+2024-10-20 03:24:42.881 [main] INFO  UserServiceImpl - Successfully sent remove role message for user 'existingUser'
+2024-10-20 03:24:42.881 [main] INFO  UserServiceImpl - Role 'ADMIN' removed successfully from user 'existingUser'
+2024-10-20 03:24:42.881 [main] TRACE UserServiceImpl - Exiting removeRole method in UserServiceImpl
+2024-10-20 03:24:42.896 [main] TRACE UserServiceImpl - Entering addRole method in UserServiceImpl
+2024-10-20 03:24:42.896 [main] INFO  UserServiceImpl - Adding role 'ADMIN' to user with id '1'
+2024-10-20 03:24:42.896 [main] ERROR UserServiceImpl - User not found with id '1'
+2024-10-20 03:24:42.912 [main] TRACE UserServiceImpl - Entering addRole method in UserServiceImpl
+2024-10-20 03:24:42.912 [main] INFO  UserServiceImpl - Adding role 'ADMIN' to user with id '1'
+2024-10-20 03:24:42.912 [main] ERROR UserServiceImpl - User 'existingUser' already has this role: 'ADMIN'
+2024-10-20 03:24:42.912 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-10-20 03:24:42.912 [main] INFO  UserServiceImpl - Removing role 'ADMIN' from user with id '1'
+2024-10-20 03:24:42.912 [main] ERROR UserServiceImpl - Cannot remove role. User 'existingUser' must have at least one role
+2024-10-20 03:24:42.912 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-10-20 03:24:42.912 [main] INFO  UserServiceImpl - Removing role 'ADMIN' from user with id '1'
+2024-10-20 03:24:42.912 [main] ERROR UserServiceImpl - User not found with id: '1'
+2024-10-20 03:24:42.912 [main] TRACE UserServiceImpl - Entering restoreUser method in UserServiceImpl
+2024-10-20 03:24:42.912 [main] DEBUG UserServiceImpl - Restoring user with id: 1
+2024-10-20 03:24:42.912 [main] ERROR UserServiceImpl - User does not exist with id 1
+2024-10-20 03:24:42.927 [main] TRACE UserServiceImpl - Entering getUsernameByEmail method in UserServiceImpl
+2024-10-20 03:24:42.927 [main] INFO  UserServiceImpl - Fetching username by email: test@example.com
+2024-10-20 03:24:42.927 [main] ERROR UserServiceImpl - No users registered to this email address: test@example.com
+2024-10-20 03:24:42.927 [main] TRACE UserServiceImpl - Entering updateUser method in UserServiceImpl
+2024-10-20 03:24:42.927 [main] DEBUG UserServiceImpl - Updating user with id: 1
+2024-10-20 03:24:42.927 [main] ERROR UserServiceImpl - Username is taken newUsername
+2024-10-20 03:24:42.927 [main] TRACE UserServiceImpl - Entering deleteUser method in UserServiceImpl
+2024-10-20 03:24:42.927 [main] DEBUG UserServiceImpl - Deleting user with id: 1
+2024-10-20 03:24:42.927 [main] ERROR UserServiceImpl - User doesn't exist with id: 1
+2024-10-20 03:24:42.943 [main] TRACE UserServiceImpl - Entering addRole method in UserServiceImpl
+2024-10-20 03:24:42.943 [main] INFO  UserServiceImpl - Adding role 'TECHNICIAN' to user with id '1'
+2024-10-20 03:24:42.943 [main] INFO  UserServiceImpl - Successfully sent add role message for user 'existingUser'
+2024-10-20 03:24:42.943 [main] INFO  UserServiceImpl - Role 'TECHNICIAN' added successfully to user 'existingUser'
+2024-10-20 03:24:42.943 [main] TRACE UserServiceImpl - Exiting addRole method in UserServiceImpl
+2024-10-20 03:24:42.943 [main] TRACE UserServiceImpl - Entering deleteUser method in UserServiceImpl
+2024-10-20 03:24:42.943 [main] DEBUG UserServiceImpl - Deleting user with id: 1
+2024-10-20 03:24:42.943 [main] INFO  UserServiceImpl - Sent delete message to RabbitMQ for user: userToDelete
+2024-10-20 03:24:42.943 [main] INFO  UserServiceImpl - User deleted successfully: userToDelete
+2024-10-20 03:24:42.943 [main] TRACE UserServiceImpl - Exiting deleteUser method in UserServiceImpl
+2024-10-20 03:24:42.943 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-10-20 03:24:42.943 [main] DEBUG UserServiceImpl - Creating user with username: existingUser
+2024-10-20 03:24:42.943 [main] ERROR UserServiceImpl - Username 'existingUser' is already taken
+2024-10-20 03:24:42.959 [main] TRACE UserServiceImpl - Entering updateCurrentUser method in UserServiceImpl
+2024-10-20 03:24:42.959 [main] INFO  UserServiceImpl - Updating current user: testUser
+2024-10-20 03:24:42.959 [main] ERROR UserServiceImpl - User doesn't exist with username: testUser
+2024-10-20 03:24:42.959 [main] TRACE UserServiceImpl - Entering getCurrentUser method in UserServiceImpl
+2024-10-20 03:24:42.959 [main] INFO  UserServiceImpl - Fetching current user by username: testUser
+2024-10-20 03:24:42.959 [main] ERROR UserServiceImpl - User not found with username: testUser
