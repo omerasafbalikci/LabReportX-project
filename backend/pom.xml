@@ -155,6 +155,7 @@
                                 <exclude>**/advice/**</exclude>
                                 <exclude>**/utilities/exceptions/**</exclude>
                                 <exclude>**/utilities/mappers/**</exclude>
+                                <exclude>**/service/abstracts/**</exclude>
                                 <exclude>**/RabbitMQConfig.class</exclude>
                                 <exclude>**/WebClientConfig.class</exclude>
                                 <exclude>**/RedisConfig.class</exclude>
@@ -162,6 +163,7 @@
                                 <exclude>**/ApplicationConfig.class</exclude>
                                 <exclude>**/Resilience4JConfig.class</exclude>
                                 <exclude>**/GatewayConfig.class</exclude>
+                                <exclude>**/BarcodeServiceImpl.class</exclude>
                                 <exclude>**/GeminiService.class</exclude>
                                 <exclude>**/PrescriptionService.class</exclude>
                                 <exclude>**/MailService.class</exclude>

@@ -1,0 +1,297 @@
+2024-10-21 01:45:23.047 [main] TRACE BarcodeController - Entering scanAndSavePatient method in BarcodeController class
+2024-10-21 01:45:23.058 [main] INFO  BarcodeController - Received request to scan and fetch patient.
+2024-10-21 01:45:23.067 [main] INFO  BarcodeController - Successfully fetched patient: GetPatientResponse(id=null, firstName=null, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, lastPatientRegistrationTime=null)
+2024-10-21 01:45:23.118 [main] TRACE BarcodeController - Exiting scanAndSavePatient method in BarcodeController class
+2024-10-21 01:46:45.777 [main] TRACE BarcodeController - Entering generateBarcodeForPatient method in BarcodeController class
+2024-10-21 01:46:45.786 [main] DEBUG BarcodeController - Received request to generate barcode for TR ID number: 12345678901
+2024-10-21 01:46:45.797 [main] DEBUG BarcodeController - Barcode generated successfully for TR ID number: 12345678901
+2024-10-21 01:46:45.797 [main] TRACE BarcodeController - Exiting generateBarcodeForPatient method in BarcodeController class
+2024-10-21 01:57:10.173 [main] TRACE PatientController - Entering getPatientById method in PatientController class
+2024-10-21 01:57:10.182 [main] INFO  PatientController - Successfully fetched patient with id: 1
+2024-10-21 01:57:10.183 [main] TRACE PatientController - Exiting getPatientById method in PatientController class
+2024-10-21 01:58:31.993 [main] TRACE PatientController - Entering getPatientByTrIdNumber method in PatientController class
+2024-10-21 01:58:31.993 [main] INFO  PatientController - Successfully fetched patient with TR ID number: 12345678901
+2024-10-21 01:58:31.993 [main] TRACE PatientController - Exiting getPatientByTrIdNumber method in PatientController class
+2024-10-21 01:59:17.077 [main] TRACE PatientController - Entering getChronicDiseasesById method in PatientController class
+2024-10-21 01:59:17.084 [main] INFO  PatientController - Successfully fetched chronic diseases for patient id: 1
+2024-10-21 01:59:17.084 [main] TRACE PatientController - Exiting getChronicDiseasesById method in PatientController class
+2024-10-21 01:59:59.396 [main] TRACE PatientController - Entering getEmail method in PatientController class
+2024-10-21 01:59:59.405 [main] INFO  PatientController - Successfully fetched email for TR ID number: 12345678901
+2024-10-21 01:59:59.405 [main] TRACE PatientController - Exiting getEmail method in PatientController class
+2024-10-21 02:00:34.224 [main] TRACE PatientController - Entering isPatientRegistered method in PatientController class
+2024-10-21 02:00:34.228 [main] INFO  PatientController - TR ID number check for 12345678901 returned: true
+2024-10-21 02:00:34.228 [main] TRACE PatientController - Exiting isPatientRegistered method in PatientController class
+2024-10-21 02:01:14.860 [main] TRACE PatientController - Entering getAllPatientsFilteredAndSorted method in PatientController class
+2024-10-21 02:01:14.860 [main] INFO  PatientController - Received request for filtered and sorted patients with parameters: page=0, size=3, sortBy=id, direction=ASC, firstName=null, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, chronicDisease=null, lastPatientRegistrationTime=null, deleted=false
+2024-10-21 02:08:14.979 [main] TRACE PatientController - Entering getAllPatientsFilteredAndSorted method in PatientController class
+2024-10-21 02:08:14.979 [main] INFO  PatientController - Received request for filtered and sorted patients with parameters: page=0, size=3, sortBy=id, direction=ASC, firstName=John, lastName=Doe, trIdNumber=12345678901, birthDate=1980-01-01, gender=Male, bloodType=A+, phoneNumber=1234567890, email=john.doe@example.com, chronicDisease=None, lastPatientRegistrationTime=2024-01-01, deleted=false
+2024-10-21 02:08:14.979 [main] INFO  PatientController - Successfully fetched filtered and sorted patients.
+2024-10-21 02:08:14.979 [main] TRACE PatientController - Exiting getAllPatientsFilteredAndSorted method in PatientController class
+2024-10-21 02:09:04.191 [main] TRACE PatientController - Entering getAllPatientsFilteredAndSorted method in PatientController class
+2024-10-21 02:09:04.191 [main] INFO  PatientController - Received request for filtered and sorted patients with parameters: page=0, size=3, sortBy=id, direction=ASC, firstName=John, lastName=Doe, trIdNumber=12345678901, birthDate=1980-01-01, gender=Male, bloodType=A+, phoneNumber=1234567890, email=john.doe@example.com, chronicDisease=None, lastPatientRegistrationTime=2024-01-01, deleted=false
+2024-10-21 02:09:04.191 [main] INFO  PatientController - Successfully fetched filtered and sorted patients.
+2024-10-21 02:09:04.191 [main] TRACE PatientController - Exiting getAllPatientsFilteredAndSorted method in PatientController class
+2024-10-21 02:09:26.045 [main] TRACE PatientController - Entering savePatient method in PatientController class
+2024-10-21 02:09:26.061 [main] INFO  PatientController - Successfully saved patient: GetPatientResponse(id=null, firstName=null, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, lastPatientRegistrationTime=null)
+2024-10-21 02:09:26.061 [main] TRACE PatientController - Exiting savePatient method in PatientController class
+2024-10-21 02:09:50.046 [main] TRACE PatientController - Entering updatePatient method in PatientController class
+2024-10-21 02:09:50.062 [main] INFO  PatientController - Successfully updated patient: GetPatientResponse(id=null, firstName=null, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, lastPatientRegistrationTime=null)
+2024-10-21 02:09:50.077 [main] TRACE PatientController - Exiting updatePatient method in PatientController class
+2024-10-21 02:10:17.906 [main] TRACE PatientController - Entering deletePatient method in PatientController class
+2024-10-21 02:10:17.922 [main] INFO  PatientController - Successfully deleted patient with id: 1
+2024-10-21 02:10:17.922 [main] TRACE PatientController - Exiting deletePatient method in PatientController class
+2024-10-21 02:10:44.810 [main] TRACE PatientController - Entering restorePatient method in PatientController class
+2024-10-21 02:10:44.810 [main] INFO  PatientController - Successfully restored patient with id: 1
+2024-10-21 02:10:44.810 [main] TRACE PatientController - Exiting restorePatient method in PatientController class
+2024-10-21 02:42:19.686 [main] TRACE BarcodeServiceImpl - Entering scanAndSavePatient method in BarcodeServiceImpl
+2024-10-21 02:42:19.691 [main] DEBUG BarcodeServiceImpl - Starting scanAndFetchPatient method.
+2024-10-21 02:42:22.694 [main] INFO  BarcodeServiceImpl - Setting camera properties: width=640, height=480
+2024-10-21 02:42:27.462 [main] DEBUG BarcodeServiceImpl - Frame successfully read from the camera.
+2024-10-21 02:42:27.462 [main] TRACE BarcodeServiceImpl - Entering matToBufferedImage method in BarcodeServiceImpl
+2024-10-21 02:42:27.463 [main] DEBUG BarcodeServiceImpl - Converting Mat to BufferedImage.
+2024-10-21 02:42:27.598 [main] TRACE BarcodeServiceImpl - Exiting matToBufferedImage method in BarcodeServiceImpl
+2024-10-21 02:42:27.598 [main] TRACE BarcodeServiceImpl - Entering readBarcodeFromImage method in BarcodeServiceImpl
+2024-10-21 02:42:27.598 [main] DEBUG BarcodeServiceImpl - Reading barcode from image.
+2024-10-21 02:42:27.639 [main] ERROR BarcodeServiceImpl - Barcode not found in image.
+com.google.zxing.NotFoundException: null
+2024-10-21 02:42:27.955 [main] DEBUG BarcodeServiceImpl - Camera released.
+2024-10-21 02:42:27.956 [main] TRACE BarcodeServiceImpl - Exiting scanAndSavePatient method in BarcodeServiceImpl
+2024-10-21 03:06:18.443 [main] TRACE BarcodeServiceImpl - Entering matToBufferedImage method in BarcodeServiceImpl
+2024-10-21 03:06:18.449 [main] DEBUG BarcodeServiceImpl - Converting Mat to BufferedImage.
+2024-10-21 03:06:18.452 [main] ERROR BarcodeServiceImpl - Failed to convert Mat to BufferedImage.
+java.lang.NullPointerException: Cannot read field "nativeObj" because "img" is null
+	at org.opencv.imgcodecs.Imgcodecs.imencode(Imgcodecs.java:722) ~[opencv-4.9.0-0.jar:?]
+	at com.lab.backend.patient.service.concretes.BarcodeServiceImpl.matToBufferedImage(BarcodeServiceImpl.java:127) ~[classes/:?]
+	at com.lab.backend.patient.service.concretes.BarcodeServiceImplTest.testScanAndSavePatient_Success(BarcodeServiceImplTest.java:52) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728) ~[junit-platform-commons-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57) [junit5-rt.jar:?]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) [idea_rt.jar:?]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55) [junit-rt.jar:?]
+2024-10-21 03:15:52.066 [main] TRACE PatientServiceImpl - Entering getPatientById method in PatientServiceImpl
+2024-10-21 03:15:52.072 [main] INFO  PatientServiceImpl - Fetching patient by ID: 1
+2024-10-21 03:15:52.078 [main] INFO  PatientServiceImpl - Successfully fetched patient by ID: 1
+2024-10-21 03:15:52.078 [main] TRACE PatientServiceImpl - Exiting getPatientById method in PatientServiceImpl
+2024-10-21 03:16:18.481 [main] TRACE PatientServiceImpl - Entering getPatientById method in PatientServiceImpl
+2024-10-21 03:16:18.487 [main] INFO  PatientServiceImpl - Fetching patient by ID: 1
+2024-10-21 03:16:18.493 [main] ERROR PatientServiceImpl - Patient not found with id: 1
+2024-10-21 03:16:57.136 [main] TRACE PatientServiceImpl - Entering getPatientByTrIdNumber method in PatientServiceImpl
+2024-10-21 03:16:57.146 [main] INFO  PatientServiceImpl - Fetching patient by TR ID number: 12345678901
+2024-10-21 03:16:57.150 [main] INFO  PatientServiceImpl - Successfully fetched patient by TR ID number: 12345678901
+2024-10-21 03:16:57.150 [main] TRACE PatientServiceImpl - Exiting getPatientByTrIdNumber method in PatientServiceImpl
+2024-10-21 03:17:25.196 [main] TRACE PatientServiceImpl - Entering getPatientByTrIdNumber method in PatientServiceImpl
+2024-10-21 03:17:25.202 [main] INFO  PatientServiceImpl - Fetching patient by TR ID number: 12345678901
+2024-10-21 03:17:25.208 [main] ERROR PatientServiceImpl - Patient not found with TR ID number: 12345678901
+2024-10-21 03:17:56.339 [main] TRACE PatientServiceImpl - Entering getChronicDiseasesById method in PatientServiceImpl
+2024-10-21 03:17:56.343 [main] INFO  PatientServiceImpl - Fetching chronic diseases by ID: 1
+2024-10-21 03:17:56.347 [main] INFO  PatientServiceImpl - Successfully fetched chronic diseases by ID: 1
+2024-10-21 03:17:56.347 [main] TRACE PatientServiceImpl - Exiting getChronicDiseasesById method in PatientServiceImpl
+2024-10-21 03:18:32.762 [main] TRACE PatientServiceImpl - Entering getChronicDiseasesById method in PatientServiceImpl
+2024-10-21 03:18:32.768 [main] INFO  PatientServiceImpl - Fetching chronic diseases by ID: 1
+2024-10-21 03:18:32.772 [main] WARN  PatientServiceImpl - No chronic diseases found for patient ID: 1
+2024-10-21 03:18:32.772 [main] INFO  PatientServiceImpl - Successfully fetched chronic diseases by ID: 1
+2024-10-21 03:18:32.772 [main] TRACE PatientServiceImpl - Exiting getChronicDiseasesById method in PatientServiceImpl
+2024-10-21 03:19:02.377 [main] TRACE PatientServiceImpl - Entering getEmail method in PatientServiceImpl
+2024-10-21 03:19:02.385 [main] INFO  PatientServiceImpl - Fetching email for patient with TR ID number: 12345678901
+2024-10-21 03:19:02.391 [main] INFO  PatientServiceImpl - Successfully retrieved email for patient with TR ID number: 12345678901
+2024-10-21 03:19:02.391 [main] TRACE PatientServiceImpl - Exiting getEmail method in PatientServiceImpl
+2024-10-21 03:19:30.021 [main] TRACE PatientServiceImpl - Entering getEmail method in PatientServiceImpl
+2024-10-21 03:19:30.028 [main] INFO  PatientServiceImpl - Fetching email for patient with TR ID number: 12345678901
+2024-10-21 03:19:30.033 [main] ERROR PatientServiceImpl - Patient not found with TrIdNumber: 12345678901
+2024-10-21 03:19:59.074 [main] TRACE PatientServiceImpl - Entering isPatientRegistered method in PatientServiceImpl
+2024-10-21 03:19:59.081 [main] INFO  PatientServiceImpl - Checking registration time for patient with TR ID number: 12345678901
+2024-10-21 03:19:59.091 [main] INFO  PatientServiceImpl - Patient with TR ID number 12345678901 is registered within the last 6 hours.
+2024-10-21 03:19:59.091 [main] TRACE PatientServiceImpl - Exiting isPatientRegistered method in PatientServiceImpl
+2024-10-21 03:21:15.878 [main] TRACE PatientServiceImpl - Entering isPatientRegistered method in PatientServiceImpl
+2024-10-21 03:21:15.882 [main] INFO  PatientServiceImpl - Checking registration time for patient with TR ID number: 12345678901
+2024-10-21 03:21:15.886 [main] INFO  PatientServiceImpl - Patient with TR ID number 12345678901 is not registered within the last 6 hours.
+2024-10-21 03:21:15.887 [main] TRACE PatientServiceImpl - Exiting isPatientRegistered method in PatientServiceImpl
+2024-10-21 03:23:12.698 [main] TRACE PatientServiceImpl - Entering isPatientRegistered method in PatientServiceImpl
+2024-10-21 03:23:12.706 [main] INFO  PatientServiceImpl - Checking registration time for patient with TR ID number: 12345678901
+2024-10-21 03:23:12.714 [main] ERROR PatientServiceImpl - Patient not found with TR ID number 12345678901
+2024-10-21 03:28:14.020 [main] TRACE PatientServiceImpl - Entering getAllPatientsFilteredAndSorted method in PatientServiceImpl
+2024-10-21 03:28:14.029 [main] DEBUG PatientServiceImpl - Fetching all patients with filters: page=0, size=10, sortBy=firstName, direction=ASC, firstName=John, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, chronicDisease=null, lastPatientRegistrationTime=null, deleted=false
+2024-10-21 03:28:14.041 [main] INFO  PatientServiceImpl - Successfully fetched patients with filters: page=0, size=10, totalPages=1, totalElements=1
+2024-10-21 03:28:14.041 [main] TRACE PatientServiceImpl - Exiting getAllPatientsFilteredAndSorted method in PatientServiceImpl
+2024-10-21 03:32:40.572 [main] TRACE PatientServiceImpl - Entering getAllPatientsFilteredAndSorted method in PatientServiceImpl
+2024-10-21 03:32:40.587 [main] DEBUG PatientServiceImpl - Fetching all patients with filters: page=0, size=10, sortBy=firstName, direction=ASC, firstName=John, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, chronicDisease=null, lastPatientRegistrationTime=null, deleted=false
+2024-10-21 03:32:40.613 [main] INFO  PatientServiceImpl - Successfully fetched patients with filters: page=0, size=10, totalPages=1, totalElements=1
+2024-10-21 03:32:40.614 [main] TRACE PatientServiceImpl - Exiting getAllPatientsFilteredAndSorted method in PatientServiceImpl
+2024-10-21 03:33:56.688 [main] TRACE PatientServiceImpl - Entering savePatient method in PatientServiceImpl
+2024-10-21 03:33:56.694 [main] INFO  PatientServiceImpl - Saving patient with TR ID number: 12345678901
+2024-10-21 03:33:56.698 [main] INFO  PatientServiceImpl - New patient created with TR ID number: 12345678901
+2024-10-21 03:33:56.699 [main] INFO  PatientServiceImpl - Successfully saved patient with ID: null
+2024-10-21 03:33:56.699 [main] TRACE PatientServiceImpl - Exiting savePatient method in PatientServiceImpl
+2024-10-21 03:34:30.832 [main] TRACE PatientServiceImpl - Entering savePatient method in PatientServiceImpl
+2024-10-21 03:34:30.846 [main] INFO  PatientServiceImpl - Saving patient with TR ID number: 12345678901
+2024-10-21 03:34:30.851 [main] DEBUG PatientServiceImpl - Patient already exists. Updating registration time for TR ID number: 12345678901
+2024-10-21 03:34:30.852 [main] INFO  PatientServiceImpl - Successfully saved patient with ID: null
+2024-10-21 03:34:30.852 [main] TRACE PatientServiceImpl - Exiting savePatient method in PatientServiceImpl
+2024-10-21 03:35:42.228 [main] TRACE PatientServiceImpl - Entering updatePatient method in PatientServiceImpl
+2024-10-21 03:35:42.238 [main] INFO  PatientServiceImpl - Updating patient with ID: 1
+2024-10-21 03:35:42.256 [main] INFO  PatientServiceImpl - Successfully updated patient with ID: 1
+2024-10-21 03:35:42.256 [main] TRACE PatientServiceImpl - Exiting updatePatient method in PatientServiceImpl
+2024-10-21 03:36:16.043 [main] TRACE PatientServiceImpl - Entering updatePatient method in PatientServiceImpl
+2024-10-21 03:36:16.049 [main] INFO  PatientServiceImpl - Updating patient with ID: 1
+2024-10-21 03:36:16.056 [main] ERROR PatientServiceImpl - Patient does not exist with id: 1
+2024-10-21 03:38:01.514 [main] TRACE PatientServiceImpl - Entering deletePatient method in PatientServiceImpl
+2024-10-21 03:38:01.522 [main] INFO  PatientServiceImpl - Deleting patient with ID: 1
+2024-10-21 03:38:01.532 [main] INFO  PatientServiceImpl - Successfully deleted patient with ID: 1
+2024-10-21 03:38:01.533 [main] TRACE PatientServiceImpl - Exiting deletePatient method in PatientServiceImpl
+2024-10-21 03:38:37.176 [main] TRACE PatientServiceImpl - Entering deletePatient method in PatientServiceImpl
+2024-10-21 03:38:37.185 [main] INFO  PatientServiceImpl - Deleting patient with ID: 1
+2024-10-21 03:38:37.189 [main] ERROR PatientServiceImpl - Patient not found to delete. ID: 1
+2024-10-21 03:39:17.970 [main] TRACE PatientServiceImpl - Entering restorePatient method in PatientServiceImpl
+2024-10-21 03:39:17.979 [main] INFO  PatientServiceImpl - Restoring patient with ID: 1
+2024-10-21 03:39:17.986 [main] INFO  PatientServiceImpl - Successfully restored patient with ID: 1
+2024-10-21 03:39:17.986 [main] TRACE PatientServiceImpl - Exiting restorePatient method in PatientServiceImpl
+2024-10-21 03:39:42.292 [main] TRACE PatientServiceImpl - Entering restorePatient method in PatientServiceImpl
+2024-10-21 03:39:42.295 [main] INFO  PatientServiceImpl - Restoring patient with ID: 1
+2024-10-21 03:39:42.300 [main] ERROR PatientServiceImpl - Patient not found to restore. ID: 1
+2024-10-21 03:42:54.162 [main] TRACE PatientServiceImpl - Entering updatePatient method in PatientServiceImpl
+2024-10-21 03:42:54.167 [main] INFO  PatientServiceImpl - Updating patient with ID: 1
+2024-10-21 03:42:54.174 [main] ERROR PatientServiceImpl - Patient already exists with TR ID number: 98765432101
+2024-10-21 03:43:32.343 [main] TRACE PatientServiceImpl - Entering getPatientById method in PatientServiceImpl
+2024-10-21 03:43:32.353 [main] INFO  PatientServiceImpl - Fetching patient by ID: 1
+2024-10-21 03:43:32.357 [main] INFO  PatientServiceImpl - Successfully fetched patient by ID: 1
+2024-10-21 03:43:32.358 [main] TRACE PatientServiceImpl - Exiting getPatientById method in PatientServiceImpl
+2024-10-21 03:43:32.402 [main] TRACE PatientServiceImpl - Entering getChronicDiseasesById method in PatientServiceImpl
+2024-10-21 03:43:32.402 [main] INFO  PatientServiceImpl - Fetching chronic diseases by ID: 1
+2024-10-21 03:43:32.402 [main] INFO  PatientServiceImpl - Successfully fetched chronic diseases by ID: 1
+2024-10-21 03:43:32.402 [main] TRACE PatientServiceImpl - Exiting getChronicDiseasesById method in PatientServiceImpl
+2024-10-21 03:43:32.406 [main] TRACE PatientServiceImpl - Entering getPatientByTrIdNumber method in PatientServiceImpl
+2024-10-21 03:43:32.406 [main] INFO  PatientServiceImpl - Fetching patient by TR ID number: 12345678901
+2024-10-21 03:43:32.407 [main] INFO  PatientServiceImpl - Successfully fetched patient by TR ID number: 12345678901
+2024-10-21 03:43:32.407 [main] TRACE PatientServiceImpl - Exiting getPatientByTrIdNumber method in PatientServiceImpl
+2024-10-21 03:43:32.411 [main] TRACE PatientServiceImpl - Entering isPatientRegistered method in PatientServiceImpl
+2024-10-21 03:43:32.411 [main] INFO  PatientServiceImpl - Checking registration time for patient with TR ID number: 12345678901
+2024-10-21 03:43:32.414 [main] INFO  PatientServiceImpl - Patient with TR ID number 12345678901 is registered within the last 6 hours.
+2024-10-21 03:43:32.414 [main] TRACE PatientServiceImpl - Exiting isPatientRegistered method in PatientServiceImpl
+2024-10-21 03:43:32.427 [main] TRACE PatientServiceImpl - Entering getAllPatientsFilteredAndSorted method in PatientServiceImpl
+2024-10-21 03:43:32.427 [main] DEBUG PatientServiceImpl - Fetching all patients with filters: page=0, size=10, sortBy=firstName, direction=ASC, firstName=John, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, chronicDisease=null, lastPatientRegistrationTime=null, deleted=false
+2024-10-21 03:43:32.435 [main] INFO  PatientServiceImpl - Successfully fetched patients with filters: page=0, size=10, totalPages=1, totalElements=1
+2024-10-21 03:43:32.436 [main] TRACE PatientServiceImpl - Exiting getAllPatientsFilteredAndSorted method in PatientServiceImpl
+2024-10-21 03:43:32.444 [main] TRACE PatientServiceImpl - Entering deletePatient method in PatientServiceImpl
+2024-10-21 03:43:32.444 [main] INFO  PatientServiceImpl - Deleting patient with ID: 1
+2024-10-21 03:43:32.445 [main] ERROR PatientServiceImpl - Patient not found to delete. ID: 1
+2024-10-21 03:43:32.451 [main] TRACE PatientServiceImpl - Entering updatePatient method in PatientServiceImpl
+2024-10-21 03:43:32.451 [main] INFO  PatientServiceImpl - Updating patient with ID: 1
+2024-10-21 03:43:32.452 [main] ERROR PatientServiceImpl - Patient already exists with TR ID number: 98765432101
+2024-10-21 03:43:32.457 [main] TRACE PatientServiceImpl - Entering getPatientById method in PatientServiceImpl
+2024-10-21 03:43:32.457 [main] INFO  PatientServiceImpl - Fetching patient by ID: 1
+2024-10-21 03:43:32.458 [main] ERROR PatientServiceImpl - Patient not found with id: 1
+2024-10-21 03:43:32.464 [main] TRACE PatientServiceImpl - Entering restorePatient method in PatientServiceImpl
+2024-10-21 03:43:32.464 [main] INFO  PatientServiceImpl - Restoring patient with ID: 1
+2024-10-21 03:43:32.465 [main] ERROR PatientServiceImpl - Patient not found to restore. ID: 1
+2024-10-21 03:43:32.469 [main] TRACE PatientServiceImpl - Entering isPatientRegistered method in PatientServiceImpl
+2024-10-21 03:43:32.470 [main] INFO  PatientServiceImpl - Checking registration time for patient with TR ID number: 12345678901
+2024-10-21 03:43:32.470 [main] ERROR PatientServiceImpl - Patient not found with TR ID number 12345678901
+2024-10-21 03:43:32.476 [main] TRACE PatientServiceImpl - Entering updatePatient method in PatientServiceImpl
+2024-10-21 03:43:32.476 [main] INFO  PatientServiceImpl - Updating patient with ID: 1
+2024-10-21 03:43:32.476 [main] ERROR PatientServiceImpl - Patient does not exist with id: 1
+2024-10-21 03:43:32.480 [main] TRACE PatientServiceImpl - Entering getPatientByTrIdNumber method in PatientServiceImpl
+2024-10-21 03:43:32.480 [main] INFO  PatientServiceImpl - Fetching patient by TR ID number: 12345678901
+2024-10-21 03:43:32.480 [main] ERROR PatientServiceImpl - Patient not found with TR ID number: 12345678901
+2024-10-21 03:43:32.485 [main] TRACE PatientServiceImpl - Entering deletePatient method in PatientServiceImpl
+2024-10-21 03:43:32.485 [main] INFO  PatientServiceImpl - Deleting patient with ID: 1
+2024-10-21 03:43:32.485 [main] INFO  PatientServiceImpl - Successfully deleted patient with ID: 1
+2024-10-21 03:43:32.485 [main] TRACE PatientServiceImpl - Exiting deletePatient method in PatientServiceImpl
+2024-10-21 03:43:32.489 [main] TRACE PatientServiceImpl - Entering isPatientRegistered method in PatientServiceImpl
+2024-10-21 03:43:32.489 [main] INFO  PatientServiceImpl - Checking registration time for patient with TR ID number: 12345678901
+2024-10-21 03:43:32.489 [main] INFO  PatientServiceImpl - Patient with TR ID number 12345678901 is not registered within the last 6 hours.
+2024-10-21 03:43:32.490 [main] TRACE PatientServiceImpl - Exiting isPatientRegistered method in PatientServiceImpl
+2024-10-21 03:43:32.495 [main] TRACE PatientServiceImpl - Entering getChronicDiseasesById method in PatientServiceImpl
+2024-10-21 03:43:32.495 [main] INFO  PatientServiceImpl - Fetching chronic diseases by ID: 1
+2024-10-21 03:43:32.496 [main] WARN  PatientServiceImpl - No chronic diseases found for patient ID: 1
+2024-10-21 03:43:32.496 [main] INFO  PatientServiceImpl - Successfully fetched chronic diseases by ID: 1
+2024-10-21 03:43:32.496 [main] TRACE PatientServiceImpl - Exiting getChronicDiseasesById method in PatientServiceImpl
+2024-10-21 03:43:32.499 [main] TRACE PatientServiceImpl - Entering getEmail method in PatientServiceImpl
+2024-10-21 03:43:32.499 [main] INFO  PatientServiceImpl - Fetching email for patient with TR ID number: 12345678901
+2024-10-21 03:43:32.499 [main] INFO  PatientServiceImpl - Successfully retrieved email for patient with TR ID number: 12345678901
+2024-10-21 03:43:32.499 [main] TRACE PatientServiceImpl - Exiting getEmail method in PatientServiceImpl
+2024-10-21 03:43:32.504 [main] TRACE PatientServiceImpl - Entering restorePatient method in PatientServiceImpl
+2024-10-21 03:43:32.504 [main] INFO  PatientServiceImpl - Restoring patient with ID: 1
+2024-10-21 03:43:32.504 [main] INFO  PatientServiceImpl - Successfully restored patient with ID: 1
+2024-10-21 03:43:32.504 [main] TRACE PatientServiceImpl - Exiting restorePatient method in PatientServiceImpl
+2024-10-21 03:43:32.508 [main] TRACE PatientServiceImpl - Entering getEmail method in PatientServiceImpl
+2024-10-21 03:43:32.509 [main] INFO  PatientServiceImpl - Fetching email for patient with TR ID number: 12345678901
+2024-10-21 03:43:32.510 [main] ERROR PatientServiceImpl - Patient not found with TrIdNumber: 12345678901
+2024-10-21 03:43:32.514 [main] TRACE PatientServiceImpl - Entering updatePatient method in PatientServiceImpl
+2024-10-21 03:43:32.514 [main] INFO  PatientServiceImpl - Updating patient with ID: 1
+2024-10-21 03:43:32.517 [main] INFO  PatientServiceImpl - Successfully updated patient with ID: 1
+2024-10-21 03:43:32.517 [main] TRACE PatientServiceImpl - Exiting updatePatient method in PatientServiceImpl
+2024-10-21 03:43:32.521 [main] TRACE PatientServiceImpl - Entering savePatient method in PatientServiceImpl
+2024-10-21 03:43:32.522 [main] INFO  PatientServiceImpl - Saving patient with TR ID number: 12345678901
+2024-10-21 03:43:32.522 [main] INFO  PatientServiceImpl - New patient created with TR ID number: 12345678901
+2024-10-21 03:43:32.522 [main] INFO  PatientServiceImpl - Successfully saved patient with ID: null
+2024-10-21 03:43:32.522 [main] TRACE PatientServiceImpl - Exiting savePatient method in PatientServiceImpl
+2024-10-21 03:43:32.526 [main] TRACE PatientServiceImpl - Entering savePatient method in PatientServiceImpl
+2024-10-21 03:43:32.527 [main] INFO  PatientServiceImpl - Saving patient with TR ID number: 12345678901
+2024-10-21 03:43:32.527 [main] DEBUG PatientServiceImpl - Patient already exists. Updating registration time for TR ID number: 12345678901
+2024-10-21 03:43:32.527 [main] INFO  PatientServiceImpl - Successfully saved patient with ID: null
+2024-10-21 03:43:32.527 [main] TRACE PatientServiceImpl - Exiting savePatient method in PatientServiceImpl

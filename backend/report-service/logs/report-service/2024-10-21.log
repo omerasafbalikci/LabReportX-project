@@ -1,0 +1,42 @@
+2024-10-21 03:59:07.313 [main] TRACE ReportController - Entering getReportById method in ReportController class
+2024-10-21 03:59:07.319 [main] INFO  ReportController - Retrieving report with ID: 1
+2024-10-21 03:59:07.323 [main] TRACE ReportController - Exiting getReportById method in ReportController class
+2024-10-21 03:59:36.083 [main] TRACE ReportController - Entering getAllReportsFilteredAndSorted method in ReportController class
+2024-10-21 03:59:36.087 [main] INFO  ReportController - Retrieving reports filtered and sorted: page=0, size=3, sortBy=id, direction=ASC, fileNumber=null, patientTrIdNumber=null, diagnosisTitle=null, diagnosisDetails=null, date=null, photoPath=null, technicianUsername=null, deleted=null
+2024-10-21 03:59:36.097 [main] TRACE ReportController - Exiting getAllReportsFilteredAndSorted method in ReportController class
+2024-10-21 04:00:21.182 [main] TRACE ReportController - Entering getAllReportsByTechnician method in ReportController class
+2024-10-21 04:00:21.187 [main] INFO  ReportController - Retrieving reports for technician: page=0, size=3, sortBy=id, direction=ASC, fileNumber=null, patientTrIdNumber=null, diagnosisTitle=null, diagnosisDetails=null, date=null, photoPath=null, username=technician1, deleted=null
+2024-10-21 04:00:21.190 [main] TRACE ReportController - Exiting getAllReportsByTechnician method in ReportController class
+2024-10-21 04:00:50.554 [main] TRACE ReportController - Entering checkTrIdNumber method in ReportController class
+2024-10-21 04:00:50.558 [main] INFO  ReportController - Checking TR ID number: 12345678901 for user: technician1
+2024-10-21 04:00:50.561 [main] TRACE ReportController - Exiting checkTrIdNumber method in ReportController class
+2024-10-21 04:01:29.107 [main] TRACE ReportController - Entering addReport method in ReportController class
+2024-10-21 04:01:29.111 [main] INFO  ReportController - Adding the report by the user: technician1
+2024-10-21 04:01:29.114 [main] TRACE ReportController - Exiting addReport method in ReportController class
+2024-10-21 04:06:33.606 [main] TRACE ReportController - Entering updateReport method in ReportController class
+2024-10-21 04:06:33.610 [main] INFO  ReportController - Updating the report by the user: technician1
+2024-10-21 04:06:33.613 [main] TRACE ReportController - Exiting updateReport method in ReportController class
+2024-10-21 04:07:07.694 [main] TRACE ReportController - Entering deleteReport method in ReportController class
+2024-10-21 04:07:07.703 [main] INFO  ReportController - Deleting the report with ID: 1 by the user: technician1
+2024-10-21 04:07:07.724 [main] TRACE ReportController - Exiting deleteReport method in ReportController class
+2024-10-21 04:07:34.749 [main] TRACE ReportController - Entering restoreReport method in ReportController class
+2024-10-21 04:07:34.752 [main] INFO  ReportController - Restoring the report with ID: 1 by the user: technician1
+2024-10-21 04:07:34.755 [main] TRACE ReportController - Exiting restoreReport method in ReportController class
+2024-10-21 04:08:09.706 [main] TRACE ReportController - Entering addPhoto method in ReportController class
+2024-10-21 04:08:09.712 [main] INFO  ReportController - Uploading photo for report ID: 1 by user: technician1
+2024-10-21 04:08:09.727 [main] TRACE ReportController - Exiting addPhoto method in ReportController class
+2024-10-21 04:08:41.332 [main] TRACE ReportController - Entering getPhoto method in ReportController class
+2024-10-21 04:08:41.336 [main] INFO  ReportController - Fetching photo for report ID: 1 by user: technician1
+2024-10-21 04:08:41.339 [main] TRACE ReportController - Exiting getPhoto method in ReportController class
+2024-10-21 04:09:17.933 [main] TRACE ReportController - Entering deletePhoto method in ReportController class
+2024-10-21 04:09:17.940 [main] INFO  ReportController - Deleting photo for report ID: 1 by user: technician1
+2024-10-21 04:09:17.956 [main] TRACE ReportController - Exiting deletePhoto method in ReportController class
+2024-10-21 04:09:58.777 [main] TRACE ReportController - Entering getReportPdf method in ReportController class
+2024-10-21 04:09:58.783 [main] INFO  ReportController - Fetching PDF report for report ID: 1
+2024-10-21 04:09:58.814 [main] TRACE ReportController - Exiting getReportPdf method in ReportController class
+2024-10-21 04:10:32.322 [main] TRACE ReportController - Entering getPrescription method in ReportController class
+2024-10-21 04:10:32.327 [main] INFO  ReportController - Fetching prescription for report ID: 1 by user: technician1
+2024-10-21 04:10:32.344 [main] TRACE ReportController - Exiting getPrescription method in ReportController class
+2024-10-21 04:10:58.142 [main] TRACE ReportController - Entering sendPrescription method in ReportController class
+2024-10-21 04:10:58.151 [main] INFO  ReportController - Sending prescription for user: technician1
+2024-10-21 04:10:58.170 [main] TRACE ReportController - Exiting sendPrescription method in ReportController class
