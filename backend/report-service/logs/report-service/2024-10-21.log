@@ -40,3 +40,68 @@
 2024-10-21 04:10:58.142 [main] TRACE ReportController - Entering sendPrescription method in ReportController class
 2024-10-21 04:10:58.151 [main] INFO  ReportController - Sending prescription for user: technician1
 2024-10-21 04:10:58.170 [main] TRACE ReportController - Exiting sendPrescription method in ReportController class
+2024-10-21 22:53:49.532 [main] TRACE ReportServiceImpl - Entering getReportById method in ReportServiceImpl
+2024-10-21 22:53:49.532 [main] DEBUG ReportServiceImpl - Fetching report with ID: 1
+2024-10-21 22:53:49.548 [main] INFO  ReportServiceImpl - Report found: GetReportResponse(id=null, fileNumber=null, patientTrIdNumber=null, diagnosisTitle=null, diagnosisDetails=null, date=null, photoPath=null, technicianUsername=null)
+2024-10-21 22:53:49.564 [main] TRACE ReportServiceImpl - Exiting getReportById method in ReportServiceImpl
+2024-10-21 22:54:59.810 [main] TRACE ReportServiceImpl - Entering getReportById method in ReportServiceImpl
+2024-10-21 22:54:59.810 [main] DEBUG ReportServiceImpl - Fetching report with ID: 1
+2024-10-21 22:54:59.826 [main] ERROR ReportServiceImpl - Report not found with ID: 1
+2024-10-21 22:55:35.139 [main] TRACE ReportServiceImpl - Entering getAllReportsFilteredAndSorted method in ReportServiceImpl
+2024-10-21 22:55:35.139 [main] DEBUG ReportServiceImpl - Fetching all reports with filters - Page: 0, Size: 10, SortBy: date, Direction: ASC
+2024-10-21 22:55:35.139 [main] INFO  ReportServiceImpl - Total reports found: 1
+2024-10-21 22:55:35.139 [main] TRACE ReportServiceImpl - Exiting getAllReportsFilteredAndSorted method in ReportServiceImpl
+2024-10-21 22:56:03.955 [main] TRACE ReportServiceImpl - Entering getReportsByTechnician method in ReportServiceImpl
+2024-10-21 22:56:03.971 [main] DEBUG ReportServiceImpl - Fetching reports for technician: technician1 with filters - Page: 0, Size: 10, SortBy: date, Direction: DESC
+2024-10-21 22:56:03.971 [main] INFO  ReportServiceImpl - Total reports found for technician technician1: 1
+2024-10-21 22:56:03.971 [main] TRACE ReportServiceImpl - Exiting getReportsByTechnician method in ReportServiceImpl
+2024-10-21 23:32:43.493 [main] TRACE ReportServiceImpl - Entering addReport method in ReportServiceImpl
+2024-10-21 23:32:43.499 [main] DEBUG ReportServiceImpl - Adding report for user: techUser
+2024-10-21 23:32:43.502 [main] INFO  ReportServiceImpl - Report added successfully: GetReportResponse(id=null, fileNumber=null, patientTrIdNumber=null, diagnosisTitle=null, diagnosisDetails=null, date=null, photoPath=null, technicianUsername=null)
+2024-10-21 23:32:43.510 [main] TRACE ReportServiceImpl - Exiting addReport method in ReportServiceImpl
+2024-10-21 23:33:52.285 [main] TRACE ReportServiceImpl - Entering addReport method in ReportServiceImpl
+2024-10-21 23:33:52.291 [main] DEBUG ReportServiceImpl - Adding report for user: techUser
+2024-10-21 23:33:52.291 [main] ERROR ReportServiceImpl - TR ID number not found in Redis for user: techUser
+2024-10-21 23:36:03.653 [main] TRACE ReportServiceImpl - Entering updateReport method in ReportServiceImpl
+2024-10-21 23:36:03.663 [main] DEBUG ReportServiceImpl - Updating report with id: 1 by technician: techUser
+2024-10-21 23:36:03.669 [main] INFO  ReportServiceImpl - Report with id: 1 successfully updated by technician: techUser
+2024-10-21 23:36:03.669 [main] TRACE ReportServiceImpl - Exiting updateReport method in ReportServiceImpl
+2024-10-21 23:36:54.574 [main] TRACE ReportServiceImpl - Entering updateReport method in ReportServiceImpl
+2024-10-21 23:36:54.584 [main] DEBUG ReportServiceImpl - Updating report with id: 1 by technician: techUser
+2024-10-21 23:36:54.587 [main] INFO  ReportServiceImpl - Report with id: 1 successfully updated by technician: techUser
+2024-10-21 23:36:54.587 [main] TRACE ReportServiceImpl - Exiting updateReport method in ReportServiceImpl
+2024-10-21 23:45:20.722 [main] TRACE ReportServiceImpl - Entering updateReport method in ReportServiceImpl
+2024-10-21 23:45:20.722 [main] DEBUG ReportServiceImpl - Updating report with id: 1 by technician: tech1
+2024-10-21 23:45:20.737 [main] INFO  ReportServiceImpl - Report with id: 1 successfully updated by technician: tech1
+2024-10-21 23:45:20.737 [main] TRACE ReportServiceImpl - Exiting updateReport method in ReportServiceImpl
+2024-10-21 23:47:18.459 [main] TRACE ReportServiceImpl - Entering updateReport method in ReportServiceImpl
+2024-10-21 23:47:18.468 [main] DEBUG ReportServiceImpl - Updating report with id: 1 by technician: tech1
+2024-10-21 23:47:18.468 [main] INFO  ReportServiceImpl - Report with id: 1 successfully updated by technician: tech1
+2024-10-21 23:47:18.475 [main] TRACE ReportServiceImpl - Exiting updateReport method in ReportServiceImpl
+2024-10-21 23:48:09.730 [main] TRACE ReportServiceImpl - Entering updateReport method in ReportServiceImpl
+2024-10-21 23:48:09.739 [main] DEBUG ReportServiceImpl - Updating report with id: 1 by technician: tech2
+2024-10-21 23:48:09.750 [main] ERROR ReportServiceImpl - Unauthorized update attempt by user: tech2 on report id: 1
+2024-10-21 23:48:34.350 [main] TRACE ReportServiceImpl - Entering deleteReport method in ReportServiceImpl
+2024-10-21 23:48:34.360 [main] DEBUG ReportServiceImpl - Attempting to delete report with id: 1 by technician: tech1
+2024-10-21 23:48:34.370 [main] INFO  ReportServiceImpl - Report with id: 1 successfully deleted by technician: tech1
+2024-10-21 23:48:34.370 [main] TRACE ReportServiceImpl - Exiting deleteReport method in ReportServiceImpl
+2024-10-21 23:49:17.012 [main] TRACE ReportServiceImpl - Entering deleteReport method in ReportServiceImpl
+2024-10-21 23:49:17.021 [main] DEBUG ReportServiceImpl - Attempting to delete report with id: 1 by technician: tech2
+2024-10-21 23:49:17.022 [main] ERROR ReportServiceImpl - Unauthorized delete attempt by user: tech2 on report id: 1
+2024-10-21 23:49:54.383 [main] TRACE ReportServiceImpl - Entering restoreReport method in ReportServiceImpl
+2024-10-21 23:49:54.393 [main] DEBUG ReportServiceImpl - Attempting to restore report with id: 1 by technician: tech1
+2024-10-21 23:49:54.394 [main] INFO  ReportServiceImpl - Report with id: 1 successfully restored by technician: tech1
+2024-10-21 23:49:54.394 [main] TRACE ReportServiceImpl - Exiting restoreReport method in ReportServiceImpl
+2024-10-21 23:50:40.219 [main] TRACE ReportServiceImpl - Entering addPhoto method in ReportServiceImpl
+2024-10-21 23:50:40.235 [main] DEBUG ReportServiceImpl - Adding photo to report with id: 1 by technician: tech1
+2024-10-21 23:50:40.251 [main] INFO  ReportServiceImpl - Successfully added photo to report with id: 1
+2024-10-21 23:50:40.251 [main] TRACE ReportServiceImpl - Exiting addPhoto method in ReportServiceImpl
+2024-10-21 23:51:20.210 [main] TRACE ReportServiceImpl - Entering addPhoto method in ReportServiceImpl
+2024-10-21 23:51:20.226 [main] DEBUG ReportServiceImpl - Adding photo to report with id: 1 by technician: tech1
+2024-10-21 23:51:20.226 [main] ERROR ReportServiceImpl - Attempted to add a photo to report with id: 1 which already has a photo
+2024-10-21 23:56:36.682 [main] TRACE ReportServiceImpl - Entering updateReport method in ReportServiceImpl
+2024-10-21 23:56:36.697 [main] DEBUG ReportServiceImpl - Updating report with id: 1 by technician: tech1
+2024-10-21 23:56:36.697 [main] ERROR ReportServiceImpl - Report with id 1 not found
+2024-10-21 23:58:05.237 [main] TRACE ReportServiceImpl - Entering deleteReport method in ReportServiceImpl
+2024-10-21 23:58:05.237 [main] DEBUG ReportServiceImpl - Attempting to delete report with id: 1 by technician: tech1
+2024-10-21 23:58:05.245 [main] ERROR ReportServiceImpl - The report with ID 1 could not be found for deletion.
