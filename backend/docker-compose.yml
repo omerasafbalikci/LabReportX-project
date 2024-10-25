@@ -37,7 +37,7 @@ services:
 
   # ELK STACK
   elasticsearch:
-    image: elasticsearch:8.15.2
+    image: elasticsearch:7.17.22
     container_name: elasticsearch
     environment:
       - bootstrap.memory_lock=true
@@ -56,7 +56,7 @@ services:
       - microservices-net
 
   logstash:
-    image: logstash:8.15.2
+    image: logstash:7.17.22
     container_name: logstash
     environment:
       LS_JAVA_OPTS: "-Xmx256m  -Xms256m"
@@ -78,7 +78,7 @@ services:
         condition: service_healthy
 
   kibana:
-    image: kibana:8.15.2
+    image: kibana:7.17.22
     container_name: kibana
     environment:
       ELASTICSEARCH_HOSTS: '["http://elasticsearch:9200"]'
@@ -180,18 +180,6 @@ services:
     restart: always
 
   # MAIN SERVICES
-  config-server:
-    container_name: config-server
-    image: omerasafbalikci/config-server:latest
-    ports:
-      - "8888:8888"
-    volumes:
-      - ./logs:/logs
-    environment:
-      - SPRING_PROFILES_ACTIVE=native
-    networks:
-      - microservices-net
-
   discovery-server:
     container_name: discovery-server
     image: omerasafbalikci/discovery-server:latest
@@ -204,12 +192,24 @@ services:
     networks:
       - microservices-net
     depends_on:
-      config-server:
-        condition: service_started
       logstash:
         condition: service_healthy
       zipkin:
         condition: service_started
+
+  config-server:
+    container_name: config-server
+    image: omerasafbalikci/config-server:latest
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./logs:/logs
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - microservices-net
+    depends_on:
+      - discovery-server
 
   api-gateway:
     container_name: api-gateway
@@ -223,10 +223,8 @@ services:
     networks:
       - microservices-net
     depends_on:
-      discovery-server:
-        condition: service_started
-      redis:
-        condition: service_started
+      - config-server
+      - redis
 
   auth-service:
     container_name: auth-service
@@ -238,12 +236,9 @@ services:
     networks:
       - microservices-net
     depends_on:
-      api-gateway:
-        condition: service_started
-      rabbitmq:
-        condition: service_started
-      postgres-auth:
-        condition: service_started
+      - api-gateway
+      - rabbitmq
+      - postgres-auth
 
   user-service:
     container_name: user-service
@@ -255,12 +250,9 @@ services:
     networks:
       - microservices-net
     depends_on:
-      api-gateway:
-        condition: service_started
-      auth-service:
-        condition: service_started
-      postgres-user:
-        condition: service_started
+      - api-gateway
+      - auth-service
+      - postgres-user
 
   patient-service:
     container_name: patient-service
@@ -272,10 +264,8 @@ services:
     networks:
       - microservices-net
     depends_on:
-      postgres-patient:
-        condition: service_started
-      api-gateway:
-        condition: service_started
+      - api-gateway
+      - postgres-patient
 
   report-service:
     container_name: report-service
@@ -287,12 +277,9 @@ services:
     networks:
       - microservices-net
     depends_on:
-      postgres-report:
-        condition: service_started
-      patient-service:
-        condition: service_started
-      api-gateway:
-        condition: service_started
+      - api-gateway
+      - postgres-report
+      - patient-service
 
 networks:
   microservices-net:
