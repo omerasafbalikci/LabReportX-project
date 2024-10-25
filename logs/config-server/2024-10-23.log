@@ -1,0 +1,117 @@
+2024-10-23 02:40:52.334 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-10-23 02:40:52.398 [main] INFO  ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.11 with PID 8348 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\config-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-23 02:40:52.398 [main] DEBUG ConfigServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-10-23 02:40:52.398 [main] INFO  ConfigServerApplication - The following 1 profile is active: "git"
+2024-10-23 02:40:53.914 [main] INFO  GenericScope - BeanFactory id=442ac13c-5b8d-3a08-b4ca-eae7936efa4c
+2024-10-23 02:40:54.337 [main] INFO  TomcatWebServer - Tomcat initialized with port 8888 (http)
+2024-10-23 02:40:54.352 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-23 02:40:54.368 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-23 02:40:54.368 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-23 02:40:54.430 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 02:40:54.430 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1948 ms
+2024-10-23 02:41:02.649 [main] INFO  EndpointLinksResolver - Exposing 17 endpoints beneath base path '/actuator'
+2024-10-23 02:41:02.712 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-23 02:41:02.728 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-10-23 02:41:03.800 [main] INFO  ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-23 02:41:03.831 [main] ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8888 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8888 or configure this application to listen on another port.
+
+2024-10-23 02:46:46.103 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-10-23 02:46:46.189 [main] INFO  ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.11 with PID 15076 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\config-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-23 02:46:46.189 [main] DEBUG ConfigServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-10-23 02:46:46.189 [main] INFO  ConfigServerApplication - The following 1 profile is active: "git"
+2024-10-23 02:46:47.808 [main] INFO  GenericScope - BeanFactory id=a28324e9-68a8-3d01-a64d-473499cd2c74
+2024-10-23 02:46:48.185 [main] INFO  TomcatWebServer - Tomcat initialized with port 8888 (http)
+2024-10-23 02:46:48.200 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-23 02:46:48.200 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-23 02:46:48.200 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-23 02:46:48.279 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 02:46:48.279 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1984 ms
+2024-10-23 02:47:02.715 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-23 02:47:02.762 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-23 02:47:02.778 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-10-23 02:47:03.819 [main] INFO  ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-23 02:47:03.851 [main] ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8888 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8888 or configure this application to listen on another port.
+
+2024-10-23 02:48:58.491 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-10-23 02:48:58.563 [main] INFO  ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.11 with PID 9236 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\config-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-23 02:48:58.563 [main] DEBUG ConfigServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-10-23 02:48:58.563 [main] INFO  ConfigServerApplication - The following 1 profile is active: "git"
+2024-10-23 02:49:00.208 [main] INFO  GenericScope - BeanFactory id=a28324e9-68a8-3d01-a64d-473499cd2c74
+2024-10-23 02:49:00.679 [main] INFO  TomcatWebServer - Tomcat initialized with port 8888 (http)
+2024-10-23 02:49:00.695 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-23 02:49:00.710 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-23 02:49:00.710 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-23 02:49:00.804 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 02:49:00.804 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2081 ms
+2024-10-23 02:49:10.461 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-23 02:49:10.508 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-23 02:49:10.524 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-10-23 02:49:11.560 [main] INFO  ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-23 02:49:11.591 [main] ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8888 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8888 or configure this application to listen on another port.
+
+2024-10-23 02:50:41.084 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-10-23 02:50:41.800 [main] INFO  ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.11 with PID 15384 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\config-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-23 02:50:41.800 [main] DEBUG ConfigServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-10-23 02:50:41.800 [main] INFO  ConfigServerApplication - The following 1 profile is active: "git"
+2024-10-23 02:50:43.521 [main] INFO  GenericScope - BeanFactory id=a28324e9-68a8-3d01-a64d-473499cd2c74
+2024-10-23 02:50:43.994 [main] INFO  TomcatWebServer - Tomcat initialized with port 8888 (http)
+2024-10-23 02:50:44.010 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-23 02:50:44.010 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-23 02:50:44.010 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-23 02:50:44.089 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 02:50:44.089 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2211 ms
+2024-10-23 02:50:50.375 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-23 02:50:50.422 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-23 02:50:50.453 [main] INFO  TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
+2024-10-23 02:50:50.657 [main] INFO  ConfigServerApplication - Started ConfigServerApplication in 10.457 seconds (process running for 14.849)
+2024-10-23 02:51:11.347 [http-nio-8888-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-23 02:51:11.347 [http-nio-8888-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-23 02:51:11.347 [http-nio-8888-exec-1] INFO  DispatcherServlet - Completed initialization in 0 ms
+2024-10-23 02:51:13.009 [http-nio-8888-exec-1] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-15681046079722553749\backend\config\discovery-server.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-15681046079722553749/backend/config/'
+2024-10-23 02:51:56.691 [http-nio-8888-exec-2] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-15681046079722553749\backend\config\api-gateway.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-15681046079722553749/backend/config/'
+2024-10-23 02:52:49.286 [http-nio-8888-exec-5] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-15681046079722553749\backend\config\api-gateway.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-15681046079722553749/backend/config/'
+2024-10-23 02:54:04.601 [http-nio-8888-exec-7] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-15681046079722553749\backend\config\auth-service.properties]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-15681046079722553749/backend/config/'
+2024-10-23 02:54:04.601 [http-nio-8888-exec-7] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-15681046079722553749\backend\config\auth-service.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-15681046079722553749/backend/config/'
+2024-10-23 02:58:17.107 [Thread-2] WARN  MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\omera\AppData\Local\Temp\config-repo-15681046079722553749\.git\objects\pack\pack-72112649565cde166ff8bb928906feda5e9f9947.idx

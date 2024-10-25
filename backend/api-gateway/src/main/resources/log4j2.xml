@@ -5,8 +5,7 @@
         <Property name="LOG_DIR">logs</Property>
         <Property name="SERVICE">api-gateway</Property>
         <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %c{1} - %msg%n</Property>
-        <Property name="CONSOLE_LOG_PATTERN">%style{%d{yyyy-MM-dd HH:mm:ss.SSS}}{bright,cyan}
-            [%style{%thread}{bright,green}] %highlight{%-5level} %style{%c{1}}{bright,yellow} - %msg%n
+        <Property name="CONSOLE_LOG_PATTERN">%style{%d{yyyy-MM-dd HH:mm:ss.SSS}}{bright,cyan} [%style{%thread}{bright,green}] %highlight{%-5level} %style{%c{1}}{bright,yellow} - %msg%n
         </Property>
         <Property name="CURRENT_DATE">${date:yyyy-MM-dd}</Property>
     </Properties>
@@ -25,12 +24,6 @@
                 <TimeBasedTriggeringPolicy/>
                 <SizeBasedTriggeringPolicy size="10MB"/>
             </Policies>
-            <DefaultRolloverStrategy max="5">
-                <Delete basePath="${LOG_DIR}" maxDepth="2">
-                    <IfFileName glob="*/api-gateway.*.log.gz"/>
-                    <IfLastModified age="P30D"/>
-                </Delete>
-            </DefaultRolloverStrategy>
         </RollingFile>
 
         <!-- Logstash Appender -->

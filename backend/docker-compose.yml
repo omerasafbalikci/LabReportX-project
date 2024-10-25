@@ -8,7 +8,7 @@ services:
     ports:
       - "80:80"
     networks:
-      - nginx
+      - microservices-net
     depends_on:
       - api-gateway
 
@@ -20,13 +20,8 @@ services:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
-    healthcheck:
-      test: [ "CMD-SHELL", "wget --spider http://localhost:9090 || exit 1" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
     networks:
-      - monitoring
+      - microservices-net
 
   # GRAFANA
   grafana:
@@ -37,13 +32,8 @@ services:
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
-    healthcheck:
-      test: [ "CMD-SHELL", "wget --spider http://localhost:3000/api/health || exit 1" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
     networks:
-      - monitoring
+      - microservices-net
 
   # ELK STACK
   elasticsearch:
@@ -63,7 +53,7 @@ services:
       retries: 10
       start_period: 30s
     networks:
-      - elk-stack
+      - microservices-net
 
   logstash:
     image: logstash:8.15.2
@@ -82,7 +72,7 @@ services:
       retries: 15
       start_period: 30s
     networks:
-      - elk-stack
+      - microservices-net
     depends_on:
       elasticsearch:
         condition: service_healthy
@@ -95,7 +85,7 @@ services:
     ports:
       - "5601:5601"
     networks:
-      - elk-stack
+      - microservices-net
     depends_on:
       elasticsearch:
         condition: service_healthy
@@ -110,7 +100,7 @@ services:
       - ./redis:/data
     command: --port 6380
     networks:
-      - redis
+      - microservices-net
     restart: always
 
   # RABBITMQ
@@ -120,7 +110,7 @@ services:
     ports:
       - "5672:5672"
     networks:
-      - rabbitmq
+      - microservices-net
     restart: always
 
   # ZIPKIN
@@ -130,8 +120,7 @@ services:
     ports:
       - "9411:9411"
     networks:
-      - tracing
-    restart: always
+      - microservices-net
 
   # POSTGRES DATABASES
   postgres-auth:
@@ -145,7 +134,7 @@ services:
       - "5433:5433"
     command: -p 5433
     networks:
-      - postgres
+      - microservices-net
     restart: always
 
   postgres-user:
@@ -159,7 +148,7 @@ services:
       - "5434:5434"
     command: -p 5434
     networks:
-      - postgres
+      - microservices-net
     restart: always
 
   postgres-patient:
@@ -173,7 +162,7 @@ services:
       - "5435:5435"
     command: -p 5435
     networks:
-      - postgres
+      - microservices-net
     restart: always
 
   postgres-report:
@@ -187,7 +176,7 @@ services:
       - "5436:5436"
     command: -p 5436
     networks:
-      - postgres
+      - microservices-net
     restart: always
 
   # MAIN SERVICES
@@ -198,25 +187,35 @@ services:
       - "8888:8888"
     volumes:
       - ./logs:/logs
+    environment:
+      - SPRING_APPLICATION_NAME=config-server
+      - SPRING_CLOUD_CONFIG_SERVER_GIT_URI=https://github.com/omerasafbalikci/LabReportX-project.git
+      - SPRING_CLOUD_CONFIG_SERVER_GIT_SEARCH_PATHS=backend/config
+      - SPRING_CLOUD_CONFIG_SERVER_GIT_CLONE_ON_START=true
     networks:
-      - elk-stack
+      - microservices-net
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8888/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   discovery-server:
     container_name: discovery-server
     image: omerasafbalikci/discovery-server:latest
     environment:
+      - SPRING_APPLICATION_NAME=discovery-server
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
     ports:
       - "8761:8761"
     volumes:
       - ./logs:/logs
     networks:
-      - elk-stack
-      - discovery
-      - tracing
+      - microservices-net
     depends_on:
       config-server:
-        condition: service_started
+        condition: service_healthy
       logstash:
         condition: service_healthy
       zipkin:
@@ -226,99 +225,95 @@ services:
     container_name: api-gateway
     image: omerasafbalikci/api-gateway:latest
     environment:
+      - SPRING_APPLICATION_NAME=api-gateway
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
     ports:
       - "8080"
     volumes:
       - ./logs:/logs
     networks:
-      - elk-stack
-      - discovery
-      - tracing
-      - redis
-      - nginx
+      - microservices-net
     depends_on:
-      - discovery-server
-      - redis
+      discovery-server:
+        condition: service_healthy
+      redis:
+        condition: service_started
 
   auth-service:
     container_name: auth-service
     image: omerasafbalikci/auth-service:latest
     environment:
+      - SPRING_APPLICATION_NAME=auth-service
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
     volumes:
       - ./logs:/logs
     networks:
-      - elk-stack
-      - discovery
-      - postgres
-      - tracing
-      - redis
-      - rabbitmq
+      - microservices-net
     depends_on:
-      - api-gateway
-      - rabbitmq
-      - postgres-auth
+      api-gateway:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+      postgres-auth:
+        condition: service_started
 
   user-service:
     container_name: user-service
     image: omerasafbalikci/user-management-service:latest
     environment:
+      - SPRING_APPLICATION_NAME=user-service
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
     volumes:
       - ./logs:/logs
     networks:
-      - elk-stack
-      - discovery
-      - postgres
-      - tracing
-      - rabbitmq
+      - microservices-net
     depends_on:
-      - api-gateway
-      - auth-service
-      - postgres-user
+      api-gateway:
+        condition: service_healthy
+      auth-service:
+        condition: service_healthy
+      postgres-user:
+        condition: service_started
 
   patient-service:
     container_name: patient-service
     image: omerasafbalikci/patient-service:latest
     environment:
+      - SPRING_APPLICATION_NAME=patient-service
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
     volumes:
       - ./logs:/logs
     networks:
-      - elk-stack
-      - discovery
-      - postgres
-      - redis
-      - tracing
+      - microservices-net
     depends_on:
-      - postgres-patient
-      - api-gateway
+      postgres-patient:
+        condition: service_started
+      api-gateway:
+        condition: service_healthy
 
   report-service:
     container_name: report-service
     image: omerasafbalikci/report-service:latest
     environment:
+      - SPRING_APPLICATION_NAME=report-service
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
     volumes:
       - ./logs:/logs
     networks:
-      - elk-stack
-      - discovery
-      - postgres
-      - redis
-      - tracing
+      - microservices-net
     depends_on:
-      - postgres-report
-      - patient-service
-      - api-gateway
+      postgres-report:
+        condition: service_started
+      patient-service:
+        condition: service_healthy
+      api-gateway:
+        condition: service_healthy
 
 networks:
-  discovery:
-  nginx:
-  elk-stack:
-  postgres:
-  redis:
-  tracing:
-  monitoring:
-  rabbitmq:
+  microservices-net:
+    driver: bridge
