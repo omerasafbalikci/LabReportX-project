@@ -188,25 +188,15 @@ services:
     volumes:
       - ./logs:/logs
     environment:
-      - SPRING_APPLICATION_NAME=config-server
-      - SPRING_CLOUD_CONFIG_SERVER_GIT_URI=https://github.com/omerasafbalikci/LabReportX-project.git
-      - SPRING_CLOUD_CONFIG_SERVER_GIT_SEARCH_PATHS=backend/config
-      - SPRING_CLOUD_CONFIG_SERVER_GIT_CLONE_ON_START=true
+      - SPRING_PROFILES_ACTIVE=native
     networks:
       - microservices-net
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8888/actuator/health" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
 
   discovery-server:
     container_name: discovery-server
     image: omerasafbalikci/discovery-server:latest
     environment:
-      - SPRING_APPLICATION_NAME=discovery-server
       - SPRING_PROFILES_ACTIVE=docker
-      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
     ports:
       - "8761:8761"
     volumes:
@@ -215,7 +205,7 @@ services:
       - microservices-net
     depends_on:
       config-server:
-        condition: service_healthy
+        condition: service_started
       logstash:
         condition: service_healthy
       zipkin:
@@ -225,9 +215,7 @@ services:
     container_name: api-gateway
     image: omerasafbalikci/api-gateway:latest
     environment:
-      - SPRING_APPLICATION_NAME=api-gateway
       - SPRING_PROFILES_ACTIVE=docker
-      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
     ports:
       - "8080"
     volumes:
@@ -236,7 +224,7 @@ services:
       - microservices-net
     depends_on:
       discovery-server:
-        condition: service_healthy
+        condition: service_started
       redis:
         condition: service_started
 
@@ -244,16 +232,14 @@ services:
     container_name: auth-service
     image: omerasafbalikci/auth-service:latest
     environment:
-      - SPRING_APPLICATION_NAME=auth-service
       - SPRING_PROFILES_ACTIVE=docker
-      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
     volumes:
       - ./logs:/logs
     networks:
       - microservices-net
     depends_on:
       api-gateway:
-        condition: service_healthy
+        condition: service_started
       rabbitmq:
         condition: service_started
       postgres-auth:
@@ -263,18 +249,16 @@ services:
     container_name: user-service
     image: omerasafbalikci/user-management-service:latest
     environment:
-      - SPRING_APPLICATION_NAME=user-service
       - SPRING_PROFILES_ACTIVE=docker
-      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
     volumes:
       - ./logs:/logs
     networks:
       - microservices-net
     depends_on:
       api-gateway:
-        condition: service_healthy
+        condition: service_started
       auth-service:
-        condition: service_healthy
+        condition: service_started
       postgres-user:
         condition: service_started
 
@@ -282,9 +266,7 @@ services:
     container_name: patient-service
     image: omerasafbalikci/patient-service:latest
     environment:
-      - SPRING_APPLICATION_NAME=patient-service
       - SPRING_PROFILES_ACTIVE=docker
-      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
     volumes:
       - ./logs:/logs
     networks:
@@ -293,15 +275,13 @@ services:
       postgres-patient:
         condition: service_started
       api-gateway:
-        condition: service_healthy
+        condition: service_started
 
   report-service:
     container_name: report-service
     image: omerasafbalikci/report-service:latest
     environment:
-      - SPRING_APPLICATION_NAME=report-service
       - SPRING_PROFILES_ACTIVE=docker
-      - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
     volumes:
       - ./logs:/logs
     networks:
@@ -310,9 +290,9 @@ services:
       postgres-report:
         condition: service_started
       patient-service:
-        condition: service_healthy
+        condition: service_started
       api-gateway:
-        condition: service_healthy
+        condition: service_started
 
 networks:
   microservices-net:

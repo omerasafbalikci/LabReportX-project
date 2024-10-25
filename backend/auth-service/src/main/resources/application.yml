@@ -2,4 +2,4 @@ spring:
   application:
     name: auth-service
   config:
-    import: "http://localhost:8888"
+    import: "configserver:http://localhost:8888"
