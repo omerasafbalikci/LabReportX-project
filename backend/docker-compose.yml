@@ -180,23 +180,6 @@ services:
     restart: always
 
   # MAIN SERVICES
-  discovery-server:
-    container_name: discovery-server
-    image: omerasafbalikci/discovery-server:latest
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    ports:
-      - "8761:8761"
-    volumes:
-      - ./logs:/logs
-    networks:
-      - microservices-net
-    depends_on:
-      logstash:
-        condition: service_healthy
-      zipkin:
-        condition: service_started
-
   config-server:
     container_name: config-server
     image: omerasafbalikci/config-server:latest
@@ -209,7 +192,24 @@ services:
     networks:
       - microservices-net
     depends_on:
-      - discovery-server
+      logstash:
+        condition: service_healthy
+      zipkin:
+        condition: service_started
+
+  discovery-server:
+    container_name: discovery-server
+    image: omerasafbalikci/discovery-server:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "8761:8761"
+    volumes:
+      - ./logs:/logs
+    networks:
+      - microservices-net
+    depends_on:
+      - config-server
 
   api-gateway:
     container_name: api-gateway

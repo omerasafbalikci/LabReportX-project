@@ -58,3 +58,118 @@
 2024-10-27 22:52:08.285 [main] INFO  TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
 2024-10-27 22:52:09.453 [main] INFO  InetUtils - Cannot determine local hostname
 2024-10-27 22:52:09.506 [main] INFO  ConfigServerApplication - Started ConfigServerApplication in 8.428 seconds (process running for 19.511)
+2024-10-27 22:57:41.411 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-10-27 22:57:41.468 [main] INFO  ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.11 with PID 1040 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\config-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-27 22:57:41.468 [main] DEBUG ConfigServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-10-27 22:57:41.469 [main] INFO  ConfigServerApplication - The following 1 profile is active: "native"
+2024-10-27 22:57:42.915 [main] INFO  GenericScope - BeanFactory id=2fc91f19-d22d-343b-a7d5-ee90c77798f9
+2024-10-27 22:57:43.326 [main] INFO  TomcatWebServer - Tomcat initialized with port 8888 (http)
+2024-10-27 22:57:43.341 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-27 22:57:43.344 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-27 22:57:43.345 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-27 22:57:43.415 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-27 22:57:43.417 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1885 ms
+2024-10-27 22:57:45.663 [main] INFO  InetUtils - Cannot determine local hostname
+2024-10-27 22:57:45.884 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-27 22:57:45.935 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-27 22:57:45.963 [main] INFO  TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
+2024-10-27 22:57:47.110 [main] INFO  InetUtils - Cannot determine local hostname
+2024-10-27 22:57:47.173 [main] INFO  ConfigServerApplication - Started ConfigServerApplication in 7.39 seconds (process running for 18.349)
+2024-10-27 22:58:34.403 [http-nio-8888-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-27 22:58:34.403 [http-nio-8888-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-27 22:58:34.404 [http-nio-8888-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
+2024-10-27 22:58:34.548 [http-nio-8888-exec-1] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'class path resource [config-repo/discovery-server.yml]' via location 'classpath:/config-repo/'
+2024-10-27 23:21:16.760 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-10-27 23:21:16.814 [main] INFO  ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.11 with PID 6944 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\config-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-27 23:21:16.815 [main] DEBUG ConfigServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-10-27 23:21:16.816 [main] INFO  ConfigServerApplication - The following 1 profile is active: "native"
+2024-10-27 23:21:18.319 [main] INFO  GenericScope - BeanFactory id=2fc91f19-d22d-343b-a7d5-ee90c77798f9
+2024-10-27 23:21:18.730 [main] INFO  TomcatWebServer - Tomcat initialized with port 8888 (http)
+2024-10-27 23:21:18.738 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:21:18.740 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-27 23:21:18.740 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-27 23:21:18.810 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-27 23:21:18.811 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1921 ms
+2024-10-27 23:21:21.038 [main] INFO  InetUtils - Cannot determine local hostname
+2024-10-27 23:21:21.239 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-27 23:21:21.325 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:21:21.361 [main] INFO  TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
+2024-10-27 23:21:22.523 [main] INFO  InetUtils - Cannot determine local hostname
+2024-10-27 23:21:22.577 [main] INFO  ConfigServerApplication - Started ConfigServerApplication in 7.39 seconds (process running for 18.285)
+2024-10-27 23:25:20.389 [http-nio-8888-exec-2] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-27 23:25:20.389 [http-nio-8888-exec-2] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-27 23:25:20.391 [http-nio-8888-exec-2] INFO  DispatcherServlet - Completed initialization in 1 ms
+2024-10-27 23:25:20.513 [http-nio-8888-exec-2] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'class path resource [config-repo/discovery-server.yml]' via location 'classpath:/config-repo/'
+2024-10-27 23:46:06.675 [http-nio-8888-exec-3] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'class path resource [config-repo/api-gateway.yml]' via location 'classpath:/config-repo/'
+2024-10-27 23:46:42.415 [http-nio-8888-exec-4] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'class path resource [config-repo/auth-service.properties]' via location 'classpath:/config-repo/'
+2024-10-27 23:46:42.416 [http-nio-8888-exec-4] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'class path resource [config-repo/auth-service.yml]' via location 'classpath:/config-repo/'
+2024-10-27 23:50:28.999 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-10-27 23:50:29.058 [main] INFO  ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.11 with PID 16352 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\config-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-27 23:50:29.058 [main] DEBUG ConfigServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-10-27 23:50:29.059 [main] INFO  ConfigServerApplication - The following 1 profile is active: "native"
+2024-10-27 23:50:30.521 [main] INFO  GenericScope - BeanFactory id=2fc91f19-d22d-343b-a7d5-ee90c77798f9
+2024-10-27 23:50:30.953 [main] INFO  TomcatWebServer - Tomcat initialized with port 8888 (http)
+2024-10-27 23:50:30.968 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:50:30.972 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-27 23:50:30.972 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-27 23:50:31.042 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-27 23:50:31.044 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1918 ms
+2024-10-27 23:50:33.397 [main] INFO  InetUtils - Cannot determine local hostname
+2024-10-27 23:50:33.618 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-27 23:50:33.697 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-27 23:50:33.722 [main] INFO  TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
+2024-10-27 23:50:34.864 [main] INFO  InetUtils - Cannot determine local hostname
+2024-10-27 23:50:34.917 [main] INFO  ConfigServerApplication - Started ConfigServerApplication in 7.502 seconds (process running for 18.461)
+2024-10-27 23:50:48.933 [http-nio-8888-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-27 23:50:48.933 [http-nio-8888-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-27 23:50:48.934 [http-nio-8888-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
+2024-10-27 23:50:49.080 [http-nio-8888-exec-1] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'class path resource [config-repo/discovery-server.yml]' via location 'classpath:/config-repo/'
+2024-10-27 23:50:50.200 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2024-10-27 23:50:50.201 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Dropped 4 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connect to http://localhost:9411 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information)
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connect to http://localhost:9411 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:830) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:691) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinRestTemplateSender.postSpans(ZipkinRestTemplateSender.java:50) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:68) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:40) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123) ~[zipkin-reporter-3.4.0.jar:?]
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266) [zipkin-reporter-3.4.0.jar:?]
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352) [zipkin-reporter-3.4.0.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:9411 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[?:?]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[?:?]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[?:?]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[?:?]
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91) ~[httpclient5-5.3.1.jar:5.3.1]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[?:?]
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889) ~[spring-web-6.1.12.jar:6.1.12]
+	... 9 more
+2024-10-27 23:52:02.096 [http-nio-8888-exec-3] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'class path resource [config-repo/api-gateway.yml]' via location 'classpath:/config-repo/'

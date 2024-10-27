@@ -1,0 +1,37 @@
+2024-10-28 02:09:54.166 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-10-28 02:09:54.257 [main] INFO  ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.11 with PID 3384 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\config-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-28 02:09:54.258 [main] DEBUG ConfigServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-10-28 02:09:54.260 [main] INFO  ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-28 02:09:55.704 [main] INFO  GenericScope - BeanFactory id=d1b5d9cc-312c-326a-b01c-181780e44dac
+2024-10-28 02:09:56.115 [main] INFO  TomcatWebServer - Tomcat initialized with port 8888 (http)
+2024-10-28 02:09:56.128 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-28 02:09:56.131 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-28 02:09:56.131 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-28 02:09:56.204 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-28 02:09:56.206 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1826 ms
+2024-10-28 02:11:06.892 [main] INFO  InetUtils - Cannot determine local hostname
+2024-10-28 02:11:07.024 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-28 02:11:07.128 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-28 02:11:07.158 [main] INFO  TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
+2024-10-28 02:11:08.308 [main] INFO  InetUtils - Cannot determine local hostname
+2024-10-28 02:11:08.341 [main] INFO  ConfigServerApplication - Started ConfigServerApplication in 75.82 seconds (process running for 87.195)
+2024-10-28 02:12:34.044 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-10-28 02:12:34.118 [main] INFO  ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.11 with PID 8732 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\config-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-10-28 02:12:34.119 [main] DEBUG ConfigServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-10-28 02:12:34.119 [main] INFO  ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-28 02:12:36.236 [main] INFO  GenericScope - BeanFactory id=d1b5d9cc-312c-326a-b01c-181780e44dac
+2024-10-28 02:12:36.706 [main] INFO  TomcatWebServer - Tomcat initialized with port 8888 (http)
+2024-10-28 02:12:36.721 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-10-28 02:12:36.726 [main] INFO  StandardService - Starting service [Tomcat]
+2024-10-28 02:12:36.726 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-28 02:12:36.844 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-10-28 02:12:36.846 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2651 ms
+2024-10-28 02:13:46.616 [main] INFO  InetUtils - Cannot determine local hostname
+2024-10-28 02:13:46.689 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-10-28 02:13:46.753 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2024-10-28 02:13:46.784 [main] INFO  TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
+2024-10-28 02:13:47.931 [main] INFO  InetUtils - Cannot determine local hostname
+2024-10-28 02:13:48.000 [main] INFO  ConfigServerApplication - Started ConfigServerApplication in 75.55 seconds (process running for 86.666)
+2024-10-28 02:15:16.508 [http-nio-8888-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-28 02:15:16.508 [http-nio-8888-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-28 02:15:16.509 [http-nio-8888-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
