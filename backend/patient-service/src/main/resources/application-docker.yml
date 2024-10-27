@@ -2,4 +2,4 @@ spring:
   application:
     name: patient-service
   config:
-    import: "http://config-server:8888"
+    import: "configserver:http://config-server:8888"
