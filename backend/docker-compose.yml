@@ -187,6 +187,7 @@ services:
       - "8888:8888"
     volumes:
       - ./logs:/logs
+      - ./config-repo:/config-repo
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     networks:
@@ -223,7 +224,7 @@ services:
     networks:
       - microservices-net
     depends_on:
-      - config-server
+      - discovery-server
       - redis
 
   auth-service:
