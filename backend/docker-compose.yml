@@ -187,7 +187,6 @@ services:
       - "8888:8888"
     volumes:
       - ./logs:/logs
-      - ./config-repo:/config-repo
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     networks:
