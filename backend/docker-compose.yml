@@ -183,6 +183,7 @@ services:
   config-server:
     container_name: config-server
     image: omerasafbalikci/config-server:latest
+    hostname: localhost
     ports:
       - "8888:8888"
     volumes:
@@ -196,10 +197,13 @@ services:
         condition: service_healthy
       zipkin:
         condition: service_started
+      prometheus:
+        condition: service_started
 
   discovery-server:
     container_name: discovery-server
     image: omerasafbalikci/discovery-server:latest
+    hostname: localhost
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
@@ -209,7 +213,8 @@ services:
     networks:
       - microservices-net
     depends_on:
-      - config-server
+      config-server:
+        condition: service_started
 
   api-gateway:
     container_name: api-gateway
