@@ -1,5 +1,0 @@
-spring:
-  application:
-    name: discovery-server
-  config:
-    import: "configserver:http://config-server:8888"

@@ -121,6 +121,7 @@ services:
       - "9411:9411"
     networks:
       - microservices-net
+    restart: always
 
   # POSTGRES DATABASES
   postgres-auth:
@@ -183,13 +184,10 @@ services:
   config-server:
     container_name: config-server
     image: omerasafbalikci/config-server:latest
-    hostname: localhost
     ports:
       - "8888:8888"
     volumes:
       - ./logs:/logs
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
     networks:
       - microservices-net
     depends_on:
@@ -199,11 +197,16 @@ services:
         condition: service_started
       prometheus:
         condition: service_started
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8888/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
   discovery-server:
     container_name: discovery-server
     image: omerasafbalikci/discovery-server:latest
-    hostname: localhost
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
@@ -214,7 +217,7 @@ services:
       - microservices-net
     depends_on:
       config-server:
-        condition: service_started
+        condition: service_healthy
 
   api-gateway:
     container_name: api-gateway
