@@ -136,8 +136,8 @@ public class ReportController {
      * @param trIdNumber the TR ID number to check
      * @return the ResponseEntity containing the validation message
      */
-    @GetMapping("/check-tr-id")
-    public ResponseEntity<String> checkTrIdNumber(@RequestHeader("X-Username") String username, @RequestParam String trIdNumber) {
+    @PostMapping("/check-tr-id")
+    public ResponseEntity<String> checkTrIdNumber(@RequestHeader("X-Username") String username, @RequestBody String trIdNumber) {
         log.trace("Entering checkTrIdNumber method in ReportController class");
         log.info("Checking TR ID number: {} for user: {}", trIdNumber, username);
         String responseMessage = this.reportService.checkTrIdNumber(username, trIdNumber);
