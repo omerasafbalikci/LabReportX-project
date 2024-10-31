@@ -9,7 +9,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: *
+        include: "*"
   endpoint:
     prometheus:
       enabled: true
