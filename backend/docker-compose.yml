@@ -197,18 +197,10 @@ services:
         condition: service_started
       prometheus:
         condition: service_started
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8888/actuator/health" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
 
   discovery-server:
     container_name: discovery-server
     image: omerasafbalikci/discovery-server:latest
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
     ports:
       - "8761:8761"
     volumes:
@@ -217,7 +209,7 @@ services:
       - microservices-net
     depends_on:
       config-server:
-        condition: service_healthy
+        condition: service_started
 
   api-gateway:
     container_name: api-gateway

@@ -1,6 +1,9 @@
 spring:
   application:
     name: discovery-server
+  cloud:
+    config:
+      label: docker
 
 eureka:
   client:
