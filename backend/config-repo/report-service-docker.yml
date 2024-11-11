@@ -1,3 +1,10 @@
+spring:
+  application:
+    name: report-service
+  cloud:
+    config:
+      label: docker
+
 eureka:
   client:
     serviceUrl:

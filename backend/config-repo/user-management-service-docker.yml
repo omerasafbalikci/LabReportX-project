@@ -1,4 +1,9 @@
 spring:
+  application:
+    name: user-management-service
+  cloud:
+    config:
+      label: docker
   rabbitmq:
     host: rabbitmq
 

@@ -201,6 +201,8 @@ services:
   discovery-server:
     container_name: discovery-server
     image: omerasafbalikci/discovery-server:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
     ports:
       - "8761:8761"
     volumes:
