@@ -12,6 +12,12 @@ eureka:
   instance:
     hostname: api-gateway
 
+route:
+  auth: "lb://auth-service"
+  user: "lb://user-management-service"
+  patient: "lb://patient-service"
+  report: "lb://report-service"
+
 redis:
   host: "redis"
   port: "6380"
