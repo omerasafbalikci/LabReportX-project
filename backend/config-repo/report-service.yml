@@ -19,8 +19,8 @@ prescription:
   font-path:
     light: "fonts/rubik-light.ttf"
   image-path:
-    gemini: "/static/images/gemini.png"
-    symbol: "/static/images/symbol.png"
+    prescription: "/static/images/prescription.png"
+    symbol: "/static/images/sevda.png"
 
 gemini:
   api-key: "AIzaSyBnRN9XgBfxeCFIqUtAv3CsLcAC0uXRwCM"

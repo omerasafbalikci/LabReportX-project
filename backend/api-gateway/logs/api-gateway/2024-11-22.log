@@ -1,0 +1,92 @@
+2024-11-22 10:08:39.938 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-11-22 10:08:39.970 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-11-22 10:08:39.985 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-11-22 10:08:39.985 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-11-22 10:08:39.985 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-11-22 10:08:39.985 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: null
+2024-11-22 10:08:39.985 [main] ERROR AuthGatewayFilterFactory - No roles found in token for user: testuser
+2024-11-22 10:08:40.063 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-11-22 10:08:40.063 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-11-22 10:08:40.063 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-11-22 10:08:40.063 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-11-22 10:08:40.063 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-11-22 10:08:40.063 [main] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:08:40.161 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-11-22 10:08:40.161 [main] INFO  AuthGatewayFilterFactory - Processing request for path: /user/me
+2024-11-22 10:08:40.161 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /user/me
+2024-11-22 10:08:40.161 [main] DEBUG AuthGatewayFilterFactory - Extracted token: ValidToken
+2024-11-22 10:08:40.161 [main] INFO  AuthGatewayFilterFactory - Authenticated user: testuser
+2024-11-22 10:08:40.161 [main] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /user/me
+2024-11-22 10:08:40.161 [main] ERROR AuthGatewayFilterFactory - User testuser does not have sufficient roles for path: /user/me
+2024-11-22 10:08:40.177 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-11-22 10:08:40.177 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-11-22 10:08:40.177 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-11-22 10:08:40.177 [main] ERROR AuthGatewayFilterFactory - Missing or invalid authorization header for request path: null
+2024-11-22 10:08:40.193 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-11-22 10:08:40.193 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-11-22 10:08:40.193 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-11-22 10:08:40.193 [main] DEBUG AuthGatewayFilterFactory - Extracted token: InvalidToken
+2024-11-22 10:08:40.193 [main] ERROR AuthGatewayFilterFactory - Invalid token for request path: null
+2024-11-22 10:08:40.208 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-11-22 10:08:40.208 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-11-22 10:08:40.224 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-11-22 10:08:40.224 [main] ERROR AuthGatewayFilterFactory - Missing or invalid authorization header for request path: null
+2024-11-22 10:08:40.224 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-11-22 10:08:40.239 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-11-22 10:08:40.239 [main] DEBUG AuthGatewayFilterFactory - Request is to a secured route: null
+2024-11-22 10:08:40.239 [main] DEBUG AuthGatewayFilterFactory - Extracted token: LoggedOutToken
+2024-11-22 10:08:40.239 [main] ERROR AuthGatewayFilterFactory - Token is logged out: LoggedOutToken
+2024-11-22 10:08:40.255 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-11-22 10:08:40.255 [main] INFO  AuthGatewayFilterFactory - Processing request for path: null
+2024-11-22 10:08:40.255 [main] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: null
+2024-11-22 10:08:40.795 [main] TRACE FallbackController - Entering fallbackReport method in FallbackController
+2024-11-22 10:08:40.795 [main] ERROR FallbackController - Report service is unavailable, executing fallback method
+2024-11-22 10:08:40.795 [main] TRACE FallbackController - Exiting fallbackReport method in FallbackController
+2024-11-22 10:08:40.810 [main] TRACE FallbackController - Entering fallbackUser method in FallbackController
+2024-11-22 10:08:40.810 [main] ERROR FallbackController - User service is unavailable, executing fallback method
+2024-11-22 10:08:40.810 [main] TRACE FallbackController - Exiting fallbackUser method in FallbackController
+2024-11-22 10:08:40.810 [main] TRACE FallbackController - Entering fallbackAuth method in FallbackController
+2024-11-22 10:08:40.810 [main] ERROR FallbackController - Auth service is unavailable, executing fallback method
+2024-11-22 10:08:40.810 [main] TRACE FallbackController - Exiting fallbackAuth method in FallbackController
+2024-11-22 10:08:40.810 [main] TRACE FallbackController - Entering fallbackPatient method in FallbackController
+2024-11-22 10:08:40.810 [main] ERROR FallbackController - Patient service is unavailable, executing fallback method
+2024-11-22 10:08:40.810 [main] TRACE FallbackController - Exiting fallbackPatient method in FallbackController
+2024-11-22 10:08:41.592 [main] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:08:41.592 [main] DEBUG JwtUtil - Extracting roles from claims: {}
+2024-11-22 10:08:41.592 [main] INFO  JwtUtil - Roles extracted: [ROLE_ADMIN]
+2024-11-22 10:08:41.592 [main] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:08:45.572 [main] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:08:45.572 [main] DEBUG JwtUtil - Checking if token is logged out: nonExistentToken
+2024-11-22 10:08:45.572 [main] ERROR JwtUtil - Token not found in Redis: nonExistentToken
+2024-11-22 10:08:45.572 [main] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:08:45.572 [main] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:08:45.572 [main] DEBUG JwtUtil - Checking if token is logged out: loggedOutToken
+2024-11-22 10:08:45.588 [main] INFO  JwtUtil - Token loggedOutToken logout status: true
+2024-11-22 10:08:45.588 [main] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:08:45.588 [main] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:08:45.588 [main] DEBUG JwtUtil - Checking if token is logged out: token
+2024-11-22 10:08:45.588 [main] ERROR JwtUtil - Logout status information not found for token: token
+2024-11-22 10:08:45.588 [main] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:08:45.604 [main] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:08:45.604 [main] DEBUG JwtUtil - Validating token: null
+2024-11-22 10:08:45.823 [main] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:08:45.823 [main] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:08:45.823 [main] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:08:45.823 [main] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:08:45.885 [main] ERROR JwtUtil - Error while parsing token: CharSequence cannot be null or empty.
+2024-11-22 10:08:45.885 [main] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:08:45.901 [main] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:08:45.901 [main] DEBUG JwtUtil - Checking if token is logged out: notLoggedOutToken
+2024-11-22 10:08:45.901 [main] INFO  JwtUtil - Token notLoggedOutToken logout status: false
+2024-11-22 10:08:45.901 [main] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:08:45.901 [main] TRACE JwtUtil - Initializing Redis connection pool with host: localhost, port: invalidPort
+2024-11-22 10:08:46.120 [main] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:08:46.120 [main] DEBUG JwtUtil - Validating token: invalidToken
+2024-11-22 10:08:46.120 [main] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:08:46.120 [main] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:08:46.120 [main] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:08:46.120 [main] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:08:46.136 [main] ERROR JwtUtil - Error while parsing token: Invalid compact JWT string: Compact JWSs must contain exactly 2 period characters, and compact JWEs must contain exactly 4.  Found: 0
+2024-11-22 10:08:46.136 [main] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:08:46.136 [main] TRACE JwtUtil - Initializing Redis connection pool with host: localhost, port: 6379
+2024-11-22 10:08:46.151 [main] TRACE JwtUtil - Redis connection pool initialized successfully.

@@ -31,8 +31,8 @@ public class PrescriptionService {
     @Value("${prescription.font-path.light}")
     private String LIGHT_FONT_PATH;
 
-    @Value("${prescription.image-path.gemini}")
-    private String GEMINI_IMAGE_PATH;
+    @Value("${prescription.image-path.prescription}")
+    private String PRESCRIPTION_IMAGE_PATH;
 
     @Value("${prescription.image-path.symbol}")
     private String SYMBOL_IMAGE_PATH;
@@ -57,14 +57,14 @@ public class PrescriptionService {
             com.itextpdf.text.Font lightSmall = new com.itextpdf.text.Font(baseFontLight, 12);
 
             log.info("Gemini image is being added to the document.");
-            try (InputStream inputStream = getClass().getResourceAsStream(GEMINI_IMAGE_PATH)) {
+            try (InputStream inputStream = getClass().getResourceAsStream(PRESCRIPTION_IMAGE_PATH)) {
                 if (inputStream != null) {
                     com.itextpdf.text.Image image = com.itextpdf.text.Image.getInstance(IOUtils.toByteArray(inputStream));
                     image.scaleToFit(75, 75);
                     image.setAlignment(com.itextpdf.text.Image.ALIGN_CENTER);
                     document.add(image);
                 } else {
-                    log.warn("Gemini image not found at path: {}", GEMINI_IMAGE_PATH);
+                    log.warn("Gemini image not found at path: {}", PRESCRIPTION_IMAGE_PATH);
                 }
             }
 
