@@ -14,6 +14,23 @@ eureka:
   instance:
     hostname: user-management-service
 
+rabbitmq:
+  exchange: user-exchange
+  queue:
+    create: user-queue-create
+    update: user-queue-update
+    delete: user-queue-delete
+    restore: user-queue-restore
+    addRole: user-queue-add-role
+    removeRole: user-queue-remove-role
+  routingKey:
+    create: user.create
+    update: user.update
+    delete: user.delete
+    restore: user.restore
+    addRole: user.add.role
+    removeRole: user.remove.role
+
 management:
   endpoints:
     web:

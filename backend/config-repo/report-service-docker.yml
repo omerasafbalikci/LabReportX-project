@@ -12,6 +12,21 @@ eureka:
   instance:
     hostname: report-service
 
+pdf:
+  font-path: "fonts/times.ttf"
+  image-path: "/static/images/sevda.png"
+  hospital-name: "SEVDA HASTANESİ"
+
+prescription:
+  font-path:
+    light: "fonts/rubik-light.ttf"
+  image-path:
+    gemini: "/static/images/gemini.png"
+    symbol: "/static/images/symbol.png"
+
+gemini:
+  api-key: "AIzaSyBnRN9XgBfxeCFIqUtAv3CsLcAC0uXRwCM"
+
 management:
   endpoints:
     web:

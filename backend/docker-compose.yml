@@ -197,6 +197,11 @@ services:
         condition: service_started
       prometheus:
         condition: service_started
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8888/actuator/health"]
+      interval: 30s
+      timeout: 60s
+      retries: 5
 
   discovery-server:
     container_name: discovery-server
@@ -211,7 +216,7 @@ services:
       - microservices-net
     depends_on:
       config-server:
-        condition: service_started
+        condition: service_healthy
 
   api-gateway:
     container_name: api-gateway
@@ -219,7 +224,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
-      - "8080"
+      - "8080:8080"
     volumes:
       - ./logs:/logs
     networks:

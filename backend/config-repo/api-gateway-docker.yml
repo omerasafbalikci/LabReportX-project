@@ -12,6 +12,10 @@ eureka:
   instance:
     hostname: api-gateway
 
+jwt:
+  secret-key: "6bc18dff62463c49343d083ae0e523fbfb88d4d45b4a9cb62e86d0c53bd9b870"
+  authorities-key: "roles"
+
 route:
   auth: "lb://auth-service"
   user: "lb://user-management-service"
@@ -21,6 +25,8 @@ route:
 redis:
   host: "redis"
   port: "6380"
+
+circuit-breaker-name: "circuit-breaker"
 
 management:
   endpoints:
