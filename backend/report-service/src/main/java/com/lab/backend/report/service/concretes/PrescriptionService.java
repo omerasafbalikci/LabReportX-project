@@ -5,6 +5,7 @@ import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.lab.backend.report.utilities.exceptions.UnexpectedException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.IOUtils;
@@ -60,7 +61,7 @@ public class PrescriptionService {
             try (InputStream inputStream = getClass().getResourceAsStream(PRESCRIPTION_IMAGE_PATH)) {
                 if (inputStream != null) {
                     com.itextpdf.text.Image image = com.itextpdf.text.Image.getInstance(IOUtils.toByteArray(inputStream));
-                    image.scaleToFit(75, 75);
+                    image.scaleToFit(100, 100);
                     image.setAlignment(com.itextpdf.text.Image.ALIGN_CENTER);
                     document.add(image);
                 } else {
@@ -92,7 +93,7 @@ public class PrescriptionService {
                     try (InputStream symbolInputStream = getClass().getResourceAsStream(SYMBOL_IMAGE_PATH)) {
                         if (symbolInputStream != null) {
                             com.itextpdf.text.Image symbolImage = com.itextpdf.text.Image.getInstance(IOUtils.toByteArray(symbolInputStream));
-                            symbolImage.scaleToFit(10, 10);
+                            symbolImage.scaleToFit(15, 15);
                             symbolImage.setSpacingBefore(10f);
 
                             PdfPCell leftCell = new PdfPCell(symbolImage);
@@ -122,7 +123,7 @@ public class PrescriptionService {
             return byteArrayOutputStream.toByteArray();
         } catch (DocumentException | IOException e) {
             log.error("Error generating prescription PDF", e);
-            return null;
+            throw new UnexpectedException("Error generating prescription PDF");
         }
     }
 }

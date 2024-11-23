@@ -72,19 +72,56 @@ public class PdfUtil {
             document.add(title);
             document.add(new Paragraph(" "));
 
-            document.add(new Paragraph("Tarih              : " + reportResponse.getDate(), light));
-            document.add(new Paragraph("Dosya Numarası     : " + reportResponse.getFileNumber(), light));
+            PdfPTable table = new PdfPTable(2);
+            table.setWidthPercentage(100);
 
-            document.add(hyphens);
-            Paragraph patientInfoTitle = new Paragraph("HASTA BİLGİLERİ", boldSmall);
-            document.add(patientInfoTitle);
-            document.add(new Paragraph("Adı                : " + patientResponse.getFirstName(), light));
-            document.add(new Paragraph("Soyadı             : " + patientResponse.getLastName(), light));
-            document.add(new Paragraph("TC Kimlik No       : " + patientResponse.getTrIdNumber(), light));
-            document.add(new Paragraph("Doğum Tarihi       : " + patientResponse.getBirthDate(), light));
-            document.add(new Paragraph("Cinsiyet           : " + patientResponse.getGender(), light));
-            document.add(new Paragraph("Kan Grubu          : " + patientResponse.getBloodType(), light));
-            document.add(new Paragraph("Telefon Numarası   : " + patientResponse.getPhoneNumber(), light));
+            float[] columnWidths = {2f, 5f};
+            table.setWidths(columnWidths);
+
+            table.addCell(createCell("Tarih", light));
+            table.addCell(createCell(": " + reportResponse.getDate(), light));
+
+            table.addCell(createCell("Dosya Numarası", light));
+            table.addCell(createCell(": " + reportResponse.getFileNumber(), light));
+
+            PdfPCell hyphensCell = new PdfPCell(new Paragraph("-----------------------------------------------------------------------------------------------------------------------------------------------------------", hyphen));
+            hyphensCell.setColspan(2);
+            hyphensCell.setBorder(Rectangle.NO_BORDER);
+            hyphensCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(hyphensCell);
+
+            PdfPCell headerCell = new PdfPCell(new Paragraph("HASTA BİLGİLERİ", boldSmall));
+            headerCell.setColspan(2);
+            headerCell.setHorizontalAlignment(Element.ALIGN_LEFT);
+            headerCell.setPadding(10);
+            headerCell.setPaddingTop(5);
+            headerCell.setPaddingBottom(5);
+            headerCell.setPaddingLeft(3);
+            headerCell.setBorder(Rectangle.NO_BORDER);
+            table.addCell(headerCell);
+
+            table.addCell(createCell("Adı", light));
+            table.addCell(createCell(": " + patientResponse.getFirstName(), light));
+
+            table.addCell(createCell("Soyadı", light));
+            table.addCell(createCell(": " + patientResponse.getLastName(), light));
+
+            table.addCell(createCell("TC Kimlik No", light));
+            table.addCell(createCell(": " + patientResponse.getTrIdNumber(), light));
+
+            table.addCell(createCell("Doğum Tarihi", light));
+            table.addCell(createCell(": " + patientResponse.getBirthDate(), light));
+
+            table.addCell(createCell("Cinsiyet", light));
+            table.addCell(createCell(": " + patientResponse.getGender(), light));
+
+            table.addCell(createCell("Kan Grubu", light));
+            table.addCell(createCell(": " + patientResponse.getBloodType(), light));
+
+            table.addCell(createCell("Telefon Numarası", light));
+            table.addCell(createCell(": " + patientResponse.getPhoneNumber(), light));
+
+            document.add(table);
 
             document.add(hyphens);
             Paragraph diagnosisTitle = new Paragraph("TANI", boldSmall);
@@ -96,12 +133,11 @@ public class PdfUtil {
             PdfPTable diagnosisTable = new PdfPTable(1);
             diagnosisTable.setWidthPercentage(100);
             PdfPCell diagnosisDetailsCell = new PdfPCell(new Paragraph(reportResponse.getDiagnosisDetails(), light));
-            diagnosisDetailsCell.setFixedHeight(50);
+            diagnosisDetailsCell.setFixedHeight(60);
             diagnosisDetailsCell.setVerticalAlignment(Element.ALIGN_TOP);
             diagnosisDetailsCell.setBorder(Rectangle.NO_BORDER);
             diagnosisTable.addCell(diagnosisDetailsCell);
             document.add(diagnosisTable);
-            document.add(new Paragraph(" "));
 
             if (reportResponse.getPhotoPath() != null) {
                 Image photo = Image.getInstance(reportResponse.getPhotoPath());
@@ -122,17 +158,17 @@ public class PdfUtil {
             document.add(technician);
             document.add(new Paragraph(" "));
 
-            PdfPTable table = new PdfPTable(1);
+            PdfPTable table1 = new PdfPTable(1);
             PdfPCell cell = new PdfPCell();
             cell.setFixedHeight(50);
             cell.setBorderWidth(1);
             cell.setBorder(Rectangle.BOX);
             cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
             cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-            table.setWidthPercentage(20);
-            table.setHorizontalAlignment(Element.ALIGN_RIGHT);
-            table.addCell(cell);
-            document.add(table);
+            table1.setWidthPercentage(20);
+            table1.setHorizontalAlignment(Element.ALIGN_RIGHT);
+            table1.addCell(cell);
+            document.add(table1);
             document.add(new Paragraph(" "));
             document.add(new Paragraph(" "));
 
@@ -157,5 +193,11 @@ public class PdfUtil {
             log.error("Error occurred while generating PDF for report: {} and patient: {}", reportResponse.getFileNumber(), patientResponse.getTrIdNumber(), e);
             throw new UnexpectedException("Error occurred while generating the PDF document" + e);
         }
+    }
+
+    PdfPCell createCell(String content, Font font) {
+        PdfPCell cell = new PdfPCell(new Paragraph(content, font));
+        cell.setBorder(Rectangle.NO_BORDER);
+        return cell;
     }
 }

@@ -1,0 +1,729 @@
+2024-11-22 10:12:09.427 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-22 10:12:09.507 [main] INFO  ApiGatewayApplication - Starting ApiGatewayApplication using Java 17.0.11 with PID 7912 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\api-gateway\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-11-22 10:12:09.507 [main] DEBUG ApiGatewayApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-11-22 10:12:09.507 [main] INFO  ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2024-11-22 10:12:09.570 [main] INFO  ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-11-22 10:12:09.570 [main] INFO  ConfigServerConfigDataLoader - Located environment: name=api-gateway, profiles=[default], label=null, version=75c0745c586672c0710f7b70d38798946ae35dc2, state=null
+2024-11-22 10:12:11.746 [main] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-22 10:12:11.746 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-22 10:12:11.792 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2024-11-22 10:12:12.340 [main] INFO  GenericScope - BeanFactory id=6f432307-047c-3c0e-babd-e966faf517ec
+2024-11-22 10:12:12.451 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-11-22 10:12:12.451 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-11-22 10:12:12.451 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-11-22 10:12:12.465 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-11-22 10:12:12.465 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-11-22 10:12:12.949 [main] TRACE JwtUtil - Initializing Redis connection pool with host: localhost, port: 6379
+2024-11-22 10:12:12.981 [main] TRACE JwtUtil - Redis connection pool initialized successfully.
+2024-11-22 10:12:13.012 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-11-22 10:12:13.211 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-11-22 10:12:13.211 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-11-22 10:12:13.211 [main] TRACE AuthGatewayFilterFactory - Entering apply method in AuthGatewayFilterFactory class
+2024-11-22 10:12:15.335 [main] INFO  InetUtils - Cannot determine local hostname
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2024-11-22 10:12:15.683 [main] INFO  RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2024-11-22 10:12:17.069 [main] INFO  InetUtils - Cannot determine local hostname
+2024-11-22 10:12:18.284 [main] INFO  InetUtils - Cannot determine local hostname
+2024-11-22 10:12:18.350 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-11-22 10:12:18.751 [main] INFO  DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-11-22 10:12:18.782 [main] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-11-22 10:12:18.866 [main] INFO  InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-11-22 10:12:18.944 [main] INFO  DiscoveryClient - Initializing Eureka in region us-east-1
+2024-11-22 10:12:18.944 [main] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-11-22 10:12:18.975 [main] INFO  DiscoveryClient - Disable delta property : false
+2024-11-22 10:12:18.975 [main] INFO  DiscoveryClient - Single vip registry refresh property : null
+2024-11-22 10:12:18.975 [main] INFO  DiscoveryClient - Force full registry fetch : false
+2024-11-22 10:12:18.975 [main] INFO  DiscoveryClient - Application is null : false
+2024-11-22 10:12:18.975 [main] INFO  DiscoveryClient - Registered Applications size is zero : true
+2024-11-22 10:12:18.975 [main] INFO  DiscoveryClient - Application version is -1: true
+2024-11-22 10:12:18.975 [main] INFO  DiscoveryClient - Getting all instance registry info from the eureka server
+2024-11-22 10:12:19.766 [main] INFO  DiscoveryClient - The response status is 200
+2024-11-22 10:12:19.782 [main] INFO  DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-11-22 10:12:19.782 [main] INFO  InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-11-22 10:12:19.797 [main] INFO  DiscoveryClient - Discovery Client initialized at timestamp 1732259539797 with initial instances count: 0
+2024-11-22 10:12:19.797 [main] INFO  EurekaServiceRegistry - Registering application API-GATEWAY with eureka with status UP
+2024-11-22 10:12:19.797 [main] INFO  DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1732259539797, current=UP, previous=STARTING]
+2024-11-22 10:12:19.813 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_API-GATEWAY/localhost:api-gateway:8080: registering service...
+2024-11-22 10:12:19.990 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_API-GATEWAY/localhost:api-gateway:8080 - registration status: 204
+2024-11-22 10:12:20.151 [main] INFO  NettyWebServer - Netty started on port 8080 (http)
+2024-11-22 10:12:20.166 [main] INFO  EurekaAutoServiceRegistration - Updating port to 8080
+2024-11-22 10:12:20.597 [main] INFO  ApiGatewayApplication - Started ApiGatewayApplication in 13.948 seconds (process running for 25.852)
+2024-11-22 10:12:49.795 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Disable delta property : false
+2024-11-22 10:12:49.797 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Single vip registry refresh property : null
+2024-11-22 10:12:49.798 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Force full registry fetch : false
+2024-11-22 10:12:49.798 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Application is null : false
+2024-11-22 10:12:49.798 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Registered Applications size is zero : true
+2024-11-22 10:12:49.798 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Application version is -1: false
+2024-11-22 10:12:49.798 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - Getting all instance registry info from the eureka server
+2024-11-22 10:12:49.821 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - The response status is 200
+2024-11-22 10:17:19.065 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-11-22 10:20:54.963 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Processing request for path: /auth/login
+2024-11-22 10:20:54.966 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: /auth/login
+2024-11-22 10:22:19.149 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-11-22 10:22:24.750 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - Processing request for path: /auth/login
+2024-11-22 10:22:24.752 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: /auth/login
+2024-11-22 10:22:36.920 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - Processing request for path: /auth/login
+2024-11-22 10:22:36.921 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Request is to an unsecured route: /auth/login
+2024-11-22 10:23:39.687 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Processing request for path: /reports
+2024-11-22 10:23:39.688 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports
+2024-11-22 10:23:39.689 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:23:39.689 [reactor-http-nio-7] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:23:39.689 [reactor-http-nio-7] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:23:39.772 [reactor-http-nio-7] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:23:39.774 [reactor-http-nio-7] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:23:39.777 [reactor-http-nio-7] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:23:39.778 [reactor-http-nio-7] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:23:39.853 [reactor-http-nio-7] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:23:39.854 [reactor-http-nio-7] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:23:39.854 [reactor-http-nio-7] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:23:39.854 [reactor-http-nio-7] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:23:39.860 [reactor-http-nio-7] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT logout status: false
+2024-11-22 10:23:39.861 [reactor-http-nio-7] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:23:39.861 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-11-22 10:23:39.868 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports
+2024-11-22 10:23:39.868 [reactor-http-nio-7] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:23:39.868 [reactor-http-nio-7] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:23:39.868 [reactor-http-nio-7] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-11-22 10:23:39.868 [reactor-http-nio-7] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:23:39.868 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports
+2024-11-22 10:23:39.868 [reactor-http-nio-7] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:23:51.853 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-11-22 10:23:51.853 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-11-22 10:23:51.854 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:23:51.854 [reactor-http-nio-7] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:23:51.854 [reactor-http-nio-7] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:23:51.854 [reactor-http-nio-7] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:23:51.854 [reactor-http-nio-7] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:23:51.854 [reactor-http-nio-7] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:23:51.854 [reactor-http-nio-7] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:23:51.855 [reactor-http-nio-7] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:23:51.855 [reactor-http-nio-7] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:23:51.855 [reactor-http-nio-7] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:23:51.855 [reactor-http-nio-7] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:23:51.857 [reactor-http-nio-7] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT logout status: false
+2024-11-22 10:23:51.858 [reactor-http-nio-7] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:23:51.858 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-11-22 10:23:51.858 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-11-22 10:23:51.858 [reactor-http-nio-7] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:23:51.859 [reactor-http-nio-7] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:23:51.859 [reactor-http-nio-7] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-11-22 10:23:51.859 [reactor-http-nio-7] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:23:51.859 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-11-22 10:23:51.859 [reactor-http-nio-7] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:24:58.784 [reactor-http-nio-1] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-11-22 10:24:58.785 [reactor-http-nio-1] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-11-22 10:24:58.785 [reactor-http-nio-1] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:24:58.786 [reactor-http-nio-1] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:24:58.786 [reactor-http-nio-1] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:24:58.786 [reactor-http-nio-1] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:24:58.786 [reactor-http-nio-1] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:24:58.786 [reactor-http-nio-1] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:24:58.786 [reactor-http-nio-1] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:24:58.790 [reactor-http-nio-1] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:24:58.790 [reactor-http-nio-1] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:24:58.790 [reactor-http-nio-1] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:24:58.790 [reactor-http-nio-1] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:24:58.791 [reactor-http-nio-1] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT logout status: false
+2024-11-22 10:24:58.791 [reactor-http-nio-1] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:24:58.791 [reactor-http-nio-1] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-11-22 10:24:58.791 [reactor-http-nio-1] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-11-22 10:24:58.791 [reactor-http-nio-1] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:24:58.792 [reactor-http-nio-1] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:24:58.792 [reactor-http-nio-1] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-11-22 10:24:58.792 [reactor-http-nio-1] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:24:58.792 [reactor-http-nio-1] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-11-22 10:24:58.792 [reactor-http-nio-1] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:26:38.971 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-11-22 10:26:38.971 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-11-22 10:26:38.972 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:26:38.972 [reactor-http-nio-3] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:26:38.972 [reactor-http-nio-3] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:26:38.972 [reactor-http-nio-3] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:26:38.973 [reactor-http-nio-3] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:26:38.973 [reactor-http-nio-3] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:26:38.973 [reactor-http-nio-3] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:26:38.976 [reactor-http-nio-3] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:26:38.976 [reactor-http-nio-3] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:26:38.976 [reactor-http-nio-3] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:26:38.976 [reactor-http-nio-3] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:26:38.977 [reactor-http-nio-3] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT logout status: false
+2024-11-22 10:26:38.977 [reactor-http-nio-3] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:26:38.977 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-11-22 10:26:38.977 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-11-22 10:26:38.978 [reactor-http-nio-3] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:26:38.978 [reactor-http-nio-3] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:26:38.979 [reactor-http-nio-3] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-11-22 10:26:38.979 [reactor-http-nio-3] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:26:38.979 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-11-22 10:26:38.980 [reactor-http-nio-3] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:26:43.360 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-11-22 10:26:43.360 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-11-22 10:26:43.360 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:26:43.360 [reactor-http-nio-3] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:26:43.362 [reactor-http-nio-3] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:26:43.362 [reactor-http-nio-3] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:26:43.362 [reactor-http-nio-3] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:26:43.362 [reactor-http-nio-3] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:26:43.362 [reactor-http-nio-3] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:26:43.363 [reactor-http-nio-3] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:26:43.363 [reactor-http-nio-3] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:26:43.363 [reactor-http-nio-3] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:26:43.363 [reactor-http-nio-3] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:26:43.364 [reactor-http-nio-3] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT logout status: false
+2024-11-22 10:26:43.364 [reactor-http-nio-3] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:26:43.364 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-11-22 10:26:43.364 [reactor-http-nio-3] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-11-22 10:26:43.364 [reactor-http-nio-3] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:26:43.365 [reactor-http-nio-3] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:26:43.365 [reactor-http-nio-3] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-11-22 10:26:43.365 [reactor-http-nio-3] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:26:43.365 [reactor-http-nio-3] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-11-22 10:26:43.365 [reactor-http-nio-3] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:27:19.154 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-11-22 10:28:31.868 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-11-22 10:28:31.869 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-11-22 10:28:31.869 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:28:31.869 [reactor-http-nio-5] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:28:31.869 [reactor-http-nio-5] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:28:31.869 [reactor-http-nio-5] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:28:31.869 [reactor-http-nio-5] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:28:31.869 [reactor-http-nio-5] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:28:31.869 [reactor-http-nio-5] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:28:31.872 [reactor-http-nio-5] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:28:31.872 [reactor-http-nio-5] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:28:31.872 [reactor-http-nio-5] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:28:31.873 [reactor-http-nio-5] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:28:31.873 [reactor-http-nio-5] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT logout status: false
+2024-11-22 10:28:31.873 [reactor-http-nio-5] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:28:31.873 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-11-22 10:28:31.875 [reactor-http-nio-5] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-11-22 10:28:31.875 [reactor-http-nio-5] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:28:31.875 [reactor-http-nio-5] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:28:31.875 [reactor-http-nio-5] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-11-22 10:28:31.875 [reactor-http-nio-5] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:28:31.876 [reactor-http-nio-5] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-11-22 10:28:31.876 [reactor-http-nio-5] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:30:23.504 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-11-22 10:30:23.504 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-11-22 10:30:23.505 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:30:23.505 [reactor-http-nio-7] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:30:23.505 [reactor-http-nio-7] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:30:23.505 [reactor-http-nio-7] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:30:23.505 [reactor-http-nio-7] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:30:23.505 [reactor-http-nio-7] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:30:23.505 [reactor-http-nio-7] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:30:23.506 [reactor-http-nio-7] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:30:23.506 [reactor-http-nio-7] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:30:23.506 [reactor-http-nio-7] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:30:23.506 [reactor-http-nio-7] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:30:23.506 [reactor-http-nio-7] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT logout status: false
+2024-11-22 10:30:23.507 [reactor-http-nio-7] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:30:23.507 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-11-22 10:30:23.507 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-11-22 10:30:23.507 [reactor-http-nio-7] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:30:23.507 [reactor-http-nio-7] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:30:23.507 [reactor-http-nio-7] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-11-22 10:30:23.507 [reactor-http-nio-7] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:30:23.507 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-11-22 10:30:23.507 [reactor-http-nio-7] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:30:26.545 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-11-22 10:30:26.546 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-11-22 10:30:26.546 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:30:26.546 [reactor-http-nio-7] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:30:26.546 [reactor-http-nio-7] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:30:26.546 [reactor-http-nio-7] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:30:26.546 [reactor-http-nio-7] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:30:26.546 [reactor-http-nio-7] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:30:26.547 [reactor-http-nio-7] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:30:26.549 [reactor-http-nio-7] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:30:26.549 [reactor-http-nio-7] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:30:26.549 [reactor-http-nio-7] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:30:26.549 [reactor-http-nio-7] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:30:26.550 [reactor-http-nio-7] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT logout status: false
+2024-11-22 10:30:26.551 [reactor-http-nio-7] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:30:26.552 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-11-22 10:30:26.552 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-11-22 10:30:26.552 [reactor-http-nio-7] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:30:26.552 [reactor-http-nio-7] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:30:26.553 [reactor-http-nio-7] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-11-22 10:30:26.553 [reactor-http-nio-7] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:30:26.553 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-11-22 10:30:26.553 [reactor-http-nio-7] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:30:30.200 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-11-22 10:30:30.201 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-11-22 10:30:30.202 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:30:30.202 [reactor-http-nio-7] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:30:30.202 [reactor-http-nio-7] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:30:30.202 [reactor-http-nio-7] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:30:30.202 [reactor-http-nio-7] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:30:30.202 [reactor-http-nio-7] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:30:30.202 [reactor-http-nio-7] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:30:30.203 [reactor-http-nio-7] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:30:30.204 [reactor-http-nio-7] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:30:30.204 [reactor-http-nio-7] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:30:30.204 [reactor-http-nio-7] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:30:30.204 [reactor-http-nio-7] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT logout status: false
+2024-11-22 10:30:30.204 [reactor-http-nio-7] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:30:30.204 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-11-22 10:30:30.205 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-11-22 10:30:30.205 [reactor-http-nio-7] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:30:30.205 [reactor-http-nio-7] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:30:30.205 [reactor-http-nio-7] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-11-22 10:30:30.205 [reactor-http-nio-7] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:30:30.205 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-11-22 10:30:30.205 [reactor-http-nio-7] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:31:27.598 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-11-22 10:31:27.599 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-11-22 10:31:27.599 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:31:27.600 [reactor-http-nio-7] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:31:27.600 [reactor-http-nio-7] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:31:27.600 [reactor-http-nio-7] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:31:27.600 [reactor-http-nio-7] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:31:27.600 [reactor-http-nio-7] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:31:27.600 [reactor-http-nio-7] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:31:27.601 [reactor-http-nio-7] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:31:27.601 [reactor-http-nio-7] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:31:27.601 [reactor-http-nio-7] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:31:27.601 [reactor-http-nio-7] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:31:27.602 [reactor-http-nio-7] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT logout status: false
+2024-11-22 10:31:27.602 [reactor-http-nio-7] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:31:27.602 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-11-22 10:31:27.602 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-11-22 10:31:27.602 [reactor-http-nio-7] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:31:27.603 [reactor-http-nio-7] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:31:27.603 [reactor-http-nio-7] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-11-22 10:31:27.603 [reactor-http-nio-7] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:31:27.603 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-11-22 10:31:27.603 [reactor-http-nio-7] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:31:32.494 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-11-22 10:31:32.495 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-11-22 10:31:32.495 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:31:32.495 [reactor-http-nio-7] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:31:32.495 [reactor-http-nio-7] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:31:32.495 [reactor-http-nio-7] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:31:32.495 [reactor-http-nio-7] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:31:32.496 [reactor-http-nio-7] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:31:32.496 [reactor-http-nio-7] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:31:32.497 [reactor-http-nio-7] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:31:32.498 [reactor-http-nio-7] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:31:32.498 [reactor-http-nio-7] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:31:32.499 [reactor-http-nio-7] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:31:32.499 [reactor-http-nio-7] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT logout status: false
+2024-11-22 10:31:32.500 [reactor-http-nio-7] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:31:32.500 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-11-22 10:31:32.500 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-11-22 10:31:32.501 [reactor-http-nio-7] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:31:32.503 [reactor-http-nio-7] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:31:32.503 [reactor-http-nio-7] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-11-22 10:31:32.503 [reactor-http-nio-7] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:31:32.503 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-11-22 10:31:32.503 [reactor-http-nio-7] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:31:42.623 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-11-22 10:31:42.624 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-11-22 10:31:42.624 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:31:42.624 [reactor-http-nio-7] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:31:42.624 [reactor-http-nio-7] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:31:42.624 [reactor-http-nio-7] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:31:42.624 [reactor-http-nio-7] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:31:42.624 [reactor-http-nio-7] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:31:42.624 [reactor-http-nio-7] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:31:42.625 [reactor-http-nio-7] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:31:42.625 [reactor-http-nio-7] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:31:42.625 [reactor-http-nio-7] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:31:42.625 [reactor-http-nio-7] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:31:42.626 [reactor-http-nio-7] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT logout status: false
+2024-11-22 10:31:42.626 [reactor-http-nio-7] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:31:42.626 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-11-22 10:31:42.626 [reactor-http-nio-7] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-11-22 10:31:42.626 [reactor-http-nio-7] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:31:42.627 [reactor-http-nio-7] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:31:42.627 [reactor-http-nio-7] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-11-22 10:31:42.627 [reactor-http-nio-7] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:31:42.627 [reactor-http-nio-7] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-11-22 10:31:42.627 [reactor-http-nio-7] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:32:19.288 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-11-22 10:32:46.947 [reactor-http-nio-1] INFO  AuthGatewayFilterFactory - Processing request for path: /reports/check-tr-id
+2024-11-22 10:32:46.948 [reactor-http-nio-1] DEBUG AuthGatewayFilterFactory - Request is to a secured route: /reports/check-tr-id
+2024-11-22 10:32:46.948 [reactor-http-nio-1] DEBUG AuthGatewayFilterFactory - Extracted token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:32:46.948 [reactor-http-nio-1] TRACE JwtUtil - Entering getClaimsAndValidate method in JwtUtils
+2024-11-22 10:32:46.948 [reactor-http-nio-1] DEBUG JwtUtil - Validating token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:32:46.948 [reactor-http-nio-1] TRACE JwtUtil - Entering getSignInKey method in JwtUtils
+2024-11-22 10:32:46.948 [reactor-http-nio-1] DEBUG JwtUtil - Retrieving secret key for JWT validation.
+2024-11-22 10:32:46.948 [reactor-http-nio-1] DEBUG JwtUtil - Secret key retrieved successfully.
+2024-11-22 10:32:46.949 [reactor-http-nio-1] TRACE JwtUtil - Exiting getSignInKey method in JwtUtils
+2024-11-22 10:32:46.950 [reactor-http-nio-1] INFO  JwtUtil - Token validated successfully. Claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:32:46.950 [reactor-http-nio-1] TRACE JwtUtil - Exiting getClaimsAndValidate method in JwtUtils
+2024-11-22 10:32:46.951 [reactor-http-nio-1] TRACE JwtUtil - Entering isLoggedOut method in JwtUtils
+2024-11-22 10:32:46.951 [reactor-http-nio-1] DEBUG JwtUtil - Checking if token is logged out: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT
+2024-11-22 10:32:46.951 [reactor-http-nio-1] INFO  JwtUtil - Token eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdXBlciIsInJvbGVzIjpbIkFETUlOIiwiU0VDUkVUQVJZIiwiVEVDSE5JQ0lBTiJdLCJpYXQiOjE3MzIyNjAxNTcsImV4cCI6MTczMjI2Mzc1N30.ilBdutRMPZoAvt3Q27XsvaXw_X1Z9TCwJ-3EDWaTerUuF52MiB-kI2aCNLyl-zqT logout status: false
+2024-11-22 10:32:46.952 [reactor-http-nio-1] TRACE JwtUtil - Exiting isLoggedOut method in JwtUtils
+2024-11-22 10:32:46.952 [reactor-http-nio-1] INFO  AuthGatewayFilterFactory - Authenticated user: super
+2024-11-22 10:32:46.952 [reactor-http-nio-1] DEBUG AuthGatewayFilterFactory - Role-based authorization needed for path: /reports/check-tr-id
+2024-11-22 10:32:46.952 [reactor-http-nio-1] TRACE JwtUtil - Entering getRoles method in JwtUtils
+2024-11-22 10:32:46.953 [reactor-http-nio-1] DEBUG JwtUtil - Extracting roles from claims: {sub=super, roles=[ADMIN, SECRETARY, TECHNICIAN], iat=1732260157, exp=1732263757}
+2024-11-22 10:32:46.953 [reactor-http-nio-1] INFO  JwtUtil - Roles extracted: [ADMIN, SECRETARY, TECHNICIAN]
+2024-11-22 10:32:46.954 [reactor-http-nio-1] TRACE JwtUtil - Exiting getRoles method in JwtUtils
+2024-11-22 10:32:46.954 [reactor-http-nio-1] INFO  AuthGatewayFilterFactory - User super authorized for path: /reports/check-tr-id
+2024-11-22 10:32:46.954 [reactor-http-nio-1] TRACE AuthGatewayFilterFactory - Exiting apply method in AuthGatewayFilterFactory class with successful authentication
+2024-11-22 10:33:43.603 [SpringApplicationShutdownHook] INFO  EurekaServiceRegistry - Unregistering application API-GATEWAY with eureka with status DOWN
+2024-11-22 10:33:43.636 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1732260823636, current=DOWN, previous=UP]
+2024-11-22 10:33:43.640 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_API-GATEWAY/localhost:api-gateway:8080: registering service...
+2024-11-22 10:33:44.112 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_API-GATEWAY/localhost:api-gateway:8080 - registration status: 204
+2024-11-22 10:33:48.776 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Shutting down DiscoveryClient ...
+2024-11-22 10:33:51.379 [DiscoveryClient-HeartbeatExecutor-0] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
+	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:297)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:103)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-11-22 10:33:51.383 [DiscoveryClient-HeartbeatExecutor-0] WARN  RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-11-22 10:33:51.395 [DiscoveryClient-HeartbeatExecutor-0] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
+	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:297)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:103)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-11-22 10:33:51.395 [DiscoveryClient-HeartbeatExecutor-0] WARN  RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-11-22 10:33:51.395 [DiscoveryClient-HeartbeatExecutor-0] ERROR DiscoveryClient - DiscoveryClient_API-GATEWAY/localhost:api-gateway:8080 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837) [eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401) [eureka-client-2.0.2.jar:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-11-22 10:33:51.705 [DiscoveryClient-CacheRefreshExecutor-0] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
+	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:297)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:103)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-11-22 10:33:51.705 [DiscoveryClient-CacheRefreshExecutor-0] WARN  RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-11-22 10:33:51.724 [DiscoveryClient-CacheRefreshExecutor-0] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
+	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:297)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:103)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-11-22 10:33:51.724 [DiscoveryClient-CacheRefreshExecutor-0] WARN  RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-11-22 10:33:51.724 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - DiscoveryClient_API-GATEWAY/localhost:api-gateway:8080 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-11-22 10:33:51.784 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Unregistering ...
+2024-11-22 10:33:51.794 [SpringApplicationShutdownHook] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
+	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:297)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:103)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-11-22 10:33:51.794 [SpringApplicationShutdownHook] WARN  RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-11-22 10:33:51.794 [SpringApplicationShutdownHook] ERROR DiscoveryClient - DiscoveryClient_API-GATEWAY/localhost:api-gateway:8080 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892) ~[eureka-client-2.0.2.jar:2.0.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389) ~[spring-cloud-context-4.1.2.jar:4.1.2]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-4.1.2.jar:4.1.2]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:149) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-3.3.3.jar:3.3.3]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) [?:?]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) [spring-boot-3.3.3.jar:3.3.3]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-11-22 10:33:51.805 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Completed shut down of DiscoveryClient
