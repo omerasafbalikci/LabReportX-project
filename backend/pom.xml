@@ -25,6 +25,7 @@
         <module>api-gateway</module>
         <module>config-server</module>
         <module>discovery-server</module>
+        <module>analytics-service</module>
     </modules>
 
     <properties>

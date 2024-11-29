@@ -1,6 +1,7 @@
 package com.lab.backend.patient.service.concretes;
 
 import com.lab.backend.patient.dto.requests.CreatePatientRequest;
+import com.lab.backend.patient.dto.requests.WeeklyStats;
 import com.lab.backend.patient.dto.requests.UpdatePatientRequest;
 import com.lab.backend.patient.dto.responses.GetPatientResponse;
 import com.lab.backend.patient.dto.responses.PagedResponse;
@@ -20,13 +21,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Consumer;
 
 /**
@@ -41,6 +42,7 @@ import java.util.function.Consumer;
 public class PatientServiceImpl implements PatientService {
     private final PatientRepository patientRepository;
     private final PatientMapper patientMapper;
+    private KafkaTemplate<String, Object> kafkaTemplate;
 
     /**
      * Retrieves a patient's details by their ID.
@@ -84,6 +86,25 @@ public class PatientServiceImpl implements PatientService {
         log.info("Successfully fetched patient by TR ID number: {}", trIdNumber);
         log.trace("Exiting getPatientByTrIdNumber method in PatientServiceImpl");
         return response;
+    }
+
+    public void sendWeeklyPatientRegistrationStats() {
+        LocalDate today = LocalDate.now();
+        Map<String, Long> dailyRegistrations = new LinkedHashMap<>();
+
+        for (int i = 0; i < 7; i++) {
+            LocalDate date = today.minusDays(i);
+            Long count = this.patientRepository.countByRegistrationTimeBetween(date.atStartOfDay(), date.plusDays(1).atStartOfDay());
+            dailyRegistrations.put(date.toString(), count);
+        }
+
+        WeeklyStats weeklyStats = WeeklyStats.builder()
+                .eventId(UUID.randomUUID().toString())
+                .timestamp(LocalDateTime.now())
+                .weeklyStats(dailyRegistrations)
+                .build();
+
+        this.kafkaTemplate.send("weekly-stats", weeklyStats);
     }
 
     /**

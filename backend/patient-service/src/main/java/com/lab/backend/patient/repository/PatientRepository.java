@@ -4,8 +4,12 @@ import com.lab.backend.patient.entity.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -48,6 +52,8 @@ public interface PatientRepository extends JpaRepository<Patient, Long>, JpaSpec
      * @return {@code true} if a patient exists with the given TR ID number and is not deleted, {@code false} otherwise
      */
     boolean existsByTrIdNumberAndDeletedIsFalse(String trIdNumber);
+
+    Long countByRegistrationTimeBetween(LocalDateTime startDate, LocalDateTime endDate);
 
     /**
      * Retrieves the chronic diseases of a patient by their ID if the patient is not marked as deleted.

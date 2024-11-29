@@ -30,6 +30,8 @@ public interface PatientService {
      */
     GetPatientResponse getPatientByTrIdNumber(String trIdNumber);
 
+    void sendWeeklyPatientRegistrationStats();
+
     /**
      * Retrieves the chronic diseases of a patient by their ID.
      *

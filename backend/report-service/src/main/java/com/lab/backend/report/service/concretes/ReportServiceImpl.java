@@ -22,7 +22,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -46,7 +45,6 @@ import java.util.regex.Pattern;
  */
 
 @Service
-@Transactional
 @RequiredArgsConstructor
 @Log4j2
 public class ReportServiceImpl implements ReportService {
