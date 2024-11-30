@@ -53,7 +53,14 @@ public interface PatientRepository extends JpaRepository<Patient, Long>, JpaSpec
      */
     boolean existsByTrIdNumberAndDeletedIsFalse(String trIdNumber);
 
-    Long countByRegistrationTimeBetween(LocalDateTime startDate, LocalDateTime endDate);
+    /**
+     * Counts the number of patients registered between the specified start and end times.
+     *
+     * @param startDate the start of the time range
+     * @param endDate   the end of the time range
+     * @return the count of patients registered within the specified time range
+     */
+    Long countByLastPatientRegistrationTimeBetween(LocalDateTime startDate, LocalDateTime endDate);
 
     /**
      * Retrieves the chronic diseases of a patient by their ID if the patient is not marked as deleted.

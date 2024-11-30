@@ -1,0 +1,606 @@
+2024-11-30 03:05:24.661 [main] INFO  DiscoveryServerApplication - Starting DiscoveryServerApplication using Java 17.0.11 with PID 2172 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\discovery-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-11-30 03:05:24.669 [main] DEBUG DiscoveryServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-11-30 03:05:24.670 [main] INFO  DiscoveryServerApplication - No active profile set, falling back to 1 default profile: "default"
+2024-11-30 03:05:24.737 [main] INFO  ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-11-30 03:05:24.737 [main] INFO  ConfigServerConfigDataLoader - Located environment: name=discovery-server, profiles=[default], label=null, version=ec345012f6a2abf1386d78069d245e34e5b196a6, state=null
+2024-11-30 03:05:26.162 [main] INFO  GenericScope - BeanFactory id=27fa30f8-6ad4-3c22-b5f7-660e2421446b
+2024-11-30 03:05:26.218 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-11-30 03:05:26.221 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-11-30 03:05:26.589 [main] INFO  TomcatWebServer - Tomcat initialized with port 8761 (http)
+2024-11-30 03:05:26.599 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2024-11-30 03:05:26.603 [main] INFO  StandardService - Starting service [Tomcat]
+2024-11-30 03:05:26.604 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-11-30 03:05:26.740 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-11-30 03:05:26.742 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2000 ms
+2024-11-30 03:05:28.008 [main] INFO  DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-11-30 03:05:28.008 [main] INFO  DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-11-30 03:05:28.255 [main] INFO  DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-11-30 03:05:28.256 [main] INFO  DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-11-30 03:05:30.054 [main] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-11-30 03:05:30.093 [main] INFO  InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-11-30 03:05:30.146 [main] INFO  DiscoveryClient - Initializing Eureka in region us-east-1
+2024-11-30 03:05:30.146 [main] INFO  DiscoveryClient - Client configured to neither register nor query for data.
+2024-11-30 03:05:30.164 [main] INFO  DiscoveryClient - Discovery Client initialized at timestamp 1732925130163 with initial instances count: 0
+2024-11-30 03:05:30.228 [main] INFO  DefaultEurekaServerContext - Initializing ...
+2024-11-30 03:05:30.230 [main] INFO  PeerEurekaNodes - Adding new peer nodes [http://localhost:8761/eureka/]
+2024-11-30 03:05:30.294 [main] INFO  DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-11-30 03:05:30.294 [main] INFO  DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-11-30 03:05:30.294 [main] INFO  DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-11-30 03:05:30.295 [main] INFO  DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-11-30 03:05:30.381 [main] INFO  PeerEurekaNodes - Replica node URL:  http://localhost:8761/eureka/
+2024-11-30 03:05:30.391 [main] INFO  AbstractInstanceRegistry - Finished initializing remote region registries. All known remote regions: []
+2024-11-30 03:05:30.392 [main] INFO  DefaultEurekaServerContext - Initialized
+2024-11-30 03:05:30.402 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-11-30 03:05:30.479 [main] INFO  EurekaServiceRegistry - Registering application DISCOVERY-SERVER with eureka with status UP
+2024-11-30 03:05:30.485 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8761"]
+2024-11-30 03:05:30.501 [Thread-10] INFO  EurekaServerBootstrap - isAws returned false
+2024-11-30 03:05:30.502 [Thread-10] INFO  EurekaServerBootstrap - Initialized server context
+2024-11-30 03:05:30.502 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Got 1 instances from neighboring DS node
+2024-11-30 03:05:30.502 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Renew threshold is: 1
+2024-11-30 03:05:30.503 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Changing status to UP
+2024-11-30 03:05:30.512 [Thread-10] INFO  EurekaServerInitializerConfiguration - Started Eureka Server
+2024-11-30 03:05:30.538 [main] INFO  TomcatWebServer - Tomcat started on port 8761 (http) with context path '/'
+2024-11-30 03:05:30.540 [main] INFO  EurekaAutoServiceRegistration - Updating port to 8761
+2024-11-30 03:05:30.715 [main] INFO  DiscoveryServerApplication - Started DiscoveryServerApplication in 8.817 seconds (process running for 13.027)
+2024-11-30 03:05:59.041 [http-nio-8761-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-30 03:05:59.041 [http-nio-8761-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-11-30 03:05:59.044 [http-nio-8761-exec-1] INFO  DispatcherServlet - Completed initialization in 2 ms
+2024-11-30 03:05:59.385 [http-nio-8761-exec-3] INFO  AbstractInstanceRegistry - Registered instance API-GATEWAY/asaf:api-gateway:8080 with status UP (replication=false)
+2024-11-30 03:06:00.084 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance API-GATEWAY/asaf:api-gateway:8080 with status UP (replication=true)
+2024-11-30 03:06:30.505 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:06:35.545 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status UP (replication=false)
+2024-11-30 03:06:36.076 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status UP (replication=true)
+2024-11-30 03:07:05.051 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance USER-MANAGEMENT-SERVICE/asaf:user-management-service:8082 with status UP (replication=false)
+2024-11-30 03:07:05.607 [http-nio-8761-exec-7] INFO  AbstractInstanceRegistry - Registered instance USER-MANAGEMENT-SERVICE/asaf:user-management-service:8082 with status UP (replication=true)
+2024-11-30 03:07:30.516 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 11ms
+2024-11-30 03:08:30.517 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:09:30.527 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 9ms
+2024-11-30 03:10:30.529 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 03:11:30.544 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 15ms
+2024-11-30 03:11:30.909 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=false)
+2024-11-30 03:11:31.427 [http-nio-8761-exec-7] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=true)
+2024-11-30 03:12:16.485 [http-nio-8761-exec-7] INFO  AbstractInstanceRegistry - Registered instance REPORT-SERVICE/asaf:report-service:8084 with status UP (replication=false)
+2024-11-30 03:12:16.997 [http-nio-8761-exec-3] INFO  AbstractInstanceRegistry - Registered instance REPORT-SERVICE/asaf:report-service:8084 with status UP (replication=true)
+2024-11-30 03:12:30.547 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 2ms
+2024-11-30 03:13:30.548 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:14:30.548 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:15:30.549 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:16:30.550 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:16:56.849 [http-nio-8761-exec-3] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=false)
+2024-11-30 03:16:57.360 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=true)
+2024-11-30 03:17:30.549 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:18:30.558 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 9ms
+2024-11-30 03:19:30.565 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 6ms
+2024-11-30 03:20:30.408 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  PeerAwareInstanceRegistryImpl - Current renewal threshold is : 11
+2024-11-30 03:20:30.565 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:21:30.565 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:22:30.565 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:22:49.755 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=false)
+2024-11-30 03:22:50.268 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=true)
+2024-11-30 03:23:18.046 [http-nio-8761-exec-7] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=false)
+2024-11-30 03:23:18.578 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=true)
+2024-11-30 03:23:30.571 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2024-11-30 03:23:31.279 [TaskBatchingWorker-target_localhost-6] ERROR ReplicationTaskProcessor - It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:534) ~[jersey-apache-connector-3.1.8.jar:?]
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:674) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:709) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:703) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:391) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:703) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:673) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345) ~[jersey-client-3.1.8.jar:?]
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116) ~[eureka-core-jersey3-2.0.2.jar:2.0.2]
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80) [eureka-core-2.0.2.jar:2.0.2]
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:190) [eureka-core-2.0.2.jar:2.0.2]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808) ~[?:?]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[?:?]
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:486) ~[jersey-apache-connector-3.1.8.jar:?]
+	... 16 more
+2024-11-30 03:24:30.571 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:24:48.011 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 03:24:48.523 [http-nio-8761-exec-3] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 03:25:12.908 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=false)
+2024-11-30 03:25:13.423 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=true)
+2024-11-30 03:25:30.573 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 03:26:25.988 [http-nio-8761-exec-7] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 03:26:26.505 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 03:26:30.573 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:26:52.079 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=false)
+2024-11-30 03:26:52.590 [http-nio-8761-exec-7] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=true)
+2024-11-30 03:27:30.573 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:28:30.574 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:29:30.575 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 03:30:30.590 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 15ms
+2024-11-30 03:31:30.590 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:32:26.735 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 03:32:27.264 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 03:32:28.770 [http-nio-8761-exec-5] INFO  AbstractInstanceRegistry - Registered instance REPORT-SERVICE/asaf:report-service:8084 with status DOWN (replication=false)
+2024-11-30 03:32:29.282 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance REPORT-SERVICE/asaf:report-service:8084 with status DOWN (replication=true)
+2024-11-30 03:32:30.023 [http-nio-8761-exec-7] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=false)
+2024-11-30 03:32:30.533 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=true)
+2024-11-30 03:32:30.599 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 8ms
+2024-11-30 03:33:30.600 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:34:30.600 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:34:30.601 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Evicting 1 items (expired=3, evictionLimit=1)
+2024-11-30 03:34:30.602 [Eureka-EvictionTimer] WARN  AbstractInstanceRegistry - DS: Registry: expired lease for ANALYTICS-SERVICE/asaf:analytics-service:8085
+2024-11-30 03:34:30.627 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Cancelled instance ANALYTICS-SERVICE/asaf:analytics-service:8085 (replication=false)
+2024-11-30 03:34:54.432 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=false)
+2024-11-30 03:34:54.945 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=true)
+2024-11-30 03:35:21.872 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=false)
+2024-11-30 03:35:22.392 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=true)
+2024-11-30 03:35:30.404 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  PeerAwareInstanceRegistryImpl - Current renewal threshold is : 11
+2024-11-30 03:35:30.601 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:35:30.601 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Evicting 1 items (expired=1, evictionLimit=1)
+2024-11-30 03:35:30.601 [Eureka-EvictionTimer] WARN  AbstractInstanceRegistry - DS: Registry: expired lease for REPORT-SERVICE/asaf:report-service:8084
+2024-11-30 03:35:30.607 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Cancelled instance REPORT-SERVICE/asaf:report-service:8084 (replication=false)
+2024-11-30 03:36:30.608 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 6ms
+2024-11-30 03:37:30.608 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:38:30.614 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2024-11-30 03:39:24.840 [http-nio-8761-exec-5] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 03:39:25.069 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 03:39:30.615 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:39:34.154 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=false)
+2024-11-30 03:39:34.662 [http-nio-8761-exec-5] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=true)
+2024-11-30 03:39:59.701 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=false)
+2024-11-30 03:40:00.210 [http-nio-8761-exec-7] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=true)
+2024-11-30 03:40:30.616 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:40:46.163 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=false)
+2024-11-30 03:40:46.688 [http-nio-8761-exec-1] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=true)
+2024-11-30 03:41:30.617 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 03:41:30.617 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Evicting 1 items (expired=1, evictionLimit=1)
+2024-11-30 03:41:30.617 [Eureka-EvictionTimer] WARN  AbstractInstanceRegistry - DS: Registry: expired lease for ANALYTICS-SERVICE/asaf:analytics-service:8085
+2024-11-30 03:41:30.617 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Cancelled instance ANALYTICS-SERVICE/asaf:analytics-service:8085 (replication=false)
+2024-11-30 03:42:30.620 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2024-11-30 03:42:30.621 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Evicting 1 items (expired=1, evictionLimit=1)
+2024-11-30 03:42:30.622 [Eureka-EvictionTimer] WARN  AbstractInstanceRegistry - DS: Registry: expired lease for PATIENT-SERVICE/asaf:patient-service:8083
+2024-11-30 03:42:30.622 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Cancelled instance PATIENT-SERVICE/asaf:patient-service:8083 (replication=false)
+2024-11-30 03:43:30.620 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:44:30.620 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:45:30.629 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 8ms
+2024-11-30 03:46:30.630 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 03:47:30.630 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:48:06.269 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=false)
+2024-11-30 03:48:06.780 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=true)
+2024-11-30 03:48:30.631 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:48:32.976 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=false)
+2024-11-30 03:48:33.489 [http-nio-8761-exec-1] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=true)
+2024-11-30 03:49:30.632 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 03:49:53.856 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=false)
+2024-11-30 03:49:53.866 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 03:49:54.121 [http-nio-8761-exec-1] INFO  AbstractInstanceRegistry - Registered instance API-GATEWAY/asaf:api-gateway:8080 with status DOWN (replication=false)
+2024-11-30 03:49:54.385 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=true)
+2024-11-30 03:49:54.386 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 03:49:54.387 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance API-GATEWAY/asaf:api-gateway:8080 with status DOWN (replication=true)
+2024-11-30 03:49:54.425 [SpringApplicationShutdownHook] INFO  EurekaServiceRegistry - Unregistering application DISCOVERY-SERVER with eureka with status DOWN
+2024-11-30 03:49:54.686 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status DOWN (replication=false)
+2024-11-30 03:49:55.169 [SpringApplicationShutdownHook] INFO  EurekaServerBootstrap - Shutting down Eureka Server..
+2024-11-30 03:49:55.274 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shutting down ...
+2024-11-30 03:49:55.276 [TaskBatchingWorker-target_localhost-18] INFO  RetryExec - I/O exception (java.net.SocketException) caught when processing request to {}->http://localhost:8761: An established connection was aborted by the software in your host machine
+2024-11-30 03:49:55.295 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2024-11-30 03:49:55.308 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2024-11-30 03:49:55.312 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2024-11-30 03:49:55.315 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2024-11-30 03:49:55.332 [Eureka-Jersey3Client-Conn-Cleaner2] ERROR EurekaJersey3ClientImpl - Cannot clean connections
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54) ~[jersey-client-3.1.8.jar:?]
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:347) [eureka-client-jersey3-2.0.2.jar:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-11-30 03:49:55.283 [TaskBatchingWorker-target_localhost-18] ERROR ReplicationTaskProcessor - Network level connection to peer localhost; retrying after delay
+jakarta.ws.rs.ProcessingException: org.apache.http.client.ClientProtocolException
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:534) ~[jersey-apache-connector-3.1.8.jar:?]
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:674) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:709) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:703) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:391) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:703) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:673) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345) ~[jersey-client-3.1.8.jar:?]
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116) ~[eureka-core-jersey3-2.0.2.jar:2.0.2]
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80) [eureka-core-2.0.2.jar:2.0.2]
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:190) [eureka-core-2.0.2.jar:2.0.2]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:187) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:486) ~[jersey-apache-connector-3.1.8.jar:?]
+	... 16 more
+Caused by: org.apache.http.client.NonRepeatableRequestException: Cannot retry request with a non-repeatable request entity
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:108) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:486) ~[jersey-apache-connector-3.1.8.jar:?]
+	... 16 more
+Caused by: java.net.SocketException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:425) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:445) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:831) ~[?:?]
+	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1035) ~[?:?]
+	at org.apache.http.impl.io.SessionOutputBufferImpl.streamWrite(SessionOutputBufferImpl.java:124) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.io.SessionOutputBufferImpl.flushBuffer(SessionOutputBufferImpl.java:136) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.io.SessionOutputBufferImpl.flush(SessionOutputBufferImpl.java:144) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.io.ChunkedOutputStream.flush(ChunkedOutputStream.java:192) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.glassfish.jersey.message.internal.CommittingOutputStream.flush(CommittingOutputStream.java:266) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$UnCloseableOutputStream.flush(WriterInterceptorExecutor.java:281) ~[jersey-common-3.1.8.jar:?]
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1207) ~[jackson-core-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.databind.ObjectMapper.writeValue(ObjectMapper.java:3366) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.core.base.GeneratorBase.writeObject(GeneratorBase.java:422) ~[jackson-core-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.core.JsonGenerator.writeObjectField(JsonGenerator.java:2430) ~[jackson-core-2.17.2.jar:2.17.2]
+	at com.netflix.discovery.converters.EurekaJacksonCodec$InstanceInfoSerializer.serialize(EurekaJacksonCodec.java:387) ~[eureka-client-2.0.2.jar:2.0.2]
+	at org.springframework.cloud.netflix.eureka.server.CloudJacksonJson$CloudInstanceInfoSerializer.serialize(CloudJacksonJson.java:163) ~[spring-cloud-netflix-eureka-server-4.1.1.jar:4.1.1]
+	at org.springframework.cloud.netflix.eureka.server.CloudJacksonJson$CloudInstanceInfoSerializer.serialize(CloudJacksonJson.java:156) ~[spring-cloud-netflix-eureka-server-4.1.1.jar:4.1.1]
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:732) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:770) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:183) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serializeContents(IndexedListSerializer.java:119) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:79) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:18) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:732) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:770) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:183) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:502) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:341) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.databind.ObjectMapper._writeValueAndClose(ObjectMapper.java:4799) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.fasterxml.jackson.databind.ObjectMapper.writeValue(ObjectMapper.java:3999) ~[jackson-databind-2.17.2.jar:2.17.2]
+	at com.netflix.discovery.converters.EurekaJacksonCodec.writeTo(EurekaJacksonCodec.java:235) ~[eureka-client-2.0.2.jar:2.0.2]
+	at org.springframework.cloud.netflix.eureka.server.CloudJacksonJson.encode(CloudJacksonJson.java:74) ~[spring-cloud-netflix-eureka-server-4.1.1.jar:4.1.1]
+	at com.netflix.discovery.provider.DiscoveryJerseyProvider.writeTo(DiscoveryJerseyProvider.java:135) ~[eureka-client-2.0.2.jar:2.0.2]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.invokeWriteTo(WriterInterceptorExecutor.java:242) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.aroundWriteTo(WriterInterceptorExecutor.java:227) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:139) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.writeTo(MessageBodyFactory.java:1116) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.client.ClientRequest.doWriteEntity(ClientRequest.java:483) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.ClientRequest.writeEntity(ClientRequest.java:465) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.apache.connector.ApacheConnector$1.writeTo(ApacheConnector.java:640) ~[jersey-apache-connector-3.1.8.jar:?]
+	at org.apache.http.impl.execchain.RequestEntityProxy.writeTo(RequestEntityProxy.java:121) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.DefaultBHttpClientConnection.sendRequestEntity(DefaultBHttpClientConnection.java:156) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.conn.CPoolProxy.sendRequestEntity(CPoolProxy.java:160) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:238) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:486) ~[jersey-apache-connector-3.1.8.jar:?]
+	... 16 more
+2024-11-30 03:49:55.577 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shut down
+2024-11-30 03:49:55.577 [SpringApplicationShutdownHook] INFO  EurekaServerBootstrap - Eureka Service is now shutdown...
+2024-11-30 03:49:55.603 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shutting down ...
+2024-11-30 03:49:55.633 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shut down
+2024-11-30 03:49:55.854 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Shutting down DiscoveryClient ...
+2024-11-30 03:49:55.869 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Completed shut down of DiscoveryClient
+2024-11-30 15:49:36.993 [main] INFO  DiscoveryServerApplication - Starting DiscoveryServerApplication using Java 17.0.11 with PID 3872 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\discovery-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-11-30 15:49:37.009 [main] DEBUG DiscoveryServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-11-30 15:49:37.009 [main] INFO  DiscoveryServerApplication - No active profile set, falling back to 1 default profile: "default"
+2024-11-30 15:49:37.056 [main] INFO  ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-11-30 15:49:37.056 [main] INFO  ConfigServerConfigDataLoader - Located environment: name=discovery-server, profiles=[default], label=null, version=ec345012f6a2abf1386d78069d245e34e5b196a6, state=null
+2024-11-30 15:49:38.186 [main] INFO  GenericScope - BeanFactory id=27fa30f8-6ad4-3c22-b5f7-660e2421446b
+2024-11-30 15:49:38.248 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-11-30 15:49:38.248 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-11-30 15:49:38.530 [main] INFO  TomcatWebServer - Tomcat initialized with port 8761 (http)
+2024-11-30 15:49:38.545 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2024-11-30 15:49:38.545 [main] INFO  StandardService - Starting service [Tomcat]
+2024-11-30 15:49:38.545 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-11-30 15:49:38.639 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-11-30 15:49:38.639 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1583 ms
+2024-11-30 15:49:39.670 [main] INFO  DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-11-30 15:49:39.670 [main] INFO  DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-11-30 15:49:39.842 [main] INFO  DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-11-30 15:49:39.842 [main] INFO  DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-11-30 15:49:41.076 [main] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-11-30 15:49:41.108 [main] INFO  InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-11-30 15:49:41.139 [main] INFO  DiscoveryClient - Initializing Eureka in region us-east-1
+2024-11-30 15:49:41.139 [main] INFO  DiscoveryClient - Client configured to neither register nor query for data.
+2024-11-30 15:49:41.139 [main] INFO  DiscoveryClient - Discovery Client initialized at timestamp 1732970981139 with initial instances count: 0
+2024-11-30 15:49:41.186 [main] INFO  DefaultEurekaServerContext - Initializing ...
+2024-11-30 15:49:41.186 [main] INFO  PeerEurekaNodes - Adding new peer nodes [http://localhost:8761/eureka/]
+2024-11-30 15:49:41.217 [main] INFO  DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-11-30 15:49:41.217 [main] INFO  DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-11-30 15:49:41.217 [main] INFO  DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-11-30 15:49:41.217 [main] INFO  DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-11-30 15:49:41.264 [main] INFO  PeerEurekaNodes - Replica node URL:  http://localhost:8761/eureka/
+2024-11-30 15:49:41.280 [main] INFO  AbstractInstanceRegistry - Finished initializing remote region registries. All known remote regions: []
+2024-11-30 15:49:41.280 [main] INFO  DefaultEurekaServerContext - Initialized
+2024-11-30 15:49:41.280 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-11-30 15:49:41.373 [main] INFO  EurekaServiceRegistry - Registering application DISCOVERY-SERVER with eureka with status UP
+2024-11-30 15:49:41.373 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8761"]
+2024-11-30 15:49:41.403 [Thread-10] INFO  EurekaServerBootstrap - isAws returned false
+2024-11-30 15:49:41.403 [Thread-10] INFO  EurekaServerBootstrap - Initialized server context
+2024-11-30 15:49:41.403 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Got 1 instances from neighboring DS node
+2024-11-30 15:49:41.403 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Renew threshold is: 1
+2024-11-30 15:49:41.403 [Thread-10] INFO  PeerAwareInstanceRegistryImpl - Changing status to UP
+2024-11-30 15:49:41.403 [Thread-10] INFO  EurekaServerInitializerConfiguration - Started Eureka Server
+2024-11-30 15:49:41.419 [main] INFO  TomcatWebServer - Tomcat started on port 8761 (http) with context path '/'
+2024-11-30 15:49:41.419 [main] INFO  EurekaAutoServiceRegistration - Updating port to 8761
+2024-11-30 15:49:41.582 [main] INFO  DiscoveryServerApplication - Started DiscoveryServerApplication in 6.969 seconds (process running for 11.042)
+2024-11-30 15:50:18.849 [http-nio-8761-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-30 15:50:18.849 [http-nio-8761-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-11-30 15:50:18.849 [http-nio-8761-exec-1] INFO  DispatcherServlet - Completed initialization in 0 ms
+2024-11-30 15:50:19.092 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance API-GATEWAY/asaf:api-gateway:8080 with status UP (replication=false)
+2024-11-30 15:50:19.739 [http-nio-8761-exec-3] INFO  AbstractInstanceRegistry - Registered instance API-GATEWAY/asaf:api-gateway:8080 with status UP (replication=true)
+2024-11-30 15:50:41.405 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 15:50:50.595 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status UP (replication=false)
+2024-11-30 15:50:51.098 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance AUTH-SERVICE/asaf:auth-service:8081 with status UP (replication=true)
+2024-11-30 15:51:23.525 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance USER-MANAGEMENT-SERVICE/asaf:user-management-service:8082 with status UP (replication=false)
+2024-11-30 15:51:24.039 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance USER-MANAGEMENT-SERVICE/asaf:user-management-service:8082 with status UP (replication=true)
+2024-11-30 15:51:41.414 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 9ms
+2024-11-30 15:52:41.426 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 11ms
+2024-11-30 15:53:41.428 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 2ms
+2024-11-30 15:54:41.440 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 11ms
+2024-11-30 15:55:41.446 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 6ms
+2024-11-30 15:56:41.451 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2024-11-30 15:57:41.455 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2024-11-30 15:58:41.457 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 15:59:41.461 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2024-11-30 16:00:41.479 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 18ms
+2024-11-30 16:01:41.479 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:02:17.876 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=false)
+2024-11-30 16:02:18.404 [http-nio-8761-exec-3] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=true)
+2024-11-30 16:02:41.494 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 14ms
+2024-11-30 16:02:46.234 [http-nio-8761-exec-3] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=false)
+2024-11-30 16:02:46.753 [http-nio-8761-exec-7] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=true)
+2024-11-30 16:03:31.731 [http-nio-8761-exec-1] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=false)
+2024-11-30 16:03:32.259 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=true)
+2024-11-30 16:03:41.506 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 12ms
+2024-11-30 16:04:41.288 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  PeerAwareInstanceRegistryImpl - Current renewal threshold is : 8
+2024-11-30 16:04:41.506 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:05:11.689 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=false)
+2024-11-30 16:05:12.202 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=true)
+2024-11-30 16:05:41.514 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 7ms
+2024-11-30 16:06:41.520 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 6ms
+2024-11-30 16:07:41.521 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 16:07:41.521 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Evicting 1 items (expired=1, evictionLimit=1)
+2024-11-30 16:07:41.526 [Eureka-EvictionTimer] WARN  AbstractInstanceRegistry - DS: Registry: expired lease for PATIENT-SERVICE/asaf:patient-service:8083
+2024-11-30 16:07:41.538 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Cancelled instance PATIENT-SERVICE/asaf:patient-service:8083 (replication=false)
+2024-11-30 16:08:41.531 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 9ms
+2024-11-30 16:09:29.122 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=false)
+2024-11-30 16:09:29.646 [http-nio-8761-exec-7] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status UP (replication=true)
+2024-11-30 16:09:41.540 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2024-11-30 16:10:35.906 [http-nio-8761-exec-3] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=false)
+2024-11-30 16:10:36.433 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=true)
+2024-11-30 16:10:41.535 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:11:41.545 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 9ms
+2024-11-30 16:12:41.556 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 10ms
+2024-11-30 16:13:41.558 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 16:14:41.558 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:15:29.245 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 16:15:29.754 [http-nio-8761-exec-1] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 16:15:41.572 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 14ms
+2024-11-30 16:16:27.993 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=false)
+2024-11-30 16:16:28.509 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=true)
+2024-11-30 16:16:41.573 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:17:41.574 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 16:18:41.575 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 16:18:54.134 [TaskBatchingWorker-target_localhost-1] ERROR ReplicationTaskProcessor - It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:534) ~[jersey-apache-connector-3.1.8.jar:?]
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:674) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:709) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:703) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:391) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:703) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:673) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345) ~[jersey-client-3.1.8.jar:?]
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116) ~[eureka-core-jersey3-2.0.2.jar:2.0.2]
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80) [eureka-core-2.0.2.jar:2.0.2]
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:190) [eureka-core-2.0.2.jar:2.0.2]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808) ~[?:?]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[?:?]
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:486) ~[jersey-apache-connector-3.1.8.jar:?]
+	... 16 more
+2024-11-30 16:19:41.576 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:19:43.572 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  PeerAwareInstanceRegistryImpl - Current renewal threshold is : 10
+2024-11-30 16:20:41.588 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 12ms
+2024-11-30 16:21:41.595 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 7ms
+2024-11-30 16:22:41.603 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 7ms
+2024-11-30 16:23:37.619 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 16:23:38.127 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 16:23:41.610 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 6ms
+2024-11-30 16:24:13.349 [http-nio-8761-exec-5] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=false)
+2024-11-30 16:24:13.876 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=true)
+2024-11-30 16:24:41.610 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:25:41.614 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2024-11-30 16:26:41.617 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2024-11-30 16:27:41.622 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2024-11-30 16:28:41.623 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:29:41.623 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:30:41.623 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:31:41.624 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:32:12.402 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 16:32:12.920 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 16:32:41.625 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 16:32:50.453 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=false)
+2024-11-30 16:32:50.970 [http-nio-8761-exec-10] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=true)
+2024-11-30 16:33:41.625 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:34:09.250 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 16:34:09.764 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 16:34:36.114 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=false)
+2024-11-30 16:34:36.631 [http-nio-8761-exec-1] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=true)
+2024-11-30 16:34:41.626 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:34:42.281 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  PeerAwareInstanceRegistryImpl - Current renewal threshold is : 10
+2024-11-30 16:35:11.810 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 16:35:12.318 [http-nio-8761-exec-7] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 16:35:37.492 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=false)
+2024-11-30 16:35:37.998 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=true)
+2024-11-30 16:35:41.633 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 6ms
+2024-11-30 16:36:41.642 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 9ms
+2024-11-30 16:37:41.643 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:38:41.649 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2024-11-30 16:38:58.772 [http-nio-8761-exec-5] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 16:38:59.278 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 16:39:24.925 [http-nio-8761-exec-1] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=false)
+2024-11-30 16:39:25.434 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status UP (replication=true)
+2024-11-30 16:39:41.650 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 16:40:41.653 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 2ms
+2024-11-30 16:41:41.654 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:42:41.663 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 9ms
+2024-11-30 16:43:41.663 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:44:41.663 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:45:41.666 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:46:41.664 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:47:41.665 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:48:41.665 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:49:41.665 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:49:42.298 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  PeerAwareInstanceRegistryImpl - Current renewal threshold is : 10
+2024-11-30 16:50:41.666 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:51:41.667 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:52:41.667 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 16:53:41.668 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:54:41.668 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:55:41.669 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:56:41.669 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:57:41.670 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:58:41.670 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 16:59:41.670 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 17:00:41.671 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 17:00:47.792 [http-nio-8761-exec-3] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 17:00:48.302 [http-nio-8761-exec-5] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/asaf:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 17:01:25.573 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/localhost:analytics-service:8085 with status UP (replication=false)
+2024-11-30 17:01:26.050 [http-nio-8761-exec-3] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/localhost:analytics-service:8085 with status UP (replication=true)
+2024-11-30 17:01:41.671 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 17:02:41.677 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 6ms
+2024-11-30 17:02:41.677 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Evicting 1 items (expired=1, evictionLimit=1)
+2024-11-30 17:02:41.677 [Eureka-EvictionTimer] WARN  AbstractInstanceRegistry - DS: Registry: expired lease for ANALYTICS-SERVICE/asaf:analytics-service:8085
+2024-11-30 17:02:41.677 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Cancelled instance ANALYTICS-SERVICE/asaf:analytics-service:8085 (replication=false)
+2024-11-30 17:03:41.691 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 14ms
+2024-11-30 17:04:41.696 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2024-11-30 17:04:42.290 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  PeerAwareInstanceRegistryImpl - Current renewal threshold is : 10
+2024-11-30 17:05:41.696 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 17:06:41.709 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 13ms
+2024-11-30 17:07:41.713 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2024-11-30 17:08:41.722 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 8ms
+2024-11-30 17:09:00.765 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/localhost:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 17:09:01.284 [http-nio-8761-exec-4] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/localhost:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 17:09:41.725 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2024-11-30 17:10:03.378 [http-nio-8761-exec-6] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/localhost:analytics-service:8085 with status UP (replication=false)
+2024-11-30 17:10:03.899 [http-nio-8761-exec-9] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/localhost:analytics-service:8085 with status UP (replication=true)
+2024-11-30 17:10:41.726 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 17:11:41.727 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 17:12:41.742 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 14ms
+2024-11-30 17:13:41.751 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 9ms
+2024-11-30 17:14:40.708 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/localhost:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 17:14:41.221 [http-nio-8761-exec-5] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/localhost:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 17:14:41.751 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 17:15:41.752 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 17:15:47.688 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/localhost:analytics-service:8085 with status UP (replication=false)
+2024-11-30 17:15:48.213 [http-nio-8761-exec-5] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/localhost:analytics-service:8085 with status UP (replication=true)
+2024-11-30 17:16:41.761 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 9ms
+2024-11-30 17:17:41.774 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 11ms
+2024-11-30 17:18:41.782 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 8ms
+2024-11-30 17:19:41.784 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-11-30 17:19:42.321 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  PeerAwareInstanceRegistryImpl - Current renewal threshold is : 10
+2024-11-30 17:20:10.364 [http-nio-8761-exec-8] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/localhost:analytics-service:8085 with status DOWN (replication=false)
+2024-11-30 17:20:10.890 [http-nio-8761-exec-1] INFO  AbstractInstanceRegistry - Registered instance ANALYTICS-SERVICE/localhost:analytics-service:8085 with status DOWN (replication=true)
+2024-11-30 17:20:14.028 [http-nio-8761-exec-2] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=false)
+2024-11-30 17:20:14.550 [http-nio-8761-exec-5] INFO  AbstractInstanceRegistry - Registered instance PATIENT-SERVICE/asaf:patient-service:8083 with status DOWN (replication=true)
+2024-11-30 17:20:41.784 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 17:21:41.798 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 13ms
+2024-11-30 17:21:41.798 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Evicting 1 items (expired=1, evictionLimit=1)
+2024-11-30 17:21:41.803 [Eureka-EvictionTimer] WARN  AbstractInstanceRegistry - DS: Registry: expired lease for ANALYTICS-SERVICE/localhost:analytics-service:8085
+2024-11-30 17:21:41.806 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Cancelled instance ANALYTICS-SERVICE/localhost:analytics-service:8085 (replication=false)
+2024-11-30 17:22:41.804 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 6ms
+2024-11-30 17:22:41.804 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Evicting 1 items (expired=1, evictionLimit=1)
+2024-11-30 17:22:41.805 [Eureka-EvictionTimer] WARN  AbstractInstanceRegistry - DS: Registry: expired lease for PATIENT-SERVICE/asaf:patient-service:8083
+2024-11-30 17:22:41.806 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Cancelled instance PATIENT-SERVICE/asaf:patient-service:8083 (replication=false)
+2024-11-30 17:23:41.811 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 7ms
+2024-11-30 17:24:41.815 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2024-11-30 17:25:41.816 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 17:26:41.817 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-11-30 17:27:41.820 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2024-11-30 17:28:41.825 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2024-11-30 17:29:41.841 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 15ms
+2024-11-30 17:30:41.857 [Eureka-EvictionTimer] INFO  AbstractInstanceRegistry - Running the evict task with compensationTime 15ms
+2024-11-30 19:27:40.406 [SpringApplicationShutdownHook] INFO  EurekaServiceRegistry - Unregistering application DISCOVERY-SERVER with eureka with status DOWN
+2024-11-30 19:27:41.222 [SpringApplicationShutdownHook] INFO  EurekaServerBootstrap - Shutting down Eureka Server..
+2024-11-30 19:27:41.331 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shutting down ...
+2024-11-30 19:27:41.379 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2024-11-30 19:27:41.394 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2024-11-30 19:27:41.394 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2024-11-30 19:27:41.394 [SpringApplicationShutdownHook] INFO  StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2024-11-30 19:27:41.410 [Eureka-Jersey3Client-Conn-Cleaner2] ERROR EurekaJersey3ClientImpl - Cannot clean connections
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363) ~[jersey-client-3.1.8.jar:?]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54) ~[jersey-client-3.1.8.jar:?]
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:347) [eureka-client-jersey3-2.0.2.jar:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-11-30 19:27:41.520 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shut down
+2024-11-30 19:27:41.520 [SpringApplicationShutdownHook] INFO  EurekaServerBootstrap - Eureka Service is now shutdown...
+2024-11-30 19:27:41.535 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shutting down ...
+2024-11-30 19:27:41.551 [SpringApplicationShutdownHook] INFO  DefaultEurekaServerContext - Shut down
+2024-11-30 19:27:41.614 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Shutting down DiscoveryClient ...
+2024-11-30 19:27:41.630 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Completed shut down of DiscoveryClient

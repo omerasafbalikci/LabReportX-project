@@ -17,28 +17,19 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Log4j2
 public class AnalyticsServiceImpl implements AnalyticsService {
+    private final AnalyticsConsumer analyticsConsumer;
     private final WebClient.Builder webClientBuilder;
     private final String jwt = HttpHeaders.AUTHORIZATION.substring(7);
-    private final CacheManager cacheManager;
     private final ChartService chartService;
     private final MailService mailService;
 
     @Override
     public byte[] getPatientChart() {
-        WeeklyStats weeklyStats = getCachedWeeklyStats();
+        WeeklyStats weeklyStats = analyticsConsumer.getCachedWeeklyStats();
         if (weeklyStats == null) {
             throw new ResponseStatusException("No weekly stats available");
         }
         return this.chartService.generateChart(weeklyStats);
-    }
-
-    @KafkaListener(topics = "weekly-stats", groupId = "analytics-group")
-    public void cacheWeeklyStats(WeeklyStats weeklyStats) {
-        Objects.requireNonNull(this.cacheManager.getCache("weeklyStatsCache")).put("latest", weeklyStats);
-    }
-
-    private WeeklyStats getCachedWeeklyStats() {
-        return Objects.requireNonNull(this.cacheManager.getCache("weeklyStatsCache")).get("latest", WeeklyStats.class);
     }
 
     @Override

@@ -9,6 +9,7 @@ import com.lab.backend.patient.entity.Patient;
 import com.lab.backend.patient.repository.PatientRepository;
 import com.lab.backend.patient.repository.PatientSpecification;
 import com.lab.backend.patient.service.abstracts.PatientService;
+import com.lab.backend.patient.utilities.PatientAnalyticsProducer;
 import com.lab.backend.patient.utilities.exceptions.PatientAlreadyExistsException;
 import com.lab.backend.patient.utilities.exceptions.PatientNotFoundException;
 import com.lab.backend.patient.utilities.mappers.PatientMapper;
@@ -42,7 +43,7 @@ import java.util.function.Consumer;
 public class PatientServiceImpl implements PatientService {
     private final PatientRepository patientRepository;
     private final PatientMapper patientMapper;
-    private KafkaTemplate<String, Object> kafkaTemplate;
+    private final PatientAnalyticsProducer patientAnalyticsProducer;
 
     /**
      * Retrieves a patient's details by their ID.
@@ -88,23 +89,30 @@ public class PatientServiceImpl implements PatientService {
         return response;
     }
 
+    /**
+     * Generates and sends weekly patient registration statistics to a Kafka topic.
+     *
+     * <p>This method calculates the number of patient registrations for each of the past
+     * 7 days, builds a {@link WeeklyStats} object containing the statistics, and sends
+     * it to the configured Kafka topic using {@link PatientAnalyticsProducer}.
+     *
+     */
     public void sendWeeklyPatientRegistrationStats() {
+        log.trace("Entering sendWeeklyPatientRegistrationStats method in PatientServiceImpl");
         LocalDate today = LocalDate.now();
         Map<String, Long> dailyRegistrations = new LinkedHashMap<>();
-
         for (int i = 0; i < 7; i++) {
             LocalDate date = today.minusDays(i);
-            Long count = this.patientRepository.countByRegistrationTimeBetween(date.atStartOfDay(), date.plusDays(1).atStartOfDay());
+            Long count = this.patientRepository.countByLastPatientRegistrationTimeBetween(date.atStartOfDay(), date.plusDays(1).atStartOfDay());
             dailyRegistrations.put(date.toString(), count);
         }
-
         WeeklyStats weeklyStats = WeeklyStats.builder()
                 .eventId(UUID.randomUUID().toString())
                 .timestamp(LocalDateTime.now())
                 .weeklyStats(dailyRegistrations)
                 .build();
-
-        this.kafkaTemplate.send("weekly-stats", weeklyStats);
+        this.patientAnalyticsProducer.sendPatientRegistrationStats("patient-stats", weeklyStats);
+        log.trace("Exiting sendWeeklyPatientRegistrationStats method in PatientServiceImpl");
     }
 
     /**

@@ -2,8 +2,10 @@ package com.lab.backend.patient.service.abstracts;
 
 import com.lab.backend.patient.dto.requests.CreatePatientRequest;
 import com.lab.backend.patient.dto.requests.UpdatePatientRequest;
+import com.lab.backend.patient.dto.requests.WeeklyStats;
 import com.lab.backend.patient.dto.responses.GetPatientResponse;
 import com.lab.backend.patient.dto.responses.PagedResponse;
+import com.lab.backend.patient.utilities.PatientAnalyticsProducer;
 
 import java.util.Set;
 
@@ -30,6 +32,9 @@ public interface PatientService {
      */
     GetPatientResponse getPatientByTrIdNumber(String trIdNumber);
 
+    /**
+     * Generates and sends weekly patient registration statistics to a Kafka topic.
+     */
     void sendWeeklyPatientRegistrationStats();
 
     /**

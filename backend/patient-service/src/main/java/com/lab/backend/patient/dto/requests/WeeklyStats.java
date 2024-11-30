@@ -9,6 +9,12 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Map;
 
+/**
+ * DTO for weekly stats.
+ *
+ * @author Ömer Asaf BALIKÇI
+ */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
