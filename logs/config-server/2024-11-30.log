@@ -1,0 +1,16 @@
+2024-11-30 02:54:15.307 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-30 02:54:15.395 [main] INFO  ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.11 with PID 1220 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\config-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-11-30 02:54:15.395 [main] DEBUG ConfigServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-11-30 02:54:15.396 [main] INFO  ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2024-11-30 02:54:17.351 [main] INFO  GenericScope - BeanFactory id=573b7218-ad2b-31a2-8a41-d3d954054d58
+2024-11-30 02:54:18.409 [main] INFO  TomcatWebServer - Tomcat initialized with port 8888 (http)
+2024-11-30 02:54:18.437 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-11-30 02:54:18.440 [main] INFO  StandardService - Starting service [Tomcat]
+2024-11-30 02:54:18.441 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-11-30 02:54:18.636 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-11-30 02:54:18.641 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3166 ms
+2024-11-30 02:54:30.492 [main] INFO  EndpointLinksResolver - Exposing 17 endpoints beneath base path '/actuator'
+2024-11-30 02:54:30.738 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2024-11-30 02:54:31.118 [main] INFO  TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
+2024-11-30 02:54:31.402 [main] INFO  ConfigServerApplication - Started ConfigServerApplication in 16.703 seconds (process running for 21.182)
+2024-11-30 02:56:07.960 [Thread-2] WARN  MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\omera\AppData\Local\Temp\config-repo-6490504399479466576\.git\objects\pack\pack-ff7d2cc27b63b61f91b3d4ddc954abde66ba2d94.idx

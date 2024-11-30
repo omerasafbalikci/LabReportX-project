@@ -78,7 +78,8 @@ public class GlobalExceptionHandler extends AbstractErrorWebExceptionHandler {
         } else if (error instanceof MissingRolesException || error instanceof LoggedOutTokenException) {
             return HttpStatus.UNAUTHORIZED;
         } else if (error instanceof AuthServiceUnavailableException || error instanceof UserServiceUnavailableException ||
-                error instanceof PatientServiceUnavailableException || error instanceof ReportServiceUnavailableException) {
+                error instanceof PatientServiceUnavailableException || error instanceof ReportServiceUnavailableException ||
+                error instanceof AnalyticsServiceUnavailableException) {
             return HttpStatus.SERVICE_UNAVAILABLE;
         } else {
             return HttpStatus.INTERNAL_SERVER_ERROR;

@@ -1,9 +1,6 @@
 package com.lab.backend.gateway.controller;
 
-import com.lab.backend.gateway.utilities.exceptions.AuthServiceUnavailableException;
-import com.lab.backend.gateway.utilities.exceptions.PatientServiceUnavailableException;
-import com.lab.backend.gateway.utilities.exceptions.ReportServiceUnavailableException;
-import com.lab.backend.gateway.utilities.exceptions.UserServiceUnavailableException;
+import com.lab.backend.gateway.utilities.exceptions.*;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -89,6 +86,17 @@ public class FallbackController {
             throw new ReportServiceUnavailableException("Report service is temporarily unavailable. Please try again later.");
         } finally {
             log.trace("Exiting fallbackReport method in FallbackController");
+        }
+    }
+
+    @RequestMapping(value = "/fallback/analytics", method = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
+    public ResponseEntity<String> fallbackAnalytics() {
+        log.trace("Entering fallbackAnalytics method in FallbackController");
+        try {
+            log.error("Analytics service is unavailable, executing fallback method");
+            throw new AnalyticsServiceUnavailableException("Analytics service is temporarily unavailable. Please try again later.");
+        } finally {
+            log.trace("Exiting fallbackAnalytics method in FallbackController");
         }
     }
 }

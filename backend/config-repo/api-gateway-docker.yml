@@ -21,6 +21,7 @@ route:
   user: "lb://user-management-service"
   patient: "lb://patient-service"
   report: "lb://report-service"
+  analytics: "lb://analytics-service"
 
 redis:
   host: "redis"

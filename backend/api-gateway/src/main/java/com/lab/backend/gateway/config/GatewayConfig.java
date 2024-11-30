@@ -31,6 +31,9 @@ public class GatewayConfig {
     @Value("${route.report}")
     private String REPORT_URI;
 
+    @Value("${route.analytics}")
+    private String ANALYTICS_URI;
+
     @Value("${circuit-breaker-name}")
     private String CIRCUIT_BREAKER_NAME;
 
@@ -47,6 +50,7 @@ public class GatewayConfig {
         this.endpointRoleMapping.put("/patients/check-tr-id-number", List.of("SECRETARY", "TECHNICIAN"));
         this.endpointRoleMapping.put("/barcode", List.of("SECRETARY"));
         this.endpointRoleMapping.put("/reports", List.of("TECHNICIAN"));
+        this.endpointRoleMapping.put("/analytics", List.of("ADMIN"));
         this.endpointRoleMapping.put("/users", List.of("ADMIN"));
         this.endpointRoleMapping.put("/users/me", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
         this.endpointRoleMapping.put("/users/update/me", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
@@ -93,6 +97,13 @@ public class GatewayConfig {
                                 .circuitBreaker(c -> c.setName(this.CIRCUIT_BREAKER_NAME).setFallbackUri("forward:/fallback/report"))
                         )
                         .uri(this.REPORT_URI))
+
+                .route("analytics-service", r -> r.path("/analytics/**")
+                        .filters(f -> f
+                                .filter(authGatewayFilterFactory.apply(new AuthGatewayFilterFactory.Config().setRoleMapping(endpointRoleMapping)))
+                                .circuitBreaker(c -> c.setName(this.CIRCUIT_BREAKER_NAME).setFallbackUri("forward:/fallback/analytics"))
+                        )
+                        .uri(this.ANALYTICS_URI))
 
                 .build();
     }
