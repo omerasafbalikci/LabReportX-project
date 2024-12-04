@@ -2,6 +2,7 @@ package com.lab.backend.report.service.concretes;
 
 import com.lab.backend.report.dto.requests.CreateReportRequest;
 import com.lab.backend.report.dto.requests.UpdateReportRequest;
+import com.lab.backend.report.dto.requests.WeeklyStats;
 import com.lab.backend.report.dto.responses.GetPatientResponse;
 import com.lab.backend.report.dto.responses.GetReportResponse;
 import com.lab.backend.report.dto.responses.PagedResponse;
@@ -10,6 +11,7 @@ import com.lab.backend.report.repository.ReportRepository;
 import com.lab.backend.report.repository.ReportSpecification;
 import com.lab.backend.report.service.abstracts.ReportService;
 import com.lab.backend.report.utilities.PdfUtil;
+import com.lab.backend.report.utilities.ReportAnalyticsProducer;
 import com.lab.backend.report.utilities.exceptions.*;
 import com.lab.backend.report.utilities.mappers.ReportMapper;
 import lombok.RequiredArgsConstructor;
@@ -33,6 +35,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -53,6 +57,7 @@ public class ReportServiceImpl implements ReportService {
     private final RedisTemplate<String, String> redisTemplate;
     private final WebClient.Builder webClientBuilder;
     private final String jwt = HttpHeaders.AUTHORIZATION.substring(7);
+    private final ReportAnalyticsProducer reportAnalyticsProducer;
     private final PdfUtil pdfUtil;
     private final PrescriptionService prescriptionService;
     private final MailService mailService;
@@ -76,6 +81,29 @@ public class ReportServiceImpl implements ReportService {
         log.info("Report found: {}", response);
         log.trace("Exiting getReportById method in ReportServiceImpl");
         return response;
+    }
+
+    /**
+     * Sends weekly report statistics by calculating the number of reports created in the past 7 days.
+     * The statistics are sent to a Kafka topic.
+     */
+    @Override
+    public void sendWeeklyReportStats() {
+        log.trace("Entering sendWeeklyReportStats method in ReportServiceImpl");
+        LocalDate today = LocalDate.now();
+        Map<String, Long> dailyReports = new LinkedHashMap<>();
+        for (int i = 0; i < 7; i++) {
+            LocalDate date = today.minusDays(i);
+            Long count = this.reportRepository.countByDateBetween(date.atStartOfDay(), date.plusDays(1).atStartOfDay());
+            dailyReports.put(date.toString(), count);
+        }
+        WeeklyStats weeklyStats = WeeklyStats.builder()
+                .eventId(UUID.randomUUID().toString())
+                .timestamp(LocalDateTime.now())
+                .weeklyStats(dailyReports)
+                .build();
+        this.reportAnalyticsProducer.sendReportStats("report-stats", weeklyStats);
+        log.trace("Exiting sendWeeklyReportStats method in ReportServiceImpl");
     }
 
     /**

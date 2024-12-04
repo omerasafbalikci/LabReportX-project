@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,4 +42,13 @@ public interface ReportRepository extends JpaRepository<Report, Long>, JpaSpecif
      */
     @Query("SELECT r.fileNumber FROM Report r WHERE r.deleted = false")
     List<String> findAllFileNumberAndDeletedFalse();
+
+    /**
+     * Counts the number of reports created between the specified start and end times.
+     *
+     * @param startDate the start of the date range
+     * @param endDate   the end of the date range
+     * @return the number of reports created in the specified range
+     */
+    Long countByDateBetween(LocalDateTime startDate, LocalDateTime endDate);
 }

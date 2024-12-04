@@ -1,8 +1,8 @@
 package com.lab.backend.patient.service.concretes;
 
 import com.lab.backend.patient.dto.requests.CreatePatientRequest;
-import com.lab.backend.patient.dto.requests.WeeklyStats;
 import com.lab.backend.patient.dto.requests.UpdatePatientRequest;
+import com.lab.backend.patient.dto.requests.WeeklyStats;
 import com.lab.backend.patient.dto.responses.GetPatientResponse;
 import com.lab.backend.patient.dto.responses.PagedResponse;
 import com.lab.backend.patient.entity.Patient;
@@ -22,7 +22,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
@@ -95,8 +94,8 @@ public class PatientServiceImpl implements PatientService {
      * <p>This method calculates the number of patient registrations for each of the past
      * 7 days, builds a {@link WeeklyStats} object containing the statistics, and sends
      * it to the configured Kafka topic using {@link PatientAnalyticsProducer}.
-     *
      */
+    @Override
     public void sendWeeklyPatientRegistrationStats() {
         log.trace("Entering sendWeeklyPatientRegistrationStats method in PatientServiceImpl");
         LocalDate today = LocalDate.now();

@@ -23,6 +23,12 @@ public interface ReportService {
     GetReportResponse getReportById(Long id);
 
     /**
+     * Sends weekly report statistics by calculating the number of reports created in the past 7 days.
+     * The statistics are sent to a Kafka topic.
+     */
+    void sendWeeklyReportStats();
+
+    /**
      * Retrieves all reports with optional filtering and sorting.
      *
      * @param page               the page number to retrieve
