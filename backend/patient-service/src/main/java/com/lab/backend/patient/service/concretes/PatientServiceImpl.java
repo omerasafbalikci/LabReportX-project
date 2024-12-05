@@ -257,6 +257,9 @@ public class PatientServiceImpl implements PatientService {
             savedPatient = this.patientRepository.save(patient);
             log.info("New patient created with TR ID number: {}", createPatientRequest.getTrIdNumber());
         }
+        if (savedPatient.getEmail() != null) {
+            this.patientAnalyticsProducer.sendEmail("patient-email-topic", savedPatient.getEmail());
+        }
         GetPatientResponse patientResponse = this.patientMapper.toGetPatientResponse(savedPatient);
         log.info("Successfully saved patient with ID: {}", savedPatient.getId());
         log.trace("Exiting savePatient method in PatientServiceImpl");

@@ -7,8 +7,8 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 /**
- * A Kafka producer component for sending patient registration statistics to a specified topic.
- * This class is responsible for publishing weekly patient registration stats to Kafka.
+ * Kafka producer component for publishing patient-related analytics data.
+ * Handles sending statistics and email notifications to specific Kafka topics.
  *
  * @author Ömer Asaf BALIKÇI
  */
@@ -28,5 +28,16 @@ public class PatientAnalyticsProducer {
     public void sendPatientRegistrationStats(String topic, WeeklyStats weeklyStats) {
         log.trace("Preparing to send weekly patient registration stats to topic: {}", topic);
         this.kafkaTemplate.send(topic, weeklyStats);
+    }
+
+    /**
+     * Sends an email address to the specified Kafka topic for survey or other notifications.
+     *
+     * @param topic the name of the Kafka topic to publish to
+     * @param email the email address to send
+     */
+    public void sendEmail(String topic, String email) {
+        log.trace("Preparing to send email to topic: {}", topic);
+        this.kafkaTemplate.send(topic, email);
     }
 }

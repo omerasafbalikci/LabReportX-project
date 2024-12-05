@@ -46,7 +46,9 @@ management, has been developed.
           <li>OpenCV</li>
           <li>Spring Cloud</li>
           <li>Netflix Eureka</li>
+          <li>Web Client</li>
           <li>Redis</li>
+          <li>Hazelcast</li>
           <li>JUnit 5</li>
           <li>JUnit Suite Engine</li>
           <li>JaCoCo</li>
@@ -64,6 +66,8 @@ management, has been developed.
           <li>Resilience4J</li>
           <li>Google Gemini</li>
           <li>RabbitMQ</li>
+          <li>Kafka</li>
+          <li>JFreeChart</li>
           <li>JavaMailSender</li>
           <li>iTextPDF</li>
           <li>Prometheus</li>
@@ -85,6 +89,7 @@ management, has been developed.
           <li>Token & Role Based Authentication & Authorization</li>
           <li>Microservices</li>
           <li>API Gateway</li>
+          <li>Config Server</li>
           <li>Load Balancing</li>
           <li>Token Storing</li>
           <li>Caching</li>
@@ -97,7 +102,7 @@ management, has been developed.
     </td>
     <td>
         <ul>
-          <li>Data Visualization</li>
+          <li>Web Client</li>
           <li>Distributed Tracing System</li>
           <li>Soft Deletion</li>
           <li>Pagination, Filtering & Sorting</li>
@@ -108,6 +113,7 @@ management, has been developed.
           <li>Prescription Generation</li>
           <li>AI Insight</li>
           <li>Static Code Analysis</li>
+          <li>Data Visualization</li>
         </ul>
     </td>
   </tr>
