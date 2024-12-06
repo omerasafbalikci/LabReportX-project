@@ -156,10 +156,18 @@
                                 <exclude>**/advice/**</exclude>
                                 <exclude>**/utilities/exceptions/**</exclude>
                                 <exclude>**/utilities/mappers/**</exclude>
+                                <exclude>**/PatientAnalyticsProducer.class</exclude>
+                                <exclude>**/WeeklyStatsScheduler.class</exclude>
+                                <exclude>**/ReportAnalyticsProducer.class</exclude>
+                                <exclude>**/AnalyticsConsumer.class</exclude>
+                                <exclude>**/ChartService.class</exclude>
                                 <exclude>**/service/abstracts/**</exclude>
                                 <exclude>**/RabbitMQConfig.class</exclude>
                                 <exclude>**/WebClientConfig.class</exclude>
                                 <exclude>**/RedisConfig.class</exclude>
+                                <exclude>**/HazelcastConfiguration.class</exclude>
+                                <exclude>**/KafkaConsumerConfig.class</exclude>
+                                <exclude>**/KafkaProducerConfig.class</exclude>
                                 <exclude>**/MailConfig.class</exclude>
                                 <exclude>**/ApplicationConfig.class</exclude>
                                 <exclude>**/Resilience4JConfig.class</exclude>
@@ -197,5 +205,69 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>properties-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <executions>
+                            <execution>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>read-project-properties</goal>
+                                </goals>
+                                <configuration>
+                                    <files>
+                                        <file>sonar-project.properties</file>
+                                    </files>
+                                </configuration>
+                                <inherited>false</inherited>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonarsource.scanner.maven</groupId>
+                        <artifactId>sonar-maven-plugin</artifactId>
+                        <version>5.0.0.4389</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>jib</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.google.cloud.tools</groupId>
+                        <artifactId>jib-maven-plugin</artifactId>
+                        <version>3.4.4</version>
+                        <configuration>
+                            <from>
+                                <image>
+                                    eclipse-temurin:17-jre-alpine@sha256:ad9223070abcf5716e98296a98c371368810deb36197b75f3a7b74815185c5e3
+                                </image>
+                            </from>
+                            <to>
+                                <image>omerasafbalikci/${project.artifactId}</image>
+                            </to>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>dockerBuild</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>

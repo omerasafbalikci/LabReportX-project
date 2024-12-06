@@ -38,7 +38,7 @@ public class AnalyticsServiceImpl implements AnalyticsService {
             throw new ResponseStatusException("No weekly patient stats available");
         }
         log.trace("Exiting getPatientChart method in AnalyticsServiceImpl");
-        return this.chartService.generateChart(weeklyStats);
+        return this.chartService.generateChart("Patients", "Weekly Patient Density", "Number of Patients", "Weekly Patient Density Overview", weeklyStats);
     }
 
     /**
@@ -56,7 +56,7 @@ public class AnalyticsServiceImpl implements AnalyticsService {
             throw new ResponseStatusException("No weekly report stats available");
         }
         log.trace("Exiting getReportChart method in AnalyticsServiceImpl");
-        return this.chartService.generateChart(weeklyStats);
+        return this.chartService.generateChart("Reports", "Weekly Report Density", "Number of Reports", "Weekly Report Density Overview", weeklyStats);
     }
 
     /**
@@ -69,8 +69,17 @@ public class AnalyticsServiceImpl implements AnalyticsService {
     public void sendPatientSatisfactionSurvey(String email) {
         log.trace("Entering sendPatientSatisfactionSurvey method with email: {}", email);
         String subject = "Patient Satisfaction Survey";
-        String text = "Dear patient,\n\nWe value your feedback. Please take a moment to fill out our patient satisfaction survey by clicking the link below:\n\n"
-                + "https://forms.gle/tntLg4g1Wrrs2oSQA\n\nYour input is important to us.\n\nBest regards,\nSevda Hospital";
+        String text = """
+                Dear patient,
+
+                We value your feedback. Please take a moment to fill out our patient satisfaction survey by clicking the link below:
+
+                https://forms.gle/tntLg4g1Wrrs2oSQA
+
+                Your input is important to us.
+
+                Best regards,
+                Sevda Hospital""";
 
         this.mailService.sendEmail(email, subject, text);
         log.info("Survey email sent to: {}", email);

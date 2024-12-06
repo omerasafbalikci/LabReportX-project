@@ -1,0 +1,1374 @@
+2024-12-06 15:40:17.901 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-06 15:40:17.964 [main] INFO  ReportServiceApplication - Starting ReportServiceApplication using Java 17.0.11 with PID 10012 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\report-service\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-12-06 15:40:17.970 [main] DEBUG ReportServiceApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-12-06 15:40:17.970 [main] INFO  ReportServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-06 15:40:18.021 [main] INFO  ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-12-06 15:40:18.026 [main] INFO  ConfigServerConfigDataLoader - Located environment: name=report-service, profiles=[default], label=null, version=a767abdc35d745c50f4555eafb10639fe4cfb72b, state=null
+2024-12-06 15:40:18.996 [main] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-06 15:40:18.996 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-06 15:40:19.021 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2024-12-06 15:40:19.490 [main] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-06 15:40:19.490 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-06 15:40:19.631 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 136 ms. Found 1 JPA repository interface.
+2024-12-06 15:40:19.640 [main] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-06 15:40:19.640 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-06 15:40:19.651 [main] INFO  RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.lab.backend.report.repository.ReportRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-12-06 15:40:19.651 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2024-12-06 15:40:20.071 [main] INFO  GenericScope - BeanFactory id=3f48e099-dcfe-3a31-8fa6-da0eef069cb7
+2024-12-06 15:40:20.419 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-06 15:40:20.421 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-12-06 15:40:20.421 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-06 15:40:20.430 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-12-06 15:40:20.430 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-12-06 15:40:20.830 [main] INFO  TomcatWebServer - Tomcat initialized with port 8084 (http)
+2024-12-06 15:40:20.849 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+2024-12-06 15:40:20.850 [main] INFO  StandardService - Starting service [Tomcat]
+2024-12-06 15:40:20.850 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-12-06 15:40:20.940 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-12-06 15:40:20.940 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2911 ms
+2024-12-06 15:40:21.759 [main] INFO  LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-06 15:40:21.854 [main] INFO  Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-12-06 15:40:21.905 [main] INFO  RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-06 15:40:22.310 [main] INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-06 15:40:22.355 [main] INFO  HikariDataSource - HikariPool-1 - Starting...
+2024-12-06 15:40:22.561 [main] INFO  HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4b8ba6b7
+2024-12-06 15:40:22.569 [main] INFO  HikariDataSource - HikariPool-1 - Start completed.
+2024-12-06 15:40:23.711 [main] INFO  JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-06 15:40:23.825 [main] INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-06 15:40:24.190 [main] INFO  QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-06 15:40:24.940 [main] TRACE KafkaProducerConfig - Kafka Producer Config - compression.type: snappy
+2024-12-06 15:40:24.949 [main] TRACE KafkaProducerConfig - Kafka Producer Config - retries: 2147483647
+2024-12-06 15:40:24.949 [main] TRACE KafkaProducerConfig - Kafka Producer Config - value.serializer: class org.springframework.kafka.support.serializer.JsonSerializer
+2024-12-06 15:40:24.949 [main] TRACE KafkaProducerConfig - Kafka Producer Config - enable.idempotence: true
+2024-12-06 15:40:24.949 [main] TRACE KafkaProducerConfig - Kafka Producer Config - acks: all
+2024-12-06 15:40:24.949 [main] TRACE KafkaProducerConfig - Kafka Producer Config - batch.size: 32768
+2024-12-06 15:40:24.949 [main] TRACE KafkaProducerConfig - Kafka Producer Config - bootstrap.servers: localhost:9092
+2024-12-06 15:40:24.949 [main] TRACE KafkaProducerConfig - Kafka Producer Config - max.in.flight.requests.per.connection: 5
+2024-12-06 15:40:24.949 [main] TRACE KafkaProducerConfig - Kafka Producer Config - key.serializer: class org.apache.kafka.common.serialization.StringSerializer
+2024-12-06 15:40:24.949 [main] TRACE KafkaProducerConfig - Kafka Producer Config - spring.json.type.mapping: weeklyStats:com.lab.backend.report.dto.requests.WeeklyStats
+2024-12-06 15:40:24.949 [main] TRACE KafkaProducerConfig - Kafka Producer Config - linger.ms: 20
+2024-12-06 15:40:26.970 [main] INFO  DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-12-06 15:40:27.070 [main] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-12-06 15:40:27.086 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-06 15:40:27.210 [main] INFO  InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-12-06 15:40:27.270 [main] INFO  DiscoveryClient - Initializing Eureka in region us-east-1
+2024-12-06 15:40:27.283 [main] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 15:40:27.317 [main] INFO  DiscoveryClient - Disable delta property : false
+2024-12-06 15:40:27.317 [main] INFO  DiscoveryClient - Single vip registry refresh property : null
+2024-12-06 15:40:27.318 [main] INFO  DiscoveryClient - Force full registry fetch : false
+2024-12-06 15:40:27.318 [main] INFO  DiscoveryClient - Application is null : false
+2024-12-06 15:40:27.318 [main] INFO  DiscoveryClient - Registered Applications size is zero : true
+2024-12-06 15:40:27.318 [main] INFO  DiscoveryClient - Application version is -1: true
+2024-12-06 15:40:27.318 [main] INFO  DiscoveryClient - Getting all instance registry info from the eureka server
+2024-12-06 15:40:27.740 [main] INFO  DiscoveryClient - The response status is 200
+2024-12-06 15:40:27.749 [main] INFO  DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-12-06 15:40:27.752 [main] INFO  InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-12-06 15:40:27.756 [main] INFO  DiscoveryClient - Discovery Client initialized at timestamp 1733488827756 with initial instances count: 4
+2024-12-06 15:40:27.760 [main] INFO  EurekaServiceRegistry - Registering application REPORT-SERVICE with eureka with status UP
+2024-12-06 15:40:27.760 [main] INFO  DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1733488827760, current=UP, previous=STARTING]
+2024-12-06 15:40:27.760 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_REPORT-SERVICE/10.7.85.246:report-service:8084: registering service...
+2024-12-06 15:40:27.760 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+2024-12-06 15:40:27.780 [main] INFO  TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
+2024-12-06 15:40:27.780 [main] INFO  EurekaAutoServiceRegistration - Updating port to 8084
+2024-12-06 15:40:27.811 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_REPORT-SERVICE/10.7.85.246:report-service:8084 - registration status: 204
+2024-12-06 15:40:28.194 [main] INFO  ReportServiceApplication - Started ReportServiceApplication in 12.145 seconds (process running for 16.355)
+2024-12-06 15:40:30.011 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:40:30.011 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:40:30.171 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:40:30.220 [scheduling-1] INFO  ProducerConfig - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 32768
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = report-service-producer-1
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 20
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2024-12-06 15:40:30.281 [scheduling-1] INFO  KafkaMetricsCollector - initializing Kafka metrics collector
+2024-12-06 15:40:30.312 [scheduling-1] INFO  KafkaProducer - [Producer clientId=report-service-producer-1] Instantiated an idempotent producer.
+2024-12-06 15:40:30.385 [scheduling-1] INFO  AppInfoParser - Kafka version: 3.7.1
+2024-12-06 15:40:30.385 [scheduling-1] INFO  AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-12-06 15:40:30.385 [scheduling-1] INFO  AppInfoParser - Kafka startTimeMs: 1733488830382
+2024-12-06 15:40:30.841 [kafka-producer-network-thread | report-service-producer-1] INFO  Metadata - [Producer clientId=report-service-producer-1] Cluster ID: DhPAyrJESYSqPFOSNVoyDg
+2024-12-06 15:40:30.841 [kafka-producer-network-thread | report-service-producer-1] INFO  TransactionManager - [Producer clientId=report-service-producer-1] ProducerId set to 3001 with epoch 0
+2024-12-06 15:40:30.920 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:40:30.920 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:41:00.016 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:41:00.017 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:41:00.048 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:41:00.048 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:41:00.049 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:41:30.005 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:41:30.006 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:41:30.035 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:41:30.036 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:41:30.037 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:42:00.015 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:42:00.015 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:42:00.042 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:42:00.043 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:42:00.043 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:42:30.009 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:42:30.009 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:42:30.019 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:42:30.025 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:42:30.025 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:43:00.002 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:43:00.002 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:43:00.029 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:43:00.029 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:43:00.029 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:43:30.013 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:43:30.013 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:43:30.038 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:43:30.038 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:43:30.038 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:44:00.005 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:44:00.005 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:44:00.034 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:44:00.041 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:44:00.042 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:44:30.007 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:44:30.007 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:44:30.035 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:44:30.037 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:44:30.037 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:45:00.006 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:45:00.006 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:45:00.035 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:45:00.037 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:45:00.038 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:45:28.603 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 15:45:30.102 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:45:30.103 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:45:30.690 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:45:30.691 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:45:30.691 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:46:00.015 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:46:00.017 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:46:00.057 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:46:00.057 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:46:00.059 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:46:30.011 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:46:30.011 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:46:30.063 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:46:30.064 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:46:30.064 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:47:00.010 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:47:00.011 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:47:00.034 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:47:00.035 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:47:00.035 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:47:30.017 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:47:30.019 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:47:30.064 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:47:30.065 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:47:30.067 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:48:00.181 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:48:00.228 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:48:00.262 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:48:00.272 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:48:00.272 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:48:02.389 [AsyncReporter{ZipkinWebClientSender{http://localhost:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2024-12-06 15:48:02.391 [AsyncReporter{ZipkinWebClientSender{http://localhost:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Dropped 1 spans due to WebClientRequestException(Connection refused: no further information: localhost/127.0.0.1:9411)
+org.springframework.web.reactive.function.client.WebClientRequestException: Connection refused: no further information: localhost/127.0.0.1:9411
+	at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:136) ~[spring-webflux-6.1.12.jar:6.1.12]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to POST http://localhost:9411/api/v2/spans [DefaultWebClient]
+Original Stack Trace:
+		at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:136) ~[spring-webflux-6.1.12.jar:6.1.12]
+		at reactor.core.publisher.MonoErrorSupplied.subscribe(MonoErrorSupplied.java:55) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onError(MonoNext.java:93) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyMain.onError(MonoFlatMapMany.java:205) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.whenError(FluxRetryWhen.java:229) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenOtherSubscriber.onError(FluxRetryWhen.java:279) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.maybeOnError(FluxConcatMapNoPrefetch.java:327) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:212) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.SinkManyEmitterProcessor.drain(SinkManyEmitterProcessor.java:476) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.SinkManyEmitterProcessor$EmitterInner.drainParent(SinkManyEmitterProcessor.java:620) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxPublish$PubSubInner.request(FluxPublish.java:874) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:337) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.Operators$DeferredSubscription.request(Operators.java:1743) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.onError(FluxRetryWhen.java:196) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.netty.http.client.HttpClientConnect$MonoHttpConnect$ClientTransportSubscriber.onError(HttpClientConnect.java:311) ~[reactor-netty-http-1.1.22.jar:1.1.22]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$DisposableAcquire.onError(DefaultPooledConnectionProvider.java:172) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at reactor.netty.internal.shaded.reactor.pool.AbstractPool$Borrower.fail(AbstractPool.java:480) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at reactor.netty.internal.shaded.reactor.pool.SimpleDequePool.lambda$drainLoop$9(SimpleDequePool.java:436) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at reactor.core.publisher.FluxDoOnEach$DoOnEachSubscriber.onError(FluxDoOnEach.java:186) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$PooledConnectionAllocator$PooledConnectionInitializer.onError(DefaultPooledConnectionProvider.java:583) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondError(MonoFlatMap.java:241) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.MonoFlatMap$FlatMapInner.onError(MonoFlatMap.java:315) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.tryFailure(TransportConnector.java:576) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.setFailure(TransportConnector.java:522) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at reactor.netty.transport.TransportConnector.lambda$doConnect$7(TransportConnector.java:261) ~[reactor-netty-core-1.1.22.jar:1.1.22]
+		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:326) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:342) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+		at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:104) ~[reactor-core-3.6.9.jar:3.6.9]
+		at reactor.core.publisher.Mono.block(Mono.java:1779) ~[reactor-core-3.6.9.jar:3.6.9]
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinWebClientSender.postSpans(ZipkinWebClientSender.java:58) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:68) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:40) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+		at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123) ~[zipkin-reporter-3.4.0.jar:?]
+		at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266) [zipkin-reporter-3.4.0.jar:?]
+		at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352) [zipkin-reporter-3.4.0.jar:?]
+		at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:9411
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[?:?]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[?:?]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:336) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:339) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.112.Final.jar:4.1.112.Final]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-12-06 15:48:30.018 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:48:30.019 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:48:30.036 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:48:30.036 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:48:30.036 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:49:00.008 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:49:00.008 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:49:00.039 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:49:00.040 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:49:00.040 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:49:30.017 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:49:30.017 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:49:34.022 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:49:34.023 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:49:34.024 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:49:38.891 [kafka-producer-network-thread | report-service-producer-1] INFO  NetworkClient - [Producer clientId=report-service-producer-1] Node -1 disconnected.
+2024-12-06 15:50:00.006 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:50:00.007 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:50:00.054 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:50:00.054 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:50:00.054 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:50:29.235 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 15:50:30.011 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:50:30.011 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:50:30.030 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:50:30.030 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:50:30.031 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:51:00.009 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:51:00.010 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:51:00.022 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:51:00.022 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:51:00.022 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:51:30.009 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:51:30.009 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:51:30.031 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:51:30.032 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:51:30.032 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:52:00.008 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:52:00.009 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:52:00.040 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:52:00.041 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:52:00.041 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:52:30.005 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:52:30.006 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:52:30.041 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:52:30.043 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:52:30.043 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:53:00.015 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:53:00.016 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:53:00.045 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:53:00.046 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:53:00.047 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:53:30.006 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:53:30.006 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:53:30.030 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:53:30.031 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:53:30.031 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:54:00.015 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:54:00.017 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:54:00.050 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:54:00.055 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:54:00.056 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:54:30.014 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:54:30.014 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:54:30.055 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:54:30.056 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:54:30.056 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:55:00.016 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:55:00.017 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:55:00.056 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:55:00.056 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:55:00.057 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:55:29.256 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 15:55:30.008 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:55:30.008 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:55:30.017 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:55:30.018 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:55:30.018 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:56:00.010 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:56:00.010 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:56:00.041 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:56:00.043 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:56:00.043 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:56:30.009 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:56:30.009 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:56:30.039 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:56:30.040 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:56:30.040 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:57:00.004 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:57:00.005 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:57:00.047 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:57:00.051 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:57:00.051 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:57:30.006 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:57:30.007 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:57:30.030 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:57:30.031 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:57:30.031 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:58:00.015 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:58:00.015 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:58:00.040 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:58:00.040 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:58:00.040 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:58:30.009 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:58:30.010 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:58:30.350 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:58:30.351 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:58:30.351 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:59:00.011 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:59:00.013 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:59:00.045 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:59:00.046 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:59:00.046 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:59:30.005 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:59:30.005 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:59:30.018 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 15:59:30.018 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 15:59:30.018 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 15:59:42.869 [kafka-producer-network-thread | report-service-producer-1] INFO  NetworkClient - [Producer clientId=report-service-producer-1] Node -1 disconnected.
+2024-12-06 16:00:00.009 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:00:00.009 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:00:00.027 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:00:00.028 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:00:00.028 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:00:29.264 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 16:00:30.008 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:00:30.008 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:00:30.088 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:00:30.089 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:00:30.089 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:01:00.012 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:01:00.012 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:01:00.034 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:01:00.035 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:01:00.035 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:01:30.002 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:01:30.003 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:01:30.022 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:01:30.023 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:01:30.023 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:02:00.014 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:02:00.015 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:02:00.035 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:02:00.036 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:02:00.036 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:02:30.008 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:02:30.008 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:02:30.025 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:02:30.026 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:02:30.026 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:03:00.011 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:03:00.013 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:03:00.041 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:03:00.042 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:03:00.043 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:03:30.012 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:03:30.013 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:03:30.035 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:03:30.037 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:03:30.038 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:04:00.023 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:04:00.023 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:04:00.043 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:04:00.043 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:04:00.044 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:04:30.016 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:04:30.016 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:04:30.026 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:04:30.026 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:04:30.026 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:05:00.012 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:05:00.014 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:05:00.040 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:05:00.040 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:05:00.041 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:05:29.282 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 16:05:30.007 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:05:30.009 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:05:30.041 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:05:30.042 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:05:30.043 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:06:00.006 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:06:00.007 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:06:00.091 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:06:00.092 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:06:00.092 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:06:30.011 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:06:30.011 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:06:30.056 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:06:30.057 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:06:30.057 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:07:00.009 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:07:00.009 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:07:00.031 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:07:00.031 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:07:00.031 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:07:30.012 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:07:30.012 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:07:30.034 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:07:30.035 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:07:30.035 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:08:00.007 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:08:00.007 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:08:00.029 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:08:00.029 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:08:00.029 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:08:30.002 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:08:30.003 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:08:30.016 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:08:30.017 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:08:30.017 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:09:00.006 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:09:00.006 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:09:00.021 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:09:00.022 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:09:00.022 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:09:30.003 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:09:30.003 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:09:30.100 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:09:30.101 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:09:30.101 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:10:00.022 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:10:00.023 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:10:00.111 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:10:00.112 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:10:00.112 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:10:29.296 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 16:10:30.010 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:10:30.010 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:10:30.027 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:10:30.027 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:10:30.027 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:11:00.011 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:11:00.011 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:11:00.042 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:11:00.042 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:11:00.042 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:11:30.018 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:11:30.018 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:11:30.033 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:11:30.033 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:11:30.033 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:12:00.014 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:12:00.014 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:12:00.187 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:12:00.187 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:12:00.187 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:12:30.019 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:12:30.020 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:12:30.052 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:12:30.053 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:12:30.053 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:13:00.012 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:13:00.012 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:13:00.034 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:13:00.034 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:13:00.035 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:13:30.016 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:13:30.016 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:13:30.048 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:13:30.049 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:13:30.049 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:14:00.001 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:14:00.001 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:14:00.025 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:14:00.026 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:14:00.026 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:14:30.012 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:14:30.012 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:14:30.027 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:14:30.028 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:14:30.028 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:15:00.009 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:15:00.020 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:15:00.140 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:15:00.141 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:15:00.141 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:15:29.314 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 16:15:30.010 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:15:30.011 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:15:30.049 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:15:30.050 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:15:30.051 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:16:00.001 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:16:00.003 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:16:00.024 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:16:00.025 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:16:00.025 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:16:30.009 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:16:30.009 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:16:30.059 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:16:30.060 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:16:30.060 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:17:00.011 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:17:00.012 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:17:00.073 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:17:00.074 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:17:00.074 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:17:30.015 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:17:30.015 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:17:30.028 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:17:30.028 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:17:30.028 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:18:00.013 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:18:00.014 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:18:00.236 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:18:00.236 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:18:00.236 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:18:30.003 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:18:30.004 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:18:30.047 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:18:30.048 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:18:30.048 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:19:00.010 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:19:00.010 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:19:00.028 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:19:00.029 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:19:00.029 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:19:30.012 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:19:30.013 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:19:30.044 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:19:30.045 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:19:30.046 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:20:00.014 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:20:00.015 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:20:00.051 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:20:00.052 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:20:00.052 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:20:29.340 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 16:20:30.002 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:20:30.002 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:20:30.078 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:20:30.078 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:20:30.078 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:21:00.008 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:21:00.009 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:21:00.049 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:21:00.050 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:21:00.051 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:21:30.002 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:21:30.002 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:21:30.017 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:21:30.017 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:21:30.017 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:22:00.015 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:22:00.016 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:22:00.057 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:22:00.059 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:22:00.060 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:22:30.014 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:22:30.014 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:22:30.063 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:22:30.064 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:22:30.064 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:23:00.013 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:23:00.014 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:23:00.036 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:23:00.036 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:23:00.036 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:23:30.001 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:23:30.001 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:23:30.013 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:23:30.014 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:23:30.014 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:24:00.012 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:24:00.012 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:24:00.026 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:24:00.026 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:24:00.026 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:24:30.012 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:24:30.013 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:24:30.025 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:24:30.025 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:24:30.026 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:25:00.001 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:25:00.001 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:25:00.039 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:25:00.040 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:25:00.040 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:25:29.347 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 16:25:30.014 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:25:30.014 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:25:30.032 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:25:30.032 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:25:30.032 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:26:00.005 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:26:00.005 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:26:00.048 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:26:00.048 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:26:00.049 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:26:30.009 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:26:30.010 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:26:30.031 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:26:30.031 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:26:30.032 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:27:00.000 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:27:00.000 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:27:00.023 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:27:00.023 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:27:00.023 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:27:30.017 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:27:30.018 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:27:30.037 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:27:30.038 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:27:30.038 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:28:00.001 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:28:00.001 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:28:00.021 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:28:00.021 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:28:00.021 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:28:30.014 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:28:30.014 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:28:30.031 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:28:30.031 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:28:30.031 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:29:00.001 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:29:00.001 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:29:00.018 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:29:00.021 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:29:00.021 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:29:30.003 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:29:30.003 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:29:30.027 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:29:30.028 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:29:30.028 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:30:00.098 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:30:00.098 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:30:00.535 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:30:00.537 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:30:00.537 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:30:29.348 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 16:30:30.011 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:30:30.011 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:30:30.035 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:30:30.035 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:30:30.035 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:31:00.010 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:31:00.010 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:31:00.029 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:31:00.029 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:31:00.029 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:31:30.009 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:31:30.010 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:31:30.050 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:31:30.052 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:31:30.052 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:32:00.013 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:32:00.013 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:32:00.029 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:32:00.029 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:32:00.029 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:32:30.023 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:32:30.024 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:32:30.048 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:32:30.049 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:32:30.049 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:33:00.004 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:33:00.005 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:33:00.032 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:33:00.033 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:33:00.033 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:33:30.010 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:33:30.010 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:33:30.057 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:33:30.057 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:33:30.057 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:34:00.007 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:34:00.007 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:34:00.038 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:34:00.038 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:34:00.038 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:34:30.015 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:34:30.015 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:34:30.031 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:34:30.032 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:34:30.033 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:35:00.011 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:35:00.012 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:35:00.108 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:35:00.109 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:35:00.109 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:35:29.362 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 16:35:30.005 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:35:30.005 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:35:30.027 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:35:30.028 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:35:30.028 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:36:00.001 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:36:00.007 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:36:00.015 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:36:00.016 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:36:00.016 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:36:30.014 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:36:30.014 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:36:30.036 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:36:30.037 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:36:30.037 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:37:00.008 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:37:00.008 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:37:00.042 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:37:00.043 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:37:00.043 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:37:30.009 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:37:30.009 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:37:30.021 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:37:30.021 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:37:30.021 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:38:00.021 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:38:00.023 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:38:00.034 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:38:00.034 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:38:00.034 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:38:30.014 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:38:30.014 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:38:30.030 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:38:30.030 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:38:30.030 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:39:00.004 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:39:00.005 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:39:00.074 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:39:00.074 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:39:00.074 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:39:30.012 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:39:30.012 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:39:30.097 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:39:30.097 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:39:30.097 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:40:00.005 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:40:00.005 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:40:00.070 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:40:00.070 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:40:00.070 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:40:29.366 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 16:40:30.021 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:40:30.022 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:40:30.039 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:40:30.039 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:40:30.039 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:41:00.005 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:41:00.005 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:41:00.039 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:41:00.039 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:41:00.039 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:41:30.022 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:41:30.022 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:41:30.038 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:41:30.038 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:41:30.038 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:42:00.020 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:42:00.020 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:42:00.048 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:42:00.048 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:42:00.048 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:42:30.015 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:42:30.015 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:42:30.050 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:42:30.050 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:42:30.050 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:43:00.005 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:43:00.005 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:43:00.036 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:43:00.036 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:43:00.036 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:43:30.010 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:43:30.010 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:43:30.042 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:43:30.044 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:43:30.044 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:44:00.003 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:44:00.004 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:44:00.039 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:44:00.039 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:44:00.039 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:44:30.009 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:44:30.010 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:44:30.032 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:44:30.033 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:44:30.033 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:45:00.027 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:45:00.028 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:45:00.111 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:45:00.112 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:45:00.112 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:45:29.368 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-06 16:45:30.008 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:45:30.008 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:45:30.023 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:45:30.025 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:45:30.025 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:46:00.008 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:46:00.008 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:46:00.031 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:46:00.031 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:46:00.032 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:46:30.007 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:46:30.008 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:46:30.047 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:46:30.049 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:46:30.049 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:47:00.012 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:47:00.012 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:47:00.039 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:47:00.040 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:47:00.046 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:47:30.012 [scheduling-1] TRACE WeeklyStatsScheduler - Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:47:30.013 [scheduling-1] TRACE ReportServiceImpl - Entering sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:47:30.026 [scheduling-1] TRACE ReportAnalyticsProducer - Preparing to send weekly report stats to topic: report-stats
+2024-12-06 16:47:30.026 [scheduling-1] TRACE ReportServiceImpl - Exiting sendWeeklyReportStats method in ReportServiceImpl
+2024-12-06 16:47:30.026 [scheduling-1] TRACE WeeklyStatsScheduler - Completed scheduleWeeklyStatsTask in WeeklyStatsScheduler.
+2024-12-06 16:47:31.566 [SpringApplicationShutdownHook] INFO  EurekaServiceRegistry - Unregistering application REPORT-SERVICE with eureka with status DOWN
+2024-12-06 16:47:31.578 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1733492851577, current=DOWN, previous=UP]
+2024-12-06 16:47:31.585 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_REPORT-SERVICE/10.7.85.246:report-service:8084: registering service...
+2024-12-06 16:47:31.777 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_REPORT-SERVICE/10.7.85.246:report-service:8084 - registration status: 204
+2024-12-06 16:47:33.193 [DiscoveryClient-HeartbeatExecutor-0] INFO  HttpRequestRetryExec - Recoverable I/O exception (org.apache.hc.core5.http.NoHttpResponseException) caught when processing request to {}->http://localhost:8761
+2024-12-06 16:47:33.379 [DiscoveryClient-CacheRefreshExecutor-0] INFO  HttpRequestRetryExec - Recoverable I/O exception (java.net.SocketException) caught when processing request to {}->http://localhost:8761
+2024-12-06 16:47:34.013 [DiscoveryClient-CacheRefreshExecutor-0] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 22 more
+
+2024-12-06 16:47:34.026 [DiscoveryClient-HeartbeatExecutor-0] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/REPORT-SERVICE/10.7.85.246:report-service:8084": Connection reset stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/REPORT-SERVICE/10.7.85.246:report-service:8084": Connection reset
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:328)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at org.apache.hc.core5.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:149)
+	at org.apache.hc.core5.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.hc.core5.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:247)
+	at org.apache.hc.core5.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:54)
+	at org.apache.hc.core5.http.impl.io.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:304)
+	at org.apache.hc.core5.http.impl.io.HttpRequestExecutor.execute(HttpRequestExecutor.java:175)
+	at org.apache.hc.core5.http.impl.io.HttpRequestExecutor.execute(HttpRequestExecutor.java:218)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionEndpoint.execute(PoolingHttpClientConnectionManager.java:717)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.execute(InternalExecRuntime.java:216)
+	at org.apache.hc.client5.http.impl.classic.MainClientExec.execute(MainClientExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:188)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 19 more
+
+2024-12-06 16:47:34.027 [DiscoveryClient-HeartbeatExecutor-0] WARN  RetryableEurekaHttpClient - Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/REPORT-SERVICE/10.7.85.246:report-service:8084": Connection reset
+2024-12-06 16:47:34.023 [DiscoveryClient-CacheRefreshExecutor-0] WARN  RetryableEurekaHttpClient - Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+2024-12-06 16:47:34.105 [DiscoveryClient-HeartbeatExecutor-0] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/REPORT-SERVICE/10.7.85.246:report-service:8084": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/REPORT-SERVICE/10.7.85.246:report-service:8084": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 20 more
+
+2024-12-06 16:47:34.115 [DiscoveryClient-HeartbeatExecutor-0] WARN  RetryableEurekaHttpClient - Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/REPORT-SERVICE/10.7.85.246:report-service:8084": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+2024-12-06 16:47:34.118 [DiscoveryClient-CacheRefreshExecutor-0] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 23 more
+
+2024-12-06 16:47:34.120 [DiscoveryClient-CacheRefreshExecutor-0] WARN  RetryableEurekaHttpClient - Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+2024-12-06 16:47:34.126 [DiscoveryClient-CacheRefreshExecutor-0] INFO  DiscoveryClient - DiscoveryClient_REPORT-SERVICE/10.7.85.246:report-service:8084 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-12-06 16:47:34.120 [DiscoveryClient-HeartbeatExecutor-0] ERROR DiscoveryClient - DiscoveryClient_REPORT-SERVICE/10.7.85.246:report-service:8084 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837) [eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401) [eureka-client-2.0.2.jar:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-12-06 16:47:36.753 [SpringApplicationShutdownHook] INFO  KafkaProducer - [Producer clientId=report-service-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-12-06 16:47:36.820 [SpringApplicationShutdownHook] INFO  Metrics - Metrics scheduler closed
+2024-12-06 16:47:36.820 [SpringApplicationShutdownHook] INFO  Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-06 16:47:36.821 [SpringApplicationShutdownHook] INFO  Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-12-06 16:47:36.821 [SpringApplicationShutdownHook] INFO  Metrics - Metrics reporters closed
+2024-12-06 16:47:36.828 [SpringApplicationShutdownHook] INFO  AppInfoParser - App info kafka.producer for report-service-producer-1 unregistered
+2024-12-06 16:47:37.050 [SpringApplicationShutdownHook] INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-06 16:47:37.112 [SpringApplicationShutdownHook] INFO  HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-06 16:47:37.128 [SpringApplicationShutdownHook] INFO  HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-06 16:47:37.261 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Shutting down DiscoveryClient ...
+2024-12-06 16:47:40.272 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Unregistering ...
+2024-12-06 16:47:40.285 [SpringApplicationShutdownHook] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
+	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:297)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:103)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-12-06 16:47:40.285 [SpringApplicationShutdownHook] WARN  RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-12-06 16:47:40.285 [SpringApplicationShutdownHook] ERROR DiscoveryClient - DiscoveryClient_REPORT-SERVICE/10.7.85.246:report-service:8084 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892) ~[eureka-client-2.0.2.jar:2.0.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389) ~[spring-cloud-context-4.1.2.jar:4.1.2]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-4.1.2.jar:4.1.2]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-3.3.3.jar:3.3.3]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) [?:?]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) [spring-boot-3.3.3.jar:3.3.3]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-12-06 16:47:40.315 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Completed shut down of DiscoveryClient

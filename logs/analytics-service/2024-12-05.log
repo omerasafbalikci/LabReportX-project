@@ -1,0 +1,1650 @@
+2024-12-05 22:06:55.932 [main] INFO  AnalyticsServiceApplication - Starting AnalyticsServiceApplication using Java 17.0.11 with PID 14140 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\analytics-service\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-12-05 22:06:55.938 [main] DEBUG AnalyticsServiceApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-12-05 22:06:55.939 [main] INFO  AnalyticsServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05 22:06:55.976 [main] INFO  ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-12-05 22:06:55.977 [main] INFO  ConfigServerConfigDataLoader - Located environment: name=analytics-service, profiles=[default], label=null, version=a767abdc35d745c50f4555eafb10639fe4cfb72b, state=null
+2024-12-05 22:06:57.427 [main] INFO  GenericScope - BeanFactory id=2a609809-2ef9-331b-8c04-9c2fc4723138
+2024-12-05 22:06:57.645 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-05 22:06:57.651 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-12-05 22:06:57.993 [main] INFO  TomcatWebServer - Tomcat initialized with port 8085 (http)
+2024-12-05 22:06:58.012 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+2024-12-05 22:06:58.015 [main] INFO  StandardService - Starting service [Tomcat]
+2024-12-05 22:06:58.015 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-12-05 22:06:58.083 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-12-05 22:06:58.085 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2104 ms
+2024-12-05 22:06:58.748 [main] WARN  HazelcastInstanceFactory - Hazelcast is starting in a Java modular environment (Java 9 and newer) but without proper access to required Java packages. Use additional Java arguments to provide Hazelcast access to Java internal API. The internal API access is used to get the best performance results. Arguments to be used:
+ --add-modules java.se --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.management/sun.management=ALL-UNNAMED --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
+2024-12-05 22:06:59.092 [main] WARN  AddressPicker - [LOCAL] [dev] [5.4.0] Ignoring TCP_KEEPCOUNT. It seems your JDK does not support jdk.net.ExtendedSocketOptions on this OS. Try upgrading to the latest JDK or check with your JDK vendor.Alternatively, on Linux, configure tcp_keepalive_probes in the kernel (affecting default keep-alive configuration for all sockets): For more info see https://tldp.org/HOWTO/html_single/TCP-Keepalive-HOWTO/. If this isn't dealt with, idle connections could be closed prematurely.
+2024-12-05 22:06:59.092 [main] WARN  AddressPicker - [LOCAL] [dev] [5.4.0] Ignoring TCP_KEEPIDLE. It seems your JDK does not support jdk.net.ExtendedSocketOptions on this OS. Try upgrading to the latest JDK or check with your JDK vendor.Alternatively, on Linux, configure tcp_keepalive_time in the kernel (affecting default keep-alive configuration for all sockets): For more info see https://tldp.org/HOWTO/html_single/TCP-Keepalive-HOWTO/. If this isn't dealt with, idle connections could be closed prematurely.
+2024-12-05 22:06:59.093 [main] WARN  AddressPicker - [LOCAL] [dev] [5.4.0] Ignoring TCP_KEEPINTERVAL. It seems your JDK does not support jdk.net.ExtendedSocketOptions on this OS. Try upgrading to the latest JDK or check with your JDK vendor.Alternatively, on Linux, configure tcp_keepalive_intvl in the kernel (affecting default keep-alive configuration for all sockets): For more info see https://tldp.org/HOWTO/html_single/TCP-Keepalive-HOWTO/. If this isn't dealt with, idle connections could be closed prematurely.
+2024-12-05 22:06:59.141 [main] INFO  logo - [10.7.85.246]:5701 [dev] [5.4.0] 
+	o    o     o     o---o   o--o o      o---o     o     o----o o--o--o
+	|    |    / \       /         |     /         / \    |         |   
+	o----o       o     o   o----o |    o             o   o----o    |   
+	|    |  *     \   /           |     \       *     \       |    |   
+	o    o *       o o---o   o--o o----o o---o *       o o----o    o   
+2024-12-05 22:06:59.141 [main] INFO  system - [10.7.85.246]:5701 [dev] [5.4.0] Copyright (c) 2008-2024, Hazelcast, Inc. All Rights Reserved.
+2024-12-05 22:06:59.141 [main] INFO  system - [10.7.85.246]:5701 [dev] [5.4.0] Hazelcast Platform 5.4.0 (20240415) starting at [10.7.85.246]:5701
+2024-12-05 22:06:59.142 [main] INFO  system - [10.7.85.246]:5701 [dev] [5.4.0] Cluster name: dev
+2024-12-05 22:06:59.142 [main] INFO  system - [10.7.85.246]:5701 [dev] [5.4.0] Integrity Checker is disabled. Fail-fast on corrupted executables will not be performed. For more information, see the documentation for Integrity Checker.
+2024-12-05 22:06:59.149 [main] INFO  system - [10.7.85.246]:5701 [dev] [5.4.0] The Jet engine is disabled.
+To enable the Jet engine on the members, do one of the following:
+  - Change member config using Java API: config.getJetConfig().setEnabled(true)
+  - Change XML/YAML configuration property: Set hazelcast.jet.enabled to true
+  - Add system property: -Dhz.jet.enabled=true (for Hazelcast embedded, works only when loading config via Config.load)
+  - Add environment variable: HZ_JET_ENABLED=true (recommended when running container image. For Hazelcast embedded, works only when loading config via Config.load)
+2024-12-05 22:07:00.088 [main] INFO  security - [10.7.85.246]:5701 [dev] [5.4.0] Enable DEBUG/FINE log level for log category com.hazelcast.system.security  or use -Dhazelcast.security.recommendations system property to see security recommendations and the status of current config.
+2024-12-05 22:07:00.184 [main] INFO  Node - [10.7.85.246]:5701 [dev] [5.4.0] Using Multicast discovery
+2024-12-05 22:07:00.187 [main] WARN  CPSubsystem - [10.7.85.246]:5701 [dev] [5.4.0] CP Subsystem is not enabled. CP data structures will operate in UNSAFE mode! Please note that UNSAFE mode will not provide strong consistency guarantees.
+2024-12-05 22:07:00.422 [main] INFO  Diagnostics - [10.7.85.246]:5701 [dev] [5.4.0] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2024-12-05 22:07:00.428 [main] INFO  LifecycleService - [10.7.85.246]:5701 [dev] [5.4.0] [10.7.85.246]:5701 is STARTING
+2024-12-05 22:07:03.579 [main] INFO  ClusterService - [10.7.85.246]:5701 [dev] [5.4.0] 
+
+Members {size:1, ver:1} [
+	Member [10.7.85.246]:5701 - 3f354e94-a6c9-476e-8681-5dc698107fcf this
+]
+
+2024-12-05 22:07:03.633 [main] INFO  LifecycleService - [10.7.85.246]:5701 [dev] [5.4.0] [10.7.85.246]:5701 is STARTED
+2024-12-05 22:07:03.661 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'analyticsController' defined in file [C:\Users\omera\Desktop\laboratory-reporting-project\backend\analytics-service\target\classes\com\lab\backend\analytics\controller\AnalyticsController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'analyticsServiceImpl' defined in file [C:\Users\omera\Desktop\laboratory-reporting-project\backend\analytics-service\target\classes\com\lab\backend\analytics\service\concretes\AnalyticsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'mailService' defined in file [C:\Users\omera\Desktop\laboratory-reporting-project\backend\analytics-service\target\classes\com\lab\backend\analytics\service\concretes\MailService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'org.springframework.mail.javamail.JavaMailSender' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-12-05 22:07:04.673 [main] WARN  AsyncReporter$BoundedAsyncReporter - Timed out waiting for in-flight spans to send
+2024-12-05 22:07:04.684 [main] INFO  StandardService - Stopping service [Tomcat]
+2024-12-05 22:07:04.734 [main] INFO  ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-05 22:07:04.764 [main] ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.lab.backend.analytics.service.concretes.MailService required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2024-12-05 22:08:22.540 [main] INFO  AnalyticsServiceApplication - Starting AnalyticsServiceApplication using Java 17.0.11 with PID 17812 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\analytics-service\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2024-12-05 22:08:22.548 [main] DEBUG AnalyticsServiceApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2024-12-05 22:08:22.549 [main] INFO  AnalyticsServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05 22:08:22.610 [main] INFO  ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-12-05 22:08:22.610 [main] INFO  ConfigServerConfigDataLoader - Located environment: name=analytics-service, profiles=[default], label=null, version=a767abdc35d745c50f4555eafb10639fe4cfb72b, state=null
+2024-12-05 22:08:25.041 [main] INFO  GenericScope - BeanFactory id=5ae5a929-18f8-33ea-809b-e061c9c22bd0
+2024-12-05 22:08:25.252 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-05 22:08:25.254 [main] WARN  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-12-05 22:08:25.573 [main] INFO  TomcatWebServer - Tomcat initialized with port 8085 (http)
+2024-12-05 22:08:25.589 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+2024-12-05 22:08:25.593 [main] INFO  StandardService - Starting service [Tomcat]
+2024-12-05 22:08:25.593 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-12-05 22:08:25.686 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2024-12-05 22:08:25.688 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3072 ms
+2024-12-05 22:08:26.350 [main] WARN  HazelcastInstanceFactory - Hazelcast is starting in a Java modular environment (Java 9 and newer) but without proper access to required Java packages. Use additional Java arguments to provide Hazelcast access to Java internal API. The internal API access is used to get the best performance results. Arguments to be used:
+ --add-modules java.se --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.management/sun.management=ALL-UNNAMED --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
+2024-12-05 22:08:26.692 [main] WARN  AddressPicker - [LOCAL] [dev] [5.4.0] Ignoring TCP_KEEPCOUNT. It seems your JDK does not support jdk.net.ExtendedSocketOptions on this OS. Try upgrading to the latest JDK or check with your JDK vendor.Alternatively, on Linux, configure tcp_keepalive_probes in the kernel (affecting default keep-alive configuration for all sockets): For more info see https://tldp.org/HOWTO/html_single/TCP-Keepalive-HOWTO/. If this isn't dealt with, idle connections could be closed prematurely.
+2024-12-05 22:08:26.692 [main] WARN  AddressPicker - [LOCAL] [dev] [5.4.0] Ignoring TCP_KEEPIDLE. It seems your JDK does not support jdk.net.ExtendedSocketOptions on this OS. Try upgrading to the latest JDK or check with your JDK vendor.Alternatively, on Linux, configure tcp_keepalive_time in the kernel (affecting default keep-alive configuration for all sockets): For more info see https://tldp.org/HOWTO/html_single/TCP-Keepalive-HOWTO/. If this isn't dealt with, idle connections could be closed prematurely.
+2024-12-05 22:08:26.693 [main] WARN  AddressPicker - [LOCAL] [dev] [5.4.0] Ignoring TCP_KEEPINTERVAL. It seems your JDK does not support jdk.net.ExtendedSocketOptions on this OS. Try upgrading to the latest JDK or check with your JDK vendor.Alternatively, on Linux, configure tcp_keepalive_intvl in the kernel (affecting default keep-alive configuration for all sockets): For more info see https://tldp.org/HOWTO/html_single/TCP-Keepalive-HOWTO/. If this isn't dealt with, idle connections could be closed prematurely.
+2024-12-05 22:08:26.725 [main] INFO  logo - [10.7.85.246]:5701 [dev] [5.4.0] 
+	o    o     o     o---o   o--o o      o---o     o     o----o o--o--o
+	|    |    / \       /         |     /         / \    |         |   
+	o----o       o     o   o----o |    o             o   o----o    |   
+	|    |  *     \   /           |     \       *     \       |    |   
+	o    o *       o o---o   o--o o----o o---o *       o o----o    o   
+2024-12-05 22:08:26.726 [main] INFO  system - [10.7.85.246]:5701 [dev] [5.4.0] Copyright (c) 2008-2024, Hazelcast, Inc. All Rights Reserved.
+2024-12-05 22:08:26.726 [main] INFO  system - [10.7.85.246]:5701 [dev] [5.4.0] Hazelcast Platform 5.4.0 (20240415) starting at [10.7.85.246]:5701
+2024-12-05 22:08:26.726 [main] INFO  system - [10.7.85.246]:5701 [dev] [5.4.0] Cluster name: dev
+2024-12-05 22:08:26.726 [main] INFO  system - [10.7.85.246]:5701 [dev] [5.4.0] Integrity Checker is disabled. Fail-fast on corrupted executables will not be performed. For more information, see the documentation for Integrity Checker.
+2024-12-05 22:08:26.729 [main] INFO  system - [10.7.85.246]:5701 [dev] [5.4.0] The Jet engine is disabled.
+To enable the Jet engine on the members, do one of the following:
+  - Change member config using Java API: config.getJetConfig().setEnabled(true)
+  - Change XML/YAML configuration property: Set hazelcast.jet.enabled to true
+  - Add system property: -Dhz.jet.enabled=true (for Hazelcast embedded, works only when loading config via Config.load)
+  - Add environment variable: HZ_JET_ENABLED=true (recommended when running container image. For Hazelcast embedded, works only when loading config via Config.load)
+2024-12-05 22:08:27.659 [main] INFO  security - [10.7.85.246]:5701 [dev] [5.4.0] Enable DEBUG/FINE log level for log category com.hazelcast.system.security  or use -Dhazelcast.security.recommendations system property to see security recommendations and the status of current config.
+2024-12-05 22:08:27.754 [main] INFO  Node - [10.7.85.246]:5701 [dev] [5.4.0] Using Multicast discovery
+2024-12-05 22:08:27.758 [main] WARN  CPSubsystem - [10.7.85.246]:5701 [dev] [5.4.0] CP Subsystem is not enabled. CP data structures will operate in UNSAFE mode! Please note that UNSAFE mode will not provide strong consistency guarantees.
+2024-12-05 22:08:27.973 [main] INFO  Diagnostics - [10.7.85.246]:5701 [dev] [5.4.0] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2024-12-05 22:08:27.981 [main] INFO  LifecycleService - [10.7.85.246]:5701 [dev] [5.4.0] [10.7.85.246]:5701 is STARTING
+2024-12-05 22:08:30.513 [main] INFO  ClusterService - [10.7.85.246]:5701 [dev] [5.4.0] 
+
+Members {size:1, ver:1} [
+	Member [10.7.85.246]:5701 - bdea5f09-f552-42df-8dba-b1e2c8eedce0 this
+]
+
+2024-12-05 22:08:30.566 [main] INFO  LifecycleService - [10.7.85.246]:5701 [dev] [5.4.0] [10.7.85.246]:5701 is STARTED
+2024-12-05 22:08:31.626 [main] INFO  DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-12-05 22:08:31.675 [main] WARN  LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-12-05 22:08:31.682 [main] INFO  EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-05 22:08:31.796 [main] INFO  InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-12-05 22:08:31.846 [main] INFO  DiscoveryClient - Initializing Eureka in region us-east-1
+2024-12-05 22:08:31.851 [main] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-05 22:08:31.889 [main] INFO  DiscoveryClient - Disable delta property : false
+2024-12-05 22:08:31.889 [main] INFO  DiscoveryClient - Single vip registry refresh property : null
+2024-12-05 22:08:31.889 [main] INFO  DiscoveryClient - Force full registry fetch : false
+2024-12-05 22:08:31.890 [main] INFO  DiscoveryClient - Application is null : false
+2024-12-05 22:08:31.890 [main] INFO  DiscoveryClient - Registered Applications size is zero : true
+2024-12-05 22:08:31.890 [main] INFO  DiscoveryClient - Application version is -1: true
+2024-12-05 22:08:31.890 [main] INFO  DiscoveryClient - Getting all instance registry info from the eureka server
+2024-12-05 22:08:32.029 [main] INFO  DiscoveryClient - The response status is 200
+2024-12-05 22:08:32.032 [main] INFO  DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-12-05 22:08:32.035 [main] INFO  InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-12-05 22:08:32.039 [main] INFO  DiscoveryClient - Discovery Client initialized at timestamp 1733425712039 with initial instances count: 5
+2024-12-05 22:08:32.043 [main] INFO  EurekaServiceRegistry - Registering application ANALYTICS-SERVICE with eureka with status UP
+2024-12-05 22:08:32.044 [main] INFO  DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1733425712044, current=UP, previous=STARTING]
+2024-12-05 22:08:32.045 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+2024-12-05 22:08:32.046 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_ANALYTICS-SERVICE/10.7.85.246:analytics-service:8085: registering service...
+2024-12-05 22:08:32.069 [main] INFO  TomcatWebServer - Tomcat started on port 8085 (http) with context path '/'
+2024-12-05 22:08:32.070 [main] INFO  EurekaAutoServiceRegistration - Updating port to 8085
+2024-12-05 22:08:32.112 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_ANALYTICS-SERVICE/10.7.85.246:analytics-service:8085 - registration status: 204
+2024-12-05 22:08:32.254 [main] INFO  ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-patient-email-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = patient-email
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-12-05 22:08:32.339 [main] INFO  KafkaMetricsCollector - initializing Kafka metrics collector
+2024-12-05 22:08:32.460 [main] INFO  AppInfoParser - Kafka version: 3.7.1
+2024-12-05 22:08:32.460 [main] INFO  AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-12-05 22:08:32.460 [main] INFO  AppInfoParser - Kafka startTimeMs: 1733425712457
+2024-12-05 22:08:32.465 [main] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Subscribed to topic(s): patient-email-topic
+2024-12-05 22:08:32.475 [main] INFO  ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-patient-email-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = patient-email
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-12-05 22:08:32.476 [main] INFO  KafkaMetricsCollector - initializing Kafka metrics collector
+2024-12-05 22:08:32.489 [main] INFO  AppInfoParser - Kafka version: 3.7.1
+2024-12-05 22:08:32.489 [main] INFO  AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-12-05 22:08:32.489 [main] INFO  AppInfoParser - Kafka startTimeMs: 1733425712489
+2024-12-05 22:08:32.490 [main] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Subscribed to topic(s): patient-email-topic
+2024-12-05 22:08:32.493 [main] INFO  ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-patient-email-3
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = patient-email
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-12-05 22:08:32.493 [main] INFO  KafkaMetricsCollector - initializing Kafka metrics collector
+2024-12-05 22:08:32.506 [main] INFO  AppInfoParser - Kafka version: 3.7.1
+2024-12-05 22:08:32.506 [main] INFO  AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-12-05 22:08:32.507 [main] INFO  AppInfoParser - Kafka startTimeMs: 1733425712506
+2024-12-05 22:08:32.507 [main] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Subscribed to topic(s): patient-email-topic
+2024-12-05 22:08:32.509 [main] INFO  ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-patients-4
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = patients
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-12-05 22:08:32.509 [main] INFO  KafkaMetricsCollector - initializing Kafka metrics collector
+2024-12-05 22:08:32.518 [main] INFO  AppInfoParser - Kafka version: 3.7.1
+2024-12-05 22:08:32.518 [main] INFO  AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-12-05 22:08:32.519 [main] INFO  AppInfoParser - Kafka startTimeMs: 1733425712518
+2024-12-05 22:08:32.519 [main] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-patients-4, groupId=patients] Subscribed to topic(s): patient-stats
+2024-12-05 22:08:32.521 [main] INFO  ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-patients-5
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = patients
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-12-05 22:08:32.522 [main] INFO  KafkaMetricsCollector - initializing Kafka metrics collector
+2024-12-05 22:08:32.531 [main] INFO  AppInfoParser - Kafka version: 3.7.1
+2024-12-05 22:08:32.531 [main] INFO  AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-12-05 22:08:32.531 [main] INFO  AppInfoParser - Kafka startTimeMs: 1733425712531
+2024-12-05 22:08:32.532 [main] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-patients-5, groupId=patients] Subscribed to topic(s): patient-stats
+2024-12-05 22:08:32.534 [main] INFO  ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-patients-6
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = patients
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-12-05 22:08:32.534 [main] INFO  KafkaMetricsCollector - initializing Kafka metrics collector
+2024-12-05 22:08:32.545 [main] INFO  AppInfoParser - Kafka version: 3.7.1
+2024-12-05 22:08:32.545 [main] INFO  AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-12-05 22:08:32.545 [main] INFO  AppInfoParser - Kafka startTimeMs: 1733425712545
+2024-12-05 22:08:32.546 [main] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-patients-6, groupId=patients] Subscribed to topic(s): patient-stats
+2024-12-05 22:08:32.548 [main] INFO  ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-reports-7
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = reports
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-12-05 22:08:32.548 [main] INFO  KafkaMetricsCollector - initializing Kafka metrics collector
+2024-12-05 22:08:32.556 [main] INFO  AppInfoParser - Kafka version: 3.7.1
+2024-12-05 22:08:32.556 [main] INFO  AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-12-05 22:08:32.557 [main] INFO  AppInfoParser - Kafka startTimeMs: 1733425712556
+2024-12-05 22:08:32.557 [main] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-reports-7, groupId=reports] Subscribed to topic(s): report-stats
+2024-12-05 22:08:32.561 [main] INFO  ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-reports-8
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = reports
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-12-05 22:08:32.562 [main] INFO  KafkaMetricsCollector - initializing Kafka metrics collector
+2024-12-05 22:08:32.573 [main] INFO  AppInfoParser - Kafka version: 3.7.1
+2024-12-05 22:08:32.573 [main] INFO  AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-12-05 22:08:32.573 [main] INFO  AppInfoParser - Kafka startTimeMs: 1733425712572
+2024-12-05 22:08:32.574 [main] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-reports-8, groupId=reports] Subscribed to topic(s): report-stats
+2024-12-05 22:08:32.577 [main] INFO  ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-reports-9
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = reports
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-12-05 22:08:32.578 [main] INFO  KafkaMetricsCollector - initializing Kafka metrics collector
+2024-12-05 22:08:32.588 [main] INFO  AppInfoParser - Kafka version: 3.7.1
+2024-12-05 22:08:32.589 [main] INFO  AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-12-05 22:08:32.589 [main] INFO  AppInfoParser - Kafka startTimeMs: 1733425712588
+2024-12-05 22:08:32.589 [main] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-reports-9, groupId=reports] Subscribed to topic(s): report-stats
+2024-12-05 22:08:32.620 [main] INFO  AnalyticsServiceApplication - Started AnalyticsServiceApplication in 12.317 seconds (process running for 16.53)
+2024-12-05 22:08:44.657 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] WARN  NetworkClient - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Error while fetching metadata with correlation id 2 : {patient-email-topic=UNKNOWN_TOPIC_OR_PARTITION}
+2024-12-05 22:08:44.657 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] WARN  NetworkClient - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Error while fetching metadata with correlation id 2 : {patient-email-topic=UNKNOWN_TOPIC_OR_PARTITION}
+2024-12-05 22:08:44.660 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  Metadata - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Cluster ID: DhPAyrJESYSqPFOSNVoyDg
+2024-12-05 22:08:44.660 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  Metadata - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Cluster ID: DhPAyrJESYSqPFOSNVoyDg
+2024-12-05 22:08:44.662 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  Metadata - [Consumer clientId=consumer-patients-5, groupId=patients] Cluster ID: DhPAyrJESYSqPFOSNVoyDg
+2024-12-05 22:08:44.663 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  Metadata - [Consumer clientId=consumer-reports-8, groupId=reports] Cluster ID: DhPAyrJESYSqPFOSNVoyDg
+2024-12-05 22:08:44.662 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  Metadata - [Consumer clientId=consumer-reports-7, groupId=reports] Cluster ID: DhPAyrJESYSqPFOSNVoyDg
+2024-12-05 22:08:44.662 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  Metadata - [Consumer clientId=consumer-reports-9, groupId=reports] Cluster ID: DhPAyrJESYSqPFOSNVoyDg
+2024-12-05 22:08:44.663 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  Metadata - [Consumer clientId=consumer-patients-6, groupId=patients] Cluster ID: DhPAyrJESYSqPFOSNVoyDg
+2024-12-05 22:08:44.663 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  Metadata - [Consumer clientId=consumer-patients-4, groupId=patients] Cluster ID: DhPAyrJESYSqPFOSNVoyDg
+2024-12-05 22:08:44.681 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Discovered group coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null)
+2024-12-05 22:08:44.681 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-9, groupId=reports] Discovered group coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null)
+2024-12-05 22:08:44.683 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-6, groupId=patients] Discovered group coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null)
+2024-12-05 22:08:44.683 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-4, groupId=patients] Discovered group coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null)
+2024-12-05 22:08:44.681 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-8, groupId=reports] Discovered group coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null)
+2024-12-05 22:08:44.685 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Discovered group coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null)
+2024-12-05 22:08:44.691 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-5, groupId=patients] Discovered group coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null)
+2024-12-05 22:08:44.692 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] Discovered group coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null)
+2024-12-05 22:08:44.699 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-9, groupId=reports] (Re-)joining group
+2024-12-05 22:08:44.700 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-5, groupId=patients] (Re-)joining group
+2024-12-05 22:08:44.703 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-6, groupId=patients] (Re-)joining group
+2024-12-05 22:08:44.702 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] (Re-)joining group
+2024-12-05 22:08:44.704 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] (Re-)joining group
+2024-12-05 22:08:44.704 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-8, groupId=reports] (Re-)joining group
+2024-12-05 22:08:44.704 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] (Re-)joining group
+2024-12-05 22:08:44.704 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-4, groupId=patients] (Re-)joining group
+2024-12-05 22:08:44.754 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] WARN  NetworkClient - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Error while fetching metadata with correlation id 2 : {patient-email-topic=LEADER_NOT_AVAILABLE}
+2024-12-05 22:08:44.754 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  Metadata - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Cluster ID: DhPAyrJESYSqPFOSNVoyDg
+2024-12-05 22:08:44.782 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-9, groupId=reports] Request joining group due to: need to re-join with the given member-id: consumer-reports-9-04498804-86cb-44ca-bc7a-61420fd89700
+2024-12-05 22:08:44.782 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] Request joining group due to: need to re-join with the given member-id: consumer-reports-7-b6cb84e1-a204-4414-b5f6-a63fdce37029
+2024-12-05 22:08:44.782 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Request joining group due to: need to re-join with the given member-id: consumer-patient-email-2-88d54d4e-fe52-4780-86a2-7187a5d447a1
+2024-12-05 22:08:44.782 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Request joining group due to: need to re-join with the given member-id: consumer-patient-email-1-ac2ae9d6-50ef-4980-8917-953846a5a611
+2024-12-05 22:08:44.782 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] (Re-)joining group
+2024-12-05 22:08:44.783 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] (Re-)joining group
+2024-12-05 22:08:44.783 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Discovered group coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null)
+2024-12-05 22:08:44.782 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-6, groupId=patients] Request joining group due to: need to re-join with the given member-id: consumer-patients-6-dfc236f6-3300-402e-89ca-17ea522c1e46
+2024-12-05 22:08:44.782 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-9, groupId=reports] (Re-)joining group
+2024-12-05 22:08:44.786 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] (Re-)joining group
+2024-12-05 22:08:44.782 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-4, groupId=patients] Request joining group due to: need to re-join with the given member-id: consumer-patients-4-4736a8c8-189f-41c2-8b46-984c449e813a
+2024-12-05 22:08:44.787 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-4, groupId=patients] (Re-)joining group
+2024-12-05 22:08:44.786 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-6, groupId=patients] (Re-)joining group
+2024-12-05 22:08:44.785 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] (Re-)joining group
+2024-12-05 22:08:44.795 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-5, groupId=patients] Request joining group due to: need to re-join with the given member-id: consumer-patients-5-dc3dc04d-794e-4c75-aaa6-60cf3acf79d3
+2024-12-05 22:08:44.795 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-5, groupId=patients] (Re-)joining group
+2024-12-05 22:08:44.800 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] WARN  NetworkClient - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Error while fetching metadata with correlation id 8 : {patient-email-topic=LEADER_NOT_AVAILABLE}
+2024-12-05 22:08:44.810 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-8, groupId=reports] Request joining group due to: need to re-join with the given member-id: consumer-reports-8-e4137e00-ab83-461c-9f60-55bc8bce6ad6
+2024-12-05 22:08:44.811 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-8, groupId=reports] (Re-)joining group
+2024-12-05 22:08:44.814 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Request joining group due to: need to re-join with the given member-id: consumer-patient-email-3-8c3efe68-98e9-4936-8df2-4c9dffdc257d
+2024-12-05 22:08:44.815 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] (Re-)joining group
+2024-12-05 22:08:44.820 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] WARN  NetworkClient - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Error while fetching metadata with correlation id 8 : {patient-email-topic=LEADER_NOT_AVAILABLE}
+2024-12-05 22:08:44.834 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-5, groupId=patients] Successfully joined group with generation Generation{generationId=27, memberId='consumer-patients-5-dc3dc04d-794e-4c75-aaa6-60cf3acf79d3', protocol='range'}
+2024-12-05 22:08:44.834 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-4, groupId=patients] Successfully joined group with generation Generation{generationId=27, memberId='consumer-patients-4-4736a8c8-189f-41c2-8b46-984c449e813a', protocol='range'}
+2024-12-05 22:08:44.836 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-6, groupId=patients] Successfully joined group with generation Generation{generationId=27, memberId='consumer-patients-6-dfc236f6-3300-402e-89ca-17ea522c1e46', protocol='range'}
+2024-12-05 22:08:44.842 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-9, groupId=reports] Successfully joined group with generation Generation{generationId=1, memberId='consumer-reports-9-04498804-86cb-44ca-bc7a-61420fd89700', protocol='range'}
+2024-12-05 22:08:44.842 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] Successfully joined group with generation Generation{generationId=1, memberId='consumer-reports-7-b6cb84e1-a204-4414-b5f6-a63fdce37029', protocol='range'}
+2024-12-05 22:08:44.843 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-8, groupId=reports] Successfully joined group with generation Generation{generationId=1, memberId='consumer-reports-8-e4137e00-ab83-461c-9f60-55bc8bce6ad6', protocol='range'}
+2024-12-05 22:08:44.844 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Successfully joined group with generation Generation{generationId=1, memberId='consumer-patient-email-1-ac2ae9d6-50ef-4980-8917-953846a5a611', protocol='range'}
+2024-12-05 22:08:44.846 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Successfully joined group with generation Generation{generationId=1, memberId='consumer-patient-email-3-8c3efe68-98e9-4936-8df2-4c9dffdc257d', protocol='range'}
+2024-12-05 22:08:44.846 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Successfully joined group with generation Generation{generationId=1, memberId='consumer-patient-email-2-88d54d4e-fe52-4780-86a2-7187a5d447a1', protocol='range'}
+2024-12-05 22:08:44.851 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] Finished assignment for group at generation 1: {consumer-reports-7-b6cb84e1-a204-4414-b5f6-a63fdce37029=Assignment(partitions=[report-stats-0]), consumer-reports-9-04498804-86cb-44ca-bc7a-61420fd89700=Assignment(partitions=[]), consumer-reports-8-e4137e00-ab83-461c-9f60-55bc8bce6ad6=Assignment(partitions=[])}
+2024-12-05 22:08:44.852 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-4, groupId=patients] Finished assignment for group at generation 27: {consumer-patients-4-4736a8c8-189f-41c2-8b46-984c449e813a=Assignment(partitions=[patient-stats-0]), consumer-patients-5-dc3dc04d-794e-4c75-aaa6-60cf3acf79d3=Assignment(partitions=[]), consumer-patients-6-dfc236f6-3300-402e-89ca-17ea522c1e46=Assignment(partitions=[])}
+2024-12-05 22:08:44.879 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] WARN  NetworkClient - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Error while fetching metadata with correlation id 9 : {patient-email-topic=LEADER_NOT_AVAILABLE}
+2024-12-05 22:08:44.911 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] Successfully synced group in generation Generation{generationId=1, memberId='consumer-reports-7-b6cb84e1-a204-4414-b5f6-a63fdce37029', protocol='range'}
+2024-12-05 22:08:44.911 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-5, groupId=patients] Successfully synced group in generation Generation{generationId=27, memberId='consumer-patients-5-dc3dc04d-794e-4c75-aaa6-60cf3acf79d3', protocol='range'}
+2024-12-05 22:08:44.912 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-5, groupId=patients] Notifying assignor about the new Assignment(partitions=[])
+2024-12-05 22:08:44.912 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] Notifying assignor about the new Assignment(partitions=[report-stats-0])
+2024-12-05 22:08:44.912 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-patients-5, groupId=patients] Adding newly assigned partitions: 
+2024-12-05 22:08:44.913 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-4, groupId=patients] Successfully synced group in generation Generation{generationId=27, memberId='consumer-patients-4-4736a8c8-189f-41c2-8b46-984c449e813a', protocol='range'}
+2024-12-05 22:08:44.913 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-9, groupId=reports] Successfully synced group in generation Generation{generationId=1, memberId='consumer-reports-9-04498804-86cb-44ca-bc7a-61420fd89700', protocol='range'}
+2024-12-05 22:08:44.914 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-9, groupId=reports] Notifying assignor about the new Assignment(partitions=[])
+2024-12-05 22:08:44.914 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-reports-9, groupId=reports] Adding newly assigned partitions: 
+2024-12-05 22:08:44.915 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  KafkaMessageListenerContainer - reports: partitions assigned: []
+2024-12-05 22:08:44.915 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  KafkaMessageListenerContainer - patients: partitions assigned: []
+2024-12-05 22:08:44.914 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-4, groupId=patients] Notifying assignor about the new Assignment(partitions=[patient-stats-0])
+2024-12-05 22:08:44.921 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-reports-7, groupId=reports] Adding newly assigned partitions: report-stats-0
+2024-12-05 22:08:44.923 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-patients-4, groupId=patients] Adding newly assigned partitions: patient-stats-0
+2024-12-05 22:08:44.921 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-6, groupId=patients] Successfully synced group in generation Generation{generationId=27, memberId='consumer-patients-6-dfc236f6-3300-402e-89ca-17ea522c1e46', protocol='range'}
+2024-12-05 22:08:44.924 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-6, groupId=patients] Notifying assignor about the new Assignment(partitions=[])
+2024-12-05 22:08:44.924 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-patients-6, groupId=patients] Adding newly assigned partitions: 
+2024-12-05 22:08:44.924 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  KafkaMessageListenerContainer - patients: partitions assigned: []
+2024-12-05 22:08:44.924 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-8, groupId=reports] Successfully synced group in generation Generation{generationId=1, memberId='consumer-reports-8-e4137e00-ab83-461c-9f60-55bc8bce6ad6', protocol='range'}
+2024-12-05 22:08:44.925 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-8, groupId=reports] Notifying assignor about the new Assignment(partitions=[])
+2024-12-05 22:08:44.925 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-reports-8, groupId=reports] Adding newly assigned partitions: 
+2024-12-05 22:08:44.925 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  KafkaMessageListenerContainer - reports: partitions assigned: []
+2024-12-05 22:08:44.961 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] Found no committed offset for partition report-stats-0
+2024-12-05 22:08:44.964 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerUtils - Setting offset for partition patient-stats-0 to the committed offset FetchPosition{offset=142, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[asaf.mshome.net:9092 (id: 0 rack: null)], epoch=0}}
+2024-12-05 22:08:44.965 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - patients: partitions assigned: [patient-stats-0]
+2024-12-05 22:08:45.009 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  SubscriptionState - [Consumer clientId=consumer-reports-7, groupId=reports] Resetting offset for partition report-stats-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[asaf.mshome.net:9092 (id: 0 rack: null)], epoch=0}}.
+2024-12-05 22:08:45.010 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  KafkaMessageListenerContainer - reports: partitions assigned: [report-stats-0]
+2024-12-05 22:08:45.022 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Finished assignment for group at generation 1: {consumer-patient-email-2-88d54d4e-fe52-4780-86a2-7187a5d447a1=Assignment(partitions=[]), consumer-patient-email-3-8c3efe68-98e9-4936-8df2-4c9dffdc257d=Assignment(partitions=[]), consumer-patient-email-1-ac2ae9d6-50ef-4980-8917-953846a5a611=Assignment(partitions=[patient-email-topic-0])}
+2024-12-05 22:08:45.026 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Successfully synced group in generation Generation{generationId=1, memberId='consumer-patient-email-3-8c3efe68-98e9-4936-8df2-4c9dffdc257d', protocol='range'}
+2024-12-05 22:08:45.026 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Successfully synced group in generation Generation{generationId=1, memberId='consumer-patient-email-2-88d54d4e-fe52-4780-86a2-7187a5d447a1', protocol='range'}
+2024-12-05 22:08:45.026 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Successfully synced group in generation Generation{generationId=1, memberId='consumer-patient-email-1-ac2ae9d6-50ef-4980-8917-953846a5a611', protocol='range'}
+2024-12-05 22:08:45.027 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Notifying assignor about the new Assignment(partitions=[])
+2024-12-05 22:08:45.027 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Notifying assignor about the new Assignment(partitions=[patient-email-topic-0])
+2024-12-05 22:08:45.027 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Adding newly assigned partitions: 
+2024-12-05 22:08:45.027 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Adding newly assigned partitions: patient-email-topic-0
+2024-12-05 22:08:45.027 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Notifying assignor about the new Assignment(partitions=[])
+2024-12-05 22:08:45.027 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Adding newly assigned partitions: 
+2024-12-05 22:08:45.028 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  KafkaMessageListenerContainer - patient-email: partitions assigned: []
+2024-12-05 22:08:45.028 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  KafkaMessageListenerContainer - patient-email: partitions assigned: []
+2024-12-05 22:08:45.033 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Found no committed offset for partition patient-email-topic-0
+2024-12-05 22:08:45.037 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  SubscriptionState - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Resetting offset for partition patient-email-topic-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[asaf.mshome.net:9092 (id: 0 rack: null)], epoch=0}}.
+2024-12-05 22:08:45.039 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  KafkaMessageListenerContainer - patient-email: partitions assigned: [patient-email-topic-0]
+2024-12-05 22:08:45.246 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  PartitionStateManager - [10.7.85.246]:5701 [dev] [5.4.0] Initializing cluster partition table arrangement...
+2024-12-05 22:08:45.316 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.316 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.317 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.317 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.318 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.318 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.319 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.319 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.319 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.319 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.320 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.320 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.320 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.320 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.321 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.321 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.321 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.321 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.322 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.322 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.322 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.322 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.323 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.323 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.323 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.324 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.324 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.324 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.325 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.325 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.326 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.326 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.326 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.326 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.327 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.327 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.328 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.328 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.328 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.328 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.329 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.329 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.329 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.329 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.330 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.330 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:08:45.331 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.331 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.332 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:08:45.333 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:09:00.061 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:09:00.249 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:09:30.112 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:09:30.167 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:10:00.392 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:10:00.424 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:10:19.766 [http-nio-8085-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-05 22:10:19.768 [http-nio-8085-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-05 22:10:19.828 [http-nio-8085-exec-1] INFO  DispatcherServlet - Completed initialization in 57 ms
+2024-12-05 22:10:19.925 [http-nio-8085-exec-1] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2024-12-05 22:10:19.925 [http-nio-8085-exec-1] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:10:19.951 [http-nio-8085-exec-1] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:10:20.826 [http-nio-8085-exec-1] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2024-12-05 22:10:30.078 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:10:30.092 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:11:00.124 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:11:00.158 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:11:30.065 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:11:30.081 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:12:00.082 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:12:00.283 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:12:30.070 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:12:30.082 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:13:00.075 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:13:00.075 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:13:30.084 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:13:30.122 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:13:31.895 [AsyncResolver-bootstrap-executor-0] INFO  ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-05 22:14:00.085 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:14:00.091 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:14:30.084 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:14:30.084 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:14:37.663 [http-nio-8085-exec-3] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2024-12-05 22:14:37.664 [http-nio-8085-exec-3] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:37.665 [http-nio-8085-exec-3] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:37.751 [http-nio-8085-exec-3] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2024-12-05 22:14:39.820 [http-nio-8085-exec-4] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2024-12-05 22:14:39.821 [http-nio-8085-exec-4] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:39.823 [http-nio-8085-exec-4] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:39.879 [http-nio-8085-exec-4] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2024-12-05 22:14:41.207 [http-nio-8085-exec-5] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2024-12-05 22:14:41.208 [http-nio-8085-exec-5] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:41.209 [http-nio-8085-exec-5] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:41.248 [http-nio-8085-exec-5] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2024-12-05 22:14:42.379 [http-nio-8085-exec-6] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2024-12-05 22:14:42.379 [http-nio-8085-exec-6] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:42.380 [http-nio-8085-exec-6] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:42.425 [http-nio-8085-exec-6] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2024-12-05 22:14:43.267 [http-nio-8085-exec-7] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2024-12-05 22:14:43.268 [http-nio-8085-exec-7] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:43.269 [http-nio-8085-exec-7] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:43.314 [http-nio-8085-exec-7] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2024-12-05 22:14:44.102 [http-nio-8085-exec-8] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2024-12-05 22:14:44.102 [http-nio-8085-exec-8] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:44.103 [http-nio-8085-exec-8] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:44.136 [http-nio-8085-exec-8] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2024-12-05 22:14:44.934 [http-nio-8085-exec-9] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2024-12-05 22:14:44.935 [http-nio-8085-exec-9] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:44.936 [http-nio-8085-exec-9] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:44.978 [http-nio-8085-exec-9] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2024-12-05 22:14:49.730 [http-nio-8085-exec-10] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2024-12-05 22:14:49.730 [http-nio-8085-exec-10] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:49.731 [http-nio-8085-exec-10] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:49.769 [http-nio-8085-exec-10] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2024-12-05 22:14:50.743 [http-nio-8085-exec-1] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2024-12-05 22:14:50.745 [http-nio-8085-exec-1] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:50.746 [http-nio-8085-exec-1] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:50.777 [http-nio-8085-exec-1] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2024-12-05 22:14:51.591 [http-nio-8085-exec-2] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2024-12-05 22:14:51.591 [http-nio-8085-exec-2] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:51.592 [http-nio-8085-exec-2] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:51.620 [http-nio-8085-exec-2] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2024-12-05 22:14:51.839 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2024-12-05 22:14:51.839 [AsyncReporter{ZipkinRestTemplateSender{http://localhost:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connect to http://localhost:9411 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information)
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connect to http://localhost:9411 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:830) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:691) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinRestTemplateSender.postSpans(ZipkinRestTemplateSender.java:50) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:68) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:40) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123) ~[zipkin-reporter-3.4.0.jar:?]
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266) [zipkin-reporter-3.4.0.jar:?]
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352) [zipkin-reporter-3.4.0.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:9411 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[?:?]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[?:?]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[?:?]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[?:?]
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91) ~[httpclient5-5.3.1.jar:5.3.1]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[?:?]
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889) ~[spring-web-6.1.12.jar:6.1.12]
+	... 9 more
+2024-12-05 22:14:52.594 [http-nio-8085-exec-3] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2024-12-05 22:14:52.594 [http-nio-8085-exec-3] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:52.595 [http-nio-8085-exec-3] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:14:52.626 [http-nio-8085-exec-3] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2024-12-05 22:15:00.052 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:15:00.052 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:15:03.108 [http-nio-8085-exec-4] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2024-12-05 22:15:03.109 [http-nio-8085-exec-4] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:15:03.110 [http-nio-8085-exec-4] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2024-12-05 22:15:03.175 [http-nio-8085-exec-4] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2024-12-05 22:15:30.067 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] TRACE AnalyticsConsumer - Patient stats successfully cached.
+2024-12-05 22:15:30.079 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] TRACE AnalyticsConsumer - Report stats successfully cached.
+2024-12-05 22:15:34.787 [SpringApplicationShutdownHook] INFO  EurekaServiceRegistry - Unregistering application ANALYTICS-SERVICE with eureka with status DOWN
+2024-12-05 22:15:34.788 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1733426134788, current=DOWN, previous=UP]
+2024-12-05 22:15:34.789 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_ANALYTICS-SERVICE/10.7.85.246:analytics-service:8085: registering service...
+2024-12-05 22:15:34.799 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Member consumer-patient-email-3-8c3efe68-98e9-4936-8df2-4c9dffdc257d sending LeaveGroup request to coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-12-05 22:15:34.800 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-9, groupId=reports] Member consumer-reports-9-04498804-86cb-44ca-bc7a-61420fd89700 sending LeaveGroup request to coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-12-05 22:15:34.800 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-8, groupId=reports] Member consumer-reports-8-e4137e00-ab83-461c-9f60-55bc8bce6ad6 sending LeaveGroup request to coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-12-05 22:15:34.800 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-reports-7, groupId=reports] Revoke previously assigned partitions report-stats-0
+2024-12-05 22:15:34.801 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-9, groupId=reports] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.801 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-9, groupId=reports] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.801 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-reports-9, groupId=reports] Unsubscribed all topics or patterns and assigned partitions
+2024-12-05 22:15:34.801 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.801 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.801 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-8, groupId=reports] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.801 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Unsubscribed all topics or patterns and assigned partitions
+2024-12-05 22:15:34.801 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-8, groupId=reports] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.801 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-reports-8, groupId=reports] Unsubscribed all topics or patterns and assigned partitions
+2024-12-05 22:15:34.801 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  KafkaMessageListenerContainer - reports: partitions revoked: [report-stats-0]
+2024-12-05 22:15:34.802 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-6, groupId=patients] Member consumer-patients-6-dfc236f6-3300-402e-89ca-17ea522c1e46 sending LeaveGroup request to coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-12-05 22:15:34.802 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-6, groupId=patients] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.802 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-6, groupId=patients] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.802 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-patients-6, groupId=patients] Unsubscribed all topics or patterns and assigned partitions
+2024-12-05 22:15:34.802 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-patients-4, groupId=patients] Revoke previously assigned partitions patient-stats-0
+2024-12-05 22:15:34.802 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Member consumer-patient-email-2-88d54d4e-fe52-4780-86a2-7187a5d447a1 sending LeaveGroup request to coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-12-05 22:15:34.802 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - patients: partitions revoked: [patient-stats-0]
+2024-12-05 22:15:34.803 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.803 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-5, groupId=patients] Member consumer-patients-5-dc3dc04d-794e-4c75-aaa6-60cf3acf79d3 sending LeaveGroup request to coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-12-05 22:15:34.803 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.803 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Unsubscribed all topics or patterns and assigned partitions
+2024-12-05 22:15:34.803 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-5, groupId=patients] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.803 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-5, groupId=patients] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.803 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Revoke previously assigned partitions patient-email-topic-0
+2024-12-05 22:15:34.803 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  KafkaMessageListenerContainer - patient-email: partitions revoked: [patient-email-topic-0]
+2024-12-05 22:15:34.803 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-patients-5, groupId=patients] Unsubscribed all topics or patterns and assigned partitions
+2024-12-05 22:15:34.808 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] Member consumer-reports-7-b6cb84e1-a204-4414-b5f6-a63fdce37029 sending LeaveGroup request to coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-12-05 22:15:34.808 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Member consumer-patient-email-1-ac2ae9d6-50ef-4980-8917-953846a5a611 sending LeaveGroup request to coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-12-05 22:15:34.808 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-4, groupId=patients] Member consumer-patients-4-4736a8c8-189f-41c2-8b46-984c449e813a sending LeaveGroup request to coordinator asaf.mshome.net:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-12-05 22:15:34.808 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.808 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.808 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-4, groupId=patients] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.808 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-reports-7, groupId=reports] Unsubscribed all topics or patterns and assigned partitions
+2024-12-05 22:15:34.808 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.808 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-4, groupId=patients] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.808 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.808 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-patients-4, groupId=patients] Unsubscribed all topics or patterns and assigned partitions
+2024-12-05 22:15:34.808 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  LegacyKafkaConsumer - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Unsubscribed all topics or patterns and assigned partitions
+2024-12-05 22:15:34.810 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.810 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-7, groupId=reports] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.810 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.810 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-1, groupId=patient-email] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.810 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-6, groupId=patients] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.811 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-6, groupId=patients] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.811 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.811 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-2, groupId=patient-email] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.811 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-4, groupId=patients] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.811 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-4, groupId=patients] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.812 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-5, groupId=patients] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.812 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patients-5, groupId=patients] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.815 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-8, groupId=reports] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.816 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-8, groupId=reports] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.817 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.817 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-patient-email-3, groupId=patient-email] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.818 [DiscoveryClient-InstanceInfoReplicator-0] INFO  DiscoveryClient - DiscoveryClient_ANALYTICS-SERVICE/10.7.85.246:analytics-service:8085 - registration status: 204
+2024-12-05 22:15:34.824 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-9, groupId=reports] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.824 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  ConsumerCoordinator - [Consumer clientId=consumer-reports-9, groupId=reports] Request joining group due to: consumer pro-actively leaving the group
+2024-12-05 22:15:34.863 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  Metrics - Metrics scheduler closed
+2024-12-05 22:15:34.864 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-05 22:15:34.864 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-12-05 22:15:34.864 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  Metrics - Metrics reporters closed
+2024-12-05 22:15:34.870 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  Metrics - Metrics scheduler closed
+2024-12-05 22:15:34.870 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-05 22:15:34.871 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-12-05 22:15:34.871 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  Metrics - Metrics reporters closed
+2024-12-05 22:15:34.884 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  AppInfoParser - App info kafka.consumer for consumer-patients-5 unregistered
+2024-12-05 22:15:34.884 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  AppInfoParser - App info kafka.consumer for consumer-patient-email-3 unregistered
+2024-12-05 22:15:34.885 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  KafkaMessageListenerContainer - patients: Consumer stopped
+2024-12-05 22:15:34.885 [org.springframework.kafka.KafkaListenerEndpointContainer#2-2-C-1] INFO  KafkaMessageListenerContainer - patient-email: Consumer stopped
+2024-12-05 22:15:34.885 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  Metrics - Metrics scheduler closed
+2024-12-05 22:15:34.885 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-05 22:15:34.885 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-12-05 22:15:34.885 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  Metrics - Metrics reporters closed
+2024-12-05 22:15:34.896 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  Metrics - Metrics scheduler closed
+2024-12-05 22:15:34.896 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-05 22:15:34.896 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-12-05 22:15:34.897 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  Metrics - Metrics reporters closed
+2024-12-05 22:15:34.900 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  Metrics - Metrics scheduler closed
+2024-12-05 22:15:34.901 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-05 22:15:34.901 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-12-05 22:15:34.901 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  Metrics - Metrics reporters closed
+2024-12-05 22:15:34.905 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  Metrics - Metrics scheduler closed
+2024-12-05 22:15:34.908 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-05 22:15:34.908 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-12-05 22:15:34.908 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  Metrics - Metrics reporters closed
+2024-12-05 22:15:34.923 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  AppInfoParser - App info kafka.consumer for consumer-reports-8 unregistered
+2024-12-05 22:15:34.923 [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] INFO  KafkaMessageListenerContainer - reports: Consumer stopped
+2024-12-05 22:15:34.928 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  AppInfoParser - App info kafka.consumer for consumer-reports-9 unregistered
+2024-12-05 22:15:34.928 [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] INFO  KafkaMessageListenerContainer - reports: Consumer stopped
+2024-12-05 22:15:34.941 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  AppInfoParser - App info kafka.consumer for consumer-patient-email-2 unregistered
+2024-12-05 22:15:34.941 [org.springframework.kafka.KafkaListenerEndpointContainer#2-1-C-1] INFO  KafkaMessageListenerContainer - patient-email: Consumer stopped
+2024-12-05 22:15:34.944 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  AppInfoParser - App info kafka.consumer for consumer-patients-6 unregistered
+2024-12-05 22:15:34.945 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  KafkaMessageListenerContainer - patients: Consumer stopped
+2024-12-05 22:15:35.193 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  Metrics - Metrics scheduler closed
+2024-12-05 22:15:35.193 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  Metrics - Metrics scheduler closed
+2024-12-05 22:15:35.193 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-05 22:15:35.193 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-05 22:15:35.193 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-12-05 22:15:35.193 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  Metrics - Metrics reporters closed
+2024-12-05 22:15:35.194 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-12-05 22:15:35.194 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  Metrics - Metrics reporters closed
+2024-12-05 22:15:35.206 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  AppInfoParser - App info kafka.consumer for consumer-reports-7 unregistered
+2024-12-05 22:15:35.206 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  KafkaMessageListenerContainer - reports: Consumer stopped
+2024-12-05 22:15:35.209 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  AppInfoParser - App info kafka.consumer for consumer-patients-4 unregistered
+2024-12-05 22:15:35.209 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - patients: Consumer stopped
+2024-12-05 22:15:35.293 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  Metrics - Metrics scheduler closed
+2024-12-05 22:15:35.293 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-05 22:15:35.293 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-12-05 22:15:35.293 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  Metrics - Metrics reporters closed
+2024-12-05 22:15:35.300 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  AppInfoParser - App info kafka.consumer for consumer-patient-email-1 unregistered
+2024-12-05 22:15:35.301 [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] INFO  KafkaMessageListenerContainer - patient-email: Consumer stopped
+2024-12-05 22:15:36.310 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Shutting down DiscoveryClient ...
+2024-12-05 22:15:39.316 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Unregistering ...
+2024-12-05 22:15:39.338 [SpringApplicationShutdownHook] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
+	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:297)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:103)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-12-05 22:15:39.338 [SpringApplicationShutdownHook] WARN  RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-12-05 22:15:39.343 [SpringApplicationShutdownHook] INFO  RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
+	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:297)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:103)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+2024-12-05 22:15:39.343 [SpringApplicationShutdownHook] WARN  RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-12-05 22:15:39.344 [SpringApplicationShutdownHook] ERROR DiscoveryClient - DiscoveryClient_ANALYTICS-SERVICE/10.7.85.246:analytics-service:8085 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892) ~[eureka-client-2.0.2.jar:2.0.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389) ~[spring-cloud-context-4.1.2.jar:4.1.2]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-4.1.2.jar:4.1.2]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1156) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-3.3.3.jar:3.3.3]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) [?:?]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) [spring-boot-3.3.3.jar:3.3.3]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+2024-12-05 22:15:39.352 [SpringApplicationShutdownHook] INFO  DiscoveryClient - Completed shut down of DiscoveryClient

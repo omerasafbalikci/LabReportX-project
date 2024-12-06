@@ -24,7 +24,10 @@ import org.springframework.stereotype.Component;
 public class WeeklyStatsScheduler {
     private final PatientService patientService;
 
-    @Scheduled(cron = "0/30 * * * * ?")
+    /**
+     * Scheduled task to generate and send weekly patient registration statistics every 30 minutes.
+     */
+    @Scheduled(cron = "0 0/30 * * * ?")
     public void scheduleWeeklyStatsTask() {
         log.trace("Starting scheduleWeeklyStatsTask in WeeklyStatsScheduler.");
         this.patientService.sendWeeklyPatientRegistrationStats();
