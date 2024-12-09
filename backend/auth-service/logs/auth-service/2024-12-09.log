@@ -1,0 +1,325 @@
+2024-12-09 04:02:45.707 [main] TRACE UserController - Entering handlePasswordReset method in UserController
+2024-12-09 04:02:45.725 [main] TRACE UserController - Exiting handlePasswordReset method in UserController
+2024-12-09 04:02:45.794 [main] TRACE UserController - Entering verifyEmail method in UserController
+2024-12-09 04:02:45.794 [main] TRACE UserController - Exiting verifyEmail method in UserController
+2024-12-09 04:02:45.802 [main] TRACE UserController - Entering logout method in UserController
+2024-12-09 04:02:45.802 [main] TRACE UserController - Exiting logout method in UserController
+2024-12-09 04:02:45.809 [main] TRACE UserController - Entering changePassword method in UserController
+2024-12-09 04:02:45.809 [main] TRACE UserController - Exiting changePassword method in UserController
+2024-12-09 04:02:45.819 [main] TRACE UserController - Entering login method in UserController
+2024-12-09 04:02:45.822 [main] TRACE UserController - Exiting login method in UserController
+2024-12-09 04:02:45.829 [main] TRACE UserController - Entering refreshToken method in UserController
+2024-12-09 04:02:45.830 [main] TRACE UserController - Exiting refreshToken method in UserController
+2024-12-09 04:02:45.836 [main] TRACE UserController - Entering initiatePasswordReset method in UserController
+2024-12-09 04:02:45.837 [main] TRACE UserController - Exiting initiatePasswordReset method in UserController
+2024-12-09 04:02:46.008 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 3600000
+2024-12-09 04:02:46.068 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-12-09 04:02:46.070 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-12-09 04:02:46.209 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzMzNzA2MTY2LCJleHAiOjE3MzM3MDk3NjZ9.IFquU9e9CKcX0jgphsOZEipJZ_hqVJaRib-cr_lXxBI
+2024-12-09 04:02:46.216 [main] TRACE JwtServiceImpl - Entering extractUsername method in JwtUtils class
+2024-12-09 04:02:46.217 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-12-09 04:02:46.217 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-12-09 04:02:46.236 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-12-09 04:02:46.237 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-12-09 04:02:46.262 [main] TRACE JwtServiceImpl - Entering generateAccessToken method in JwtUtils class with username: user
+2024-12-09 04:02:46.263 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 3600000
+2024-12-09 04:02:46.263 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-12-09 04:02:46.263 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-12-09 04:02:46.266 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTczMzcwNjE2NiwiZXhwIjoxNzMzNzA5NzY2fQ.6INHpklghoz55dlpNEJZ8iTVIjwhfJeSwWQejN9QQvU
+2024-12-09 04:02:46.266 [main] TRACE JwtServiceImpl - Exiting generateAccessToken method in JwtUtils class with accessToken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTczMzcwNjE2NiwiZXhwIjoxNzMzNzA5NzY2fQ.6INHpklghoz55dlpNEJZ8iTVIjwhfJeSwWQejN9QQvU
+2024-12-09 04:02:46.266 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-12-09 04:02:46.266 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-12-09 04:02:46.266 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-12-09 04:02:46.266 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-12-09 04:02:46.297 [main] TRACE JwtServiceImpl - Exiting extractAllClaims method in JwtUtils class
+2024-12-09 04:02:46.298 [main] TRACE JwtServiceImpl - Exiting extractClaim method in JwtUtils class with claim: user
+2024-12-09 04:02:46.302 [main] TRACE JwtServiceImpl - Entering generateRefreshToken method in JwtUtils class with username: user
+2024-12-09 04:02:46.302 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 86400000
+2024-12-09 04:02:46.305 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-12-09 04:02:46.306 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-12-09 04:02:46.308 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzMzNzA2MTY2LCJleHAiOjE3MzM3OTI1NjZ9.KPFzfSaEGAIlVX0tPCblZTYm8ax8e-DTHZcfXJdeWgs
+2024-12-09 04:02:46.309 [main] TRACE JwtServiceImpl - Exiting generateRefreshToken method in JwtUtils class with refreshToken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzMzNzA2MTY2LCJleHAiOjE3MzM3OTI1NjZ9.KPFzfSaEGAIlVX0tPCblZTYm8ax8e-DTHZcfXJdeWgs
+2024-12-09 04:02:46.314 [main] TRACE JwtServiceImpl - Entering generateAccessToken method in JwtUtils class with username: user
+2024-12-09 04:02:46.314 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 3600000
+2024-12-09 04:02:46.315 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-12-09 04:02:46.315 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-12-09 04:02:46.316 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MzM3MDYxNjYsImV4cCI6MTczMzcwOTc2Nn0.fVSvoITAYqz6I2cpgnIy0NQ0FMty8P1TRKb8PtFVYWE
+2024-12-09 04:02:46.316 [main] TRACE JwtServiceImpl - Exiting generateAccessToken method in JwtUtils class with accessToken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MzM3MDYxNjYsImV4cCI6MTczMzcwOTc2Nn0.fVSvoITAYqz6I2cpgnIy0NQ0FMty8P1TRKb8PtFVYWE
+2024-12-09 04:02:46.316 [main] TRACE JwtServiceImpl - Entering extractUsername method in JwtUtils class
+2024-12-09 04:02:46.316 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-12-09 04:02:46.316 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-12-09 04:02:46.316 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-12-09 04:02:46.316 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-12-09 04:02:46.317 [main] TRACE JwtServiceImpl - Exiting extractAllClaims method in JwtUtils class
+2024-12-09 04:02:46.318 [main] TRACE JwtServiceImpl - Exiting extractClaim method in JwtUtils class with claim: user
+2024-12-09 04:02:46.318 [main] TRACE JwtServiceImpl - Exiting extractUsername method in JwtUtils class with username: user
+2024-12-09 04:02:46.324 [main] TRACE JwtServiceImpl - Entering generateAccessToken method in JwtUtils class with username: user
+2024-12-09 04:02:46.325 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 3600000
+2024-12-09 04:02:46.325 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-12-09 04:02:46.325 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-12-09 04:02:46.326 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTczMzcwNjE2NiwiZXhwIjoxNzMzNzA5NzY2fQ.6INHpklghoz55dlpNEJZ8iTVIjwhfJeSwWQejN9QQvU
+2024-12-09 04:02:46.327 [main] TRACE JwtServiceImpl - Exiting generateAccessToken method in JwtUtils class with accessToken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTczMzcwNjE2NiwiZXhwIjoxNzMzNzA5NzY2fQ.6INHpklghoz55dlpNEJZ8iTVIjwhfJeSwWQejN9QQvU
+2024-12-09 04:02:46.331 [main] TRACE JwtServiceImpl - Entering generateAccessToken method in JwtUtils class with username: user
+2024-12-09 04:02:46.332 [main] TRACE JwtServiceImpl - Entering buildToken method in JwtUtils class with claims and expiration: 3600000
+2024-12-09 04:02:46.332 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-12-09 04:02:46.334 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-12-09 04:02:46.335 [main] TRACE JwtServiceImpl - Exiting buildToken method in JwtUtils class with token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MzM3MDYxNjYsImV4cCI6MTczMzcwOTc2Nn0.fVSvoITAYqz6I2cpgnIy0NQ0FMty8P1TRKb8PtFVYWE
+2024-12-09 04:02:46.336 [main] TRACE JwtServiceImpl - Exiting generateAccessToken method in JwtUtils class with accessToken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MzM3MDYxNjYsImV4cCI6MTczMzcwOTc2Nn0.fVSvoITAYqz6I2cpgnIy0NQ0FMty8P1TRKb8PtFVYWE
+2024-12-09 04:02:46.336 [main] TRACE JwtServiceImpl - Entering isTokenValid method in JwtUtils class with token and user: user
+2024-12-09 04:02:46.336 [main] TRACE JwtServiceImpl - Entering extractUsername method in JwtUtils class
+2024-12-09 04:02:46.336 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-12-09 04:02:46.337 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-12-09 04:02:46.337 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-12-09 04:02:46.337 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-12-09 04:02:46.339 [main] TRACE JwtServiceImpl - Exiting extractAllClaims method in JwtUtils class
+2024-12-09 04:02:46.340 [main] TRACE JwtServiceImpl - Exiting extractClaim method in JwtUtils class with claim: user
+2024-12-09 04:02:46.340 [main] TRACE JwtServiceImpl - Exiting extractUsername method in JwtUtils class with username: user
+2024-12-09 04:02:46.340 [main] TRACE JwtServiceImpl - Entering isTokenExpired method in JwtUtils class
+2024-12-09 04:02:46.341 [main] TRACE JwtServiceImpl - Entering extractExpiration method in JwtUtils class
+2024-12-09 04:02:46.341 [main] TRACE JwtServiceImpl - Entering extractClaim method in JwtUtils class
+2024-12-09 04:02:46.341 [main] TRACE JwtServiceImpl - Entering extractAllClaims method in JwtUtils class
+2024-12-09 04:02:46.342 [main] TRACE JwtServiceImpl - Entering getSignInKey method in JwtUtils class
+2024-12-09 04:02:46.342 [main] TRACE JwtServiceImpl - Exiting getSignInKey method in JwtUtils class with key
+2024-12-09 04:02:46.344 [main] TRACE JwtServiceImpl - Exiting extractAllClaims method in JwtUtils class
+2024-12-09 04:02:46.344 [main] TRACE JwtServiceImpl - Exiting extractClaim method in JwtUtils class with claim: 2024-12-09T05:02:46.000+0300
+2024-12-09 04:02:46.346 [main] TRACE JwtServiceImpl - Exiting extractExpiration method in JwtUtils class with expiration date: 2024-12-09T05:02:46.000+0300
+2024-12-09 04:02:46.347 [main] TRACE JwtServiceImpl - Exiting isTokenExpired method in JwtUtils class with result: false
+2024-12-09 04:02:46.347 [main] TRACE JwtServiceImpl - Exiting isTokenValid method in JwtUtils class with result: true
+2024-12-09 04:02:46.486 [main] TRACE UserDetailsServiceImpl - Entering loadUserByUsername with username: nonexistentuser
+2024-12-09 04:02:46.487 [main] ERROR UserDetailsServiceImpl - User not found with username: nonexistentuser
+2024-12-09 04:02:46.493 [main] TRACE UserDetailsServiceImpl - Entering loadUserByUsername with username: testuser
+2024-12-09 04:02:46.493 [main] INFO  UserDetailsServiceImpl - User found: testuser
+2024-12-09 04:02:46.494 [main] DEBUG UserDetailsServiceImpl - Mapping role USER to authority ROLE_USER
+2024-12-09 04:02:46.499 [main] INFO  UserDetailsServiceImpl - User authorities: [ROLE_USER]
+2024-12-09 04:02:46.501 [main] TRACE UserDetailsServiceImpl - Exiting loadUserByUsername method in UserDetailsServiceImpl with username: testuser
+2024-12-09 04:02:47.221 [main] TRACE UserServiceImpl - Entering refreshToken method in UserServiceImpl
+2024-12-09 04:02:47.221 [main] DEBUG UserServiceImpl - Attempting to refresh token
+2024-12-09 04:02:47.221 [main] INFO  UserServiceImpl - Extracted username from refresh token: testUser
+2024-12-09 04:02:47.222 [main] ERROR UserServiceImpl - User not found : testUser
+2024-12-09 04:02:47.232 [main] TRACE UserServiceImpl - Entering login method in UserServiceImpl
+2024-12-09 04:02:47.234 [main] DEBUG UserServiceImpl - Attempting to authenticate user: testUser
+2024-12-09 04:02:47.237 [main] ERROR UserServiceImpl - Email not verified for user: testUser
+2024-12-09 04:02:47.255 [main] TRACE UserServiceImpl - Entering login method in UserServiceImpl
+2024-12-09 04:02:47.256 [main] DEBUG UserServiceImpl - Attempting to authenticate user: testUser
+2024-12-09 04:02:47.256 [main] ERROR UserServiceImpl - User not found with username: testUser
+2024-12-09 04:02:48.758 [main] TRACE UserServiceImpl - Entering logout method in UserServiceImpl
+2024-12-09 04:02:48.758 [main] DEBUG UserServiceImpl - Logout initiated
+2024-12-09 04:02:48.759 [main] ERROR UserServiceImpl - Failed to log out token in Redis
+redis.clients.jedis.exceptions.JedisException: Redis error
+	at redis.clients.jedis.Jedis.set(Jedis.java:4892) ~[jedis-5.0.2.jar:?]
+	at com.lab.backend.auth.service.concretes.UserServiceImpl.logout(UserServiceImpl.java:250) ~[classes/:?]
+	at com.lab.backend.auth.service.concretes.UserServiceImplTest.lambda$logout_withRedisFailure_shouldThrowRedisOperationException$11(UserServiceImplTest.java:354) ~[test-classes/:?]
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53) ~[junit-jupiter-api-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35) ~[junit-jupiter-api-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115) ~[junit-jupiter-api-5.10.3.jar:5.10.3]
+	at com.lab.backend.auth.service.concretes.UserServiceImplTest.logout_withRedisFailure_shouldThrowRedisOperationException(UserServiceImplTest.java:353) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728) ~[junit-platform-commons-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) [junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56) [surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184) [surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148) [surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122) [surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) [surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) [surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) [surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) [surefire-booter-3.2.5.jar:3.2.5]
+2024-12-09 04:02:48.778 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-12-09 04:02:48.779 [main] ERROR UserServiceImpl - No user found to remove role: nonExistingUser
+2024-12-09 04:02:48.786 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-12-09 04:02:48.788 [main] ERROR UserServiceImpl - No valid roles found
+2024-12-09 04:02:48.794 [main] TRACE UserServiceImpl - Entering logout method in UserServiceImpl
+2024-12-09 04:02:48.794 [main] DEBUG UserServiceImpl - Logout initiated
+2024-12-09 04:02:48.795 [main] INFO  UserServiceImpl - Token successfully logged out and saved in Redis
+2024-12-09 04:02:48.795 [main] TRACE UserServiceImpl - Exiting logout method in UserServiceImpl
+2024-12-09 04:02:48.806 [main] TRACE UserServiceImpl - Entering login method in UserServiceImpl
+2024-12-09 04:02:48.807 [main] DEBUG UserServiceImpl - Attempting to authenticate user: testUser
+2024-12-09 04:02:48.807 [main] ERROR UserServiceImpl - Authentication failed for user: testUser
+2024-12-09 04:02:48.812 [main] TRACE UserServiceImpl - Entering changePassword method in UserServiceImpl
+2024-12-09 04:02:48.812 [main] DEBUG UserServiceImpl - Password change request initiated
+2024-12-09 04:02:48.814 [main] ERROR UserServiceImpl - User not found for username: testUser
+2024-12-09 04:02:48.818 [main] TRACE UserServiceImpl - Entering handlePasswordReset method in UserServiceImpl
+2024-12-09 04:02:48.818 [main] DEBUG UserServiceImpl - Handling password reset for token: validToken
+2024-12-09 04:02:48.818 [main] ERROR UserServiceImpl - New password does not meet the minimum length requirement
+2024-12-09 04:02:48.824 [main] TRACE UserServiceImpl - Entering refreshToken method in UserServiceImpl
+2024-12-09 04:02:48.825 [main] DEBUG UserServiceImpl - Attempting to refresh token
+2024-12-09 04:02:48.825 [main] INFO  UserServiceImpl - Extracted username from refresh token: testUser
+2024-12-09 04:02:48.826 [main] ERROR UserServiceImpl - Email not verified for user testUser so refresh token cannot be done.
+2024-12-09 04:02:48.832 [main] TRACE UserServiceImpl - Entering updateUser method in UserServiceImpl
+2024-12-09 04:02:48.832 [main] ERROR UserServiceImpl - Username is already taken: newUsername
+2024-12-09 04:02:48.837 [main] TRACE UserServiceImpl - Entering verifyEmail method in UserServiceImpl
+2024-12-09 04:02:48.838 [main] ERROR UserServiceImpl - User with the given verification token not found
+2024-12-09 04:02:48.844 [main] TRACE UserServiceImpl - Entering addRole method in UserServiceImpl
+2024-12-09 04:02:48.844 [main] ERROR UserServiceImpl - Role not found: NON_EXISTING_ROLE
+2024-12-09 04:02:48.849 [main] TRACE UserServiceImpl - Entering handlePasswordReset method in UserServiceImpl
+2024-12-09 04:02:48.849 [main] DEBUG UserServiceImpl - Handling password reset for token: validToken
+2024-12-09 04:02:48.850 [main] INFO  UserServiceImpl - Password reset successfully for user: testUser
+2024-12-09 04:02:48.850 [main] TRACE UserServiceImpl - Exiting handlePasswordReset method in UserServiceImpl
+2024-12-09 04:02:48.855 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-12-09 04:02:48.856 [main] ERROR UserServiceImpl - No role found for registration!
+2024-12-09 04:02:48.861 [main] TRACE UserServiceImpl - Entering changePassword method in UserServiceImpl
+2024-12-09 04:02:48.861 [main] DEBUG UserServiceImpl - Password change request initiated
+2024-12-09 04:02:48.861 [main] ERROR UserServiceImpl - Invalid token format to change password
+2024-12-09 04:02:48.868 [main] TRACE UserServiceImpl - Entering refreshToken method in UserServiceImpl
+2024-12-09 04:02:48.868 [main] DEBUG UserServiceImpl - Attempting to refresh token
+2024-12-09 04:02:48.868 [main] ERROR UserServiceImpl - Invalid token format
+2024-12-09 04:02:48.874 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-12-09 04:02:48.874 [main] INFO  UserServiceImpl - User 'newUser' created successfully
+2024-12-09 04:02:48.875 [main] INFO  UserServiceImpl - Verification email sent to 'newUser@example.com'
+2024-12-09 04:02:48.875 [main] TRACE UserServiceImpl - Exiting createUser method in UserServiceImpl
+2024-12-09 04:02:48.880 [main] TRACE UserServiceImpl - Entering deleteUser method in UserServiceImpl
+2024-12-09 04:02:48.881 [main] ERROR UserServiceImpl - User not found: username
+2024-12-09 04:02:48.886 [main] TRACE UserServiceImpl - Initializing JedisPool with Redis Host: localhost and Port: invalidPort
+2024-12-09 04:02:48.893 [main] TRACE UserServiceImpl - Entering updateUser method in UserServiceImpl
+2024-12-09 04:02:48.893 [main] INFO  UserServiceImpl - User 'newUsername' updated successfully
+2024-12-09 04:02:48.893 [main] TRACE UserServiceImpl - Exiting updateUser method in UserServiceImpl
+2024-12-09 04:02:48.898 [main] TRACE UserServiceImpl - Entering handlePasswordReset method in UserServiceImpl
+2024-12-09 04:02:48.898 [main] DEBUG UserServiceImpl - Handling password reset for token: invalidToken
+2024-12-09 04:02:48.899 [main] ERROR UserServiceImpl - Invalid reset token provided
+2024-12-09 04:02:48.904 [main] TRACE UserServiceImpl - Entering deleteUser method in UserServiceImpl
+2024-12-09 04:02:48.904 [main] ERROR UserServiceImpl - User not found: username
+2024-12-09 04:02:48.909 [main] TRACE UserServiceImpl - Entering addRole method in UserServiceImpl
+2024-12-09 04:02:48.909 [main] INFO  UserServiceImpl - Role 'TECHNICIAN' added to user 'testUser'
+2024-12-09 04:02:48.910 [main] TRACE UserServiceImpl - Exiting addRole method in UserServiceImpl
+2024-12-09 04:02:48.916 [main] TRACE UserServiceImpl - Entering updateUser method in UserServiceImpl
+2024-12-09 04:02:48.916 [main] ERROR UserServiceImpl - User not found
+2024-12-09 04:02:48.922 [main] TRACE UserServiceImpl - Entering restoreUser method in UserServiceImpl
+2024-12-09 04:02:48.922 [main] TRACE UserServiceImpl - Entering revokeAllTokensByUser method in UserServiceImpl
+2024-12-09 04:02:48.922 [main] DEBUG UserServiceImpl - Revoking all tokens for user ID: 1
+2024-12-09 04:02:48.923 [main] INFO  UserServiceImpl - No valid tokens found for user ID: 1
+2024-12-09 04:02:48.923 [main] INFO  UserServiceImpl - User 'username' restored successfully
+2024-12-09 04:02:48.923 [main] TRACE UserServiceImpl - Exiting restoreUser method in UserServiceImpl
+2024-12-09 04:02:48.929 [main] TRACE UserServiceImpl - Entering deleteUser method in UserServiceImpl
+2024-12-09 04:02:48.929 [main] TRACE UserServiceImpl - Entering revokeAllTokensByUser method in UserServiceImpl
+2024-12-09 04:02:48.929 [main] DEBUG UserServiceImpl - Revoking all tokens for user ID: 1
+2024-12-09 04:02:48.930 [main] INFO  UserServiceImpl - No valid tokens found for user ID: 1
+2024-12-09 04:02:48.930 [main] INFO  UserServiceImpl - User 'username' marked as deleted
+2024-12-09 04:02:48.930 [main] TRACE UserServiceImpl - Exiting deleteUser method in UserServiceImpl
+2024-12-09 04:02:48.934 [main] TRACE UserServiceImpl - Entering refreshToken method in UserServiceImpl
+2024-12-09 04:02:48.935 [main] DEBUG UserServiceImpl - Attempting to refresh token
+2024-12-09 04:02:48.935 [main] INFO  UserServiceImpl - Extracted username from refresh token: null
+2024-12-09 04:02:48.935 [main] ERROR UserServiceImpl - Username extraction failed from token
+2024-12-09 04:02:48.940 [main] TRACE UserServiceImpl - Entering addRole method in UserServiceImpl
+2024-12-09 04:02:48.940 [main] ERROR UserServiceImpl - No user found to add role: nonExistingUser
+2024-12-09 04:02:48.944 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-12-09 04:02:48.944 [main] INFO  UserServiceImpl - Role 'ADMIN' removed from user 'testUser'
+2024-12-09 04:02:48.944 [main] TRACE UserServiceImpl - Exiting removeRole method in UserServiceImpl
+2024-12-09 04:02:48.947 [main] TRACE UserServiceImpl - Entering changePassword method in UserServiceImpl
+2024-12-09 04:02:48.948 [main] DEBUG UserServiceImpl - Password change request initiated
+2024-12-09 04:02:48.948 [main] TRACE UserServiceImpl - Entering revokeAllTokensByUser method in UserServiceImpl
+2024-12-09 04:02:48.948 [main] DEBUG UserServiceImpl - Revoking all tokens for user ID: 1
+2024-12-09 04:02:48.948 [main] INFO  UserServiceImpl - No valid tokens found for user ID: 1
+2024-12-09 04:02:48.949 [main] INFO  UserServiceImpl - Password changed successfully for user: testUser
+2024-12-09 04:02:48.949 [main] TRACE UserServiceImpl - Exiting changePassword method in UserServiceImpl
+2024-12-09 04:02:48.954 [main] TRACE UserServiceImpl - Entering createUser method in UserServiceImpl
+2024-12-09 04:02:48.955 [main] ERROR UserServiceImpl - Username 'existingUser' is already taken
+2024-12-09 04:02:48.961 [main] TRACE UserServiceImpl - Entering refreshToken method in UserServiceImpl
+2024-12-09 04:02:48.962 [main] DEBUG UserServiceImpl - Attempting to refresh token
+2024-12-09 04:02:48.962 [main] INFO  UserServiceImpl - Extracted username from refresh token: testUser
+2024-12-09 04:02:48.962 [main] ERROR UserServiceImpl - User not found : testUser
+2024-12-09 04:02:48.969 [main] TRACE UserServiceImpl - Entering changePassword method in UserServiceImpl
+2024-12-09 04:02:48.970 [main] DEBUG UserServiceImpl - Password change request initiated
+2024-12-09 04:02:48.970 [main] ERROR UserServiceImpl - Old password is incorrect for user: testUser
+2024-12-09 04:02:48.975 [main] TRACE UserServiceImpl - Entering verifyEmail method in UserServiceImpl
+2024-12-09 04:02:48.976 [main] INFO  UserServiceImpl - Email verified for user: testUser
+2024-12-09 04:02:48.976 [main] TRACE UserServiceImpl - Exiting verifyEmail method in UserServiceImpl
+2024-12-09 04:02:48.983 [main] TRACE UserServiceImpl - Entering handlePasswordReset method in UserServiceImpl
+2024-12-09 04:02:48.983 [main] DEBUG UserServiceImpl - Handling password reset for token: validToken
+2024-12-09 04:02:48.983 [main] ERROR UserServiceImpl - Reset token has expired for user: testUser
+2024-12-09 04:02:48.990 [main] TRACE UserServiceImpl - Entering removeRole method in UserServiceImpl
+2024-12-09 04:02:48.990 [main] ERROR UserServiceImpl - Role not found to remove: NON_EXISTING_ROLE
+2024-12-09 04:02:48.996 [main] TRACE UserServiceImpl - Entering logout method in UserServiceImpl
+2024-12-09 04:02:48.996 [main] DEBUG UserServiceImpl - Logout initiated
+2024-12-09 04:02:48.997 [main] ERROR UserServiceImpl - Invalid token
+2024-12-09 04:02:49.006 [main] TRACE UserServiceImpl - Entering login method in UserServiceImpl
+2024-12-09 04:02:49.009 [main] DEBUG UserServiceImpl - Attempting to authenticate user: testUser
+2024-12-09 04:02:49.010 [main] INFO  UserServiceImpl - User authenticated successfully: testUser
+2024-12-09 04:02:49.011 [main] TRACE UserServiceImpl - Entering getRolesAsString method in UserServiceImpl
+2024-12-09 04:02:49.012 [main] TRACE UserServiceImpl - Exiting getRolesAsString method in UserServiceImpl
+2024-12-09 04:02:49.013 [main] TRACE UserServiceImpl - Entering revokeAllTokensByUser method in UserServiceImpl
+2024-12-09 04:02:49.013 [main] DEBUG UserServiceImpl - Revoking all tokens for user ID: 1
+2024-12-09 04:02:49.014 [main] INFO  UserServiceImpl - No valid tokens found for user ID: 1
+2024-12-09 04:02:49.014 [main] TRACE UserServiceImpl - Entering saveUserToken method in UserServiceImpl
+2024-12-09 04:02:49.014 [main] DEBUG UserServiceImpl - Saving token for user: testUser
+2024-12-09 04:02:49.031 [main] INFO  UserServiceImpl - Token saved in Redis for user: testUser
+2024-12-09 04:02:49.032 [main] TRACE UserServiceImpl - Exiting saveUserToken method in UserServiceImpl
+2024-12-09 04:02:49.032 [main] TRACE UserServiceImpl - Exiting login method in UserServiceImpl
+2024-12-09 04:02:49.046 [main] TRACE UserServiceImpl - Entering logout method in UserServiceImpl
+2024-12-09 04:02:49.046 [main] DEBUG UserServiceImpl - Logout initiated
+2024-12-09 04:02:49.047 [main] ERROR UserServiceImpl - Token not found in repository
+2024-12-09 04:02:49.118 [main] TRACE UserServiceImpl - Entering refreshToken method in UserServiceImpl
+2024-12-09 04:02:49.119 [main] DEBUG UserServiceImpl - Attempting to refresh token
+2024-12-09 04:02:49.119 [main] INFO  UserServiceImpl - Extracted username from refresh token: testUser
+2024-12-09 04:02:49.121 [main] INFO  UserServiceImpl - Generating new tokens for user: testUser
+2024-12-09 04:02:49.123 [main] TRACE UserServiceImpl - Entering getRolesAsString method in UserServiceImpl
+2024-12-09 04:02:49.123 [main] TRACE UserServiceImpl - Exiting getRolesAsString method in UserServiceImpl
+2024-12-09 04:02:49.124 [main] TRACE UserServiceImpl - Entering revokeAllTokensByUser method in UserServiceImpl
+2024-12-09 04:02:49.124 [main] DEBUG UserServiceImpl - Revoking all tokens for user ID: 1
+2024-12-09 04:02:49.124 [main] INFO  UserServiceImpl - No valid tokens found for user ID: 1
+2024-12-09 04:02:49.126 [main] TRACE UserServiceImpl - Entering saveUserToken method in UserServiceImpl
+2024-12-09 04:02:49.126 [main] DEBUG UserServiceImpl - Saving token for user: testUser
+2024-12-09 04:02:49.129 [main] INFO  UserServiceImpl - Token saved in Redis for user: testUser
+2024-12-09 04:02:49.131 [main] TRACE UserServiceImpl - Exiting saveUserToken method in UserServiceImpl
+2024-12-09 04:02:49.131 [main] TRACE UserServiceImpl - Exiting refreshToken method in UserServiceImpl
+2024-12-09 04:02:49.336 [main] TRACE UserServiceImpl - Initializing JedisPool with Redis Host: localhost and Port: 6379
+2024-12-09 04:02:49.351 [main] TRACE UserServiceImpl - Exiting init method in UserServiceImpl

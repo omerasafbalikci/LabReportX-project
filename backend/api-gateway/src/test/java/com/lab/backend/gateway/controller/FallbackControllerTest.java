@@ -1,9 +1,6 @@
 package com.lab.backend.gateway.controller;
 
-import com.lab.backend.gateway.utilities.exceptions.AuthServiceUnavailableException;
-import com.lab.backend.gateway.utilities.exceptions.PatientServiceUnavailableException;
-import com.lab.backend.gateway.utilities.exceptions.ReportServiceUnavailableException;
-import com.lab.backend.gateway.utilities.exceptions.UserServiceUnavailableException;
+import com.lab.backend.gateway.utilities.exceptions.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -51,5 +48,14 @@ public class FallbackControllerTest {
                 () -> fallbackController.fallbackReport());
 
         assertEquals("Report service is temporarily unavailable. Please try again later.", exception.getMessage());
+    }
+
+    @Test
+    void whenFallbackAnalyticsEndpointIsCalled_thenAnalyticsServiceUnavailableExceptionIsThrown() {
+        // Act & Assert
+        Exception exception = assertThrows(AnalyticsServiceUnavailableException.class,
+                () -> fallbackController.fallbackAnalytics());
+
+        assertEquals("Analytics service is temporarily unavailable. Please try again later.", exception.getMessage());
     }
 }

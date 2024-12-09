@@ -89,6 +89,13 @@ public class FallbackController {
         }
     }
 
+    /**
+     * Fallback method for the analytics service.
+     * Triggered when the analytics service is unavailable.
+     * Logs the error and throws a AnalyticsServiceUnavailableException.
+     *
+     * @return ResponseEntity with a fallback message for the analytics service.
+     */
     @RequestMapping(value = "/fallback/analytics", method = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
     public ResponseEntity<String> fallbackAnalytics() {
         log.trace("Entering fallbackAnalytics method in FallbackController");
