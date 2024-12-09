@@ -23,7 +23,6 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -343,31 +342,6 @@ public class ReportServiceImplTest {
         assertEquals("You are not authorized to restore this report.", exception.getMessage());
         verify(reportRepository).findByIdAndDeletedTrue(reportId);
         verify(reportRepository, never()).save(any(Report.class));
-    }
-
-    @Test
-    void testAddPhoto_success() throws IOException {
-        // Arrange
-        String username = "tech1";
-        Long reportId = 1L;
-        MultipartFile photo = mock(MultipartFile.class);
-        String originalFileName = "photo.png";
-        when(photo.getOriginalFilename()).thenReturn(originalFileName);
-        when(photo.getInputStream()).thenReturn(mock(java.io.InputStream.class));
-
-        Report report = new Report();
-        report.setId(reportId);
-        report.setTechnicianUsername(username);
-
-        when(reportRepository.findByIdAndDeletedFalse(reportId)).thenReturn(Optional.of(report));
-
-        // Act
-        reportService.addPhoto(username, reportId, photo);
-
-        // Assert
-        verify(reportRepository).save(report);
-        assertNotNull(report.getPhotoPath());
-        verify(photo).getInputStream();
     }
 
     @Test

@@ -113,6 +113,65 @@ services:
       - microservices-net
     restart: always
 
+  # ZOOKEEPER AND KAFKA
+  zookeeper:
+    image: 'bitnami/zookeeper:latest'
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ALLOW_ANONYMOUS_LOGIN: yes
+    networks:
+      - microservices-net
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    healthcheck:
+      test: [ "CMD-SHELL", "nc -z localhost 2181" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  kafka:
+    image: 'bitnami/kafka:latest'
+    user: root
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_LISTENERS: PLAINTEXT://:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      ALLOW_PLAINTEXT_LISTENER: 'yes'
+      KAFKA_LOG_CLEANER_ENABLE: 'true'
+      KAFKA_JVM_PERFORMANCE_OPTS: -XX:MaxMetaspaceSize=128m -Xss512k
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+    networks:
+      - microservices-net
+    deploy:
+      resources:
+        limits:
+          memory: 3072MB
+    oom_score_adj: -100
+    healthcheck:
+      test: [ "CMD-SHELL", "/opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --list" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # HAZELCAST
+  hazelcast:
+    image: hazelcast/hazelcast:latest
+    container_name: hazelcast
+    ports:
+      - "5701:5701"
+    networks:
+      - microservices-net
+
   # ZIPKIN
   zipkin:
     image: openzipkin/zipkin:latest
@@ -273,6 +332,7 @@ services:
     depends_on:
       - api-gateway
       - postgres-patient
+      - kafka
 
   report-service:
     container_name: report-service
@@ -287,6 +347,21 @@ services:
       - api-gateway
       - postgres-report
       - patient-service
+
+  analytics-service:
+    container_name: analytics-service
+    image: omerasafbalikci/analytics-service:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    volumes:
+      - ./logs:/logs
+    networks:
+      - microservices-net
+    depends_on:
+      - api-gateway
+      - report-service
+      - patient-service
+      - hazelcast
 
 networks:
   microservices-net:
