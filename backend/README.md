@@ -412,7 +412,7 @@ port number**.
 }
 ```
 
-### Sale Service
+### Report Service
 
 **Endpoints:**
 

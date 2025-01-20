@@ -108,7 +108,7 @@ services:
     image: rabbitmq:alpine
     container_name: rabbitmq
     ports:
-      - "5672:5672"
+      - "5673:5672"
     networks:
       - microservices-net
     restart: always
