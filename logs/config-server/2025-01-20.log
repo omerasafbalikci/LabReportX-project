@@ -75,3 +75,82 @@ Caused by: java.net.UnknownHostException: No such host is known (zipkin)
 2025-01-20 02:52:57.312 [http-nio-8888-exec-2] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-9002174252372990310\backend\config-repo\analytics-service.properties]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-9002174252372990310/backend/config-repo/'
 2025-01-20 02:52:57.312 [http-nio-8888-exec-2] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-9002174252372990310\backend\config-repo\analytics-service.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-9002174252372990310/backend/config-repo/'
 2025-01-20 04:47:42.074 [Thread-2] WARN  MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\omera\AppData\Local\Temp\config-repo-9002174252372990310\.git\objects\pack\pack-18df35585f160a8b5e87dbb62d0bdf4493d87033.idx
+2025-01-20 22:54:32.569 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-01-20 22:54:32.644 [main] INFO  ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.11 with PID 9272 (C:\Users\omera\Desktop\laboratory-reporting-project\backend\config-server\target\classes started by asaf in C:\Users\omera\Desktop\laboratory-reporting-project)
+2025-01-20 22:54:32.645 [main] DEBUG ConfigServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2025-01-20 22:54:32.646 [main] INFO  ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-20 22:54:34.698 [main] INFO  GenericScope - BeanFactory id=573b7218-ad2b-31a2-8a41-d3d954054d58
+2025-01-20 22:54:35.237 [main] INFO  TomcatWebServer - Tomcat initialized with port 8888 (http)
+2025-01-20 22:54:35.269 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2025-01-20 22:54:35.272 [main] INFO  StandardService - Starting service [Tomcat]
+2025-01-20 22:54:35.273 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-01-20 22:54:35.371 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-01-20 22:54:35.374 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2653 ms
+2025-01-20 22:54:42.196 [main] INFO  EndpointLinksResolver - Exposing 17 endpoints beneath base path '/actuator'
+2025-01-20 22:54:42.259 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2025-01-20 22:54:42.290 [main] INFO  TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
+2025-01-20 22:54:42.510 [main] INFO  ConfigServerApplication - Started ConfigServerApplication in 10.884 seconds (process running for 16.416)
+2025-01-20 22:54:57.937 [http-nio-8888-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-20 22:54:57.937 [http-nio-8888-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-20 22:54:57.952 [http-nio-8888-exec-1] INFO  DispatcherServlet - Completed initialization in 15 ms
+2025-01-20 22:54:59.187 [http-nio-8888-exec-1] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\discovery-server.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 22:55:32.899 [http-nio-8888-exec-2] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\api-gateway.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 22:58:00.345 [http-nio-8888-exec-5] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\auth-service.properties]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 22:58:00.346 [http-nio-8888-exec-5] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\auth-service.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 22:58:54.241 [http-nio-8888-exec-6] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\user-management-service.properties]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 22:58:54.243 [http-nio-8888-exec-6] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\user-management-service.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 22:58:58.006 [AsyncReporter{ZipkinRestTemplateSender{http://zipkin:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2025-01-20 22:58:58.006 [AsyncReporter{ZipkinRestTemplateSender{http://zipkin:9411/api/v2/spans}}] WARN  AsyncReporter$BoundedAsyncReporter - Dropped 3 spans due to ResourceAccessException(I/O error on POST request for "http://zipkin:9411/api/v2/spans": No such host is known (zipkin))
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://zipkin:9411/api/v2/spans": No such host is known (zipkin)
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:830) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:691) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinRestTemplateSender.postSpans(ZipkinRestTemplateSender.java:50) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:68) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:40) ~[spring-boot-actuator-autoconfigure-3.3.3.jar:3.3.3]
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123) ~[zipkin-reporter-3.4.0.jar:?]
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266) [zipkin-reporter-3.4.0.jar:?]
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352) [zipkin-reporter-3.4.0.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:842) [?:?]
+Caused by: java.net.UnknownHostException: No such host is known (zipkin)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[?:?]
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:933) ~[?:?]
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1543) ~[?:?]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:852) ~[?:?]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1532) ~[?:?]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1384) ~[?:?]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1305) ~[?:?]
+	at org.apache.hc.client5.http.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:144) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183) ~[httpclient5-5.3.1.jar:5.3.1]
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889) ~[spring-web-6.1.12.jar:6.1.12]
+	... 9 more
+2025-01-20 22:59:12.894 [http-nio-8888-exec-8] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\patient-service.properties]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 22:59:12.894 [http-nio-8888-exec-8] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\patient-service.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 22:59:41.167 [http-nio-8888-exec-9] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\report-service.properties]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 22:59:41.167 [http-nio-8888-exec-9] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\report-service.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 23:00:02.427 [http-nio-8888-exec-1] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\analytics-service.properties]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 23:00:02.428 [http-nio-8888-exec-1] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\analytics-service.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 23:04:54.650 [http-nio-8888-exec-5] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\analytics-service.properties]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 23:04:54.651 [http-nio-8888-exec-5] INFO  NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\backend\config-repo\analytics-service.yml]' via location 'file:/C:/Users/omera/AppData/Local/Temp/config-repo-13653772078024553742/backend/config-repo/'
+2025-01-20 23:20:27.493 [Thread-2] WARN  MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\omera\AppData\Local\Temp\config-repo-13653772078024553742\.git\objects\pack\pack-ab58bd34495588b16777547476b32011f7a229a9.idx
