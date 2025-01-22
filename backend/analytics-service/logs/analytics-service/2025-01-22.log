@@ -1,0 +1,15 @@
+2025-01-22 20:11:49.576 [main] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2025-01-22 20:11:49.600 [main] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2025-01-22 20:11:49.642 [main] TRACE AnalyticsController - Entering getReportChart method in AnalyticsController class
+2025-01-22 20:11:49.642 [main] TRACE AnalyticsController - Exiting getReportChart method in AnalyticsController class
+2025-01-22 20:11:49.835 [main] TRACE AnalyticsServiceImpl - Entering getReportChart method in AnalyticsServiceImpl
+2025-01-22 20:11:49.836 [main] ERROR AnalyticsServiceImpl - No weekly report stats available
+2025-01-22 20:11:49.846 [main] TRACE AnalyticsServiceImpl - Entering sendPatientSatisfactionSurvey method with email: test@example.com
+2025-01-22 20:11:49.850 [main] INFO  AnalyticsServiceImpl - Survey email sent to: test@example.com
+2025-01-22 20:11:49.851 [main] TRACE AnalyticsServiceImpl - Exiting sendPatientSatisfactionSurvey method in AnalyticsServiceImpl
+2025-01-22 20:11:49.860 [main] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2025-01-22 20:11:49.860 [main] ERROR AnalyticsServiceImpl - No weekly patient stats available
+2025-01-22 20:11:49.869 [main] TRACE AnalyticsServiceImpl - Entering getReportChart method in AnalyticsServiceImpl
+2025-01-22 20:11:49.869 [main] TRACE AnalyticsServiceImpl - Exiting getReportChart method in AnalyticsServiceImpl
+2025-01-22 20:11:49.879 [main] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2025-01-22 20:11:49.879 [main] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl

@@ -12,6 +12,10 @@ eureka:
   instance:
     hostname: patient-service
 
+redis:
+  host: "redis"
+  port: "6380"
+
 management:
   endpoints:
     web:
