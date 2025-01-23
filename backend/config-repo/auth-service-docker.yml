@@ -6,6 +6,10 @@ spring:
       label: docker
   rabbitmq:
     host: rabbitmq
+  data:
+    redis:
+      host: "redis"
+      port: "6380"
 
 eureka:
   client:
@@ -19,10 +23,6 @@ jwt:
   authorities-key: "roles"
   access-token-expiration: 3600000 # an hour
   refresh-token-expiration: 86400000 # a day
-
-redis:
-  host: "redis"
-  port: "6380"
 
 rabbitmq:
   exchange: user-exchange
