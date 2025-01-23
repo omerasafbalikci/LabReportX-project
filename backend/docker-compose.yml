@@ -95,12 +95,18 @@ services:
     image: redis:latest
     container_name: redis
     ports:
-      - "6379:6379"
+      - "6380:6380"
+    command: --port 6380
     volumes:
       - ./redis:/data
     networks:
       - microservices-net
     restart: always
+    healthcheck:
+      test: [ "CMD", "redis-cli", "-p", "6380", "ping" ]
+      interval: 1s
+      timeout: 2s
+      retries: 10
 
   # RABBITMQ
   rabbitmq:
@@ -288,8 +294,10 @@ services:
     networks:
       - microservices-net
     depends_on:
-      - discovery-server
-      - redis
+      discovery-server:
+        condition: service_started
+      redis:
+        condition: service_healthy
 
   auth-service:
     container_name: auth-service
@@ -324,14 +332,21 @@ services:
     image: omerasafbalikci/patient-service:latest
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_REDIS_HOST=redis
+      - SPRING_REDIS_PORT=6380
     volumes:
       - ./logs:/logs
     networks:
       - microservices-net
     depends_on:
-      - api-gateway
-      - postgres-patient
-      - kafka
+      redis:
+        condition: service_healthy
+      api-gateway:
+        condition: service_started
+      postgres-patient:
+        condition: service_started
+      kafka:
+        condition: service_healthy
 
   report-service:
     container_name: report-service
@@ -365,3 +380,4 @@ services:
 networks:
   microservices-net:
     driver: bridge
+    name: microservices-net

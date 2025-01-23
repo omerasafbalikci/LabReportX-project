@@ -48,3 +48,19 @@ Identify and stop the process that's listening on port 8888 or configure this ap
 2025-01-23 01:43:32.727 [http-nio-8888-exec-3] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2025-01-23 01:43:32.727 [http-nio-8888-exec-3] INFO  DispatcherServlet - Completed initialization in 0 ms
 2025-01-23 01:43:44.577 [Thread-2] WARN  MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\omera\AppData\Local\Temp\config-repo-7948394504639865356\.git\objects\pack\pack-997e24343ac900300889af74a94b25868b1b4575.idx
+2025-01-23 19:18:51.125 [background-preinit] INFO  Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-01-23 19:18:51.180 [main] INFO  ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.12 with PID 4568 (C:\Users\omera\Desktop\LabReportX-project\backend\config-server\target\classes started by Kadir Can Balıkçı in C:\Users\omera\Desktop\LabReportX-project)
+2025-01-23 19:18:51.181 [main] DEBUG ConfigServerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2025-01-23 19:18:51.182 [main] INFO  ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-23 19:18:52.451 [main] INFO  GenericScope - BeanFactory id=573b7218-ad2b-31a2-8a41-d3d954054d58
+2025-01-23 19:18:52.788 [main] INFO  TomcatWebServer - Tomcat initialized with port 8888 (http)
+2025-01-23 19:18:52.799 [main] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2025-01-23 19:18:52.802 [main] INFO  StandardService - Starting service [Tomcat]
+2025-01-23 19:18:52.802 [main] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-01-23 19:18:52.864 [main] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-01-23 19:18:52.866 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1633 ms
+2025-01-23 19:18:57.422 [main] INFO  EndpointLinksResolver - Exposing 17 endpoints beneath base path '/actuator'
+2025-01-23 19:18:57.472 [main] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2025-01-23 19:18:57.496 [main] INFO  TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
+2025-01-23 19:18:57.558 [main] INFO  ConfigServerApplication - Started ConfigServerApplication in 6.797 seconds (process running for 10.556)
+2025-01-23 19:19:00.540 [Thread-2] WARN  MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\omera\AppData\Local\Temp\config-repo-8508618837662718978\.git\objects\pack\pack-a5f4b9ff9a0d7b2f47b5505783805ca8cbd3d02a.idx
