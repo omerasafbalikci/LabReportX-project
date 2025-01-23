@@ -1,10 +1,6 @@
 spring:
   application:
     name: api-gateway
-  data:
-    redis:
-      host: "localhost"
-      port: "6379"
 
 server:
   port: 8080
@@ -24,5 +20,9 @@ route:
   patient: "lb://patient-service"
   report: "lb://report-service"
   analytics: "lb://analytics-service"
+
+redis:
+  host: "localhost"
+  port: "6379"
 
 circuit-breaker-name: "circuit-breaker"

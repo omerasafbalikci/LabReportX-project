@@ -4,10 +4,6 @@ spring:
   cloud:
     config:
       label: docker
-  data:
-    redis:
-      host: "redis"
-      port: "6380"
 
 eureka:
   client:
@@ -26,6 +22,10 @@ route:
   patient: "lb://patient-service"
   report: "lb://report-service"
   analytics: "lb://analytics-service"
+
+redis:
+  host: "redis"
+  port: "6380"
 
 circuit-breaker-name: "circuit-breaker"
 
