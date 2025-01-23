@@ -22,7 +22,7 @@ jwt:
 
 redis:
   host: "redis"
-  port: "6379"
+  port: "6380"
 
 rabbitmq:
   exchange: user-exchange
