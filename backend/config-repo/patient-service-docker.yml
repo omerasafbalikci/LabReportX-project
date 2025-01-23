@@ -4,6 +4,9 @@ spring:
   cloud:
     config:
       label: docker
+  redis:
+    host: "redis"
+    port: "6379"
 
 eureka:
   client:
@@ -12,9 +15,7 @@ eureka:
   instance:
     hostname: patient-service
 
-redis:
-  host: "redis"
-  port: "6379"
+
 
 management:
   endpoints:
