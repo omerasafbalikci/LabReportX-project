@@ -12,10 +12,6 @@ eureka:
   instance:
     hostname: patient-service
 
-logging:
-  level:
-    org.springframework.data.redis: TRACE
-
 management:
   endpoints:
     web:
