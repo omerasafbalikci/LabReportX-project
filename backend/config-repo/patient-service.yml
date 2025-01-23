@@ -2,7 +2,7 @@ spring:
   application:
     name: patient-service
   redis:
-    host: "localhost"
+    host: "redis"
     port: "6379"
 
 server:
