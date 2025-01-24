@@ -186,8 +186,8 @@ public class JwtServiceImpl implements JwtService {
     private SecretKey getSignInKey() {
         log.trace("Entering getSignInKey method in JwtUtils class");
         byte[] keyBytes = Decoders.BASE64URL.decode(this.secretKey);
-        SecretKey secretKey = Keys.hmacShaKeyFor(keyBytes);
+        SecretKey sKey = Keys.hmacShaKeyFor(keyBytes);
         log.trace("Exiting getSignInKey method in JwtUtils class with key");
-        return secretKey;
+        return sKey;
     }
 }

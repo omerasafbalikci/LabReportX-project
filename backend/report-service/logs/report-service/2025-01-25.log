@@ -1,0 +1,149 @@
+2025-01-25 00:10:05.442 [main] TRACE ReportController - Entering getPrescription method in ReportController class
+2025-01-25 00:10:05.449 [main] INFO  ReportController - Fetching prescription for report ID: 1 by user: technician1
+2025-01-25 00:10:05.476 [main] TRACE ReportController - Exiting getPrescription method in ReportController class
+2025-01-25 00:10:05.519 [main] TRACE ReportController - Entering addReport method in ReportController class
+2025-01-25 00:10:05.519 [main] INFO  ReportController - Adding the report by the user: technician1
+2025-01-25 00:10:05.520 [main] TRACE ReportController - Exiting addReport method in ReportController class
+2025-01-25 00:10:05.532 [main] TRACE ReportController - Entering restoreReport method in ReportController class
+2025-01-25 00:10:05.533 [main] INFO  ReportController - Restoring the report with ID: 1 by the user: technician1
+2025-01-25 00:10:05.533 [main] TRACE ReportController - Exiting restoreReport method in ReportController class
+2025-01-25 00:10:05.536 [main] TRACE ReportController - Entering getReportById method in ReportController class
+2025-01-25 00:10:05.537 [main] INFO  ReportController - Retrieving report with ID: 1
+2025-01-25 00:10:05.537 [main] TRACE ReportController - Exiting getReportById method in ReportController class
+2025-01-25 00:10:05.541 [main] TRACE ReportController - Entering getAllReportsFilteredAndSorted method in ReportController class
+2025-01-25 00:10:05.541 [main] INFO  ReportController - Retrieving reports filtered and sorted: page=0, size=3, sortBy=id, direction=ASC, fileNumber=null, patientTrIdNumber=null, diagnosisTitle=null, diagnosisDetails=null, date=null, photoPath=null, technicianUsername=null, deleted=null
+2025-01-25 00:10:05.542 [main] TRACE ReportController - Exiting getAllReportsFilteredAndSorted method in ReportController class
+2025-01-25 00:10:05.546 [main] TRACE ReportController - Entering updateReport method in ReportController class
+2025-01-25 00:10:05.546 [main] INFO  ReportController - Updating the report by the user: technician1
+2025-01-25 00:10:05.546 [main] TRACE ReportController - Exiting updateReport method in ReportController class
+2025-01-25 00:10:05.550 [main] TRACE ReportController - Entering sendPrescription method in ReportController class
+2025-01-25 00:10:05.550 [main] INFO  ReportController - Sending prescription for user: technician1
+2025-01-25 00:10:05.550 [main] TRACE ReportController - Exiting sendPrescription method in ReportController class
+2025-01-25 00:10:05.554 [main] TRACE ReportController - Entering getAllReportsByTechnician method in ReportController class
+2025-01-25 00:10:05.554 [main] INFO  ReportController - Retrieving reports for technician: page=0, size=3, sortBy=id, direction=ASC, fileNumber=null, patientTrIdNumber=null, diagnosisTitle=null, diagnosisDetails=null, date=null, photoPath=null, username=technician1, deleted=null
+2025-01-25 00:10:05.554 [main] TRACE ReportController - Exiting getAllReportsByTechnician method in ReportController class
+2025-01-25 00:10:05.557 [main] TRACE ReportController - Entering deletePhoto method in ReportController class
+2025-01-25 00:10:05.558 [main] INFO  ReportController - Deleting photo for report ID: 1 by user: technician1
+2025-01-25 00:10:05.558 [main] TRACE ReportController - Exiting deletePhoto method in ReportController class
+2025-01-25 00:10:05.561 [main] TRACE ReportController - Entering deleteReport method in ReportController class
+2025-01-25 00:10:05.561 [main] INFO  ReportController - Deleting the report with ID: 1 by the user: technician1
+2025-01-25 00:10:05.562 [main] TRACE ReportController - Exiting deleteReport method in ReportController class
+2025-01-25 00:10:05.646 [main] TRACE ReportController - Entering getReportPdf method in ReportController class
+2025-01-25 00:10:05.646 [main] INFO  ReportController - Fetching PDF report for report ID: 1
+2025-01-25 00:10:05.647 [main] TRACE ReportController - Exiting getReportPdf method in ReportController class
+2025-01-25 00:10:05.650 [main] TRACE ReportController - Entering checkTrIdNumber method in ReportController class
+2025-01-25 00:10:05.651 [main] INFO  ReportController - Checking TR ID number: 12345678901 for user: technician1
+2025-01-25 00:10:05.651 [main] TRACE ReportController - Exiting checkTrIdNumber method in ReportController class
+2025-01-25 00:10:05.655 [main] TRACE ReportController - Entering getPhoto method in ReportController class
+2025-01-25 00:10:05.655 [main] INFO  ReportController - Fetching photo for report ID: 1 by user: technician1
+2025-01-25 00:10:05.655 [main] TRACE ReportController - Exiting getPhoto method in ReportController class
+2025-01-25 00:10:05.660 [main] TRACE ReportController - Entering addPhoto method in ReportController class
+2025-01-25 00:10:05.660 [main] INFO  ReportController - Uploading photo for report ID: 1 by user: technician1
+2025-01-25 00:10:05.660 [main] TRACE ReportController - Exiting addPhoto method in ReportController class
+2025-01-25 00:10:06.222 [main] TRACE ReportServiceImpl - Entering getPhoto method in ReportServiceImpl
+2025-01-25 00:10:06.223 [main] DEBUG ReportServiceImpl - Fetching photo for report with id: 1 by technician: differentUser
+2025-01-25 00:10:06.224 [main] ERROR ReportServiceImpl - Unauthorized access attempt by username: differentUser for report id: 1
+2025-01-25 00:10:06.242 [main] TRACE ReportServiceImpl - Entering getReportsByTechnician method in ReportServiceImpl
+2025-01-25 00:10:06.242 [main] DEBUG ReportServiceImpl - Fetching reports for technician: technician1 with filters - Page: 0, Size: 10, SortBy: date, Direction: DESC
+2025-01-25 00:10:06.246 [main] INFO  ReportServiceImpl - Total reports found for technician technician1: 1
+2025-01-25 00:10:06.246 [main] TRACE ReportServiceImpl - Exiting getReportsByTechnician method in ReportServiceImpl
+2025-01-25 00:10:06.252 [main] TRACE ReportServiceImpl - Entering addReport method in ReportServiceImpl
+2025-01-25 00:10:06.253 [main] DEBUG ReportServiceImpl - Adding report for user: techUser
+2025-01-25 00:10:06.253 [main] ERROR ReportServiceImpl - TR ID number not found in Redis for user: techUser
+2025-01-25 00:10:06.258 [main] TRACE ReportServiceImpl - Entering updateReport method in ReportServiceImpl
+2025-01-25 00:10:06.259 [main] DEBUG ReportServiceImpl - Updating report with id: 1 by technician: tech2
+2025-01-25 00:10:06.259 [main] ERROR ReportServiceImpl - Unauthorized update attempt by user: tech2 on report id: 1
+2025-01-25 00:10:06.263 [main] TRACE ReportServiceImpl - Entering restoreReport method in ReportServiceImpl
+2025-01-25 00:10:06.264 [main] DEBUG ReportServiceImpl - Attempting to restore report with id: 1 by technician: tech1
+2025-01-25 00:10:06.264 [main] ERROR ReportServiceImpl - Unauthorized restore attempt by user: tech1 on report id: 1
+2025-01-25 00:10:06.350 [main] TRACE ReportServiceImpl - Entering getPhoto method in ReportServiceImpl
+2025-01-25 00:10:06.350 [main] DEBUG ReportServiceImpl - Fetching photo for report with id: 1 by technician: technicianUser
+2025-01-25 00:10:06.350 [main] DEBUG ReportServiceImpl - Reading photo from path: backend/uploads/photos/photo.jpg
+2025-01-25 00:10:06.350 [main] TRACE ReportServiceImpl - Exiting getPhoto method in ReportServiceImpl
+2025-01-25 00:10:06.356 [main] TRACE ReportServiceImpl - Entering sendPrescription method in ReportServiceImpl
+2025-01-25 00:10:06.356 [main] DEBUG ReportServiceImpl - Sending prescription email for username: testUser
+2025-01-25 00:10:06.357 [main] ERROR ReportServiceImpl - PDF data is empty or corrupted for username: testUser
+2025-01-25 00:10:06.362 [main] TRACE ReportServiceImpl - Entering deletePhoto method in ReportServiceImpl
+2025-01-25 00:10:06.363 [main] DEBUG ReportServiceImpl - Attempting to delete photo for report id: 1 by technician: technicianUser
+2025-01-25 00:10:06.363 [main] DEBUG ReportServiceImpl - Deleting photo at path: backend/uploads/photos/photo.jpg
+2025-01-25 00:10:06.363 [main] INFO  ReportServiceImpl - Successfully deleted photo for report id: 1
+2025-01-25 00:10:06.363 [main] TRACE ReportServiceImpl - Exiting deletePhoto method in ReportServiceImpl
+2025-01-25 00:10:06.368 [main] TRACE ReportServiceImpl - Entering deletePhoto method in ReportServiceImpl
+2025-01-25 00:10:06.369 [main] DEBUG ReportServiceImpl - Attempting to delete photo for report id: 1 by technician: unauthorizedUser
+2025-01-25 00:10:06.369 [main] ERROR ReportServiceImpl - Unauthorized deletion attempt by username: unauthorizedUser for report id: 1
+2025-01-25 00:10:06.373 [main] TRACE ReportServiceImpl - Entering getReportById method in ReportServiceImpl
+2025-01-25 00:10:06.374 [main] DEBUG ReportServiceImpl - Fetching report with ID: 1
+2025-01-25 00:10:06.374 [main] ERROR ReportServiceImpl - Report not found with ID: 1
+2025-01-25 00:10:06.379 [main] TRACE ReportServiceImpl - Entering getReportPdf method in ReportServiceImpl
+2025-01-25 00:10:06.379 [main] DEBUG ReportServiceImpl - Generating PDF for report id: 1
+2025-01-25 00:10:06.380 [main] ERROR ReportServiceImpl - Report with id: 1 not found
+2025-01-25 00:10:06.384 [main] TRACE ReportServiceImpl - Entering getAllReportsFilteredAndSorted method in ReportServiceImpl
+2025-01-25 00:10:06.385 [main] DEBUG ReportServiceImpl - Fetching all reports with filters - Page: 0, Size: 10, SortBy: date, Direction: ASC
+2025-01-25 00:10:06.385 [main] INFO  ReportServiceImpl - Total reports found: 1
+2025-01-25 00:10:06.386 [main] TRACE ReportServiceImpl - Exiting getAllReportsFilteredAndSorted method in ReportServiceImpl
+2025-01-25 00:10:06.390 [main] TRACE ReportServiceImpl - Entering addReport method in ReportServiceImpl
+2025-01-25 00:10:06.390 [main] DEBUG ReportServiceImpl - Adding report for user: techUser
+2025-01-25 00:10:06.391 [main] INFO  ReportServiceImpl - Report added successfully: GetReportResponse(id=null, fileNumber=null, patientTrIdNumber=null, diagnosisTitle=null, diagnosisDetails=null, date=null, photoPath=null, technicianUsername=null)
+2025-01-25 00:10:06.398 [main] TRACE ReportServiceImpl - Exiting addReport method in ReportServiceImpl
+2025-01-25 00:10:06.402 [main] TRACE ReportServiceImpl - Entering deletePhoto method in ReportServiceImpl
+2025-01-25 00:10:06.402 [main] DEBUG ReportServiceImpl - Attempting to delete photo for report id: 1 by technician: technicianUser
+2025-01-25 00:10:06.402 [main] ERROR ReportServiceImpl - Report with id: 1 not found for delete photo
+2025-01-25 00:10:06.406 [main] TRACE ReportServiceImpl - Entering sendPrescription method in ReportServiceImpl
+2025-01-25 00:10:06.406 [main] DEBUG ReportServiceImpl - Sending prescription email for username: testUser
+2025-01-25 00:10:06.406 [main] ERROR ReportServiceImpl - Cached prescription or TR ID number not found for username: testUser
+2025-01-25 00:10:06.410 [main] TRACE ReportServiceImpl - Entering getPrescription method in ReportServiceImpl
+2025-01-25 00:10:06.410 [main] DEBUG ReportServiceImpl - Generating prescription for report id: 1
+2025-01-25 00:10:06.410 [main] ERROR ReportServiceImpl - Report with id: 1 not found for prescription
+2025-01-25 00:10:06.414 [main] TRACE ReportServiceImpl - Entering restoreReport method in ReportServiceImpl
+2025-01-25 00:10:06.414 [main] DEBUG ReportServiceImpl - Attempting to restore report with id: 1 by technician: tech1
+2025-01-25 00:10:06.415 [main] INFO  ReportServiceImpl - Report with id: 1 successfully restored by technician: tech1
+2025-01-25 00:10:06.415 [main] TRACE ReportServiceImpl - Exiting restoreReport method in ReportServiceImpl
+2025-01-25 00:10:06.419 [main] TRACE ReportServiceImpl - Entering getReportById method in ReportServiceImpl
+2025-01-25 00:10:06.419 [main] DEBUG ReportServiceImpl - Fetching report with ID: 1
+2025-01-25 00:10:06.420 [main] INFO  ReportServiceImpl - Report found: GetReportResponse(id=null, fileNumber=null, patientTrIdNumber=null, diagnosisTitle=null, diagnosisDetails=null, date=null, photoPath=null, technicianUsername=null)
+2025-01-25 00:10:06.420 [main] TRACE ReportServiceImpl - Exiting getReportById method in ReportServiceImpl
+2025-01-25 00:10:06.424 [main] TRACE ReportServiceImpl - Entering addPhoto method in ReportServiceImpl
+2025-01-25 00:10:06.424 [main] DEBUG ReportServiceImpl - Adding photo to report with id: 1 by technician: tech1
+2025-01-25 00:10:06.424 [main] ERROR ReportServiceImpl - Unauthorized photo upload attempt by user: tech1 on report id: 1
+2025-01-25 00:10:06.428 [main] TRACE ReportServiceImpl - Entering restoreReport method in ReportServiceImpl
+2025-01-25 00:10:06.428 [main] DEBUG ReportServiceImpl - Attempting to restore report with id: 1 by technician: tech1
+2025-01-25 00:10:06.428 [main] ERROR ReportServiceImpl - The report with ID 1 could not be found to restore
+2025-01-25 00:10:06.432 [main] TRACE ReportServiceImpl - Entering getPrescription method in ReportServiceImpl
+2025-01-25 00:10:06.433 [main] DEBUG ReportServiceImpl - Generating prescription for report id: 1
+2025-01-25 00:10:06.433 [main] INFO  ReportServiceImpl - Successfully generated and cached prescription for username: testUser
+2025-01-25 00:10:06.434 [main] TRACE ReportServiceImpl - Exiting getPrescription method in ReportServiceImpl
+2025-01-25 00:10:06.438 [main] TRACE ReportServiceImpl - Entering updateReport method in ReportServiceImpl
+2025-01-25 00:10:06.438 [main] DEBUG ReportServiceImpl - Updating report with id: 1 by technician: tech1
+2025-01-25 00:10:06.439 [main] INFO  ReportServiceImpl - Report with id: 1 successfully updated by technician: tech1
+2025-01-25 00:10:06.439 [main] TRACE ReportServiceImpl - Exiting updateReport method in ReportServiceImpl
+2025-01-25 00:10:06.443 [main] TRACE ReportServiceImpl - Entering getPhoto method in ReportServiceImpl
+2025-01-25 00:10:06.443 [main] DEBUG ReportServiceImpl - Fetching photo for report with id: 1 by technician: technicianUser
+2025-01-25 00:10:06.443 [main] ERROR ReportServiceImpl - No photo found for report id: 1
+2025-01-25 00:10:06.485 [main] TRACE ReportServiceImpl - Entering addPhoto method in ReportServiceImpl
+2025-01-25 00:10:06.486 [main] DEBUG ReportServiceImpl - Adding photo to report with id: 1 by technician: tech1
+2025-01-25 00:10:06.486 [main] ERROR ReportServiceImpl - Attempted to add a photo to report with id: 1 which already has a photo
+2025-01-25 00:10:06.491 [main] TRACE ReportServiceImpl - Entering updateReport method in ReportServiceImpl
+2025-01-25 00:10:06.492 [main] DEBUG ReportServiceImpl - Updating report with id: 1 by technician: tech1
+2025-01-25 00:10:06.492 [main] ERROR ReportServiceImpl - Report with id 1 not found
+2025-01-25 00:10:06.498 [main] TRACE ReportServiceImpl - Entering deleteReport method in ReportServiceImpl
+2025-01-25 00:10:06.499 [main] DEBUG ReportServiceImpl - Attempting to delete report with id: 1 by technician: tech1
+2025-01-25 00:10:06.499 [main] INFO  ReportServiceImpl - Report with id: 1 successfully deleted by technician: tech1
+2025-01-25 00:10:06.500 [main] TRACE ReportServiceImpl - Exiting deleteReport method in ReportServiceImpl
+2025-01-25 00:10:06.507 [main] TRACE ReportServiceImpl - Entering deleteReport method in ReportServiceImpl
+2025-01-25 00:10:06.508 [main] DEBUG ReportServiceImpl - Attempting to delete report with id: 1 by technician: tech2
+2025-01-25 00:10:06.508 [main] ERROR ReportServiceImpl - Unauthorized delete attempt by user: tech2 on report id: 1
+2025-01-25 00:10:06.515 [main] TRACE ReportServiceImpl - Entering deleteReport method in ReportServiceImpl
+2025-01-25 00:10:06.515 [main] DEBUG ReportServiceImpl - Attempting to delete report with id: 1 by technician: tech1
+2025-01-25 00:10:06.516 [main] ERROR ReportServiceImpl - The report with ID 1 could not be found for deletion.
+2025-01-25 00:10:06.521 [main] TRACE ReportServiceImpl - Entering addPhoto method in ReportServiceImpl
+2025-01-25 00:10:06.521 [main] DEBUG ReportServiceImpl - Adding photo to report with id: 1 by technician: tech1
+2025-01-25 00:10:06.521 [main] ERROR ReportServiceImpl - Report with id 1 not found for add photo
+2025-01-25 00:10:06.526 [main] TRACE ReportServiceImpl - Entering addPhoto method in ReportServiceImpl
+2025-01-25 00:10:06.526 [main] DEBUG ReportServiceImpl - Adding photo to report with id: 1 by technician: tech1
+2025-01-25 00:10:06.527 [main] ERROR ReportServiceImpl - Unsupported file format: txt for report id: 1
+2025-01-25 00:10:06.531 [main] TRACE ReportServiceImpl - Entering getPhoto method in ReportServiceImpl
+2025-01-25 00:10:06.531 [main] DEBUG ReportServiceImpl - Fetching photo for report with id: 1 by technician: technicianUser
+2025-01-25 00:10:06.531 [main] ERROR ReportServiceImpl - Report with id: 1 not found for get photo
+2025-01-25 00:10:06.536 [main] TRACE ReportServiceImpl - Entering deletePhoto method in ReportServiceImpl
+2025-01-25 00:10:06.536 [main] DEBUG ReportServiceImpl - Attempting to delete photo for report id: 1 by technician: technicianUser
+2025-01-25 00:10:06.536 [main] ERROR ReportServiceImpl - No photo to delete for report id: 1

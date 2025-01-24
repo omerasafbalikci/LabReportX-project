@@ -174,7 +174,7 @@ public class PatientServiceImpl implements PatientService {
         LocalDateTime currentTime = LocalDateTime.now();
         LocalDateTime lastRegistrationTime = patient.getLastPatientRegistrationTime();
         Duration duration = Duration.between(lastRegistrationTime, currentTime);
-        boolean isRegisteredRecently = !(duration.toHours() > 6);
+        boolean isRegisteredRecently = duration.toHours() <= 6;
         if (isRegisteredRecently) {
             log.info("Patient with TR ID number {} is registered within the last 6 hours.", trIdNumber);
         } else {

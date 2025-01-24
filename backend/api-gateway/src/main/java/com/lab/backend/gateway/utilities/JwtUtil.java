@@ -148,9 +148,9 @@ public class JwtUtil {
         log.trace("Entering getSignInKey method in JwtUtils");
         log.debug("Retrieving secret key for JWT validation.");
         byte[] keyBytes = Decoders.BASE64URL.decode(this.secretKey);
-        SecretKey secretKey = Keys.hmacShaKeyFor(keyBytes);
+        SecretKey sKey = Keys.hmacShaKeyFor(keyBytes);
         log.debug("Secret key retrieved successfully.");
         log.trace("Exiting getSignInKey method in JwtUtils");
-        return secretKey;
+        return sKey;
     }
 }

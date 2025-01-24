@@ -182,9 +182,9 @@ public class PdfUtil {
                     log.warn("Logo image not found at path: {}", imagePath);
                 }
             }
-            Paragraph hospitalName = new Paragraph(this.hospitalName, light);
-            hospitalName.setAlignment(Element.ALIGN_CENTER);
-            document.add(hospitalName);
+            Paragraph hName = new Paragraph(this.hospitalName, light);
+            hName.setAlignment(Element.ALIGN_CENTER);
+            document.add(hName);
             document.close();
             log.info("PDF generated successfully for report: {} and patient: {}", reportResponse.getFileNumber(), patientResponse.getTrIdNumber());
             log.trace("Exiting generatePdf method in PdfUtil");

@@ -1,0 +1,236 @@
+2025-01-25 00:09:55.188 [main] TRACE BarcodeController - Entering generateBarcodeForPatient method in BarcodeController class
+2025-01-25 00:09:55.195 [main] DEBUG BarcodeController - Received request to generate barcode for TR ID number: 12345678901
+2025-01-25 00:09:55.209 [main] DEBUG BarcodeController - Barcode generated successfully for TR ID number: 12345678901
+2025-01-25 00:09:55.209 [main] TRACE BarcodeController - Exiting generateBarcodeForPatient method in BarcodeController class
+2025-01-25 00:09:55.249 [main] TRACE BarcodeController - Entering scanAndSavePatient method in BarcodeController class
+2025-01-25 00:09:55.250 [main] INFO  BarcodeController - Received request to scan and fetch patient.
+2025-01-25 00:09:55.251 [main] INFO  BarcodeController - Successfully fetched patient: GetPatientResponse(id=null, firstName=null, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, lastPatientRegistrationTime=null)
+2025-01-25 00:09:55.258 [main] TRACE BarcodeController - Exiting scanAndSavePatient method in BarcodeController class
+2025-01-25 00:09:55.321 [main] TRACE PatientController - Entering getEmail method in PatientController class
+2025-01-25 00:09:55.321 [main] INFO  PatientController - Successfully fetched email for TR ID number: 12345678901
+2025-01-25 00:09:55.321 [main] TRACE PatientController - Exiting getEmail method in PatientController class
+2025-01-25 00:09:55.325 [main] TRACE PatientController - Entering getPatientById method in PatientController class
+2025-01-25 00:09:55.325 [main] INFO  PatientController - Successfully fetched patient with id: 1
+2025-01-25 00:09:55.325 [main] TRACE PatientController - Exiting getPatientById method in PatientController class
+2025-01-25 00:09:55.329 [main] TRACE PatientController - Entering savePatient method in PatientController class
+2025-01-25 00:09:55.329 [main] INFO  PatientController - Successfully saved patient: GetPatientResponse(id=null, firstName=null, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, lastPatientRegistrationTime=null)
+2025-01-25 00:09:55.330 [main] TRACE PatientController - Exiting savePatient method in PatientController class
+2025-01-25 00:09:55.333 [main] TRACE PatientController - Entering getPatientByTrIdNumber method in PatientController class
+2025-01-25 00:09:55.334 [main] INFO  PatientController - Successfully fetched patient with TR ID number: 12345678901
+2025-01-25 00:09:55.334 [main] TRACE PatientController - Exiting getPatientByTrIdNumber method in PatientController class
+2025-01-25 00:09:55.339 [main] TRACE PatientController - Entering updatePatient method in PatientController class
+2025-01-25 00:09:55.339 [main] INFO  PatientController - Successfully updated patient: GetPatientResponse(id=null, firstName=null, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, lastPatientRegistrationTime=null)
+2025-01-25 00:09:55.339 [main] TRACE PatientController - Exiting updatePatient method in PatientController class
+2025-01-25 00:09:55.343 [main] TRACE PatientController - Entering getChronicDiseasesById method in PatientController class
+2025-01-25 00:09:55.344 [main] INFO  PatientController - Successfully fetched chronic diseases for patient id: 1
+2025-01-25 00:09:55.344 [main] TRACE PatientController - Exiting getChronicDiseasesById method in PatientController class
+2025-01-25 00:09:55.348 [main] TRACE PatientController - Entering isPatientRegistered method in PatientController class
+2025-01-25 00:09:55.348 [main] INFO  PatientController - TR ID number check for 12345678901 returned: true
+2025-01-25 00:09:55.349 [main] TRACE PatientController - Exiting isPatientRegistered method in PatientController class
+2025-01-25 00:09:55.352 [main] TRACE PatientController - Entering deletePatient method in PatientController class
+2025-01-25 00:09:55.352 [main] INFO  PatientController - Successfully deleted patient with id: 1
+2025-01-25 00:09:55.353 [main] TRACE PatientController - Exiting deletePatient method in PatientController class
+2025-01-25 00:09:55.356 [main] TRACE PatientController - Entering restorePatient method in PatientController class
+2025-01-25 00:09:55.357 [main] INFO  PatientController - Successfully restored patient with id: 1
+2025-01-25 00:09:55.357 [main] TRACE PatientController - Exiting restorePatient method in PatientController class
+2025-01-25 00:09:55.363 [main] TRACE PatientController - Entering getAllPatientsFilteredAndSorted method in PatientController class
+2025-01-25 00:09:55.364 [main] INFO  PatientController - Received request for filtered and sorted patients with parameters: page=0, size=3, sortBy=id, direction=ASC, firstName=John, lastName=Doe, trIdNumber=12345678901, birthDate=1980-01-01, gender=Male, bloodType=A+, phoneNumber=1234567890, email=john.doe@example.com, chronicDisease=None, lastPatientRegistrationTime=2024-01-01, deleted=false
+2025-01-25 00:09:55.364 [main] INFO  PatientController - Successfully fetched filtered and sorted patients.
+2025-01-25 00:09:55.364 [main] TRACE PatientController - Exiting getAllPatientsFilteredAndSorted method in PatientController class
+2025-01-25 00:09:55.575 [main] TRACE PatientServiceImpl - Entering getPatientById method in PatientServiceImpl
+2025-01-25 00:09:55.576 [main] INFO  PatientServiceImpl - Fetching patient by ID: 1
+2025-01-25 00:09:55.579 [main] INFO  PatientServiceImpl - Successfully fetched patient by ID: 1
+2025-01-25 00:09:55.579 [main] TRACE PatientServiceImpl - Exiting getPatientById method in PatientServiceImpl
+2025-01-25 00:09:55.587 [main] TRACE PatientServiceImpl - Entering getChronicDiseasesById method in PatientServiceImpl
+2025-01-25 00:09:55.587 [main] INFO  PatientServiceImpl - Fetching chronic diseases by ID: 1
+2025-01-25 00:09:55.588 [main] INFO  PatientServiceImpl - Successfully fetched chronic diseases by ID: 1
+2025-01-25 00:09:55.588 [main] TRACE PatientServiceImpl - Exiting getChronicDiseasesById method in PatientServiceImpl
+2025-01-25 00:09:55.593 [main] TRACE PatientServiceImpl - Entering getPatientByTrIdNumber method in PatientServiceImpl
+2025-01-25 00:09:55.593 [main] INFO  PatientServiceImpl - Fetching patient by TR ID number: 12345678901
+2025-01-25 00:09:55.594 [main] INFO  PatientServiceImpl - Successfully fetched patient by TR ID number: 12345678901
+2025-01-25 00:09:55.594 [main] TRACE PatientServiceImpl - Exiting getPatientByTrIdNumber method in PatientServiceImpl
+2025-01-25 00:09:55.599 [main] TRACE PatientServiceImpl - Entering isPatientRegistered method in PatientServiceImpl
+2025-01-25 00:09:55.600 [main] INFO  PatientServiceImpl - Checking registration time for patient with TR ID number: 12345678901
+2025-01-25 00:09:55.601 [main] INFO  PatientServiceImpl - Patient with TR ID number 12345678901 is registered within the last 6 hours.
+2025-01-25 00:09:55.601 [main] TRACE PatientServiceImpl - Exiting isPatientRegistered method in PatientServiceImpl
+2025-01-25 00:09:55.620 [main] TRACE PatientServiceImpl - Entering getAllPatientsFilteredAndSorted method in PatientServiceImpl
+2025-01-25 00:09:55.620 [main] DEBUG PatientServiceImpl - Fetching all patients with filters: page=0, size=10, sortBy=firstName, direction=ASC, firstName=John, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, chronicDisease=null, lastPatientRegistrationTime=null, deleted=false
+2025-01-25 00:09:55.639 [main] INFO  PatientServiceImpl - Successfully fetched patients with filters: page=0, size=10, totalPages=1, totalElements=1
+2025-01-25 00:09:55.639 [main] TRACE PatientServiceImpl - Exiting getAllPatientsFilteredAndSorted method in PatientServiceImpl
+2025-01-25 00:09:55.645 [main] TRACE PatientServiceImpl - Entering deletePatient method in PatientServiceImpl
+2025-01-25 00:09:55.646 [main] INFO  PatientServiceImpl - Deleting patient with ID: 1
+2025-01-25 00:09:55.646 [main] ERROR PatientServiceImpl - Patient not found to delete. ID: 1
+2025-01-25 00:09:55.651 [main] TRACE PatientServiceImpl - Entering updatePatient method in PatientServiceImpl
+2025-01-25 00:09:55.651 [main] INFO  PatientServiceImpl - Updating patient with ID: 1
+2025-01-25 00:09:55.652 [main] ERROR PatientServiceImpl - Patient already exists with TR ID number: 98765432101
+2025-01-25 00:09:55.656 [main] TRACE PatientServiceImpl - Entering getPatientById method in PatientServiceImpl
+2025-01-25 00:09:55.657 [main] INFO  PatientServiceImpl - Fetching patient by ID: 1
+2025-01-25 00:09:55.657 [main] ERROR PatientServiceImpl - Patient not found with id: 1
+2025-01-25 00:09:55.662 [main] TRACE PatientServiceImpl - Entering restorePatient method in PatientServiceImpl
+2025-01-25 00:09:55.663 [main] INFO  PatientServiceImpl - Restoring patient with ID: 1
+2025-01-25 00:09:55.663 [main] ERROR PatientServiceImpl - Patient not found to restore. ID: 1
+2025-01-25 00:09:55.667 [main] TRACE PatientServiceImpl - Entering isPatientRegistered method in PatientServiceImpl
+2025-01-25 00:09:55.667 [main] INFO  PatientServiceImpl - Checking registration time for patient with TR ID number: 12345678901
+2025-01-25 00:09:55.667 [main] ERROR PatientServiceImpl - Patient not found with TR ID number 12345678901
+2025-01-25 00:09:55.672 [main] TRACE PatientServiceImpl - Entering updatePatient method in PatientServiceImpl
+2025-01-25 00:09:55.672 [main] INFO  PatientServiceImpl - Updating patient with ID: 1
+2025-01-25 00:09:55.672 [main] ERROR PatientServiceImpl - Patient does not exist with id: 1
+2025-01-25 00:09:55.675 [main] TRACE PatientServiceImpl - Entering getPatientByTrIdNumber method in PatientServiceImpl
+2025-01-25 00:09:55.675 [main] INFO  PatientServiceImpl - Fetching patient by TR ID number: 12345678901
+2025-01-25 00:09:55.676 [main] ERROR PatientServiceImpl - Patient not found with TR ID number: 12345678901
+2025-01-25 00:09:55.680 [main] TRACE PatientServiceImpl - Entering deletePatient method in PatientServiceImpl
+2025-01-25 00:09:55.680 [main] INFO  PatientServiceImpl - Deleting patient with ID: 1
+2025-01-25 00:09:55.680 [main] INFO  PatientServiceImpl - Successfully deleted patient with ID: 1
+2025-01-25 00:09:55.680 [main] TRACE PatientServiceImpl - Exiting deletePatient method in PatientServiceImpl
+2025-01-25 00:09:55.683 [main] TRACE PatientServiceImpl - Entering isPatientRegistered method in PatientServiceImpl
+2025-01-25 00:09:55.683 [main] INFO  PatientServiceImpl - Checking registration time for patient with TR ID number: 12345678901
+2025-01-25 00:09:55.684 [main] INFO  PatientServiceImpl - Patient with TR ID number 12345678901 is not registered within the last 6 hours.
+2025-01-25 00:09:55.684 [main] TRACE PatientServiceImpl - Exiting isPatientRegistered method in PatientServiceImpl
+2025-01-25 00:09:55.688 [main] TRACE PatientServiceImpl - Entering getChronicDiseasesById method in PatientServiceImpl
+2025-01-25 00:09:55.689 [main] INFO  PatientServiceImpl - Fetching chronic diseases by ID: 1
+2025-01-25 00:09:55.689 [main] WARN  PatientServiceImpl - No chronic diseases found for patient ID: 1
+2025-01-25 00:09:55.689 [main] INFO  PatientServiceImpl - Successfully fetched chronic diseases by ID: 1
+2025-01-25 00:09:55.689 [main] TRACE PatientServiceImpl - Exiting getChronicDiseasesById method in PatientServiceImpl
+2025-01-25 00:09:55.692 [main] TRACE PatientServiceImpl - Entering getEmail method in PatientServiceImpl
+2025-01-25 00:09:55.693 [main] INFO  PatientServiceImpl - Fetching email for patient with TR ID number: 12345678901
+2025-01-25 00:09:55.693 [main] INFO  PatientServiceImpl - Successfully retrieved email for patient with TR ID number: 12345678901
+2025-01-25 00:09:55.693 [main] TRACE PatientServiceImpl - Exiting getEmail method in PatientServiceImpl
+2025-01-25 00:09:55.697 [main] TRACE PatientServiceImpl - Entering restorePatient method in PatientServiceImpl
+2025-01-25 00:09:55.697 [main] INFO  PatientServiceImpl - Restoring patient with ID: 1
+2025-01-25 00:09:55.698 [main] INFO  PatientServiceImpl - Successfully restored patient with ID: 1
+2025-01-25 00:09:55.698 [main] TRACE PatientServiceImpl - Exiting restorePatient method in PatientServiceImpl
+2025-01-25 00:09:55.701 [main] TRACE PatientServiceImpl - Entering getEmail method in PatientServiceImpl
+2025-01-25 00:09:55.701 [main] INFO  PatientServiceImpl - Fetching email for patient with TR ID number: 12345678901
+2025-01-25 00:09:55.702 [main] ERROR PatientServiceImpl - Patient not found with TrIdNumber: 12345678901
+2025-01-25 00:09:55.705 [main] TRACE PatientServiceImpl - Entering updatePatient method in PatientServiceImpl
+2025-01-25 00:09:55.706 [main] INFO  PatientServiceImpl - Updating patient with ID: 1
+2025-01-25 00:09:55.710 [main] INFO  PatientServiceImpl - Successfully updated patient with ID: 1
+2025-01-25 00:09:55.710 [main] TRACE PatientServiceImpl - Exiting updatePatient method in PatientServiceImpl
+2025-01-25 00:09:55.714 [main] TRACE PatientServiceImpl - Entering savePatient method in PatientServiceImpl
+2025-01-25 00:09:55.714 [main] INFO  PatientServiceImpl - Saving patient with TR ID number: 12345678901
+2025-01-25 00:09:55.715 [main] INFO  PatientServiceImpl - New patient created with TR ID number: 12345678901
+2025-01-25 00:09:55.715 [main] INFO  PatientServiceImpl - Successfully saved patient with ID: null
+2025-01-25 00:09:55.715 [main] TRACE PatientServiceImpl - Exiting savePatient method in PatientServiceImpl
+2025-01-25 00:09:55.719 [main] TRACE PatientServiceImpl - Entering savePatient method in PatientServiceImpl
+2025-01-25 00:09:55.719 [main] INFO  PatientServiceImpl - Saving patient with TR ID number: 12345678901
+2025-01-25 00:09:55.720 [main] DEBUG PatientServiceImpl - Patient already exists. Updating registration time for TR ID number: 12345678901
+2025-01-25 00:09:55.720 [main] INFO  PatientServiceImpl - Successfully saved patient with ID: null
+2025-01-25 00:09:55.720 [main] TRACE PatientServiceImpl - Exiting savePatient method in PatientServiceImpl
+2025-01-25 00:14:38.365 [main] TRACE BarcodeController - Entering generateBarcodeForPatient method in BarcodeController class
+2025-01-25 00:14:38.372 [main] DEBUG BarcodeController - Received request to generate barcode for TR ID number: 12345678901
+2025-01-25 00:14:38.387 [main] DEBUG BarcodeController - Barcode generated successfully for TR ID number: 12345678901
+2025-01-25 00:14:38.387 [main] TRACE BarcodeController - Exiting generateBarcodeForPatient method in BarcodeController class
+2025-01-25 00:14:38.425 [main] TRACE BarcodeController - Entering scanAndSavePatient method in BarcodeController class
+2025-01-25 00:14:38.425 [main] INFO  BarcodeController - Received request to scan and fetch patient.
+2025-01-25 00:14:38.425 [main] INFO  BarcodeController - Successfully fetched patient: GetPatientResponse(id=null, firstName=null, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, lastPatientRegistrationTime=null)
+2025-01-25 00:14:38.434 [main] TRACE BarcodeController - Exiting scanAndSavePatient method in BarcodeController class
+2025-01-25 00:14:38.510 [main] TRACE PatientController - Entering getEmail method in PatientController class
+2025-01-25 00:14:38.511 [main] INFO  PatientController - Successfully fetched email for TR ID number: 12345678901
+2025-01-25 00:14:38.511 [main] TRACE PatientController - Exiting getEmail method in PatientController class
+2025-01-25 00:14:38.515 [main] TRACE PatientController - Entering getPatientById method in PatientController class
+2025-01-25 00:14:38.516 [main] INFO  PatientController - Successfully fetched patient with id: 1
+2025-01-25 00:14:38.516 [main] TRACE PatientController - Exiting getPatientById method in PatientController class
+2025-01-25 00:14:38.521 [main] TRACE PatientController - Entering savePatient method in PatientController class
+2025-01-25 00:14:38.521 [main] INFO  PatientController - Successfully saved patient: GetPatientResponse(id=null, firstName=null, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, lastPatientRegistrationTime=null)
+2025-01-25 00:14:38.522 [main] TRACE PatientController - Exiting savePatient method in PatientController class
+2025-01-25 00:14:38.527 [main] TRACE PatientController - Entering getPatientByTrIdNumber method in PatientController class
+2025-01-25 00:14:38.528 [main] INFO  PatientController - Successfully fetched patient with TR ID number: 12345678901
+2025-01-25 00:14:38.528 [main] TRACE PatientController - Exiting getPatientByTrIdNumber method in PatientController class
+2025-01-25 00:14:38.534 [main] TRACE PatientController - Entering updatePatient method in PatientController class
+2025-01-25 00:14:38.534 [main] INFO  PatientController - Successfully updated patient: GetPatientResponse(id=null, firstName=null, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, lastPatientRegistrationTime=null)
+2025-01-25 00:14:38.535 [main] TRACE PatientController - Exiting updatePatient method in PatientController class
+2025-01-25 00:14:38.540 [main] TRACE PatientController - Entering getChronicDiseasesById method in PatientController class
+2025-01-25 00:14:38.540 [main] INFO  PatientController - Successfully fetched chronic diseases for patient id: 1
+2025-01-25 00:14:38.541 [main] TRACE PatientController - Exiting getChronicDiseasesById method in PatientController class
+2025-01-25 00:14:38.545 [main] TRACE PatientController - Entering isPatientRegistered method in PatientController class
+2025-01-25 00:14:38.546 [main] INFO  PatientController - TR ID number check for 12345678901 returned: true
+2025-01-25 00:14:38.546 [main] TRACE PatientController - Exiting isPatientRegistered method in PatientController class
+2025-01-25 00:14:38.550 [main] TRACE PatientController - Entering deletePatient method in PatientController class
+2025-01-25 00:14:38.551 [main] INFO  PatientController - Successfully deleted patient with id: 1
+2025-01-25 00:14:38.551 [main] TRACE PatientController - Exiting deletePatient method in PatientController class
+2025-01-25 00:14:38.556 [main] TRACE PatientController - Entering restorePatient method in PatientController class
+2025-01-25 00:14:38.557 [main] INFO  PatientController - Successfully restored patient with id: 1
+2025-01-25 00:14:38.558 [main] TRACE PatientController - Exiting restorePatient method in PatientController class
+2025-01-25 00:14:38.564 [main] TRACE PatientController - Entering getAllPatientsFilteredAndSorted method in PatientController class
+2025-01-25 00:14:38.564 [main] INFO  PatientController - Received request for filtered and sorted patients with parameters: page=0, size=3, sortBy=id, direction=ASC, firstName=John, lastName=Doe, trIdNumber=12345678901, birthDate=1980-01-01, gender=Male, bloodType=A+, phoneNumber=1234567890, email=john.doe@example.com, chronicDisease=None, lastPatientRegistrationTime=2024-01-01, deleted=false
+2025-01-25 00:14:38.565 [main] INFO  PatientController - Successfully fetched filtered and sorted patients.
+2025-01-25 00:14:38.565 [main] TRACE PatientController - Exiting getAllPatientsFilteredAndSorted method in PatientController class
+2025-01-25 00:14:38.790 [main] TRACE PatientServiceImpl - Entering getPatientById method in PatientServiceImpl
+2025-01-25 00:14:38.791 [main] INFO  PatientServiceImpl - Fetching patient by ID: 1
+2025-01-25 00:14:38.794 [main] INFO  PatientServiceImpl - Successfully fetched patient by ID: 1
+2025-01-25 00:14:38.794 [main] TRACE PatientServiceImpl - Exiting getPatientById method in PatientServiceImpl
+2025-01-25 00:14:38.801 [main] TRACE PatientServiceImpl - Entering getChronicDiseasesById method in PatientServiceImpl
+2025-01-25 00:14:38.802 [main] INFO  PatientServiceImpl - Fetching chronic diseases by ID: 1
+2025-01-25 00:14:38.802 [main] INFO  PatientServiceImpl - Successfully fetched chronic diseases by ID: 1
+2025-01-25 00:14:38.802 [main] TRACE PatientServiceImpl - Exiting getChronicDiseasesById method in PatientServiceImpl
+2025-01-25 00:14:38.807 [main] TRACE PatientServiceImpl - Entering getPatientByTrIdNumber method in PatientServiceImpl
+2025-01-25 00:14:38.808 [main] INFO  PatientServiceImpl - Fetching patient by TR ID number: 12345678901
+2025-01-25 00:14:38.809 [main] INFO  PatientServiceImpl - Successfully fetched patient by TR ID number: 12345678901
+2025-01-25 00:14:38.809 [main] TRACE PatientServiceImpl - Exiting getPatientByTrIdNumber method in PatientServiceImpl
+2025-01-25 00:14:38.815 [main] TRACE PatientServiceImpl - Entering isPatientRegistered method in PatientServiceImpl
+2025-01-25 00:14:38.816 [main] INFO  PatientServiceImpl - Checking registration time for patient with TR ID number: 12345678901
+2025-01-25 00:14:38.816 [main] INFO  PatientServiceImpl - Patient with TR ID number 12345678901 is registered within the last 6 hours.
+2025-01-25 00:14:38.816 [main] TRACE PatientServiceImpl - Exiting isPatientRegistered method in PatientServiceImpl
+2025-01-25 00:14:38.836 [main] TRACE PatientServiceImpl - Entering getAllPatientsFilteredAndSorted method in PatientServiceImpl
+2025-01-25 00:14:38.837 [main] DEBUG PatientServiceImpl - Fetching all patients with filters: page=0, size=10, sortBy=firstName, direction=ASC, firstName=John, lastName=null, trIdNumber=null, birthDate=null, gender=null, bloodType=null, phoneNumber=null, email=null, chronicDisease=null, lastPatientRegistrationTime=null, deleted=false
+2025-01-25 00:14:38.853 [main] INFO  PatientServiceImpl - Successfully fetched patients with filters: page=0, size=10, totalPages=1, totalElements=1
+2025-01-25 00:14:38.853 [main] TRACE PatientServiceImpl - Exiting getAllPatientsFilteredAndSorted method in PatientServiceImpl
+2025-01-25 00:14:38.859 [main] TRACE PatientServiceImpl - Entering deletePatient method in PatientServiceImpl
+2025-01-25 00:14:38.860 [main] INFO  PatientServiceImpl - Deleting patient with ID: 1
+2025-01-25 00:14:38.860 [main] ERROR PatientServiceImpl - Patient not found to delete. ID: 1
+2025-01-25 00:14:38.865 [main] TRACE PatientServiceImpl - Entering updatePatient method in PatientServiceImpl
+2025-01-25 00:14:38.865 [main] INFO  PatientServiceImpl - Updating patient with ID: 1
+2025-01-25 00:14:38.866 [main] ERROR PatientServiceImpl - Patient already exists with TR ID number: 98765432101
+2025-01-25 00:14:38.870 [main] TRACE PatientServiceImpl - Entering getPatientById method in PatientServiceImpl
+2025-01-25 00:14:38.870 [main] INFO  PatientServiceImpl - Fetching patient by ID: 1
+2025-01-25 00:14:38.870 [main] ERROR PatientServiceImpl - Patient not found with id: 1
+2025-01-25 00:14:38.875 [main] TRACE PatientServiceImpl - Entering restorePatient method in PatientServiceImpl
+2025-01-25 00:14:38.875 [main] INFO  PatientServiceImpl - Restoring patient with ID: 1
+2025-01-25 00:14:38.876 [main] ERROR PatientServiceImpl - Patient not found to restore. ID: 1
+2025-01-25 00:14:38.879 [main] TRACE PatientServiceImpl - Entering isPatientRegistered method in PatientServiceImpl
+2025-01-25 00:14:38.880 [main] INFO  PatientServiceImpl - Checking registration time for patient with TR ID number: 12345678901
+2025-01-25 00:14:38.880 [main] ERROR PatientServiceImpl - Patient not found with TR ID number 12345678901
+2025-01-25 00:14:38.885 [main] TRACE PatientServiceImpl - Entering updatePatient method in PatientServiceImpl
+2025-01-25 00:14:38.885 [main] INFO  PatientServiceImpl - Updating patient with ID: 1
+2025-01-25 00:14:38.886 [main] ERROR PatientServiceImpl - Patient does not exist with id: 1
+2025-01-25 00:14:38.889 [main] TRACE PatientServiceImpl - Entering getPatientByTrIdNumber method in PatientServiceImpl
+2025-01-25 00:14:38.890 [main] INFO  PatientServiceImpl - Fetching patient by TR ID number: 12345678901
+2025-01-25 00:14:38.890 [main] ERROR PatientServiceImpl - Patient not found with TR ID number: 12345678901
+2025-01-25 00:14:38.895 [main] TRACE PatientServiceImpl - Entering deletePatient method in PatientServiceImpl
+2025-01-25 00:14:38.896 [main] INFO  PatientServiceImpl - Deleting patient with ID: 1
+2025-01-25 00:14:38.896 [main] INFO  PatientServiceImpl - Successfully deleted patient with ID: 1
+2025-01-25 00:14:38.896 [main] TRACE PatientServiceImpl - Exiting deletePatient method in PatientServiceImpl
+2025-01-25 00:14:38.900 [main] TRACE PatientServiceImpl - Entering isPatientRegistered method in PatientServiceImpl
+2025-01-25 00:14:38.900 [main] INFO  PatientServiceImpl - Checking registration time for patient with TR ID number: 12345678901
+2025-01-25 00:14:38.900 [main] INFO  PatientServiceImpl - Patient with TR ID number 12345678901 is not registered within the last 6 hours.
+2025-01-25 00:14:38.901 [main] TRACE PatientServiceImpl - Exiting isPatientRegistered method in PatientServiceImpl
+2025-01-25 00:14:38.905 [main] TRACE PatientServiceImpl - Entering getChronicDiseasesById method in PatientServiceImpl
+2025-01-25 00:14:38.906 [main] INFO  PatientServiceImpl - Fetching chronic diseases by ID: 1
+2025-01-25 00:14:38.906 [main] WARN  PatientServiceImpl - No chronic diseases found for patient ID: 1
+2025-01-25 00:14:38.906 [main] INFO  PatientServiceImpl - Successfully fetched chronic diseases by ID: 1
+2025-01-25 00:14:38.906 [main] TRACE PatientServiceImpl - Exiting getChronicDiseasesById method in PatientServiceImpl
+2025-01-25 00:14:38.909 [main] TRACE PatientServiceImpl - Entering getEmail method in PatientServiceImpl
+2025-01-25 00:14:38.909 [main] INFO  PatientServiceImpl - Fetching email for patient with TR ID number: 12345678901
+2025-01-25 00:14:38.910 [main] INFO  PatientServiceImpl - Successfully retrieved email for patient with TR ID number: 12345678901
+2025-01-25 00:14:38.910 [main] TRACE PatientServiceImpl - Exiting getEmail method in PatientServiceImpl
+2025-01-25 00:14:38.914 [main] TRACE PatientServiceImpl - Entering restorePatient method in PatientServiceImpl
+2025-01-25 00:14:38.914 [main] INFO  PatientServiceImpl - Restoring patient with ID: 1
+2025-01-25 00:14:38.914 [main] INFO  PatientServiceImpl - Successfully restored patient with ID: 1
+2025-01-25 00:14:38.914 [main] TRACE PatientServiceImpl - Exiting restorePatient method in PatientServiceImpl
+2025-01-25 00:14:38.918 [main] TRACE PatientServiceImpl - Entering getEmail method in PatientServiceImpl
+2025-01-25 00:14:38.918 [main] INFO  PatientServiceImpl - Fetching email for patient with TR ID number: 12345678901
+2025-01-25 00:14:38.918 [main] ERROR PatientServiceImpl - Patient not found with TrIdNumber: 12345678901
+2025-01-25 00:14:38.922 [main] TRACE PatientServiceImpl - Entering updatePatient method in PatientServiceImpl
+2025-01-25 00:14:38.922 [main] INFO  PatientServiceImpl - Updating patient with ID: 1
+2025-01-25 00:14:38.928 [main] INFO  PatientServiceImpl - Successfully updated patient with ID: 1
+2025-01-25 00:14:38.928 [main] TRACE PatientServiceImpl - Exiting updatePatient method in PatientServiceImpl
+2025-01-25 00:14:38.932 [main] TRACE PatientServiceImpl - Entering savePatient method in PatientServiceImpl
+2025-01-25 00:14:38.932 [main] INFO  PatientServiceImpl - Saving patient with TR ID number: 12345678901
+2025-01-25 00:14:38.933 [main] INFO  PatientServiceImpl - New patient created with TR ID number: 12345678901
+2025-01-25 00:14:38.933 [main] INFO  PatientServiceImpl - Successfully saved patient with ID: null
+2025-01-25 00:14:38.933 [main] TRACE PatientServiceImpl - Exiting savePatient method in PatientServiceImpl
+2025-01-25 00:14:38.937 [main] TRACE PatientServiceImpl - Entering savePatient method in PatientServiceImpl
+2025-01-25 00:14:38.937 [main] INFO  PatientServiceImpl - Saving patient with TR ID number: 12345678901
+2025-01-25 00:14:38.937 [main] DEBUG PatientServiceImpl - Patient already exists. Updating registration time for TR ID number: 12345678901
+2025-01-25 00:14:38.938 [main] INFO  PatientServiceImpl - Successfully saved patient with ID: null
+2025-01-25 00:14:38.938 [main] TRACE PatientServiceImpl - Exiting savePatient method in PatientServiceImpl
