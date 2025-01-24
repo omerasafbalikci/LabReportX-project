@@ -31,10 +31,10 @@ public class JwtServiceImplTest {
         final String authoritiesKey = "roles";
         final long refreshTokenExpiration = 1000 * 60 * 60 * 24; // 24 hours
 
-        ReflectionTestUtils.setField(jwtService, "SECRET_KEY", secretKey);
-        ReflectionTestUtils.setField(jwtService, "AUTHORITIES_KEY", authoritiesKey);
-        ReflectionTestUtils.setField(jwtService, "ACCESS_TOKEN_EXPIRATION", accessTokenExpiration);
-        ReflectionTestUtils.setField(jwtService, "REFRESH_TOKEN_EXPIRATION", refreshTokenExpiration);
+        ReflectionTestUtils.setField(jwtService, "secretKey", secretKey);
+        ReflectionTestUtils.setField(jwtService, "authoritiesKey", authoritiesKey);
+        ReflectionTestUtils.setField(jwtService, "accessTokenExpiration", accessTokenExpiration);
+        ReflectionTestUtils.setField(jwtService, "refreshTokenExpiration", refreshTokenExpiration);
     }
 
     @Test

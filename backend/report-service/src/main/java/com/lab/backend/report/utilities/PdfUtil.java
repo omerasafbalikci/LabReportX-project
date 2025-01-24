@@ -30,13 +30,13 @@ import java.io.InputStream;
 @Log4j2
 public class PdfUtil {
     @Value("${pdf.font-path}")
-    private String FONT_PATH;
+    private String fontPath;
 
     @Value("${pdf.image-path}")
-    private String IMAGE_PATH;
+    private String imagePath;
 
     @Value("${pdf.hospital-name}")
-    private String HOSPITAL_NAME;
+    private String hospitalName;
 
     /**
      * Generates a PDF document for a patient's report based on the provided
@@ -56,7 +56,7 @@ public class PdfUtil {
 
             document.open();
 
-            BaseFont baseFont = BaseFont.createFont(FONT_PATH, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            BaseFont baseFont = BaseFont.createFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
             Font boldBig = new Font(baseFont, 22, Font.BOLD);
             Font boldSmall = new Font(baseFont, 14, Font.BOLD);
             Font light = new Font(baseFont, 10);
@@ -172,17 +172,17 @@ public class PdfUtil {
             document.add(new Paragraph(" "));
             document.add(new Paragraph(" "));
 
-            try (InputStream inputStream = getClass().getResourceAsStream(this.IMAGE_PATH)) {
+            try (InputStream inputStream = getClass().getResourceAsStream(this.imagePath)) {
                 if (inputStream != null) {
                     Image image = Image.getInstance(IOUtils.toByteArray(inputStream));
                     image.scaleToFit(50, 50);
                     image.setAlignment(Image.ALIGN_CENTER);
                     document.add(image);
                 } else {
-                    log.warn("Logo image not found at path: {}", IMAGE_PATH);
+                    log.warn("Logo image not found at path: {}", imagePath);
                 }
             }
-            Paragraph hospitalName = new Paragraph(HOSPITAL_NAME, light);
+            Paragraph hospitalName = new Paragraph(this.hospitalName, light);
             hospitalName.setAlignment(Element.ALIGN_CENTER);
             document.add(hospitalName);
             document.close();

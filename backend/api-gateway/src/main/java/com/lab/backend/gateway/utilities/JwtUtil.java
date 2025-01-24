@@ -31,10 +31,10 @@ import java.util.List;
 @Log4j2
 public class JwtUtil {
     @Value("${jwt.secret-key}")
-    private String SECRET_KEY;
+    private String secretKey;
 
     @Value("${jwt.authorities-key}")
-    private String AUTHORITIES_KEY;
+    private String authoritiesKey;
 
     @Value("${redis.host}")
     private String redisHost;
@@ -123,7 +123,7 @@ public class JwtUtil {
     public List<String> getRoles(Claims claims) {
         log.trace("Entering getRoles method in JwtUtils");
         log.debug("Extracting roles from claims: {}", claims);
-        Object rolesObject = claims.get(this.AUTHORITIES_KEY);
+        Object rolesObject = claims.get(this.authoritiesKey);
         if (rolesObject instanceof List<?>) {
             List<String> roles = new ArrayList<>();
             for (Object role : (List<?>) rolesObject) {
@@ -147,7 +147,7 @@ public class JwtUtil {
     private SecretKey getSignInKey() {
         log.trace("Entering getSignInKey method in JwtUtils");
         log.debug("Retrieving secret key for JWT validation.");
-        byte[] keyBytes = Decoders.BASE64URL.decode(this.SECRET_KEY);
+        byte[] keyBytes = Decoders.BASE64URL.decode(this.secretKey);
         SecretKey secretKey = Keys.hmacShaKeyFor(keyBytes);
         log.debug("Secret key retrieved successfully.");
         log.trace("Exiting getSignInKey method in JwtUtils");

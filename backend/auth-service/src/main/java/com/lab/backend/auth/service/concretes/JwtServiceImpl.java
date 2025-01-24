@@ -27,16 +27,16 @@ import java.util.function.Function;
 @Log4j2
 public class JwtServiceImpl implements JwtService {
     @Value("${jwt.secret-key}")
-    private String SECRET_KEY;
+    private String secretKey;
 
     @Value("${jwt.authorities-key}")
-    private String AUTHORITIES_KEY;
+    private String authoritiesKey;
 
     @Value("${jwt.access-token-expiration}")
-    private long ACCESS_TOKEN_EXPIRATION;
+    private long accessTokenExpiration;
 
     @Value("${jwt.refresh-token-expiration}")
-    private long REFRESH_TOKEN_EXPIRATION;
+    private long refreshTokenExpiration;
 
     /**
      * Generates an access token for the specified username and roles.
@@ -48,8 +48,8 @@ public class JwtServiceImpl implements JwtService {
     @Override
     public String generateAccessToken(String username, List<String> roles) {
         log.trace("Entering generateAccessToken method in JwtUtils class with username: {}", username);
-        Claims claims = Jwts.claims().subject(username).add(this.AUTHORITIES_KEY, roles).build();
-        String accessToken = buildToken(claims, this.ACCESS_TOKEN_EXPIRATION);
+        Claims claims = Jwts.claims().subject(username).add(this.authoritiesKey, roles).build();
+        String accessToken = buildToken(claims, this.accessTokenExpiration);
         log.trace("Exiting generateAccessToken method in JwtUtils class with accessToken: {}", accessToken);
         return accessToken;
     }
@@ -64,7 +64,7 @@ public class JwtServiceImpl implements JwtService {
     public String generateRefreshToken(String username) {
         log.trace("Entering generateRefreshToken method in JwtUtils class with username: {}", username);
         Claims claims = Jwts.claims().subject(username).build();
-        String refreshToken = buildToken(claims, this.REFRESH_TOKEN_EXPIRATION);
+        String refreshToken = buildToken(claims, this.refreshTokenExpiration);
         log.trace("Exiting generateRefreshToken method in JwtUtils class with refreshToken: {}", refreshToken);
         return refreshToken;
     }
@@ -185,7 +185,7 @@ public class JwtServiceImpl implements JwtService {
      */
     private SecretKey getSignInKey() {
         log.trace("Entering getSignInKey method in JwtUtils class");
-        byte[] keyBytes = Decoders.BASE64URL.decode(this.SECRET_KEY);
+        byte[] keyBytes = Decoders.BASE64URL.decode(this.secretKey);
         SecretKey secretKey = Keys.hmacShaKeyFor(keyBytes);
         log.trace("Exiting getSignInKey method in JwtUtils class with key");
         return secretKey;

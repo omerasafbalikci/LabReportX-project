@@ -29,7 +29,7 @@ import java.nio.charset.StandardCharsets;
 @Log4j2
 public class GeminiService {
     @Value("${gemini.api-key}")
-    private String GEMINI_API_KEY;
+    private String geminiApiKey;
 
     /**
      * Sends a request to the Gemini API to generate insights based on the provided data.
@@ -40,7 +40,7 @@ public class GeminiService {
      */
     public String getInsight(String data) throws IOException {
         log.trace("Entering getInsight method in GeminiService");
-        String ENDPOINT_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + GEMINI_API_KEY;
+        String ENDPOINT_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + geminiApiKey;
 
         JsonObject requestJson = getJsonObject(data);
         log.debug("Request JSON: {}", requestJson);

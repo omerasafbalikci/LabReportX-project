@@ -20,22 +20,22 @@ import java.util.Map;
 @Configuration
 public class GatewayConfig {
     @Value("${route.auth}")
-    private String AUTH_URI;
+    private String authUri;
 
     @Value("${route.user}")
-    private String USER_URI;
+    private String userUri;
 
     @Value("${route.patient}")
-    private String PATIENT_URI;
+    private String patientUri;
 
     @Value("${route.report}")
-    private String REPORT_URI;
+    private String reportUri;
 
     @Value("${route.analytics}")
-    private String ANALYTICS_URI;
+    private String analyticsUri;
 
     @Value("${circuit-breaker-name}")
-    private String CIRCUIT_BREAKER_NAME;
+    private String circuitBreakerName;
 
     private static final String ADMIN = "ADMIN";
     private static final String TECHNICIAN = "TECHNICIAN";
@@ -76,37 +76,37 @@ public class GatewayConfig {
                 .route("auth-service", r -> r.path("/auth/**")
                         .filters(f -> f
                                 .filter(authGatewayFilterFactory.apply(new AuthGatewayFilterFactory.Config().setRoleMapping(endpointRoleMapping)))
-                                .circuitBreaker(c -> c.setName(this.CIRCUIT_BREAKER_NAME).setFallbackUri("forward:/fallback/auth"))
+                                .circuitBreaker(c -> c.setName(this.circuitBreakerName).setFallbackUri("forward:/fallback/auth"))
                         )
-                        .uri(this.AUTH_URI))
+                        .uri(this.authUri))
 
                 .route("user-management-service", r -> r.path("/users/**")
                         .filters(f -> f
                                 .filter(authGatewayFilterFactory.apply(new AuthGatewayFilterFactory.Config().setRoleMapping(endpointRoleMapping)))
-                                .circuitBreaker(c -> c.setName(this.CIRCUIT_BREAKER_NAME).setFallbackUri("forward:/fallback/user"))
+                                .circuitBreaker(c -> c.setName(this.circuitBreakerName).setFallbackUri("forward:/fallback/user"))
                         )
-                        .uri(this.USER_URI))
+                        .uri(this.userUri))
 
                 .route("patient-service", r -> r.path("/patients/**", "/barcode/**")
                         .filters(f -> f
                                 .filter(authGatewayFilterFactory.apply(new AuthGatewayFilterFactory.Config().setRoleMapping(endpointRoleMapping)))
-                                .circuitBreaker(c -> c.setName(this.CIRCUIT_BREAKER_NAME).setFallbackUri("forward:/fallback/patient"))
+                                .circuitBreaker(c -> c.setName(this.circuitBreakerName).setFallbackUri("forward:/fallback/patient"))
                         )
-                        .uri(this.PATIENT_URI))
+                        .uri(this.patientUri))
 
                 .route("report-service", r -> r.path("/reports/**")
                         .filters(f -> f
                                 .filter(authGatewayFilterFactory.apply(new AuthGatewayFilterFactory.Config().setRoleMapping(endpointRoleMapping)))
-                                .circuitBreaker(c -> c.setName(this.CIRCUIT_BREAKER_NAME).setFallbackUri("forward:/fallback/report"))
+                                .circuitBreaker(c -> c.setName(this.circuitBreakerName).setFallbackUri("forward:/fallback/report"))
                         )
-                        .uri(this.REPORT_URI))
+                        .uri(this.reportUri))
 
                 .route("analytics-service", r -> r.path("/analytics/**")
                         .filters(f -> f
                                 .filter(authGatewayFilterFactory.apply(new AuthGatewayFilterFactory.Config().setRoleMapping(endpointRoleMapping)))
-                                .circuitBreaker(c -> c.setName(this.CIRCUIT_BREAKER_NAME).setFallbackUri("forward:/fallback/analytics"))
+                                .circuitBreaker(c -> c.setName(this.circuitBreakerName).setFallbackUri("forward:/fallback/analytics"))
                         )
-                        .uri(this.ANALYTICS_URI))
+                        .uri(this.analyticsUri))
 
                 .build();
     }

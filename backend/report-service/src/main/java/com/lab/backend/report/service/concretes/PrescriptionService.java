@@ -30,13 +30,13 @@ import java.util.List;
 @Log4j2
 public class PrescriptionService {
     @Value("${prescription.font-path.light}")
-    private String LIGHT_FONT_PATH;
+    private String lightFontPath;
 
     @Value("${prescription.image-path.prescription}")
-    private String PRESCRIPTION_IMAGE_PATH;
+    private String prescriptionImagePath;
 
     @Value("${prescription.image-path.symbol}")
-    private String SYMBOL_IMAGE_PATH;
+    private String symbolImagePath;
 
     private final GeminiService geminiService;
 
@@ -53,19 +53,19 @@ public class PrescriptionService {
             Document document = new Document();
             PdfWriter.getInstance(document, byteArrayOutputStream);
             document.open();
-            log.debug("Loading light font from path: {}", LIGHT_FONT_PATH);
-            BaseFont baseFontLight = BaseFont.createFont(LIGHT_FONT_PATH, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            log.debug("Loading light font from path: {}", lightFontPath);
+            BaseFont baseFontLight = BaseFont.createFont(lightFontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
             com.itextpdf.text.Font lightSmall = new com.itextpdf.text.Font(baseFontLight, 12);
 
             log.info("Gemini image is being added to the document.");
-            try (InputStream inputStream = getClass().getResourceAsStream(PRESCRIPTION_IMAGE_PATH)) {
+            try (InputStream inputStream = getClass().getResourceAsStream(prescriptionImagePath)) {
                 if (inputStream != null) {
                     com.itextpdf.text.Image image = com.itextpdf.text.Image.getInstance(IOUtils.toByteArray(inputStream));
                     image.scaleToFit(100, 100);
                     image.setAlignment(com.itextpdf.text.Image.ALIGN_CENTER);
                     document.add(image);
                 } else {
-                    log.warn("Gemini image not found at path: {}", PRESCRIPTION_IMAGE_PATH);
+                    log.warn("Gemini image not found at path: {}", prescriptionImagePath);
                 }
             }
 
@@ -90,7 +90,7 @@ public class PrescriptionService {
 
                 for (String sentence : sentences) {
                     log.debug("Adding symbol image and sentence to PDF table.");
-                    try (InputStream symbolInputStream = getClass().getResourceAsStream(SYMBOL_IMAGE_PATH)) {
+                    try (InputStream symbolInputStream = getClass().getResourceAsStream(symbolImagePath)) {
                         if (symbolInputStream != null) {
                             com.itextpdf.text.Image symbolImage = com.itextpdf.text.Image.getInstance(IOUtils.toByteArray(symbolInputStream));
                             symbolImage.scaleToFit(15, 15);
@@ -103,7 +103,7 @@ public class PrescriptionService {
 
                             aiTable.addCell(leftCell);
                         } else {
-                            log.warn("Symbol image not found at path: {}", SYMBOL_IMAGE_PATH);
+                            log.warn("Symbol image not found at path: {}", symbolImagePath);
                         }
                     }
 

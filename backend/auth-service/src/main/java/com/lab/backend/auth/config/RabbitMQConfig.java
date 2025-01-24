@@ -21,107 +21,107 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
     @Value("${rabbitmq.exchange}")
-    private String EXCHANGE;
+    private String exchange;
 
     @Value("${rabbitmq.queue.create}")
-    private String USER_QUEUE_CREATE;
+    private String userQueueCreate;
 
     @Value("${rabbitmq.queue.update}")
-    private String USER_QUEUE_UPDATE;
+    private String userQueueUpdate;
 
     @Value("${rabbitmq.queue.delete}")
-    private String USER_QUEUE_DELETE;
+    private String userQueueDelete;
 
     @Value("${rabbitmq.queue.restore}")
-    private String USER_QUEUE_RESTORE;
+    private String userQueueRestore;
 
     @Value("${rabbitmq.queue.addRole}")
-    private String USER_QUEUE_ADD_ROLE;
+    private String userQueueAddRole;
 
     @Value("${rabbitmq.queue.removeRole}")
-    private String USER_QUEUE_REMOVE_ROLE;
+    private String userQueueRemoveRole;
 
     @Value("${rabbitmq.routingKey.create}")
-    private String ROUTING_KEY_CREATE;
+    private String routingKeyCreate;
 
     @Value("${rabbitmq.routingKey.update}")
-    private String ROUTING_KEY_UPDATE;
+    private String routingKeyUpdate;
 
     @Value("${rabbitmq.routingKey.delete}")
-    private String ROUTING_KEY_DELETE;
+    private String routingKeyDelete;
 
     @Value("${rabbitmq.routingKey.restore}")
-    private String ROUTING_KEY_RESTORE;
+    private String routingKeyRestore;
 
     @Value("${rabbitmq.routingKey.addRole}")
-    private String ROUTING_KEY_ADD_ROLE;
+    private String routingKeyAddRole;
 
     @Value("${rabbitmq.routingKey.removeRole}")
-    private String ROUTING_KEY_REMOVE_ROLE;
+    private String routingKeyRemoveRole;
 
     @Bean
     public DirectExchange userExchange() {
-        return new DirectExchange(this.EXCHANGE);
+        return new DirectExchange(this.exchange);
     }
 
     @Bean
     public Queue userQueueCreate() {
-        return new Queue(this.USER_QUEUE_CREATE, false);
+        return new Queue(this.userQueueCreate, false);
     }
 
     @Bean
     public Queue userQueueUpdate() {
-        return new Queue(this.USER_QUEUE_UPDATE, false);
+        return new Queue(this.userQueueUpdate, false);
     }
 
     @Bean
     public Queue userQueueDelete() {
-        return new Queue(this.USER_QUEUE_DELETE, false);
+        return new Queue(this.userQueueDelete, false);
     }
 
     @Bean
     public Queue userQueueRestore() {
-        return new Queue(this.USER_QUEUE_RESTORE, false);
+        return new Queue(this.userQueueRestore, false);
     }
 
     @Bean
     public Queue userQueueAddRole() {
-        return new Queue(this.USER_QUEUE_ADD_ROLE, false);
+        return new Queue(this.userQueueAddRole, false);
     }
 
     @Bean
     public Queue userQueueRemoveRole() {
-        return new Queue(this.USER_QUEUE_REMOVE_ROLE, false);
+        return new Queue(this.userQueueRemoveRole, false);
     }
 
     @Bean
     public Binding bindingCreate() {
-        return BindingBuilder.bind(userQueueCreate()).to(userExchange()).with(this.ROUTING_KEY_CREATE);
+        return BindingBuilder.bind(userQueueCreate()).to(userExchange()).with(this.routingKeyCreate);
     }
 
     @Bean
     public Binding bindingUpdate() {
-        return BindingBuilder.bind(userQueueUpdate()).to(userExchange()).with(this.ROUTING_KEY_UPDATE);
+        return BindingBuilder.bind(userQueueUpdate()).to(userExchange()).with(this.routingKeyUpdate);
     }
 
     @Bean
     public Binding bindingDelete() {
-        return BindingBuilder.bind(userQueueDelete()).to(userExchange()).with(this.ROUTING_KEY_DELETE);
+        return BindingBuilder.bind(userQueueDelete()).to(userExchange()).with(this.routingKeyDelete);
     }
 
     @Bean
     public Binding bindingRestore() {
-        return BindingBuilder.bind(userQueueRestore()).to(userExchange()).with(this.ROUTING_KEY_RESTORE);
+        return BindingBuilder.bind(userQueueRestore()).to(userExchange()).with(this.routingKeyRestore);
     }
 
     @Bean
     public Binding bindingAddRole() {
-        return BindingBuilder.bind(userQueueAddRole()).to(userExchange()).with(this.ROUTING_KEY_ADD_ROLE);
+        return BindingBuilder.bind(userQueueAddRole()).to(userExchange()).with(this.routingKeyAddRole);
     }
 
     @Bean
     public Binding bindingRemoveRole() {
-        return BindingBuilder.bind(userQueueRemoveRole()).to(userExchange()).with(this.ROUTING_KEY_REMOVE_ROLE);
+        return BindingBuilder.bind(userQueueRemoveRole()).to(userExchange()).with(this.routingKeyRemoveRole);
     }
 
     @Bean

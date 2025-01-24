@@ -39,25 +39,25 @@ import java.util.stream.Collectors;
 @Log4j2
 public class UserServiceImpl implements UserService {
     @Value("${rabbitmq.exchange}")
-    private String EXCHANGE;
+    private String exchange;
 
     @Value("${rabbitmq.routingKey.create}")
-    private String ROUTING_KEY_CREATE;
+    private String routingKeyCreate;
 
     @Value("${rabbitmq.routingKey.update}")
-    private String ROUTING_KEY_UPDATE;
+    private String routingKeyUpdate;
 
     @Value("${rabbitmq.routingKey.delete}")
-    private String ROUTING_KEY_DELETE;
+    private String routingKeyDelete;
 
     @Value("${rabbitmq.routingKey.restore}")
-    private String ROUTING_KEY_RESTORE;
+    private String routingKeyRestore;
 
     @Value("${rabbitmq.routingKey.addRole}")
-    private String ROUTING_KEY_ADD_ROLE;
+    private String routingKeyAddRole;
 
     @Value("${rabbitmq.routingKey.removeRole}")
-    private String ROUTING_KEY_REMOVE_ROLE;
+    private String routingKeyRemoveRole;
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
@@ -226,7 +226,7 @@ public class UserServiceImpl implements UserService {
 
             try {
                 UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(existingUsername, updateUserRequest.getUsername());
-                this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_UPDATE, updateAuthUserRequest);
+                this.rabbitTemplate.convertAndSend(exchange, routingKeyUpdate, updateAuthUserRequest);
                 log.info("Sent update message to RabbitMQ for user: {}", existingUser);
             } catch (Exception e) {
                 log.error("Failed to send update message to RabbitMQ: {}", e.getMessage());
@@ -265,7 +265,7 @@ public class UserServiceImpl implements UserService {
 
         try {
             CreateAuthUserRequest createAuthUserRequest = new CreateAuthUserRequest(createUserRequest.getUsername(), createUserRequest.getPassword(), createUserRequest.getEmail(), roles);
-            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_CREATE, createAuthUserRequest);
+            this.rabbitTemplate.convertAndSend(exchange, routingKeyCreate, createAuthUserRequest);
             log.info("Sent create message to RabbitMQ for user: {}", createUserRequest.getUsername());
         } catch (Exception exception) {
             log.error("Failed to send create message to RabbitMQ", exception);
@@ -328,7 +328,7 @@ public class UserServiceImpl implements UserService {
 
             try {
                 UpdateAuthUserRequest updateAuthUserRequest = new UpdateAuthUserRequest(existingUsername, updateUserRequest.getUsername());
-                this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_UPDATE, updateAuthUserRequest);
+                this.rabbitTemplate.convertAndSend(exchange, routingKeyUpdate, updateAuthUserRequest);
                 log.info("Sent update message to RabbitMQ for user {}", existingUser.getUsername());
             } catch (Exception e) {
                 log.error(FAIL_RABBITMQ, e);
@@ -361,7 +361,7 @@ public class UserServiceImpl implements UserService {
         String username = user.getUsername();
         user.setDeleted(true);
         try {
-            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_DELETE, username);
+            this.rabbitTemplate.convertAndSend(exchange, routingKeyDelete, username);
             log.info("Sent delete message to RabbitMQ for user: {}", username);
         } catch (Exception exception) {
             log.error("Failed to send delete message to RabbitMQ", exception);
@@ -391,7 +391,7 @@ public class UserServiceImpl implements UserService {
         String username = user.getUsername();
         user.setDeleted(false);
         try {
-            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_RESTORE, username);
+            this.rabbitTemplate.convertAndSend(exchange, routingKeyRestore, username);
             log.info("Sent restore message to RabbitMQ for user: {}", username);
         } catch (Exception exception) {
             log.error("Failed to send restore message to RabbitMQ", exception);
@@ -432,7 +432,7 @@ public class UserServiceImpl implements UserService {
         try {
             String r = role.toString();
             UpdateAuthUserRoleRequest updateAuthUserRoleRequest = new UpdateAuthUserRoleRequest(username, r);
-            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_ADD_ROLE, updateAuthUserRoleRequest);
+            this.rabbitTemplate.convertAndSend(exchange, routingKeyAddRole, updateAuthUserRoleRequest);
             log.info("Successfully sent add role message for user '{}'", username);
         } catch (Exception exception) {
             log.error("Failed to send add role message to RabbitMQ for user '{}'", username, exception);
@@ -478,7 +478,7 @@ public class UserServiceImpl implements UserService {
         try {
             String r = role.toString();
             UpdateAuthUserRoleRequest updateAuthUserRoleRequest = new UpdateAuthUserRoleRequest(username, r);
-            this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_REMOVE_ROLE, updateAuthUserRoleRequest);
+            this.rabbitTemplate.convertAndSend(exchange, routingKeyRemoveRole, updateAuthUserRoleRequest);
             log.info("Successfully sent remove role message for user '{}'", username);
         } catch (Exception exception) {
             log.error("Failed to send remove role message to RabbitMQ for user '{}'", username, exception);

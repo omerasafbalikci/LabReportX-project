@@ -34,7 +34,7 @@ public class JwtUtilTest {
 
     @BeforeEach
     void setUp() {
-        ReflectionTestUtils.setField(jwtUtil, "SECRET_KEY", "6bc18dff62463c49343d083ae0e523fbfb88d4d45b4a9cb62e86d0c53bd9b870");
+        ReflectionTestUtils.setField(jwtUtil, "secretKey", "6bc18dff62463c49343d083ae0e523fbfb88d4d45b4a9cb62e86d0c53bd9b870");
         ReflectionTestUtils.setField(jwtUtil, "redisHost", "localhost");
         ReflectionTestUtils.setField(jwtUtil, "redisPort", "6379");
     }
@@ -156,7 +156,7 @@ public class JwtUtilTest {
     @Test
     void getRoles_shouldReturnRolesFromClaims() {
         // Arrange
-        ReflectionTestUtils.setField(jwtUtil, "AUTHORITIES_KEY", "authorities");
+        ReflectionTestUtils.setField(jwtUtil, "authoritiesKey", "authorities");
         Claims claims = mock(Claims.class);
         List<String> roles = Collections.singletonList("ROLE_ADMIN");
         when(claims.get("authorities")).thenReturn(roles);

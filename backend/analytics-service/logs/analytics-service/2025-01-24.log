@@ -73,3 +73,18 @@
 2025-01-24 23:02:29.119 [main] TRACE AnalyticsServiceImpl - Exiting getReportChart method in AnalyticsServiceImpl
 2025-01-24 23:02:29.129 [main] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
 2025-01-24 23:02:29.130 [main] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
+2025-01-24 23:33:51.095 [main] TRACE AnalyticsController - Entering getPatientChart method in AnalyticsController class
+2025-01-24 23:33:51.115 [main] TRACE AnalyticsController - Exiting getPatientChart method in AnalyticsController class
+2025-01-24 23:33:51.151 [main] TRACE AnalyticsController - Entering getReportChart method in AnalyticsController class
+2025-01-24 23:33:51.151 [main] TRACE AnalyticsController - Exiting getReportChart method in AnalyticsController class
+2025-01-24 23:33:51.310 [main] TRACE AnalyticsServiceImpl - Entering getReportChart method in AnalyticsServiceImpl
+2025-01-24 23:33:51.311 [main] ERROR AnalyticsServiceImpl - No weekly report stats available
+2025-01-24 23:33:51.319 [main] TRACE AnalyticsServiceImpl - Entering sendPatientSatisfactionSurvey method with email: test@example.com
+2025-01-24 23:33:51.323 [main] INFO  AnalyticsServiceImpl - Survey email sent to: test@example.com
+2025-01-24 23:33:51.324 [main] TRACE AnalyticsServiceImpl - Exiting sendPatientSatisfactionSurvey method in AnalyticsServiceImpl
+2025-01-24 23:33:51.332 [main] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2025-01-24 23:33:51.332 [main] ERROR AnalyticsServiceImpl - No weekly patient stats available
+2025-01-24 23:33:51.343 [main] TRACE AnalyticsServiceImpl - Entering getReportChart method in AnalyticsServiceImpl
+2025-01-24 23:33:51.343 [main] TRACE AnalyticsServiceImpl - Exiting getReportChart method in AnalyticsServiceImpl
+2025-01-24 23:33:51.355 [main] TRACE AnalyticsServiceImpl - Entering getPatientChart method in AnalyticsServiceImpl
+2025-01-24 23:33:51.356 [main] TRACE AnalyticsServiceImpl - Exiting getPatientChart method in AnalyticsServiceImpl
