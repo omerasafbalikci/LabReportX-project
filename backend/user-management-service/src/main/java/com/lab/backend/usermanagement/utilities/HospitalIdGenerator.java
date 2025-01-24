@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * A utility class for generating unique hospital IDs.
@@ -23,6 +23,7 @@ import java.util.Random;
 public class HospitalIdGenerator {
     private static final int HOSPITAL_ID_LENGTH = 7;
     private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private final SecureRandom random = new SecureRandom();
 
     @Autowired
     private UserRepository userRepository;
@@ -39,7 +40,6 @@ public class HospitalIdGenerator {
 
     private String generateRandomHospitalId() {
         StringBuilder sb = new StringBuilder(HOSPITAL_ID_LENGTH);
-        Random random = new Random();
         for (int i = 0; i < HOSPITAL_ID_LENGTH; i++) {
             sb.append(CHARACTERS.charAt(random.nextInt(CHARACTERS.length())));
         }

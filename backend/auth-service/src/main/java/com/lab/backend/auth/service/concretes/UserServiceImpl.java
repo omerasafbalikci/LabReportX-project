@@ -61,6 +61,11 @@ public class UserServiceImpl implements UserService {
     private final MailService mailService;
     private JedisPool jedisPool;
     private final WebClient.Builder webClientBuilder;
+    private static final String BEARER = "Bearer ";
+    private static final String USER_NOT_FOUND = "User not found";
+    private static final String IS_LOGGED_OUT = ":is_logged_out";
+    private static final String TOKEN = "token:";
+    private static final String INVALID_TOKEN = "Invalid token";
 
     @PostConstruct
     public void init() {
@@ -129,7 +134,7 @@ public class UserServiceImpl implements UserService {
         log.trace("Entering refreshToken method in UserServiceImpl");
         String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
         log.debug("Attempting to refresh token");
-        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+        if (authHeader != null && authHeader.startsWith(BEARER)) {
             String refreshToken = authHeader.substring(7);
             String username = this.jwtService.extractUsername(refreshToken);
             log.info("Extracted username from refresh token: {}", username);
@@ -153,7 +158,7 @@ public class UserServiceImpl implements UserService {
                     return Arrays.asList(accessToken, refreshToken);
                 } else {
                     log.error("User not found : {}", username);
-                    throw new UserNotFoundException("User not found");
+                    throw new UserNotFoundException(USER_NOT_FOUND);
                 }
             } else {
                 log.error("Username extraction failed from token");
@@ -183,7 +188,7 @@ public class UserServiceImpl implements UserService {
         this.tokenRepository.save(token);
 
         try (Jedis jedis = this.jedisPool.getResource()) {
-            jedis.set("token:" + token.getId() + ":is_logged_out", "false");
+            jedis.set(TOKEN + token.getId() + IS_LOGGED_OUT, "false");
             jedis.set(jwt, String.valueOf(token.getId()));
             log.info("Token saved in Redis for user: {}", user.getUsername());
         } catch (JedisException e) {
@@ -211,7 +216,7 @@ public class UserServiceImpl implements UserService {
         try (Jedis jedis = this.jedisPool.getResource()) {
             for (Token token : validTokens) {
                 token.setLoggedOut(true);
-                jedis.set("token:" + token.getId() + ":is_logged_out", "true");
+                jedis.set(TOKEN + token.getId() + IS_LOGGED_OUT, "true");
                 log.info("Token revoked for user ID: {}", id);
             }
         } catch (JedisException e) {
@@ -234,9 +239,9 @@ public class UserServiceImpl implements UserService {
         log.trace("Entering logout method in UserServiceImpl");
         log.debug("Logout initiated");
         String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            log.error("Invalid token");
-            throw new InvalidTokenException("Invalid token");
+        if (authHeader == null || !authHeader.startsWith(BEARER)) {
+            log.error(INVALID_TOKEN);
+            throw new InvalidTokenException(INVALID_TOKEN);
         }
         String jwt = authHeader.substring(7);
         Token storedToken = this.tokenRepository.findByToken(jwt).orElse(null);
@@ -247,7 +252,7 @@ public class UserServiceImpl implements UserService {
         storedToken.setLoggedOut(true);
         this.tokenRepository.save(storedToken);
         try (Jedis jedis = this.jedisPool.getResource()) {
-            jedis.set("token:" + storedToken.getId() + ":is_logged_out", "true");
+            jedis.set(TOKEN + storedToken.getId() + IS_LOGGED_OUT, "true");
             log.info("Token successfully logged out and saved in Redis");
         } catch (JedisException e) {
             log.error("Failed to log out token in Redis", e);
@@ -270,9 +275,9 @@ public class UserServiceImpl implements UserService {
         log.trace("Entering changePassword method in UserServiceImpl");
         log.debug("Password change request initiated");
         String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+        if (authHeader == null || !authHeader.startsWith(BEARER)) {
             log.error("Invalid token format to change password");
-            throw new InvalidTokenException("Invalid token");
+            throw new InvalidTokenException(INVALID_TOKEN);
         }
         String jwt = authHeader.substring(7);
         String username = this.jwtService.extractUsername(jwt);
@@ -414,7 +419,7 @@ public class UserServiceImpl implements UserService {
             return "Password reset successfully.";
         } else {
             log.error("Invalid reset token provided");
-            throw new InvalidTokenException("Invalid token");
+            throw new InvalidTokenException(INVALID_TOKEN);
         }
     }
 
@@ -523,8 +528,8 @@ public class UserServiceImpl implements UserService {
             this.userRepository.save(user);
             log.info("User '{}' updated successfully", user.getUsername());
         } else {
-            log.error("User not found");
-            throw new UserNotFoundException("User not found");
+            log.error(USER_NOT_FOUND);
+            throw new UserNotFoundException(USER_NOT_FOUND);
         }
         log.trace("Exiting updateUser method in UserServiceImpl");
     }
@@ -548,7 +553,7 @@ public class UserServiceImpl implements UserService {
             log.info("User '{}' marked as deleted", username);
         } else {
             log.error("User not found: {}", username);
-            throw new UserNotFoundException("User not found");
+            throw new UserNotFoundException(USER_NOT_FOUND);
         }
         log.trace("Exiting deleteUser method in UserServiceImpl");
     }
@@ -572,7 +577,7 @@ public class UserServiceImpl implements UserService {
             log.info("User '{}' restored successfully", username);
         } else {
             log.error("User not found to restore: {}", username);
-            throw new UserNotFoundException("User not found");
+            throw new UserNotFoundException(USER_NOT_FOUND);
         }
         log.trace("Exiting restoreUser method in UserServiceImpl");
     }
@@ -601,7 +606,7 @@ public class UserServiceImpl implements UserService {
             }
         } else {
             log.error("No user found to add role: {}", updateAuthUserRoleRequest.getUsername());
-            throw new UserNotFoundException("User not found");
+            throw new UserNotFoundException(USER_NOT_FOUND);
         }
         log.trace("Exiting addRole method in UserServiceImpl");
     }
@@ -630,7 +635,7 @@ public class UserServiceImpl implements UserService {
             }
         } else {
             log.error("No user found to remove role: {}", updateAuthUserRoleRequest.getUsername());
-            throw new UserNotFoundException("User not found");
+            throw new UserNotFoundException(USER_NOT_FOUND);
         }
         log.trace("Exiting removeRole method in UserServiceImpl");
     }

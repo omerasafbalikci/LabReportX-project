@@ -62,6 +62,8 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
     private final RabbitTemplate rabbitTemplate;
+    private static final String FAIL_RABBITMQ = "Failed to send update message to RabbitMQ";
+    private static final String USER_DOES_NOT_EXIST = "User doesn't exist with id ";
 
     /**
      * Retrieves a user by their ID.
@@ -228,7 +230,7 @@ public class UserServiceImpl implements UserService {
                 log.info("Sent update message to RabbitMQ for user: {}", existingUser);
             } catch (Exception e) {
                 log.error("Failed to send update message to RabbitMQ: {}", e.getMessage());
-                throw new RabbitMQException("Failed to send update message to RabbitMQ", e);
+                throw new RabbitMQException(FAIL_RABBITMQ, e);
             }
         }
         this.userRepository.save(existingUser);
@@ -296,7 +298,7 @@ public class UserServiceImpl implements UserService {
         User existingUser = this.userRepository.findByIdAndDeletedFalse(updateUserRequest.getId())
                 .orElseThrow(() -> {
                     log.error("User doesn't exist with id {}", updateUserRequest.getId());
-                    return new UserNotFoundException("User doesn't exist with id " + updateUserRequest.getId());
+                    return new UserNotFoundException(USER_DOES_NOT_EXIST + updateUserRequest.getId());
                 });
 
         String existingUsername = existingUser.getUsername();
@@ -329,8 +331,8 @@ public class UserServiceImpl implements UserService {
                 this.rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY_UPDATE, updateAuthUserRequest);
                 log.info("Sent update message to RabbitMQ for user {}", existingUser.getUsername());
             } catch (Exception e) {
-                log.error("Failed to send update message to RabbitMQ", e);
-                throw new RabbitMQException("Failed to send update message to RabbitMQ", e);
+                log.error(FAIL_RABBITMQ, e);
+                throw new RabbitMQException(FAIL_RABBITMQ, e);
             }
         }
         this.userRepository.save(existingUser);
@@ -354,7 +356,7 @@ public class UserServiceImpl implements UserService {
         User user = this.userRepository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> {
                     log.error("User doesn't exist with id: {}", id);
-                    return new UserNotFoundException("User doesn't exist with id " + id);
+                    return new UserNotFoundException(USER_DOES_NOT_EXIST + id);
                 });
         String username = user.getUsername();
         user.setDeleted(true);
@@ -384,7 +386,7 @@ public class UserServiceImpl implements UserService {
         User user = this.userRepository.findByIdAndDeletedTrue(id)
                 .orElseThrow(() -> {
                     log.error("User does not exist with id {}", id);
-                    return new UserNotFoundException("User doesn't exist with id " + id);
+                    return new UserNotFoundException(USER_DOES_NOT_EXIST + id);
                 });
         String username = user.getUsername();
         user.setDeleted(false);
@@ -419,7 +421,7 @@ public class UserServiceImpl implements UserService {
         User user = this.userRepository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> {
                     log.error("User not found with id '{}'", id);
-                    return new UserNotFoundException("User doesn't exist with id " + id);
+                    return new UserNotFoundException(USER_DOES_NOT_EXIST + id);
                 });
         String username = user.getUsername();
         if (user.getRoles().contains(role)) {
@@ -461,7 +463,7 @@ public class UserServiceImpl implements UserService {
         User user = this.userRepository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> {
                     log.error("User not found with id: '{}'", id);
-                    return new UserNotFoundException("User doesn't exist with id " + id);
+                    return new UserNotFoundException(USER_DOES_NOT_EXIST + id);
                 });
         String username = user.getUsername();
         if (user.getRoles().size() <= 1) {

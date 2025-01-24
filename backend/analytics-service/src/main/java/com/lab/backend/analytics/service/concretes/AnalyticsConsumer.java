@@ -22,6 +22,7 @@ import java.util.Objects;
 @Log4j2
 public class AnalyticsConsumer {
     private final CacheManager cacheManager;
+    private static final String WEEKLY_STATS_CACHE = "weeklyStatsCache";
 
     /**
      * Listens to the Kafka topic "patient-stats" and caches the weekly patient statistics.
@@ -32,7 +33,7 @@ public class AnalyticsConsumer {
      */
     @KafkaListener(topics = "patient-stats", groupId = "patients")
     public void cacheWeeklyPatientStats(WeeklyStats weeklyStats) {
-        Objects.requireNonNull(this.cacheManager.getCache("weeklyStatsCache")).put("patient-latest", weeklyStats);
+        Objects.requireNonNull(this.cacheManager.getCache(WEEKLY_STATS_CACHE)).put("patient-latest", weeklyStats);
         log.trace("Patient stats successfully cached.");
     }
 
@@ -45,7 +46,7 @@ public class AnalyticsConsumer {
      */
     @KafkaListener(topics = "report-stats", groupId = "reports")
     public void cacheWeeklyReportStats(WeeklyStats weeklyStats) {
-        Objects.requireNonNull(this.cacheManager.getCache("weeklyStatsCache")).put("report-latest", weeklyStats);
+        Objects.requireNonNull(this.cacheManager.getCache(WEEKLY_STATS_CACHE)).put("report-latest", weeklyStats);
         log.trace("Report stats successfully cached.");
     }
 
@@ -56,7 +57,7 @@ public class AnalyticsConsumer {
      * @return the cached WeeklyStats object for patient statistics
      */
     public WeeklyStats getCachedWeeklyPatientStats() {
-        return Objects.requireNonNull(this.cacheManager.getCache("weeklyStatsCache")).get("patient-latest", WeeklyStats.class);
+        return Objects.requireNonNull(this.cacheManager.getCache(WEEKLY_STATS_CACHE)).get("patient-latest", WeeklyStats.class);
     }
 
     /**
@@ -66,6 +67,6 @@ public class AnalyticsConsumer {
      * @return the cached WeeklyStats object for report statistics
      */
     public WeeklyStats getCachedWeeklyReportStats() {
-        return Objects.requireNonNull(this.cacheManager.getCache("weeklyStatsCache")).get("report-latest", WeeklyStats.class);
+        return Objects.requireNonNull(this.cacheManager.getCache(WEEKLY_STATS_CACHE)).get("report-latest", WeeklyStats.class);
     }
 }

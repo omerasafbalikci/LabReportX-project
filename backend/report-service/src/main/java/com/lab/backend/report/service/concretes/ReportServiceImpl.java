@@ -61,6 +61,13 @@ public class ReportServiceImpl implements ReportService {
     private final PdfUtil pdfUtil;
     private final PrescriptionService prescriptionService;
     private final MailService mailService;
+    private static final String TR_ID_NUMBER = "trIdNumber";
+    private static final String BEARER = "Bearer ";
+    private static final String VALID_TC_FOR_REPORT = "validTcForReport:";
+    private static final String REPORT_DOES_NOT_EXIST = "Report doesn't exist with id ";
+    private static final String TRY_AGAIN = ". Please try again! ";
+    private static final String PRESCRIPTION = "prescription:";
+    private static final String TR_ID_NUMBER_CACHE = "trIdNumber:";
 
     /**
      * Retrieves a report by its ID.
@@ -220,8 +227,8 @@ public class ReportServiceImpl implements ReportService {
         try {
             check = this.webClientBuilder.build().get()
                     .uri("http://patient-service/patients/check-tr-id-number", uriBuilder ->
-                            uriBuilder.queryParam("trIdNumber", trIdNumber).build())
-                    .header(HttpHeaders.AUTHORIZATION, "Bearer " + jwt)
+                            uriBuilder.queryParam(TR_ID_NUMBER, trIdNumber).build())
+                    .header(HttpHeaders.AUTHORIZATION, BEARER + jwt)
                     .retrieve()
                     .bodyToMono(Boolean.class)
                     .block();
@@ -234,8 +241,8 @@ public class ReportServiceImpl implements ReportService {
         }
 
         if (check != null && check) {
-            this.redisTemplate.delete("validTcForReport:" + username);
-            this.redisTemplate.opsForValue().set("validTcForReport:" + username, trIdNumber, 1, TimeUnit.HOURS);
+            this.redisTemplate.delete(VALID_TC_FOR_REPORT + username);
+            this.redisTemplate.opsForValue().set(VALID_TC_FOR_REPORT + username, trIdNumber, 1, TimeUnit.HOURS);
             log.info("TR ID number {} is valid for user {}. Redirecting to report creation...", trIdNumber, username);
             log.trace("Exiting checkTrIdNumber method in ReportServiceImpl");
             return "TR ID number is valid. Redirecting to report creation...";
@@ -257,13 +264,13 @@ public class ReportServiceImpl implements ReportService {
     public GetReportResponse addReport(String username, CreateReportRequest createReportRequest) {
         log.trace("Entering addReport method in ReportServiceImpl");
         log.debug("Adding report for user: {}", username);
-        String trIdNumber = this.redisTemplate.opsForValue().get("validTcForReport:" + username);
+        String trIdNumber = this.redisTemplate.opsForValue().get(VALID_TC_FOR_REPORT + username);
         if (trIdNumber != null) {
             Report report = this.reportMapper.toReport(createReportRequest);
             report.setPatientTrIdNumber(trIdNumber);
             report.setTechnicianUsername(username);
             this.reportRepository.save(report);
-            this.redisTemplate.delete("validTcForReport:" + username);
+            this.redisTemplate.delete(VALID_TC_FOR_REPORT + username);
             GetReportResponse response = this.reportMapper.toGetReportResponse(report);
             log.info("Report added successfully: {}", response);
             log.trace("Exiting addReport method in ReportServiceImpl");
@@ -290,7 +297,7 @@ public class ReportServiceImpl implements ReportService {
         Report existingReport = this.reportRepository.findByIdAndDeletedFalse(updateReportRequest.getId())
                 .orElseThrow(() -> {
                     log.error("Report with id {} not found", updateReportRequest.getId());
-                    return new ReportNotFoundException("Report doesn't exist with id " + updateReportRequest.getId());
+                    return new ReportNotFoundException(REPORT_DOES_NOT_EXIST + updateReportRequest.getId());
                 });
         if (!username.equals(existingReport.getTechnicianUsername())) {
             log.error("Unauthorized update attempt by user: {} on report id: {}", username, updateReportRequest.getId());
@@ -325,7 +332,7 @@ public class ReportServiceImpl implements ReportService {
         Report report = this.reportRepository.findByIdAndDeletedFalse(id)
                 .orElseThrow(() -> {
                     log.error("The report with ID {} could not be found for deletion.", id);
-                    return new ReportNotFoundException("Report doesn't exist with id " + id);
+                    return new ReportNotFoundException(REPORT_DOES_NOT_EXIST + id);
                 });
         if (!username.equals(report.getTechnicianUsername())) {
             log.error("Unauthorized delete attempt by user: {} on report id: {}", username, id);
@@ -353,7 +360,7 @@ public class ReportServiceImpl implements ReportService {
         Report report = this.reportRepository.findByIdAndDeletedTrue(id)
                 .orElseThrow(() -> {
                     log.error("The report with ID {} could not be found to restore", id);
-                    return new ReportNotFoundException("Report doesn't exist with id " + id);
+                    return new ReportNotFoundException(REPORT_DOES_NOT_EXIST + id);
                 });
         if (!username.equals(report.getTechnicianUsername())) {
             log.error("Unauthorized restore attempt by user: {} on report id: {}", username, id);
@@ -384,11 +391,11 @@ public class ReportServiceImpl implements ReportService {
         Report report = this.reportRepository.findByIdAndDeletedFalse(reportId)
                 .orElseThrow(() -> {
                     log.error("Report with id {} not found for add photo", reportId);
-                    return new ReportNotFoundException("Report doesn't exist with id " + reportId);
+                    return new ReportNotFoundException(REPORT_DOES_NOT_EXIST + reportId);
                 });
         if (!username.equals(report.getTechnicianUsername())) {
             log.error("Unauthorized photo upload attempt by user: {} on report id: {}", username, reportId);
-            throw new UnauthorizedAccessException("You are not authorized to restore this report.");
+            throw new UnauthorizedAccessException("You are not authorized to add photo this report.");
         }
         String photoPath = report.getPhotoPath();
         if (photoPath != null) {
@@ -412,7 +419,7 @@ public class ReportServiceImpl implements ReportService {
             log.info("Successfully added photo to report with id: {}", reportId);
         } catch (IOException exception) {
             log.error("Error occurred while uploading photo for report id: {}", reportId, exception);
-            throw new FileStorageException("Could not store file " + newFileName + ". Please try again! " + exception);
+            throw new FileStorageException("Could not store file " + newFileName + TRY_AGAIN + exception);
         }
         log.trace("Exiting addPhoto method in ReportServiceImpl");
     }
@@ -444,11 +451,11 @@ public class ReportServiceImpl implements ReportService {
         Report report = this.reportRepository.findByIdAndDeletedFalse(reportId)
                 .orElseThrow(() -> {
                     log.error("Report with id: {} not found for get photo", reportId);
-                    return new ReportNotFoundException("Report doesn't exist with id " + reportId);
+                    return new ReportNotFoundException(REPORT_DOES_NOT_EXIST + reportId);
                 });
         if (!username.equals(report.getTechnicianUsername())) {
             log.error("Unauthorized access attempt by username: {} for report id: {}", username, reportId);
-            throw new UnauthorizedAccessException("You are not authorized to restore this report.");
+            throw new UnauthorizedAccessException("You are not authorized to get photo this report.");
         }
         String photoPath = report.getPhotoPath();
         if (photoPath == null || photoPath.isEmpty()) {
@@ -462,7 +469,7 @@ public class ReportServiceImpl implements ReportService {
             return Files.readAllBytes(filePath);
         } catch (IOException exception) {
             log.error("Could not read file at path: {} for report id: {}", photoPath, reportId, exception);
-            throw new FileStorageException("Could not read file: " + photoPath + ". Please try again! " + exception);
+            throw new FileStorageException("Could not read file: " + photoPath + TRY_AGAIN + exception);
         }
     }
 
@@ -482,11 +489,11 @@ public class ReportServiceImpl implements ReportService {
         Report report = this.reportRepository.findByIdAndDeletedFalse(reportId)
                 .orElseThrow(() -> {
                     log.error("Report with id: {} not found for delete photo", reportId);
-                    return new ReportNotFoundException("Report doesn't exist with id " + reportId);
+                    return new ReportNotFoundException(REPORT_DOES_NOT_EXIST + reportId);
                 });
         if (!username.equals(report.getTechnicianUsername())) {
             log.error("Unauthorized deletion attempt by username: {} for report id: {}", username, reportId);
-            throw new UnauthorizedAccessException("You are not authorized to restore this report.");
+            throw new UnauthorizedAccessException("You are not authorized to delete this report.");
         }
         String photoPath = report.getPhotoPath();
         if (photoPath == null || photoPath.isEmpty()) {
@@ -502,7 +509,7 @@ public class ReportServiceImpl implements ReportService {
             log.info("Successfully deleted photo for report id: {}", reportId);
         } catch (IOException exception) {
             log.error("Could not delete file at path: {} for report id: {}", photoPath, reportId, exception);
-            throw new FileStorageException("Could not delete file: " + photoPath + ". Please try again! " + exception);
+            throw new FileStorageException("Could not delete file: " + photoPath + TRY_AGAIN + exception);
         }
         log.trace("Exiting deletePhoto method in ReportServiceImpl");
     }
@@ -530,8 +537,8 @@ public class ReportServiceImpl implements ReportService {
         log.trace("Exiting getPatientByTrIdNumber method in ReportServiceImpl");
         return this.webClientBuilder.build().get()
                 .uri("http://patient-service/patients/tr-id-number", uriBuilder ->
-                        uriBuilder.queryParam("trIdNumber", trIdNumber).build())
-                .header(HttpHeaders.AUTHORIZATION, "Bearer " + jwt)
+                        uriBuilder.queryParam(TR_ID_NUMBER, trIdNumber).build())
+                .header(HttpHeaders.AUTHORIZATION, BEARER + jwt)
                 .retrieve()
                 .onStatus(HttpStatusCode::is4xxClientError, clientResponse -> {
                     log.error("Client error while fetching patient information for TR ID number: {}", trIdNumber);
@@ -587,13 +594,13 @@ public class ReportServiceImpl implements ReportService {
         Report report = this.reportRepository.findByIdAndDeletedFalse(reportId)
                 .orElseThrow(() -> {
                     log.error("Report with id: {} not found for prescription", reportId);
-                    return new ReportNotFoundException("Report doesn't exist with id " + reportId);
+                    return new ReportNotFoundException(REPORT_DOES_NOT_EXIST + reportId);
                 });
         byte[] pdfBytes = this.prescriptionService.generatePrescription(report.getDiagnosisDetails());
-        this.redisTemplate.delete("prescription:" + username);
-        this.redisTemplate.delete("trIdNumber:" + username);
-        this.redisTemplate.opsForValue().set("prescription:" + username, Base64.getEncoder().encodeToString(pdfBytes), 1, TimeUnit.HOURS);
-        this.redisTemplate.opsForValue().set("trIdNumber:" + username, report.getPatientTrIdNumber(), 1, TimeUnit.HOURS);
+        this.redisTemplate.delete(PRESCRIPTION + username);
+        this.redisTemplate.delete(TR_ID_NUMBER_CACHE + username);
+        this.redisTemplate.opsForValue().set(PRESCRIPTION + username, Base64.getEncoder().encodeToString(pdfBytes), 1, TimeUnit.HOURS);
+        this.redisTemplate.opsForValue().set(TR_ID_NUMBER_CACHE + username, report.getPatientTrIdNumber(), 1, TimeUnit.HOURS);
         log.info("Successfully generated and cached prescription for username: {}", username);
         log.trace("Exiting getPrescription method in ReportServiceImpl");
         return pdfBytes;
@@ -609,8 +616,8 @@ public class ReportServiceImpl implements ReportService {
     public void sendPrescription(String username) {
         log.trace("Entering sendPrescription method in ReportServiceImpl");
         log.debug("Sending prescription email for username: {}", username);
-        String encodedPrescription = this.redisTemplate.opsForValue().get("prescription:" + username);
-        String encodedTrIdNumber = this.redisTemplate.opsForValue().get("trIdNumber:" + username);
+        String encodedPrescription = this.redisTemplate.opsForValue().get(PRESCRIPTION + username);
+        String encodedTrIdNumber = this.redisTemplate.opsForValue().get(TR_ID_NUMBER_CACHE + username);
         if (encodedPrescription != null && encodedTrIdNumber != null) {
             byte[] pdfBytes = Base64.getDecoder().decode(encodedPrescription);
             if (pdfBytes == null || pdfBytes.length == 0) {
@@ -619,8 +626,8 @@ public class ReportServiceImpl implements ReportService {
             }
             String email = getEmail(jwt, encodedTrIdNumber);
             this.mailService.sendEmail(email, "Your Prescription", "Here is your prescription.", pdfBytes, "prescription.pdf");
-            this.redisTemplate.delete("prescription:" + username);
-            this.redisTemplate.delete("trIdNumber:" + username);
+            this.redisTemplate.delete(PRESCRIPTION + username);
+            this.redisTemplate.delete(TR_ID_NUMBER_CACHE + username);
             log.info("Successfully sent prescription email to: {}", email);
         } else {
             log.error("Cached prescription or TR ID number not found for username: {}", username);
@@ -647,8 +654,8 @@ public class ReportServiceImpl implements ReportService {
             log.debug("Calling patient service to retrieve email for TR ID number: {}", trIdNumber);
             email = this.webClientBuilder.build().get()
                     .uri("http://patient-service/patients/email", uriBuilder ->
-                            uriBuilder.queryParam("trIdNumber", trIdNumber).build())
-                    .header(HttpHeaders.AUTHORIZATION, "Bearer " + jwt)
+                            uriBuilder.queryParam(TR_ID_NUMBER, trIdNumber).build())
+                    .header(HttpHeaders.AUTHORIZATION, BEARER + jwt)
                     .retrieve()
                     .bodyToMono(String.class)
                     .block();

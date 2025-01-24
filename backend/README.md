@@ -133,35 +133,6 @@ Ensure you have the following installed:
 
 ### Usage
 
-Create a `.env` file in the root directory of the project and add the following configuration:
-
-```env
-# PORTS
-ELASTICSEARCH_PORT=9200
-LOGSTASH_PORT=5000
-LOGSTASH_HEALTH_CHECK_PORT=9600
-KIBANA_PORT=5601
-REDIS_PORT=6380
-RABBITMQ_PORT=5672
-ZIPKIN_PORT=9411
-POSTGRES_AUTH_PORT=5433
-POSTGRES_USER_PORT=5434
-POSTGRES_PRODUCT_PORT=5435
-POSTGRES_SALE_PORT=5436
-POSTGRES_SONARQUBE_PORT=5437
-SONARQUBE_PORT=9000
-SERVICE_REGISTRY_PORT=8761
-API_GATEWAY_PORT=8080
-NGINX_PORT=80
-
-# API KEY
-GEMINI_API_KEY=<YOUR_GEMINI_API_KEY>
-
-# EMAIL
-EMAIL_USERNAME=<YOUR_SENDER_EMAIL_ADDRESS>
-EMAIL_PASSWORD=<YOUR_SENDER_EMAIL_APP_PASSWORD>
-```
-
 To **start** all services defined in docker-compose.yml, use the following command:
 
 ```bash
@@ -173,8 +144,6 @@ To **stop** all running services, use:
 ```bash
 docker-compose down
 ```
-
-<br>
 
 ## Services
 
@@ -236,7 +205,9 @@ it uses AI assistance to create prescriptions based on report data. This service
 efficient handling, secure storage, and automated prescription creation to improve overall medical record accuracy and
 usability.
 
-<br>
+### Analytics Service
+
+The Analytics Service in Spring Boot creates charts about patients and reports. It presents a beautiful image to the user. It creates graphs with the data it receives from the patient and report service.
 
 ## Roles & Users
 
@@ -255,6 +226,7 @@ To make requests to the relevant service, you need to have the following role.
 | User Management Service | ADMIN      | 
 | Patient Service         | SECRETARY  | 
 | Report Service          | TECHNICIAN |
+| Analytics Service       | ADMIN      |
 
 ### Default Users
 
@@ -354,6 +326,13 @@ port number**.
 | GET         | /reports/prescription/{reportId} | Generate prescription by report ID                  |
 | POST        | /reports/prescription/send       | Send prescription to email                          |
 
+### Analytics Service
+
+| HTTP Method | Endpoint                 | Description               |
+|-------------|--------------------------|---------------------------|
+| POST        | /analytics/patient-stats | Get patient density chart |
+| POST        | /analytics/report-stats  | Get report density chart  |
+
 <br>
 
 ## Request Body Examples
@@ -432,7 +411,22 @@ port number**.
 }
 ```
 
+### Analytics Service
+
+**Endpoints:**
+
+- **POST** `/analytics/patient-stats`
+- **POST** `/analytics/report-stats`
+
 <br>
 
 ## Report Example
+
+## Prescription Example
+
+## Chart Example
+
+## SonarQube
+
+
 

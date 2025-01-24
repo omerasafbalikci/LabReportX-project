@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * Utility class responsible for generating unique file numbers for reports.
@@ -21,6 +21,7 @@ import java.util.Random;
 public class FileNumberGenerator {
     private static final int FILE_NUMBER_LENGTH = 8;
     private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private final SecureRandom random = new SecureRandom();
 
     @Autowired
     private ReportRepository reportRepository;
@@ -37,7 +38,6 @@ public class FileNumberGenerator {
 
     private String generateRandomFileNumber() {
         StringBuilder sb = new StringBuilder(FILE_NUMBER_LENGTH);
-        Random random = new Random();
         for (int i = 0; i < FILE_NUMBER_LENGTH; i++) {
             sb.append(CHARACTERS.charAt(random.nextInt(CHARACTERS.length())));
         }

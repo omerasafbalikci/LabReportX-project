@@ -43,6 +43,7 @@ public class PatientServiceImpl implements PatientService {
     private final PatientRepository patientRepository;
     private final PatientMapper patientMapper;
     private final PatientAnalyticsProducer patientAnalyticsProducer;
+    private static final String PATIENT_NOT_FOUND = "Patient not found with TR ID number: ";
 
     /**
      * Retrieves a patient's details by their ID.
@@ -80,7 +81,7 @@ public class PatientServiceImpl implements PatientService {
         log.info("Fetching patient by TR ID number: {}", trIdNumber);
         Patient patient = this.patientRepository.findByTrIdNumberAndDeletedFalse(trIdNumber).orElseThrow(() -> {
             log.error("Patient not found with TR ID number: {}", trIdNumber);
-            return new PatientNotFoundException("Patient not found with TR ID number: " + trIdNumber);
+            return new PatientNotFoundException(PATIENT_NOT_FOUND + trIdNumber);
         });
         GetPatientResponse response = this.patientMapper.toGetPatientResponse(patient);
         log.info("Successfully fetched patient by TR ID number: {}", trIdNumber);
@@ -148,7 +149,7 @@ public class PatientServiceImpl implements PatientService {
         log.info("Fetching email for patient with TR ID number: {}", trIdNumber);
         Patient patient = this.patientRepository.findByTrIdNumberAndDeletedFalse(trIdNumber).orElseThrow(() -> {
             log.error("Patient not found with TrIdNumber: {}", trIdNumber);
-            return new PatientNotFoundException("Patient not found with TR ID number: " + trIdNumber);
+            return new PatientNotFoundException(PATIENT_NOT_FOUND + trIdNumber);
         });
         log.info("Successfully retrieved email for patient with TR ID number: {}", trIdNumber);
         log.trace("Exiting getEmail method in PatientServiceImpl");
@@ -168,7 +169,7 @@ public class PatientServiceImpl implements PatientService {
         log.info("Checking registration time for patient with TR ID number: {}", trIdNumber);
         Patient patient = this.patientRepository.findByTrIdNumberAndDeletedFalse(trIdNumber).orElseThrow(() -> {
             log.error("Patient not found with TR ID number {}", trIdNumber);
-            return new PatientNotFoundException("Patient not found with TR ID number: " + trIdNumber);
+            return new PatientNotFoundException(PATIENT_NOT_FOUND + trIdNumber);
         });
         LocalDateTime currentTime = LocalDateTime.now();
         LocalDateTime lastRegistrationTime = patient.getLastPatientRegistrationTime();

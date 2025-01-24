@@ -36,8 +36,8 @@ public class Initializer implements CommandLineRunner {
     private void initializeSecretaryUser() {
         if (!userRepository.existsByUsernameAndDeletedIsFalse("ozlembalikci")) {
             this.userRepository.save(User.builder()
-                    .firstName("Özlem")
-                    .lastName("Balıkçı")
+                    .firstName("Sevda")
+                    .lastName("Aktaş")
                     .username("ozlembalikci")
                     .hospitalId("ABCDEF1")
                     .email("blkc.ozlem@gmail.com")

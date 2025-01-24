@@ -28,6 +28,8 @@ import java.io.IOException;
 @RequiredArgsConstructor
 @Log4j2
 public class ChartService {
+    private static final String SANS_SERIF = "SansSerif";
+
     /**
      * Generates a line chart as a PNG image byte array.
      *
@@ -61,7 +63,7 @@ public class ChartService {
             log.debug("Customizing chart appearance.");
             chart.setTitle(new TextTitle(
                     text,
-                    new Font("SansSerif", Font.BOLD, 20)
+                    new Font(SANS_SERIF, Font.BOLD, 20)
             ));
 
             var plot = chart.getCategoryPlot();
@@ -72,8 +74,8 @@ public class ChartService {
             renderer.setDefaultShapesFilled(true);
             plot.setRenderer(renderer);
 
-            plot.getDomainAxis().setTickLabelFont(new Font("SansSerif", Font.PLAIN, 12));
-            plot.getRangeAxis().setTickLabelFont(new Font("SansSerif", Font.PLAIN, 12));
+            plot.getDomainAxis().setTickLabelFont(new Font(SANS_SERIF, Font.PLAIN, 12));
+            plot.getRangeAxis().setTickLabelFont(new Font(SANS_SERIF, Font.PLAIN, 12));
 
             plot.setBackgroundPaint(Color.WHITE);
             plot.setDomainGridlinePaint(Color.LIGHT_GRAY);

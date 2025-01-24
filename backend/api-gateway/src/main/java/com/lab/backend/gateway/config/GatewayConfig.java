@@ -37,6 +37,9 @@ public class GatewayConfig {
     @Value("${circuit-breaker-name}")
     private String CIRCUIT_BREAKER_NAME;
 
+    private static final String ADMIN = "ADMIN";
+    private static final String TECHNICIAN = "TECHNICIAN";
+    private static final String SECRETARY = "SECRETARY";
     private final Map<String, List<String>> endpointRoleMapping = new HashMap<>();
 
     /**
@@ -44,19 +47,19 @@ public class GatewayConfig {
      * Role mappings define which user roles are allowed to access specific endpoints.
      */
     public GatewayConfig() {
-        this.endpointRoleMapping.put("/patients", List.of("SECRETARY"));
-        this.endpointRoleMapping.put("/patients/tr-id-number", List.of("SECRETARY", "TECHNICIAN"));
-        this.endpointRoleMapping.put("/patients/email", List.of("SECRETARY", "TECHNICIAN"));
-        this.endpointRoleMapping.put("/patients/check-tr-id-number", List.of("SECRETARY", "TECHNICIAN"));
-        this.endpointRoleMapping.put("/barcode", List.of("SECRETARY"));
-        this.endpointRoleMapping.put("/reports", List.of("TECHNICIAN"));
-        this.endpointRoleMapping.put("/analytics", List.of("ADMIN"));
-        this.endpointRoleMapping.put("/users", List.of("ADMIN"));
-        this.endpointRoleMapping.put("/users/me", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
-        this.endpointRoleMapping.put("/users/update/me", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
-        this.endpointRoleMapping.put("/auth/refresh", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
-        this.endpointRoleMapping.put("/auth/logout", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
-        this.endpointRoleMapping.put("/auth/change-password", List.of("SECRETARY", "TECHNICIAN", "ADMIN"));
+        this.endpointRoleMapping.put("/patients", List.of(SECRETARY));
+        this.endpointRoleMapping.put("/patients/tr-id-number", List.of(SECRETARY, TECHNICIAN));
+        this.endpointRoleMapping.put("/patients/email", List.of(SECRETARY, TECHNICIAN));
+        this.endpointRoleMapping.put("/patients/check-tr-id-number", List.of(SECRETARY, TECHNICIAN));
+        this.endpointRoleMapping.put("/barcode", List.of(SECRETARY));
+        this.endpointRoleMapping.put("/reports", List.of(TECHNICIAN));
+        this.endpointRoleMapping.put("/analytics", List.of(ADMIN));
+        this.endpointRoleMapping.put("/users", List.of(ADMIN));
+        this.endpointRoleMapping.put("/users/me", List.of(SECRETARY, TECHNICIAN, ADMIN));
+        this.endpointRoleMapping.put("/users/update/me", List.of(SECRETARY, TECHNICIAN, ADMIN));
+        this.endpointRoleMapping.put("/auth/refresh", List.of(SECRETARY, TECHNICIAN, ADMIN));
+        this.endpointRoleMapping.put("/auth/logout", List.of(SECRETARY, TECHNICIAN, ADMIN));
+        this.endpointRoleMapping.put("/auth/change-password", List.of(SECRETARY, TECHNICIAN, ADMIN));
     }
 
     /**

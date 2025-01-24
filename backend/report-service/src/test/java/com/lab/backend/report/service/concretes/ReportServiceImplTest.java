@@ -378,7 +378,7 @@ public class ReportServiceImplTest {
         // Act & Assert
         UnauthorizedAccessException exception = assertThrows(UnauthorizedAccessException.class, () -> reportService.addPhoto(username, reportId, photo));
 
-        assertEquals("You are not authorized to restore this report.", exception.getMessage());
+        assertEquals("You are not authorized to add photo this report.", exception.getMessage());
         verify(reportRepository).findByIdAndDeletedFalse(reportId);
         verify(reportRepository, never()).save(any(Report.class));
     }
@@ -470,7 +470,7 @@ public class ReportServiceImplTest {
         Exception exception = assertThrows(UnauthorizedAccessException.class, () -> reportService.getPhoto(username, reportId));
 
         // Act & Assert
-        assertEquals("You are not authorized to restore this report.", exception.getMessage());
+        assertEquals("You are not authorized to get photo this report.", exception.getMessage());
     }
 
     @Test
@@ -543,7 +543,7 @@ public class ReportServiceImplTest {
         Exception exception = assertThrows(UnauthorizedAccessException.class, () -> reportService.deletePhoto(username, reportId));
 
         // Act & Assert
-        assertEquals("You are not authorized to restore this report.", exception.getMessage());
+        assertEquals("You are not authorized to delete this report.", exception.getMessage());
     }
 
     @Test
