@@ -7,7 +7,7 @@ management, has been developed.
 
 ## Project Architecture
 
-![Architecture](~images/architecture.png)
+![Architecture](backend/~images/architecture.png)
 
 <br>
 
