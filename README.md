@@ -26,10 +26,10 @@ management, has been developed.
 - [Prescription Example](#prescription-example)
 - [Chart Example](#chart-example)
 - [Hospital Satisfaction Survey Example](#hospital-satisfaction-survey-example)
-- [ELK Stack Example](#elk-stack-example)
-- [Grafana Example](#grafana-example)
+- [ELK Stack](#elk-stack)
+- [Grafana](#grafana)
 - [SonarQube](#sonarqube)
-- [Get in Touch](#get-in-touch)
+- [Get in Touch](#-get-in-touch)
 
 <br>
 
