@@ -21,13 +21,15 @@ management, has been developed.
 - [Authentication & Authorization](#authentication--authorization)
 - [Endpoints](#endpoints)
 - [Request Body Examples](#request-body-examples)
+- [Patient Barcode Example](#patient-barcode-example)
 - [Report Example](#report-example)
-- [AI Insight Example](#ai-insight-example)
+- [Prescription Example](#prescription-example)
+- [Chart Example](#chart-example)
+- [Hospital Satisfaction Survey Example](#hospital-satisfaction-survey-example)
 - [ELK Stack Example](#elk-stack-example)
-- [Importing Dashboard Samples to Kibana](#importing-dashboard-samples-to-kibana)
-- [SonarQube Result](#sonarqube-result)
-- [Using SonarQube for Code Quality Analysis](#using-sonarqube-for-code-quality-analysis)
-- [Contact](#contact)
+- [Grafana Example](#grafana-example)
+- [SonarQube](#sonarqube)
+- [Get in Touch](#get-in-touch)
 
 <br>
 
