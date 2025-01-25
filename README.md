@@ -98,6 +98,7 @@ management, has been developed.
           <li>Circuit Breaking</li>
           <li>Centralized Logging</li>
           <li>Reverse Proxy</li>
+          <li>Survey</li>
         </ul>
     </td>
     <td>
@@ -114,6 +115,7 @@ management, has been developed.
           <li>AI Insight</li>
           <li>Static Code Analysis</li>
           <li>Data Visualization</li>
+          <li>Chart</li>
         </ul>
     </td>
   </tr>
@@ -207,7 +209,7 @@ usability.
 
 ### Analytics Service
 
-The Analytics Service in Spring Boot creates charts about patients and reports. It presents a beautiful image to the user. It creates graphs with the data it receives from the patient and report service.
+Analytics Service in Spring Boot creates charts about patients and reports. It presents a beautiful image to the user. It creates graphs with the data it receives from the patient and report service. Sends a hospital satisfaction survey to the patient via e-mail.
 
 ## Roles & Users
 
@@ -420,11 +422,35 @@ port number**.
 
 <br>
 
+## Patient Barcode Example
+
+![Barcode](backend/~images/barcode.png)
+
+<br>
+
 ## Report Example
+
+![Report](backend/~images/report.png)
+
+<br>
 
 ## Prescription Example
 
+![Prescription](backend/~images/prescription.png)
+
+<br>
+
 ## Chart Example
+
+![Prescription](backend/~images/patient-stats.png)
+
+<br>
+
+## Hospital Satisfaction Survey Example
+
+![Survey](backend/~images/survey.png)
+
+<br>
 
 ## ELK Stack
 
