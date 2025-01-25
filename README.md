@@ -440,7 +440,9 @@ port number**.
 
 <br>
 
-## Contact
+## 📬 Get in Touch
+I'm always open to discussing new ideas, collaborations, or just having a tech chat! Feel free to reach out at:
+#### 📧 Email: balikciomerasaf@gmail.com
 
 
 
