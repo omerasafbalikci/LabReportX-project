@@ -1,4 +1,4 @@
-# LabReportX - Backend
+# LabReportX
 
 ## Project Description
 
@@ -426,7 +426,23 @@ port number**.
 
 ## Chart Example
 
+## ELK Stack
+
+![Kibana](backend/~images/kibana.png)
+
+<br>
+
+## Grafana
+
 ## SonarQube
+
+![SonarQube](backend/~images/sonarqube.png)
+
+<br>
+
+## Contact
+
+
 
 
 
